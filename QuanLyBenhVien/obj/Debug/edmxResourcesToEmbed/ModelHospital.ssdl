@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChiTietPhanQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhanQuyenID" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="ChucNangQuanLyID" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChucNangQuanLy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenChucNangQuanLy" Type="nvarchar" MaxLength="100" />
+    <Property Name="Nut" Type="nvarchar" MaxLength="50" />
+    <Property Name="KichHoat" Type="bit" />
+  </EntityType>
+  <EntityType Name="Khoa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKhoa" Type="nvarchar" MaxLength="100" />
+    <Property Name="KichHoat" Type="bit" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="numeric" Precision="6" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KhoaID" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="PhanQuyenID" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="HoVaTen" Type="nvarchar" MaxLength="100" />
+    <Property Name="TaiKhoan" Type="varchar" MaxLength="100" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="150" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+    <Property Name="CMT" Type="varchar" MaxLength="12" />
+    <Property Name="KichHoat" Type="bit" />
+  </EntityType>
+  <EntityType Name="PhanQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPhanQuyen" Type="nvarchar" MaxLength="100" />
+    <Property Name="KichHoat" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="HospitalModelStoreContainer">
+    <EntitySet Name="ChiTietPhanQuyen" EntityType="Self.ChiTietPhanQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChucNangQuanLy" EntityType="Self.ChucNangQuanLy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khoa" EntityType="Self.Khoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
