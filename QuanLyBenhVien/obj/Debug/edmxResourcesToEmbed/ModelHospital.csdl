@@ -23,7 +23,6 @@
     </Key>
     <Property Name="ID" Type="Decimal" Precision="3" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenKhoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="KichHoat" Type="Boolean" />
   </EntityType>
   <EntityType Name="PhanQuyen">
     <Key>

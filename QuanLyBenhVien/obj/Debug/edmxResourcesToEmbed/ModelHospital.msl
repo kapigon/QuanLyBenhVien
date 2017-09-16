@@ -25,7 +25,6 @@
         <MappingFragment StoreEntitySet="Khoa">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TenKhoa" ColumnName="TenKhoa" />
-          <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

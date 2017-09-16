@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBenhVien.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,9 +44,16 @@ namespace QuanLyBenhVien
                 ToolManage frmToolMangage = new ToolManage();
 
                 // Đóng form ToolManage sẽ ở lại form đăng nhập
-                frmToolMangage.FormClosed += new FormClosedEventHandler(frmToolMangageClosed);
+                /*frmToolMangage.FormClosed += new FormClosedEventHandler(frmToolMangageClosed);
                 frmToolMangage.Show();
+                this.Hide();*/
+
+                string strSQL = "";
+                frmBaoCao bCao = new frmBaoCao();
+                bCao.FormClosed += new FormClosedEventHandler(frmToolMangageClosed);
                 this.Hide();
+                bCao.PreviewReport(strSQL, 1);
+                bCao.ShowDialog();
                
             }
             else

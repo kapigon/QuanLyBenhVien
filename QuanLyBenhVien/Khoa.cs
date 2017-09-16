@@ -16,6 +16,5 @@ namespace QuanLyBenhVien
     {
         public decimal ID { get; set; }
         public string TenKhoa { get; set; }
-        public Nullable<bool> KichHoat { get; set; }
     }
 }
