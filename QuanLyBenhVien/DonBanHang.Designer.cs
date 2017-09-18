@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabKeDon = new System.Windows.Forms.TabPage();
+            this.cachedrptNhanVien1 = new QuanLyBenhVien.Reports.CachedrptNhanVien();
             this.panel1.SuspendLayout();
             this.tabLoaiDonThuoc.SuspendLayout();
             this.tabBanLe.SuspendLayout();
@@ -251,5 +252,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private Reports.CachedrptNhanVien cachedrptNhanVien1;
     }
 }

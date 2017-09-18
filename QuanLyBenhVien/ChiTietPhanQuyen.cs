@@ -15,7 +15,7 @@ namespace QuanLyBenhVien
     public partial class ChiTietPhanQuyen
     {
         public int ID { get; set; }
-        public decimal PhanQuyenID { get; set; }
-        public decimal ChucNangQuanLyID { get; set; }
+        public int PhanQuyenID { get; set; }
+        public int ChucNangQuanLyID { get; set; }
     }
 }

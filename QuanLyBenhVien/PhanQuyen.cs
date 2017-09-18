@@ -14,8 +14,8 @@ namespace QuanLyBenhVien
     
     public partial class PhanQuyen
     {
-        public decimal ID { get; set; }
+        public int ID { get; set; }
         public string TenPhanQuyen { get; set; }
-        public Nullable<bool> KichHoat { get; set; }
+        public bool KichHoat { get; set; }
     }
 }

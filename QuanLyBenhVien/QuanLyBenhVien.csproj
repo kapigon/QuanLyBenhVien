@@ -114,6 +114,15 @@
     <Compile Include="DonBanHang.Designer.cs">
       <DependentUpon>DonBanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="DonViTinh.cs">
+      <DependentUpon>ModelHospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiaBan.cs">
+      <DependentUpon>ModelHospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kho.cs">
+      <DependentUpon>ModelHospital.tt</DependentUpon>
+    </Compile>
     <Compile Include="Khoa.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
@@ -138,6 +147,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelHospital.edmx</DependentUpon>
     </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>ModelHospital.tt</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
@@ -157,6 +169,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rptNhanVien.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ModelHospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Thuoc.cs">
+      <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
     <Compile Include="ToolManage.cs">
       <SubType>Form</SubType>

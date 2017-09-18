@@ -5,8 +5,8 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PhanQuyenID" Type="numeric" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="ChucNangQuanLyID" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="PhanQuyenID" Type="int" Nullable="false" />
+    <Property Name="ChucNangQuanLyID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ChucNangQuanLy">
     <Key>
@@ -17,21 +17,66 @@
     <Property Name="Nut" Type="nvarchar" MaxLength="50" />
     <Property Name="KichHoat" Type="bit" />
   </EntityType>
+  <EntityType Name="DonViTinh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDVT" Type="nvarchar" MaxLength="50" />
+    <Property Name="KichHoat" Type="bit" />
+  </EntityType>
+  <EntityType Name="GiaBan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ThuocID" Type="int" />
+    <Property Name="GiaNhap" Type="float" />
+    <Property Name="GiaBan" Type="float" />
+  </EntityType>
+  <EntityType Name="Kho">
+    <Key>
+      <PropertyRef Name="MaKho" />
+    </Key>
+    <Property Name="MaKho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKho" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="DienThoai" Type="nvarchar" MaxLength="20" />
+  </EntityType>
   <EntityType Name="Khoa">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaKhoa" Type="nchar" MaxLength="20" />
     <Property Name="TenKhoa" Type="nvarchar" MaxLength="100" />
+    <Property Name="KichHoat" Type="bit" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaNCC" Type="nchar" MaxLength="20" />
+    <Property Name="TenNCC" Type="nvarchar" MaxLength="150" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+    <Property Name="DienThoai" Type="nchar" MaxLength="15" />
+    <Property Name="Email" Type="nchar" MaxLength="100" />
+    <Property Name="MST" Type="nchar" MaxLength="50" />
+    <Property Name="SoTaiKhoan" Type="nvarchar" MaxLength="15" />
+    <Property Name="NganHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="200" />
     <Property Name="KichHoat" Type="bit" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="numeric" Precision="6" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="KhoaID" Type="numeric" Precision="3" Scale="0" />
-    <Property Name="PhanQuyenID" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KhoaID" Type="int" />
+    <Property Name="PhanQuyenID" Type="int" />
     <Property Name="HoVaTen" Type="nvarchar" MaxLength="100" />
     <Property Name="TaiKhoan" Type="varchar" MaxLength="100" />
     <Property Name="MatKhau" Type="varchar" MaxLength="150" />
@@ -45,15 +90,40 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenPhanQuyen" Type="nvarchar" MaxLength="100" />
     <Property Name="KichHoat" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Thuoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaThuoc" Type="nchar" MaxLength="20" />
+    <Property Name="BarCode" Type="nchar" MaxLength="20" />
+    <Property Name="TenThuoc" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityContainer Name="HospitalModelStoreContainer">
     <EntitySet Name="ChiTietPhanQuyen" EntityType="Self.ChiTietPhanQuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChucNangQuanLy" EntityType="Self.ChucNangQuanLy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonViTinh" EntityType="Self.DonViTinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiaBan" EntityType="Self.GiaBan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kho" EntityType="Self.Kho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Khoa" EntityType="Self.Khoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thuoc" EntityType="Self.Thuoc" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

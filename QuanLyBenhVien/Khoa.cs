@@ -14,7 +14,9 @@ namespace QuanLyBenhVien
     
     public partial class Khoa
     {
-        public decimal ID { get; set; }
+        public int ID { get; set; }
+        public string MaKhoa { get; set; }
         public string TenKhoa { get; set; }
+        public bool KichHoat { get; set; }
     }
 }

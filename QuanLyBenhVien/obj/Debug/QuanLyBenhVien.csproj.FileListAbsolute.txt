@@ -7,6 +7,7 @@ D:\Project\QuanLyBenhVien\QuanLyBenhVien\bin\Debug\EntityFramework.dll
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\bin\Debug\EntityFramework.SqlServer.dll
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\bin\Debug\EntityFramework.xml
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.csprojResolveAssemblyReference.cache
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.DonBanHang.resources
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.Login.resources
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.Properties.Resources.resources
