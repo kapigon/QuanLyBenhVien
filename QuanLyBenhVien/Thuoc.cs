@@ -18,5 +18,11 @@ namespace QuanLyBenhVien
         public string MaThuoc { get; set; }
         public string BarCode { get; set; }
         public string TenThuoc { get; set; }
+        public Nullable<int> NhomThuocID { get; set; }
+        public Nullable<double> GiaBanLe { get; set; }
+        public Nullable<double> GiaBanBuon { get; set; }
+        public Nullable<int> DonViTinh { get; set; }
+        public Nullable<int> DonViTinhQuyDoi { get; set; }
+        public string QuyCach { get; set; }
     }
 }

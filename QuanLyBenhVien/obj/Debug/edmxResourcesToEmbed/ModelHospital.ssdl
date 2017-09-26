@@ -12,10 +12,27 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenChucNangQuanLy" Type="nvarchar" MaxLength="100" />
     <Property Name="Nut" Type="nvarchar" MaxLength="50" />
     <Property Name="KichHoat" Type="bit" />
+  </EntityType>
+  <EntityType Name="DanhSachNhapHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HangSanXuatID" Type="int" />
+    <Property Name="NuocSanXuatID" Type="int" />
+    <Property Name="PhieuNhapHangID" Type="bigint" />
+    <Property Name="ThuocID" Type="bigint" />
+    <Property Name="ViTriID" Type="int" />
+    <Property Name="KhoHangID" Type="int" />
+    <Property Name="GiaNhap" Type="float" />
+    <Property Name="SoLuongNhap" Type="int" />
+    <Property Name="SoLuongBan" Type="int" />
+    <Property Name="HanSuDung" Type="date" />
+    <Property Name="TongSoDaBan" Type="int" />
   </EntityType>
   <EntityType Name="DonViTinh">
     <Key>
@@ -25,7 +42,7 @@
     <Property Name="TenDVT" Type="nvarchar" MaxLength="50" />
     <Property Name="KichHoat" Type="bit" />
   </EntityType>
-  <EntityType Name="GiaBan">
+  <EntityType Name="GiaBanNhap">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -94,36 +111,43 @@
     <Property Name="TenPhanQuyen" Type="nvarchar" MaxLength="100" />
     <Property Name="KichHoat" Type="bit" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PhieuNhapHang">
+          <Property Name="ID" Type="bigint" />
+          <Property Name="SoPhieu" Type="nchar" MaxLength="10" />
+          <Property Name="NgayNhap" Type="date" />
+          <Property Name="NhaCCID" Type="int" />
+          <Property Name="ThueSuat" Type="float" />
+          <Property Name="SoSeri" Type="nchar" MaxLength="50" />
+          <Property Name="SoHD" Type="nchar" MaxLength="50" />
+          <Property Name="NgayHD" Type="date" />
+        </EntityType>-->
   <EntityType Name="Thuoc">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NhomThuocID" Type="int" />
     <Property Name="MaThuoc" Type="nchar" MaxLength="20" />
-    <Property Name="BarCode" Type="nchar" MaxLength="20" />
     <Property Name="TenThuoc" Type="nvarchar" MaxLength="255" />
+    <Property Name="GiaBanLe" Type="float" />
+    <Property Name="GiaBanBuon" Type="float" />
+    <Property Name="DonViTinh" Type="int" />
+    <Property Name="DonViTinhQuyDoi" Type="int" />
+    <Property Name="QuyCach" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityContainer Name="HospitalModelStoreContainer">
     <EntitySet Name="ChiTietPhanQuyen" EntityType="Self.ChiTietPhanQuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChucNangQuanLy" EntityType="Self.ChucNangQuanLy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhSachNhapHang" EntityType="Self.DanhSachNhapHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DonViTinh" EntityType="Self.DonViTinh" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GiaBan" EntityType="Self.GiaBan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiaBanNhap" EntityType="Self.GiaBanNhap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Kho" EntityType="Self.Kho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Khoa" EntityType="Self.Khoa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thuoc" EntityType="Self.Thuoc" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

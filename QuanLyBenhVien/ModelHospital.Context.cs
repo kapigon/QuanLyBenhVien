@@ -28,13 +28,13 @@ namespace QuanLyBenhVien
         public virtual DbSet<ChiTietPhanQuyen> ChiTietPhanQuyens { get; set; }
         public virtual DbSet<ChucNangQuanLy> ChucNangQuanLies { get; set; }
         public virtual DbSet<DonViTinh> DonViTinhs { get; set; }
-        public virtual DbSet<GiaBan> GiaBans { get; set; }
         public virtual DbSet<Kho> Khoes { get; set; }
         public virtual DbSet<Khoa> Khoas { get; set; }
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PhanQuyen> PhanQuyens { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Thuoc> Thuocs { get; set; }
+        public virtual DbSet<GiaBanNhap> GiaBanNhaps { get; set; }
+        public virtual DbSet<DanhSachNhapHang> DanhSachNhapHangs { get; set; }
     }
 }

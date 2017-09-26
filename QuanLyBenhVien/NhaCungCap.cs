@@ -26,6 +26,6 @@ namespace QuanLyBenhVien
         public string Fax { get; set; }
         public string Website { get; set; }
         public string MoTa { get; set; }
-        public bool KichHoat { get; set; }
+        public Nullable<bool> KichHoat { get; set; }
     }
 }

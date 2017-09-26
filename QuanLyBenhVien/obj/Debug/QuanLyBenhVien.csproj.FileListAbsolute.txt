@@ -18,3 +18,4 @@ D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.exe.manifest
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.application
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.exe
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.pdb
+D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.PhieuNhapThuoc.resources

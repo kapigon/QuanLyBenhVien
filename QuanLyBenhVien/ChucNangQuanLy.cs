@@ -17,6 +17,6 @@ namespace QuanLyBenhVien
         public int ID { get; set; }
         public string TenChucNangQuanLy { get; set; }
         public string Nut { get; set; }
-        public bool KichHoat { get; set; }
+        public Nullable<bool> KichHoat { get; set; }
     }
 }
