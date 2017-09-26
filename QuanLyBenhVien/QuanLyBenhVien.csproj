@@ -120,6 +120,24 @@
     <Compile Include="DonViTinh.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmMsgOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMsgOK.Designer.cs">
+      <DependentUpon>frmMsgOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhaCungCap.Designer.cs">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTinhTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTinhTP.Designer.cs">
+      <DependentUpon>frmTinhTP.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaBanNhap.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
@@ -182,6 +200,9 @@
     <Compile Include="Thuoc.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
+    <Compile Include="TinhTP.cs">
+      <DependentUpon>ModelHospital.tt</DependentUpon>
+    </Compile>
     <Compile Include="ToolManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +211,15 @@
     </Compile>
     <EmbeddedResource Include="DonBanHang.resx">
       <DependentUpon>DonBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMsgOK.resx">
+      <DependentUpon>frmMsgOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhaCungCap.resx">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTinhTP.resx">
+      <DependentUpon>frmTinhTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

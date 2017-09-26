@@ -52,6 +52,8 @@
     <EntitySetMapping Name="NhaCungCaps">
       <EntityTypeMapping TypeName="HospitalModel.NhaCungCap">
         <MappingFragment StoreEntitySet="NhaCungCap">
+          <ScalarProperty Name="MoTai" ColumnName="MoTai" />
+          <ScalarProperty Name="TinhTPID" ColumnName="TinhTPID" />
           <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="Website" ColumnName="Website" />
@@ -94,21 +96,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Thuocs">
-      <EntityTypeMapping TypeName="HospitalModel.Thuoc">
-        <MappingFragment StoreEntitySet="Thuoc">
-          <ScalarProperty Name="QuyCach" ColumnName="QuyCach" />
-          <ScalarProperty Name="DonViTinhQuyDoi" ColumnName="DonViTinhQuyDoi" />
-          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
-          <ScalarProperty Name="GiaBanBuon" ColumnName="GiaBanBuon" />
-          <ScalarProperty Name="GiaBanLe" ColumnName="GiaBanLe" />
-          <ScalarProperty Name="NhomThuocID" ColumnName="NhomThuocID" />
-          <ScalarProperty Name="TenThuoc" ColumnName="TenThuoc" />
-          <ScalarProperty Name="MaThuoc" ColumnName="MaThuoc" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="GiaBanNhaps">
       <EntityTypeMapping TypeName="HospitalModel.GiaBanNhap">
         <MappingFragment StoreEntitySet="GiaBanNhap">
@@ -133,6 +120,30 @@
           <ScalarProperty Name="PhieuNhapHangID" ColumnName="PhieuNhapHangID" />
           <ScalarProperty Name="NuocSanXuatID" ColumnName="NuocSanXuatID" />
           <ScalarProperty Name="HangSanXuatID" ColumnName="HangSanXuatID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Thuocs">
+      <EntityTypeMapping TypeName="HospitalModel.Thuoc">
+        <MappingFragment StoreEntitySet="Thuoc">
+          <ScalarProperty Name="QuyCach" ColumnName="QuyCach" />
+          <ScalarProperty Name="DonViTinhQuyDoi" ColumnName="DonViTinhQuyDoi" />
+          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+          <ScalarProperty Name="GiaBanBuon" ColumnName="GiaBanBuon" />
+          <ScalarProperty Name="GiaBanLe" ColumnName="GiaBanLe" />
+          <ScalarProperty Name="TenThuoc" ColumnName="TenThuoc" />
+          <ScalarProperty Name="MaThuoc" ColumnName="MaThuoc" />
+          <ScalarProperty Name="NhomThuocID" ColumnName="NhomThuocID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinhTPs">
+      <EntityTypeMapping TypeName="HospitalModel.TinhTP">
+        <MappingFragment StoreEntitySet="TinhTP">
+          <ScalarProperty Name="QuocGia" ColumnName="QuocGia" />
+          <ScalarProperty Name="TenTinhTP" ColumnName="TenTinhTP" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

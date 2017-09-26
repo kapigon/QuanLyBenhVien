@@ -61,6 +61,7 @@
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HanSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cboNhaCungCap = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -200,6 +201,7 @@
             this.btnThemNhaCC.TabIndex = 6;
             this.btnThemNhaCC.TabStop = false;
             this.btnThemNhaCC.UseVisualStyleBackColor = true;
+            this.btnThemNhaCC.Click += new System.EventHandler(this.btnThemNhaCC_Click);
             // 
             // dateTimePicker1
             // 
@@ -211,6 +213,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cboNhaCungCap);
             this.groupBox2.Controls.Add(this.txtDiaChi);
             this.groupBox2.Controls.Add(this.lblDiaChi);
             this.groupBox2.Controls.Add(this.txtGhiChu);
@@ -337,6 +340,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thao tác";
             // 
+            // cboNhaCungCap
+            // 
+            this.cboNhaCungCap.FormattingEnabled = true;
+            this.cboNhaCungCap.Location = new System.Drawing.Point(101, 46);
+            this.cboNhaCungCap.Name = "cboNhaCungCap";
+            this.cboNhaCungCap.Size = new System.Drawing.Size(439, 21);
+            this.cboNhaCungCap.TabIndex = 12;
+            // 
             // PhieuNhapThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,5 +401,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn HanSuDung;
+        private System.Windows.Forms.ComboBox cboNhaCungCap;
     }
 }

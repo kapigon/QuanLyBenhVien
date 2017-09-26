@@ -19,3 +19,6 @@ D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.application
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.exe
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.pdb
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.PhieuNhapThuoc.resources
+D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.frmNhaCungCap.resources
+D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.frmTinhTP.resources
+D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.frmMsgOK.resources

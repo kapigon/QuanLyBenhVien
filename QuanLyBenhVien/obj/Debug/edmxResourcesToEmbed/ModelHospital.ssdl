@@ -77,11 +77,13 @@
     <Property Name="MaNCC" Type="nchar" MaxLength="20" />
     <Property Name="TenNCC" Type="nvarchar" MaxLength="150" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+    <Property Name="TinhTPID" Type="int" />
     <Property Name="DienThoai" Type="nchar" MaxLength="15" />
     <Property Name="Email" Type="nchar" MaxLength="100" />
     <Property Name="MST" Type="nchar" MaxLength="50" />
     <Property Name="SoTaiKhoan" Type="nvarchar" MaxLength="15" />
     <Property Name="NganHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTai" Type="nvarchar" MaxLength="250" />
     <Property Name="Fax" Type="nvarchar" MaxLength="20" />
     <Property Name="Website" Type="nvarchar" MaxLength="50" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="200" />
@@ -137,6 +139,14 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
     <Property Name="DonViTinhQuyDoi" Type="int" />
     <Property Name="QuyCach" Type="nvarchar" MaxLength="250" />
   </EntityType>
+  <EntityType Name="TinhTP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTinhTP" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuocGia" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityContainer Name="HospitalModelStoreContainer">
     <EntitySet Name="ChiTietPhanQuyen" EntityType="Self.ChiTietPhanQuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChucNangQuanLy" EntityType="Self.ChucNangQuanLy" Schema="dbo" store:Type="Tables" />
@@ -149,5 +159,6 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thuoc" EntityType="Self.Thuoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TinhTP" EntityType="Self.TinhTP" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

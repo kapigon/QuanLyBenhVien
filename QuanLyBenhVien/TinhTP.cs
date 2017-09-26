@@ -12,16 +12,10 @@ namespace QuanLyBenhVien
     using System;
     using System.Collections.Generic;
     
-    public partial class Thuoc
+    public partial class TinhTP
     {
-        public long ID { get; set; }
-        public Nullable<int> NhomThuocID { get; set; }
-        public string MaThuoc { get; set; }
-        public string TenThuoc { get; set; }
-        public Nullable<double> GiaBanLe { get; set; }
-        public Nullable<double> GiaBanBuon { get; set; }
-        public Nullable<int> DonViTinh { get; set; }
-        public Nullable<int> DonViTinhQuyDoi { get; set; }
-        public string QuyCach { get; set; }
+        public int ID { get; set; }
+        public string TenTinhTP { get; set; }
+        public string QuocGia { get; set; }
     }
 }

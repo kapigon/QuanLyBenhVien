@@ -27,5 +27,7 @@ namespace QuanLyBenhVien
         public string Website { get; set; }
         public string MoTa { get; set; }
         public Nullable<bool> KichHoat { get; set; }
+        public Nullable<int> TinhTPID { get; set; }
+        public string MoTai { get; set; }
     }
 }

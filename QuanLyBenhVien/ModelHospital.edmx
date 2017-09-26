@@ -82,11 +82,13 @@
           <Property Name="MaNCC" Type="nchar" MaxLength="20" />
           <Property Name="TenNCC" Type="nvarchar" MaxLength="150" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+          <Property Name="TinhTPID" Type="int" />
           <Property Name="DienThoai" Type="nchar" MaxLength="15" />
           <Property Name="Email" Type="nchar" MaxLength="100" />
           <Property Name="MST" Type="nchar" MaxLength="50" />
           <Property Name="SoTaiKhoan" Type="nvarchar" MaxLength="15" />
           <Property Name="NganHang" Type="nvarchar" MaxLength="50" />
+          <Property Name="MoTai" Type="nvarchar" MaxLength="250" />
           <Property Name="Fax" Type="nvarchar" MaxLength="20" />
           <Property Name="Website" Type="nvarchar" MaxLength="50" />
           <Property Name="MoTa" Type="nvarchar" MaxLength="200" />
@@ -142,6 +144,14 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
           <Property Name="DonViTinhQuyDoi" Type="int" />
           <Property Name="QuyCach" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="TinhTP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTinhTP" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuocGia" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityContainer Name="HospitalModelStoreContainer">
           <EntitySet Name="ChiTietPhanQuyen" EntityType="Self.ChiTietPhanQuyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChucNangQuanLy" EntityType="Self.ChucNangQuanLy" Schema="dbo" store:Type="Tables" />
@@ -154,6 +164,7 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
           <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Thuoc" EntityType="Self.Thuoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TinhTP" EntityType="Self.TinhTP" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -168,9 +179,10 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
           <EntitySet Name="NhaCungCaps" EntityType="HospitalModel.NhaCungCap" />
           <EntitySet Name="NhanViens" EntityType="HospitalModel.NhanVien" />
           <EntitySet Name="PhanQuyens" EntityType="HospitalModel.PhanQuyen" />
-          <EntitySet Name="Thuocs" EntityType="HospitalModel.Thuoc" />
           <EntitySet Name="GiaBanNhaps" EntityType="HospitalModel.GiaBanNhap" />
           <EntitySet Name="DanhSachNhapHangs" EntityType="HospitalModel.DanhSachNhapHang" />
+          <EntitySet Name="Thuocs" EntityType="HospitalModel.Thuoc" />
+          <EntitySet Name="TinhTPs" EntityType="HospitalModel.TinhTP" />
         </EntityContainer>
         <EntityType Name="ChiTietPhanQuyen">
           <Key>
@@ -232,6 +244,8 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
           <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MoTa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="KichHoat" Type="Boolean" />
+          <Property Name="TinhTPID" Type="Int32" />
+          <Property Name="MoTai" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -256,21 +270,6 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenPhanQuyen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="KichHoat" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="Thuoc">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaThuoc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="BarCode" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="TenThuoc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="NhomThuocID" Type="Int32" />
-          <Property Name="GiaBanLe" Type="Double" />
-          <Property Name="GiaBanBuon" Type="Double" />
-          <Property Name="DonViTinh" Type="Int32" />
-          <Property Name="DonViTinhQuyDoi" Type="Int32" />
-          <Property Name="QuyCach" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GiaBanNhap">
           <Key>
@@ -297,6 +296,28 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
           <Property Name="SoLuongBan" Type="Int32" />
           <Property Name="HanSuDung" Type="DateTime" Precision="0" />
           <Property Name="TongSoDaBan" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Thuoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NhomThuocID" Type="Int32" />
+          <Property Name="MaThuoc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="TenThuoc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GiaBanLe" Type="Double" />
+          <Property Name="GiaBanBuon" Type="Double" />
+          <Property Name="DonViTinh" Type="Int32" />
+          <Property Name="DonViTinhQuyDoi" Type="Int32" />
+          <Property Name="QuyCach" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TinhTP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTinhTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuocGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -355,6 +376,8 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
           <EntitySetMapping Name="NhaCungCaps">
             <EntityTypeMapping TypeName="HospitalModel.NhaCungCap">
               <MappingFragment StoreEntitySet="NhaCungCap">
+                <ScalarProperty Name="MoTai" ColumnName="MoTai" />
+                <ScalarProperty Name="TinhTPID" ColumnName="TinhTPID" />
                 <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />
                 <ScalarProperty Name="Website" ColumnName="Website" />
@@ -397,21 +420,6 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Thuocs">
-            <EntityTypeMapping TypeName="HospitalModel.Thuoc">
-              <MappingFragment StoreEntitySet="Thuoc">
-                <ScalarProperty Name="QuyCach" ColumnName="QuyCach" />
-                <ScalarProperty Name="DonViTinhQuyDoi" ColumnName="DonViTinhQuyDoi" />
-                <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
-                <ScalarProperty Name="GiaBanBuon" ColumnName="GiaBanBuon" />
-                <ScalarProperty Name="GiaBanLe" ColumnName="GiaBanLe" />
-                <ScalarProperty Name="NhomThuocID" ColumnName="NhomThuocID" />
-                <ScalarProperty Name="TenThuoc" ColumnName="TenThuoc" />
-                <ScalarProperty Name="MaThuoc" ColumnName="MaThuoc" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="GiaBanNhaps">
             <EntityTypeMapping TypeName="HospitalModel.GiaBanNhap">
               <MappingFragment StoreEntitySet="GiaBanNhap">
@@ -436,6 +444,30 @@ warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a prima
                 <ScalarProperty Name="PhieuNhapHangID" ColumnName="PhieuNhapHangID" />
                 <ScalarProperty Name="NuocSanXuatID" ColumnName="NuocSanXuatID" />
                 <ScalarProperty Name="HangSanXuatID" ColumnName="HangSanXuatID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Thuocs">
+            <EntityTypeMapping TypeName="HospitalModel.Thuoc">
+              <MappingFragment StoreEntitySet="Thuoc">
+                <ScalarProperty Name="QuyCach" ColumnName="QuyCach" />
+                <ScalarProperty Name="DonViTinhQuyDoi" ColumnName="DonViTinhQuyDoi" />
+                <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+                <ScalarProperty Name="GiaBanBuon" ColumnName="GiaBanBuon" />
+                <ScalarProperty Name="GiaBanLe" ColumnName="GiaBanLe" />
+                <ScalarProperty Name="TenThuoc" ColumnName="TenThuoc" />
+                <ScalarProperty Name="MaThuoc" ColumnName="MaThuoc" />
+                <ScalarProperty Name="NhomThuocID" ColumnName="NhomThuocID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TinhTPs">
+            <EntityTypeMapping TypeName="HospitalModel.TinhTP">
+              <MappingFragment StoreEntitySet="TinhTP">
+                <ScalarProperty Name="QuocGia" ColumnName="QuocGia" />
+                <ScalarProperty Name="TenTinhTP" ColumnName="TenTinhTP" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
