@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class PhieuNhapThuoc : Form
+    public partial class frmPhieuNhapThuoc : Form
     {
         HospitalEntities db = new HospitalEntities();
-        public PhieuNhapThuoc()
+        public frmPhieuNhapThuoc()
         {
             InitializeComponent();
             LoadNhaCungCap();

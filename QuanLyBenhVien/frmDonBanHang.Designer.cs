@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBenhVien
 {
-    partial class DonBanHang
+    partial class frmDonBanHang
     {
         /// <summary>
         /// Required designer variable.
@@ -221,6 +221,8 @@
             this.ClientSize = new System.Drawing.Size(924, 511);
             this.Controls.Add(this.tabLoaiDonThuoc);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DonBanHang";
             this.Text = "DonBanHang";
             this.panel1.ResumeLayout(false);

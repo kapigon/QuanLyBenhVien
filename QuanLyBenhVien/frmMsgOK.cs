@@ -20,7 +20,7 @@ namespace QuanLyBenhVien
         public void HienThi(string loinhan, string tieude)
         {
             lblloiNhac.Text = loinhan;
-            this.Text = tieude + "12345";
+            this.Text = tieude;
         }
         #endregion
     }

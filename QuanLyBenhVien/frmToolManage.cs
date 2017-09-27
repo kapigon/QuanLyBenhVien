@@ -9,12 +9,11 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class DonBanHang : Form
+    public partial class frmToolManage : Form
     {
-        public DonBanHang()
+        public frmToolManage()
         {
             InitializeComponent();
         }
-                
     }
 }

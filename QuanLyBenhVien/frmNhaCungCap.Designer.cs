@@ -370,6 +370,8 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmNhaCungCap";
             this.Text = "NHÀ CUNG CẤP";
             this.GroupBox1.ResumeLayout(false);

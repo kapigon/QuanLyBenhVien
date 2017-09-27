@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
         HospitalEntities db = new HospitalEntities();
 
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace QuanLyBenhVien
             if (checkLogin())
             {
                 MessageBox.Show("Đăng nhập thành công!");
-                ToolManage frmToolMangage = new ToolManage();
+                frmToolManage frmToolMangage = new frmToolManage();
 
                 // Đóng form ToolManage sẽ ở lại form đăng nhập
                 /*frmToolMangage.FormClosed += new FormClosedEventHandler(frmToolMangageClosed);

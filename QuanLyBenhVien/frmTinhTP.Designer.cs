@@ -133,6 +133,8 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.Label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmTinhTP";
             this.Text = "TỈNH THÀNH PHỐ";
             this.GroupBox1.ResumeLayout(false);

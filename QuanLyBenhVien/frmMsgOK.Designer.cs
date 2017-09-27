@@ -84,6 +84,8 @@
             this.Controls.Add(this.lblloiNhac);
             this.Controls.Add(this.picInfomation);
             this.Controls.Add(this.picStop);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMsgOK";
             this.Text = "THÔNG BÁO";
             ((System.ComponentModel.ISupportInitialize)(this.picInfomation)).EndInit();

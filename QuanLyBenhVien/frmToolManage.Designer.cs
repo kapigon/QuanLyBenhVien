@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBenhVien
 {
-    partial class ToolManage
+    partial class frmToolManage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolManage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmToolManage));
             this.lblBanHang = new System.Windows.Forms.Label();
             this.lnkDonBanThuoc = new System.Windows.Forms.LinkLabel();
             this.lnkDanhSachDonThuoc = new System.Windows.Forms.LinkLabel();
