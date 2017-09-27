@@ -113,18 +113,6 @@
     <Property Name="TenPhanQuyen" Type="nvarchar" MaxLength="100" />
     <Property Name="KichHoat" Type="bit" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'mHospital.dbo.PhieuNhapHang' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PhieuNhapHang">
-          <Property Name="ID" Type="bigint" />
-          <Property Name="SoPhieu" Type="nchar" MaxLength="10" />
-          <Property Name="NgayNhap" Type="date" />
-          <Property Name="NhaCCID" Type="int" />
-          <Property Name="ThueSuat" Type="float" />
-          <Property Name="SoSeri" Type="nchar" MaxLength="50" />
-          <Property Name="SoHD" Type="nchar" MaxLength="50" />
-          <Property Name="NgayHD" Type="date" />
-        </EntityType>-->
   <EntityType Name="Thuoc">
     <Key>
       <PropertyRef Name="ID" />

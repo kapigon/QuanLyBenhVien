@@ -111,11 +111,11 @@
     <Compile Include="DanhSachNhapHang.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
-    <Compile Include="DonBanHang.cs">
+    <Compile Include="frmDonBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DonBanHang.Designer.cs">
-      <DependentUpon>DonBanHang.cs</DependentUpon>
+    <Compile Include="frmDonBanHang.Designer.cs">
+      <DependentUpon>frmDonBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="DonViTinh.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
@@ -147,11 +147,11 @@
     <Compile Include="Khoa.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelHospital.Context.cs">
       <AutoGen>True</AutoGen>
@@ -177,11 +177,11 @@
     <Compile Include="PhanQuyen.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
-    <Compile Include="PhieuNhapThuoc.cs">
+    <Compile Include="frmPhieuNhapThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhieuNhapThuoc.Designer.cs">
-      <DependentUpon>PhieuNhapThuoc.cs</DependentUpon>
+    <Compile Include="frmPhieuNhapThuoc.Designer.cs">
+      <DependentUpon>frmPhieuNhapThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,14 +203,14 @@
     <Compile Include="TinhTP.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
-    <Compile Include="ToolManage.cs">
+    <Compile Include="frmToolManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolManage.Designer.cs">
-      <DependentUpon>ToolManage.cs</DependentUpon>
+    <Compile Include="frmToolManage.Designer.cs">
+      <DependentUpon>frmToolManage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DonBanHang.resx">
-      <DependentUpon>DonBanHang.cs</DependentUpon>
+    <EmbeddedResource Include="frmDonBanHang.resx">
+      <DependentUpon>frmDonBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMsgOK.resx">
       <DependentUpon>frmMsgOK.cs</DependentUpon>
@@ -221,11 +221,11 @@
     <EmbeddedResource Include="frmTinhTP.resx">
       <DependentUpon>frmTinhTP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhieuNhapThuoc.resx">
-      <DependentUpon>PhieuNhapThuoc.cs</DependentUpon>
+    <EmbeddedResource Include="frmPhieuNhapThuoc.resx">
+      <DependentUpon>frmPhieuNhapThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -244,8 +244,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptNhanVien.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolManage.resx">
-      <DependentUpon>ToolManage.cs</DependentUpon>
+    <EmbeddedResource Include="frmToolManage.resx">
+      <DependentUpon>frmToolManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="ModelHospital.edmx">

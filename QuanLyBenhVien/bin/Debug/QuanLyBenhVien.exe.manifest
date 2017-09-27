@@ -181,14 +181,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuanLyBenhVien.exe" size="232368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuanLyBenhVien.exe" size="231344">
       <assemblyIdentity name="QuanLyBenhVien" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>nAtGhQ0NWqkMX14ICculb6dEZ0Q=</dsig:DigestValue>
+        <dsig:DigestValue>MxU/KzwPWiiZcRJ/Fh2jkZJEBNI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -453,13 +453,13 @@
       <dsig:DigestValue>GIibcA5sYncpVL6pJr6JuFOrfrw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="QuanLyBenhVien.exe.config" size="2732">
+  <file name="QuanLyBenhVien.exe.config" size="3186">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>CYcBLh5XftE/U7OE3WSOvioLA9s=</dsig:DigestValue>
+      <dsig:DigestValue>IfSmnIDMihLKwKPAavs9niZUV04=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
