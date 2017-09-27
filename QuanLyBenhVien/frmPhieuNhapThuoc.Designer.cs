@@ -348,7 +348,7 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thao tác";
             // 
-            // PhieuNhapThuoc
+            // frmPhieuNhapThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -359,7 +359,7 @@
             this.Controls.Add(this.groupBox2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "PhieuNhapThuoc";
+            this.Name = "frmPhieuNhapThuoc";
             this.Text = "PHIẾU NHẬP THUỐC";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
