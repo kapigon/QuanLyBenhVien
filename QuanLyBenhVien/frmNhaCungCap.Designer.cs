@@ -136,7 +136,8 @@
             // 
             // cboTinhTP
             // 
-            this.cboTinhTP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTinhTP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboTinhTP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTinhTP.FormattingEnabled = true;
             this.cboTinhTP.Location = new System.Drawing.Point(112, 126);
             this.cboTinhTP.Name = "cboTinhTP";
