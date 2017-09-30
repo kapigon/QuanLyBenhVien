@@ -26,6 +26,22 @@ namespace QuanLyBenhVien
             }
             return true;
         }
+
+        private bool save(TinhTP tinhTP)
+        {
+            try
+            {
+                db.TinhTPs.Add(tinhTP);
+                db.SaveChanges();
+
+                return true;
+
+            }catch(Exception e){
+                MessageBox.Show(e.Message);
+                return false;
+            }
+            
+        }
         #endregion
 
         #region event
@@ -45,11 +61,12 @@ namespace QuanLyBenhVien
             else
             {
                 TinhTP tinhTP = new TinhTP() { TenTinhTP = txtTenTinhTP.Text, QuocGia = txtQuocGia.Text };
-                db.TinhTPs.Add(tinhTP);
-                db.SaveChanges();
 
-                txtTenTinhTP.Text = "";
-                txtQuocGia.Text = "";
+                if (save(tinhTP))
+                {
+                    txtTenTinhTP.Text = "";
+                    txtQuocGia.Text = "";
+                }                
             }
 
         }

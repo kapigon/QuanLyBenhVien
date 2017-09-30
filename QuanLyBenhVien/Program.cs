@@ -15,7 +15,7 @@ namespace QuanLyBenhVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPhieuNhapThuoc());
+            Application.Run(new frmDanhSachDonHang());
         }
     }
 }

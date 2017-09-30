@@ -111,6 +111,18 @@
     <Compile Include="DanhSachNhapHang.cs">
       <DependentUpon>ModelHospital.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmDanhSachDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachDonHang.Designer.cs">
+      <DependentUpon>frmDanhSachDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachNCC.Designer.cs">
+      <DependentUpon>frmDanhSachNCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDonBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +221,12 @@
     <Compile Include="frmToolManage.Designer.cs">
       <DependentUpon>frmToolManage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmDanhSachDonHang.resx">
+      <DependentUpon>frmDanhSachDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachNCC.resx">
+      <DependentUpon>frmDanhSachNCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDonBanHang.resx">
       <DependentUpon>frmDonBanHang.cs</DependentUpon>
     </EmbeddedResource>

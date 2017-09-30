@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhaCungCap));
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMaNCC = new System.Windows.Forms.TextBox();
-            this.mskFax = new System.Windows.Forms.MaskedTextBox();
             this.btnThemTinhTP = new System.Windows.Forms.Button();
-            this.mskDienThoai = new System.Windows.Forms.MaskedTextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.cboTinhTP = new System.Windows.Forms.ComboBox();
@@ -48,25 +46,27 @@
             this.Label15 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
             this.Label13 = new System.Windows.Forms.Label();
-            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
+            this.txtSoTaiKhoan = new System.Windows.Forms.TextBox();
             this.Label11 = new System.Windows.Forms.Label();
             this.txtMST = new System.Windows.Forms.TextBox();
             this.Label10 = new System.Windows.Forms.Label();
             this.Label7 = new System.Windows.Forms.Label();
-            this.txtNganHang = new System.Windows.Forms.TextBox();
-            this.Label9 = new System.Windows.Forms.Label();
+            this.txtMoTaiNN = new System.Windows.Forms.TextBox();
+            this.lblMoTaiNN = new System.Windows.Forms.Label();
             this.Label21 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtFax = new System.Windows.Forms.TextBox();
             this.GroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.txtFax);
+            this.GroupBox1.Controls.Add(this.txtSDT);
             this.GroupBox1.Controls.Add(this.txtMaNCC);
-            this.GroupBox1.Controls.Add(this.mskFax);
             this.GroupBox1.Controls.Add(this.btnThemTinhTP);
-            this.GroupBox1.Controls.Add(this.mskDienThoai);
             this.GroupBox1.Controls.Add(this.Label2);
             this.GroupBox1.Controls.Add(this.txtMoTa);
             this.GroupBox1.Controls.Add(this.cboTinhTP);
@@ -81,13 +81,13 @@
             this.GroupBox1.Controls.Add(this.Label15);
             this.GroupBox1.Controls.Add(this.Label8);
             this.GroupBox1.Controls.Add(this.Label13);
-            this.GroupBox1.Controls.Add(this.txtTaiKhoan);
+            this.GroupBox1.Controls.Add(this.txtSoTaiKhoan);
             this.GroupBox1.Controls.Add(this.Label11);
             this.GroupBox1.Controls.Add(this.txtMST);
             this.GroupBox1.Controls.Add(this.Label10);
             this.GroupBox1.Controls.Add(this.Label7);
-            this.GroupBox1.Controls.Add(this.txtNganHang);
-            this.GroupBox1.Controls.Add(this.Label9);
+            this.GroupBox1.Controls.Add(this.txtMoTaiNN);
+            this.GroupBox1.Controls.Add(this.lblMoTaiNN);
             this.GroupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox1.Location = new System.Drawing.Point(12, 50);
             this.GroupBox1.Name = "GroupBox1";
@@ -105,15 +105,6 @@
             this.txtMaNCC.TabIndex = 0;
             this.txtMaNCC.Tag = "NN";
             // 
-            // mskFax
-            // 
-            this.mskFax.Location = new System.Drawing.Point(449, 208);
-            this.mskFax.Mask = "(9999) 000-0000";
-            this.mskFax.Name = "mskFax";
-            this.mskFax.Size = new System.Drawing.Size(211, 21);
-            this.mskFax.TabIndex = 9;
-            this.mskFax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // btnThemTinhTP
             // 
             this.btnThemTinhTP.Image = ((System.Drawing.Image)(resources.GetObject("btnThemTinhTP.Image")));
@@ -124,15 +115,6 @@
             this.btnThemTinhTP.TabStop = false;
             this.btnThemTinhTP.UseVisualStyleBackColor = true;
             this.btnThemTinhTP.Click += new System.EventHandler(this.btnThemTinhTP_Click);
-            // 
-            // mskDienThoai
-            // 
-            this.mskDienThoai.Location = new System.Drawing.Point(112, 208);
-            this.mskDienThoai.Mask = "(9999) 000-0000";
-            this.mskDienThoai.Name = "mskDienThoai";
-            this.mskDienThoai.Size = new System.Drawing.Size(206, 21);
-            this.mskDienThoai.TabIndex = 8;
-            this.mskDienThoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Label2
             // 
@@ -146,7 +128,7 @@
             // txtMoTa
             // 
             this.txtMoTa.Location = new System.Drawing.Point(112, 288);
-            this.txtMoTa.MaxLength = 200;
+            this.txtMoTa.MaxLength = 250;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(548, 21);
             this.txtMoTa.TabIndex = 12;
@@ -164,7 +146,7 @@
             // txtWebsite
             // 
             this.txtWebsite.Location = new System.Drawing.Point(112, 261);
-            this.txtWebsite.MaxLength = 50;
+            this.txtWebsite.MaxLength = 250;
             this.txtWebsite.Name = "txtWebsite";
             this.txtWebsite.Size = new System.Drawing.Size(548, 21);
             this.txtWebsite.TabIndex = 11;
@@ -182,7 +164,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(112, 234);
-            this.txtEmail.MaxLength = 50;
+            this.txtEmail.MaxLength = 150;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(548, 21);
             this.txtEmail.TabIndex = 10;
@@ -200,7 +182,7 @@
             // txtTenNCC
             // 
             this.txtTenNCC.Location = new System.Drawing.Point(112, 49);
-            this.txtTenNCC.MaxLength = 30;
+            this.txtTenNCC.MaxLength = 250;
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(548, 21);
             this.txtTenNCC.TabIndex = 1;
@@ -209,7 +191,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(112, 77);
-            this.txtDiaChi.MaxLength = 50;
+            this.txtDiaChi.MaxLength = 500;
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(548, 44);
@@ -261,14 +243,14 @@
             this.Label13.TabIndex = 178;
             this.Label13.Text = "Fax";
             // 
-            // txtTaiKhoan
+            // txtSoTaiKhoan
             // 
-            this.txtTaiKhoan.Location = new System.Drawing.Point(449, 155);
-            this.txtTaiKhoan.MaxLength = 15;
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(211, 21);
-            this.txtTaiKhoan.TabIndex = 6;
-            this.txtTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSoTaiKhoan.Location = new System.Drawing.Point(449, 155);
+            this.txtSoTaiKhoan.MaxLength = 15;
+            this.txtSoTaiKhoan.Name = "txtSoTaiKhoan";
+            this.txtSoTaiKhoan.Size = new System.Drawing.Size(211, 21);
+            this.txtSoTaiKhoan.TabIndex = 6;
+            this.txtSoTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Label11
             // 
@@ -307,22 +289,22 @@
             this.Label7.TabIndex = 169;
             this.Label7.Text = "Mã số thuế";
             // 
-            // txtNganHang
+            // txtMoTaiNN
             // 
-            this.txtNganHang.Location = new System.Drawing.Point(112, 182);
-            this.txtNganHang.MaxLength = 50;
-            this.txtNganHang.Name = "txtNganHang";
-            this.txtNganHang.Size = new System.Drawing.Size(548, 21);
-            this.txtNganHang.TabIndex = 7;
+            this.txtMoTaiNN.Location = new System.Drawing.Point(112, 182);
+            this.txtMoTaiNN.MaxLength = 50;
+            this.txtMoTaiNN.Name = "txtMoTaiNN";
+            this.txtMoTaiNN.Size = new System.Drawing.Size(548, 21);
+            this.txtMoTaiNN.TabIndex = 7;
             // 
-            // Label9
+            // lblMoTaiNN
             // 
-            this.Label9.AutoSize = true;
-            this.Label9.Location = new System.Drawing.Point(9, 188);
-            this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(40, 15);
-            this.Label9.TabIndex = 175;
-            this.Label9.Text = "Mở tại";
+            this.lblMoTaiNN.AutoSize = true;
+            this.lblMoTaiNN.Location = new System.Drawing.Point(9, 188);
+            this.lblMoTaiNN.Name = "lblMoTaiNN";
+            this.lblMoTaiNN.Size = new System.Drawing.Size(61, 15);
+            this.lblMoTaiNN.TabIndex = 175;
+            this.lblMoTaiNN.Text = "Mở tại NN";
             // 
             // Label21
             // 
@@ -352,13 +334,33 @@
             this.btnLuu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(533, 385);
+            this.btnLuu.Location = new System.Drawing.Point(499, 385);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 30);
+            this.btnLuu.Size = new System.Drawing.Size(122, 30);
             this.btnLuu.TabIndex = 6;
-            this.btnLuu.Text = "&Ghi";
+            this.btnLuu.Text = "&Thêm mới";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(112, 208);
+            this.txtSDT.MaxLength = 20;
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(206, 21);
+            this.txtSDT.TabIndex = 181;
+            this.txtSDT.Tag = "";
+            this.txtSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtFax
+            // 
+            this.txtFax.Location = new System.Drawing.Point(449, 208);
+            this.txtFax.MaxLength = 20;
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(211, 21);
+            this.txtFax.TabIndex = 182;
+            this.txtFax.Tag = "";
+            this.txtFax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmNhaCungCap
             // 
@@ -385,9 +387,7 @@
 
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.TextBox txtMaNCC;
-        internal System.Windows.Forms.MaskedTextBox mskFax;
         internal System.Windows.Forms.Button btnThemTinhTP;
-        internal System.Windows.Forms.MaskedTextBox mskDienThoai;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.TextBox txtMoTa;
         internal System.Windows.Forms.ComboBox cboTinhTP;
@@ -402,15 +402,17 @@
         internal System.Windows.Forms.Label Label15;
         internal System.Windows.Forms.Label Label8;
         internal System.Windows.Forms.Label Label13;
-        internal System.Windows.Forms.TextBox txtTaiKhoan;
+        internal System.Windows.Forms.TextBox txtSoTaiKhoan;
         internal System.Windows.Forms.Label Label11;
         internal System.Windows.Forms.TextBox txtMST;
         internal System.Windows.Forms.Label Label10;
         internal System.Windows.Forms.Label Label7;
-        internal System.Windows.Forms.TextBox txtNganHang;
-        internal System.Windows.Forms.Label Label9;
+        internal System.Windows.Forms.Label lblMoTaiNN;
         internal System.Windows.Forms.Label Label21;
         internal System.Windows.Forms.Button btnThoat;
         internal System.Windows.Forms.Button btnLuu;
+        internal System.Windows.Forms.TextBox txtMoTaiNN;
+        internal System.Windows.Forms.TextBox txtFax;
+        internal System.Windows.Forms.TextBox txtSDT;
     }
 }

@@ -25,7 +25,7 @@ namespace QuanLyBenhVien
                          where nv.KichHoat == true
                          select nv;
             cboNhaCungCap.DataSource = result.ToList();
-            cboNhaCungCap.DisplayMember = "Name";
+            cboNhaCungCap.DisplayMember = "TenNCC";
             cboNhaCungCap.ValueMember = "ID";
            // ddlNhaCungCap.DataBind();
         }

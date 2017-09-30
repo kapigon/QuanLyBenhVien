@@ -10,13 +10,13 @@
         <EntityTypeShape EntityType="HospitalModel.DonViTinh" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="HospitalModel.Kho" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="HospitalModel.Khoa" Width="1.5" PointX="4.75" PointY="2.875" />
-        <EntityTypeShape EntityType="HospitalModel.NhaCungCap" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="HospitalModel.NhanVien" Width="1.5" PointX="11" PointY="2.625" />
         <EntityTypeShape EntityType="HospitalModel.PhanQuyen" Width="1.5" PointX="11" PointY="0.75" />
         <EntityTypeShape EntityType="HospitalModel.GiaBanNhap" Width="1.5" PointX="9.125" PointY="2.75" />
         <EntityTypeShape EntityType="HospitalModel.DanhSachNhapHang" Width="1.5" PointX="2.75" PointY="3.125" />
         <EntityTypeShape EntityType="HospitalModel.Thuoc" Width="1.5" PointX="5.375" PointY="5.75" />
         <EntityTypeShape EntityType="HospitalModel.TinhTP" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HospitalModel.NhaCungCap" Width="1.5" PointX="6.5" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
