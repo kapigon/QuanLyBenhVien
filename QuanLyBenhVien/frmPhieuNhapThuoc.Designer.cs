@@ -53,15 +53,15 @@
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.lblGhiChu = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaVach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVT = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.GiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HanSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -289,6 +289,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(1159, 399);
             this.dataGridView1.TabIndex = 2;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(12, 591);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(268, 102);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thao tác";
+            // 
             // MaThuoc
             // 
             this.MaThuoc.HeaderText = "Mã thuốc";
@@ -299,7 +308,6 @@
             // 
             this.MaVach.HeaderText = "Mã vạch";
             this.MaVach.Name = "MaVach";
-            this.MaVach.ReadOnly = true;
             this.MaVach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // TenThuoc
@@ -318,8 +326,16 @@
             // 
             // DVT
             // 
+            this.DVT.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.DVT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DVT.HeaderText = "ĐVT";
+            this.DVT.Items.AddRange(new object[] {
+            "a",
+            "a1",
+            "a2"});
             this.DVT.Name = "DVT";
+            this.DVT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DVT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // GiaNhap
             // 
@@ -338,15 +354,6 @@
             this.HanSuDung.DefaultCellStyle = dataGridViewCellStyle1;
             this.HanSuDung.HeaderText = "Hạn sử dụng";
             this.HanSuDung.Name = "HanSuDung";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(12, 591);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(268, 102);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thao tác";
             // 
             // frmPhieuNhapThuoc
             // 
@@ -395,14 +402,14 @@
         private System.Windows.Forms.Label lblDiaChi;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label lblGhiChu;
+        private System.Windows.Forms.ComboBox cboNhaCungCap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaVach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DVT;
+        private System.Windows.Forms.DataGridViewComboBoxColumn DVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn HanSuDung;
-        private System.Windows.Forms.ComboBox cboNhaCungCap;
     }
 }

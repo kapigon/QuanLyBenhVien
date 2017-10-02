@@ -50,10 +50,20 @@ namespace QuanLyBenhVien
             phieuNhapThuoc.ShowDialog();
         }
 
+        private void lnkTonKho_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmTonKhoThuoc tonkho = new frmTonKhoThuoc();
+            tonkho.FormClosed += new FormClosedEventHandler(callBackAfterClose);
+            this.Hide();
+            tonkho.ShowDialog();
+        }
+
         private void callBackAfterClose(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }
         #endregion
+
+        
     }
 }

@@ -38,13 +38,13 @@ namespace QuanLyBenhVien
                             TenNCC = ncc.TenNCC,
                             DiaChi = ncc.DiaChi,
                             Email = ncc.Email,
-                            SDT = ncc.DienThoai,
+                            DienThoai = ncc.DienThoai,
                             KichHoat = ncc.KichHoat
                         };
             DataRow dr = null;
             
             if(query.ToList().Count() > 0){
-                for(int i = 0; i < query.ToList().Count(); i ++){
+                /*for(int i = 0; i < query.ToList().Count(); i ++){
                     dgvDanhSachThuoc.Rows.Add();
                     dgvDanhSachThuoc.Rows[i].Cells[0].Value = query.ToList()[i].ID;
                     dgvDanhSachThuoc.Rows[i].Cells[1].Value = query.ToList()[i].MaNCC;
@@ -54,7 +54,8 @@ namespace QuanLyBenhVien
                     dgvDanhSachThuoc.Rows[i].Cells[5].Value = query.ToList()[i].SDT;
                     dgvDanhSachThuoc.Rows[i].Cells[6].Value = query.ToList()[i].KichHoat;
                     //dgvDanhSachThuoc.Rows.Add("001", "1234", "432423", "1111", "111", true);
-                }
+                }*/
+                dgvDanhSachThuoc.DataSource = query.ToList();
                 dgvRow = dgvDanhSachThuoc.Rows[0];
                 nccID = Convert.ToInt32(dgvRow.Cells[0].Value);
                 dgvDanhSachThuoc.ReadOnly = true;
@@ -115,6 +116,9 @@ namespace QuanLyBenhVien
                     NhaCungCap objNCC = db.NhaCungCaps.Where(p => p.ID == nccID).SingleOrDefault();
                     db.NhaCungCaps.Remove(objNCC);
                     db.SaveChanges();
+
+                    // Tải lại danh sách nhà cung cấp
+                    LoadNhaCungCap();
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -154,7 +158,7 @@ namespace QuanLyBenhVien
             int index = e.RowIndex;
             dgvRow = dgvDanhSachThuoc.Rows[index];
             nccID = Convert.ToInt32(dgvRow.Cells[0].Value);
-            //MessageBox.Show(index.ToString());
+            MessageBox.Show(index.ToString());
         }
 
         

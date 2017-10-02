@@ -181,14 +181,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuanLyBenhVien.exe" size="249776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuanLyBenhVien.exe" size="287664">
       <assemblyIdentity name="QuanLyBenhVien" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>RcWtXvDWz+3hm1Bdv8RZSB5LuQU=</dsig:DigestValue>
+        <dsig:DigestValue>OFKqbv7TDpPrNIyS6OQD8JgK0cI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

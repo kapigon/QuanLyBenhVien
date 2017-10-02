@@ -373,6 +373,7 @@
             this.lnkTonKho.TabIndex = 27;
             this.lnkTonKho.TabStop = true;
             this.lnkTonKho.Text = "Tồn Kho";
+            this.lnkTonKho.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkTonKho_LinkClicked);
             // 
             // pictureBox13
             // 

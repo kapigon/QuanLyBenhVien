@@ -30,21 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhSachNCC));
             this.dgvDanhSachThuoc = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.KichHoat = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDanhSachThuoc
             // 
+            this.dgvDanhSachThuoc.AllowUserToAddRows = false;
             this.dgvDanhSachThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -53,58 +54,12 @@
             this.DiaChi,
             this.Email,
             this.SDT,
-            this.ThanhTien});
+            this.KichHoat});
             this.dgvDanhSachThuoc.Location = new System.Drawing.Point(12, 14);
             this.dgvDanhSachThuoc.Name = "dgvDanhSachThuoc";
             this.dgvDanhSachThuoc.Size = new System.Drawing.Size(1045, 401);
             this.dgvDanhSachThuoc.TabIndex = 2;
             this.dgvDanhSachThuoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThuoc_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // MaNCC
-            // 
-            this.MaNCC.HeaderText = "Mã NCC";
-            this.MaNCC.Name = "MaNCC";
-            this.MaNCC.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // TenNCC
-            // 
-            this.TenNCC.HeaderText = "Tên NCC";
-            this.TenNCC.Name = "TenNCC";
-            this.TenNCC.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.TenNCC.Width = 350;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DiaChi.Width = 200;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Email.Width = 120;
-            // 
-            // SDT
-            // 
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.HeaderText = "Kích hoạt";
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ThanhTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ThanhTien.Width = 80;
             // 
             // btnAdd
             // 
@@ -134,6 +89,59 @@
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.DataPropertyName = "MaNCC";
+            this.MaNCC.HeaderText = "Mã NCC";
+            this.MaNCC.Name = "MaNCC";
+            this.MaNCC.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.DataPropertyName = "TenNCC";
+            this.TenNCC.HeaderText = "Tên NCC";
+            this.TenNCC.Name = "TenNCC";
+            this.TenNCC.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TenNCC.Width = 350;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DiaChi.Width = 200;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Email.Width = 120;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "DienThoai";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            // 
+            // KichHoat
+            // 
+            this.KichHoat.DataPropertyName = "KichHoat";
+            this.KichHoat.HeaderText = "Kích hoạt";
+            this.KichHoat.Name = "KichHoat";
+            this.KichHoat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.KichHoat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.KichHoat.Width = 80;
             // 
             // frmDanhSachNCC
             // 
@@ -166,6 +174,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ThanhTien;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn KichHoat;
     }
 }

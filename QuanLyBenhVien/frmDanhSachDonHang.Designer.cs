@@ -32,13 +32,6 @@
             this.btnView = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvDanhSachThuoc = new System.Windows.Forms.DataGridView();
-            this.SoDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BacSyKeToa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTimKiem = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -60,6 +53,13 @@
             this.txtTongCong = new System.Windows.Forms.TextBox();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.grbThaoTac = new System.Windows.Forms.GroupBox();
+            this.SoDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BacSyKeToa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThuoc)).BeginInit();
             this.grbTimKiem.SuspendLayout();
             this.grbThaoTac.SuspendLayout();
@@ -97,6 +97,7 @@
             // 
             // dgvDanhSachThuoc
             // 
+            this.dgvDanhSachThuoc.AllowUserToAddRows = false;
             this.dgvDanhSachThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SoDH,
@@ -110,52 +111,6 @@
             this.dgvDanhSachThuoc.Name = "dgvDanhSachThuoc";
             this.dgvDanhSachThuoc.Size = new System.Drawing.Size(1045, 401);
             this.dgvDanhSachThuoc.TabIndex = 8;
-            // 
-            // SoDH
-            // 
-            this.SoDH.HeaderText = "Số ĐH";
-            this.SoDH.Name = "SoDH";
-            this.SoDH.Width = 80;
-            // 
-            // NgayDH
-            // 
-            this.NgayDH.HeaderText = "Ngày ĐH";
-            this.NgayDH.Name = "NgayDH";
-            this.NgayDH.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // TenKH
-            // 
-            this.TenKH.HeaderText = "Tên KH";
-            this.TenKH.Name = "TenKH";
-            this.TenKH.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.TenKH.Width = 200;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DiaChi.Width = 180;
-            // 
-            // BacSyKeToa
-            // 
-            this.BacSyKeToa.HeaderText = "Bác sỹ kê toa";
-            this.BacSyKeToa.Name = "BacSyKeToa";
-            this.BacSyKeToa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.BacSyKeToa.Width = 120;
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.HeaderText = "Ghi chú";
-            this.GhiChu.Name = "GhiChu";
-            this.GhiChu.Width = 200;
-            // 
-            // TongTien
-            // 
-            this.TongTien.HeaderText = "Tổng tiền";
-            this.TongTien.Name = "TongTien";
-            this.TongTien.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TongTien.Width = 120;
             // 
             // grbTimKiem
             // 
@@ -353,6 +308,59 @@
             this.grbThaoTac.TabStop = false;
             this.grbThaoTac.Text = "Thao tác";
             // 
+            // SoDH
+            // 
+            this.SoDH.DataPropertyName = "SoDH";
+            this.SoDH.HeaderText = "Số ĐH";
+            this.SoDH.Name = "SoDH";
+            this.SoDH.Width = 80;
+            // 
+            // NgayDH
+            // 
+            this.NgayDH.DataPropertyName = "NgayDH";
+            this.NgayDH.HeaderText = "Ngày ĐH";
+            this.NgayDH.Name = "NgayDH";
+            this.NgayDH.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên KH";
+            this.TenKH.Name = "TenKH";
+            this.TenKH.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TenKH.Width = 200;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DiaChi.Width = 180;
+            // 
+            // BacSyKeToa
+            // 
+            this.BacSyKeToa.DataPropertyName = "BacSyKeToa";
+            this.BacSyKeToa.HeaderText = "Bác sỹ kê toa";
+            this.BacSyKeToa.Name = "BacSyKeToa";
+            this.BacSyKeToa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.BacSyKeToa.Width = 120;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.Width = 200;
+            // 
+            // TongTien
+            // 
+            this.TongTien.DataPropertyName = "TongTien";
+            this.TongTien.HeaderText = "Tổng tiền";
+            this.TongTien.Name = "TongTien";
+            this.TongTien.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TongTien.Width = 120;
+            // 
             // frmDanhSachDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,6 +406,9 @@
         private System.Windows.Forms.Label lblSoDH;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtTongCong;
+        private System.Windows.Forms.Label lblTongCong;
+        private System.Windows.Forms.GroupBox grbThaoTac;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
@@ -405,9 +416,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BacSyKeToa;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.TextBox txtTongCong;
-        private System.Windows.Forms.Label lblTongCong;
-        private System.Windows.Forms.GroupBox grbThaoTac;
 
     }
 }
