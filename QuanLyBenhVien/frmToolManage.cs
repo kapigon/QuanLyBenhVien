@@ -15,5 +15,45 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
         }
+
+
+        #region events
+        private void lnkDanhMucNhaCungCap_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmDanhSachNCC dsNCC = new frmDanhSachNCC();
+            dsNCC.FormClosed += new FormClosedEventHandler(callBackAfterClose);
+            this.Hide();
+            dsNCC.ShowDialog();
+        }
+
+        private void lnkDanhSachDonThuoc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmDanhSachDonHang dsDonHang = new frmDanhSachDonHang();
+            dsDonHang.FormClosed += new FormClosedEventHandler(callBackAfterClose);
+            this.Hide();
+            dsDonHang.ShowDialog();
+        }
+
+        private void lnkDonBanThuoc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmDonBanHang donBanHang = new frmDonBanHang();
+            donBanHang.FormClosed += new FormClosedEventHandler(callBackAfterClose);
+            this.Hide();
+            donBanHang.ShowDialog();
+        }
+
+        private void lnkNhapKho_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPhieuNhapThuoc phieuNhapThuoc = new frmPhieuNhapThuoc();
+            phieuNhapThuoc.FormClosed += new FormClosedEventHandler(callBackAfterClose);
+            this.Hide();
+            phieuNhapThuoc.ShowDialog();
+        }
+
+        private void callBackAfterClose(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+        #endregion
     }
 }

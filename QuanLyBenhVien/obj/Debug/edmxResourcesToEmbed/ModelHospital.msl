@@ -49,27 +49,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NhaCungCaps">
-      <EntityTypeMapping TypeName="HospitalModel.NhaCungCap">
-        <MappingFragment StoreEntitySet="NhaCungCap">
-          <ScalarProperty Name="MoTai" ColumnName="MoTai" />
-          <ScalarProperty Name="TinhTPID" ColumnName="TinhTPID" />
-          <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
-          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-          <ScalarProperty Name="Website" ColumnName="Website" />
-          <ScalarProperty Name="Fax" ColumnName="Fax" />
-          <ScalarProperty Name="NganHang" ColumnName="NganHang" />
-          <ScalarProperty Name="SoTaiKhoan" ColumnName="SoTaiKhoan" />
-          <ScalarProperty Name="MST" ColumnName="MST" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
-          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="NhanViens">
       <EntityTypeMapping TypeName="HospitalModel.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
@@ -144,6 +123,27 @@
         <MappingFragment StoreEntitySet="TinhTP">
           <ScalarProperty Name="QuocGia" ColumnName="QuocGia" />
           <ScalarProperty Name="TenTinhTP" ColumnName="TenTinhTP" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaCungCaps">
+      <EntityTypeMapping TypeName="HospitalModel.NhaCungCap">
+        <MappingFragment StoreEntitySet="NhaCungCap">
+          <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="MoTai" ColumnName="MoTai" />
+          <ScalarProperty Name="NganHang" ColumnName="NganHang" />
+          <ScalarProperty Name="SoTaiKhoan" ColumnName="SoTaiKhoan" />
+          <ScalarProperty Name="MST" ColumnName="MST" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="TinhTPID" ColumnName="TinhTPID" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

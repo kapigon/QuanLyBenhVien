@@ -74,17 +74,17 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MaNCC" Type="nchar" MaxLength="20" />
+    <Property Name="MaNCC" Type="varchar" MaxLength="50" />
     <Property Name="TenNCC" Type="nvarchar" MaxLength="150" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
     <Property Name="TinhTPID" Type="int" />
-    <Property Name="DienThoai" Type="nchar" MaxLength="15" />
-    <Property Name="Email" Type="nchar" MaxLength="100" />
-    <Property Name="MST" Type="nchar" MaxLength="50" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="MST" Type="varchar" MaxLength="50" />
     <Property Name="SoTaiKhoan" Type="nvarchar" MaxLength="15" />
     <Property Name="NganHang" Type="nvarchar" MaxLength="50" />
     <Property Name="MoTai" Type="nvarchar" MaxLength="250" />
-    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" />
     <Property Name="Website" Type="nvarchar" MaxLength="50" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="200" />
     <Property Name="KichHoat" Type="bit" />

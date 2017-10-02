@@ -113,6 +113,7 @@
             this.lnkDonBanThuoc.TabIndex = 1;
             this.lnkDonBanThuoc.TabStop = true;
             this.lnkDonBanThuoc.Text = "Đơn Bán Thuốc";
+            this.lnkDonBanThuoc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkDonBanThuoc_LinkClicked);
             // 
             // lnkDanhSachDonThuoc
             // 
@@ -123,6 +124,7 @@
             this.lnkDanhSachDonThuoc.TabIndex = 2;
             this.lnkDanhSachDonThuoc.TabStop = true;
             this.lnkDanhSachDonThuoc.Text = "Danh Sách Đơn Thuốc";
+            this.lnkDanhSachDonThuoc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkDanhSachDonThuoc_LinkClicked);
             // 
             // lnkBaoCaoBanHang
             // 
@@ -237,6 +239,7 @@
             this.lnkNhapKho.TabIndex = 9;
             this.lnkNhapKho.TabStop = true;
             this.lnkNhapKho.Text = "Nhập Kho";
+            this.lnkNhapKho.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNhapKho_LinkClicked);
             // 
             // pictureBox6
             // 
@@ -427,6 +430,7 @@
             this.lnkDanhMucNhaCungCap.TabIndex = 29;
             this.lnkDanhMucNhaCungCap.TabStop = true;
             this.lnkDanhMucNhaCungCap.Text = "Danh Mục Nhà Cung Cấp";
+            this.lnkDanhMucNhaCungCap.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkDanhMucNhaCungCap_LinkClicked);
             // 
             // pictureBox16
             // 
@@ -504,7 +508,7 @@
             this.linkLabel10.TabStop = true;
             this.linkLabel10.Text = "Báo Cáo Bán Hàng";
             // 
-            // ToolManage
+            // frmToolManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -552,7 +556,7 @@
             this.Controls.Add(this.lnkDanhSachDonThuoc);
             this.Controls.Add(this.lnkDonBanThuoc);
             this.Controls.Add(this.lblBanHang);
-            this.Name = "ToolManage";
+            this.Name = "frmToolManage";
             this.Text = "Quản Lý Thuốc";
             ((System.ComponentModel.ISupportInitialize)(this.picQuestion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

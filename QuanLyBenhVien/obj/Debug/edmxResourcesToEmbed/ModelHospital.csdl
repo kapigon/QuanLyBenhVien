@@ -6,13 +6,13 @@
     <EntitySet Name="DonViTinhs" EntityType="HospitalModel.DonViTinh" />
     <EntitySet Name="Khoes" EntityType="HospitalModel.Kho" />
     <EntitySet Name="Khoas" EntityType="HospitalModel.Khoa" />
-    <EntitySet Name="NhaCungCaps" EntityType="HospitalModel.NhaCungCap" />
     <EntitySet Name="NhanViens" EntityType="HospitalModel.NhanVien" />
     <EntitySet Name="PhanQuyens" EntityType="HospitalModel.PhanQuyen" />
     <EntitySet Name="GiaBanNhaps" EntityType="HospitalModel.GiaBanNhap" />
     <EntitySet Name="DanhSachNhapHangs" EntityType="HospitalModel.DanhSachNhapHang" />
     <EntitySet Name="Thuocs" EntityType="HospitalModel.Thuoc" />
     <EntitySet Name="TinhTPs" EntityType="HospitalModel.TinhTP" />
+    <EntitySet Name="NhaCungCaps" EntityType="HospitalModel.NhaCungCap" />
   </EntityContainer>
   <EntityType Name="ChiTietPhanQuyen">
     <Key>
@@ -56,26 +56,6 @@
     <Property Name="MaKhoa" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="TenKhoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="KichHoat" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="NhaCungCap">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MaNCC" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="TenNCC" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-    <Property Name="MST" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="SoTaiKhoan" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-    <Property Name="NganHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MoTa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="KichHoat" Type="Boolean" />
-    <Property Name="TinhTPID" Type="Int32" />
-    <Property Name="MoTai" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>
@@ -148,5 +128,25 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenTinhTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="QuocGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenNCC" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TinhTPID" Type="Int32" />
+    <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoTaiKhoan" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NganHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTai" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="KichHoat" Type="Boolean" />
   </EntityType>
 </Schema>
