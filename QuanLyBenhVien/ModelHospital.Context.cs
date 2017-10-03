@@ -37,5 +37,9 @@ namespace QuanLyBenhVien
         public virtual DbSet<Thuoc> Thuocs { get; set; }
         public virtual DbSet<TinhTP> TinhTPs { get; set; }
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
+        public virtual DbSet<DonThuoc> DonThuocs { get; set; }
+        public virtual DbSet<HangSanXuat> HangSanXuats { get; set; }
+        public virtual DbSet<NuocSanXuat> NuocSanXuats { get; set; }
+        public virtual DbSet<PhieuNhapHang> PhieuNhapHangs { get; set; }
     }
 }

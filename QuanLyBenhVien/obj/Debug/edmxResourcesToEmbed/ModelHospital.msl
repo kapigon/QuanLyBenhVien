@@ -88,12 +88,12 @@
     <EntitySetMapping Name="DanhSachNhapHangs">
       <EntityTypeMapping TypeName="HospitalModel.DanhSachNhapHang">
         <MappingFragment StoreEntitySet="DanhSachNhapHang">
+          <ScalarProperty Name="KhoID" ColumnName="KhoID" />
           <ScalarProperty Name="TongSoDaBan" ColumnName="TongSoDaBan" />
           <ScalarProperty Name="HanSuDung" ColumnName="HanSuDung" />
           <ScalarProperty Name="SoLuongBan" ColumnName="SoLuongBan" />
           <ScalarProperty Name="SoLuongNhap" ColumnName="SoLuongNhap" />
           <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
-          <ScalarProperty Name="KhoHangID" ColumnName="KhoHangID" />
           <ScalarProperty Name="ViTriID" ColumnName="ViTriID" />
           <ScalarProperty Name="ThuocID" ColumnName="ThuocID" />
           <ScalarProperty Name="PhieuNhapHangID" ColumnName="PhieuNhapHangID" />
@@ -144,6 +144,65 @@
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
           <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonThuocs">
+      <EntityTypeMapping TypeName="HospitalModel.DonThuoc">
+        <MappingFragment StoreEntitySet="DonThuoc">
+          <ScalarProperty Name="KhachHangTra" ColumnName="KhachHangTra" />
+          <ScalarProperty Name="PhuPhi" ColumnName="PhuPhi" />
+          <ScalarProperty Name="TienThuoc" ColumnName="TienThuoc" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoDH" ColumnName="SoDH" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Tuoi" ColumnName="Tuoi" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="KhachHang" ColumnName="KhachHang" />
+          <ScalarProperty Name="ChoCapThuoc" ColumnName="ChoCapThuoc" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="BacSyID" ColumnName="BacSyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HangSanXuats">
+      <EntityTypeMapping TypeName="HospitalModel.HangSanXuat">
+        <MappingFragment StoreEntitySet="HangSanXuat">
+          <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="TenHangSX" ColumnName="TenHangSX" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NuocSanXuats">
+      <EntityTypeMapping TypeName="HospitalModel.NuocSanXuat">
+        <MappingFragment StoreEntitySet="NuocSanXuat">
+          <ScalarProperty Name="TenNuoc" ColumnName="TenNuoc" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuNhapHangs">
+      <EntityTypeMapping TypeName="HospitalModel.PhieuNhapHang">
+        <MappingFragment StoreEntitySet="PhieuNhapHang">
+          <ScalarProperty Name="SoDH" ColumnName="SoDH" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="NgayHD" ColumnName="NgayHD" />
+          <ScalarProperty Name="SoHD" ColumnName="SoHD" />
+          <ScalarProperty Name="SoSeri" ColumnName="SoSeri" />
+          <ScalarProperty Name="ThueSuat" ColumnName="ThueSuat" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DonThuocID" ColumnName="DonThuocID" />
+          <ScalarProperty Name="NhaCCID" ColumnName="NhaCCID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

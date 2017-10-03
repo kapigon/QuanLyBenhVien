@@ -42,7 +42,6 @@
             this.lblSoPhieu = new System.Windows.Forms.Label();
             this.txtSoPhieu = new System.Windows.Forms.TextBox();
             this.lblNgayNhap = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblNhaCungCap = new System.Windows.Forms.Label();
             this.btnThemNhaCC = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -53,7 +52,6 @@
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.lblGhiChu = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaVach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +60,7 @@
             this.GiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HanSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -176,13 +175,6 @@
             this.lblNgayNhap.TabIndex = 2;
             this.lblNgayNhap.Text = "Ngày Nhập";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(101, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(439, 20);
-            this.textBox2.TabIndex = 5;
-            // 
             // lblNhaCungCap
             // 
             this.lblNhaCungCap.AutoSize = true;
@@ -195,7 +187,7 @@
             // btnThemNhaCC
             // 
             this.btnThemNhaCC.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNhaCC.Image")));
-            this.btnThemNhaCC.Location = new System.Drawing.Point(550, 19);
+            this.btnThemNhaCC.Location = new System.Drawing.Point(550, 20);
             this.btnThemNhaCC.Name = "btnThemNhaCC";
             this.btnThemNhaCC.Size = new System.Drawing.Size(29, 24);
             this.btnThemNhaCC.TabIndex = 6;
@@ -219,7 +211,6 @@
             this.groupBox2.Controls.Add(this.txtGhiChu);
             this.groupBox2.Controls.Add(this.lblGhiChu);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.btnThemNhaCC);
             this.groupBox2.Controls.Add(this.lblSoPhieu);
             this.groupBox2.Controls.Add(this.txtSoPhieu);
@@ -235,7 +226,7 @@
             // cboNhaCungCap
             // 
             this.cboNhaCungCap.FormattingEnabled = true;
-            this.cboNhaCungCap.Location = new System.Drawing.Point(101, 46);
+            this.cboNhaCungCap.Location = new System.Drawing.Point(101, 22);
             this.cboNhaCungCap.Name = "cboNhaCungCap";
             this.cboNhaCungCap.Size = new System.Drawing.Size(439, 21);
             this.cboNhaCungCap.TabIndex = 12;
@@ -288,15 +279,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1159, 399);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(12, 591);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(268, 102);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thao tác";
             // 
             // MaThuoc
             // 
@@ -355,6 +337,15 @@
             this.HanSuDung.HeaderText = "Hạn sử dụng";
             this.HanSuDung.Name = "HanSuDung";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(12, 591);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(268, 102);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thao tác";
+            // 
             // frmPhieuNhapThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,7 +371,6 @@
         #endregion
 
         internal System.Windows.Forms.Button btnThemNhaCC;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lblNhaCungCap;
         private System.Windows.Forms.Label lblNgayNhap;
         private System.Windows.Forms.TextBox txtSoPhieu;

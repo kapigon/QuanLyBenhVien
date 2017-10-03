@@ -11,6 +11,8 @@ namespace QuanLyBenhVien
 {
     public partial class frmDonBanHang : Form
     {
+        HospitalEntities db = new HospitalEntities();
+
         public frmDonBanHang()
         {
             InitializeComponent();
@@ -31,7 +33,43 @@ namespace QuanLyBenhVien
 
         private void resetField()
         {
-            txtKhachHang
+            txtKhachHang.Text = "";
+            txtDiaChi.Text = "";
+            txtGhiChu.Text = "";
+            txtTuoi.Text = "";
+            txtDienThoai.Text = "";
+        }
+
+        public void loadData(int nccID)
+        {
+            var result = from donthuoc in db.DonThuocs
+                         where donthuoc.ID == nccID
+                         select donthuoc;
+
+            if (result.Count() > 0)
+            {
+                DonThuoc donthuoc = result.SingleOrDefault();
+                txtKhachHang.Text = donthuoc.KhachHang;
+                txtDiaChi.Text = donthuoc.DiaChi;
+                txtGhiChu.Text = donthuoc.GhiChu;
+                if (donthuoc.GioiTinh == true)
+                {
+                    radNam.Checked = true;
+                }
+                else
+                {
+                    radNu.Checked = true;
+                }
+                txtTuoi.Text = donthuoc.Tuoi.ToString();
+                txtDienThoai.Text = donthuoc.SDT;
+                txtTienThuoc.Text = donthuoc.TienThuoc.ToString();
+                txtPhuPhi.Text = donthuoc.PhuPhi.ToString();
+                txtKHTra.Text = donthuoc.KhachHangTra.ToString();
+                txtTongCong.Text = donthuoc.TongTien.ToString();
+            }
+            btnLuu.Text = "&Cập nhật";
+            //isUpdate = true;
+            //nccID = ID;
         }
         #endregion
 
@@ -103,8 +141,5 @@ namespace QuanLyBenhVien
         }
 
         #endregion
-
-        
-       
     }
 }

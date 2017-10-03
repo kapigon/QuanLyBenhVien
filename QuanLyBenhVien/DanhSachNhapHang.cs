@@ -20,7 +20,7 @@ namespace QuanLyBenhVien
         public Nullable<long> PhieuNhapHangID { get; set; }
         public Nullable<long> ThuocID { get; set; }
         public Nullable<int> ViTriID { get; set; }
-        public Nullable<int> KhoHangID { get; set; }
+        public Nullable<int> KhoID { get; set; }
         public Nullable<double> GiaNhap { get; set; }
         public Nullable<int> SoLuongNhap { get; set; }
         public Nullable<int> SoLuongBan { get; set; }

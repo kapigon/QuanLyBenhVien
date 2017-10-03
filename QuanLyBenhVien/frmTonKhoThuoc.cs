@@ -15,5 +15,29 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
         }
+
+        private void txtPhanTram_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Nếu là số thì cho nhập
+            e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
+
+            // Khi ấn enter bắt đầu tìm kiếm
+            if (e.KeyChar == (char)13)
+            {
+
+            }
+        }
+
+        private void txtSoNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Nếu là số thì cho nhập
+            e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
+
+            // Khi ấn enter bắt đầu tìm kiếm
+            if (e.KeyChar == (char)13)
+            {
+
+            }
+        }
     }
 }

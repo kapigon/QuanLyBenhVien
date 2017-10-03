@@ -18,7 +18,6 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
             LoadNhaCungCap();
-            addBinding();
         }
 
        
@@ -88,10 +87,7 @@ namespace QuanLyBenhVien
              dgvDanhSachThuoc.DataSource = dt;
              * */
         }
-        private void addBinding()
-        {
-           // nccID = Convert.ToInt32(new Binding("Text", dgvDanhSachThuoc.DataSource, 'ID'));
-        }
+
         #endregion
 
         #region events
