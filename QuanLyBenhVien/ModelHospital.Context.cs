@@ -28,7 +28,6 @@ namespace QuanLyBenhVien
         public virtual DbSet<ChiTietPhanQuyen> ChiTietPhanQuyens { get; set; }
         public virtual DbSet<ChucNangQuanLy> ChucNangQuanLies { get; set; }
         public virtual DbSet<DonViTinh> DonViTinhs { get; set; }
-        public virtual DbSet<Kho> Khoes { get; set; }
         public virtual DbSet<LichSuGia> LichSuGias { get; set; }
         public virtual DbSet<NCC_KH> NCC_KH { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
@@ -44,5 +43,6 @@ namespace QuanLyBenhVien
         public virtual DbSet<NuocSanXuat> NuocSanXuats { get; set; }
         public virtual DbSet<TrangThaiPhieu> TrangThaiPhieux { get; set; }
         public virtual DbSet<PhieuXuatThuoc> PhieuXuatThuoc { get; set; }
+        public virtual DbSet<Kho> Kho { get; set; }
     }
 }

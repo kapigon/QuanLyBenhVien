@@ -25,5 +25,6 @@ namespace QuanLyBenhVien
         public string DiaChi { get; set; }
         public string CMT { get; set; }
         public Nullable<bool> KichHoat { get; set; }
+        public Nullable<System.DateTime> NgayTao { get; set; }
     }
 }

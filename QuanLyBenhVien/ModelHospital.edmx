@@ -32,12 +32,13 @@
         </EntityType>
         <EntityType Name="Kho">
           <Key>
-            <PropertyRef Name="MaKho" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="MaKho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenKho" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
           <Property Name="DienThoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="MaKho" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="LichSuGia">
           <Key>
@@ -67,8 +68,8 @@
           <Property Name="Fax" Type="varchar" MaxLength="20" />
           <Property Name="Website" Type="nvarchar" MaxLength="50" />
           <Property Name="MoTa" Type="nvarchar" MaxLength="200" />
-          <Property Name="KichHoat" Type="bit" />
           <Property Name="LoaiNCC_KH" Type="int" />
+          <Property Name="KichHoat" Type="bit" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -84,6 +85,7 @@
           <Property Name="NgaySinh" Type="date" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
           <Property Name="CMT" Type="varchar" MaxLength="12" />
+          <Property Name="NgayTao" Type="date" />
           <Property Name="KichHoat" Type="bit" />
         </EntityType>
         <EntityType Name="NhomThuoc">
@@ -255,7 +257,6 @@
           <EntitySet Name="ChiTietPhanQuyens" EntityType="HospitalModel.ChiTietPhanQuyen" />
           <EntitySet Name="ChucNangQuanLies" EntityType="HospitalModel.ChucNangQuanLy" />
           <EntitySet Name="DonViTinhs" EntityType="HospitalModel.DonViTinh" />
-          <EntitySet Name="Khoes" EntityType="HospitalModel.Kho" />
           <EntitySet Name="LichSuGias" EntityType="HospitalModel.LichSuGia" />
           <EntitySet Name="NCC_KH" EntityType="HospitalModel.NCC_KH" />
           <EntitySet Name="NhanViens" EntityType="HospitalModel.NhanVien" />
@@ -271,6 +272,7 @@
           <EntitySet Name="NuocSanXuats" EntityType="HospitalModel.NuocSanXuat" />
           <EntitySet Name="TrangThaiPhieux" EntityType="HospitalModel.TrangThaiPhieu" />
           <EntitySet Name="PhieuXuatThuoc" EntityType="HospitalModel.PhieuXuatThuoc" />
+          <EntitySet Name="Kho" EntityType="HospitalModel.Kho" />
         </EntityContainer>
         <EntityType Name="ChiTietPhanQuyen">
           <Key>
@@ -296,15 +298,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenDVT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KichHoat" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="Kho">
-          <Key>
-            <PropertyRef Name="MaKho" />
-          </Key>
-          <Property Name="MaKho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenKho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="LichSuGia">
           <Key>
@@ -352,6 +345,7 @@
           <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="CMT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="KichHoat" Type="Boolean" />
+          <Property Name="NgayTao" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NhomThuoc">
           <Key>
@@ -493,6 +487,16 @@
           <Property Name="ChietKhau" Type="Double" />
           <Property Name="TongTienKHTra" Type="Double" />
         </EntityType>
+        <EntityType Name="Kho">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenKho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaKho" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -524,16 +528,6 @@
                 <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
                 <ScalarProperty Name="TenDVT" ColumnName="TenDVT" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Khoes">
-            <EntityTypeMapping TypeName="HospitalModel.Kho">
-              <MappingFragment StoreEntitySet="Kho">
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="TenKho" ColumnName="TenKho" />
-                <ScalarProperty Name="MaKho" ColumnName="MaKho" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -573,6 +567,7 @@
           <EntitySetMapping Name="NhanViens">
             <EntityTypeMapping TypeName="HospitalModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
                 <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
                 <ScalarProperty Name="CMT" ColumnName="CMT" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
@@ -735,6 +730,17 @@
                 <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
                 <ScalarProperty Name="TrangThaiPhieu_ID" ColumnName="TrangThaiPhieu_ID" />
                 <ScalarProperty Name="NCC_KH_ID" ColumnName="NCC_KH_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kho">
+            <EntityTypeMapping TypeName="HospitalModel.Kho">
+              <MappingFragment StoreEntitySet="Kho">
+                <ScalarProperty Name="MaKho" ColumnName="MaKho" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="TenKho" ColumnName="TenKho" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

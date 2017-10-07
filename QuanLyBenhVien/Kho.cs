@@ -14,9 +14,10 @@ namespace QuanLyBenhVien
     
     public partial class Kho
     {
-        public int MaKho { get; set; }
+        public int ID { get; set; }
         public string TenKho { get; set; }
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
+        public string MaKho { get; set; }
     }
 }

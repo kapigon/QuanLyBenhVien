@@ -57,18 +57,18 @@ namespace QuanLyBenhVien
         private void btnLuu_Click(object sender, EventArgs e)
         {
             NCC_KH ncc = new NCC_KH() {
-                    MaNCC_KH       = txtMaNCC.Text.Trim(),
-                    TenNCC_KH      = txtTenNCC.Text.Trim(),
-                    DiaChi      = txtDiaChi.Text.Trim(),
-                    MST         = txtMST.Text.Trim(),
-                    SoTaiKhoan  = txtSoTaiKhoan.Text.Trim(),
-                    NganHang       = txtMoTaiNN.Text.Trim(),
-                    DienThoai   = txtSDT.Text.Trim(),
-                    Fax         = txtFax.Text.Trim(),
-                    Email       = txtEmail.Text.Trim(),
-                    Website     = txtWebsite.Text.Trim(),
-                    MoTa        = txtMoTa.Text.Trim(),
-                    LoaiNCC_KH  = 1
+                    MaNCC_KH        = txtMaNCC.Text.Trim(),
+                    TenNCC_KH       = txtTenNCC.Text.Trim(),
+                    DiaChi          = txtDiaChi.Text.Trim(),
+                    MST             = txtMST.Text.Trim(),
+                    SoTaiKhoan      = txtSoTaiKhoan.Text.Trim(),
+                    NganHang        = txtMoTaiNN.Text.Trim(),
+                    DienThoai       = txtSDT.Text.Trim(),
+                    Fax             = txtFax.Text.Trim(),
+                    Email           = txtEmail.Text.Trim(),
+                    Website         = txtWebsite.Text.Trim(),
+                    MoTa            = txtMoTa.Text.Trim(),
+                    LoaiNCC_KH      = 1
             };
 
             try
@@ -89,6 +89,7 @@ namespace QuanLyBenhVien
                     objNCC.Website      = txtWebsite.Text.Trim();
                     objNCC.MoTa         = txtMoTa.Text.Trim();
                     objNCC.LoaiNCC_KH   = 1;
+
                     db.SaveChanges();
 
                     this.Close();
