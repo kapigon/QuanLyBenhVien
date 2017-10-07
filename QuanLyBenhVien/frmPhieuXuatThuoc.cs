@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class frmDonBanHang : Form
+    public partial class frmPhieuXuatThuoc : Form
     {
         HospitalEntities db = new HospitalEntities();
 
-        public frmDonBanHang()
+        public frmPhieuXuatThuoc()
         {
             InitializeComponent();
         }
@@ -42,30 +42,28 @@ namespace QuanLyBenhVien
 
         public void loadData(int nccID)
         {
-            var result = from donthuoc in db.DonThuocs
+            var result = from donthuoc in db.PhieuXuatThuoc
                          where donthuoc.ID == nccID
                          select donthuoc;
 
             if (result.Count() > 0)
             {
-                DonThuoc donthuoc = result.SingleOrDefault();
-                txtKhachHang.Text = donthuoc.KhachHang;
-                txtDiaChi.Text = donthuoc.DiaChi;
-                txtGhiChu.Text = donthuoc.GhiChu;
-                if (donthuoc.GioiTinh == true)
+                PhieuXuatThuoc phieuXuatThuoc = result.SingleOrDefault();
+                txtGhiChu.Text = phieuXuatThuoc.GhiChu;
+                /*if (phieuXuatThuoc.GioiTinh == true)
                 {
                     radNam.Checked = true;
                 }
                 else
                 {
                     radNu.Checked = true;
-                }
-                txtTuoi.Text = donthuoc.Tuoi.ToString();
-                txtDienThoai.Text = donthuoc.SDT;
-                txtTienThuoc.Text = donthuoc.TienThuoc.ToString();
-                txtPhuPhi.Text = donthuoc.PhuPhi.ToString();
-                txtKHTra.Text = donthuoc.KhachHangTra.ToString();
-                txtTongCong.Text = donthuoc.TongTien.ToString();
+                }*/
+                /*txtTuoi.Text = phieuXuatThuoc.Tuoi.ToString();
+                txtDienThoai.Text = phieuXuatThuoc.SDT;
+                txtTienThuoc.Text = phieuXuatThuoc.TienThuoc.ToString();
+                txtPhuPhi.Text = phieuXuatThuoc.PhuPhi.ToString();
+                txtKHTra.Text = phieuXuatThuoc.KhachHangTra.ToString();
+                txtTongCong.Text = phieuXuatThuoc.TongTien.ToString();*/
             }
             btnLuu.Text = "&Cập nhật";
             //isUpdate = true;

@@ -12,11 +12,13 @@ namespace QuanLyBenhVien
     using System;
     using System.Collections.Generic;
     
-    public partial class GiaBanNhap
+    public partial class LichSuGia
     {
         public int ID { get; set; }
         public Nullable<int> ThuocID { get; set; }
         public Nullable<double> GiaNhap { get; set; }
-        public Nullable<double> GiaBan { get; set; }
+        public Nullable<double> GiaBanCu { get; set; }
+        public Nullable<double> GiaBanMoi { get; set; }
+        public Nullable<System.DateTime> NgayTao { get; set; }
     }
 }

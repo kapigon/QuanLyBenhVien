@@ -38,13 +38,20 @@ namespace QuanLyBenhVien.Reports
                                          };
                     */
                     //lstNhanVien = lst.ToList();
-                    List<Khoa> lstKhoa = new List<Khoa>();
+                   /* List<Khoa> lstKhoa = new List<Khoa>();
                     lstKhoa = db.Khoas.Select(p => p).ToList();
 
                     
                     rptNhanVien.SetDataSource(db.Khoas.Select(p => new { 
                         ID = p.ID,
                         TenKhoa = p.TenKhoa
+                    }).ToList());*/
+                    rptNhanVien.SetDataSource(db.NhanViens.Select(p => new
+                    {
+                        ID = p.ID,
+                        HoVaTen = p.HoVaTen,
+                        TaiKhoan = p.TaiKhoan,
+                        DiaChi = p.DiaChi
                     }).ToList());
                     rptNhanVien.SetParameterValue("pUserName", "Admin");
                     rptNhanVien.SetParameterValue("pFullName", "Le Phuc Hoa");

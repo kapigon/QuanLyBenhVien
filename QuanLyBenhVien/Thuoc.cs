@@ -15,13 +15,19 @@ namespace QuanLyBenhVien
     public partial class Thuoc
     {
         public long ID { get; set; }
-        public Nullable<int> NhomThuocID { get; set; }
+        public Nullable<int> NhomThuoc_ID { get; set; }
+        public Nullable<int> HangSanXuat_ID { get; set; }
+        public string HoatChat_ID { get; set; }
+        public Nullable<int> DVT_Nguyen_ID { get; set; }
+        public Nullable<int> DVT_Le_ID { get; set; }
+        public string Barcode { get; set; }
         public string MaThuoc { get; set; }
         public string TenThuoc { get; set; }
         public Nullable<double> GiaBanLe { get; set; }
         public Nullable<double> GiaBanBuon { get; set; }
-        public Nullable<int> DonViTinh { get; set; }
-        public Nullable<int> DonViTinhQuyDoi { get; set; }
-        public string QuyCach { get; set; }
+        public Nullable<double> QuyCach { get; set; }
+        public Nullable<int> TonKho { get; set; }
+        public Nullable<System.DateTime> ThoiGianCanhBaoHetHan { get; set; }
+        public Nullable<int> TonKhoToiThieu { get; set; }
     }
 }

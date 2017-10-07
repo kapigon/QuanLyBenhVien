@@ -12,10 +12,9 @@ namespace QuanLyBenhVien
     using System;
     using System.Collections.Generic;
     
-    public partial class ChiTietPhanQuyen
+    public partial class TrangThaiPhieu
     {
         public int ID { get; set; }
-        public int PhanQuyen_ID { get; set; }
-        public int ChucNangQuanLy_ID { get; set; }
+        public string TenTrangThai { get; set; }
     }
 }

@@ -12,10 +12,9 @@ namespace QuanLyBenhVien
     using System;
     using System.Collections.Generic;
     
-    public partial class TinhTP
+    public partial class LoaiDonThuoc
     {
         public int ID { get; set; }
-        public string TenTinhTP { get; set; }
-        public string QuocGia { get; set; }
+        public string TenDonThuoc { get; set; }
     }
 }

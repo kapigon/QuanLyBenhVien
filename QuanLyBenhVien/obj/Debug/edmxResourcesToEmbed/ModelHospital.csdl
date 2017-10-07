@@ -5,26 +5,29 @@
     <EntitySet Name="ChucNangQuanLies" EntityType="HospitalModel.ChucNangQuanLy" />
     <EntitySet Name="DonViTinhs" EntityType="HospitalModel.DonViTinh" />
     <EntitySet Name="Khoes" EntityType="HospitalModel.Kho" />
-    <EntitySet Name="Khoas" EntityType="HospitalModel.Khoa" />
+    <EntitySet Name="LichSuGias" EntityType="HospitalModel.LichSuGia" />
+    <EntitySet Name="NCC_KH" EntityType="HospitalModel.NCC_KH" />
     <EntitySet Name="NhanViens" EntityType="HospitalModel.NhanVien" />
+    <EntitySet Name="NhomThuocs" EntityType="HospitalModel.NhomThuoc" />
     <EntitySet Name="PhanQuyens" EntityType="HospitalModel.PhanQuyen" />
-    <EntitySet Name="GiaBanNhaps" EntityType="HospitalModel.GiaBanNhap" />
-    <EntitySet Name="DanhSachNhapHangs" EntityType="HospitalModel.DanhSachNhapHang" />
+    <EntitySet Name="PhieuNhapThuocs" EntityType="HospitalModel.PhieuNhapThuoc" />
     <EntitySet Name="Thuocs" EntityType="HospitalModel.Thuoc" />
-    <EntitySet Name="TinhTPs" EntityType="HospitalModel.TinhTP" />
-    <EntitySet Name="NhaCungCaps" EntityType="HospitalModel.NhaCungCap" />
-    <EntitySet Name="DonThuocs" EntityType="HospitalModel.DonThuoc" />
+    <EntitySet Name="CT_Thuoc_PhieuNhap" EntityType="HospitalModel.CT_Thuoc_PhieuNhap" />
+    <EntitySet Name="CT_Thuoc_PhieuXuat" EntityType="HospitalModel.CT_Thuoc_PhieuXuat" />
     <EntitySet Name="HangSanXuats" EntityType="HospitalModel.HangSanXuat" />
+    <EntitySet Name="HoatChats" EntityType="HospitalModel.HoatChat" />
+    <EntitySet Name="LoaiDonThuocs" EntityType="HospitalModel.LoaiDonThuoc" />
     <EntitySet Name="NuocSanXuats" EntityType="HospitalModel.NuocSanXuat" />
-    <EntitySet Name="PhieuNhapHangs" EntityType="HospitalModel.PhieuNhapHang" />
+    <EntitySet Name="TrangThaiPhieux" EntityType="HospitalModel.TrangThaiPhieu" />
+    <EntitySet Name="PhieuXuatThuoc" EntityType="HospitalModel.PhieuXuatThuoc" />
   </EntityContainer>
   <EntityType Name="ChiTietPhanQuyen">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PhanQuyenID" Type="Int32" Nullable="false" />
-    <Property Name="ChucNangQuanLyID" Type="Int32" Nullable="false" />
+    <Property Name="PhanQuyen_ID" Type="Int32" Nullable="false" />
+    <Property Name="ChucNangQuanLy_ID" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="ChucNangQuanLy">
     <Key>
@@ -52,22 +55,44 @@
     <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Khoa">
+  <EntityType Name="LichSuGia">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MaKhoa" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="TenKhoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ThuocID" Type="Int32" />
+    <Property Name="GiaNhap" Type="Double" />
+    <Property Name="GiaBanCu" Type="Double" />
+    <Property Name="GiaBanMoi" Type="Double" />
+    <Property Name="NgayTao" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="NCC_KH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaNCC_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenNCC_KH" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoTaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NganHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ChiNhanh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="KichHoat" Type="Boolean" />
+    <Property Name="LoaiNCC_KH" Type="Int32" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="KhoaID" Type="Int32" />
-    <Property Name="PhanQuyenID" Type="Int32" />
+    <Property Name="Khoa_ID" Type="Int32" />
+    <Property Name="PhanQuyen_ID" Type="Int32" />
     <Property Name="HoVaTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="TaiKhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="MatKhau" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
@@ -77,6 +102,13 @@
     <Property Name="CMT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="KichHoat" Type="Boolean" />
   </EntityType>
+  <EntityType Name="NhomThuoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNhom" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="PhanQuyen">
     <Key>
       <PropertyRef Name="ID" />
@@ -85,93 +117,74 @@
     <Property Name="TenPhanQuyen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="KichHoat" Type="Boolean" />
   </EntityType>
-  <EntityType Name="GiaBanNhap">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ThuocID" Type="Int32" />
-    <Property Name="GiaNhap" Type="Double" />
-    <Property Name="GiaBan" Type="Double" />
-  </EntityType>
-  <EntityType Name="DanhSachNhapHang">
+  <EntityType Name="PhieuNhapThuoc">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="HangSanXuatID" Type="Int32" />
-    <Property Name="NuocSanXuatID" Type="Int32" />
-    <Property Name="PhieuNhapHangID" Type="Int64" />
-    <Property Name="ThuocID" Type="Int64" />
-    <Property Name="ViTriID" Type="Int32" />
-    <Property Name="KhoID" Type="Int32" />
-    <Property Name="GiaNhap" Type="Double" />
-    <Property Name="SoLuongNhap" Type="Int32" />
-    <Property Name="SoLuongBan" Type="Int32" />
-    <Property Name="HanSuDung" Type="DateTime" Precision="0" />
-    <Property Name="TongSoDaBan" Type="Int32" />
+    <Property Name="NCC_KH_ID" Type="Int32" />
+    <Property Name="SoPhieu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NgayNhap" Type="DateTime" Precision="0" />
+    <Property Name="ThueSuat" Type="Double" />
+    <Property Name="SoSeri" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="SoHoaDon" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="NgayHoaDon" Type="DateTime" Precision="0" />
+    <Property Name="TongTienTruocThue" Type="Double" />
+    <Property Name="ChietKhau" Type="Double" />
+    <Property Name="TongTienTra" Type="Double" />
   </EntityType>
   <EntityType Name="Thuoc">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NhomThuocID" Type="Int32" />
+    <Property Name="NhomThuoc_ID" Type="Int32" />
+    <Property Name="HangSanXuat_ID" Type="Int32" />
+    <Property Name="HoatChat_ID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DVT_Nguyen_ID" Type="Int32" />
+    <Property Name="DVT_Le_ID" Type="Int32" />
+    <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MaThuoc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="TenThuoc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="GiaBanLe" Type="Double" />
     <Property Name="GiaBanBuon" Type="Double" />
-    <Property Name="DonViTinh" Type="Int32" />
-    <Property Name="DonViTinhQuyDoi" Type="Int32" />
-    <Property Name="QuyCach" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="QuyCach" Type="Double" />
+    <Property Name="TonKho" Type="Int32" />
+    <Property Name="ThoiGianCanhBaoHetHan" Type="DateTime" Precision="0" />
+    <Property Name="TonKhoToiThieu" Type="Int32" />
   </EntityType>
-  <EntityType Name="TinhTP">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TenTinhTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="QuocGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="NhaCungCap">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TinhTPID" Type="Int32" />
-    <Property Name="MaNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="TenNCC" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="MST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="SoTaiKhoan" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-    <Property Name="NganHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MoTai" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MoTa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="KichHoat" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="DonThuoc">
+  <EntityType Name="CT_Thuoc_PhieuNhap">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BacSyID" Type="Int32" />
-    <Property Name="NgayNhap" Type="DateTime" Precision="0" />
-    <Property Name="ChoCapThuoc" Type="Boolean" />
-    <Property Name="KhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="GioiTinh" Type="Boolean" />
-    <Property Name="Tuoi" Type="Int32" />
-    <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="SoDH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PhieuNhapHang_ID" Type="Int64" />
+    <Property Name="DVT_Theo_DVT_Thuoc_ID" Type="Int32" />
+    <Property Name="Thuoc_ID" Type="Int64" />
+    <Property Name="Kho_ID" Type="Int32" />
+    <Property Name="Vitri_ID" Type="Int32" />
+    <Property Name="Barcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HSD" Type="DateTime" Precision="0" />
+    <Property Name="GiaNhap" Type="Double" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="SoLo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="TongTien" Type="Double" />
-    <Property Name="TienThuoc" Type="Double" />
-    <Property Name="PhuPhi" Type="Double" />
-    <Property Name="KhachHangTra" Type="Double" />
+  </EntityType>
+  <EntityType Name="CT_Thuoc_PhieuXuat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhieuXuatHangID" Type="Int64" />
+    <Property Name="CT_Thuoc_PhieuNhapID" Type="Int64" />
+    <Property Name="DVT_Theo_DVT_ThuocID" Type="Int32" />
+    <Property Name="LoaiDonThuocID" Type="Int32" />
+    <Property Name="GiaNhap" Type="Double" />
+    <Property Name="GiaBan" Type="Double" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="TongTien" Type="Double" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="HangSanXuat">
     <Key>
@@ -183,6 +196,20 @@
     <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="KichHoat" Type="Boolean" />
   </EntityType>
+  <EntityType Name="HoatChat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenHoatChat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LoaiDonThuoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDonThuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="NuocSanXuat">
     <Key>
       <PropertyRef Name="ID" />
@@ -190,22 +217,29 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenNuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="PhieuNhapHang">
+  <EntityType Name="TrangThaiPhieu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PhieuXuatThuoc">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NhaCCID" Type="Int32" />
-    <Property Name="DonThuocID" Type="Int64" />
-    <Property Name="DiaChi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="GhiChu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="SoPhieu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="NgayNhap" Type="DateTime" Precision="0" />
+    <Property Name="NCC_KH_ID" Type="Int32" />
+    <Property Name="TrangThaiPhieu_ID" Type="Int32" />
+    <Property Name="SoPhieu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NgayTao" Type="DateTime" Precision="0" />
     <Property Name="ThueSuat" Type="Double" />
     <Property Name="SoSeri" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="SoHD" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="NgayHD" Type="DateTime" Precision="0" />
-    <Property Name="TongTien" Type="Double" />
-    <Property Name="SoDH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoHoaDon" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="NgayHoaDon" Type="DateTime" Precision="0" />
+    <Property Name="TongTienTruocThue" Type="Double" />
+    <Property Name="ChietKhau" Type="Double" />
+    <Property Name="TongTienKHTra" Type="Double" />
   </EntityType>
 </Schema>

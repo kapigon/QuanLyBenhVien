@@ -12,18 +12,17 @@ namespace QuanLyBenhVien
     using System;
     using System.Collections.Generic;
     
-    public partial class NhanVien
+    public partial class CT_Thuoc_PhieuXuat
     {
         public long ID { get; set; }
-        public Nullable<int> Khoa_ID { get; set; }
-        public Nullable<int> PhanQuyen_ID { get; set; }
-        public string HoVaTen { get; set; }
-        public string TaiKhoan { get; set; }
-        public string MatKhau { get; set; }
-        public Nullable<bool> GioiTinh { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
-        public string DiaChi { get; set; }
-        public string CMT { get; set; }
-        public Nullable<bool> KichHoat { get; set; }
+        public Nullable<long> PhieuXuatHangID { get; set; }
+        public Nullable<long> CT_Thuoc_PhieuNhapID { get; set; }
+        public Nullable<int> DVT_Theo_DVT_ThuocID { get; set; }
+        public Nullable<int> LoaiDonThuocID { get; set; }
+        public Nullable<double> GiaNhap { get; set; }
+        public Nullable<double> GiaBan { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<double> TongTien { get; set; }
+        public string GhiChu { get; set; }
     }
 }

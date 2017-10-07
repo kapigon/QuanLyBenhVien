@@ -36,7 +36,7 @@ namespace QuanLyBenhVien
 
         private void lnkDonBanThuoc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmDonBanHang donBanHang = new frmDonBanHang();
+            frmPhieuXuatThuoc donBanHang = new frmPhieuXuatThuoc();
             donBanHang.FormClosed += new FormClosedEventHandler(callBackAfterClose);
             this.Hide();
             donBanHang.ShowDialog();

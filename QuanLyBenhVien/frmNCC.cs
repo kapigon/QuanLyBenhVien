@@ -11,31 +11,31 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class frmNhaCungCap : Form
+    public partial class frmNCC : Form
     {
         HospitalEntities db = new HospitalEntities();
         bool isUpdate = false;
         int nccID = 0;
-        public frmNhaCungCap()
+        public frmNCC()
         {
             InitializeComponent();
-            LoadTinhTP();
+            //LoadTinhTP();
         }
 
         #region method
         // Load Danh sách Tỉnh Thành Phố
-        private void LoadTinhTP()
+        /*private void LoadTinhTP()
         {
             var result = from tinhTP in db.TinhTPs
                          select tinhTP;
             cboTinhTP.DataSource = result.ToList();
             cboTinhTP.DisplayMember = "TenTinhTP";
             cboTinhTP.ValueMember = "ID";
-        }
+        }*/
         #endregion
 
         #region event
-        private void btnThemTinhTP_Click(object sender, EventArgs e)
+        /*private void btnThemTinhTP_Click(object sender, EventArgs e)
         {
             frmTinhTP tinhTP = new frmTinhTP();
             // CallBack khi đóng form TinhTP
@@ -46,7 +46,7 @@ namespace QuanLyBenhVien
         private void frmTinhTPClosed(object sender, FormClosedEventArgs e)
         {
             LoadTinhTP();
-        }
+        }*/
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -56,45 +56,46 @@ namespace QuanLyBenhVien
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            NhaCungCap ncc = new NhaCungCap() {
-                    MaNCC       = txtMaNCC.Text.Trim(),
-                    TenNCC      = txtTenNCC.Text.Trim(),
+            NCC_KH ncc = new NCC_KH() {
+                    MaNCC_KH       = txtMaNCC.Text.Trim(),
+                    TenNCC_KH      = txtTenNCC.Text.Trim(),
                     DiaChi      = txtDiaChi.Text.Trim(),
-                    TinhTPID    = Convert.ToInt32(cboTinhTP.SelectedValue),
                     MST         = txtMST.Text.Trim(),
                     SoTaiKhoan  = txtSoTaiKhoan.Text.Trim(),
-                    MoTai       = txtMoTaiNN.Text.Trim(),
+                    NganHang       = txtMoTaiNN.Text.Trim(),
                     DienThoai   = txtSDT.Text.Trim(),
                     Fax         = txtFax.Text.Trim(),
                     Email       = txtEmail.Text.Trim(),
                     Website     = txtWebsite.Text.Trim(),
-                    MoTa        = txtMoTa.Text.Trim()
+                    MoTa        = txtMoTa.Text.Trim(),
+                    LoaiNCC_KH  = 1
             };
 
             try
             {
                 if (isUpdate && nccID > 0)
                 {
-                    NhaCungCap objNCC = db.NhaCungCaps.Where(p => p.ID == nccID).SingleOrDefault();
-                    objNCC.MaNCC       = txtMaNCC.Text.Trim();
-                    objNCC.TenNCC      = txtTenNCC.Text.Trim();
-                    objNCC.DiaChi      = txtDiaChi.Text.Trim();
-                    objNCC.TinhTPID    = Convert.ToInt32(cboTinhTP.SelectedValue);
-                    objNCC.MST         = txtMST.Text.Trim();
-                    objNCC.SoTaiKhoan  = txtSoTaiKhoan.Text.Trim();
-                    objNCC.MoTai       = txtMoTaiNN.Text.Trim();
-                    objNCC.DienThoai   = txtSDT.Text.Trim();
-                    objNCC.Fax         = txtFax.Text.Trim();
-                    objNCC.Email       = txtEmail.Text.Trim();
-                    objNCC.Website     = txtWebsite.Text.Trim();
-                    objNCC.MoTa = txtMoTa.Text.Trim();
+                    NCC_KH objNCC       = db.NCC_KH.Where(p => p.ID == nccID).SingleOrDefault();
+                    objNCC.MaNCC_KH     = txtMaNCC.Text.Trim();
+                    objNCC.TenNCC_KH    = txtTenNCC.Text.Trim();
+                    objNCC.DiaChi       = txtDiaChi.Text.Trim();
+                    objNCC.MST          = txtMST.Text.Trim();
+                    objNCC.SoTaiKhoan   = txtSoTaiKhoan.Text.Trim();
+                    objNCC.NganHang     = txtMoTaiNN.Text.Trim();
+                    objNCC.ChiNhanh     = txtChiNhanh.Text.Trim();
+                    objNCC.DienThoai    = txtSDT.Text.Trim();
+                    objNCC.Fax          = txtFax.Text.Trim();
+                    objNCC.Email        = txtEmail.Text.Trim();
+                    objNCC.Website      = txtWebsite.Text.Trim();
+                    objNCC.MoTa         = txtMoTa.Text.Trim();
+                    objNCC.LoaiNCC_KH   = 1;
                     db.SaveChanges();
 
                     this.Close();
                 }
                 else
                 {
-                    db.NhaCungCaps.Add(ncc);
+                    db.NCC_KH.Add(ncc);
                     db.SaveChanges();
 
                     this.Close();
@@ -118,20 +119,20 @@ namespace QuanLyBenhVien
 
         public void loadData(int ID)
         {
-            var result = from ncc in db.NhaCungCaps
+            var result = from ncc in db.NCC_KH
                          where ncc.ID == ID
                          select ncc;
 
             if (result.Count() > 0)
             {
-                NhaCungCap ncc = result.SingleOrDefault();
-                txtMaNCC.Text           = ncc.MaNCC;
-                txtTenNCC.Text          = ncc.TenNCC;
+                NCC_KH ncc = result.SingleOrDefault();
+                txtMaNCC.Text           = ncc.MaNCC_KH;
+                txtTenNCC.Text          = ncc.TenNCC_KH;
                 txtDiaChi.Text          = ncc.DiaChi;
-                cboTinhTP.SelectedValue = ncc.TinhTPID;
+                txtChiNhanh.Text        = ncc.ChiNhanh;
                 txtMST.Text             = ncc.MST;
                 txtSoTaiKhoan.Text      = ncc.SoTaiKhoan;
-                txtMoTaiNN.Text         = ncc.MoTai;
+                txtMoTaiNN.Text         = ncc.NganHang;
                 txtSDT.Text             = ncc.DienThoai;
                 txtFax.Text             = ncc.Fax;
                 txtEmail.Text           = ncc.Email;

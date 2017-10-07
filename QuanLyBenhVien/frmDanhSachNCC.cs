@@ -30,11 +30,11 @@ namespace QuanLyBenhVien
                          select nv;
             dgvDanhSachThuoc.DataSource = result.ToList();*/
             DataTable dt = new DataTable();
-            var query = from ncc in db.NhaCungCaps
+            var query = from ncc in db.NCC_KH
                         select new {
                             ID = ncc.ID,
-                            MaNCC = ncc.MaNCC,
-                            TenNCC = ncc.TenNCC,
+                            MaNCC = ncc.MaNCC_KH,
+                            TenNCC = ncc.TenNCC_KH,
                             DiaChi = ncc.DiaChi,
                             Email = ncc.Email,
                             DienThoai = ncc.DienThoai,
@@ -54,10 +54,10 @@ namespace QuanLyBenhVien
                     dgvDanhSachThuoc.Rows[i].Cells[6].Value = query.ToList()[i].KichHoat;
                     //dgvDanhSachThuoc.Rows.Add("001", "1234", "432423", "1111", "111", true);
                 }*/
-                dgvDanhSachThuoc.DataSource = query.ToList();
-                dgvRow = dgvDanhSachThuoc.Rows[0];
+                dgvNhaCungCap.DataSource = query.ToList();
+                dgvRow = dgvNhaCungCap.Rows[0];
                 nccID = Convert.ToInt32(dgvRow.Cells[0].Value);
-                dgvDanhSachThuoc.ReadOnly = true;
+                dgvNhaCungCap.ReadOnly = true;
 
             }
             else
@@ -93,7 +93,7 @@ namespace QuanLyBenhVien
         #region events
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmNhaCungCap nhaCC = new frmNhaCungCap();
+            frmNCC nhaCC = new frmNCC();
             nhaCC.FormClosed += new FormClosedEventHandler(frmNhaCCClosed);
             nhaCC.ShowDialog();
         }
@@ -109,8 +109,8 @@ namespace QuanLyBenhVien
                 if (dialogResult == DialogResult.Yes)
                 {
                     //do something
-                    NhaCungCap objNCC = db.NhaCungCaps.Where(p => p.ID == nccID).SingleOrDefault();
-                    db.NhaCungCaps.Remove(objNCC);
+                    NCC_KH objNCC = db.NCC_KH.Where(p => p.ID == nccID).SingleOrDefault();
+                    db.NCC_KH.Remove(objNCC);
                     db.SaveChanges();
 
                     // Tải lại danh sách nhà cung cấp
@@ -132,7 +132,7 @@ namespace QuanLyBenhVien
         {
             if (nccID > 0)
             {
-                frmNhaCungCap frmNCC = new frmNhaCungCap();
+                frmNCC frmNCC = new frmNCC();
                 frmNCC.FormClosed += new FormClosedEventHandler(frmNCCClosed);
                 frmNCC.loadData(nccID);
                 frmNCC.ShowDialog();
@@ -147,16 +147,15 @@ namespace QuanLyBenhVien
         {
             LoadNhaCungCap();
         }
-        #endregion
-
+        
         private void dgvDanhSachThuoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            dgvRow = dgvDanhSachThuoc.Rows[index];
+            dgvRow = dgvNhaCungCap.Rows[index];
             nccID = Convert.ToInt32(dgvRow.Cells[0].Value);
             MessageBox.Show(index.ToString());
         }
 
-        
+        #endregion
     }
 }

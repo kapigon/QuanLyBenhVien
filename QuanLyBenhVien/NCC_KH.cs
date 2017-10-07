@@ -12,22 +12,22 @@ namespace QuanLyBenhVien
     using System;
     using System.Collections.Generic;
     
-    public partial class NhaCungCap
+    public partial class NCC_KH
     {
         public int ID { get; set; }
-        public Nullable<int> TinhTPID { get; set; }
-        public string MaNCC { get; set; }
-        public string TenNCC { get; set; }
+        public string MaNCC_KH { get; set; }
+        public string TenNCC_KH { get; set; }
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
         public string Email { get; set; }
         public string MST { get; set; }
         public string SoTaiKhoan { get; set; }
         public string NganHang { get; set; }
-        public string MoTai { get; set; }
+        public string ChiNhanh { get; set; }
         public string Fax { get; set; }
         public string Website { get; set; }
         public string MoTa { get; set; }
         public Nullable<bool> KichHoat { get; set; }
+        public Nullable<int> LoaiNCC_KH { get; set; }
     }
 }

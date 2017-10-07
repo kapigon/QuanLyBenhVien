@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBenhVien
 {
-    partial class frmDonBanHang
+    partial class frmPhieuXuatThuoc
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuXuatThuoc));
             this.tabLoaiDonThuoc = new System.Windows.Forms.TabControl();
             this.tabBanLe = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,6 +48,7 @@
             this.lblTuoi = new System.Windows.Forms.Label();
             this.tabKeDon = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNgay = new System.Windows.Forms.TextBox();
             this.lblTongHD = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
@@ -75,7 +77,7 @@
             this.lblTienThuoc = new System.Windows.Forms.Label();
             this.txtTienThuoc = new System.Windows.Forms.TextBox();
             this.lblThemPhuPhi = new System.Windows.Forms.Label();
-            this.txtNgay = new System.Windows.Forms.TextBox();
+            this.btnThemNhaCC = new System.Windows.Forms.Button();
             this.tabLoaiDonThuoc.SuspendLayout();
             this.tabBanLe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -117,6 +119,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnThemNhaCC);
             this.groupBox3.Controls.Add(this.grbGioiTinh);
             this.groupBox3.Controls.Add(this.txtDienThoai);
             this.groupBox3.Controls.Add(this.lblDienThoai);
@@ -222,7 +225,7 @@
             // 
             this.txtKhachHang.Location = new System.Drawing.Point(92, 19);
             this.txtKhachHang.Name = "txtKhachHang";
-            this.txtKhachHang.Size = new System.Drawing.Size(366, 20);
+            this.txtKhachHang.Size = new System.Drawing.Size(332, 20);
             this.txtKhachHang.TabIndex = 6;
             // 
             // lblKhachHang
@@ -277,6 +280,14 @@
             this.groupBox1.Size = new System.Drawing.Size(900, 55);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // txtNgay
+            // 
+            this.txtNgay.Location = new System.Drawing.Point(559, 21);
+            this.txtNgay.Name = "txtNgay";
+            this.txtNgay.ReadOnly = true;
+            this.txtNgay.Size = new System.Drawing.Size(122, 20);
+            this.txtNgay.TabIndex = 18;
             // 
             // lblTongHD
             // 
@@ -539,15 +550,17 @@
             this.lblThemPhuPhi.TabIndex = 24;
             this.lblThemPhuPhi.Text = "(+ phụ phí)";
             // 
-            // txtNgay
+            // btnThemNhaCC
             // 
-            this.txtNgay.Location = new System.Drawing.Point(559, 21);
-            this.txtNgay.Name = "txtNgay";
-            this.txtNgay.ReadOnly = true;
-            this.txtNgay.Size = new System.Drawing.Size(122, 20);
-            this.txtNgay.TabIndex = 18;
+            this.btnThemNhaCC.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNhaCC.Image")));
+            this.btnThemNhaCC.Location = new System.Drawing.Point(430, 16);
+            this.btnThemNhaCC.Name = "btnThemNhaCC";
+            this.btnThemNhaCC.Size = new System.Drawing.Size(29, 24);
+            this.btnThemNhaCC.TabIndex = 25;
+            this.btnThemNhaCC.TabStop = false;
+            this.btnThemNhaCC.UseVisualStyleBackColor = true;
             // 
-            // frmDonBanHang
+            // frmPhieuXuatThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -570,7 +583,7 @@
             this.Controls.Add(this.tabLoaiDonThuoc);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmDonBanHang";
+            this.Name = "frmPhieuXuatThuoc";
             this.Text = "ĐƠN BÁN HÀNG";
             this.Load += new System.EventHandler(this.frmDonBanHang_Load);
             this.tabLoaiDonThuoc.ResumeLayout(false);
@@ -639,5 +652,6 @@
         private System.Windows.Forms.Label lblThemPhuPhi;
         private System.Windows.Forms.GroupBox grbGioiTinh;
         private System.Windows.Forms.TextBox txtNgay;
+        internal System.Windows.Forms.Button btnThemNhaCC;
     }
 }

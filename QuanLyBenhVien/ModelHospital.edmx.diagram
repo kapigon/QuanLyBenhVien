@@ -4,23 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f8fd3b6c6b0b4becbfafef8c9e3300bb" Name="Diagram1">
+      <Diagram DiagramId="f8fd3b6c6b0b4becbfafef8c9e3300bb" Name="Diagram1" ZoomLevel="98">
         <EntityTypeShape EntityType="HospitalModel.ChiTietPhanQuyen" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HospitalModel.ChucNangQuanLy" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="HospitalModel.ChucNangQuanLy" Width="1.5" PointX="8.75" PointY="6.375" />
         <EntityTypeShape EntityType="HospitalModel.DonViTinh" Width="1.5" PointX="0.75" PointY="2.625" />
-        <EntityTypeShape EntityType="HospitalModel.Kho" Width="1.5" PointX="2.5" PointY="4.375" />
-        <EntityTypeShape EntityType="HospitalModel.Khoa" Width="1.5" PointX="11" PointY="6.125" />
-        <EntityTypeShape EntityType="HospitalModel.NhanVien" Width="1.5" PointX="11" PointY="2.625" />
-        <EntityTypeShape EntityType="HospitalModel.PhanQuyen" Width="1.5" PointX="11" PointY="0.75" />
-        <EntityTypeShape EntityType="HospitalModel.GiaBanNhap" Width="1.5" PointX="2.75" PointY="6.5" />
-        <EntityTypeShape EntityType="HospitalModel.DanhSachNhapHang" Width="1.75" PointX="2.5" PointY="0.75" />
-        <EntityTypeShape EntityType="HospitalModel.Thuoc" Width="1.5" PointX="4.625" PointY="0.75" />
-        <EntityTypeShape EntityType="HospitalModel.TinhTP" Width="1.5" PointX="0.875" PointY="6.75" />
-        <EntityTypeShape EntityType="HospitalModel.NhaCungCap" Width="1.5" PointX="6.5" PointY="0.75" />
-        <EntityTypeShape EntityType="HospitalModel.DonThuoc" Width="1.5" PointX="8.875" PointY="0.75" />
-        <EntityTypeShape EntityType="HospitalModel.HangSanXuat" Width="1.5" PointX="4.625" PointY="5" />
-        <EntityTypeShape EntityType="HospitalModel.NuocSanXuat" Width="1.5" PointX="6.625" PointY="5" />
-        <EntityTypeShape EntityType="HospitalModel.PhieuNhapHang" Width="1.5" PointX="8.875" PointY="3.75" />
+        <EntityTypeShape EntityType="HospitalModel.Kho" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="HospitalModel.LichSuGia" Width="1.5" PointX="2.625" PointY="4.75" />
+        <EntityTypeShape EntityType="HospitalModel.NCC_KH" Width="1.5" PointX="4.625" PointY="3.875" />
+        <EntityTypeShape EntityType="HospitalModel.NhanVien" Width="1.5" PointX="10.625" PointY="5.75" />
+        <EntityTypeShape EntityType="HospitalModel.NhomThuoc" Width="1.5" PointX="0.75" PointY="4.375" />
+        <EntityTypeShape EntityType="HospitalModel.PhanQuyen" Width="1.5" PointX="2.625" PointY="7.125" />
+        <EntityTypeShape EntityType="HospitalModel.PhieuNhapThuoc" Width="1.5" PointX="6.875" PointY="0.75" />
+        <EntityTypeShape EntityType="HospitalModel.Thuoc" Width="1.5" PointX="6.875" PointY="4.25" />
+        <EntityTypeShape EntityType="HospitalModel.CT_Thuoc_PhieuNhap" Width="1.5" PointX="8.875" PointY="0.75" />
+        <EntityTypeShape EntityType="HospitalModel.CT_Thuoc_PhieuXuat" Width="1.5" PointX="4.5" PointY="0.75" />
+        <EntityTypeShape EntityType="HospitalModel.HangSanXuat" Width="1.5" PointX="8.75" PointY="4.25" />
+        <EntityTypeShape EntityType="HospitalModel.HoatChat" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HospitalModel.LoaiDonThuoc" Width="1.5" PointX="10.75" PointY="2.375" />
+        <EntityTypeShape EntityType="HospitalModel.NuocSanXuat" Width="1.5" PointX="10.75" PointY="4" />
+        <EntityTypeShape EntityType="HospitalModel.TrangThaiPhieu" Width="1.5" PointX="4.625" PointY="7.875" />
+        <EntityTypeShape EntityType="HospitalModel.PhieuXuatThuoc" Width="1.5" PointX="2.625" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

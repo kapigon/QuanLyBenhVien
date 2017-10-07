@@ -12,11 +12,9 @@ namespace QuanLyBenhVien
     using System;
     using System.Collections.Generic;
     
-    public partial class Khoa
+    public partial class HoatChat
     {
         public int ID { get; set; }
-        public string MaKhoa { get; set; }
-        public string TenKhoa { get; set; }
-        public Nullable<bool> KichHoat { get; set; }
+        public string TenHoatChat { get; set; }
     }
 }

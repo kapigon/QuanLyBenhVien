@@ -23,22 +23,22 @@ namespace QuanLyBenhVien
 
         private void Load_DS_DonHang()
         {
-            var query = from donthuoc in db.DonThuocs
+            var query = from pxt in db.PhieuXuatThuoc
+                        join ncc_kh in db.NCC_KH on pxt.NCC_KH_ID equals ncc_kh.ID
                         select new
                         {
-                            ID = donthuoc.ID,
-                            SoDH = donthuoc.SoDH,
-                            NgayDH = donthuoc.NgayNhap,
-                            TenKH = donthuoc.KhachHang,
-                            DiaChi = donthuoc.DiaChi,
-                            BacSyKeToa = donthuoc.BacSyID,
-                            GhiChu = donthuoc.GhiChu,
-                            TongTien = donthuoc.TongTien
+                            ID = pxt.ID,
+                            SoDH = pxt.SoPhieu,
+                            NgayDH = pxt.NgayTao,
+                            TenKH = ncc_kh.TenNCC_KH,
+                            DiaChi = ncc_kh.DiaChi,
+                            //BacSyKeToa = donthuoc.BacSyID,
+                            GhiChu = pxt.GhiChu,
+                            TongTien = pxt.TongTienKHTra
                         };
 
             if (query.ToList().Count() > 0)
             {
-                
                 dgvDanhSachThuoc.DataSource = query.ToList();
 
             }
@@ -65,7 +65,7 @@ namespace QuanLyBenhVien
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmDonBanHang donhang = new frmDonBanHang();
+            frmPhieuXuatThuoc donhang = new frmPhieuXuatThuoc();
             donhang.FormClosed += new FormClosedEventHandler(frmDSDonHangClosed);
             donhang.ShowDialog();
         }
@@ -79,7 +79,7 @@ namespace QuanLyBenhVien
         {
             if (nccID > 0)
             {
-                frmDonBanHang donhang = new frmDonBanHang();
+                frmPhieuXuatThuoc donhang = new frmPhieuXuatThuoc();
                 donhang.FormClosed += new FormClosedEventHandler(frmDSDonHangClosed);
                 donhang.loadData(nccID);
                 donhang.ShowDialog();

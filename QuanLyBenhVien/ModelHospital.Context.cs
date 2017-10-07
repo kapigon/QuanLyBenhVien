@@ -29,17 +29,20 @@ namespace QuanLyBenhVien
         public virtual DbSet<ChucNangQuanLy> ChucNangQuanLies { get; set; }
         public virtual DbSet<DonViTinh> DonViTinhs { get; set; }
         public virtual DbSet<Kho> Khoes { get; set; }
-        public virtual DbSet<Khoa> Khoas { get; set; }
+        public virtual DbSet<LichSuGia> LichSuGias { get; set; }
+        public virtual DbSet<NCC_KH> NCC_KH { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public virtual DbSet<NhomThuoc> NhomThuocs { get; set; }
         public virtual DbSet<PhanQuyen> PhanQuyens { get; set; }
-        public virtual DbSet<GiaBanNhap> GiaBanNhaps { get; set; }
-        public virtual DbSet<DanhSachNhapHang> DanhSachNhapHangs { get; set; }
+        public virtual DbSet<PhieuNhapThuoc> PhieuNhapThuocs { get; set; }
         public virtual DbSet<Thuoc> Thuocs { get; set; }
-        public virtual DbSet<TinhTP> TinhTPs { get; set; }
-        public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
-        public virtual DbSet<DonThuoc> DonThuocs { get; set; }
+        public virtual DbSet<CT_Thuoc_PhieuNhap> CT_Thuoc_PhieuNhap { get; set; }
+        public virtual DbSet<CT_Thuoc_PhieuXuat> CT_Thuoc_PhieuXuat { get; set; }
         public virtual DbSet<HangSanXuat> HangSanXuats { get; set; }
+        public virtual DbSet<HoatChat> HoatChats { get; set; }
+        public virtual DbSet<LoaiDonThuoc> LoaiDonThuocs { get; set; }
         public virtual DbSet<NuocSanXuat> NuocSanXuats { get; set; }
-        public virtual DbSet<PhieuNhapHang> PhieuNhapHangs { get; set; }
+        public virtual DbSet<TrangThaiPhieu> TrangThaiPhieux { get; set; }
+        public virtual DbSet<PhieuXuatThuoc> PhieuXuatThuoc { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace QuanLyBenhVien
         #region method
         private void LoadNhaCungCap()
         {
-            var result = from nv in db.NhaCungCaps
+            var result = from nv in db.NCC_KH
                          where nv.KichHoat == true
                          select nv;
             cboNhaCungCap.DataSource = result.ToList();
@@ -36,7 +36,7 @@ namespace QuanLyBenhVien
         private void btnThemNhaCC_Click(object sender, EventArgs e)
         {
             
-            frmNhaCungCap nhaCC = new frmNhaCungCap();
+            frmNCC nhaCC = new frmNCC();
             nhaCC.FormClosed += new FormClosedEventHandler(frmNhaCCClosed);
             nhaCC.ShowDialog();
         }
@@ -44,6 +44,46 @@ namespace QuanLyBenhVien
         private void frmNhaCCClosed(object sender, FormClosedEventArgs e)
         {
             LoadNhaCungCap();
+        }
+       
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            int nccID = Convert.ToInt32(cboNhaCungCap.SelectedValue);
+            string ghiChu = txtGhiChu.Text;
+            string soPhieu = txtSoPhieu.Text;
+            DateTime ngayNhap = dtpNgayNhap.Value;
+            int thueSuat = Convert.ToInt32(txtThueSuat.Text);
+            string seri = txtSoSeri.Text;
+            string soHD = txtSoHD.Text;
+            DateTime ngayHD = dtpNgayHD.Value;
+
+
+            using (var dbContextTransaction = db.Database.BeginTransaction()) 
+                { 
+                    try 
+                    { 
+                        /*context.Database.ExecuteSqlCommand( 
+                            @"UPDATE Blogs SET Rating = 5" + 
+                                " WHERE Name LIKE '%Entity Framework%'" 
+                            ); */
+ 
+                        /*var query = db.PhieuNhapThuocs.Where(p => p.Blog.Rating >= 5); 
+                        foreach (var post in query) 
+                        { 
+                            post.Title += "[Cool Blog]"; 
+                        } */
+ 
+                        db.SaveChanges(); 
+ 
+                        dbContextTransaction.Commit(); 
+                    } 
+                    catch (Exception) 
+                    { 
+                        dbContextTransaction.Rollback(); 
+                    } 
+                } 
+            } 
         }
         #endregion
     }
