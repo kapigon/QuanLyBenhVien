@@ -27,3 +27,5 @@ D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.frmTonKhoThuoc
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.frmDanhSachPhieuNhapThuoc.resources
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.csprojResolveAssemblyReference.cache
 D:\Project\QuanLyBenhVien\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.frmNCC_KH.resources
+D:\Project\QuanLyBenhVien\sources\QuanLyBenhVien\bin\Debug\QuanLyBenhVien.exe.config
+D:\Project\QuanLyBenhVien\sources\QuanLyBenhVien\obj\Debug\QuanLyBenhVien.exe
