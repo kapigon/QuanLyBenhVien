@@ -45,8 +45,19 @@
     <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +68,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietPhanQuyen.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChucNangQuanLy.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CT_Thuoc_PhieuNhap.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CT_Thuoc_PhieuXuat.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DonViTinh.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="frmDSPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,8 +113,78 @@
     <Compile Include="frmThemThuoc.Designer.cs">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="HangSanXuat.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ErrorHandle.cs" />
+    <Compile Include="Helpers\StringClearFormat.cs" />
+    <Compile Include="Helpers\ValidateInput.cs" />
+    <Compile Include="HoatChat.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Kho.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LichSuGia.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiDonThuoc.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NCC_KH.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhomThuoc.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NuocSanXuat.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhanQuyen.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhapThuoc.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatThuoc.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DVTRepository.cs" />
+    <Compile Include="Repository\CT_PhieuNhapThuocRepository.cs" />
+    <Compile Include="Repository\ThuocRepository.cs" />
+    <Compile Include="Repository\NuocSanXuatRepository.cs" />
+    <Compile Include="Repository\LoaiDonThuocRepository.cs" />
+    <Compile Include="Repository\NhomThuocRepository.cs" />
+    <Compile Include="Repository\KhoRepository.cs" />
+    <Compile Include="Repository\NCC_KHRepository.cs" />
+    <Compile Include="Repository\PhieuNhapThuocRepository.cs" />
+    <Compile Include="Repository\NhanVienRepository.cs" />
+    <Compile Include="Thuoc.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrangThaiPhieu.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCT_Thuoc_PhieuNhap.resx">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +210,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="HospitalModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HospitalModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="HospitalModel.edmx.diagram">
+      <DependentUpon>HospitalModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,6 +228,48 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HospitalModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HospitalModel.edmx</DependentUpon>
+      <LastGenOutput>HospitalModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HospitalModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HospitalModel.edmx</DependentUpon>
+      <LastGenOutput>HospitalModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\Icon\add.ico" />
+    <Content Include="Images\Icon\BanHang16x16.ico" />
+    <Content Include="Images\Icon\box.ico" />
+    <Content Include="Images\Icon\christmas-star-icon.ico" />
+    <Content Include="Images\Icon\City.ico" />
+    <Content Include="Images\Icon\crystalreports16x16.ico" />
+    <Content Include="Images\Icon\Customer.ico" />
+    <Content Include="Images\Icon\download.ico" />
+    <Content Include="Images\Icon\Edit.ico" />
+    <Content Include="Images\Icon\green-dollar 16x16.ico" />
+    <Content Include="Images\Icon\home.ico" />
+    <Content Include="Images\Icon\Hot home.ico" />
+    <Content Include="Images\Icon\INVOICE.ico" />
+    <Content Include="Images\Icon\Key 32x32.ico" />
+    <Content Include="Images\Icon\MuaHang16x16.ico" />
+    <Content Include="Images\Icon\NhomHang.ico" />
+    <Content Include="Images\Icon\objects.ico" />
+    <Content Include="Images\Icon\payment-16x16.ico" />
+    <Content Include="Images\Icon\people.ico" />
+    <Content Include="Images\Icon\Program.ico" />
+    <Content Include="Images\Icon\QLKD.ico" />
+    <Content Include="Images\Icon\retail-shop.ico" />
+    <Content Include="Images\Icon\Search.ico" />
+    <Content Include="Images\Icon\tag.ico" />
+    <Content Include="Images\Icon\User-16x16.ico" />
+    <Content Include="Images\Icon\user.ico" />
+    <Content Include="Images\Icon\UTC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
