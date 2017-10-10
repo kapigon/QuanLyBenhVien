@@ -23,7 +23,7 @@ namespace QLBV_DEV
         private void LoadNCC()
         {
             var result = from ncc in db.NCC_KH
-                         where ncc.KichHoat == true && (ncc.LoaiNCC_KH == 1 || ncc.LoaiNCC_KH == 3)
+                         where ncc.KichHoat == true && (ncc.LoaiNCC_KH_ID == 1 || ncc.LoaiNCC_KH_ID == 3)
                          select new
                         {
                             ID = ncc.ID,

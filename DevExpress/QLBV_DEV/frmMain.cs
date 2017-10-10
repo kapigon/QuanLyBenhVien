@@ -34,69 +34,84 @@ namespace QLBV_DEV
             MessageBox.Show("Hey");
         }
 
-                private void btnTaoPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
-                {
-                    Form frm = kiemtraform(typeof(frmPhieuNhapThuoc));
-                    if (frm == null)
-                    {
-                        frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
-                        forms.MdiParent = this;
-                        forms.Show();
-                    }
-                    else
-                    {
-                        frm.Activate();
-                    }
-                }
+        private void btnTaoPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmPhieuNhapThuoc));
+            if (frm == null)
+            {
+                frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
 
-                private void frmMain_Load(object sender, EventArgs e)
-                {
+        private void frmMain_Load(object sender, EventArgs e)
+        {
 
-                }
+        }
 
-                private void btnDSPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
-                {
-                    Form frm = kiemtraform(typeof(frmDSPhieuNhap));
-                    if (frm == null)
-                    {
-                        frmDSPhieuNhap forms = new frmDSPhieuNhap();
-                        forms.MdiParent = this;
-                        forms.Show();
-                    }
-                    else
-                    {
-                        frm.Activate();
-                    }
-                }
+        private void btnDSPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmDSPhieuNhap));
+            if (frm == null)
+            {
+                frmDSPhieuNhap forms = new frmDSPhieuNhap();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
 
-                private void btnThemNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
-                {
-                    Form frm = kiemtraform(typeof(frmThemNhaCungCap));
-                    if (frm == null)
-                    {
-                        frmThemNhaCungCap forms = new frmThemNhaCungCap();
-                        forms.MdiParent = this;
-                        forms.Show();
-                    }
-                    else
-                    {
-                        frm.Activate();
-                    }
-                }
+        private void btnThemNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmThemNhaCungCap));
+            if (frm == null)
+            {
+                frmThemNhaCungCap forms = new frmThemNhaCungCap();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
 
-                private void btnThemThuoc_ItemClick(object sender, ItemClickEventArgs e)
-                {
-                    Form frm = kiemtraform(typeof(frmThemThuoc));
-                    if (frm == null)
-                    {
-                        frmThemThuoc forms = new frmThemThuoc();
-                        forms.MdiParent = this;
-                        forms.Show();
-                    }
-                    else
-                    {
-                        frm.Activate();
-                    }
-                }
+        private void btnThemThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmThemThuoc));
+            if (frm == null)
+            {
+                frmThemThuoc forms = new frmThemThuoc();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnDSNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmDSNCC_KH));
+            if (frm == null)
+            {
+                frmDSNCC_KH forms = new frmDSNCC_KH();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
     }
 }

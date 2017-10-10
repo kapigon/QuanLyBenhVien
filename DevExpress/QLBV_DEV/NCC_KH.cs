@@ -15,6 +15,7 @@ namespace QLBV_DEV
     public partial class NCC_KH
     {
         public int ID { get; set; }
+        public Nullable<int> LoaiNCC_KH_ID { get; set; }
         public string MaNCC_KH { get; set; }
         public string TenNCC_KH { get; set; }
         public string DiaChi { get; set; }
@@ -27,7 +28,6 @@ namespace QLBV_DEV
         public string Fax { get; set; }
         public string Website { get; set; }
         public string MoTa { get; set; }
-        public Nullable<int> LoaiNCC_KH { get; set; }
         public Nullable<bool> KichHoat { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
     }

@@ -30,7 +30,6 @@ namespace QLBV_DEV
         public virtual DbSet<DonViTinh> DonViTinh { get; set; }
         public virtual DbSet<Kho> Kho { get; set; }
         public virtual DbSet<LichSuGia> LichSuGia { get; set; }
-        public virtual DbSet<NCC_KH> NCC_KH { get; set; }
         public virtual DbSet<NhanVien> NhanVien { get; set; }
         public virtual DbSet<NhomThuoc> NhomThuoc { get; set; }
         public virtual DbSet<PhanQuyen> PhanQuyen { get; set; }
@@ -44,5 +43,7 @@ namespace QLBV_DEV
         public virtual DbSet<LoaiDonThuoc> LoaiDonThuoc { get; set; }
         public virtual DbSet<NuocSanXuat> NuocSanXuat { get; set; }
         public virtual DbSet<TrangThaiPhieu> TrangThaiPhieu { get; set; }
+        public virtual DbSet<NCC_KH> NCC_KH { get; set; }
+        public virtual DbSet<LoaiNCC_KH> LoaiNCC_KH { get; set; }
     }
 }
