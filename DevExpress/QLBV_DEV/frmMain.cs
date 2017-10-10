@@ -68,5 +68,35 @@ namespace QLBV_DEV
                         frm.Activate();
                     }
                 }
+
+                private void btnThemNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
+                {
+                    Form frm = kiemtraform(typeof(frmThemNhaCungCap));
+                    if (frm == null)
+                    {
+                        frmThemNhaCungCap forms = new frmThemNhaCungCap();
+                        forms.MdiParent = this;
+                        forms.Show();
+                    }
+                    else
+                    {
+                        frm.Activate();
+                    }
+                }
+
+                private void btnThemThuoc_ItemClick(object sender, ItemClickEventArgs e)
+                {
+                    Form frm = kiemtraform(typeof(frmThemThuoc));
+                    if (frm == null)
+                    {
+                        frmThemThuoc forms = new frmThemThuoc();
+                        forms.MdiParent = this;
+                        forms.Show();
+                    }
+                    else
+                    {
+                        frm.Activate();
+                    }
+                }
     }
 }
