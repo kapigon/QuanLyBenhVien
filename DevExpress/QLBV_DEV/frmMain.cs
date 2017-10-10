@@ -98,5 +98,10 @@ namespace QLBV_DEV
                         frm.Activate();
                     }
                 }
+
+                private void btnDSNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
+                {
+
+                }
     }
 }
