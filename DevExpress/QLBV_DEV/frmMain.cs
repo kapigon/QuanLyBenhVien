@@ -34,20 +34,6 @@ namespace QLBV_DEV
             MessageBox.Show("Hey");
         }
 
-                private void btnTaoPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
-                {
-                    Form frm = kiemtraform(typeof(frmPhieuNhapThuoc));
-                    if (frm == null)
-                    {
-                        frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
-                        forms.MdiParent = this;
-                        forms.Show();
-                    }
-                    else
-                    {
-                        frm.Activate();
-                    }
-                }
         private void btnTaoPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(frmPhieuNhapThuoc));
@@ -127,10 +113,5 @@ namespace QLBV_DEV
                 frm.Activate();
             }
         }
-
-                private void btnDSNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
-                {
-
-                }
     }
 }
