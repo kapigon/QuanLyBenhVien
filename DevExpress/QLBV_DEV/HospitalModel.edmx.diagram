@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="HospitalModel.DonViTinh" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="HospitalModel.Kho" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="HospitalModel.LichSuGia" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HospitalModel.NCC_KH" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="HospitalModel.NhanVien" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="HospitalModel.NhomThuoc" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="HospitalModel.PhanQuyen" Width="1.5" PointX="6.75" PointY="5.75" />
@@ -20,10 +19,12 @@
         <EntityTypeShape EntityType="HospitalModel.CT_Thuoc_PhieuNhap" Width="1.5" PointX="8.75" PointY="5.75" />
         <EntityTypeShape EntityType="HospitalModel.CT_Thuoc_PhieuXuat" Width="1.5" PointX="10.75" PointY="0.75" />
         <EntityTypeShape EntityType="HospitalModel.HangSanXuat" Width="1.5" PointX="10.75" PointY="4.75" />
-        <EntityTypeShape EntityType="HospitalModel.HoatChat" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="HospitalModel.HoatChat" Width="1.5" PointX="6.75" PointY="9.5" />
         <EntityTypeShape EntityType="HospitalModel.LoaiDonThuoc" Width="1.5" PointX="10.75" PointY="7.75" />
-        <EntityTypeShape EntityType="HospitalModel.NuocSanXuat" Width="1.5" PointX="8.75" PointY="10.75" />
-        <EntityTypeShape EntityType="HospitalModel.TrangThaiPhieu" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="HospitalModel.NuocSanXuat" Width="1.5" PointX="8.75" PointY="9.5" />
+        <EntityTypeShape EntityType="HospitalModel.TrangThaiPhieu" Width="1.5" PointX="10.75" PointY="9.5" />
+        <EntityTypeShape EntityType="HospitalModel.NCC_KH" Width="1.5" PointX="7.375" PointY="11.75" />
+        <EntityTypeShape EntityType="HospitalModel.LoaiNCC_KH" Width="1.5" PointX="9.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

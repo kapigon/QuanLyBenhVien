@@ -32,7 +32,6 @@
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.dateNgayVietHD = new DevExpress.XtraEditors.DateEdit();
             this.txtSoHoaDon = new DevExpress.XtraEditors.TextEdit();
-            this.cboThueSuat = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtSeri = new DevExpress.XtraEditors.TextEdit();
             this.dateNgayNhap = new DevExpress.XtraEditors.DateEdit();
             this.txtSoPhieu = new DevExpress.XtraEditors.TextEdit();
@@ -51,6 +50,7 @@
             this.HanSuDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.cbbNCC = new DevExpress.XtraEditors.LookUpEdit();
+            this.cboThueSuat = new DevExpress.XtraEditors.ComboBoxEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -76,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayVietHD.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayVietHD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHoaDon.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboThueSuat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeri.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayNhap.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayNhap.Properties)).BeginInit();
@@ -85,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbNCC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboThueSuat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -111,7 +111,6 @@
             this.layoutControl1.Controls.Add(this.txtGhiChu);
             this.layoutControl1.Controls.Add(this.dateNgayVietHD);
             this.layoutControl1.Controls.Add(this.txtSoHoaDon);
-            this.layoutControl1.Controls.Add(this.cboThueSuat);
             this.layoutControl1.Controls.Add(this.txtSeri);
             this.layoutControl1.Controls.Add(this.dateNgayNhap);
             this.layoutControl1.Controls.Add(this.txtSoPhieu);
@@ -121,6 +120,7 @@
             this.layoutControl1.Controls.Add(this.btnThem);
             this.layoutControl1.Controls.Add(this.grdDSThuoc);
             this.layoutControl1.Controls.Add(this.cbbNCC);
+            this.layoutControl1.Controls.Add(this.cboThueSuat);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -144,19 +144,22 @@
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(92, 93);
             this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Properties.MaxLength = 150;
             this.txtGhiChu.Size = new System.Drawing.Size(213, 73);
             this.txtGhiChu.StyleController = this.layoutControl1;
             this.txtGhiChu.TabIndex = 15;
             // 
             // dateNgayVietHD
             // 
-            this.dateNgayVietHD.EditValue = new System.DateTime(2017, 10, 9, 15, 47, 15, 872);
+            this.dateNgayVietHD.EditValue = new System.DateTime(2017, 10, 10, 0, 0, 0, 0);
             this.dateNgayVietHD.Location = new System.Drawing.Point(947, 124);
             this.dateNgayVietHD.Name = "dateNgayVietHD";
             this.dateNgayVietHD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayVietHD.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNgayVietHD.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayVietHD.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateNgayVietHD.Size = new System.Drawing.Size(201, 20);
             this.dateNgayVietHD.StyleController = this.layoutControl1;
             this.dateNgayVietHD.TabIndex = 14;
@@ -165,30 +168,16 @@
             // 
             this.txtSoHoaDon.Location = new System.Drawing.Point(674, 124);
             this.txtSoHoaDon.Name = "txtSoHoaDon";
+            this.txtSoHoaDon.Properties.MaxLength = 20;
             this.txtSoHoaDon.Size = new System.Drawing.Size(201, 20);
             this.txtSoHoaDon.StyleController = this.layoutControl1;
             this.txtSoHoaDon.TabIndex = 13;
-            // 
-            // cboThueSuat
-            // 
-            this.cboThueSuat.Location = new System.Drawing.Point(947, 100);
-            this.cboThueSuat.Name = "cboThueSuat";
-            this.cboThueSuat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboThueSuat.Properties.Items.AddRange(new object[] {
-            "5%",
-            "10%",
-            "12%",
-            "15%",
-            "20%"});
-            this.cboThueSuat.Size = new System.Drawing.Size(201, 20);
-            this.cboThueSuat.StyleController = this.layoutControl1;
-            this.cboThueSuat.TabIndex = 12;
             // 
             // txtSeri
             // 
             this.txtSeri.Location = new System.Drawing.Point(674, 100);
             this.txtSeri.Name = "txtSeri";
+            this.txtSeri.Properties.MaxLength = 20;
             this.txtSeri.Size = new System.Drawing.Size(201, 20);
             this.txtSeri.StyleController = this.layoutControl1;
             this.txtSeri.TabIndex = 11;
@@ -210,6 +199,7 @@
             // 
             this.txtSoPhieu.Location = new System.Drawing.Point(377, 69);
             this.txtSoPhieu.Name = "txtSoPhieu";
+            this.txtSoPhieu.Properties.MaxLength = 10;
             this.txtSoPhieu.Size = new System.Drawing.Size(213, 20);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
@@ -365,6 +355,23 @@
             this.cbbNCC.Size = new System.Drawing.Size(213, 20);
             this.cbbNCC.StyleController = this.layoutControl1;
             this.cbbNCC.TabIndex = 7;
+            // 
+            // cboThueSuat
+            // 
+            this.cboThueSuat.Location = new System.Drawing.Point(947, 100);
+            this.cboThueSuat.Name = "cboThueSuat";
+            this.cboThueSuat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboThueSuat.Properties.Items.AddRange(new object[] {
+            "5%",
+            "10%",
+            "12%",
+            "15%",
+            "20%",
+            "25%"});
+            this.cboThueSuat.Size = new System.Drawing.Size(201, 20);
+            this.cboThueSuat.StyleController = this.layoutControl1;
+            this.cboThueSuat.TabIndex = 12;
             // 
             // Root
             // 
@@ -595,7 +602,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayVietHD.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayVietHD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHoaDon.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboThueSuat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeri.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayNhap.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayNhap.Properties)).EndInit();
@@ -604,6 +610,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbNCC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboThueSuat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -655,7 +662,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.DateEdit dateNgayVietHD;
         private DevExpress.XtraEditors.TextEdit txtSoHoaDon;
-        private DevExpress.XtraEditors.ComboBoxEdit cboThueSuat;
         private DevExpress.XtraEditors.TextEdit txtSeri;
         private DevExpress.XtraEditors.DateEdit dateNgayNhap;
         private DevExpress.XtraEditors.TextEdit txtSoPhieu;
@@ -671,6 +677,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraEditors.LookUpEdit cbbNCC;
+        private DevExpress.XtraEditors.ComboBoxEdit cboThueSuat;
 
     }
 }

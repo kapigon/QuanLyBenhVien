@@ -83,6 +83,12 @@
     <Compile Include="DonViTinh.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmDSNCC_KH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSNCC_KH.Designer.cs">
+      <DependentUpon>frmDSNCC_KH.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <Compile Include="LoaiDonThuoc.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LoaiNCC_KH.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="NCC_KH.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
@@ -200,6 +209,9 @@
     <EmbeddedResource Include="frmCT_Thuoc_PhieuNhap.resx">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDSNCC_KH.resx">
+      <DependentUpon>frmDSNCC_KH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDSPhieuNhap.resx">
       <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +250,8 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LoaiDonThuoc.datasource" />
+    <None Include="Properties\DataSources\NCC_KH.datasource" />
+    <None Include="Properties\DataSources\LoaiNCC_KH.datasource" />
     <None Include="Properties\DataSources\NCC_KH.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
