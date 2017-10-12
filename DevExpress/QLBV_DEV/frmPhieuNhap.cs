@@ -17,6 +17,7 @@ namespace QLBV_DEV
         {
             InitializeComponent();
             LoadNCC();
+            LoadDVT();
         }
 
         #region methods
@@ -34,12 +35,28 @@ namespace QLBV_DEV
             cbbNCC.Properties.DisplayMember = "TenNCC";
             cbbNCC.Properties.ValueMember = "ID";
         }
+
+        private void LoadDVT()
+        {
+            var result = from dvt in db.DonViTinh
+                         select new
+                         {
+                             ID = dvt.ID,
+                             TenDVT = dvt.TenDVT
+                         };
+            cbbDVT.DataSource = result.ToList();
+            //cbbNCC.DataSource = result.ToList();
+            cbbDVT.DisplayMember = "TenDVT";
+            cbbDVT.ValueMember = "ID";
+        }
         #endregion
 
         #region events
         private void frmPhieuNhapThuoc_Load(object sender, EventArgs e)
         {
-
+            //Defaul value
+            dateNgayNhap.EditValue = DateTime.Now;
+            dateNgayVietHD.EditValue = DateTime.Now;
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -54,13 +71,15 @@ namespace QLBV_DEV
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            dxValidate.Validate();
+
             int nccID = Convert.ToInt32(cbbNCC.EditValue);
             String soPhieu = txtSoPhieu.Text;
             String ghiChu = txtGhiChu.Text;
             DateTime ngayNhap = dateNgayNhap.DateTime;
-            MessageBox.Show(ngayNhap.ToString("dd/MM/yyyy"));
+            //MessageBox.Show(ngayNhap.ToString("dd/MM/yyyy"));
             String soSeri = txtSeri.Text;
-            int thueSuat = Convert.ToInt32(cboThueSuat.EditValue);
+            int thueSuat = Convert.ToInt32(cbbThueSuat.EditValue);
             String soHD = txtSoHoaDon.Text;
             DateTime ngayVietHD = dateNgayVietHD.DateTime;
 

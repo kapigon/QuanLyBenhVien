@@ -28,7 +28,6 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenDVT" Type="nvarchar" MaxLength="50" />
-          <Property Name="KichHoat" Type="bit" />
         </EntityType>
         <EntityType Name="Kho">
           <Key>
@@ -310,7 +309,6 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenDVT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="KichHoat" Type="Boolean" />
         </EntityType>
         <EntityType Name="Kho">
           <Key>
@@ -549,7 +547,6 @@
           <EntitySetMapping Name="DonViTinh">
             <EntityTypeMapping TypeName="HospitalModel.DonViTinh">
               <MappingFragment StoreEntitySet="DonViTinh">
-                <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
                 <ScalarProperty Name="TenDVT" ColumnName="TenDVT" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>

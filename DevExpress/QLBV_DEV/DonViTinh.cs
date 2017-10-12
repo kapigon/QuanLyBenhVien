@@ -16,6 +16,5 @@ namespace QLBV_DEV
     {
         public int ID { get; set; }
         public string TenDVT { get; set; }
-        public Nullable<bool> KichHoat { get; set; }
     }
 }

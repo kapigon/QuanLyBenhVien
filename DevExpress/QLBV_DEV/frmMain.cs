@@ -12,6 +12,12 @@ namespace QLBV_DEV
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        frmPhieuNhapThuoc frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
+        frmDSPhieuNhap frmDSPhieuNhap = new frmDSPhieuNhap();
+        frmThemNhaCungCap frmThemNhaCungCap = new frmThemNhaCungCap();
+        frmThemThuoc frmThemThuoc = new frmThemThuoc();
+        frmDSNCC_KH frmDSNCC_KH = new frmDSNCC_KH();
+
         public frmMain()
         {
             InitializeComponent();
@@ -39,9 +45,9 @@ namespace QLBV_DEV
             Form frm = kiemtraform(typeof(frmPhieuNhapThuoc));
             if (frm == null)
             {
-                frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
-                forms.MdiParent = this;
-                forms.Show();
+                //frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
+                frmPhieuNhapThuoc.MdiParent = this;
+                frmPhieuNhapThuoc.Show();
             }
             else
             {
@@ -59,9 +65,8 @@ namespace QLBV_DEV
             Form frm = kiemtraform(typeof(frmDSPhieuNhap));
             if (frm == null)
             {
-                frmDSPhieuNhap forms = new frmDSPhieuNhap();
-                forms.MdiParent = this;
-                forms.Show();
+                frmDSPhieuNhap.MdiParent = this;
+                frmDSPhieuNhap.Show();
             }
             else
             {
@@ -74,9 +79,8 @@ namespace QLBV_DEV
             Form frm = kiemtraform(typeof(frmThemNhaCungCap));
             if (frm == null)
             {
-                frmThemNhaCungCap forms = new frmThemNhaCungCap();
-                forms.MdiParent = this;
-                forms.Show();
+                frmThemNhaCungCap.MdiParent = this;
+                frmThemNhaCungCap.Show();
             }
             else
             {
@@ -89,9 +93,8 @@ namespace QLBV_DEV
             Form frm = kiemtraform(typeof(frmThemThuoc));
             if (frm == null)
             {
-                frmThemThuoc forms = new frmThemThuoc();
-                forms.MdiParent = this;
-                forms.Show();
+                frmThemThuoc.MdiParent = this;
+                frmThemThuoc.Show();
             }
             else
             {
@@ -104,9 +107,8 @@ namespace QLBV_DEV
             Form frm = kiemtraform(typeof(frmDSNCC_KH));
             if (frm == null)
             {
-                frmDSNCC_KH forms = new frmDSNCC_KH();
-                forms.MdiParent = this;
-                forms.Show();
+                frmDSNCC_KH.MdiParent = this;
+                frmDSNCC_KH.Show();
             }
             else
             {

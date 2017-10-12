@@ -48,7 +48,7 @@ namespace QLBV_DEV
             if (query.ToList().Count() > 0)
             {
 
-                grvDSNCC_KH.DataSource = query.ToList();
+                grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(db.NCC_KH.ToList());
                 //dgvRow = grdDSNCC.Rows[0];
                 //ncc_kh_ID = Convert.ToInt32(dgvRow.Cells[0].Value);
                 //grdDSNCC.ReadOnly = true;
@@ -66,11 +66,15 @@ namespace QLBV_DEV
                          select new
                          {
                              ID = ncc.ID,
-                             LoaiNCC_KH = ncc.TenLoaiNCC_KH
+                             TenLoaiNCC_KH = ncc.TenLoaiNCC_KH
                          };
             cbbLoaiNCC_KH.Properties.DataSource = result.ToList();
-            cbbLoaiNCC_KH.Properties.DisplayMember = "LoaiNCC_KH";
+            cbbLoaiNCC_KH.Properties.DisplayMember = "TenLoaiNCC_KH";
             cbbLoaiNCC_KH.Properties.ValueMember = "ID";
+
+            cbbColLoaiNCC_KH.DataSource = result.ToList();
+            cbbColLoaiNCC_KH.DisplayMember = "TenLoaiNCC_KH";
+            cbbColLoaiNCC_KH.ValueMember = "ID";
         }
         #endregion
 

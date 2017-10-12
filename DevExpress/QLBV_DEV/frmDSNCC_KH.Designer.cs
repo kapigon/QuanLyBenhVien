@@ -40,9 +40,11 @@
             this.MaNCC_KH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenNCC_KH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LoaiNCC_KH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MST = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbbColLoaiNCC_KH = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenNCC_KH = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtMaNCC_KH = new DevExpress.XtraEditors.TextEdit();
@@ -64,6 +66,8 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSNCC_KH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbColLoaiNCC_KH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNCC_KH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNCC_KH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLoaiNCC_KH.Properties)).BeginInit();
@@ -163,6 +167,9 @@
             this.grvDSNCC_KH.Location = new System.Drawing.Point(12, 140);
             this.grvDSNCC_KH.MainView = this.gridView1;
             this.grvDSNCC_KH.Name = "grvDSNCC_KH";
+            this.grvDSNCC_KH.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cbbColLoaiNCC_KH,
+            this.repositoryItemTextEdit1});
             this.grvDSNCC_KH.Size = new System.Drawing.Size(833, 329);
             this.grvDSNCC_KH.TabIndex = 10;
             this.grvDSNCC_KH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -214,10 +221,16 @@
             this.LoaiNCC_KH.AppearanceHeader.Options.UseTextOptions = true;
             this.LoaiNCC_KH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.LoaiNCC_KH.Caption = "Loại NCC & KH";
-            this.LoaiNCC_KH.FieldName = "LoaiNCC_KH";
+            this.LoaiNCC_KH.ColumnEdit = this.cbbColLoaiNCC_KH;
+            this.LoaiNCC_KH.FieldName = "LoaiNCC_KH_ID";
             this.LoaiNCC_KH.Name = "LoaiNCC_KH";
             this.LoaiNCC_KH.Visible = true;
             this.LoaiNCC_KH.VisibleIndex = 1;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // DiaChi
             // 
@@ -248,6 +261,16 @@
             this.MST.Name = "MST";
             this.MST.Visible = true;
             this.MST.VisibleIndex = 5;
+            // 
+            // cbbColLoaiNCC_KH
+            // 
+            this.cbbColLoaiNCC_KH.AutoHeight = false;
+            this.cbbColLoaiNCC_KH.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbColLoaiNCC_KH.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenLoaiNCC_KH", "Loại NCC_KH")});
+            this.cbbColLoaiNCC_KH.Name = "cbbColLoaiNCC_KH";
             // 
             // btnTim
             // 
@@ -290,7 +313,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbbLoaiNCC_KH.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LoaiNCC_KH", "Loại NCC_KH")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenLoaiNCC_KH", "Loại NCC_KH")});
             this.cbbLoaiNCC_KH.Properties.NullText = "";
             this.cbbLoaiNCC_KH.Properties.PopupSizeable = false;
             this.cbbLoaiNCC_KH.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -462,6 +485,8 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvDSNCC_KH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbColLoaiNCC_KH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNCC_KH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNCC_KH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLoaiNCC_KH.Properties)).EndInit();
@@ -515,5 +540,7 @@
         private DevExpress.XtraEditors.TextEdit txtMaNCC_KH;
         private DevExpress.XtraEditors.LookUpEdit cbbLoaiNCC_KH;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cbbColLoaiNCC_KH;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
     }
 }
