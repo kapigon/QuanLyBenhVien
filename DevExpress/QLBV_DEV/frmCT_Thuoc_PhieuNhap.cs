@@ -29,5 +29,10 @@ namespace QLBV_DEV
                 MessageBox.Show("Hey");
             }
         }
+
+        internal void loadData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

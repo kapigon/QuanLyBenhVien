@@ -18,6 +18,7 @@ namespace QLBV_DEV
             InitializeComponent();
             LoadNCC();
             LoadDVT();
+            LoadThuoc();
         }
 
         #region methods
@@ -28,7 +29,8 @@ namespace QLBV_DEV
                          select new
                         {
                             ID = ncc.ID,
-                            TenNCC = ncc.TenNCC_KH
+                            TenNCC = ncc.TenNCC_KH,
+                            DiaChi = ncc.DiaChi
                         };
             cbbNCC.Properties.DataSource = result.ToList();
             //cbbNCC.DataSource = result.ToList();
@@ -49,6 +51,21 @@ namespace QLBV_DEV
             cbbDVT.DisplayMember = "TenDVT";
             cbbDVT.ValueMember = "ID";
         }
+
+        private void LoadThuoc()
+        {
+            var result = from thuoc in db.Thuoc
+                         select new
+                         {
+                             ID = thuoc.ID,
+                             MaThuoc = thuoc.MaThuoc,
+                             TenThuoc = thuoc.TenThuoc
+                         };
+            gridColThuoc_ID.DataSource = result.ToList();
+            //cbbNCC.DataSource = result.ToList();
+            gridColThuoc_ID.DisplayMember = "TenThuoc";
+            gridColThuoc_ID.ValueMember = "ID";
+        }
         #endregion
 
         #region events
@@ -57,6 +74,8 @@ namespace QLBV_DEV
             //Defaul value
             dateNgayNhap.EditValue = DateTime.Now;
             dateNgayVietHD.EditValue = DateTime.Now;
+
+            grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>(db.CT_Thuoc_PhieuNhap.Where(p=>p.ID == 0).ToList());
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -107,5 +126,20 @@ namespace QLBV_DEV
             this.Close();
         }
         #endregion
+
+        private void grdDSThuoc_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ID") == null)
+                return;
+
+            long thuocID = Convert.ToInt64(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Thuoc_ID_1").ToString());
+            DataRow dr;
+            dr = gridView1.GetFocusedDataRow();
+
+            //frmCT_Thuoc_PhieuNhap frmCT_Thuoc = new frmCT_Thuoc_PhieuNhap();
+           // frmCT_Thuoc.ShowDialog();
+            //frmCT_Thuoc.loadData();
+            //MessageBox.Show(thuocID.ToString());
+        }
     }
 }

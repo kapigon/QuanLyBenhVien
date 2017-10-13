@@ -40,11 +40,11 @@
             this.MaNCC_KH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenNCC_KH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LoaiNCC_KH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.cbbColLoaiNCC_KH = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MST = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cbbColLoaiNCC_KH = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenNCC_KH = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtMaNCC_KH = new DevExpress.XtraEditors.TextEdit();
@@ -66,8 +66,8 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSNCC_KH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbColLoaiNCC_KH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNCC_KH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNCC_KH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLoaiNCC_KH.Properties)).BeginInit();
@@ -227,10 +227,15 @@
             this.LoaiNCC_KH.Visible = true;
             this.LoaiNCC_KH.VisibleIndex = 1;
             // 
-            // repositoryItemTextEdit1
+            // cbbColLoaiNCC_KH
             // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            this.cbbColLoaiNCC_KH.AutoHeight = false;
+            this.cbbColLoaiNCC_KH.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbColLoaiNCC_KH.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenLoaiNCC_KH", "Loại NCC_KH")});
+            this.cbbColLoaiNCC_KH.Name = "cbbColLoaiNCC_KH";
             // 
             // DiaChi
             // 
@@ -262,15 +267,10 @@
             this.MST.Visible = true;
             this.MST.VisibleIndex = 5;
             // 
-            // cbbColLoaiNCC_KH
+            // repositoryItemTextEdit1
             // 
-            this.cbbColLoaiNCC_KH.AutoHeight = false;
-            this.cbbColLoaiNCC_KH.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbColLoaiNCC_KH.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenLoaiNCC_KH", "Loại NCC_KH")});
-            this.cbbColLoaiNCC_KH.Name = "cbbColLoaiNCC_KH";
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // btnTim
             // 
@@ -485,8 +485,8 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvDSNCC_KH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbColLoaiNCC_KH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNCC_KH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNCC_KH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLoaiNCC_KH.Properties)).EndInit();
