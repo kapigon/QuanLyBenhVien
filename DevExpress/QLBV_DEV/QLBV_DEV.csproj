@@ -83,6 +83,12 @@
     <Compile Include="DonViTinh.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmDonViTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDonViTinh.Designer.cs">
+      <DependentUpon>frmDonViTinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSNCC_KH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +107,29 @@
     <Compile Include="frmCT_Thuoc_PhieuNhap.Designer.cs">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHangSanXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHangSanXuat.Designer.cs">
+      <DependentUpon>frmHangSanXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoatChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoatChat.Designer.cs">
+      <DependentUpon>frmHoatChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhomThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhomThuoc.Designer.cs">
+      <DependentUpon>frmNhomThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhieuNhap.cs">
       <SubType>Form</SubType>
@@ -186,6 +210,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DVTRepository.cs" />
     <Compile Include="Repository\CT_PhieuNhapThuocRepository.cs" />
+    <Compile Include="Repository\HangSanXuatRepository.cs" />
+    <Compile Include="Repository\HoatChatRepository.cs" />
+    <Compile Include="Repository\ViTriRepository.cs" />
     <Compile Include="Repository\ThuocRepository.cs" />
     <Compile Include="Repository\NuocSanXuatRepository.cs" />
     <Compile Include="Repository\LoaiDonThuocRepository.cs" />
@@ -200,6 +227,9 @@
     <Compile Include="TrangThaiPhieu.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViTri.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCT_Thuoc_PhieuNhap.resx">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSPhieuNhap.resx">
       <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHoatChat.resx">
+      <DependentUpon>frmHoatChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

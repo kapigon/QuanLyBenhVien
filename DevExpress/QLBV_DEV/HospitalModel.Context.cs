@@ -45,5 +45,6 @@ namespace QLBV_DEV
         public virtual DbSet<TrangThaiPhieu> TrangThaiPhieu { get; set; }
         public virtual DbSet<NCC_KH> NCC_KH { get; set; }
         public virtual DbSet<LoaiNCC_KH> LoaiNCC_KH { get; set; }
+        public virtual DbSet<ViTri> ViTri { get; set; }
     }
 }

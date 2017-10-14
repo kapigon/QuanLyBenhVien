@@ -17,7 +17,7 @@ namespace QLBV_DEV
         public long ID { get; set; }
         public Nullable<int> NhomThuoc_ID { get; set; }
         public Nullable<int> HangSanXuat_ID { get; set; }
-        public string HoatChat_ID { get; set; }
+        public Nullable<int> HoatChat_ID { get; set; }
         public Nullable<int> DVT_Nguyen_ID { get; set; }
         public Nullable<int> DVT_Le_ID { get; set; }
         public string Barcode { get; set; }

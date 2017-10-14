@@ -7,12 +7,16 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using QLBV_DEV.Repository;
 
 namespace QLBV_DEV
 {
     public partial class frmPhieuNhapThuoc : DevExpress.XtraEditors.XtraForm
     {
         HospitalEntities db = new HospitalEntities();
+        PhieuNhapThuocRepository repository_PhieuNhap = new PhieuNhapThuocRepository();
+        CT_Thuoc_PhieuNhapRepository repository_CT_Thuoc = new CT_Thuoc_PhieuNhapRepository();
+
         public frmPhieuNhapThuoc()
         {
             InitializeComponent();
@@ -114,6 +118,7 @@ namespace QLBV_DEV
             _object.TongTienTruocThue = 0;
             _object.ChietKhau = 0;
             _object.TongTienTra = 0;
+
         }
 
         private void btnIn_Click(object sender, EventArgs e)
@@ -129,16 +134,21 @@ namespace QLBV_DEV
 
         private void grdDSThuoc_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ID") == null)
-                return;
+            //if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ID") == null)
+            //    return;
+            if (gridView1 == null || gridView1.SelectedRowsCount == 0) return;
 
-            long thuocID = Convert.ToInt64(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Thuoc_ID_1").ToString());
-            DataRow dr;
-            dr = gridView1.GetFocusedDataRow();
-
-            //frmCT_Thuoc_PhieuNhap frmCT_Thuoc = new frmCT_Thuoc_PhieuNhap();
-           // frmCT_Thuoc.ShowDialog();
-            //frmCT_Thuoc.loadData();
+            DataRow[] rows = new DataRow[gridView1.SelectedRowsCount];
+            //int indexRow = gridView1.GetSelectedRows;
+            long thuocID = 0;
+            if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Thuoc_ID_1") != null)
+                thuocID = Convert.ToInt64(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Thuoc_ID_1").ToString());
+            DataRow dr = null;
+            //dr = gridView1.GetFocusedDataRow();
+            
+            frmCT_Thuoc_PhieuNhap frmCT_Thuoc = new frmCT_Thuoc_PhieuNhap();
+            frmCT_Thuoc.ShowDialog();
+            frmCT_Thuoc.loadData(thuocID, dr);
             //MessageBox.Show(thuocID.ToString());
         }
     }

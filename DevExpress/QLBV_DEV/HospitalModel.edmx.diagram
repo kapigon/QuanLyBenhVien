@@ -25,6 +25,7 @@
         <EntityTypeShape EntityType="HospitalModel.TrangThaiPhieu" Width="1.5" PointX="10.75" PointY="9.5" />
         <EntityTypeShape EntityType="HospitalModel.NCC_KH" Width="1.5" PointX="7.375" PointY="11.75" />
         <EntityTypeShape EntityType="HospitalModel.LoaiNCC_KH" Width="1.5" PointX="9.375" PointY="11.75" />
+        <EntityTypeShape EntityType="HospitalModel.ViTri" Width="1.5" PointX="11.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

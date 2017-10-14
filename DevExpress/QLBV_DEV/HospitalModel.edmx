@@ -145,7 +145,7 @@
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NhomThuoc_ID" Type="int" />
           <Property Name="HangSanXuat_ID" Type="int" />
-          <Property Name="HoatChat_ID" Type="nvarchar" MaxLength="250" />
+          <Property Name="HoatChat_ID" Type="int" />
           <Property Name="DVT_Nguyen_ID" Type="int" />
           <Property Name="DVT_Le_ID" Type="int" />
           <Property Name="Barcode" Type="varchar" MaxLength="50" />
@@ -238,6 +238,13 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenTrangThai" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="ViTri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenViTri" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityContainer Name="HospitalModelStoreContainer">
           <EntitySet Name="ChiTietPhanQuyen" EntityType="Self.ChiTietPhanQuyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChucNangQuanLy" EntityType="Self.ChucNangQuanLy" Schema="dbo" store:Type="Tables" />
@@ -259,6 +266,7 @@
           <EntitySet Name="LoaiNCC_KH" EntityType="Self.LoaiNCC_KH" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="NuocSanXuat" EntityType="Self.NuocSanXuat" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="TrangThaiPhieu" EntityType="Self.TrangThaiPhieu" Schema="g6t_user" store:Type="Tables" />
+          <EntitySet Name="ViTri" EntityType="Self.ViTri" Schema="g6t_user" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -285,6 +293,7 @@
           <EntitySet Name="TrangThaiPhieu" EntityType="HospitalModel.TrangThaiPhieu" />
           <EntitySet Name="NCC_KH" EntityType="HospitalModel.NCC_KH" />
           <EntitySet Name="LoaiNCC_KH" EntityType="HospitalModel.LoaiNCC_KH" />
+          <EntitySet Name="ViTri" EntityType="HospitalModel.ViTri" />
         </EntityContainer>
         <EntityType Name="ChiTietPhanQuyen">
           <Key>
@@ -405,7 +414,7 @@
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NhomThuoc_ID" Type="Int32" />
           <Property Name="HangSanXuat_ID" Type="Int32" />
-          <Property Name="HoatChat_ID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HoatChat_ID" Type="Int32" />
           <Property Name="DVT_Nguyen_ID" Type="Int32" />
           <Property Name="DVT_Le_ID" Type="Int32" />
           <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -518,6 +527,13 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenLoaiNCC_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViTri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenViTri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -774,6 +790,14 @@
             <EntityTypeMapping TypeName="HospitalModel.LoaiNCC_KH">
               <MappingFragment StoreEntitySet="LoaiNCC_KH">
                 <ScalarProperty Name="TenLoaiNCC_KH" ColumnName="TenLoaiNCC_KH" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViTri">
+            <EntityTypeMapping TypeName="HospitalModel.ViTri">
+              <MappingFragment StoreEntitySet="ViTri">
+                <ScalarProperty Name="TenViTri" ColumnName="TenViTri" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

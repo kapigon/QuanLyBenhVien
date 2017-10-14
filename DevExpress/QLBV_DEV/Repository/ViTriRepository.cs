@@ -5,41 +5,35 @@ using System.Text;
 
 namespace QLBV_DEV.Repository
 {    
-    public partial class ThuocRepository
+    public partial class ViTriRepository
     {
         QLBV_DEV.Helpers.ErrorHandle myError = new QLBV_DEV.Helpers.ErrorHandle();
         HospitalEntities db = new HospitalEntities();
 
-        public IQueryable<Thuoc> GetAll()
+        public IQueryable<ViTri> GetAll()
         {
-            return from _object in db.Thuoc orderby _object.ID ascending select _object;
+            return from _object in db.ViTri orderby _object.ID ascending select _object;
         }
 
-        public IQueryable<Thuoc> GetAll(bool kichhoat)
+        public IQueryable<ViTri> GetAll(bool kichhoat)
         {
-            return from _object in db.Thuoc where (_object.KichHoat == kichhoat) orderby _object.ID ascending select _object;
+            return from _object in db.ViTri orderby _object.ID ascending select _object;
         }
 
-        public Thuoc GetSingle(long id)
+        public ViTri GetSingle(int id)
         {
-            return (from _object in db.Thuoc where _object.ID == id select _object).FirstOrDefault();
+            return (from _object in db.ViTri where _object.ID == id select _object).FirstOrDefault();
         }
 
-        public Thuoc GetSingleByTenThuoc(string tenThuoc)
+        public ViTri GetSingle(string TenViTri)
         {
-            return (from c in db.Thuoc.AsEnumerable() where Helpers.StringClearFormat.ClearCharacterSpecial(c.TenThuoc) == tenThuoc select c).FirstOrDefault();
+            return (from c in db.ViTri.AsEnumerable() where Helpers.StringClearFormat.ClearCharacterSpecial(c.TenViTri) == TenViTri select c).FirstOrDefault();
         }
-
-        public Thuoc GetSingleByMaThuoc(string maThuoc)
-        {
-            return (from c in db.Thuoc.AsEnumerable() where Helpers.StringClearFormat.ClearCharacterSpecial(c.MaThuoc) == maThuoc select c).FirstOrDefault();
-        }
-
-        public List<Thuoc> GetAll(int take, int pageSize, ref int count)
+        public List<ViTri> GetAll(int take, int pageSize, ref int count)
         {
             try
             {
-                var contents = (from c in db.Thuoc
+                var contents = (from c in db.ViTri
                                 orderby c.ID descending
                                 select c)
                                 .ToList()
@@ -56,12 +50,11 @@ namespace QLBV_DEV.Repository
             }
         }
 
-        public void Create(Thuoc _object)
+        public void Create(ViTri _object)
         {
             try
             {
-                _object.NgayTao = System.DateTime.Now;
-                db.Thuoc.Add(_object);
+                db.ViTri.Add(_object);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -74,8 +67,8 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                var _object = (from _list in db.Thuoc where _list.ID == id select _list).First();
-                db.Thuoc.Remove(_object);
+                var _object = (from _list in db.ViTri where _list.ID == id select _list).First();
+                db.ViTri.Remove(_object);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -84,11 +77,10 @@ namespace QLBV_DEV.Repository
             }
         }
 
-        public void Save(Thuoc _object)
+        public void Save(ViTri _object)
         {
             try
             {
-                //_object.EntityKey = (from Thuoc ac in db.Thuoc where ac.ID == _object.ID select ac).FirstOrDefault().EntityKey;
                 //_object.NgayTao = System.DateTime.Now;
                 db.SaveChanges();
             }
