@@ -17,6 +17,7 @@ namespace QLBV_DEV
         frmThemNhaCungCap frmThemNhaCungCap = new frmThemNhaCungCap();
         frmThemThuoc frmThemThuoc = new frmThemThuoc();
         frmDSNCC_KH frmDSNCC_KH = new frmDSNCC_KH();
+        frmDSNuocSanXuat frmDSNuocSanXuat = new frmDSNuocSanXuat();
 
         public frmMain()
         {
@@ -114,6 +115,27 @@ namespace QLBV_DEV
             {
                 frm.Activate();
             }
+        }
+
+        private void btnDSNuocSanXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmDSNuocSanXuat));
+            if (frm == null)
+            {
+                frmDSNuocSanXuat.MdiParent = this;
+                frmDSNuocSanXuat.FormClosed += new FormClosedEventHandler(close_form);
+                frmDSNuocSanXuat.Show();
+                
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void close_form(object sender, FormClosedEventArgs e)
+        {
+            frmDSNuocSanXuat = new frmDSNuocSanXuat();            
         }
     }
 }
