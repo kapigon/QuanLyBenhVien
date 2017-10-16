@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QLBV_DEV.Repository;
+using System.Collections;
 
 namespace QLBV_DEV
 {
@@ -16,6 +17,7 @@ namespace QLBV_DEV
         HospitalEntities db = new HospitalEntities();
         PhieuNhapThuocRepository repository_PhieuNhap = new PhieuNhapThuocRepository();
         CT_Thuoc_PhieuNhapRepository repository_CT_Thuoc = new CT_Thuoc_PhieuNhapRepository();
+        CT_Thuoc_PhieuNhap obj_CT_Thuoc = new CT_Thuoc_PhieuNhap();
 
         public frmPhieuNhapThuoc()
         {
@@ -95,35 +97,45 @@ namespace QLBV_DEV
         private void btnLuu_Click(object sender, EventArgs e)
         {
             dxValidate.Validate();
+            if (dxValidate.Validate())
+            {
+                int nccID = Convert.ToInt32(cbbNCC.EditValue);
+                String soPhieu = txtSoPhieu.Text;
+                String ghiChu = txtGhiChu.Text;
+                DateTime ngayNhap = dateNgayNhap.DateTime;
+                //MessageBox.Show(ngayNhap.ToString("dd/MM/yyyy"));
+                String soSeri = txtSeri.Text;
+                int thueSuat = Convert.ToInt32(cbbThueSuat.EditValue);
+                String soHD = txtSoHoaDon.Text;
+                DateTime ngayVietHD = dateNgayVietHD.DateTime;
 
-            int nccID = Convert.ToInt32(cbbNCC.EditValue);
-            String soPhieu = txtSoPhieu.Text;
-            String ghiChu = txtGhiChu.Text;
-            DateTime ngayNhap = dateNgayNhap.DateTime;
-            //MessageBox.Show(ngayNhap.ToString("dd/MM/yyyy"));
-            String soSeri = txtSeri.Text;
-            int thueSuat = Convert.ToInt32(cbbThueSuat.EditValue);
-            String soHD = txtSoHoaDon.Text;
-            DateTime ngayVietHD = dateNgayVietHD.DateTime;
+                PhieuNhapThuoc _object = new PhieuNhapThuoc();
+                _object.NCC_KH_ID = nccID;
+                _object.SoPhieu = soPhieu;
+                _object.GhiChu = ghiChu;
+                _object.NgayNhap = ngayNhap;
+                _object.ThueSuat = thueSuat;
+                _object.SoSeri = soSeri;
+                _object.SoHoaDon = soHD;
+                _object.NgayHoaDon = ngayVietHD;
+                _object.TongTienTruocThue = 0;
+                _object.ChietKhau = 0;
+                _object.TongTienTra = 0;
 
-            PhieuNhapThuoc _object = new PhieuNhapThuoc();
-            _object.NCC_KH_ID = nccID;
-            _object.SoPhieu = soPhieu;
-            _object.GhiChu = ghiChu;
-            _object.NgayNhap = ngayNhap;
-            _object.ThueSuat = thueSuat;
-            _object.SoSeri = soSeri;
-            _object.SoHoaDon = soHD;
-            _object.NgayHoaDon = ngayVietHD;
-            _object.TongTienTruocThue = 0;
-            _object.ChietKhau = 0;
-            _object.TongTienTra = 0;
+                MessageBox.Show("Lưu thành công");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi");
+
+            }
+            
 
         }
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -133,23 +145,48 @@ namespace QLBV_DEV
         #endregion
 
         private void grdDSThuoc_DoubleClick(object sender, EventArgs e)
-        {
-            //if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ID") == null)
-            //    return;
+        {   
             if (gridView1 == null || gridView1.SelectedRowsCount == 0) return;
 
-            DataRow[] rows = new DataRow[gridView1.SelectedRowsCount];
-            //int indexRow = gridView1.GetSelectedRows;
+            //DataRow[] rows = new DataRow[gridView1.SelectedRowsCount];
+            // DataRow row = gridView1.GetFocusedRow();
+            obj_CT_Thuoc = new CT_Thuoc_PhieuNhap();
+
+            int[] selectedRows = gridView1.GetSelectedRows();
+            foreach (int rowHandle in selectedRows)
+            {
+                long thuocID = 0;
+                if (rowHandle >= 0)
+                {
+                    thuocID = Convert.ToInt64(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Thuoc_ID_1"));
+                    obj_CT_Thuoc.Thuoc_ID = Convert.ToInt64(gridView1.GetRowCellValue(rowHandle, "Thuoc_ID_1"));
+                    obj_CT_Thuoc.Barcode = gridView1.GetRowCellValue(rowHandle, "Barcode").ToString();
+                    obj_CT_Thuoc.SoLuong = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "SoLuong"));
+                    obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DVT_Theo_DVT_Thuoc_ID"));
+
+                    frmCT_Thuoc_PhieuNhap frmCT_Thuoc = new frmCT_Thuoc_PhieuNhap();
+                    frmCT_Thuoc.loadData(thuocID, ref obj_CT_Thuoc);
+                    frmCT_Thuoc.ShowInTaskbar = false;
+                    frmCT_Thuoc.ShowDialog();
+
+                    // Call back
+                    //gridView1.SetRowCellValue(rowHandle, "SoLuong") = "";
+                }
+                     
+            }
+
+            /*
             long thuocID = 0;
             if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Thuoc_ID_1") != null)
                 thuocID = Convert.ToInt64(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Thuoc_ID_1").ToString());
+
             DataRow dr = null;
-            //dr = gridView1.GetFocusedDataRow();
             
             frmCT_Thuoc_PhieuNhap frmCT_Thuoc = new frmCT_Thuoc_PhieuNhap();
             frmCT_Thuoc.ShowDialog();
             frmCT_Thuoc.loadData(thuocID, dr);
             //MessageBox.Show(thuocID.ToString());
+            */
         }
     }
 }

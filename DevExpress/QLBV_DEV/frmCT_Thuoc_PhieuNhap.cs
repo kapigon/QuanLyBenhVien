@@ -30,6 +30,7 @@ namespace QLBV_DEV
         public frmCT_Thuoc_PhieuNhap()
         {
             InitializeComponent();
+            cbbTenThuoc.EditValue = 656;
         }
 
         #region methods
@@ -90,15 +91,47 @@ namespace QLBV_DEV
             cbbViTri.Properties.DataSource = rpo_ViTri.GetAll().ToList();
             cbbViTri.Properties.DisplayMember = "TenViTri";
             cbbViTri.Properties.ValueMember = "ID";
+
+            /// Đơn Vị Bán
+            cbbDonViNhap.Properties.DataSource = rpo_DVT.GetAll().ToList();
+            cbbDonViNhap.Properties.DisplayMember = "TenDVT";
+            cbbDonViNhap.Properties.ValueMember = "ID";
         }
 
-        public void loadData(long thuocID, DataRow dr)
+        public void loadData(long thuocID, ref CT_Thuoc_PhieuNhap obj_CT_Thuoc)
         {
             if (thuocID > 0)
             {
                 Thuoc obj_Thuoc = rpo_Thuoc.GetSingle(thuocID);
-                chkKichHoat.Checked = obj_Thuoc.KichHoat.Value;
+                if (obj_Thuoc != null)
+                {
+                    cbbTenThuoc.EditValue = thuocID.ToString();
+                   /* txtMaThuoc.Text             = obj_Thuoc.MaThuoc;
+                    cbbTenThuoc.EditValue       = obj_CT_Thuoc.ID;
+                    cbbNhomThuoc.EditValue      = obj_Thuoc.NhomThuoc_ID;
+                    cbbDonViNguyen.EditValue    = obj_Thuoc.DVT_Nguyen_ID;
+                    cbbDonViLe.EditValue        = obj_Thuoc.DVT_Le_ID;
+                    cbbHangSanXuat.EditValue    = obj_Thuoc.HangSanXuat_ID;
+                    cbbHoatChat.EditValue       = obj_Thuoc.HoatChat_ID;
+                    txtQuyCach.Text             = obj_Thuoc.QuyCach.ToString();
+                    txtTonKho.Text              = obj_Thuoc.TonKho.ToString();
+                    txtTonKhoToiThieu.Text      = obj_Thuoc.TonKhoToiThieu.ToString();
+                    txtGiaBanLe.Text            = obj_Thuoc.GiaBanLe.ToString();
+                    txtGiaBanBuon.Text          = obj_Thuoc.GiaBanBuon.ToString();
+                    txtCanhBaoHetHan.Text = obj_Thuoc.ThoiGianCanhBaoHetHan.ToString();
+                    if (obj_Thuoc.KichHoat != null)
+                        chkKichHoat.Checked     = obj_Thuoc.KichHoat.Value;*/
+                }
+               
+                txtSoLuong.Text         = obj_CT_Thuoc.SoLuong.ToString();
+                txtGiaNhap.Text         = obj_CT_Thuoc.GiaNhap.ToString();
+                txtBarcode.Text         = obj_CT_Thuoc.Barcode;
+                txtSoLo.Text            = obj_CT_Thuoc.SoLo != null ? obj_CT_Thuoc.SoLo.ToString() : "";
+                dateHSD.EditValue       = obj_CT_Thuoc.HSD != null ? obj_CT_Thuoc.HSD : DateTime.Now;
+                cbbViTri.EditValue      = obj_CT_Thuoc.Vitri_ID != null ? obj_CT_Thuoc.Vitri_ID : 0;
+                cbbKho.EditValue        = obj_CT_Thuoc.Kho_ID != null ? obj_CT_Thuoc.Kho_ID : 0;
 
+                //obj_CT_Thuoc.ID = 100;
             }
         }
         #endregion
@@ -140,18 +173,18 @@ namespace QLBV_DEV
             int soluong = txtSoLuong.Text.Trim() != "" ? Convert.ToInt32(txtSoLuong.Text) : 1;
             double gianhap = txtGiaNhap.Text.Trim() != "" ? Convert.ToDouble(txtGiaNhap.Text) : 1;
 
-            obj_CT_Thuoc.PhieuNhapHang_ID = 0;
-            obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID = Convert.ToInt32(cbbDonViNguyen.EditValue);
-            obj_CT_Thuoc.Thuoc_ID  = Convert.ToInt64(cbbTenThuoc.EditValue);
-            obj_CT_Thuoc.Kho_ID = Convert.ToInt32(cbbKho.EditValue);
-            obj_CT_Thuoc.Vitri_ID = Convert.ToInt32(cbbViTri.EditValue);
-            obj_CT_Thuoc.Barcode = txtBarcode.Text.Trim();
-            obj_CT_Thuoc.HSD = dateHSD.EditValue != "" ? Convert.ToDateTime(dateHSD.EditValue) : DateTime.Now;
-            obj_CT_Thuoc.GiaNhap = gianhap;
-            obj_CT_Thuoc.SoLuong = soluong;
-            obj_CT_Thuoc.SoLo = txtSoLo.Text.Trim();
-            obj_CT_Thuoc.TongTien = Convert.ToDouble(txtTongTien.Text);
-            obj_CT_Thuoc.NgayNhap = DateTime.Now;
+            obj_CT_Thuoc.PhieuNhapHang_ID           = 0;
+            obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID      = Convert.ToInt32(cbbDonViNhap.EditValue);
+            obj_CT_Thuoc.Thuoc_ID                   = Convert.ToInt64(cbbTenThuoc.EditValue);
+            obj_CT_Thuoc.Kho_ID                     = Convert.ToInt32(cbbKho.EditValue);
+            obj_CT_Thuoc.Vitri_ID                   = Convert.ToInt32(cbbViTri.EditValue);
+            obj_CT_Thuoc.Barcode                    = txtBarcode.Text.Trim();
+            obj_CT_Thuoc.HSD                        = dateHSD.EditValue.ToString() != "" ? Convert.ToDateTime(dateHSD.EditValue) : DateTime.Now;
+            obj_CT_Thuoc.GiaNhap                    = gianhap;
+            obj_CT_Thuoc.SoLuong                    = soluong;
+            obj_CT_Thuoc.SoLo                       = txtSoLo.Text.Trim();
+            obj_CT_Thuoc.TongTien                   = Convert.ToDouble(txtTongTien.Text);
+            obj_CT_Thuoc.NgayNhap                   = DateTime.Now;
 
             //rpo_CT_Thuoc.Create(obj_CT_Thuoc);
 
@@ -182,21 +215,27 @@ namespace QLBV_DEV
             long thuocID = Convert.ToInt64(cbbTenThuoc.EditValue);
             Thuoc obj_Thuoc = new Thuoc();
             obj_Thuoc = rpo_Thuoc.GetSingle(thuocID);
-            cbbNhomThuoc.EditValue = obj_Thuoc.NhomThuoc_ID;
-            cbbDonViNguyen.EditValue = obj_Thuoc.DVT_Nguyen_ID;
-            cbbDonViLe.EditValue = obj_Thuoc.DVT_Le_ID;
-            cbbHangSanXuat.EditValue = obj_Thuoc.HangSanXuat_ID;
-            cbbHoatChat.EditValue = obj_Thuoc.HoatChat_ID;
-            txtQuyCach.Text = obj_Thuoc.QuyCach.ToString();
-            txtTonKho.Text = obj_Thuoc.TonKho.ToString();
-            txtTonKhoToiThieu.Text = obj_Thuoc.TonKhoToiThieu.ToString();
-            txtGiaBanLe.Text = obj_Thuoc.GiaBanLe.ToString();
-            txtGiaBanBuon.Text = obj_Thuoc.GiaBanBuon.ToString();
-            txtCanhBaoHetHan.Text = obj_Thuoc.ThoiGianCanhBaoHetHan.ToString();
-            if(obj_Thuoc.KichHoat != null)
+
+            if (obj_Thuoc != null)
             {
-                chkKichHoat.Checked = obj_Thuoc.KichHoat.Value;
+                txtBarcode.Text             = obj_Thuoc.Barcode;
+                txtMaThuoc.Text             = obj_Thuoc.MaThuoc;
+                cbbNhomThuoc.EditValue      = obj_Thuoc.NhomThuoc_ID;
+                cbbDonViNguyen.EditValue    = obj_Thuoc.DVT_Nguyen_ID;
+                cbbDonViLe.EditValue        = obj_Thuoc.DVT_Le_ID;
+                cbbHangSanXuat.EditValue    = obj_Thuoc.HangSanXuat_ID;
+                cbbHoatChat.EditValue       = obj_Thuoc.HoatChat_ID;
+                txtQuyCach.Text             = obj_Thuoc.QuyCach.ToString();
+                txtTonKho.Text              = obj_Thuoc.TonKho.ToString();
+                txtTonKhoToiThieu.Text      = obj_Thuoc.TonKhoToiThieu.ToString();
+                txtGiaBanLe.Text            = obj_Thuoc.GiaBanLe.ToString();
+                txtGiaBanBuon.Text          = obj_Thuoc.GiaBanBuon.ToString();
+                txtCanhBaoHetHan.Text       = obj_Thuoc.ThoiGianCanhBaoHetHan.ToString();
+
+                if (obj_Thuoc.KichHoat != null)
+                    chkKichHoat.Checked     = obj_Thuoc.KichHoat.Value;
             }
+            
             //chkKichHoat.Checked = ((obj_Thuoc.KichHoat != null) ? Convert.ToBoolean(obj_Thuoc.KichHoat.Value) : false);
         }
         #endregion

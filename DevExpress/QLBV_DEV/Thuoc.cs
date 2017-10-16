@@ -27,7 +27,7 @@ namespace QLBV_DEV
         public Nullable<double> GiaBanBuon { get; set; }
         public Nullable<double> QuyCach { get; set; }
         public Nullable<int> TonKho { get; set; }
-        public Nullable<System.DateTime> ThoiGianCanhBaoHetHan { get; set; }
+        public Nullable<int> ThoiGianCanhBaoHetHan { get; set; }
         public Nullable<int> TonKhoToiThieu { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
         public Nullable<bool> KichHoat { get; set; }

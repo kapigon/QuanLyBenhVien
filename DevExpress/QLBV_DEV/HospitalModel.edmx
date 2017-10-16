@@ -155,7 +155,7 @@
           <Property Name="GiaBanBuon" Type="float" />
           <Property Name="QuyCach" Type="float" />
           <Property Name="TonKho" Type="int" />
-          <Property Name="ThoiGianCanhBaoHetHan" Type="date" />
+          <Property Name="ThoiGianCanhBaoHetHan" Type="int" />
           <Property Name="TonKhoToiThieu" Type="int" />
           <Property Name="NgayTao" Type="date" />
           <Property Name="KichHoat" Type="bit" />
@@ -424,7 +424,7 @@
           <Property Name="GiaBanBuon" Type="Double" />
           <Property Name="QuyCach" Type="Double" />
           <Property Name="TonKho" Type="Int32" />
-          <Property Name="ThoiGianCanhBaoHetHan" Type="DateTime" Precision="0" />
+          <Property Name="ThoiGianCanhBaoHetHan" Type="Int32" />
           <Property Name="TonKhoToiThieu" Type="Int32" />
           <Property Name="NgayTao" Type="DateTime" Precision="0" />
           <Property Name="KichHoat" Type="Boolean" />

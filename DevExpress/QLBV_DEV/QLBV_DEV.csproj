@@ -233,6 +233,9 @@
     <EmbeddedResource Include="frmCT_Thuoc_PhieuNhap.resx">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDonViTinh.resx">
+      <DependentUpon>frmDonViTinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDSNCC_KH.resx">
       <DependentUpon>frmDSNCC_KH.cs</DependentUpon>
     </EmbeddedResource>
