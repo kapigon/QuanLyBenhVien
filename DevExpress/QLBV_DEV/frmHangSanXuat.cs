@@ -53,6 +53,13 @@ namespace QLBV_DEV
             LoadDS_HangSanXuat();
         }
 
+        private void Xoatrang()
+        {
+            txtDiaChi.Text = "";
+            txtTenHangSanXuat.Text = "";
+            txtSDT.Text = ""; 
+        }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (HangSanXuat_Id > 0)
@@ -66,7 +73,7 @@ namespace QLBV_DEV
 
                     // Tải lại danh sách nước sản xuất
                     LoadDS_HangSanXuat();
-                    txtTenHangSanXuat.Text = "";
+                    Xoatrang();
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -140,7 +147,9 @@ namespace QLBV_DEV
                     obj_HangSanXuat = new HangSanXuat();
                 }
                 obj_HangSanXuat.TenHangSX = txtTenHangSanXuat.Text.Trim();
-
+                obj_HangSanXuat.DiaChi    = txtDiaChi.Text.Trim();
+                obj_HangSanXuat.SDT       = txtSDT.Text.Trim();
+                obj_HangSanXuat.KichHoat = true;     //Viết lại dòng này
                 if (isUpdate && HangSanXuat_Id > 0) // Cập nhật
                 {
                     //respository.Save(objNuocSanXuat);
@@ -152,7 +161,7 @@ namespace QLBV_DEV
                     repository.Create(obj_HangSanXuat);
                     //db.NCC_KH.Add(_object);
                     //db.SaveChanges(); 
-                    txtTenHangSanXuat.Text = "";
+                    Xoatrang();
                 }
                 LoadDS_HangSanXuat();
             }
@@ -223,7 +232,7 @@ namespace QLBV_DEV
         {
             layoutControlGroup2.Expanded = true;
             txtTenHangSanXuat.Focus();
-            txtTenHangSanXuat.Text = "";
+            Xoatrang();
             isUpdate = false;
         }
     }
