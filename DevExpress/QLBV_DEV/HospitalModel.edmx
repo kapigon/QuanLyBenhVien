@@ -119,6 +119,9 @@
           <Property Name="TongTienTruocThue" Type="float" />
           <Property Name="ChietKhau" Type="float" />
           <Property Name="TongTienTra" Type="float" />
+          <Property Name="UserTao" Type="int" />
+          <Property Name="Xoa" Type="bit" />
+          <Property Name="NgayXoa" Type="date" />
         </EntityType>
         <EntityType Name="PhieuXuatThuoc">
           <Key>
@@ -137,6 +140,7 @@
           <Property Name="TongTienTruocThue" Type="float" />
           <Property Name="ChietKhau" Type="float" />
           <Property Name="TongTienKHTra" Type="float" />
+          <Property Name="UserTao" Type="int" />
         </EntityType>
         <EntityType Name="Thuoc">
           <Key>
@@ -169,7 +173,7 @@
           <Property Name="DVT_Theo_DVT_Thuoc_ID" Type="int" />
           <Property Name="Thuoc_ID" Type="bigint" />
           <Property Name="Kho_ID" Type="int" />
-          <Property Name="Vitri_ID" Type="int" />
+          <Property Name="ViTri_ID" Type="int" />
           <Property Name="Barcode" Type="varchar" MaxLength="20" />
           <Property Name="HSD" Type="date" />
           <Property Name="GiaNhap" Type="float" />
@@ -177,6 +181,9 @@
           <Property Name="SoLo" Type="varchar" MaxLength="10" />
           <Property Name="TongTien" Type="float" />
           <Property Name="NgayNhap" Type="date" />
+          <Property Name="UserTao" Type="int" />
+          <Property Name="Xoa" Type="bit" />
+          <Property Name="NgayXoa" Type="date" />
         </EntityType>
         <EntityType Name="CT_Thuoc_PhieuXuat">
           <Key>
@@ -192,6 +199,7 @@
           <Property Name="SoLuong" Type="int" />
           <Property Name="TongTien" Type="float" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserTao" Type="int" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -388,6 +396,9 @@
           <Property Name="TongTienTruocThue" Type="Double" />
           <Property Name="ChietKhau" Type="Double" />
           <Property Name="TongTienTra" Type="Double" />
+          <Property Name="UserTao" Type="Int32" />
+          <Property Name="Xoa" Type="Boolean" />
+          <Property Name="NgayXoa" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="PhieuXuatThuoc">
           <Key>
@@ -406,6 +417,7 @@
           <Property Name="TongTienTruocThue" Type="Double" />
           <Property Name="ChietKhau" Type="Double" />
           <Property Name="TongTienKHTra" Type="Double" />
+          <Property Name="UserTao" Type="Int32" />
         </EntityType>
         <EntityType Name="Thuoc">
           <Key>
@@ -438,7 +450,7 @@
           <Property Name="DVT_Theo_DVT_Thuoc_ID" Type="Int32" />
           <Property Name="Thuoc_ID" Type="Int64" />
           <Property Name="Kho_ID" Type="Int32" />
-          <Property Name="Vitri_ID" Type="Int32" />
+          <Property Name="ViTri_ID" Type="Int32" />
           <Property Name="Barcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="HSD" Type="DateTime" Precision="0" />
           <Property Name="GiaNhap" Type="Double" />
@@ -446,6 +458,9 @@
           <Property Name="SoLo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="TongTien" Type="Double" />
           <Property Name="NgayNhap" Type="DateTime" Precision="0" />
+          <Property Name="UserTao" Type="Int32" />
+          <Property Name="Xoa" Type="Boolean" />
+          <Property Name="NgayXoa" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="CT_Thuoc_PhieuXuat">
           <Key>
@@ -461,6 +476,7 @@
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="TongTien" Type="Double" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserTao" Type="Int32" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -629,6 +645,9 @@
           <EntitySetMapping Name="PhieuNhapThuoc">
             <EntityTypeMapping TypeName="HospitalModel.PhieuNhapThuoc">
               <MappingFragment StoreEntitySet="PhieuNhapThuoc">
+                <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
+                <ScalarProperty Name="Xoa" ColumnName="Xoa" />
+                <ScalarProperty Name="UserTao" ColumnName="UserTao" />
                 <ScalarProperty Name="TongTienTra" ColumnName="TongTienTra" />
                 <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
                 <ScalarProperty Name="TongTienTruocThue" ColumnName="TongTienTruocThue" />
@@ -647,6 +666,7 @@
           <EntitySetMapping Name="PhieuXuatThuoc">
             <EntityTypeMapping TypeName="HospitalModel.PhieuXuatThuoc">
               <MappingFragment StoreEntitySet="PhieuXuatThuoc">
+                <ScalarProperty Name="UserTao" ColumnName="UserTao" />
                 <ScalarProperty Name="TongTienKHTra" ColumnName="TongTienKHTra" />
                 <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
                 <ScalarProperty Name="TongTienTruocThue" ColumnName="TongTienTruocThue" />
@@ -689,6 +709,10 @@
           <EntitySetMapping Name="CT_Thuoc_PhieuNhap">
             <EntityTypeMapping TypeName="HospitalModel.CT_Thuoc_PhieuNhap">
               <MappingFragment StoreEntitySet="CT_Thuoc_PhieuNhap">
+                <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
+                <ScalarProperty Name="Xoa" ColumnName="Xoa" />
+                <ScalarProperty Name="UserTao" ColumnName="UserTao" />
+                <ScalarProperty Name="ViTri_ID" ColumnName="ViTri_ID" />
                 <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
                 <ScalarProperty Name="TongTien" ColumnName="TongTien" />
                 <ScalarProperty Name="SoLo" ColumnName="SoLo" />
@@ -696,7 +720,6 @@
                 <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
                 <ScalarProperty Name="HSD" ColumnName="HSD" />
                 <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-                <ScalarProperty Name="Vitri_ID" ColumnName="Vitri_ID" />
                 <ScalarProperty Name="Kho_ID" ColumnName="Kho_ID" />
                 <ScalarProperty Name="Thuoc_ID" ColumnName="Thuoc_ID" />
                 <ScalarProperty Name="DVT_Theo_DVT_Thuoc_ID" ColumnName="DVT_Theo_DVT_Thuoc_ID" />
@@ -708,6 +731,7 @@
           <EntitySetMapping Name="CT_Thuoc_PhieuXuat">
             <EntityTypeMapping TypeName="HospitalModel.CT_Thuoc_PhieuXuat">
               <MappingFragment StoreEntitySet="CT_Thuoc_PhieuXuat">
+                <ScalarProperty Name="UserTao" ColumnName="UserTao" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="TongTien" ColumnName="TongTien" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />

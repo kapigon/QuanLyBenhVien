@@ -27,5 +27,6 @@ namespace QLBV_DEV
         public Nullable<double> TongTienTruocThue { get; set; }
         public Nullable<double> ChietKhau { get; set; }
         public Nullable<double> TongTienKHTra { get; set; }
+        public Nullable<int> UserTao { get; set; }
     }
 }

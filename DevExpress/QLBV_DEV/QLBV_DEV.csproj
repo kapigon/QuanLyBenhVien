@@ -143,11 +143,11 @@
     <Compile Include="frmPhieuNhap.Designer.cs">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThemNhaCungCap.cs">
+    <Compile Include="frmThemNCC_KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemNhaCungCap.Designer.cs">
-      <DependentUpon>frmThemNhaCungCap.cs</DependentUpon>
+    <Compile Include="frmThemNCC_KH.Designer.cs">
+      <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemNuocSanXuat.cs">
       <SubType>Form</SubType>
@@ -267,8 +267,8 @@
     <EmbeddedResource Include="frmPhieuNhap.resx">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThemNhaCungCap.resx">
-      <DependentUpon>frmThemNhaCungCap.cs</DependentUpon>
+    <EmbeddedResource Include="frmThemNCC_KH.resx">
+      <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemNuocSanXuat.resx">
       <DependentUpon>frmThemNuocSanXuat.cs</DependentUpon>

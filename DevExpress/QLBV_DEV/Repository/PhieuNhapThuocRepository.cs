@@ -15,6 +15,11 @@ namespace QLBV_DEV.Repository
             return from _object in db.PhieuNhapThuoc orderby _object.ID ascending select _object;
         }
 
+        public IQueryable<PhieuNhapThuoc> GetAllNotDelete()
+        {
+            return from _object in db.PhieuNhapThuoc where _object.Xoa != true orderby _object.ID ascending select _object;
+        }
+
         public PhieuNhapThuoc GetSingle(long id)
         {
             return (from _object in db.PhieuNhapThuoc where _object.ID == id select _object).FirstOrDefault();

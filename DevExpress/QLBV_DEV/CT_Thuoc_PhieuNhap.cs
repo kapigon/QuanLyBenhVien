@@ -19,7 +19,7 @@ namespace QLBV_DEV
         public Nullable<int> DVT_Theo_DVT_Thuoc_ID { get; set; }
         public Nullable<long> Thuoc_ID { get; set; }
         public Nullable<int> Kho_ID { get; set; }
-        public Nullable<int> Vitri_ID { get; set; }
+        public Nullable<int> ViTri_ID { get; set; }
         public string Barcode { get; set; }
         public Nullable<System.DateTime> HSD { get; set; }
         public Nullable<double> GiaNhap { get; set; }
@@ -27,5 +27,8 @@ namespace QLBV_DEV
         public string SoLo { get; set; }
         public Nullable<double> TongTien { get; set; }
         public Nullable<System.DateTime> NgayNhap { get; set; }
+        public Nullable<int> UserTao { get; set; }
+        public Nullable<bool> Xoa { get; set; }
+        public Nullable<System.DateTime> NgayXoa { get; set; }
     }
 }
