@@ -29,7 +29,6 @@ D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.dll
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.SqlServer.dll
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.xml
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.SqlServer.xml
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.csprojResolveAssemblyReference.cache
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmCT_Thuoc_PhieuNhap.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDonViTinh.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSNCC_KH.resources
@@ -38,7 +37,7 @@ D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSPhieuNhap.
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmHoatChat.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmMain.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPhieuNhapThuoc.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemNhaCungCap.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemNCC_KH.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemNuocSanXuat.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemThuoc.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.Properties.Resources.resources

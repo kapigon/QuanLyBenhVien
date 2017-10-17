@@ -114,6 +114,9 @@
     <Property Name="TongTienTruocThue" Type="float" />
     <Property Name="ChietKhau" Type="float" />
     <Property Name="TongTienTra" Type="float" />
+    <Property Name="UserTao" Type="int" />
+    <Property Name="Xoa" Type="bit" />
+    <Property Name="NgayXoa" Type="date" />
   </EntityType>
   <EntityType Name="PhieuXuatThuoc">
     <Key>
@@ -132,6 +135,7 @@
     <Property Name="TongTienTruocThue" Type="float" />
     <Property Name="ChietKhau" Type="float" />
     <Property Name="TongTienKHTra" Type="float" />
+    <Property Name="UserTao" Type="int" />
   </EntityType>
   <EntityType Name="Thuoc">
     <Key>
@@ -164,7 +168,7 @@
     <Property Name="DVT_Theo_DVT_Thuoc_ID" Type="int" />
     <Property Name="Thuoc_ID" Type="bigint" />
     <Property Name="Kho_ID" Type="int" />
-    <Property Name="Vitri_ID" Type="int" />
+    <Property Name="ViTri_ID" Type="int" />
     <Property Name="Barcode" Type="varchar" MaxLength="20" />
     <Property Name="HSD" Type="date" />
     <Property Name="GiaNhap" Type="float" />
@@ -172,6 +176,9 @@
     <Property Name="SoLo" Type="varchar" MaxLength="10" />
     <Property Name="TongTien" Type="float" />
     <Property Name="NgayNhap" Type="date" />
+    <Property Name="UserTao" Type="int" />
+    <Property Name="Xoa" Type="bit" />
+    <Property Name="NgayXoa" Type="date" />
   </EntityType>
   <EntityType Name="CT_Thuoc_PhieuXuat">
     <Key>
@@ -187,6 +194,7 @@
     <Property Name="SoLuong" Type="int" />
     <Property Name="TongTien" Type="float" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserTao" Type="int" />
   </EntityType>
   <EntityType Name="HangSanXuat">
     <Key>

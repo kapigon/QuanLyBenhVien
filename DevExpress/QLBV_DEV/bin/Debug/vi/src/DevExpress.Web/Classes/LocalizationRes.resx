@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxperienceStringId.CallbackGenericErrorText">
+    <value>Callback request failed due to an internal server error.</value>
+  </data>
+  <data name="ASPxperienceStringId.Loading">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_All">
+    <value>All</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_First">
+    <value>First</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_Prev">
+    <value>Prev</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_Next">
+    <value>Next</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_Last">
+    <value>Last</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_SummaryFormat">
+    <value>Page {0} of {1} ({2} items)</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_SummaryAllPagesFormat">
+    <value>Pages: {0} - {1} ({2} items)</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_SummaryEmptyText">
+    <value>No data to paginate</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_PageSize">
+    <value>Page size:</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_PageSizeAllItem">
+    <value>All</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_PagerSummaryFormat">
+    <value>Page {0} of {1}</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_PagerSummaryAllPages">
+    <value>All pages</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_PagerPageSize">
+    <value>Page size:</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_PagerRowPerPage">
+    <value>Rows per page:</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_ShowMoreItemsText">
+    <value>Show more items...</value>
+  </data>
+  <data name="ASPxperienceStringId.DataViewBase_EmptyDataText">
+    <value>No data to display</value>
+  </data>
+  <data name="ASPxperienceStringId.NewsControl_BackToTop">
+    <value>Back to top</value>
+  </data>
+  <data name="ASPxperienceStringId.NewsControl_Page">
+    <value>Page:</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_CloseButton">
+    <value>[Close]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_PinButton">
+    <value>[Pin/Unpin]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_RefreshButton">
+    <value>[Refresh]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_CollapseButton">
+    <value>[Collapse/Expand]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_MaximizeButton">
+    <value>[Maximize/Restore]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_SizeGrip">
+    <value>[Resize]</value>
+  </data>
+  <data name="ASPxperienceStringId.RoundPanel_CollapseButton">
+    <value>[Collapse/Expand]</value>
+  </data>
+  <data name="ASPxperienceStringId.TitleIndex_FilterCaption">
+    <value>Filter:&amp;nbsp;&amp;nbsp;&amp;nbsp;</value>
+  </data>
+  <data name="ASPxperienceStringId.TitleIndex_FilterHint">
+    <value>&lt;b&gt;?&lt;/b&gt; = any single character
+&lt;b&gt;*&lt;/b&gt; = any characters</value>
+  </data>
+  <data name="ASPxperienceStringId.TitleIndex_BackToTop">
+    <value>[Back to Top]</value>
+  </data>
+  <data name="ASPxperienceStringId.TitleIndex_NoData">
+    <value>No data for this filter criteria</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_MaxSize">
+    <value>File size exceeds the maximum allowed size, which is {0} bytes</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_AccessDeniedError">
+    <value>Access to the server path "{0}" is denied. The reason might be due to lack of permissions to write files in this (or parent) folder.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_GeneralError">
+    <value>File upload failed due to an external error</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_UnspecifiedError">
+    <value>The server encountered an internal unspecified error that prevented it from fulfilling the request.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_UploadWasCanceledError">
+    <value>File upload was canceled.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_PlatformErrorText">
+    <value>Please use a browser with HTML5 support; or install &lt;a href="{0}"&gt;Microsoft Silverlight v3 or later&lt;/a&gt; to view this content and have an ability to upload files.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_EnctypeError">
+    <value>File uploading fails because the form's enctype attribute is not set to 'multipart/form-data'</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_MultiSelection">
+    <value>Attention! 
+
+{0} files are invalid and will not be uploaded. Possible reasons are: they exceed the allowed file size ({1}), their extensions are not allowed, or their filenames contain invalid characters. These files have been removed from the selection: 
+
+{2}</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_NotAllowedContentTypes">
+    <value>This content type isn't allowed</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_NotAllowedFileExtension">
+    <value>This file extension isn't allowed</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_FileDoesNotExistError">
+    <value>The uploading file doesn't exist</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_ClearFileSelectionButtonToolTip">
+    <value>Clear selection</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_RemoveButton">
+    <value>Remove</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_AddButton">
+    <value>Add</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_BrowseButton">
+    <value>Browse...</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_UploadButton">
+    <value>Upload</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_CancelButton">
+    <value>Cancel</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_InvalidWindowsFileName">
+    <value>The file name contains invalid characters.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_SelectedSeveralFiles">
+    <value>{0} files are selected for upload</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_TooManyFilesError">
+    <value>Too many files are selected. Reduce the number of selected files and try again.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_OperationTimeoutError">
+    <value>The file upload cannot be completed due to an operation timeout. Reload the web page and upload your file(s) once again.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_UploadModeNotSupported">
+    <value>Your browser does not support this file upload mode.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_DropZone">
+    <value>Drop files here</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_DragAndDropMoreThanOneFileError">
+    <value>You dragged more than one file, whereas multiple file selection is not allowed. Please drag a single file only.</value>
+  </data>
+  <data name="ASPxperienceStringId.TreeView_AltExpand">
+    <value>Expand</value>
+  </data>
+  <data name="ASPxperienceStringId.TreeView_AltCollapse">
+    <value>Collapse</value>
+  </data>
+  <data name="ASPxperienceStringId.TreeView_AltLoading">
+    <value>Loading</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FolderLocked">
+    <value>Locked for upload</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Folder">
+    <value>Folder</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Filter">
+    <value>Filter by:</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Path">
+    <value>Path:</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbCreate">
+    <value>Create (F7)</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbRename">
+    <value>Rename (F2)</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbMove">
+    <value>Move (F6)</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbDelete">
+    <value>Delete (Del)</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbRefresh">
+    <value>Refresh</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbDownload">
+    <value>Download</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbCopy">
+    <value>Copy</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_DeleteConfirm">
+    <value>Are you sure you want to delete '{0}'?</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FolderBrowserPopupHeader">
+    <value>Select Destination Folder</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Ok">
+    <value>OK</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Cancel">
+    <value>Cancel</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_NewFolderName">
+    <value>NewFolder</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_InformationUnitSymbol">
+    <value>B</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorRootFolderNotSpecified">
+    <value>The root folder is not specified or does not exist</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorNoAccess">
+    <value>Access denied. The operation cannot be completed</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorIO">
+    <value>Unspecified IO error. The operation cannot be completed</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorFileNotFound">
+    <value>File not found</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorFolderNotFound">
+    <value>Folder not found</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorOther">
+    <value>Unspecified error</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorNameCannotBeEmpty">
+    <value>The file/folder name cannot be empty</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorInvalidSymbols">
+    <value>This name contains invalid characters. The operation cannot be completed</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorWrongExtension">
+    <value>This file extension is not allowed. The operation cannot be completed</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorAlreadyExists">
+    <value>The specified file/folder already exists</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorAccessProhibited">
+    <value>Access prohibited. The operation cannot be completed</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorCloudAccessFailed">
+    <value>Failed to access a remote cloud service</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorPathToLong">
+    <value>The specified path, file name, or both are too long</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorThumbnail">
+    <value>No access to the thumbnail folder</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorUsedByAnotherProcess">
+    <value>The operation cannot be completed because the file/folder is being used by another process</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorUploadSeveralFiles">
+    <value>The upload was unsuccessful for {0} of {1} files</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeEmpty">
+    <value>Empty ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeTiny">
+    <value>Tiny ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeSmall">
+    <value>Small ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeMedium">
+    <value>Medium ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeLarge">
+    <value>Large ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeHuge">
+    <value>Huge ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeGigantic">
+    <value>Gigantic ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_DateToday">
+    <value>Today</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_DateWeek">
+    <value>Last 7 days</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_DateMonth">
+    <value>Last 30 days</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_DateYear">
+    <value>Last 365 days</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FileInfoTypeCaption_FileName">
+    <value>Name</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FileInfoTypeCaption_LastWriteTime">
+    <value>Date modified</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FileInfoTypeCaption_Size">
+    <value>Size</value>
+  </data>
+  <data name="ASPxperienceStringId.Ribbon_FileTabText">
+    <value>File</value>
+  </data>
+  <data name="ASPxperienceStringId.ImageZoom_HintText">
+    <value>Zoom</value>
+  </data>
+</root>

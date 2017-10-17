@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Workflow">
+        <Items>
+          <Item Id="DatabaseWorkflows" Caption="Database Flussi di Lavoro" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="SequentalWorkflowData_DetailView">
+      <Layout>
+        <TabbedGroup Id="Item2">
+          <LayoutGroup Id="Main">
+            <LayoutGroup Id="SimpleEditors" Caption="Editors Semplici">
+              <LayoutGroup Id="WorkflowData" Caption="Dati Flusso di Lavoro" />
+            </LayoutGroup>
+            <LayoutGroup Id="SizeableEditors" Caption="Editors Ridimensionabili" />
+          </LayoutGroup>
+          <LayoutGroup Id="Item1" Caption="Flusso di Lavoro" />
+        </TabbedGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="StateMachineWorkflowData_DetailView">
+      <Layout>
+        <TabbedGroup Id="Item2">
+          <LayoutGroup Id="Main">
+            <LayoutGroup Id="SimpleEditors" Caption="Editors Semplici">
+              <LayoutGroup Id="WorkflowData" Caption="Dati Flusso di Lavoro" />
+            </LayoutGroup>
+            <LayoutGroup Id="SizeableEditors" Caption="Editors Ridimensionabili" />
+          </LayoutGroup>
+          <LayoutGroup Id="Item1" Caption="Flusso di Lavoro" />
+        </TabbedGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="Activate" Caption="Kích hoạt" />
+      <Action Id="CancelWorkflowInstance" Caption="Hủy" ConfirmationMessage="Bạn sắp hủy bỏ (các) mục đã chọn. Bạn có muốn tiếp tục không?" />
+      <Action Id="Deactivate" Caption="Bỏ kích hoạt" />
+      <Action Id="ResumeWorkflowInstance" Caption="Hồi phục" ConfirmationMessage="Bạn sắp hồi phục (các) mục được chọn. Bạn có muốn tiếp tục không?" />
+      <Action Id="ShowWorkflowInstances" Caption="Hiển thị Các ví dụ Workflow" />
+      <Action Id="SuspendWorkflowInstance" Caption="Hoãn" ConfirmationMessage="Bạn sắp hoãn (các) mục được chọn. Bạn có muốn tiếp tục không?" />
+      <Action Id="TerminateWorkflowInstance" Caption="Chấm dứt" ConfirmationMessage="Bạn sắp chấm dứt (các) mục được chọn. Bạn có muốn tiếp tục không?" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.Workflow.DC.IDCWorkflowDefinition">
+      <OwnMembers>
+        <Member Name="AutoStartWhenObjectFitsCriteria" Caption="Tự động Bắt đầu Khi Đối tượng Hợp với Biểu thức lọc" />
+        <Member Name="AutoStartWhenObjectIsCreated" Caption="Tự động Bắt đầu Khi Đối tượng Được tạo" />
+        <Member Name="Criteria" Caption="Biểu thức lọc" />
+        <Member Name="IsActive" Caption="Là Đang hoạt động" />
+        <Member Name="Name" Caption="Tên" />
+        <Member Name="TargetObjectType" Caption="Kiểu Đối tượng Mục tiêu" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Workflow.Versioning.IUserActivityVersion" Caption="Phiên bản cuối IUser">
+      <OwnMembers>
+        <Member Name="Version" Caption="Phiên bản" />
+        <Member Name="WorkflowUniqueId" Caption="Id Duy nhất Workflow" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Workflow.Versioning.XpoUserActivityVersion" Caption="Phiên bản cuối  Xpo User">
+      <OwnMembers>
+        <Member Name="Version" Caption="Phiên bản" />
+        <Member Name="WorkflowUniqueId" Caption="Id Duy nhất Workflow" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Workflow.Xpo.WFBaseObject" Caption="Đối tượng WFBase" />
+    <Class Name="DevExpress.ExpressApp.Workflow.Xpo.XpoRunningWorkflowInstanceInfo" Caption="Chạy Thông tin Ví dụ Workflow">
+      <OwnMembers>
+        <Member Name="ActivityInstanceId" Caption="Id Ví dụ Hoạt động" />
+        <Member Name="State" Caption="Tình trạng" />
+        <Member Name="TargetObjectHandle" Caption="Xử lý Đối tượng Mục tiêu" />
+        <Member Name="TrackingRecords" Caption="Các bản ghi Lưu vết" />
+        <Member Name="TrackingRecordVisualizationInfo" Caption="Thông tin Theo dõi Bản ghi Lưu vết" />
+        <Member Name="WorkflowName" Caption="Tên Workflow" />
+        <Member Name="WorkflowUniqueId" Caption="Id Duy nhất Workflow" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Workflow.Xpo.XpoStartWorkflowRequest">
+      <OwnMembers>
+        <Member Name="TargetObjectKey" Caption="Chìa khóa Đối tượng Mục tiêu" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Workflow.Xpo.XpoWorkflowDefinition" Caption="Định nghĩa Workflow">
+      <OwnMembers>
+        <Member Name="AutoStartWhenObjectFitsCriteria" Caption="Tự động Bắt đầu Khi Đối tượng Hợp với Biểu thức lọc" />
+        <Member Name="AutoStartWhenObjectIsCreated" Caption="Tự động Bắt đầu Khi Đối tượng Được tạo" />
+        <Member Name="Criteria" Caption="Biểu thức lọc" />
+        <Member Name="IsActive" Caption="Là Đang hoạt động" />
+        <Member Name="Name" Caption="Tên" />
+        <Member Name="TargetObjectType" Caption="Kiểu Đối tượng Mục tiêu" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Workflow.Xpo.XpoWorkflowInstanceControlCommandRequest">
+      <OwnMembers>
+        <Member Name="Command" Caption="Lệnh" />
+        <Member Name="CreatedOn" Caption="Tạo lúc" />
+        <Member Name="Result" Caption="Kết quả" />
+        <Member Name="TargetActivityInstanceId" Caption="Id Ví dụ Hoạt động Mục tiêu" />
+        <Member Name="TargetWorkflowUniqueId" Caption="Id Duy nhất Workflow Mục tiêu" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Workflow.Xpo.XpoTrackingRecord" Caption="Bản ghi Lưu vết Xpo">
+      <OwnMembers>
+        <Member Name="ActivityId" Caption="Id Hoạt động" />
+        <Member Name="Data" Caption="Dữ liệu" />
+        <Member Name="DateTime" Caption="Ngày Giờ" />
+        <Member Name="InstanceId" Caption="Id Ví dụ" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Workflow.Xpo.XpoWorkflowInstance">
+      <OwnMembers>
+        <Member Name="ExpirationDateTime" Caption="Ngày Giờ Đến hạn" />
+        <Member Name="InstanceId" Caption="Id Ví dụ" />
+        <Member Name="Status" Caption="Trạng thái" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.ExpressApp.Workflow.WorkflowControlCommand" Value="Lệnh Điều khiển Workflow">
+        <LocalizationItem Name="Cancel" Value="Hủy" />
+        <LocalizationItem Name="Resume" Value="Hồi phục" />
+        <LocalizationItem Name="Suspend" Value="Hoãn" />
+        <LocalizationItem Name="Terminate" Value="Chấm dứt" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="System.Activities.ActivityInstanceState" Value="Trạng thái Ví dụ Hoạt động">
+        <LocalizationItem Name="Canceled" Value="Bị hủy" />
+        <LocalizationItem Name="Closed" Value="Đã đóng" />
+        <LocalizationItem Name="Executing" Value="Đang thực hiện" />
+        <LocalizationItem Name="Faulted" Value="Bị sự cố" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <Views>
+    <DetailView Id="IDCWorkflowDefinition_DetailView">
+      <Items>
+        <PropertyEditor Id="AutoStartWhenObjectFitsCriteria" Caption="Đối tượng Hợp với Biểu thức lọc" />
+        <PropertyEditor Id="AutoStartWhenObjectIsCreated" Caption="Đối tượng Được tạo" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main_Copy">
+          <LayoutGroup Id="SizeableEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="XpoWorkflowDefinition" Caption="Các thuộc tính">
+                <LayoutGroup Id="Item2" Caption="Tự động bắt đầu khi:" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item2" Caption="Trình thiết kế" />
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="XpoRunningWorkflowInstanceInfo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="XpoRunningWorkflowInstanceInfo" Caption="Chạy Thông tin Ví dụ Workflow" />
+          </LayoutGroup>
+          <LayoutGroup Id="TrackingRecords_Group" Caption="Các bản ghi Lưu vết" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="XpoWorkflowDefinition_DetailView">
+      <Items>
+        <PropertyEditor Id="AutoStartWhenObjectFitsCriteria" Caption="Đối tượng Hợp với Biểu thức lọc" />
+        <PropertyEditor Id="AutoStartWhenObjectIsCreated" Caption="Đối tượng Được tạo" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main_Copy">
+          <LayoutGroup Id="SizeableEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="XpoWorkflowDefinition" Caption="Các thuộc tính">
+                <LayoutGroup Id="Item2" Caption="Tự động bắt đầu khi:" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item2" Caption="Trình thiết kế" />
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
