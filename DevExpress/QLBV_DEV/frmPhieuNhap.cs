@@ -145,7 +145,9 @@ namespace QLBV_DEV
         #endregion
 
         private void grdDSThuoc_DoubleClick(object sender, EventArgs e)
-        {   
+        {
+            int index = gridView1.FocusedRowHandle;
+
             if (gridView1 == null || gridView1.SelectedRowsCount == 0) return;
 
             //DataRow[] rows = new DataRow[gridView1.SelectedRowsCount];

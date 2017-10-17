@@ -23,7 +23,6 @@
     <EntitySetMapping Name="DonViTinh">
       <EntityTypeMapping TypeName="HospitalModel.DonViTinh">
         <MappingFragment StoreEntitySet="DonViTinh">
-          <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
           <ScalarProperty Name="TenDVT" ColumnName="TenDVT" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
@@ -48,28 +47,6 @@
           <ScalarProperty Name="GiaBanCu" ColumnName="GiaBanCu" />
           <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
           <ScalarProperty Name="ThuocID" ColumnName="ThuocID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="NCC_KH">
-      <EntityTypeMapping TypeName="HospitalModel.NCC_KH">
-        <MappingFragment StoreEntitySet="NCC_KH">
-          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
-          <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
-          <ScalarProperty Name="LoaiNCC_KH" ColumnName="LoaiNCC_KH" />
-          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-          <ScalarProperty Name="Website" ColumnName="Website" />
-          <ScalarProperty Name="Fax" ColumnName="Fax" />
-          <ScalarProperty Name="ChiNhanh" ColumnName="ChiNhanh" />
-          <ScalarProperty Name="NganHang" ColumnName="NganHang" />
-          <ScalarProperty Name="SoTaiKhoan" ColumnName="SoTaiKhoan" />
-          <ScalarProperty Name="MST" ColumnName="MST" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="TenNCC_KH" ColumnName="TenNCC_KH" />
-          <ScalarProperty Name="MaNCC_KH" ColumnName="MaNCC_KH" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -243,6 +220,44 @@
       <EntityTypeMapping TypeName="HospitalModel.TrangThaiPhieu">
         <MappingFragment StoreEntitySet="TrangThaiPhieu">
           <ScalarProperty Name="TenTrangThai" ColumnName="TenTrangThai" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NCC_KH">
+      <EntityTypeMapping TypeName="HospitalModel.NCC_KH">
+        <MappingFragment StoreEntitySet="NCC_KH">
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="ChiNhanh" ColumnName="ChiNhanh" />
+          <ScalarProperty Name="NganHang" ColumnName="NganHang" />
+          <ScalarProperty Name="SoTaiKhoan" ColumnName="SoTaiKhoan" />
+          <ScalarProperty Name="MST" ColumnName="MST" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="TenNCC_KH" ColumnName="TenNCC_KH" />
+          <ScalarProperty Name="MaNCC_KH" ColumnName="MaNCC_KH" />
+          <ScalarProperty Name="LoaiNCC_KH_ID" ColumnName="LoaiNCC_KH_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiNCC_KH">
+      <EntityTypeMapping TypeName="HospitalModel.LoaiNCC_KH">
+        <MappingFragment StoreEntitySet="LoaiNCC_KH">
+          <ScalarProperty Name="TenLoaiNCC_KH" ColumnName="TenLoaiNCC_KH" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViTri">
+      <EntityTypeMapping TypeName="HospitalModel.ViTri">
+        <MappingFragment StoreEntitySet="ViTri">
+          <ScalarProperty Name="TenViTri" ColumnName="TenViTri" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

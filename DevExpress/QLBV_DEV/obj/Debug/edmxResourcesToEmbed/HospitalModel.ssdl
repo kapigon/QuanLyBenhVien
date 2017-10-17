@@ -23,7 +23,6 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenDVT" Type="nvarchar" MaxLength="50" />
-    <Property Name="KichHoat" Type="bit" />
   </EntityType>
   <EntityType Name="Kho">
     <Key>
@@ -51,6 +50,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoaiNCC_KH_ID" Type="int" />
     <Property Name="MaNCC_KH" Type="varchar" MaxLength="50" />
     <Property Name="TenNCC_KH" Type="nvarchar" MaxLength="150" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
@@ -63,7 +63,6 @@
     <Property Name="Fax" Type="varchar" MaxLength="20" />
     <Property Name="Website" Type="nvarchar" MaxLength="50" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="200" />
-    <Property Name="LoaiNCC_KH" Type="int" />
     <Property Name="KichHoat" Type="bit" />
     <Property Name="NgayTao" Type="date" />
   </EntityType>
@@ -109,8 +108,8 @@
     <Property Name="GhiChu" Type="nvarchar" MaxLength="150" />
     <Property Name="NgayNhap" Type="date" />
     <Property Name="ThueSuat" Type="float" />
-    <Property Name="SoSeri" Type="nchar" MaxLength="50" />
-    <Property Name="SoHoaDon" Type="nchar" MaxLength="50" />
+    <Property Name="SoSeri" Type="varchar" MaxLength="20" />
+    <Property Name="SoHoaDon" Type="varchar" MaxLength="20" />
     <Property Name="NgayHoaDon" Type="date" />
     <Property Name="TongTienTruocThue" Type="float" />
     <Property Name="ChietKhau" Type="float" />
@@ -141,7 +140,7 @@
     <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NhomThuoc_ID" Type="int" />
     <Property Name="HangSanXuat_ID" Type="int" />
-    <Property Name="HoatChat_ID" Type="nvarchar" MaxLength="250" />
+    <Property Name="HoatChat_ID" Type="int" />
     <Property Name="DVT_Nguyen_ID" Type="int" />
     <Property Name="DVT_Le_ID" Type="int" />
     <Property Name="Barcode" Type="varchar" MaxLength="50" />
@@ -151,7 +150,7 @@
     <Property Name="GiaBanBuon" Type="float" />
     <Property Name="QuyCach" Type="float" />
     <Property Name="TonKho" Type="int" />
-    <Property Name="ThoiGianCanhBaoHetHan" Type="date" />
+    <Property Name="ThoiGianCanhBaoHetHan" Type="int" />
     <Property Name="TonKhoToiThieu" Type="int" />
     <Property Name="NgayTao" Type="date" />
     <Property Name="KichHoat" Type="bit" />
@@ -213,6 +212,13 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenDonThuoc" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="LoaiNCC_KH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiNCC_KH" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="NuocSanXuat">
     <Key>
       <PropertyRef Name="ID" />
@@ -226,6 +232,13 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenTrangThai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ViTri">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenViTri" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="HospitalModelStoreContainer">
     <EntitySet Name="ChiTietPhanQuyen" EntityType="Self.ChiTietPhanQuyen" Schema="dbo" store:Type="Tables" />
@@ -245,7 +258,9 @@
     <EntitySet Name="HangSanXuat" EntityType="Self.HangSanXuat" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="HoatChat" EntityType="Self.HoatChat" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="LoaiDonThuoc" EntityType="Self.LoaiDonThuoc" Schema="g6t_user" store:Type="Tables" />
+    <EntitySet Name="LoaiNCC_KH" EntityType="Self.LoaiNCC_KH" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="NuocSanXuat" EntityType="Self.NuocSanXuat" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="TrangThaiPhieu" EntityType="Self.TrangThaiPhieu" Schema="g6t_user" store:Type="Tables" />
+    <EntitySet Name="ViTri" EntityType="Self.ViTri" Schema="g6t_user" store:Type="Tables" />
   </EntityContainer>
 </Schema>
