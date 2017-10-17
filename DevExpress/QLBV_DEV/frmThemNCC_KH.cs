@@ -13,13 +13,13 @@ using QLBV_DEV.Repository;
 
 namespace QLBV_DEV
 {
-    public partial class frmThemNhaCungCap : DevExpress.XtraEditors.XtraForm
+    public partial class frmThemNCC_KH : DevExpress.XtraEditors.XtraForm
     {
         HospitalEntities db = new HospitalEntities();
         NCC_KHRepository respository = new NCC_KHRepository();
         bool isUpdate = false;
         int ncc_kh_ID = 0;
-        public frmThemNhaCungCap()
+        public frmThemNCC_KH()
         {
             InitializeComponent();
         }
@@ -78,49 +78,43 @@ namespace QLBV_DEV
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            NCC_KH _object = new NCC_KH()
-            {
-                MaNCC_KH = txtMa.Text.Trim(),
-                TenNCC_KH = txtTen.Text.Trim(),
-                DiaChi = txtDiaChi.Text.Trim(),
-                MST = txtMST.Text.Trim(),
-                SoTaiKhoan = txtSoTK.Text.Trim(),
-                NganHang = txtNganHang.Text.Trim(),
-                DienThoai = txtDienThoai.Text.Trim(),
-                Fax = txtFax.Text.Trim(),
-                Email = txtEmail.Text.Trim(),
-                Website = txtWebsite.Text.Trim(),
-                MoTa = txtMota.Text.Trim(),
-                LoaiNCC_KH_ID = Convert.ToInt32(cbbLoaiNCC_KH.EditValue)
-            };
+            NCC_KH obj_NCC_KH;
 
             try
             {
                 if (isUpdate && ncc_kh_ID > 0)
                 {
-                    NCC_KH objNCC = db.NCC_KH.Where(p => p.ID == ncc_kh_ID).SingleOrDefault();
-                    objNCC.MaNCC_KH = txtMa.Text.Trim();
-                    objNCC.TenNCC_KH = txtTen.Text.Trim();
-                    objNCC.DiaChi = txtDiaChi.Text.Trim();
-                    objNCC.MST = txtMST.Text.Trim();
-                    objNCC.SoTaiKhoan = txtSoTK.Text.Trim();
-                    objNCC.NganHang = txtNganHang.Text.Trim();
-                    objNCC.ChiNhanh = txtChiNhanh.Text.Trim();
-                    objNCC.DienThoai = txtDienThoai.Text.Trim();
-                    objNCC.Fax = txtFax.Text.Trim();
-                    objNCC.Email = txtEmail.Text.Trim();
-                    objNCC.Website = txtWebsite.Text.Trim();
-                    objNCC.MoTa = txtMota.Text.Trim();
-                    objNCC.LoaiNCC_KH_ID = Convert.ToInt32(cbbLoaiNCC_KH.EditValue);
+                    obj_NCC_KH = db.NCC_KH.Where(p => p.ID == ncc_kh_ID).SingleOrDefault();
+                }
+                else
+                {
+                    obj_NCC_KH = new NCC_KH();
+                }
 
+                obj_NCC_KH.MaNCC_KH = txtMa.Text.Trim();
+                obj_NCC_KH.TenNCC_KH = txtTen.Text.Trim();
+                obj_NCC_KH.DiaChi = txtDiaChi.Text.Trim();
+                obj_NCC_KH.MST = txtMST.Text.Trim();
+                obj_NCC_KH.SoTaiKhoan = txtSoTK.Text.Trim();
+                obj_NCC_KH.NganHang = txtNganHang.Text.Trim();
+                obj_NCC_KH.ChiNhanh = txtChiNhanh.Text.Trim();
+                obj_NCC_KH.DienThoai = txtDienThoai.Text.Trim();
+                obj_NCC_KH.Fax = txtFax.Text.Trim();
+                obj_NCC_KH.Email = txtEmail.Text.Trim();
+                obj_NCC_KH.Website = txtWebsite.Text.Trim();
+                obj_NCC_KH.MoTa = txtMota.Text.Trim();
+                obj_NCC_KH.LoaiNCC_KH_ID = Convert.ToInt32(cbbLoaiNCC_KH.EditValue);
+
+                if (isUpdate && ncc_kh_ID > 0) // Cập nhật
+                {
                     //respository.Save(objNCC);
                     db.SaveChanges();
 
                     this.Close();
                 }
-                else
+                else // Thêm mới
                 {
-                    respository.Create(_object);
+                    respository.Create(obj_NCC_KH);
                     //db.NCC_KH.Add(_object);
                     //db.SaveChanges();
 

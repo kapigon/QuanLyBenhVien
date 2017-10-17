@@ -87,7 +87,7 @@ namespace QLBV_DEV
         
         private void btnThem_Click(object sender, EventArgs e)
         {
-            frmThemNhaCungCap f_ncc_kh = new frmThemNhaCungCap();
+            frmThemNCC_KH f_ncc_kh = new frmThemNCC_KH();
             f_ncc_kh.FormClosed += new FormClosedEventHandler(frmDSNCC_KHClosed);
             f_ncc_kh.ShowDialog();
         }
@@ -107,7 +107,7 @@ namespace QLBV_DEV
         {
             if (ncc_kh_ID > 0)
             {
-                frmThemNhaCungCap frmNCC_KH = new frmThemNhaCungCap();
+                frmThemNCC_KH frmNCC_KH = new frmThemNCC_KH();
                 frmNCC_KH.FormClosed += new FormClosedEventHandler(frmNCC_KHClosed);
                 frmNCC_KH.loadData(ncc_kh_ID);
                 frmNCC_KH.ShowDialog();

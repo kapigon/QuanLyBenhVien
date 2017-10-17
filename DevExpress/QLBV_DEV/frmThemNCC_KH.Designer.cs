@@ -1,6 +1,6 @@
 ﻿namespace QLBV_DEV
 {
-    partial class frmThemNhaCungCap
+    partial class frmThemNCC_KH
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemNhaCungCap));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemNCC_KH));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();

@@ -14,7 +14,7 @@ namespace QLBV_DEV
     {
         frmPhieuNhapThuoc frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
         frmDSPhieuNhap frmDSPhieuNhap = new frmDSPhieuNhap();
-        frmThemNhaCungCap frmThemNhaCungCap = new frmThemNhaCungCap();
+        frmThemNCC_KH frmThemNhaCungCap = new frmThemNCC_KH();
         frmThemThuoc frmThemThuoc = new frmThemThuoc();
         frmDSNCC_KH frmDSNCC_KH = new frmDSNCC_KH();
         frmDSNuocSanXuat frmDSNuocSanXuat = new frmDSNuocSanXuat();
@@ -77,7 +77,7 @@ namespace QLBV_DEV
 
         private void btnThemNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmThemNhaCungCap));
+            Form frm = kiemtraform(typeof(frmThemNCC_KH));
             if (frm == null)
             {
                 frmThemNhaCungCap.MdiParent = this;
