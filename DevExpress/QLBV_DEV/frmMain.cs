@@ -13,13 +13,15 @@ namespace QLBV_DEV
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         frmPhieuNhapThuoc frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
-        frmDSPhieuNhap frmDSPhieuNhap = new frmDSPhieuNhap();
-        frmThemNCC_KH frmThemNhaCungCap = new frmThemNCC_KH();
-        frmThemThuoc frmThemThuoc = new frmThemThuoc();
-        frmDSNCC_KH frmDSNCC_KH = new frmDSNCC_KH();
-        frmNuocSanXuat frmNuocSanXuat = new frmNuocSanXuat();
-        frmHoatChat frmHoatChat = new frmHoatChat();
-        frmDonViTinh frmDonViTinh = new frmDonViTinh();
+        frmDSPhieuNhap    frmDSPhieuNhap    = new frmDSPhieuNhap();
+        frmThemNCC_KH     frmThemNhaCungCap = new frmThemNCC_KH();
+        frmThemThuoc      frmThemThuoc      = new frmThemThuoc();
+        frmDSNCC_KH       frmDSNCC_KH       = new frmDSNCC_KH();
+        frmNuocSanXuat    frmNuocSanXuat    = new frmNuocSanXuat();
+        frmHoatChat       frmHoatChat       = new frmHoatChat();
+        frmViTri          frmDonViTinh      = new frmViTri();
+        frmNhomThuoc      frmNhomThuoc      = new frmNhomThuoc();
+        frmViTri          frmViTri          = new frmViTri();
 
         public frmMain()
         {
@@ -144,7 +146,10 @@ namespace QLBV_DEV
             frmThemThuoc        = new frmThemThuoc();
             frmDSNCC_KH         = new frmDSNCC_KH();
             frmNuocSanXuat      = new frmNuocSanXuat();
-            frmHoatChat         = new frmHoatChat();      
+            frmHoatChat         = new frmHoatChat();
+            frmNhomThuoc        = new frmNhomThuoc();
+            frmDonViTinh        = new frmViTri();
+            frmViTri            = new frmViTri();
         }
 
         private void btnHoatChat_ItemClick(object sender, ItemClickEventArgs e)
@@ -165,12 +170,44 @@ namespace QLBV_DEV
 
         private void btnDonViTinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmDonViTinh));
+            Form frm = kiemtraform(typeof(frmViTri));
             if (frm == null)
             {
                 frmDonViTinh.MdiParent = this;
                 frmDonViTinh.FormClosed += new FormClosedEventHandler(close_form);
                 frmDonViTinh.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnNhomThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmNhomThuoc));
+            if (frm == null)
+            {
+                frmNhomThuoc.MdiParent = this;
+                frmNhomThuoc.FormClosed += new FormClosedEventHandler(close_form);
+                frmNhomThuoc.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnViTri_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmViTri));
+            if (frm == null)
+            {
+                frmViTri.MdiParent = this;
+                frmViTri.FormClosed += new FormClosedEventHandler(close_form);
+                frmViTri.Show();
 
             }
             else
