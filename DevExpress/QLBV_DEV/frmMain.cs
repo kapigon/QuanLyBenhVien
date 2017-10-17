@@ -22,7 +22,7 @@ namespace QLBV_DEV
         frmViTri          frmDonViTinh      = new frmViTri();
         frmNhomThuoc      frmNhomThuoc      = new frmNhomThuoc();
         frmViTri          frmViTri          = new frmViTri();
-
+        frmHangSanXuat    frmHangSanXuat    = new frmHangSanXuat();
         public frmMain()
         {
 
@@ -150,6 +150,7 @@ namespace QLBV_DEV
             frmNhomThuoc        = new frmNhomThuoc();
             frmDonViTinh        = new frmViTri();
             frmViTri            = new frmViTri();
+            frmHangSanXuat      = new frmHangSanXuat();
         }
 
         private void btnHoatChat_ItemClick(object sender, ItemClickEventArgs e)
@@ -208,6 +209,22 @@ namespace QLBV_DEV
                 frmViTri.MdiParent = this;
                 frmViTri.FormClosed += new FormClosedEventHandler(close_form);
                 frmViTri.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnHangSanXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmHangSanXuat));
+            if (frm == null)
+            {
+                frmHangSanXuat.MdiParent = this;
+                frmHangSanXuat.FormClosed += new FormClosedEventHandler(close_form);
+                frmHangSanXuat.Show();
 
             }
             else
