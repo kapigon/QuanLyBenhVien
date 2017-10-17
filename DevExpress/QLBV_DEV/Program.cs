@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace QLBV_DEV
@@ -14,10 +15,24 @@ namespace QLBV_DEV
         [STAThread]
         static void Main()
         {
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("vi-VN");
+
+            // The following line provides localization for the application's user interface.  
+            Thread.CurrentThread.CurrentUICulture = culture;
+
+            // The following line provides localization for data formats.  
+            Thread.CurrentThread.CurrentCulture = culture;
+
+            // Set this culture as the default culture for all threads in this application.  
+            // Note: The following properties are supported in the .NET Framework 4.5+ 
+            //CultureInfo.DefaultThreadCurrentCulture = culture;
+            //CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            CultureInfo culture = new CultureInfo("vi-VN", true);
             culture.NumberFormat.CurrencySymbol = "VNĐ"; // ₫
             System.Threading.Thread.CurrentThread.CurrentCulture = culture;
             DevExpress.Utils.FormatInfo.AlwaysUseThreadFormat = true;

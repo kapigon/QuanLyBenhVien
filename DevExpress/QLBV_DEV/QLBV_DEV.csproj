@@ -83,23 +83,29 @@
     <Compile Include="DonViTinh.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmDonViTinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDonViTinh.Designer.cs">
-      <DependentUpon>frmDonViTinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDSNCC_KH.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDSNCC_KH.Designer.cs">
       <DependentUpon>frmDSNCC_KH.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDSNuocSanXuat.cs">
+    <Compile Include="frmDonViTinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDSNuocSanXuat.Designer.cs">
-      <DependentUpon>frmDSNuocSanXuat.cs</DependentUpon>
+    <Compile Include="frmDonViTinh.Designer.cs">
+      <DependentUpon>frmDonViTinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoatChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoatChat.Designer.cs">
+      <DependentUpon>frmHoatChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuocSanXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuocSanXuat.Designer.cs">
+      <DependentUpon>frmNuocSanXuat.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDSPhieuNhap.cs">
       <SubType>Form</SubType>
@@ -119,12 +125,6 @@
     <Compile Include="frmHangSanXuat.Designer.cs">
       <DependentUpon>frmHangSanXuat.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoatChat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHoatChat.Designer.cs">
-      <DependentUpon>frmHoatChat.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,17 +143,11 @@
     <Compile Include="frmPhieuNhap.Designer.cs">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThemNhaCungCap.cs">
+    <Compile Include="frmThemNCC_KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemNhaCungCap.Designer.cs">
-      <DependentUpon>frmThemNhaCungCap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmThemNuocSanXuat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThemNuocSanXuat.Designer.cs">
-      <DependentUpon>frmThemNuocSanXuat.cs</DependentUpon>
+    <Compile Include="frmThemNCC_KH.Designer.cs">
+      <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemThuoc.cs">
       <SubType>Form</SubType>
@@ -245,20 +239,20 @@
     <EmbeddedResource Include="frmCT_Thuoc_PhieuNhap.resx">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDonViTinh.resx">
-      <DependentUpon>frmDonViTinh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDSNCC_KH.resx">
       <DependentUpon>frmDSNCC_KH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDSNuocSanXuat.resx">
-      <DependentUpon>frmDSNuocSanXuat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDSPhieuNhap.resx">
-      <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
+    <EmbeddedResource Include="frmDonViTinh.resx">
+      <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoatChat.resx">
       <DependentUpon>frmHoatChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuocSanXuat.resx">
+      <DependentUpon>frmNuocSanXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSPhieuNhap.resx">
+      <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -267,11 +261,8 @@
     <EmbeddedResource Include="frmPhieuNhap.resx">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThemNhaCungCap.resx">
-      <DependentUpon>frmThemNhaCungCap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThemNuocSanXuat.resx">
-      <DependentUpon>frmThemNuocSanXuat.cs</DependentUpon>
+    <EmbeddedResource Include="frmThemNCC_KH.resx">
+      <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemThuoc.resx">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>
@@ -285,6 +276,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="HospitalModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -295,6 +287,9 @@
       <DependentUpon>HospitalModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DonViTinh1.datasource" />
+    <None Include="Properties\DataSources\frmHoatChat.datasource" />
+    <None Include="Properties\DataSources\HoatChat.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -319,6 +314,7 @@
     <Content Include="Images\Icon\add.ico" />
     <Content Include="Images\Icon\BanHang16x16.ico" />
     <Content Include="Images\Icon\box.ico" />
+    <None Include="Images\Icon\btv.ico" />
     <Content Include="Images\Icon\christmas-star-icon.ico" />
     <Content Include="Images\Icon\City.ico" />
     <Content Include="Images\Icon\crystalreports16x16.ico" />
@@ -343,13 +339,13 @@
     <Content Include="Images\Icon\User-16x16.ico" />
     <Content Include="Images\Icon\user.ico" />
     <Content Include="Images\Icon\UTC.ico" />
+    <None Include="Resources\btv2.ico" />
+    <None Include="Resources\btv1.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -17,10 +17,13 @@ namespace QLBV_DEV
         frmThemNCC_KH frmThemNhaCungCap = new frmThemNCC_KH();
         frmThemThuoc frmThemThuoc = new frmThemThuoc();
         frmDSNCC_KH frmDSNCC_KH = new frmDSNCC_KH();
-        frmDSNuocSanXuat frmDSNuocSanXuat = new frmDSNuocSanXuat();
+        frmNuocSanXuat frmNuocSanXuat = new frmNuocSanXuat();
+        frmHoatChat frmHoatChat = new frmHoatChat();
+        frmDonViTinh frmDonViTinh = new frmDonViTinh();
 
         public frmMain()
         {
+
             InitializeComponent();
         }
         //Kiểm tra đã bật Tab Form chưa
@@ -119,12 +122,12 @@ namespace QLBV_DEV
 
         private void btnDSNuocSanXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmDSNuocSanXuat));
+            Form frm = kiemtraform(typeof(frmNuocSanXuat));
             if (frm == null)
             {
-                frmDSNuocSanXuat.MdiParent = this;
-                frmDSNuocSanXuat.FormClosed += new FormClosedEventHandler(close_form);
-                frmDSNuocSanXuat.Show();
+                frmNuocSanXuat.MdiParent = this;
+                frmNuocSanXuat.FormClosed += new FormClosedEventHandler(close_form);
+                frmNuocSanXuat.Show();
                 
             }
             else
@@ -135,7 +138,45 @@ namespace QLBV_DEV
 
         private void close_form(object sender, FormClosedEventArgs e)
         {
-            frmDSNuocSanXuat = new frmDSNuocSanXuat();            
+            frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
+            frmDSPhieuNhap      = new frmDSPhieuNhap();
+            frmThemNhaCungCap   = new frmThemNCC_KH();
+            frmThemThuoc        = new frmThemThuoc();
+            frmDSNCC_KH         = new frmDSNCC_KH();
+            frmNuocSanXuat      = new frmNuocSanXuat();
+            frmHoatChat         = new frmHoatChat();      
+        }
+
+        private void btnHoatChat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmHoatChat));
+            if (frm == null)
+            {
+                frmHoatChat.MdiParent = this;
+                frmHoatChat.FormClosed += new FormClosedEventHandler(close_form);
+                frmHoatChat.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnDonViTinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmDonViTinh));
+            if (frm == null)
+            {
+                frmDonViTinh.MdiParent = this;
+                frmDonViTinh.FormClosed += new FormClosedEventHandler(close_form);
+                frmDonViTinh.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
         }
     }
 }

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="RefreshKpi" Caption="Làm mới KPI" />
+      <Action Id="ShowChart" Caption="Hiển thị Biểu đồ" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.Kpi.BaseKpiObject" Caption="Đối tượng Kpi Cơ sở" />
+    <Class Name="DevExpress.ExpressApp.Kpi.IDateRange" Caption="Khoảng IDate">
+      <OwnMembers>
+        <Member Name="Caption" Caption="Tiêu đề" />
+        <Member Name="EndPoint" Caption="Điểm Kết thúc" />
+        <Member Name="Name" Caption="Tên" />
+        <Member Name="StartPoint" Caption="Điểm Bắt đầu" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Kpi.KpiDefinition" Caption="Định nghĩa">
+      <OwnMembers>
+        <Member Name="Active" Caption="Hoạt động" />
+        <Member Name="Compare" Caption="So sánh" />
+        <Member Name="Criteria" Caption="Biểu thức lọc" />
+        <Member Name="Current" Caption="Hiện thời" />
+        <Member Name="Direction" Caption="Chỉ dẫn" />
+        <Member Name="EnableCustomizeRepresentation" Caption="Kích hoạt Trình diễn Tùy chỉnh" />
+        <Member Name="Expression" Caption="Biểu thức" />
+        <Member Name="GreenZone" Caption="Vùng Xanh" />
+        <Member Name="MeasurementFrequency" Caption="Tần số Đo" />
+        <Member Name="Name" Caption="Tên" />
+        <Member Name="Objects" Caption="Đối tượng" />
+        <Member Name="Period" Caption="Kỳ" />
+        <Member Name="Range" Caption="Khoảng" />
+        <Member Name="RangeToCompare" Caption="Phạm vi để So sánh" />
+        <Member Name="RedZone" Caption="Vùng Đỏ" />
+        <Member Name="SuppressedSeries" Caption="Series bị dấu" />
+        <Member Name="TargetObjectType" Caption="Kiểu Đối tượng Mục tiêu" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Kpi.KpiHistoryItem" Caption="Mục Lịch sử Kpi">
+      <OwnMembers>
+        <Member Name="RangeEnd" Caption="Khoảng Kết thúc" />
+        <Member Name="RangeStart" Caption="Khoảng Bắt đầu" />
+        <Member Name="Value" Caption="Giá trị" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Kpi.KpiInstance" Caption="Kpi Ví dụ">
+      <OwnMembers>
+        <Member Name="Change" Caption="Thay đổi" />
+        <Member Name="ChartDataSource" Caption="Nguồn Dữ liệu Biểu đồ" />
+        <Member Name="Current" Caption="Hiện thời" />
+        <Member Name="GaugeDataSource" Caption="Nguồn Dữ liệu Gauge" />
+        <Member Name="HistoryItems" Caption="Các mục Lịch sử" />
+        <Member Name="KpiName" Caption="Tên Kpi" />
+        <Member Name="Period" Caption="Kỳ" />
+        <Member Name="Previous" Caption="Trước" />
+        <Member Name="Scorecards" Caption="Thẻ tính điểm" />
+        <Member Name="Trend" Caption="Hướng" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Kpi.KpiScorecard" Caption="Thẻ tính điểm">
+      <OwnMembers>
+        <Member Name="Indicators" Caption="Chỉ dẫn" />
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="DateRanges">
+      <LocalizationItem Name="DayMonthAgo" Value="Ngày này tháng trước" />
+      <LocalizationItem Name="DayWeekAgo" Value="Ngày này tuần trước" />
+      <LocalizationItem Name="DayYearAgo" Value="Ngày này năm trước" />
+      <LocalizationItem Name="LastMonthToDate" Value="Tháng trước đến ngày" />
+      <LocalizationItem Name="LastTenDays" Value="Mười ngày cuối" />
+      <LocalizationItem Name="LastThirtyDays" Value="Ba mươi ngày cuối" />
+      <LocalizationItem Name="LastThreeDays" Value="Ba ngày cuối" />
+      <LocalizationItem Name="LastWeekToDate" Value="Tuần trước đến ngày" />
+      <LocalizationItem Name="LastYearToDate" Value="Năm trước đến ngày" />
+      <LocalizationItem Name="Now" Value="Bây giờ" />
+      <LocalizationItem Name="ThisMonthToDate" Value="Tháng này đến ngày" />
+      <LocalizationItem Name="ThisWeekToDate" Value="Tuần này đến ngày" />
+      <LocalizationItem Name="ThisYearToDate" Value="Năm nay đến ngày" />
+      <LocalizationItem Name="Today" Value="Hôm nay" />
+      <LocalizationItem Name="Yesterday" Value="Hôm qua" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.ExpressApp.Editors.Trend" Value="Hướng">
+        <LocalizationItem Name="Better" Value="Tốt hơn" />
+        <LocalizationItem Name="NoChange" Value="Không có thay đổi" />
+        <LocalizationItem Name="Worse" Value="Tệ hơn" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.ExpressApp.Kpi.Direction" Value="Chỉ dẫn">
+        <LocalizationItem Name="HighIsBetter" Value="Cao là tốt hơn" />
+        <LocalizationItem Name="LowIsBetter" Value="Thấp là tốt hơn" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.ExpressApp.Kpi.TimeIntervalType" Value="Kiểu khoảng thời gian">
+        <LocalizationItem Name="Day" Value="Ngày" />
+        <LocalizationItem Name="Hour" Value="Giờ" />
+        <LocalizationItem Name="Month" Value="Tháng" />
+        <LocalizationItem Name="Week" Value="Tuần" />
+        <LocalizationItem Name="Year" Value="Năm" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <Views>
+    <DetailView Id="KpiDefinition_DetailView">
+      <Layout>
+        <TabbedGroup Id="Tabs">
+          <LayoutGroup Id="Definition" Caption="Định nghĩa">
+            <LayoutGroup Id="SimpleEditors">
+              <LayoutGroup Id="SizeableEditors" Caption="Biểu thức lọc" />
+            </LayoutGroup>
+            <LayoutGroup Id="Options">
+              <TabbedGroup Id="OptionsTabs">
+                <LayoutGroup Id="MeasurementOptions" Caption="Tùy chọn Đo lường" />
+                <LayoutGroup Id="Zones" Caption="Vùng" />
+              </TabbedGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Preview" Caption="Xem trước">
+            <LayoutGroup Id="Objects_Group" Caption="Đối tượng" />
+          </LayoutGroup>
+        </TabbedGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
