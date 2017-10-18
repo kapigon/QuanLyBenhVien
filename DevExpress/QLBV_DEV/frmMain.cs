@@ -19,7 +19,7 @@ namespace QLBV_DEV
         frmDSNCC_KH       frmDSNCC_KH       = new frmDSNCC_KH();
         frmNuocSanXuat    frmNuocSanXuat    = new frmNuocSanXuat();
         frmHoatChat       frmHoatChat       = new frmHoatChat();
-        frmViTri          frmDonViTinh      = new frmViTri();
+        frmDonViTinh      frmDonViTinh      = new frmDonViTinh();
         frmNhomThuoc      frmNhomThuoc      = new frmNhomThuoc();
         frmViTri          frmViTri          = new frmViTri();
         frmHangSanXuat    frmHangSanXuat    = new frmHangSanXuat();
@@ -148,7 +148,7 @@ namespace QLBV_DEV
             frmNuocSanXuat      = new frmNuocSanXuat();
             frmHoatChat         = new frmHoatChat();
             frmNhomThuoc        = new frmNhomThuoc();
-            frmDonViTinh        = new frmViTri();
+            frmDonViTinh        = new frmDonViTinh();
             frmViTri            = new frmViTri();
             frmHangSanXuat      = new frmHangSanXuat();
         }
