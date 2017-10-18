@@ -21,8 +21,9 @@ namespace QLBV_DEV
         frmHoatChat       frmHoatChat       = new frmHoatChat();
         frmDonViTinh      frmDonViTinh      = new frmDonViTinh();
         frmNhomThuoc      frmNhomThuoc      = new frmNhomThuoc();
-        frmViTri          frmViTri          = new frmViTri();
+        frmKho            frmViTri          = new frmKho();
         frmHangSanXuat    frmHangSanXuat    = new frmHangSanXuat();
+        frmKho            frmKho            = new frmKho();
         public frmMain()
         {
 
@@ -149,8 +150,9 @@ namespace QLBV_DEV
             frmHoatChat         = new frmHoatChat();
             frmNhomThuoc        = new frmNhomThuoc();
             frmDonViTinh        = new frmDonViTinh();
-            frmViTri            = new frmViTri();
+            frmViTri            = new frmKho();
             frmHangSanXuat      = new frmHangSanXuat();
+            frmKho              = new frmKho();
         }
 
         private void btnHoatChat_ItemClick(object sender, ItemClickEventArgs e)
@@ -171,7 +173,7 @@ namespace QLBV_DEV
 
         private void btnDonViTinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmViTri));
+            Form frm = kiemtraform(typeof(frmKho));
             if (frm == null)
             {
                 frmDonViTinh.MdiParent = this;
@@ -203,7 +205,7 @@ namespace QLBV_DEV
 
         private void btnViTri_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmViTri));
+            Form frm = kiemtraform(typeof(frmKho));
             if (frm == null)
             {
                 frmViTri.MdiParent = this;
@@ -225,6 +227,22 @@ namespace QLBV_DEV
                 frmHangSanXuat.MdiParent = this;
                 frmHangSanXuat.FormClosed += new FormClosedEventHandler(close_form);
                 frmHangSanXuat.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmKho));
+            if (frm == null)
+            {
+                frmKho.MdiParent = this;
+                frmKho.FormClosed += new FormClosedEventHandler(close_form);
+                frmKho.Show();
 
             }
             else
