@@ -20,6 +20,30 @@ namespace QLBV_DEV.Repository
             return from _object in db.NCC_KH where (_object.KichHoat == kichhoat) orderby _object.ID ascending select _object;
         }
 
+        // type: 1-lấy ra 1 kiểu; 2 lấy ra 2 kiểu
+        public IQueryable<NCC_KH> GetAllByType(int loai_ID, int type)
+        {
+            if (type == 1)
+                return from _object in db.NCC_KH where (_object.KichHoat == true && _object.LoaiNCC_KH_ID == loai_ID) orderby _object.ID ascending select _object;
+            else
+                return from _object in db.NCC_KH where (_object.KichHoat == true && (_object.LoaiNCC_KH_ID == loai_ID || _object.LoaiNCC_KH_ID == 3)) orderby _object.ID ascending select _object;
+        }
+
+        public IQueryable<NCC_KH> search(String maNCC_KH, int loai_CCC_KH, String tenNCC_KH)
+        {
+            var query = from _object in db.NCC_KH select _object;
+
+            if (maNCC_KH != "")
+                query = query.Where(p => p.MaNCC_KH.StartsWith(maNCC_KH));
+
+            if (loai_CCC_KH > 0)
+                query = query.Where(p => p.LoaiNCC_KH_ID == loai_CCC_KH);
+
+            if (tenNCC_KH != "")
+                query = query.Where(p => p.TenNCC_KH.Contains(tenNCC_KH));
+
+            return query;
+        }
         public NCC_KH GetSingle(int id)
         {
             return (from _object in db.NCC_KH where _object.ID == id select _object).FirstOrDefault();

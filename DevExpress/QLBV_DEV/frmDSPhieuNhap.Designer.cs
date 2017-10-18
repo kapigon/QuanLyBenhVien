@@ -36,6 +36,7 @@
             this.btnThemPhieu = new DevExpress.XtraEditors.SimpleButton();
             this.grdDS_PhieuNhap = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgayNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoHoaDon = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,7 +73,6 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDS_PhieuNhap)).BeginInit();
@@ -218,6 +218,12 @@
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "ID";
+            this.gridColumn1.FieldName = "ID";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
             // SoPhieu
             // 
             this.SoPhieu.AppearanceHeader.Options.UseTextOptions = true;
@@ -253,7 +259,6 @@
             this.NCC_KH_ID.AppearanceHeader.Options.UseTextOptions = true;
             this.NCC_KH_ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NCC_KH_ID.Caption = "Nhà cung cấp";
-            this.NCC_KH_ID.ColumnEdit = this.cbbCol_NCC_KH;
             this.NCC_KH_ID.FieldName = "NCC_KH_ID";
             this.NCC_KH_ID.Name = "NCC_KH_ID";
             this.NCC_KH_ID.Visible = true;
@@ -359,6 +364,7 @@
             this.btnTimKiem.StyleController = this.layoutControl1;
             this.btnTimKiem.TabIndex = 9;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // dateDenNgay
             // 
@@ -589,12 +595,6 @@
             this.layoutControlItem11.Text = "layoutControlItem11";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "ID";
-            this.gridColumn1.FieldName = "ID";
-            this.gridColumn1.Name = "gridColumn1";
             // 
             // frmDSPhieuNhap
             // 

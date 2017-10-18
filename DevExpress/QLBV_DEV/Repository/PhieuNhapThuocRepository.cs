@@ -15,9 +15,33 @@ namespace QLBV_DEV.Repository
             return from _object in db.PhieuNhapThuoc orderby _object.ID ascending select _object;
         }
 
+        
         public IQueryable<PhieuNhapThuoc> GetAllNotDelete()
         {
             return from _object in db.PhieuNhapThuoc where _object.Xoa != true orderby _object.ID ascending select _object;
+        }
+
+        public IQueryable<PhieuNhapThuoc> search(int ncc_kh_ID, String soPhieu, DateTime tuNgay, DateTime denNgay, String soHoaDon)
+        {
+            var query = from _object in db.PhieuNhapThuoc select _object;
+            
+            if (ncc_kh_ID > 0)
+                query = query.Where(p => p.NCC_KH_ID == ncc_kh_ID);
+
+            if (soPhieu != "")
+                query = query.Where(p => p.SoPhieu == soPhieu);
+
+            if (tuNgay != null && tuNgay.ToString("dd/MM/yyyy") != "01/01/0001")
+                query = query.Where(p => p.NgayNhap >= tuNgay);
+
+            if (denNgay != null && denNgay.ToString("dd/MM/yyyy") != "01/01/0001")
+                query = query.Where(p => p.NgayNhap <= denNgay);
+
+            if (soHoaDon != "")
+                query = query.Where(p => p.SoHoaDon == soHoaDon);
+
+                return query;
+            //return from _object in db.PhieuNhapThuoc orderby _object.ID ascending select _object;
         }
 
         public PhieuNhapThuoc GetSingle(long id)
@@ -54,7 +78,7 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                _object.NgayNhap = System.DateTime.Now;
+                //_object.NgayNhap = System.DateTime.Now;
                 db.PhieuNhapThuoc.Add(_object);
                 db.SaveChanges();
             }

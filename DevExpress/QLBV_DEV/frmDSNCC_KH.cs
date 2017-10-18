@@ -16,7 +16,7 @@ namespace QLBV_DEV
         #region params
         HospitalEntities db = new HospitalEntities();
         int ncc_kh_ID = 0;
-        NCC_KHRepository repository = new NCC_KHRepository();
+        NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
 
         #endregion
 
@@ -36,23 +36,20 @@ namespace QLBV_DEV
                         join loaiNCC_KH in db.LoaiNCC_KH on ncc_kh.LoaiNCC_KH_ID equals loaiNCC_KH.ID 
                         select new
                         {
-                            ID          = ncc_kh.ID,
-                            MaNCC_KH    = ncc_kh.MaNCC_KH,
-                            TenNCC_KH   = ncc_kh.TenNCC_KH,
-                            LoaiNCC_KH  = loaiNCC_KH.TenLoaiNCC_KH,
-                            DiaChi      = ncc_kh.DiaChi,
-                            SDT         = ncc_kh.DienThoai,
-                            MST         = ncc_kh.MST
+                            ID              = ncc_kh.ID,
+                            MaNCC_KH        = ncc_kh.MaNCC_KH,
+                            TenNCC_KH       = ncc_kh.TenNCC_KH,
+                            LoaiNCC_KH_ID   = loaiNCC_KH.TenLoaiNCC_KH,
+                            DiaChi          = ncc_kh.DiaChi,
+                            SDT             = ncc_kh.DienThoai,
+                            MST             = ncc_kh.MST,
+                            KichHoat        = ncc_kh.KichHoat
                         };
             
             if (query.ToList().Count() > 0)
             {
-
-                grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(db.NCC_KH.ToList());
-                //dgvRow = grdDSNCC.Rows[0];
-                //ncc_kh_ID = Convert.ToInt32(dgvRow.Cells[0].Value);
-                //grdDSNCC.ReadOnly = true;
-
+                grvDSNCC_KH.DataSource = query.ToList();
+                //grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(db.NCC_KH.ToList());
             }
             else
             {
@@ -68,13 +65,13 @@ namespace QLBV_DEV
                              ID = ncc.ID,
                              TenLoaiNCC_KH = ncc.TenLoaiNCC_KH
                          };
-            cbbLoaiNCC_KH.Properties.DataSource = result.ToList();
+            cbbLoaiNCC_KH.Properties.DataSource = new BindingList<LoaiNCC_KH>(db.LoaiNCC_KH.ToList());
             cbbLoaiNCC_KH.Properties.DisplayMember = "TenLoaiNCC_KH";
             cbbLoaiNCC_KH.Properties.ValueMember = "ID";
 
-            cbbColLoaiNCC_KH.DataSource = result.ToList();
-            cbbColLoaiNCC_KH.DisplayMember = "TenLoaiNCC_KH";
-            cbbColLoaiNCC_KH.ValueMember = "ID";
+            //cbbColLoaiNCC_KH.DataSource = result.ToList();
+            //cbbColLoaiNCC_KH.DisplayMember = "TenLoaiNCC_KH";
+            //cbbColLoaiNCC_KH.ValueMember = "ID";
         }
         #endregion
 
@@ -100,7 +97,14 @@ namespace QLBV_DEV
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cbbLoaiNCC_KH.EditValue.ToString());
+            //MessageBox.Show(cbbLoaiNCC_KH.EditValue.ToString());
+            String maNCC_KH =txtMaNCC_KH.Text.Trim();
+            int loai_CCC_KH = Convert.ToInt32(cbbLoaiNCC_KH.EditValue);
+            String tenNCC_KH = txtTenNCC_KH.Text.Trim();
+
+            var query = rpo_NCC_KH.search(maNCC_KH, loai_CCC_KH, tenNCC_KH);
+            grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(query.ToList());
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -128,15 +132,17 @@ namespace QLBV_DEV
             if (ncc_kh_ID > 0)
             {
                 String ten = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenNCC_KH").ToString();
-                DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa 'Nhà Cung Cấp' ?", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    NCC_KH objNCC_KH = rpo_NCC_KH.GetSingle(ncc_kh_ID);
                     //do something
                     /*NCC_KH objNCC_KH = db.NCC_KH.Where(p => p.ID == ncc_kh_ID).SingleOrDefault();
                     db.NCC_KH.Remove(objNCC_KH);
                     db.SaveChanges();
                     */
-                    repository.Delete(ncc_kh_ID);
+                    objNCC_KH.KichHoat = false;
+                    rpo_NCC_KH.Save(objNCC_KH);
                     
 
                     // Tải lại danh sách nhà cung cấp

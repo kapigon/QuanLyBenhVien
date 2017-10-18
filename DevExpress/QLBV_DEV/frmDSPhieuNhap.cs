@@ -33,19 +33,34 @@ namespace QLBV_DEV
             //var result = from nv in db.PhieuNhapThuoc
             //             where nv.Xoa == false
             //             select nv;
-            var result = rpo_PhieuNhap.GetAllNotDelete();
+            //var result = rpo_PhieuNhap.GetAllNotDelete();
+            var result = from phieunhap in db.PhieuNhapThuoc
+                        join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
+                        where phieunhap.Xoa != true
+                        orderby phieunhap.ID ascending
+                        select new
+                        {
+                            ID          = phieunhap.ID,
+                            SoPhieu     = phieunhap.SoPhieu,
+                            SoHoaDon    = phieunhap.SoHoaDon,
+                            NgayNhap    = phieunhap.NgayNhap,
+                            NCC_KH_ID   = ncc_kh.TenNCC_KH,
+                            ChietKhau   = phieunhap.ChietKhau,
+                            TongTien    = phieunhap.TongTienTra
+                        };
             grdDS_PhieuNhap.DataSource = result.ToList();
         }
 
         private void LoadNCC()
         {
+            NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
             // lấy ra NCC và vừa là NCC vừa là KH
-            cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(db.NCC_KH.Where(p=>p.ID == 1 || p.ID == 3).ToList());
+            cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
             //cbbNCC.DataSource = result.ToList();
             cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
             cbbNCC_KH.Properties.ValueMember = "ID";
 
-            cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(db.NCC_KH.Where(p => p.ID == 1 || p.ID == 3).ToList());
+            cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
             cbbCol_NCC_KH.DisplayMember = "TenNCC_KH";
             cbbCol_NCC_KH.ValueMember = "ID";
         }
@@ -89,7 +104,7 @@ namespace QLBV_DEV
             if (iRow >= 0)
             {
                 String soPhieu = gridView1.GetRowCellValue(iRow, "SoPhieu").ToString();
-                DialogResult dialogResult = MessageBox.Show(soPhieu, "Xác nhận xóa 'Phiếu nhập' ?", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show(soPhieu, "Xác nhận xóa?", MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -145,8 +160,17 @@ namespace QLBV_DEV
             LoadNCC();
             LoadDS_PhieuNhap();
         }
-        #endregion
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            int ncc_kh_ID       = Convert.ToInt32(cbbNCC_KH.EditValue); 
+            String soPhieu      = txtSoPhieu.Text.Trim();
+            DateTime tuNgay     = Convert.ToDateTime(dateTuNgay.EditValue);
+            DateTime denNgay    = Convert.ToDateTime(dateDenNgay.EditValue);
+            String soHoaDon     = txtSoHoaDon.Text.Trim();
 
-       
+            var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
+            grdDS_PhieuNhap.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+        }
+        #endregion
     }
 }

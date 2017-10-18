@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemNCC_KH));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -65,6 +67,9 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.chkKichHoat = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
@@ -99,10 +104,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkKichHoat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chkKichHoat);
             this.layoutControl1.Controls.Add(this.txtTen);
             this.layoutControl1.Controls.Add(this.btnThoat);
             this.layoutControl1.Controls.Add(this.btnLuu);
@@ -146,6 +155,9 @@
             this.txtTen.Size = new System.Drawing.Size(543, 20);
             this.txtTen.StyleController = this.layoutControl1;
             this.txtTen.TabIndex = 22;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Tên không được để trống.!";
+            this.dxValidate.SetValidationRule(this.txtTen, conditionValidationRule1);
             // 
             // btnThoat
             // 
@@ -244,7 +256,7 @@
             this.txtMota.Name = "txtMota";
             this.txtMota.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Italic);
             this.txtMota.Properties.Appearance.Options.UseFont = true;
-            this.txtMota.Size = new System.Drawing.Size(543, 44);
+            this.txtMota.Size = new System.Drawing.Size(543, 49);
             this.txtMota.StyleController = this.layoutControl1;
             this.txtMota.TabIndex = 16;
             // 
@@ -291,6 +303,9 @@
             this.cbbLoaiNCC_KH.Size = new System.Drawing.Size(218, 20);
             this.cbbLoaiNCC_KH.StyleController = this.layoutControl1;
             this.cbbLoaiNCC_KH.TabIndex = 23;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Hãy chọn loại NCC hay KH.!";
+            this.dxValidate.SetValidationRule(this.cbbLoaiNCC_KH, conditionValidationRule2);
             // 
             // Root
             // 
@@ -315,7 +330,8 @@
             this.layoutControlItem7,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem1});
+            this.layoutControlItem1,
+            this.layoutControlItem5});
             this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(629, 306);
@@ -326,9 +342,9 @@
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 216);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(304, 221);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(609, 28);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(305, 23);
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -378,7 +394,7 @@
             this.layoutControlItem13.CustomizationFormText = "Cảnh báo hết hạn";
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(609, 48);
+            this.layoutControlItem13.Size = new System.Drawing.Size(609, 53);
             this.layoutControlItem13.Text = "Mô tả";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(59, 13);
             // 
@@ -504,14 +520,35 @@
             this.layoutControlItem1.Text = "Mã";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // frmThemNhaCungCap
+            // chkKichHoat
+            // 
+            this.chkKichHoat.EditValue = true;
+            this.chkKichHoat.Location = new System.Drawing.Point(12, 233);
+            this.chkKichHoat.Name = "chkKichHoat";
+            this.chkKichHoat.Properties.Caption = "Kích hoạt";
+            this.chkKichHoat.Size = new System.Drawing.Size(300, 19);
+            this.chkKichHoat.StyleController = this.layoutControl1;
+            this.chkKichHoat.TabIndex = 24;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.chkKichHoat;
+            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 221);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(304, 23);
+            this.layoutControlItem5.Text = "layoutControlItem5";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // frmThemNCC_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 306);
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmThemNhaCungCap";
+            this.Name = "frmThemNCC_KH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm NCC & KH mới";
             this.Load += new System.EventHandler(this.frmThemNhaCungCap_Load);
@@ -549,6 +586,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkKichHoat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,5 +630,8 @@
         private DevExpress.XtraEditors.TextEdit txtSoTK;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.LookUpEdit cbbLoaiNCC_KH;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidate;
+        private DevExpress.XtraEditors.CheckEdit chkKichHoat;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

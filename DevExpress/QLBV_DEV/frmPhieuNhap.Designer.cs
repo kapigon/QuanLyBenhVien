@@ -43,6 +43,7 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.grdDSThuoc = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaVach = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.MaVach_1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -98,7 +99,6 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
@@ -199,7 +199,7 @@
             // dateNgayVietHD
             // 
             this.dateNgayVietHD.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateNgayVietHD.EditValue = new System.DateTime(2017, 10, 11, 0, 0, 0, 0);
+            this.dateNgayVietHD.EditValue = new System.DateTime(2017, 10, 18, 0, 0, 0, 0);
             this.dateNgayVietHD.Location = new System.Drawing.Point(947, 124);
             this.dateNgayVietHD.Name = "dateNgayVietHD";
             this.dateNgayVietHD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -232,7 +232,7 @@
             // 
             // dateNgayNhap
             // 
-            this.dateNgayNhap.EditValue = new System.DateTime(2017, 10, 11, 0, 0, 0, 0);
+            this.dateNgayNhap.EditValue = new System.DateTime(2017, 10, 18, 0, 0, 0, 0);
             this.dateNgayNhap.Location = new System.Drawing.Point(377, 93);
             this.dateNgayNhap.Name = "dateNgayNhap";
             this.dateNgayNhap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -347,6 +347,12 @@
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
             // 
             // MaVach
             // 
@@ -625,7 +631,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
             this.cbbNCC.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNCC", "Tên NCC"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DiaChi", "Địa chỉ")});
             this.cbbNCC.Properties.NullText = "";
@@ -865,12 +871,6 @@
             this.layoutControlItem14.Size = new System.Drawing.Size(285, 77);
             this.layoutControlItem14.Text = "Ghi chú";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(65, 13);
-            // 
-            // ID
-            // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
             // 
             // frmPhieuNhapThuoc
             // 
