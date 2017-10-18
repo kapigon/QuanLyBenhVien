@@ -30,9 +30,24 @@ namespace QLBV_DEV
         #region methods
         private void LoadDS_Thuoc()
         {
-            if (db.Thuoc.ToList().Count() > 0)
+            var query = from thuoc in db.Thuoc
+                        join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
+                        from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
+                        select new
+                        {
+                            ID = thuoc.ID,
+                            TenThuoc = thuoc.TenThuoc,
+                            MaThuoc = thuoc.MaThuoc,
+                            TenNhom = nhomthuoc.TenNhom,
+                            HoatChat = hoatchat.TenHoatChat,
+                            ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,
+                            TonKhoToiThieu = thuoc.TonKhoToiThieu,
+                            KichHoat = thuoc.KichHoat
+                        };
+            if (query.ToList().Count() > 0)
             {
-                grvDSThuoc.DataSource = new BindingList<Thuoc>(db.Thuoc.Where(p=>p.KichHoat == true || p.KichHoat == null).ToList());
+                grvDSThuoc.DataSource = query.ToList();
+                //grvDSThuoc.DataSource = new BindingList<Thuoc>(db.Thuoc.Where(p=>p.KichHoat == true || p.KichHoat == null).ToList());
 
             }
             else
