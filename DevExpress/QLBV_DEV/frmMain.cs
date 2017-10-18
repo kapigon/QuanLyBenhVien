@@ -12,18 +12,19 @@ namespace QLBV_DEV
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        frmPhieuNhapThuoc frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
-        frmDSPhieuNhap    frmDSPhieuNhap    = new frmDSPhieuNhap();
-        frmThemNCC_KH     frmThemNhaCungCap = new frmThemNCC_KH();
-        frmThemThuoc      frmThemThuoc      = new frmThemThuoc();
-        frmDSNCC_KH       frmDSNCC_KH       = new frmDSNCC_KH();
-        frmNuocSanXuat    frmNuocSanXuat    = new frmNuocSanXuat();
-        frmHoatChat       frmHoatChat       = new frmHoatChat();
-        frmDonViTinh      frmDonViTinh      = new frmDonViTinh();
-        frmNhomThuoc      frmNhomThuoc      = new frmNhomThuoc();
-        frmKho            frmViTri          = new frmKho();
-        frmHangSanXuat    frmHangSanXuat    = new frmHangSanXuat();
-        frmKho            frmKho            = new frmKho();
+        frmPhieuNhapThuoc   frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
+        frmDSPhieuNhap      frmDSPhieuNhap      = new frmDSPhieuNhap();
+        frmThemNCC_KH       frmThemNhaCungCap   = new frmThemNCC_KH();
+        frmThemThuoc        frmThemThuoc        = new frmThemThuoc();
+        frmDSNCC_KH         frmDSNCC_KH         = new frmDSNCC_KH();
+        frmNuocSanXuat      frmNuocSanXuat      = new frmNuocSanXuat();
+        frmHoatChat         frmHoatChat         = new frmHoatChat();
+        frmDonViTinh        frmDonViTinh        = new frmDonViTinh();
+        frmNhomThuoc        frmNhomThuoc        = new frmNhomThuoc();
+        frmKho              frmViTri            = new frmKho();
+        frmHangSanXuat      frmHangSanXuat      = new frmHangSanXuat();
+        frmKho              frmKho              = new frmKho();
+        frmDS_Thuoc         frmDS_Thuoc         = new frmDS_Thuoc();
         public frmMain()
         {
 
@@ -243,6 +244,22 @@ namespace QLBV_DEV
                 frmKho.MdiParent = this;
                 frmKho.FormClosed += new FormClosedEventHandler(close_form);
                 frmKho.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnDSThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmDS_Thuoc));
+            if (frm == null)
+            {
+                frmDS_Thuoc.MdiParent = this;
+                frmDS_Thuoc.FormClosed += new FormClosedEventHandler(close_form);
+                frmDS_Thuoc.Show();
 
             }
             else

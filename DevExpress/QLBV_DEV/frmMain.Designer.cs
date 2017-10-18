@@ -49,6 +49,7 @@
             this.btnNhomThuoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnViTri = new DevExpress.XtraBars.BarButtonItem();
             this.btnHangSanXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKho = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -63,6 +64,7 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -81,8 +83,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnKho = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.hideContainerLeft.SuspendLayout();
@@ -95,7 +95,7 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 438);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(867, 31);
@@ -125,7 +125,7 @@
             this.btnHangSanXuat,
             this.btnKho});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(2);
             this.ribbon.MaxItemId = 22;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -224,6 +224,7 @@
             this.btnDSThuoc.Id = 14;
             this.btnDSThuoc.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDSThuoc.LargeGlyph")));
             this.btnDSThuoc.Name = "btnDSThuoc";
+            this.btnDSThuoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSThuoc_ItemClick);
             // 
             // btnDSNuocSanXuat
             // 
@@ -278,6 +279,15 @@
             this.btnHangSanXuat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnHangSanXuat.LargeGlyph")));
             this.btnHangSanXuat.Name = "btnHangSanXuat";
             this.btnHangSanXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHangSanXuat_ItemClick);
+            // 
+            // btnKho
+            // 
+            this.btnKho.Caption = "Kho hàng";
+            this.btnKho.Glyph = ((System.Drawing.Image)(resources.GetObject("btnKho.Glyph")));
+            this.btnKho.Id = 21;
+            this.btnKho.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnKho.LargeGlyph")));
+            this.btnKho.Name = "btnKho";
+            this.btnKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKho_ItemClick);
             // 
             // ribbonPage6
             // 
@@ -369,6 +379,11 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.btnHangSanXuat);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.btnKho);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            // 
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -410,7 +425,7 @@
             this.hideContainerLeft.Controls.Add(this.dockPanel1);
             this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.hideContainerLeft.Location = new System.Drawing.Point(0, 144);
-            this.hideContainerLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hideContainerLeft.Margin = new System.Windows.Forms.Padding(2);
             this.hideContainerLeft.Name = "hideContainerLeft";
             this.hideContainerLeft.Size = new System.Drawing.Size(19, 294);
             // 
@@ -420,7 +435,7 @@
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel1.ID = new System.Guid("472ff65d-f260-4bc3-85da-72d891609d3b");
             this.dockPanel1.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dockPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
             this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
@@ -433,7 +448,7 @@
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(3, 18);
-            this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(2);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(128, 307);
             this.dockPanel1_Container.TabIndex = 0;
@@ -449,7 +464,7 @@
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem1});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.navBarControl1.Margin = new System.Windows.Forms.Padding(2);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 128;
             this.navBarControl1.Size = new System.Drawing.Size(128, 307);
@@ -512,20 +527,6 @@
             this.barButtonItem2.Id = -1;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.ItemLinks.Add(this.btnKho);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            // 
-            // btnKho
-            // 
-            this.btnKho.Caption = "Kho hàng";
-            this.btnKho.Glyph = ((System.Drawing.Image)(resources.GetObject("btnKho.Glyph")));
-            this.btnKho.Id = 21;
-            this.btnKho.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnKho.LargeGlyph")));
-            this.btnKho.Name = "btnKho";
-            this.btnKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKho_ItemClick);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,7 +536,7 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;

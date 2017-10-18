@@ -83,6 +83,12 @@
     <Compile Include="DonViTinh.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmDS_Thuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDS_Thuoc.Designer.cs">
+      <DependentUpon>frmDS_Thuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSNCC_KH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,12 @@
     </Compile>
     <Compile Include="frmHoatChat.Designer.cs">
       <DependentUpon>frmHoatChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKho.Designer.cs">
+      <DependentUpon>frmKho.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNuocSanXuat.cs">
       <SubType>Form</SubType>
@@ -245,6 +257,9 @@
     <EmbeddedResource Include="frmCT_Thuoc_PhieuNhap.resx">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDS_Thuoc.resx">
+      <DependentUpon>frmDS_Thuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDSNCC_KH.resx">
       <DependentUpon>frmDSNCC_KH.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoatChat.resx">
       <DependentUpon>frmHoatChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKho.resx">
+      <DependentUpon>frmKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhomThuoc.resx">
       <DependentUpon>frmNhomThuoc.cs</DependentUpon>
