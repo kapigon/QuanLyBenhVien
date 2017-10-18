@@ -41,21 +41,59 @@ namespace QLBV_DEV
                 btnXoa.Enabled = false;
             }
         }
+        private void LoadTenThuoc()
+        {
+            var result = from ncc in db.Thuoc
+                         select new
+                         {
+                             TenThuoc = ncc.TenThuoc,
+                             MaThuoc  = ncc.MaThuoc,
+                         };
+            cbbTenThuoc.Properties.DataSource = result.ToList();
+            cbbTenThuoc.Properties.DisplayMember = "TenThuoc";
+            cbbTenThuoc.Properties.ValueMember = "ID";
+        }
+
         private void LoadNhomThuoc()
         {
             var result = from ncc in db.NhomThuoc
                          select new
                          {
-                             ID = ncc.ID,
-                             TenNhom = ncc.TenNhom
+                             TenNhom = ncc.TenNhom,
                          };
             cbbNhomThuoc.Properties.DataSource = result.ToList();
             cbbNhomThuoc.Properties.DisplayMember = "TenNhom";
             cbbNhomThuoc.Properties.ValueMember = "ID";
 
-            cbbColNhomThuoc.DataSource = result.ToList();
-            cbbColNhomThuoc.DisplayMember = "TenNhom";
-            cbbColNhomThuoc.ValueMember = "ID";
+            //cbbColNhomThuoc.DataSource = result.ToList();
+            //cbbColNhomThuoc.DisplayMember = "TenNhom";
+            //cbbColNhomThuoc.ValueMember = "ID";
+        }
+        private void LoadHoatChat()
+        {
+            var result = from ncc in db.HoatChat
+                         select new
+                         {
+                             TenHoatChat = ncc.TenHoatChat,
+                         };
+
+            cbbHoatChat.Properties.DataSource = result.ToList();
+            cbbHoatChat.Properties.DisplayMember = "TenHoatChat";
+            cbbHoatChat.Properties.ValueMember = "ID";
+
+        }
+        private void LoadHangSanXuat()
+        {
+            var result = from ncc in db.HangSanXuat
+                         select new
+                         {
+                             TenHangSX = ncc.TenHangSX,
+                         };
+
+            cbbHangSanXuat.Properties.DataSource = result.ToList();
+            cbbHangSanXuat.Properties.DisplayMember = "TenHangSX";
+            cbbHangSanXuat.Properties.ValueMember = "ID";
+
         }
         #endregion
 
@@ -63,14 +101,17 @@ namespace QLBV_DEV
         private void frmDSThuoc_Load(object sender, EventArgs e)
         {
             LoadNhomThuoc();
+            LoadTenThuoc();
+            LoadHoatChat();
+            LoadHangSanXuat();
         }
 
         
         private void btnThem_Click(object sender, EventArgs e)
         {
-            frmThemNCC_KH f_ncc_kh = new frmThemNCC_KH();
-            f_ncc_kh.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
-            f_ncc_kh.ShowDialog();
+            frmThemThuoc frmThemThuoc = new frmThemThuoc();
+            frmThemThuoc.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
+            frmThemThuoc.ShowDialog();
         }
 
         private void frmDSThuoc_Closed(object sender, FormClosedEventArgs e)
@@ -99,17 +140,13 @@ namespace QLBV_DEV
             }
         }
 
-        private void frmNCC_KHClosed(object sender, FormClosedEventArgs e)
-        {
-            LoadDS_Thuoc();
-        }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (thuoc_ID > 0)
             {
                 String ten = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenThuoc").ToString();
-                DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa 'Nhà Cung Cấp' ?", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     //do something
