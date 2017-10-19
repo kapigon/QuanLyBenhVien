@@ -15,15 +15,15 @@ namespace QLBV_DEV
     public partial class CT_Thuoc_PhieuXuat
     {
         public long ID { get; set; }
-        public Nullable<long> PhieuXuatHangID { get; set; }
-        public Nullable<long> CT_Thuoc_PhieuNhapID { get; set; }
-        public Nullable<int> DVT_Theo_DVT_ThuocID { get; set; }
-        public Nullable<int> LoaiDonThuocID { get; set; }
-        public Nullable<double> GiaNhap { get; set; }
+        public Nullable<long> PhieuXuatHang_ID { get; set; }
+        public Nullable<long> CT_Thuoc_PhieuNhap_ID { get; set; }
+        public Nullable<int> DVT_Theo_DVT_Thuoc_ID { get; set; }
+        public Nullable<int> LoaiDonThuoc_ID { get; set; }
         public Nullable<double> GiaBan { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<double> TongTien { get; set; }
         public string GhiChu { get; set; }
         public Nullable<int> UserTao { get; set; }
+        public Nullable<System.DateTime> NgayBan { get; set; }
     }
 }

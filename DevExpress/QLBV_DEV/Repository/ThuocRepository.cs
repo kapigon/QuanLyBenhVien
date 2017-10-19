@@ -25,6 +25,13 @@ namespace QLBV_DEV.Repository
             return (from _object in db.Thuoc where _object.ID == id select _object).FirstOrDefault();
         }
 
+        public int GetCountTonKho(long id){
+
+            var query = from _object in db.CT_Thuoc_PhieuNhap where _object.Thuoc_ID == id select _object;
+
+            return query.Sum(x => x.TonKho).Value;
+        }
+
         public Thuoc GetSingleByTenThuoc(string tenThuoc)
         {
             return (from c in db.Thuoc.AsEnumerable() where Helpers.StringClearFormat.ClearCharacterSpecial(c.TenThuoc) == tenThuoc select c).FirstOrDefault();

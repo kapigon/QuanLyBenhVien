@@ -25,6 +25,7 @@ namespace QLBV_DEV
         frmHangSanXuat      frmHangSanXuat      = new frmHangSanXuat();
         frmKho              frmKho              = new frmKho();
         frmDS_Thuoc         frmDS_Thuoc         = new frmDS_Thuoc();
+        frmPhieuXuatThuoc   frmPhieuXuatThuoc   = new frmPhieuXuatThuoc();
         public frmMain()
         {
 
@@ -260,6 +261,22 @@ namespace QLBV_DEV
                 frmDS_Thuoc.MdiParent = this;
                 frmDS_Thuoc.FormClosed += new FormClosedEventHandler(close_form);
                 frmDS_Thuoc.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnTaoPhieuXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmPhieuXuatThuoc));
+            if (frm == null)
+            {
+                frmPhieuXuatThuoc.MdiParent = this;
+                frmPhieuXuatThuoc.FormClosed += new FormClosedEventHandler(close_form);
+                frmPhieuXuatThuoc.Show();
 
             }
             else

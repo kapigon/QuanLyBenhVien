@@ -11,7 +11,7 @@ using QLBV_DEV.Repository;
 
 namespace QLBV_DEV
 {
-    public partial class frmCT_Thuoc_PhieuNhap : DevExpress.XtraEditors.XtraForm
+    public partial class frmCT_Thuoc_PhieuXuat : DevExpress.XtraEditors.XtraForm
     {
         /// <summary>
         ///  Repository
@@ -25,18 +25,17 @@ namespace QLBV_DEV
         ViTriRepository                 rpo_ViTri       = new ViTriRepository();
         CT_Thuoc_PhieuNhapRepository    rpo_CT_Thuoc    = new CT_Thuoc_PhieuNhapRepository();
 
-        private frmPhieuNhapThuoc frmPhieuNhapThuoc;
+        private frmPhieuXuatThuoc frmPhieuXuatThuoc;
 
-        //CT_Thuoc_PhieuNhap      obj_CT_Thuoc    = new CT_Thuoc_PhieuNhap();
         int index;
-        public frmCT_Thuoc_PhieuNhap()
+        public frmCT_Thuoc_PhieuXuat()
         {
             InitializeComponent();
         }
 
-        public frmCT_Thuoc_PhieuNhap(frmPhieuNhapThuoc _frmPhieuNhapThuoc)
+        public frmCT_Thuoc_PhieuXuat(frmPhieuXuatThuoc _frmPhieuXuatThuoc)
         {
-            this.frmPhieuNhapThuoc = _frmPhieuNhapThuoc;
+            this.frmPhieuXuatThuoc = _frmPhieuXuatThuoc;
             InitializeComponent();
         }
 
@@ -162,33 +161,30 @@ namespace QLBV_DEV
 
         public void btnLuu_Click(object sender, EventArgs e)
         {
-            if (dxValidate.Validate())
-            {
-                CT_Thuoc_PhieuNhap obj_CT_Thuoc = new CT_Thuoc_PhieuNhap();
+            CT_Thuoc_PhieuXuat  obj_CT_Thuoc_Xuat = new CT_Thuoc_PhieuXuat();
 
-                int soluong         = txtSoLuong.Text.Trim() != "" ? Convert.ToInt32(txtSoLuong.Text) : 0;
-                double gianhap      = txtGiaNhap.Text.Trim() != "" ? Convert.ToDouble(txtGiaNhap.Text) : 1;
-                double tongTien         = (soluong * gianhap);
+            int soluong = txtSoLuong.Text.Trim() != "" ? Convert.ToInt32(txtSoLuong.Text) : 0;
+            double gianhap = txtGiaNhap.Text.Trim() != "" ? Convert.ToDouble(txtGiaNhap.Text) : 1;
 
-                obj_CT_Thuoc.PhieuNhapHang_ID       = 0;
-                obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID  = Convert.ToInt32(cbbDonViNhap.EditValue);
-                obj_CT_Thuoc.Thuoc_ID               = Convert.ToInt64(cbbTenThuoc.EditValue);
-                obj_CT_Thuoc.Kho_ID                 = Convert.ToInt32(cbbKho.EditValue);
-                obj_CT_Thuoc.ViTri_ID               = Convert.ToInt32(cbbViTri.EditValue);
-                obj_CT_Thuoc.Barcode                = txtBarcode.Text.Trim();
-                obj_CT_Thuoc.HSD                    = dateHSD.EditValue != null ? Convert.ToDateTime(dateHSD.EditValue) : Convert.ToDateTime("01/01/0001");
-                obj_CT_Thuoc.GiaNhap                = gianhap;
-                obj_CT_Thuoc.SoLuong                = soluong;
-                obj_CT_Thuoc.TonKho                 = soluong;
-                obj_CT_Thuoc.SoLo                   = txtSoLo.Text.Trim();
-                obj_CT_Thuoc.TongTien               = Convert.ToDouble(tongTien);
-                obj_CT_Thuoc.NgayNhap               = DateTime.Now;
-                
-                this.Close();
+            obj_CT_Thuoc_Xuat.PhieuXuatHang_ID           = 0;
+            obj_CT_Thuoc_Xuat.DVT_Theo_DVT_Thuoc_ID      = Convert.ToInt32(cbbDonViNhap.EditValue);
+            //obj_CT_Thuoc_Xuat.Thuoc_ID                   = Convert.ToInt64(cbbTenThuoc.EditValue);
+            //obj_CT_Thuoc_Xuat.Kho_ID                     = Convert.ToInt32(cbbKho.EditValue);
+            //obj_CT_Thuoc_Xuat.ViTri_ID                   = Convert.ToInt32(cbbViTri.EditValue);
+            //obj_CT_Thuoc_Xuat.Barcode                    = txtBarcode.Text.Trim();
+            //obj_CT_Thuoc_Xuat.HSD                        = dateHSD.EditValue.ToString() != "" ? Convert.ToDateTime(dateHSD.EditValue) : Convert.ToDateTime("01/01/0001");
+            //obj_CT_Thuoc_Xuat.GiaNhap                    = gianhap;
+            obj_CT_Thuoc_Xuat.SoLuong                    = soluong;
+            //obj_CT_Thuoc_Xuat.SoLo                       = txtSoLo.Text.Trim();
+            obj_CT_Thuoc_Xuat.TongTien                   = Convert.ToDouble(txtTongTien.Text);
+            obj_CT_Thuoc_Xuat.NgayBan                       = DateTime.Now;
 
-                frmPhieuNhapThuoc.setValueGridControl(obj_CT_Thuoc, index);
-                //rpo_CT_Thuoc.Create(obj_CT_Thuoc);
-            }
+
+            this.Close();
+
+            frmPhieuXuatThuoc.setValueGridControl(obj_CT_Thuoc_Xuat, index);
+            //rpo_CT_Thuoc.Create(obj_CT_Thuoc);
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

@@ -92,6 +92,7 @@ namespace QLBV_DEV
             gridView1.SetRowCellValue(_index, "HSD", obj_CT_Thuoc.HSD);
             gridView1.SetRowCellValue(_index, "GiaNhap", obj_CT_Thuoc.GiaNhap);
             gridView1.SetRowCellValue(_index, "SoLuong", obj_CT_Thuoc.SoLuong);
+            gridView1.SetRowCellValue(_index, "TonKho", obj_CT_Thuoc.TonKho);
             gridView1.SetRowCellValue(_index, "SoLo", obj_CT_Thuoc.SoLo);
         }
         #endregion
@@ -177,6 +178,9 @@ namespace QLBV_DEV
                                     CT_Thuoc_PhieuNhap obj_CT_Thuoc;
                                     int ct_thuoc_ID = 0;
                                     bool isUpdateRow = false;
+                                    long thuoc_ID = Convert.ToInt64(gridView1.GetRowCellValue(i, "Thuoc_ID"));
+                                    //int soluong = 0;
+
 
                                     /// Kiểm tra xem ID đã tồn tại trong 'row' chưa
                                     if (gridView1.GetRowCellValue(i, "ID") != "" && Convert.ToInt32(gridView1.GetRowCellValue(i, "ID")) > 0)
@@ -184,11 +188,14 @@ namespace QLBV_DEV
                                         ct_thuoc_ID = Convert.ToInt32(gridView1.GetRowCellValue(i, "ID"));
                                         obj_CT_Thuoc = rpo_CT_Thuoc.GetSingle(ct_thuoc_ID);
                                         isUpdateRow = true;
+
+                                        //soluong = Convert.ToInt32(obj_CT_Thuoc.SoLuong);
                                     }
                                     else
                                     {
                                         obj_CT_Thuoc = new CT_Thuoc_PhieuNhap();
                                     }
+ 
 
                                     obj_CT_Thuoc.PhieuNhapHang_ID       = obj_PhieuNhap.ID;
                                     obj_CT_Thuoc.Thuoc_ID               = Convert.ToInt64(gridView1.GetRowCellValue(i, "Thuoc_ID"));
@@ -199,8 +206,27 @@ namespace QLBV_DEV
                                     obj_CT_Thuoc.HSD                    = Convert.ToDateTime(gridView1.GetRowCellValue(i, "HSD"));
                                     obj_CT_Thuoc.GiaNhap                = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaNhap"));
                                     obj_CT_Thuoc.SoLuong                = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
+                                    obj_CT_Thuoc.TonKho                 = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
                                     obj_CT_Thuoc.SoLo                   = gridView1.GetRowCellValue(i, "SoLo") != null ? gridView1.GetRowCellValue(i, "SoLo").ToString() : "";
                                     obj_PhieuNhap.UserTao               = userID;
+
+                                     /*/// Cập số lượng tồn kho Thuốc
+                                    if (!isUpdateRow)
+                                    {
+                                        obj_Thuoc.TonKho += soluong;
+                                    }
+                                    else
+                                    {
+                                        if (Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong")) > soluong)
+                                        {
+                                            obj_Thuoc.TonKho += Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong")) - soluong;
+                                        }
+                                        else if (Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong")) < soluong)
+                                        {
+                                            obj_Thuoc.TonKho -= soluong - Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
+                                        }
+                                    }
+                                   */
 
                                     /// Nếu 'row' chưa có 1 Chi tiết Thuốc thì tạo mới
                                     if (!isUpdateRow)
@@ -208,6 +234,14 @@ namespace QLBV_DEV
                                     /// Lưu lại 1 Chi tiết Thuốc
                                     else
                                         rpo_CT_Thuoc.Save(obj_CT_Thuoc);
+
+
+                                    /// Cập số lượng tồn kho Thuốc
+                                    ThuocRepository rpo_Thuoc = new ThuocRepository();
+                                    Thuoc obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
+                                    obj_Thuoc.TonKho = rpo_Thuoc.GetCountTonKho(thuoc_ID);
+
+                                    rpo_Thuoc.Save(obj_Thuoc); 
                                 }
                             }
                             this.Close();
@@ -246,16 +280,18 @@ namespace QLBV_DEV
 
             CT_Thuoc_PhieuNhap obj_CT_Thuoc = new CT_Thuoc_PhieuNhap();
 
+            
             long thuocID = 0;
             thuocID                             = Convert.ToInt64(gridView1.GetRowCellValue(index, "Thuoc_ID"));
             obj_CT_Thuoc.Thuoc_ID               = Convert.ToInt64(gridView1.GetRowCellValue(index, "Thuoc_ID"));
             obj_CT_Thuoc.Kho_ID                 = Convert.ToInt32(gridView1.GetRowCellValue(index, "Kho_ID"));
             obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID  = Convert.ToInt32(gridView1.GetRowCellValue(index, "DVT_Theo_DVT_Thuoc_ID"));
             obj_CT_Thuoc.ViTri_ID               = Convert.ToInt32(gridView1.GetRowCellValue(index, "ViTri_ID"));
-            obj_CT_Thuoc.Barcode                = gridView1.GetRowCellValue(index, "Barcode_1").ToString();
+            obj_CT_Thuoc.Barcode                = gridView1.GetRowCellValue(index, "Barcode_1") != null ? gridView1.GetRowCellValue(index, "Barcode_1").ToString() : "";
             obj_CT_Thuoc.HSD                    = Convert.ToDateTime(gridView1.GetRowCellValue(index, "HSD"));
             obj_CT_Thuoc.GiaNhap                = Convert.ToDouble(gridView1.GetRowCellValue(index, "GiaNhap"));
             obj_CT_Thuoc.SoLuong                = Convert.ToInt32(gridView1.GetRowCellValue(index, "SoLuong"));
+            obj_CT_Thuoc.TonKho                 = Convert.ToInt32(gridView1.GetRowCellValue(index, "TonKho"));
             obj_CT_Thuoc.SoLo                   = gridView1.GetRowCellValue(index, "SoLo") != null ? gridView1.GetRowCellValue(index, "SoLo").ToString() : "";
 
             frmCT_Thuoc_PhieuNhap frmCT_Thuoc = new frmCT_Thuoc_PhieuNhap(this);
