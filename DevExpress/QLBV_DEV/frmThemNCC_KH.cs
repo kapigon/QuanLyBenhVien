@@ -20,10 +20,13 @@ namespace QLBV_DEV
 
         bool isUpdate = false;
         int ncc_kh_ID = 0;
+
         public frmThemNCC_KH()
         {
             InitializeComponent();
+            LoadLoaiNCC_KH();
         }
+
 
         #region methods
         private void LoadLoaiNCC_KH()
@@ -37,9 +40,11 @@ namespace QLBV_DEV
             cbbLoaiNCC_KH.Properties.DataSource = result.ToList();
             cbbLoaiNCC_KH.Properties.DisplayMember = "LoaiNCC_KH";
             cbbLoaiNCC_KH.Properties.ValueMember = "ID";
-            cbbLoaiNCC_KH.EditValue = 1;
+            //cbbLoaiNCC_KH.EditValue = 1;
         }
-
+        public void  ChonNCC_KH(int type){
+            cbbLoaiNCC_KH.EditValue = type;
+        }
         public void loadData(int ID)
         {
             NCC_KH obj_NCC_KH = rpo_NCC_KH.GetSingle(ID);
@@ -69,7 +74,7 @@ namespace QLBV_DEV
         #region events
         private void frmThemNhaCungCap_Load(object sender, EventArgs e)
         {
-            LoadLoaiNCC_KH();
+            
         }
 
         

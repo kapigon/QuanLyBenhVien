@@ -12,9 +12,9 @@ namespace QLBV_DEV
     using System;
     using System.Collections.Generic;
     
-    public partial class LoaiDonThuoc
+    public partial class LoaiHinhBan
     {
         public int ID { get; set; }
-        public string TenDonThuoc { get; set; }
+        public string TenLoaiHinhBan { get; set; }
     }
 }

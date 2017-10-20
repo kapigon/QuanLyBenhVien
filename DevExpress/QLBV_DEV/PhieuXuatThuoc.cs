@@ -17,6 +17,7 @@ namespace QLBV_DEV
         public long ID { get; set; }
         public Nullable<int> NCC_KH_ID { get; set; }
         public Nullable<int> TrangThaiPhieu_ID { get; set; }
+        public Nullable<int> LoaiHinhBan_ID { get; set; }
         public string SoPhieu { get; set; }
         public string GhiChu { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
@@ -27,9 +28,8 @@ namespace QLBV_DEV
         public Nullable<double> TongTienTruocThue { get; set; }
         public Nullable<double> ChietKhau { get; set; }
         public Nullable<double> TongTienKHTra { get; set; }
-        public Nullable<int> UserTao { get; set; }
         public Nullable<bool> Xoa { get; set; }
         public Nullable<int> UserXoa { get; set; }
-        public Nullable<bool> TrangThai { get; set; }
+        public Nullable<int> UserTao { get; set; }
     }
 }

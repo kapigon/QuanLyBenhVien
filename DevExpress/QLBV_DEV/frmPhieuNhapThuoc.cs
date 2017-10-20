@@ -340,5 +340,15 @@ namespace QLBV_DEV
 
             grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>(db.CT_Thuoc_PhieuNhap.Where(p => p.PhieuNhapHang_ID == id).ToList());
         }
+
+        private void cbbNCC_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Kind.ToString() == "Plus")
+            {
+                frmThemNCC_KH frmThemNCC_KH = new frmThemNCC_KH(); // 1 : NCC
+                frmThemNCC_KH.ChonNCC_KH(1);
+                frmThemNCC_KH.ShowDialog();
+            }
+        }
     }
 }

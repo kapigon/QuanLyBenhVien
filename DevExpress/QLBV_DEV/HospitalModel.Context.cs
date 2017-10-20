@@ -34,17 +34,17 @@ namespace QLBV_DEV
         public virtual DbSet<NhomThuoc> NhomThuoc { get; set; }
         public virtual DbSet<PhanQuyen> PhanQuyen { get; set; }
         public virtual DbSet<PhieuNhapThuoc> PhieuNhapThuoc { get; set; }
-        public virtual DbSet<PhieuXuatThuoc> PhieuXuatThuoc { get; set; }
         public virtual DbSet<Thuoc> Thuoc { get; set; }
         public virtual DbSet<CT_Thuoc_PhieuNhap> CT_Thuoc_PhieuNhap { get; set; }
         public virtual DbSet<CT_Thuoc_PhieuXuat> CT_Thuoc_PhieuXuat { get; set; }
         public virtual DbSet<HangSanXuat> HangSanXuat { get; set; }
         public virtual DbSet<HoatChat> HoatChat { get; set; }
-        public virtual DbSet<LoaiDonThuoc> LoaiDonThuoc { get; set; }
         public virtual DbSet<NuocSanXuat> NuocSanXuat { get; set; }
         public virtual DbSet<TrangThaiPhieu> TrangThaiPhieu { get; set; }
         public virtual DbSet<NCC_KH> NCC_KH { get; set; }
         public virtual DbSet<LoaiNCC_KH> LoaiNCC_KH { get; set; }
         public virtual DbSet<ViTri> ViTri { get; set; }
+        public virtual DbSet<LoaiHinhBan> LoaiHinhBan { get; set; }
+        public virtual DbSet<PhieuXuatThuoc> PhieuXuatThuoc { get; set; }
     }
 }

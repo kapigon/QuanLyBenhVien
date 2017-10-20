@@ -32,6 +32,7 @@ namespace QLBV_DEV
             LoadNCC_KH();
             LoadDVT();
             LoadThuoc();
+            LoadLoaiHinhBan();
         }
 
         #region methods
@@ -56,7 +57,7 @@ namespace QLBV_DEV
             var result = from dvt in db.DonViTinh
                          select new
                          {
-                             ID = dvt.ID,
+                             ID     = dvt.ID,
                              TenDVT = dvt.TenDVT
                          };
             cbbDVT.DataSource = result.ToList();
@@ -72,22 +73,40 @@ namespace QLBV_DEV
                          //join dvt in db.DonViTinh on ct_thuoc.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
                          select new
                          {
-                             ID = ct_thuoc.ID,
-                             MaThuoc = thuoc.MaThuoc,
-                             TenThuoc = thuoc.TenThuoc,
-                             TonKhoLo = ct_thuoc.TonKho,
-                             TonKhoTong = thuoc.TonKho,
-                             DVT_Theo_DVT_Thuoc_ID = ct_thuoc.DVT_Theo_DVT_Thuoc_ID,
-		                     SoLuong = ct_thuoc.SoLuong,  // 1
-                             SoLo = ct_thuoc.SoLo, 
-                             HSD = ct_thuoc.HSD             //2
+                             ID                     = ct_thuoc.ID,
+                             MaThuoc                = thuoc.MaThuoc,
+                             TenThuoc               = thuoc.TenThuoc,
+                             TonKhoLo               = ct_thuoc.TonKho,
+                             TonKhoTong             = thuoc.TonKho,
+                             DVT_Theo_DVT_Thuoc_ID  = ct_thuoc.DVT_Theo_DVT_Thuoc_ID,
+                             GiaBanLe               = thuoc.GiaBanLe,
+                             GiaBanBuon             = thuoc.GiaBanBuon,
+		                     SoLuong                = ct_thuoc.SoLuong,  
+                             SoLo                   = ct_thuoc.SoLo, 
+                             HSD                    = ct_thuoc.HSD
                          };
             
-            rlookHSD.DataSource=
+            //rlookHSD.DataSource= : thay bằng xử lý thêm trường trong class
             gridColThuoc_ID.DataSource = result.ToList<dynamic>();
             //cbbNCC.DataSource = result.ToList();
             gridColThuoc_ID.DisplayMember = "TenThuoc";
             gridColThuoc_ID.ValueMember = "ID";
+        }
+
+        private void LoadLoaiHinhBan()
+        {
+            var result = from loai in db.LoaiHinhBan
+                         select new
+                         {
+                             ID = loai.ID,
+                             TenLoaiHinhBan = loai.TenLoaiHinhBan
+                         };
+            cbbLoaiHinhBan.Properties.DataSource = result.ToList();
+            //cbbNCC.DataSource = result.ToList();
+            cbbLoaiHinhBan.Properties.DisplayMember = "TenLoaiHinhBan";
+            cbbLoaiHinhBan.Properties.ValueMember = "ID";
+
+            cbbLoaiHinhBan.EditValue = 1;
         }
 
         public void setValueGridControl(CT_Thuoc_PhieuXuat obj_CT_Thuoc, int _index)
@@ -117,33 +136,31 @@ namespace QLBV_DEV
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            cbbKH.EditValue            = null;
+            cbbKH.EditValue             = null;
             txtSoPhieu.Text             = "";
             txtGhiChu.Text              = "";
             txtSeri.Text                = "";
             cbbThueSuat.EditValue       = "";
             txtSoHoaDon.Text            = "";
             dateNgayVietHD.EditValue    = DateTime.Now;
-            dateNgayBan.EditValue      = DateTime.Now;
-            grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuXuat>();
+            dateNgayBan.EditValue       = DateTime.Now;
+            grdDSThuoc.DataSource       = new BindingList<CT_Thuoc_PhieuXuat>();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (dxValidate.Validate())
             {
-                //MessageBox.Show(ngayNhap.ToString("dd/MM/yyyy"));
-
-                int khID            = Convert.ToInt32(cbbKH.EditValue);
-                String soPhieu      = txtSoPhieu.Text.Trim();
-                String ghiChu       = txtGhiChu.Text.Trim();
-                DateTime ngayBan    = dateNgayBan.DateTime;
-                String soSeri       = txtSeri.Text.Trim();
-                int thueSuat        = Convert.ToInt32(cbbThueSuat.EditValue.ToString().Replace("%",""));
-                String soHD         = txtSoHoaDon.Text.Trim();
-                DateTime ngayVietHD = dateNgayVietHD.DateTime;
-                int userID          = 100000;
-                double tongtien = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
+                int khID                = Convert.ToInt32(cbbKH.EditValue);
+                String soPhieu          = txtSoPhieu.Text.Trim();
+                String ghiChu           = txtGhiChu.Text.Trim();
+                DateTime ngayBan        = dateNgayBan.DateTime;
+                String soSeri           = txtSeri.Text.Trim();
+                int thueSuat            = Convert.ToInt32(cbbThueSuat.EditValue.ToString().Replace("%",""));
+                String soHD             = txtSoHoaDon.Text.Trim();
+                DateTime ngayVietHD     = dateNgayVietHD.DateTime;
+                int userID              = 100000;
+                double tongtien         = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
 
                 PhieuXuatThuoc obj_PhieuXuat;
 
@@ -153,6 +170,8 @@ namespace QLBV_DEV
                     obj_PhieuXuat = rpo_PhieuXuat.GetSingle(phieuxuat_ID);
 
                 obj_PhieuXuat.NCC_KH_ID         = khID;
+                obj_PhieuXuat.TrangThaiPhieu_ID = 1;            // Nháp
+                obj_PhieuXuat.LoaiHinhBan_ID    = Convert.ToInt32(cbbLoaiHinhBan.EditValue);
                 obj_PhieuXuat.SoPhieu           = soPhieu;
                 obj_PhieuXuat.GhiChu            = ghiChu;
                 obj_PhieuXuat.NgayTao           = ngayBan;
@@ -160,15 +179,15 @@ namespace QLBV_DEV
                 obj_PhieuXuat.SoSeri            = soSeri;
                 obj_PhieuXuat.SoHoaDon          = soHD;
                 obj_PhieuXuat.NgayHoaDon        = ngayVietHD;
-                obj_PhieuXuat.TongTienTruocThue = tongtien;            /// *
-                obj_PhieuXuat.ChietKhau         = 0;            /// *
+                obj_PhieuXuat.TongTienTruocThue = tongtien;             /// *
+                obj_PhieuXuat.ChietKhau         = 0;                    /// *
                 obj_PhieuXuat.TongTienKHTra     = tongtien + tongtien * thueSuat;            /// *
-                obj_PhieuXuat.UserTao           = userID;       /// *
+                obj_PhieuXuat.UserTao           = userID;               /// *
 
-                /// Tạo Phiếu nhập
+                /// Tạo Phiếu xuất
                 if (!isUpdate)
                     rpo_PhieuXuat.Create(obj_PhieuXuat);
-                /// Lưu lại phiếu nhập
+                /// Lưu lại phiếu xuất
                 else 
                     rpo_PhieuXuat.Save(obj_PhieuXuat);
 
@@ -178,7 +197,7 @@ namespace QLBV_DEV
                     {
                         try
                         {
-                            /// Khi tao 1 phiếu nhập thành công -> tạo các Chi tiết Thuốc theo phiếu nhập đó
+                            /// Khi tao 1 phiếu xuất thành công -> tạo các Chi tiết Thuốc theo phiếu xuất đó
                             if (obj_PhieuXuat.ID != null)
                             {
                                 for (int i = 0; i < gridView1.DataRowCount; i++)
@@ -186,7 +205,8 @@ namespace QLBV_DEV
                                     CT_Thuoc_PhieuXuat obj_CT_Thuoc;
                                     int ct_thuoc_ID = 0;
                                     bool isUpdateRow = false;
-
+                                    long ct_phieunhap_ID = 0;
+                                    int soluong = 0;
                                     /// Kiểm tra xem ID đã tồn tại trong 'row' chưa
                                     if (gridView1.GetRowCellValue(i, "ID") != "" && Convert.ToInt32(gridView1.GetRowCellValue(i, "ID")) > 0)
                                     {
@@ -199,17 +219,19 @@ namespace QLBV_DEV
                                         obj_CT_Thuoc = new CT_Thuoc_PhieuXuat();
                                     }
 
-                                    //obj_CT_Thuoc.PhieuXuatHang_ID       = obj_PhieuXuat.ID;
-                                    //obj_CT_Thuoc.Thuoc_ID               = Convert.ToInt64(gridView1.GetRowCellValue(i, "Thuoc_ID"));
-                                    //obj_CT_Thuoc.Kho_ID                 = Convert.ToInt32(gridView1.GetRowCellValue(i, "Kho_ID"));
-                                    //obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID  = Convert.ToInt32(gridView1.GetRowCellValue(i, "DVT_Theo_DVT_Thuoc_ID"));
-                                    //obj_CT_Thuoc.ViTri_ID               = Convert.ToInt32(gridView1.GetRowCellValue(i, "ViTri_ID"));
-                                    //obj_CT_Thuoc.Barcode                = gridView1.GetRowCellValue(i, "Barcode_1").ToString();
-                                    //obj_CT_Thuoc.HSD                    = Convert.ToDateTime(gridView1.GetRowCellValue(i, "HSD"));
-                                    //obj_CT_Thuoc.GiaNhap                = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaNhap"));
-                                    //obj_CT_Thuoc.SoLuong                = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
-                                    //obj_CT_Thuoc.SoLo                   = gridView1.GetRowCellValue(i, "SoLo") != null ? gridView1.GetRowCellValue(i, "SoLo").ToString() : "";
+                                    ct_phieunhap_ID                     = Convert.ToInt64(gridView1.GetRowCellValue(i, "ID"));
+                                    soluong                             = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
+
+                                    obj_CT_Thuoc.PhieuXuatHang_ID       = obj_PhieuXuat.ID;
+                                    obj_CT_Thuoc.CT_Thuoc_PhieuNhap_ID  = Convert.ToInt64(gridView1.GetRowCellValue(i, "ID"));
+                                    obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID  = Convert.ToInt32(gridView1.GetRowCellValue(i, "DVT_Theo_DVT_Thuoc_ID"));
+                                    obj_CT_Thuoc.LoaiHinhBan_ID         = obj_PhieuXuat.LoaiHinhBan_ID;
+                                    obj_CT_Thuoc.GiaBan                 = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaBan"));
+                                    obj_CT_Thuoc.SoLuong                = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
+                                    obj_CT_Thuoc.TongTien               = Convert.ToDouble(gridView1.GetRowCellValue(i, "ThanhTien"));
+                                    obj_CT_Thuoc.GhiChu                 = gridView1.GetRowCellValue(i, "GhiChu").ToString();
                                     obj_PhieuXuat.UserTao               = userID;
+
 
                                     /// Nếu 'row' chưa có 1 Chi tiết Thuốc thì tạo mới
                                     if (!isUpdateRow)
@@ -217,6 +239,21 @@ namespace QLBV_DEV
                                     /// Lưu lại 1 Chi tiết Thuốc
                                     else
                                         rpo_CT_Thuoc.Save(obj_CT_Thuoc);
+
+                                    /// Cập nhật lại số lượng thuốc theo CT_Thuoc_PhieuNhap
+                                    CT_Thuoc_PhieuNhapRepository rpo_CT_PhieuNhap = new CT_Thuoc_PhieuNhapRepository();
+                                    CT_Thuoc_PhieuNhap obj_CT_PhieuNhap = rpo_CT_PhieuNhap.GetSingle(ct_phieunhap_ID);
+                                    obj_CT_PhieuNhap.TonKho -= soluong;
+                                    rpo_CT_PhieuNhap.Save(obj_CT_PhieuNhap);
+
+
+                                    /// Cập số lượng tồn kho Thuốc
+                                    /*ThuocRepository rpo_Thuoc = new ThuocRepository();
+                                    Thuoc obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
+                                    obj_Thuoc.TonKho = rpo_Thuoc.GetCountTonKho(thuoc_ID);
+
+                                    rpo_Thuoc.Save(obj_Thuoc); */
+
                                 }
                             }
                             this.Close();
@@ -319,6 +356,9 @@ namespace QLBV_DEV
         {
             //CT_Thuoc_PhieuXuat
 
+            //MessageBox.Show(gridView1.FocusedRowHandle.ToString());
+            int _index = gridView1.FocusedRowHandle;
+            
             var search = sender as SearchLookUpEdit;
             if (search == null) return;
 
@@ -332,10 +372,23 @@ namespace QLBV_DEV
 
             var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuXuat;
             if (ctXuat == null) return;
-            ctXuat.SoLuong = x.SoLuong;
-            ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Theo_DVT_Thuoc_ID;
+            ctXuat.SoLuong                  = x.SoLuong;
+            ctXuat.DVT_Theo_DVT_Thuoc_ID    = x.DVT_Theo_DVT_Thuoc_ID;
+            ctXuat.GiaBan                   = x.GiaBanLe;
+            ctXuat.TonKho                   = x.TonKhoLo;
+            ctXuat.HSD                      = x.HSD;
 
             gridView1.PostEditor();
+        }
+
+        private void cbbKH_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Kind.ToString() == "Plus")
+            {
+                frmThemNCC_KH frmThemNCC_KH = new frmThemNCC_KH(); // 2 : KH
+                frmThemNCC_KH.ChonNCC_KH(2);
+                frmThemNCC_KH.ShowDialog();
+            }
         }
     }
 }

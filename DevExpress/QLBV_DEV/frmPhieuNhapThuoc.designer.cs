@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
@@ -56,6 +57,7 @@
             this.Thuoc_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.TonKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DVT_Theo_DVT_Thuoc_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbbDVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.GiaNhap = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -97,8 +99,7 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
-            this.TonKho = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
@@ -447,6 +448,8 @@
             // 
             // SoLuong
             // 
+            this.SoLuong.AppearanceCell.Options.UseTextOptions = true;
+            this.SoLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.SoLuong.AppearanceHeader.Options.UseTextOptions = true;
             this.SoLuong.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SoLuong.Caption = "Số lượng";
@@ -463,8 +466,16 @@
             this.repositoryItemTextEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
+            // TonKho
+            // 
+            this.TonKho.Caption = "Tồn kho";
+            this.TonKho.FieldName = "TonKho";
+            this.TonKho.Name = "TonKho";
+            // 
             // DVT_Theo_DVT_Thuoc_ID
             // 
+            this.DVT_Theo_DVT_Thuoc_ID.AppearanceCell.Options.UseTextOptions = true;
+            this.DVT_Theo_DVT_Thuoc_ID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.DVT_Theo_DVT_Thuoc_ID.AppearanceHeader.Options.UseTextOptions = true;
             this.DVT_Theo_DVT_Thuoc_ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.DVT_Theo_DVT_Thuoc_ID.Caption = "ĐVT";
@@ -486,6 +497,8 @@
             // 
             // GiaNhap
             // 
+            this.GiaNhap.AppearanceCell.Options.UseTextOptions = true;
+            this.GiaNhap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.GiaNhap.AppearanceHeader.Options.UseTextOptions = true;
             this.GiaNhap.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.GiaNhap.Caption = "Giá nhập";
@@ -497,6 +510,8 @@
             // 
             // ThanhTien
             // 
+            this.ThanhTien.AppearanceCell.Options.UseTextOptions = true;
+            this.ThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ThanhTien.AppearanceHeader.Options.UseTextOptions = true;
             this.ThanhTien.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ThanhTien.Caption = "Thành tiền";
@@ -520,6 +535,8 @@
             // 
             // HSD
             // 
+            this.HSD.AppearanceCell.Options.UseTextOptions = true;
+            this.HSD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HSD.AppearanceHeader.Options.UseTextOptions = true;
             this.HSD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HSD.Caption = "Hạn sử dụng";
@@ -639,6 +656,7 @@
             this.cbbNCC.Size = new System.Drawing.Size(213, 20);
             this.cbbNCC.StyleController = this.layoutControl1;
             this.cbbNCC.TabIndex = 7;
+            this.cbbNCC.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cbbNCC_ButtonClick);
             // 
             // cbbThueSuat
             // 
@@ -870,12 +888,6 @@
             this.layoutControlItem14.Size = new System.Drawing.Size(285, 77);
             this.layoutControlItem14.Text = "Ghi chú";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(65, 13);
-            // 
-            // TonKho
-            // 
-            this.TonKho.Caption = "Tồn kho";
-            this.TonKho.FieldName = "TonKho";
-            this.TonKho.Name = "TonKho";
             // 
             // frmPhieuNhapThuoc
             // 

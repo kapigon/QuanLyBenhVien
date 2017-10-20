@@ -130,6 +130,7 @@
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NCC_KH_ID" Type="int" />
           <Property Name="TrangThaiPhieu_ID" Type="int" />
+          <Property Name="LoaiHinhBan_ID" Type="int" />
           <Property Name="SoPhieu" Type="varchar" MaxLength="20" />
           <Property Name="GhiChu" Type="nchar" MaxLength="10" />
           <Property Name="NgayTao" Type="date" />
@@ -140,7 +141,6 @@
           <Property Name="TongTienTruocThue" Type="float" />
           <Property Name="ChietKhau" Type="float" />
           <Property Name="TongTienKHTra" Type="float" />
-          <Property Name="TrangThai" Type="bit" />
           <Property Name="Xoa" Type="bit" />
           <Property Name="UserXoa" Type="int" />
           <Property Name="UserTao" Type="int" />
@@ -197,7 +197,7 @@
           <Property Name="PhieuXuatHang_ID" Type="bigint" />
           <Property Name="CT_Thuoc_PhieuNhap_ID" Type="bigint" />
           <Property Name="DVT_Theo_DVT_Thuoc_ID" Type="int" />
-          <Property Name="LoaiDonThuoc_ID" Type="int" />
+          <Property Name="LoaiHinhBan_ID" Type="int" />
           <Property Name="GiaBan" Type="float" />
           <Property Name="SoLuong" Type="int" />
           <Property Name="TongTien" Type="float" />
@@ -222,12 +222,12 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenHoatChat" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="LoaiDonThuoc">
+        <EntityType Name="LoaiHinhBan">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenDonThuoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoaiHinhBan" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="LoaiNCC_KH">
           <Key>
@@ -274,7 +274,7 @@
           <EntitySet Name="CT_Thuoc_PhieuXuat" EntityType="Self.CT_Thuoc_PhieuXuat" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="HangSanXuat" EntityType="Self.HangSanXuat" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="HoatChat" EntityType="Self.HoatChat" Schema="g6t_user" store:Type="Tables" />
-          <EntitySet Name="LoaiDonThuoc" EntityType="Self.LoaiDonThuoc" Schema="g6t_user" store:Type="Tables" />
+          <EntitySet Name="LoaiHinhBan" EntityType="Self.LoaiHinhBan" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="LoaiNCC_KH" EntityType="Self.LoaiNCC_KH" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="NuocSanXuat" EntityType="Self.NuocSanXuat" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="TrangThaiPhieu" EntityType="Self.TrangThaiPhieu" Schema="g6t_user" store:Type="Tables" />
@@ -294,18 +294,18 @@
           <EntitySet Name="NhomThuoc" EntityType="HospitalModel.NhomThuoc" />
           <EntitySet Name="PhanQuyen" EntityType="HospitalModel.PhanQuyen" />
           <EntitySet Name="PhieuNhapThuoc" EntityType="HospitalModel.PhieuNhapThuoc" />
-          <EntitySet Name="PhieuXuatThuoc" EntityType="HospitalModel.PhieuXuatThuoc" />
           <EntitySet Name="Thuoc" EntityType="HospitalModel.Thuoc" />
           <EntitySet Name="CT_Thuoc_PhieuNhap" EntityType="HospitalModel.CT_Thuoc_PhieuNhap" />
           <EntitySet Name="CT_Thuoc_PhieuXuat" EntityType="HospitalModel.CT_Thuoc_PhieuXuat" />
           <EntitySet Name="HangSanXuat" EntityType="HospitalModel.HangSanXuat" />
           <EntitySet Name="HoatChat" EntityType="HospitalModel.HoatChat" />
-          <EntitySet Name="LoaiDonThuoc" EntityType="HospitalModel.LoaiDonThuoc" />
           <EntitySet Name="NuocSanXuat" EntityType="HospitalModel.NuocSanXuat" />
           <EntitySet Name="TrangThaiPhieu" EntityType="HospitalModel.TrangThaiPhieu" />
           <EntitySet Name="NCC_KH" EntityType="HospitalModel.NCC_KH" />
           <EntitySet Name="LoaiNCC_KH" EntityType="HospitalModel.LoaiNCC_KH" />
           <EntitySet Name="ViTri" EntityType="HospitalModel.ViTri" />
+          <EntitySet Name="LoaiHinhBan" EntityType="HospitalModel.LoaiHinhBan" />
+          <EntitySet Name="PhieuXuatThuoc" EntityType="HospitalModel.PhieuXuatThuoc" />
         </EntityContainer>
         <EntityType Name="ChiTietPhanQuyen">
           <Key>
@@ -404,28 +404,6 @@
           <Property Name="Xoa" Type="Boolean" />
           <Property Name="NgayXoa" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="PhieuXuatThuoc">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NCC_KH_ID" Type="Int32" />
-          <Property Name="TrangThaiPhieu_ID" Type="Int32" />
-          <Property Name="SoPhieu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="GhiChu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="NgayTao" Type="DateTime" Precision="0" />
-          <Property Name="ThueSuat" Type="Double" />
-          <Property Name="SoSeri" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="SoHoaDon" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="NgayHoaDon" Type="DateTime" Precision="0" />
-          <Property Name="TongTienTruocThue" Type="Double" />
-          <Property Name="ChietKhau" Type="Double" />
-          <Property Name="TongTienKHTra" Type="Double" />
-          <Property Name="UserTao" Type="Int32" />
-          <Property Name="Xoa" Type="Boolean" />
-          <Property Name="UserXoa" Type="Int32" />
-          <Property Name="TrangThai" Type="Boolean" />
-        </EntityType>
         <EntityType Name="Thuoc">
           <Key>
             <PropertyRef Name="ID" />
@@ -478,7 +456,7 @@
           <Property Name="PhieuXuatHang_ID" Type="Int64" />
           <Property Name="CT_Thuoc_PhieuNhap_ID" Type="Int64" />
           <Property Name="DVT_Theo_DVT_Thuoc_ID" Type="Int32" />
-          <Property Name="LoaiDonThuoc_ID" Type="Int32" />
+          <Property Name="LoaiHinhBan_ID" Type="Int32" />
           <Property Name="GiaBan" Type="Double" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="TongTien" Type="Double" />
@@ -502,13 +480,6 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenHoatChat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="LoaiDonThuoc">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenDonThuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NuocSanXuat">
           <Key>
@@ -558,6 +529,35 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenViTri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LoaiHinhBan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLoaiHinhBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PhieuXuatThuoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NCC_KH_ID" Type="Int32" />
+          <Property Name="TrangThaiPhieu_ID" Type="Int32" />
+          <Property Name="LoaiHinhBan_ID" Type="Int32" />
+          <Property Name="SoPhieu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="GhiChu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NgayTao" Type="DateTime" Precision="0" />
+          <Property Name="ThueSuat" Type="Double" />
+          <Property Name="SoSeri" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SoHoaDon" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="NgayHoaDon" Type="DateTime" Precision="0" />
+          <Property Name="TongTienTruocThue" Type="Double" />
+          <Property Name="ChietKhau" Type="Double" />
+          <Property Name="TongTienKHTra" Type="Double" />
+          <Property Name="Xoa" Type="Boolean" />
+          <Property Name="UserXoa" Type="Int32" />
+          <Property Name="UserTao" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -671,29 +671,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PhieuXuatThuoc">
-            <EntityTypeMapping TypeName="HospitalModel.PhieuXuatThuoc">
-              <MappingFragment StoreEntitySet="PhieuXuatThuoc">
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-                <ScalarProperty Name="UserXoa" ColumnName="UserXoa" />
-                <ScalarProperty Name="Xoa" ColumnName="Xoa" />
-                <ScalarProperty Name="UserTao" ColumnName="UserTao" />
-                <ScalarProperty Name="TongTienKHTra" ColumnName="TongTienKHTra" />
-                <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
-                <ScalarProperty Name="TongTienTruocThue" ColumnName="TongTienTruocThue" />
-                <ScalarProperty Name="NgayHoaDon" ColumnName="NgayHoaDon" />
-                <ScalarProperty Name="SoHoaDon" ColumnName="SoHoaDon" />
-                <ScalarProperty Name="SoSeri" ColumnName="SoSeri" />
-                <ScalarProperty Name="ThueSuat" ColumnName="ThueSuat" />
-                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
-                <ScalarProperty Name="TrangThaiPhieu_ID" ColumnName="TrangThaiPhieu_ID" />
-                <ScalarProperty Name="NCC_KH_ID" ColumnName="NCC_KH_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Thuoc">
             <EntityTypeMapping TypeName="HospitalModel.Thuoc">
               <MappingFragment StoreEntitySet="Thuoc">
@@ -743,8 +720,8 @@
           <EntitySetMapping Name="CT_Thuoc_PhieuXuat">
             <EntityTypeMapping TypeName="HospitalModel.CT_Thuoc_PhieuXuat">
               <MappingFragment StoreEntitySet="CT_Thuoc_PhieuXuat">
+                <ScalarProperty Name="LoaiHinhBan_ID" ColumnName="LoaiHinhBan_ID" />
                 <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
-                <ScalarProperty Name="LoaiDonThuoc_ID" ColumnName="LoaiDonThuoc_ID" />
                 <ScalarProperty Name="DVT_Theo_DVT_Thuoc_ID" ColumnName="DVT_Theo_DVT_Thuoc_ID" />
                 <ScalarProperty Name="CT_Thuoc_PhieuNhap_ID" ColumnName="CT_Thuoc_PhieuNhap_ID" />
                 <ScalarProperty Name="PhieuXuatHang_ID" ColumnName="PhieuXuatHang_ID" />
@@ -772,14 +749,6 @@
             <EntityTypeMapping TypeName="HospitalModel.HoatChat">
               <MappingFragment StoreEntitySet="HoatChat">
                 <ScalarProperty Name="TenHoatChat" ColumnName="TenHoatChat" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LoaiDonThuoc">
-            <EntityTypeMapping TypeName="HospitalModel.LoaiDonThuoc">
-              <MappingFragment StoreEntitySet="LoaiDonThuoc">
-                <ScalarProperty Name="TenDonThuoc" ColumnName="TenDonThuoc" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -834,6 +803,37 @@
             <EntityTypeMapping TypeName="HospitalModel.ViTri">
               <MappingFragment StoreEntitySet="ViTri">
                 <ScalarProperty Name="TenViTri" ColumnName="TenViTri" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiHinhBan">
+            <EntityTypeMapping TypeName="HospitalModel.LoaiHinhBan">
+              <MappingFragment StoreEntitySet="LoaiHinhBan">
+                <ScalarProperty Name="TenLoaiHinhBan" ColumnName="LoaiHinhBan" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhieuXuatThuoc">
+            <EntityTypeMapping TypeName="HospitalModel.PhieuXuatThuoc">
+              <MappingFragment StoreEntitySet="PhieuXuatThuoc">
+                <ScalarProperty Name="UserTao" ColumnName="UserTao" />
+                <ScalarProperty Name="UserXoa" ColumnName="UserXoa" />
+                <ScalarProperty Name="Xoa" ColumnName="Xoa" />
+                <ScalarProperty Name="TongTienKHTra" ColumnName="TongTienKHTra" />
+                <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
+                <ScalarProperty Name="TongTienTruocThue" ColumnName="TongTienTruocThue" />
+                <ScalarProperty Name="NgayHoaDon" ColumnName="NgayHoaDon" />
+                <ScalarProperty Name="SoHoaDon" ColumnName="SoHoaDon" />
+                <ScalarProperty Name="SoSeri" ColumnName="SoSeri" />
+                <ScalarProperty Name="ThueSuat" ColumnName="ThueSuat" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
+                <ScalarProperty Name="LoaiHinhBan_ID" ColumnName="LoaiHinhBan_ID" />
+                <ScalarProperty Name="TrangThaiPhieu_ID" ColumnName="TrangThaiPhieu_ID" />
+                <ScalarProperty Name="NCC_KH_ID" ColumnName="NCC_KH_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
