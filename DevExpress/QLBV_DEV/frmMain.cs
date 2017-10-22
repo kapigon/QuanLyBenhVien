@@ -26,6 +26,33 @@ namespace QLBV_DEV
         frmKho              frmKho              = new frmKho();
         frmDS_Thuoc         frmDS_Thuoc         = new frmDS_Thuoc();
         frmPhieuXuatThuoc   frmPhieuXuatThuoc   = new frmPhieuXuatThuoc();
+        frmDSThuocCanDate   frmDSThuocCanDate   = new frmDSThuocCanDate();
+        frmThuoCanDate_tungloai frmThuoCanDate_tungloai = new frmThuoCanDate_tungloai();
+        frmTonKhoTheoLo frmTonKhoTheoLo         = new frmTonKhoTheoLo();
+        frmTonKhoTheoThuoc  frmTonKhoTheoThuoc  = new frmTonKhoTheoThuoc();
+        frmTonKhoToiThieu   frmTonKhoToiThieu   = new frmTonKhoToiThieu();
+
+        private void close_form(object sender, FormClosedEventArgs e)
+        {
+            frmPhieuNhapThuoc       = new frmPhieuNhapThuoc();
+            frmDSPhieuNhap          = new frmDSPhieuNhap();
+            frmThemNhaCungCap       = new frmThemNCC_KH();
+            frmThemThuoc            = new frmThemThuoc();
+            frmDSNCC_KH             = new frmDSNCC_KH();
+            frmNuocSanXuat          = new frmNuocSanXuat();
+            frmHoatChat             = new frmHoatChat();
+            frmNhomThuoc            = new frmNhomThuoc();
+            frmDonViTinh            = new frmDonViTinh();
+            frmViTri                = new frmKho();
+            frmHangSanXuat          = new frmHangSanXuat();
+            frmKho                  = new frmKho();
+            frmDSThuocCanDate       = new frmDSThuocCanDate();
+            frmThuoCanDate_tungloai = new frmThuoCanDate_tungloai();
+            frmTonKhoTheoLo         = new frmTonKhoTheoLo();
+            frmTonKhoTheoThuoc      = new frmTonKhoTheoThuoc();
+            frmTonKhoToiThieu       = new frmTonKhoToiThieu();
+        }
+
         public frmMain()
         {
 
@@ -44,10 +71,7 @@ namespace QLBV_DEV
             return null;
         }
 
-        private void comboBoxEdit1_DoubleClick(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hey");
-        }
+
 
         private void btnTaoPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -141,21 +165,7 @@ namespace QLBV_DEV
             }
         }
 
-        private void close_form(object sender, FormClosedEventArgs e)
-        {
-            frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
-            frmDSPhieuNhap      = new frmDSPhieuNhap();
-            frmThemNhaCungCap   = new frmThemNCC_KH();
-            frmThemThuoc        = new frmThemThuoc();
-            frmDSNCC_KH         = new frmDSNCC_KH();
-            frmNuocSanXuat      = new frmNuocSanXuat();
-            frmHoatChat         = new frmHoatChat();
-            frmNhomThuoc        = new frmNhomThuoc();
-            frmDonViTinh        = new frmDonViTinh();
-            frmViTri            = new frmKho();
-            frmHangSanXuat      = new frmHangSanXuat();
-            frmKho              = new frmKho();
-        }
+
 
         private void btnHoatChat_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -277,6 +287,86 @@ namespace QLBV_DEV
                 frmPhieuXuatThuoc.MdiParent = this;
                 frmPhieuXuatThuoc.FormClosed += new FormClosedEventHandler(close_form);
                 frmPhieuXuatThuoc.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnCanDate1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmDSThuocCanDate));
+            if (frm == null)
+            {
+                frmDSThuocCanDate.MdiParent = this;
+                frmDSThuocCanDate.FormClosed += new FormClosedEventHandler(close_form);
+                frmDSThuocCanDate.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnThuocCanDate_tungloai_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmThuoCanDate_tungloai));
+            if (frm == null)
+            {
+                frmThuoCanDate_tungloai.MdiParent = this;
+                frmThuoCanDate_tungloai.FormClosed += new FormClosedEventHandler(close_form);
+                frmThuoCanDate_tungloai.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnTonKhoTheoLo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmTonKhoTheoLo));
+            if (frm == null)
+            {
+                frmTonKhoTheoLo.MdiParent = this;
+                frmTonKhoTheoLo.FormClosed += new FormClosedEventHandler(close_form);
+                frmTonKhoTheoLo.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnTonKhoTheoThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmTonKhoTheoThuoc));
+            if (frm == null)
+            {
+                frmTonKhoTheoThuoc.MdiParent = this;
+                frmTonKhoTheoThuoc.FormClosed += new FormClosedEventHandler(close_form);
+                frmTonKhoTheoThuoc.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnTonkhoToiThieu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmTonKhoToiThieu));
+            if (frm == null)
+            {
+                frmTonKhoToiThieu.MdiParent = this;
+                frmTonKhoToiThieu.FormClosed += new FormClosedEventHandler(close_form);
+                frmTonKhoToiThieu.Show();
 
             }
             else

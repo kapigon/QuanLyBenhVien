@@ -350,5 +350,10 @@ namespace QLBV_DEV
                 frmThemNCC_KH.ShowDialog();
             }
         }
+
+        private void grdDSThuoc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
