@@ -123,6 +123,7 @@
             this.labelKhachDua = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtConLai.Properties)).BeginInit();
@@ -194,6 +195,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.splitterControl1);
             this.layoutControl1.Controls.Add(this.txtConLai);
             this.layoutControl1.Controls.Add(this.txtChietKhau);
             this.layoutControl1.Controls.Add(this.txtKhachDua);
@@ -1220,6 +1222,14 @@
             this.layoutControlItem19.Text = "Còn lại";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(64, 13);
             // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Location = new System.Drawing.Point(1130, 190);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(5, 3);
+            this.splitterControl1.TabIndex = 22;
+            this.splitterControl1.TabStop = false;
+            // 
             // frmPhieuXuatThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1395,6 +1405,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
         private DevExpress.XtraLayout.LayoutControlItem labelKhachDua;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
+        private DevExpress.XtraEditors.SplitterControl splitterControl1;
 
     }
 }

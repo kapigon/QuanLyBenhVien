@@ -14,13 +14,14 @@ namespace QLBV_DEV
     {
         frmPhieuNhapThuoc   frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
         frmDSPhieuNhap      frmDSPhieuNhap      = new frmDSPhieuNhap();
+        frmDSPhieuXuat      frmDSPhieuXuat      = new frmDSPhieuXuat();
         frmThemNCC_KH       frmThemNhaCungCap   = new frmThemNCC_KH();
         frmThemThuoc        frmThemThuoc        = new frmThemThuoc();
         frmDSNCC_KH         frmDSNCC_KH         = new frmDSNCC_KH();
         frmNuocSanXuat      frmNuocSanXuat      = new frmNuocSanXuat();
         frmHoatChat         frmHoatChat         = new frmHoatChat();
-        frmDonViTinh        frmDonViTinh        = new frmDonViTinh();
         frmNhomThuoc        frmNhomThuoc        = new frmNhomThuoc();
+        frmDonViTinh        frmDonViTinh        = new frmDonViTinh();
         frmKho              frmViTri            = new frmKho();
         frmHangSanXuat      frmHangSanXuat      = new frmHangSanXuat();
         frmKho              frmKho              = new frmKho();
@@ -28,7 +29,7 @@ namespace QLBV_DEV
         frmPhieuXuatThuoc   frmPhieuXuatThuoc   = new frmPhieuXuatThuoc();
         frmDSThuocCanDate   frmDSThuocCanDate   = new frmDSThuocCanDate();
         frmThuoCanDate_tungloai frmThuoCanDate_tungloai = new frmThuoCanDate_tungloai();
-        frmTonKhoTheoLo frmTonKhoTheoLo         = new frmTonKhoTheoLo();
+        frmTonKhoTheoLo     frmTonKhoTheoLo         = new frmTonKhoTheoLo();
         frmTonKhoTheoThuoc  frmTonKhoTheoThuoc  = new frmTonKhoTheoThuoc();
         frmTonKhoToiThieu   frmTonKhoToiThieu   = new frmTonKhoToiThieu();
 
@@ -36,6 +37,7 @@ namespace QLBV_DEV
         {
             frmPhieuNhapThuoc       = new frmPhieuNhapThuoc();
             frmDSPhieuNhap          = new frmDSPhieuNhap();
+            frmDSPhieuXuat          = new frmDSPhieuXuat();
             frmThemNhaCungCap       = new frmThemNCC_KH();
             frmThemThuoc            = new frmThemThuoc();
             frmDSNCC_KH             = new frmDSNCC_KH();
@@ -46,6 +48,7 @@ namespace QLBV_DEV
             frmViTri                = new frmKho();
             frmHangSanXuat          = new frmHangSanXuat();
             frmKho                  = new frmKho();
+            frmPhieuXuatThuoc       = new frmPhieuXuatThuoc();
             frmDSThuocCanDate       = new frmDSThuocCanDate();
             frmThuoCanDate_tungloai = new frmThuoCanDate_tungloai();
             frmTonKhoTheoLo         = new frmTonKhoTheoLo();
@@ -80,6 +83,7 @@ namespace QLBV_DEV
             {
                 //frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
                 frmPhieuNhapThuoc.MdiParent = this;
+                frmPhieuNhapThuoc.FormClosed += new FormClosedEventHandler(close_form);
                 frmPhieuNhapThuoc.Show();
             }
             else
@@ -99,6 +103,7 @@ namespace QLBV_DEV
             if (frm == null)
             {
                 frmDSPhieuNhap.MdiParent = this;
+                frmDSPhieuNhap.FormClosed += new FormClosedEventHandler(close_form);
                 frmDSPhieuNhap.Show();
             }
             else
@@ -113,6 +118,7 @@ namespace QLBV_DEV
             if (frm == null)
             {
                 frmThemNhaCungCap.MdiParent = this;
+                frmThemNhaCungCap.FormClosed += new FormClosedEventHandler(close_form);
                 frmThemNhaCungCap.Show();
             }
             else
@@ -127,6 +133,7 @@ namespace QLBV_DEV
             if (frm == null)
             {
                 frmThemThuoc.MdiParent = this;
+                frmThemThuoc.FormClosed += new FormClosedEventHandler(close_form);
                 frmThemThuoc.Show();
             }
             else
@@ -141,6 +148,7 @@ namespace QLBV_DEV
             if (frm == null)
             {
                 frmDSNCC_KH.MdiParent = this;
+                frmDSNCC_KH.FormClosed += new FormClosedEventHandler(close_form);
                 frmDSNCC_KH.Show();
             }
             else
@@ -367,6 +375,22 @@ namespace QLBV_DEV
                 frmTonKhoToiThieu.MdiParent = this;
                 frmTonKhoToiThieu.FormClosed += new FormClosedEventHandler(close_form);
                 frmTonKhoToiThieu.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnDSPhieuXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmDSPhieuXuat));
+            if (frm == null)
+            {
+                frmDSPhieuXuat.MdiParent = this;
+                frmDSPhieuXuat.FormClosed += new FormClosedEventHandler(close_form);
+                frmDSPhieuXuat.Show();
 
             }
             else

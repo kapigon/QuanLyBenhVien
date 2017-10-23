@@ -95,6 +95,18 @@
     <Compile Include="frmCT_Thuoc_PhieuXuat.Designer.cs">
       <DependentUpon>frmCT_Thuoc_PhieuXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSPhieuNhap.Designer.cs">
+      <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSPhieuXuat.Designer.cs">
+      <DependentUpon>frmDSPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSThuocCanDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,12 +148,6 @@
     </Compile>
     <Compile Include="frmNuocSanXuat.Designer.cs">
       <DependentUpon>frmNuocSanXuat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDSPhieuNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDSPhieuNhap.Designer.cs">
-      <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHangSanXuat.cs">
       <SubType>Form</SubType>
@@ -304,6 +310,12 @@
     <EmbeddedResource Include="frmCT_Thuoc_PhieuXuat.resx">
       <DependentUpon>frmCT_Thuoc_PhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDSPhieuNhap.resx">
+      <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSPhieuXuat.resx">
+      <DependentUpon>frmDSPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDSThuocCanDate.resx">
       <DependentUpon>frmDSThuocCanDate.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,9 +342,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuocSanXuat.resx">
       <DependentUpon>frmNuocSanXuat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDSPhieuNhap.resx">
-      <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

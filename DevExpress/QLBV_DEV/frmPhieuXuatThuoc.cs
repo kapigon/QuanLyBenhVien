@@ -210,19 +210,19 @@ namespace QLBV_DEV
                 obj_PhieuXuat.TongTienKHTra     = tongtien + (tongtien * thueSuat / 100) - chietkhau;            /// *
                 obj_PhieuXuat.UserTao           = userID;               /// *
 
-                /// Tạo Phiếu xuất
-                if (!isUpdate)
-                    rpo_PhieuXuat.Create(obj_PhieuXuat);
-                /// Lưu lại phiếu xuất
-                else 
-                    rpo_PhieuXuat.Save(obj_PhieuXuat);
-
                 if (gridView1.DataRowCount > 0)
                 {
                     using (var dbContextTransaction = db.Database.BeginTransaction())
                     {
                         try
                         {
+                            /// Tạo Phiếu xuất
+                            if (!isUpdate)
+                                rpo_PhieuXuat.Create(obj_PhieuXuat);
+                            /// Lưu lại phiếu xuất
+                            else
+                                rpo_PhieuXuat.Save(obj_PhieuXuat);
+
                             /// Khi tao 1 phiếu xuất thành công -> tạo các Chi tiết Thuốc theo phiếu xuất đó
                             if (obj_PhieuXuat.ID != null)
                             {
@@ -257,7 +257,7 @@ namespace QLBV_DEV
                                     obj_CT_Thuoc.GiaBan                 = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaBan"));
                                     obj_CT_Thuoc.SoLuong                = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
                                     obj_CT_Thuoc.TongTien               = Convert.ToDouble(gridView1.GetRowCellValue(i, "ThanhTien"));
-                                    obj_CT_Thuoc.GhiChu                 = gridView1.GetRowCellValue(i, "GhiChu").ToString();
+                                    obj_CT_Thuoc.GhiChu                 = gridView1.GetRowCellValue(i, "GhiChu") != null ? gridView1.GetRowCellValue(i, "GhiChu").ToString() : "";
                                     obj_PhieuXuat.UserTao               = userID;
 
 
@@ -285,16 +285,17 @@ namespace QLBV_DEV
 
                                 }
                             }
-                            this.Close();
+                            //this.Close();
+                            MessageBox.Show("Lưu thành công");
+                            btnLuu.Enabled = false;
                         }
                         catch (Exception)
                         {
                             dbContextTransaction.Rollback();
+                            MessageBox.Show("Quá trình xử lý không thành công");
                         }
                     }
                 } 
-                MessageBox.Show("Lưu thành công");
-                btnLuu.Enabled = false;
             }
             else
             {
