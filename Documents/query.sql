@@ -10,5 +10,9 @@ select *from Thuoc
 where id = 21
 
 update thuoc
-set ThoiGianCanhBaoHetHan = 10
+set ThoiGianCanhBaoHetHan = 9
 where id = 21
+
+select *from CT_Thuoc_PhieuXuat
+
+select *from PhieuXuatThuoc

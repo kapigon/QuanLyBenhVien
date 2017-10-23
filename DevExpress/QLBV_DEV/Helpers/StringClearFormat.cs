@@ -193,5 +193,10 @@ namespace QLBV_DEV.Helpers
             }
             return result;
         }
+
+        private static string clearVND(string value)
+        {
+            return value.Trim().Replace("VNĐ", "");
+        }
     }
 }

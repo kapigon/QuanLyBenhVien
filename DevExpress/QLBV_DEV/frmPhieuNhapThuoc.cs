@@ -36,6 +36,27 @@ namespace QLBV_DEV
         }
 
         #region methods
+        // Load dữ liệu theo ID đổ vào các trường trong Form
+        public void loadData(long id)
+        {
+            phieunhap_ID = id;
+            isUpdate = true;
+
+            PhieuNhapThuoc obj_PhieuNhap = new PhieuNhapThuoc();
+            obj_PhieuNhap = rpo_PhieuNhap.GetSingle(id);
+
+            cbbNCC.EditValue = obj_PhieuNhap.NCC_KH_ID;
+            txtSoPhieu.Text = obj_PhieuNhap.SoPhieu;
+            txtGhiChu.Text = obj_PhieuNhap.GhiChu;
+            txtSeri.Text = obj_PhieuNhap.SoSeri;
+            cbbThueSuat.EditValue = obj_PhieuNhap.ThueSuat + "%";
+            txtSoHoaDon.Text = obj_PhieuNhap.SoHoaDon;
+            dateNgayVietHD.EditValue = Convert.ToDateTime(obj_PhieuNhap.NgayHoaDon);
+            dateNgayNhap.EditValue = Convert.ToDateTime(obj_PhieuNhap.NgayNhap);
+
+            grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>(db.CT_Thuoc_PhieuNhap.Where(p => p.PhieuNhapHang_ID == id).ToList());
+        }
+
         private void LoadNCC()
         {
             var result = from ncc in db.NCC_KH
@@ -69,12 +90,15 @@ namespace QLBV_DEV
         private void LoadThuoc()
         {
             var result = from thuoc in db.Thuoc
-                         select new
-                         {
-                             ID = thuoc.ID,
-                             MaThuoc = thuoc.MaThuoc,
-                             TenThuoc = thuoc.TenThuoc
-                         };
+                         select thuoc;
+                         //select new
+                         //{
+                         //    thuoc.ID,
+                         //    thuoc.MaThuoc,
+                         //    thuoc.TenThuoc,
+                         //    thuoc.DVT_Le_ID,
+                         //    thuoc.DVT_Nguyen_ID
+                         //};
             gridColThuoc_ID.DataSource = result.ToList();
             //cbbNCC.DataSource = result.ToList();
             gridColThuoc_ID.DisplayMember = "TenThuoc";
@@ -154,7 +178,7 @@ namespace QLBV_DEV
                 obj_PhieuNhap.NgayHoaDon        = ngayVietHD;
                 obj_PhieuNhap.TongTienTruocThue = tongtien;            /// *
                 obj_PhieuNhap.ChietKhau         = 0;            /// *
-                obj_PhieuNhap.TongTienTra       = tongtien + tongtien * thueSuat;            /// *
+                obj_PhieuNhap.TongTienTra       = tongtien + (tongtien * thueSuat / 100);            /// *
                 obj_PhieuNhap.UserTao           = userID;       /// *
 
                 /// Tạo Phiếu nhập
@@ -317,29 +341,35 @@ namespace QLBV_DEV
         {
             index = gridView1.FocusedRowHandle;
         }
-        #endregion
 
-
-        // Load dữ liệu theo ID đổ vào các trường trong Form
-        public void loadData(long id)
+        // Bắt sự kiện thay đổi khi chọn Tên thuốc -> tự động đưa ra dữ liệu vào các cột trong gridcontrol tương ứng
+        private void gridColThuoc_ID_EditValueChanged(object sender, EventArgs e)
         {
-            phieunhap_ID    = id;
-            isUpdate        = true;
+            //CT_Thuoc_PhieuXuat
 
-            PhieuNhapThuoc obj_PhieuNhap    = new PhieuNhapThuoc();
-            obj_PhieuNhap                   = rpo_PhieuNhap.GetSingle(id);
+            //MessageBox.Show(gridView1.FocusedRowHandle.ToString());
+            int _index = gridView1.FocusedRowHandle;
 
-            cbbNCC.EditValue            = obj_PhieuNhap.NCC_KH_ID;
-            txtSoPhieu.Text             = obj_PhieuNhap.SoPhieu;
-            txtGhiChu.Text              = obj_PhieuNhap.GhiChu;
-            txtSeri.Text                = obj_PhieuNhap.SoSeri;
-            cbbThueSuat.EditValue       = obj_PhieuNhap.ThueSuat + "%";
-            txtSoHoaDon.Text            = obj_PhieuNhap.SoHoaDon;
-            dateNgayVietHD.EditValue    = Convert.ToDateTime(obj_PhieuNhap.NgayHoaDon);
-            dateNgayNhap.EditValue      = Convert.ToDateTime(obj_PhieuNhap.NgayNhap);
+            var search = sender as SearchLookUpEdit;
+            if (search == null) return;
 
-            grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>(db.CT_Thuoc_PhieuNhap.Where(p => p.PhieuNhapHang_ID == id).ToList());
+            var id = (search.EditValue == null || search.EditValue == DBNull.Value) ? 0 : Convert.ToInt32(search.EditValue);
+
+            //search.Properties.DataSource
+            List<Thuoc> listThuoc = search.Properties.DataSource as List<Thuoc>;
+            //List<dynamic> listThuoc = search.Properties.DataSource as List<dynamic>;
+            if (listThuoc == null) return;
+
+            var x = listThuoc.FirstOrDefault(t => t.ID == id);
+
+            var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuNhap;
+            if (ctXuat == null) return;
+            ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Nguyen_ID;
+
+            gridView1.PostEditor();
         }
+
+        
 
         private void cbbNCC_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -355,5 +385,7 @@ namespace QLBV_DEV
         {
 
         }
+
+        #endregion
     }
 }

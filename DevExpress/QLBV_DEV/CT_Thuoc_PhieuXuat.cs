@@ -29,7 +29,10 @@ namespace QLBV_DEV
         /// <summary>
         ///  Thêm các trường tưởng ứng bên CT_Thuoc_PhieuNhap : để hiển thị lên GridControl
         /// </summary>
+        public long ThuocID { get; set; }
         public Nullable<System.DateTime> HSD { get; set; }
         public Nullable<int> TonKho { get; set; }
+        public Nullable<double> GiaBanLe { get; set; }
+        public Nullable<double> GiaBanBuon { get; set; }
     }
 }

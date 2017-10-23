@@ -83,6 +83,24 @@
     <Compile Include="DonViTinh.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmCT_Thuoc_PhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCT_Thuoc_PhieuNhap.designer.cs">
+      <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCT_Thuoc_PhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCT_Thuoc_PhieuXuat.Designer.cs">
+      <DependentUpon>frmCT_Thuoc_PhieuXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSThuocCanDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSThuocCanDate.Designer.cs">
+      <DependentUpon>frmDSThuocCanDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDS_Thuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,12 +143,6 @@
     <Compile Include="frmDSPhieuNhap.Designer.cs">
       <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCT_Thuoc_PhieuNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCT_Thuoc_PhieuNhap.Designer.cs">
-      <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHangSanXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,11 +161,17 @@
     <Compile Include="frmNhomThuoc.Designer.cs">
       <DependentUpon>frmNhomThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhieuNhap.cs">
+    <Compile Include="frmPhieuNhapThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhieuNhap.Designer.cs">
-      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    <Compile Include="frmPhieuNhapThuoc.designer.cs">
+      <DependentUpon>frmPhieuNhapThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuXuatThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuXuatThuoc.Designer.cs">
+      <DependentUpon>frmPhieuXuatThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemNCC_KH.cs">
       <SubType>Form</SubType>
@@ -166,6 +184,30 @@
     </Compile>
     <Compile Include="frmThemThuoc.Designer.cs">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThuoCanDate_tungloai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThuoCanDate_tungloai.Designer.cs">
+      <DependentUpon>frmThuoCanDate_tungloai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTonKhoTheoLo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTonKhoTheoLo.Designer.cs">
+      <DependentUpon>frmTonKhoTheoLo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTonKhoTheoThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTonKhoTheoThuoc.Designer.cs">
+      <DependentUpon>frmTonKhoTheoThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTonKhoToiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTonKhoToiThieu.Designer.cs">
+      <DependentUpon>frmTonKhoToiThieu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmViTri.cs">
       <SubType>Form</SubType>
@@ -203,7 +245,7 @@
     <Compile Include="LichSuGia.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LoaiDonThuoc.cs">
+    <Compile Include="LoaiHinhBan.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LoaiNCC_KH.cs">
@@ -232,10 +274,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CT_PhieuXuatThuocRepository.cs" />
     <Compile Include="Repository\DVTRepository.cs" />
     <Compile Include="Repository\CT_PhieuNhapThuocRepository.cs" />
     <Compile Include="Repository\HangSanXuatRepository.cs" />
     <Compile Include="Repository\HoatChatRepository.cs" />
+    <Compile Include="Repository\PhieuXuatThuocRepository.cs" />
     <Compile Include="Repository\ViTriRepository.cs" />
     <Compile Include="Repository\ThuocRepository.cs" />
     <Compile Include="Repository\NuocSanXuatRepository.cs" />
@@ -256,6 +300,12 @@
     </Compile>
     <EmbeddedResource Include="frmCT_Thuoc_PhieuNhap.resx">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCT_Thuoc_PhieuXuat.resx">
+      <DependentUpon>frmCT_Thuoc_PhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSThuocCanDate.resx">
+      <DependentUpon>frmDSThuocCanDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDS_Thuoc.resx">
       <DependentUpon>frmDS_Thuoc.cs</DependentUpon>
@@ -288,14 +338,29 @@
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieuNhap.resx">
-      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    <EmbeddedResource Include="frmPhieuNhapThuoc.resx">
+      <DependentUpon>frmPhieuNhapThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuXuatThuoc.resx">
+      <DependentUpon>frmPhieuXuatThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemNCC_KH.resx">
       <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemThuoc.resx">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThuoCanDate_tungloai.resx">
+      <DependentUpon>frmThuoCanDate_tungloai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTonKhoTheoLo.resx">
+      <DependentUpon>frmTonKhoTheoLo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTonKhoTheoThuoc.resx">
+      <DependentUpon>frmTonKhoTheoThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTonKhoToiThieu.resx">
+      <DependentUpon>frmTonKhoToiThieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVitri.resx">
       <DependentUpon>frmViTri.cs</DependentUpon>
