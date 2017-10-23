@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.txtConLai = new DevExpress.XtraEditors.TextEdit();
             this.txtChietKhau = new DevExpress.XtraEditors.TextEdit();
             this.txtKhachDua = new DevExpress.XtraEditors.TextEdit();
@@ -123,7 +124,6 @@
             this.labelKhachDua = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtConLai.Properties)).BeginInit();
@@ -234,6 +234,14 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Location = new System.Drawing.Point(1130, 190);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(5, 3);
+            this.splitterControl1.TabIndex = 22;
+            this.splitterControl1.TabStop = false;
+            // 
             // txtConLai
             // 
             this.txtConLai.EditValue = "0";
@@ -241,6 +249,8 @@
             this.txtConLai.Name = "txtConLai";
             this.txtConLai.Properties.Appearance.Options.UseTextOptions = true;
             this.txtConLai.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtConLai.Properties.EditFormat.FormatString = "C0";
+            this.txtConLai.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtConLai.Properties.Mask.EditMask = "c0";
             this.txtConLai.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtConLai.Properties.ReadOnly = true;
@@ -255,6 +265,8 @@
             this.txtChietKhau.Name = "txtChietKhau";
             this.txtChietKhau.Properties.Appearance.Options.UseTextOptions = true;
             this.txtChietKhau.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtChietKhau.Properties.EditFormat.FormatString = "C0";
+            this.txtChietKhau.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtChietKhau.Properties.Mask.EditMask = "c0";
             this.txtChietKhau.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtChietKhau.Size = new System.Drawing.Size(173, 20);
@@ -269,6 +281,8 @@
             this.txtKhachDua.Name = "txtKhachDua";
             this.txtKhachDua.Properties.Appearance.Options.UseTextOptions = true;
             this.txtKhachDua.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtKhachDua.Properties.EditFormat.FormatString = "C0";
+            this.txtKhachDua.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtKhachDua.Properties.Mask.EditMask = "c0";
             this.txtKhachDua.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtKhachDua.Size = new System.Drawing.Size(141, 20);
@@ -283,6 +297,8 @@
             this.txtThueSuat.Name = "txtThueSuat";
             this.txtThueSuat.Properties.Appearance.Options.UseTextOptions = true;
             this.txtThueSuat.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtThueSuat.Properties.EditFormat.FormatString = "C0";
+            this.txtThueSuat.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtThueSuat.Properties.ReadOnly = true;
             this.txtThueSuat.Size = new System.Drawing.Size(173, 20);
             this.txtThueSuat.StyleController = this.layoutControl1;
@@ -295,6 +311,10 @@
             this.txtTongCong.Name = "txtTongCong";
             this.txtTongCong.Properties.Appearance.Options.UseTextOptions = true;
             this.txtTongCong.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtTongCong.Properties.EditFormat.FormatString = "C0";
+            this.txtTongCong.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtTongCong.Properties.Mask.EditMask = "C2";
+            this.txtTongCong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTongCong.Properties.ReadOnly = true;
             this.txtTongCong.Size = new System.Drawing.Size(385, 20);
             this.txtTongCong.StyleController = this.layoutControl1;
@@ -483,6 +503,8 @@
             // repositoryItemTextEdit6
             // 
             this.repositoryItemTextEdit6.AutoHeight = false;
+            this.repositoryItemTextEdit6.EditFormat.FormatString = "C0";
+            this.repositoryItemTextEdit6.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit6.Name = "repositoryItemTextEdit6";
             // 
             // Thuoc_ID_1
@@ -730,6 +752,8 @@
             // repositoryItemTextEdit1
             // 
             this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.EditFormat.FormatString = "C0";
+            this.repositoryItemTextEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit1.Mask.EditMask = "n";
             this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
@@ -1221,14 +1245,6 @@
             this.layoutControlItem19.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem19.Text = "Còn lại";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(64, 13);
-            // 
-            // splitterControl1
-            // 
-            this.splitterControl1.Location = new System.Drawing.Point(1130, 190);
-            this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(5, 3);
-            this.splitterControl1.TabIndex = 22;
-            this.splitterControl1.TabStop = false;
             // 
             // frmPhieuXuatThuoc
             // 

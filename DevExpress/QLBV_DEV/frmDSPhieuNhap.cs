@@ -25,6 +25,8 @@ namespace QLBV_DEV
         public frmDSPhieuNhap()
         {
             InitializeComponent();
+            LoadNCC();
+            LoadDS_PhieuNhap();
         }
 
         #region methods
@@ -45,8 +47,9 @@ namespace QLBV_DEV
                             SoHoaDon    = phieunhap.SoHoaDon,
                             NgayNhap    = phieunhap.NgayNhap,
                             NCC_KH_ID   = ncc_kh.TenNCC_KH,
+                            ThueSuat    = phieunhap.ThueSuat + "%",
                             ChietKhau   = phieunhap.ChietKhau,
-                            TongTien    = phieunhap.TongTienTra
+                            TongTienTra = phieunhap.TongTienTra
                         };
             grdDS_PhieuNhap.DataSource = result.ToList();
         }
@@ -157,8 +160,7 @@ namespace QLBV_DEV
 
         private void frmDSPhieuNhap_Load(object sender, EventArgs e)
         {
-            LoadNCC();
-            LoadDS_PhieuNhap();
+            
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {

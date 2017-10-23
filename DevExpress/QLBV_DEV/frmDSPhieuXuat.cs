@@ -25,6 +25,8 @@ namespace QLBV_DEV
         public frmDSPhieuXuat()
         {
             InitializeComponent();
+            LoadNCC();
+            LoadDS_PhieuXuat();
         }
 
         #region methods
@@ -35,27 +37,29 @@ namespace QLBV_DEV
             //             select nv;
             //var result = rpo_PhieuNhap.GetAllNotDelete();
             var result = from phieuxuat in db.PhieuXuatThuoc
-                        join ncc_kh in db.NCC_KH on phieuxuat.NCC_KH_ID equals ncc_kh.ID
+                        //join ncc_kh in db.NCC_KH on phieuxuat.NCC_KH_ID equals ncc_kh.ID
+                         from kh in db.NCC_KH.Where(kh => kh.ID == phieuxuat.NCC_KH_ID).DefaultIfEmpty()
                         where phieuxuat.Xoa != true
                         orderby phieuxuat.ID ascending
                         select new
                         {
-                            ID          = phieuxuat.ID,
-                            SoPhieu     = phieuxuat.SoPhieu,
-                            SoHoaDon    = phieuxuat.SoHoaDon,
-                            NgayTao     = phieuxuat.NgayTao,
-                            NCC_KH_ID   = ncc_kh.TenNCC_KH,
-                            ChietKhau   = phieuxuat.ChietKhau,
-                            //TongTien    = phieuxuat.TongTienTra
+                            ID              = phieuxuat.ID,
+                            SoPhieu         = phieuxuat.SoPhieu,
+                            SoHoaDon        = phieuxuat.SoHoaDon,
+                            NgayTao         = phieuxuat.NgayTao,
+                            NCC_KH_ID       = kh.TenNCC_KH,
+                            ThueSuat        = phieuxuat.ThueSuat + "%",
+                            ChietKhau       = phieuxuat.ChietKhau,
+                            TongTienKHTra   = phieuxuat.TongTienKHTra
                         };
-            grdDS_PhieuNhap.DataSource = result.ToList();
+            grdDS_PhieuXuat.DataSource = result.ToList();
         }
 
         private void LoadNCC()
         {
             NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
             // lấy ra NCC và vừa là NCC vừa là KH
-            cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
+            cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(2, 2).ToList());
             //cbbNCC.DataSource = result.ToList();
             cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
             cbbNCC_KH.Properties.ValueMember = "ID";
@@ -70,23 +74,9 @@ namespace QLBV_DEV
         #region events
         private void btnThemPhieu_Click(object sender, EventArgs e)
         {
-            frmPhieuNhapThuoc frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
-            frmPhieuNhapThuoc.ShowInTaskbar = false;
-            frmPhieuNhapThuoc.ShowDialog();
-
-            /*frmMain frmMain = new frmMain();
-            frmMain.showPhieuNhap();
-            Form frm = frmMain.kiemtraform(typeof(frmPhieuNhapThuoc));
-            if (frm == null)
-            {
-                //frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
-                frmPhieuNhapThuoc.MdiParent = frmMain;
-                frmPhieuNhapThuoc.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }*/
+            frmPhieuXuatThuoc frmPhieuXuatThuoc = new frmPhieuXuatThuoc();
+            frmPhieuXuatThuoc.ShowInTaskbar = false;
+            frmPhieuXuatThuoc.ShowDialog();
         }
         
         private void btnThoat_Click(object sender, EventArgs e)
@@ -111,11 +101,11 @@ namespace QLBV_DEV
                     long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
                     //int userID = 100000;
 
-                    PhieuNhapThuoc obj_PhieuNhap = rpo_PhieuXuat.GetSingle(id);
-                    obj_PhieuNhap.Xoa = true;
-                    obj_PhieuNhap.NgayXoa = DateTime.Now;
+                    PhieuXuatThuoc obj_PhieuXuat = rpo_PhieuXuat.GetSingle(id);
+                    obj_PhieuXuat.Xoa = true;
+                    //obj_PhieuXuat.NgayXoa = DateTime.Now; //// **
 
-                    rpo_PhieuXuat.Save(obj_PhieuNhap);
+                    rpo_PhieuXuat.Save(obj_PhieuXuat);
 
 
                     // Tải lại danh sách nhà cung cấp
@@ -138,11 +128,11 @@ namespace QLBV_DEV
             {
                 long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
 
-                frmPhieuNhapThuoc frmPhieuNhap = new frmPhieuNhapThuoc();
-                frmPhieuNhap.FormClosed += new FormClosedEventHandler(frmDS_PhieuNhapClosed);
+                frmPhieuXuatThuoc frmPhieuXuatThuoc = new frmPhieuXuatThuoc();
+                frmPhieuXuatThuoc.FormClosed += new FormClosedEventHandler(frmDS_PhieuXuatClosed);
 
-                frmPhieuNhap.loadData(id);
-                frmPhieuNhap.ShowDialog();
+                frmPhieuXuatThuoc.loadData(id);
+                frmPhieuXuatThuoc.ShowDialog();
             }
             else
             {
@@ -150,15 +140,14 @@ namespace QLBV_DEV
             }
         }
 
-        private void frmDS_PhieuNhapClosed(object sender, FormClosedEventArgs e)
+        private void frmDS_PhieuXuatClosed(object sender, FormClosedEventArgs e)
         {
             LoadDS_PhieuXuat();
         }
 
         private void frmDSPhieuNhap_Load(object sender, EventArgs e)
         {
-            LoadNCC();
-            LoadDS_PhieuXuat();
+            
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
@@ -169,7 +158,7 @@ namespace QLBV_DEV
             String soHoaDon     = txtSoHoaDon.Text.Trim();
 
             var query = rpo_PhieuXuat.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
-            grdDS_PhieuNhap.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+            grdDS_PhieuXuat.DataSource = new BindingList<PhieuXuatThuoc>(query.ToList());
         }
         #endregion
     }

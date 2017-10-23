@@ -41,9 +41,9 @@
             this.NgayNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoHoaDon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NCC_KH_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cbbCol_NCC_KH = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ChietKhau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemFontEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemFontEdit();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,6 +52,7 @@
             this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenNCC_KH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbbCol_NCC_KH = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.dateDenNgay = new DevExpress.XtraEditors.DateEdit();
             this.dateTuNgay = new DevExpress.XtraEditors.DateEdit();
@@ -77,13 +78,13 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDS_PhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbCol_NCC_KH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbCol_NCC_KH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -211,7 +212,8 @@
             this.SoHoaDon,
             this.NCC_KH_ID,
             this.ChietKhau,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn2});
             this.gridView1.GridControl = this.grdDS_PhieuNhap;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Save;
@@ -231,16 +233,20 @@
             this.SoPhieu.Caption = "Số phiếu";
             this.SoPhieu.FieldName = "SoPhieu";
             this.SoPhieu.Name = "SoPhieu";
+            this.SoPhieu.OptionsColumn.ReadOnly = true;
             this.SoPhieu.Visible = true;
             this.SoPhieu.VisibleIndex = 0;
             // 
             // NgayNhap
             // 
+            this.NgayNhap.AppearanceCell.Options.UseTextOptions = true;
+            this.NgayNhap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NgayNhap.AppearanceHeader.Options.UseTextOptions = true;
             this.NgayNhap.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NgayNhap.Caption = "Ngày nhập";
             this.NgayNhap.FieldName = "NgayNhap";
             this.NgayNhap.Name = "NgayNhap";
+            this.NgayNhap.OptionsColumn.ReadOnly = true;
             this.NgayNhap.Visible = true;
             this.NgayNhap.VisibleIndex = 2;
             // 
@@ -251,6 +257,7 @@
             this.SoHoaDon.Caption = "Số hóa đơn";
             this.SoHoaDon.FieldName = "SoHoaDon";
             this.SoHoaDon.Name = "SoHoaDon";
+            this.SoHoaDon.OptionsColumn.ReadOnly = true;
             this.SoHoaDon.Visible = true;
             this.SoHoaDon.VisibleIndex = 1;
             // 
@@ -261,37 +268,52 @@
             this.NCC_KH_ID.Caption = "Nhà cung cấp";
             this.NCC_KH_ID.FieldName = "NCC_KH_ID";
             this.NCC_KH_ID.Name = "NCC_KH_ID";
+            this.NCC_KH_ID.OptionsColumn.ReadOnly = true;
             this.NCC_KH_ID.Visible = true;
             this.NCC_KH_ID.VisibleIndex = 3;
             // 
-            // cbbCol_NCC_KH
-            // 
-            this.cbbCol_NCC_KH.AutoHeight = false;
-            this.cbbCol_NCC_KH.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbCol_NCC_KH.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNCC_KH", "Tên NCC_KH")});
-            this.cbbCol_NCC_KH.Name = "cbbCol_NCC_KH";
-            // 
             // ChietKhau
             // 
+            this.ChietKhau.AppearanceCell.Options.UseTextOptions = true;
+            this.ChietKhau.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ChietKhau.AppearanceHeader.Options.UseTextOptions = true;
             this.ChietKhau.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ChietKhau.Caption = "Chiết khấu";
+            this.ChietKhau.DisplayFormat.FormatString = "C0";
+            this.ChietKhau.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.ChietKhau.FieldName = "ChietKhau";
             this.ChietKhau.Name = "ChietKhau";
+            this.ChietKhau.OptionsColumn.ReadOnly = true;
             this.ChietKhau.Visible = true;
-            this.ChietKhau.VisibleIndex = 4;
+            this.ChietKhau.VisibleIndex = 5;
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn6.Caption = "Tổng tiền";
+            this.gridColumn6.DisplayFormat.FormatString = "C0";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn6.FieldName = "TongTienTra";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.Caption = "Thuế suất";
+            this.gridColumn2.FieldName = "ThueSuat";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 4;
             // 
             // repositoryItemFontEdit1
             // 
@@ -353,6 +375,16 @@
             this.TenNCC_KH.Name = "TenNCC_KH";
             this.TenNCC_KH.Visible = true;
             this.TenNCC_KH.VisibleIndex = 0;
+            // 
+            // cbbCol_NCC_KH
+            // 
+            this.cbbCol_NCC_KH.AutoHeight = false;
+            this.cbbCol_NCC_KH.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbCol_NCC_KH.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNCC_KH", "Tên NCC_KH")});
+            this.cbbCol_NCC_KH.Name = "cbbCol_NCC_KH";
             // 
             // btnTimKiem
             // 
@@ -610,13 +642,13 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdDS_PhieuNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbCol_NCC_KH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbCol_NCC_KH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -689,5 +721,6 @@
         private DevExpress.XtraEditors.LookUpEdit cbbNCC_KH;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cbbCol_NCC_KH;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
