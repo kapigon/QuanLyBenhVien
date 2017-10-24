@@ -42,22 +42,28 @@ namespace QLBV_DEV
         {
             var query = from ct_thuoc_nhap in db.CT_Thuoc_PhieuNhap
                         join thuoc in db.Thuoc on ct_thuoc_nhap.Thuoc_ID equals thuoc.ID
-                        from pdc in db.PhieuDieuChinh.Where(pdc => pdc.CT_Thuoc_PhieuNhap_ID == ct_thuoc_nhap.ID).DefaultIfEmpty()
+                        //from pdc in db.PhieuDieuChinh.Where(pdc => pdc.CT_Thuoc_PhieuNhap_ID == ct_thuoc_nhap.ID).DefaultIfEmpty()
+                        //join tinhtong in
+                        //    (from pdc in db.PhieuDieuChinh select new {
+                        //        CT_Thuoc_PhieuNhap_ID = pdc.CT_Thuoc_PhieuNhap_ID,
+                        //        SoLuongTang = (pdc.SoLuongTang)
+                        //    }) 
+                        //on ct_thuoc_nhap.ID equals tinhtong.CT_Thuoc_PhieuNhap_ID
                         //join pdc in db.PhieuDieuChinh on ct_thuoc_nhap.ID equals pdc.CT_Thuoc_PhieuNhap_ID
                         //join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
                         //from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
                         //from hangsanxuat in db.HangSanXuat.Where(hsx => hsx.ID == thuoc.HangSanXuat_ID).DefaultIfEmpty()
                         select new
                         {
-                            ID          = ct_thuoc_nhap.ID,
-                            MaThuoc     = thuoc.MaThuoc,
-                            TenThuoc    = thuoc.TenThuoc,
-                            DVT         = thuoc.DVT_Le_ID,
-                            HSD         = ct_thuoc_nhap.HSD,
-                            SoLo        = ct_thuoc_nhap.SoLo,
-                            TonKho      = ct_thuoc_nhap.TonKho ,//+ (from ct_thuoc_nhap in db.CT_Thuoc_PhieuNhap),
-                            TonSoSach   = ct_thuoc_nhap.TonKho,
-                            KichHoat    = thuoc.KichHoat
+                            ID = ct_thuoc_nhap.ID,
+                            MaThuoc = thuoc.MaThuoc,
+                            TenThuoc = thuoc.TenThuoc,
+                            DVT = thuoc.DVT_Le_ID,
+                            HSD = ct_thuoc_nhap.HSD,
+                            SoLo = ct_thuoc_nhap.SoLo,
+                            TonKho = ct_thuoc_nhap.TonKho,//+ (from ct_thuoc_nhap in db.CT_Thuoc_PhieuNhap),
+                            TonSoSach = ct_thuoc_nhap.TonKho,
+                            KichHoat = thuoc.KichHoat
                             //TenNhom = nhomthuoc.TenNhom,
                             //HoatChat = hoatchat.TenHoatChat,
                             //ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,

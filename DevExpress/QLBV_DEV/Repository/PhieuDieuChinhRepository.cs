@@ -15,6 +15,11 @@ namespace QLBV_DEV.Repository
             return from _object in db.PhieuDieuChinh orderby _object.ID ascending select _object;
         }
 
+        public long GetCount()
+        {
+            return (from _object in db.PhieuDieuChinh select _object).Count();
+        } 
+
         public PhieuDieuChinh GetSingle(long id)
         {
             return (from _object in db.PhieuDieuChinh where _object.ID == id select _object).FirstOrDefault();

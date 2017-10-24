@@ -16,3 +16,13 @@ where id = 21
 select *from CT_Thuoc_PhieuXuat
 
 select *from PhieuXuatThuoc
+
+SELECT pdc.CT_Thuoc_PhieuNhap_ID, SUM(pdc.SoLuongTang) as SLT, SUM(pdc.SoLuongGiam) as SLG from PHIEUDIEUCHINH as pdc
+GROUP BY pdc.CT_Thuoc_PhieuNhap_ID
+
+
+/*Tinhs so luong sau khi dieu chinh*/
+SELECT ct_phieu.ID, ct_phieu.TonKho + tinhtong.SLT - tinhtong.SLG
+FROM CT_Thuoc_PhieuNhap as ct_phieu
+JOIN (SELECT pdc.CT_Thuoc_PhieuNhap_ID as ID, SUM(pdc.SoLuongTang) as SLT, SUM(pdc.SoLuongGiam) as SLG from PHIEUDIEUCHINH as pdc
+GROUP BY pdc.CT_Thuoc_PhieuNhap_ID) as tinhtong on tinhtong.ID = ct_phieu.ID
