@@ -55,6 +55,7 @@ namespace QLBV_DEV
             frmTonKhoTheoLo         = new frmTonKhoTheoLo();
             frmTonKhoTheoThuoc      = new frmTonKhoTheoThuoc();
             frmTonKhoToiThieu       = new frmTonKhoToiThieu();
+            frmDS_Thuoc             = new frmDS_Thuoc();
             frmPhieuDieuChinh       = new frmKiemKe();
         }
 
@@ -399,6 +400,11 @@ namespace QLBV_DEV
             {
                 frm.Activate();
             }
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
