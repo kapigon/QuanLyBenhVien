@@ -181,12 +181,6 @@ namespace QLBV_DEV
                 obj_PhieuNhap.TongTienTra       = tongtien + (tongtien * thueSuat / 100);            /// *
                 obj_PhieuNhap.UserTao           = userID;       /// *
 
-                /// Tạo Phiếu nhập
-                if (!isUpdate)
-                    rpo_PhieuNhap.Create(obj_PhieuNhap);
-                /// Lưu lại phiếu nhập
-                else 
-                    rpo_PhieuNhap.Save(obj_PhieuNhap);
 
                 if (gridView1.DataRowCount > 0)
                 {
@@ -194,6 +188,13 @@ namespace QLBV_DEV
                     {
                         try
                         {
+                            /// Tạo Phiếu nhập
+                            if (!isUpdate)
+                                rpo_PhieuNhap.Create(obj_PhieuNhap);
+                            /// Lưu lại phiếu nhập
+                            else 
+                                rpo_PhieuNhap.Save(obj_PhieuNhap);
+
                             /// Khi tao 1 phiếu nhập thành công -> tạo các Chi tiết Thuốc theo phiếu nhập đó
                             if (obj_PhieuNhap.ID != null)
                             {

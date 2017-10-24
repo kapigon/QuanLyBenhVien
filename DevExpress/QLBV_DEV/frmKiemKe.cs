@@ -55,7 +55,7 @@ namespace QLBV_DEV
                             DVT         = thuoc.DVT_Le_ID,
                             HSD         = ct_thuoc_nhap.HSD,
                             SoLo        = ct_thuoc_nhap.SoLo,
-                            TonKho      = ct_thuoc_nhap.TonKho,
+                            TonKho      = ct_thuoc_nhap.TonKho ,//+ (from ct_thuoc_nhap in db.CT_Thuoc_PhieuNhap),
                             TonSoSach   = ct_thuoc_nhap.TonKho,
                             KichHoat    = thuoc.KichHoat
                             //TenNhom = nhomthuoc.TenNhom,

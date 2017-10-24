@@ -48,6 +48,7 @@
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuongKiemKe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TonSoSach = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtColTonSoSach = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.SoLuongTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuongGiam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -67,7 +68,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtColTonSoSach = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSThuoc)).BeginInit();
@@ -75,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbbColDVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPhieuDieuChinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColTonSoSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenPhieu.Properties)).BeginInit();
@@ -93,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtColTonSoSach)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -288,7 +289,6 @@
             this.grvPhieuDieuChinh.TabIndex = 10;
             this.grvPhieuDieuChinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.grvPhieuDieuChinh.Click += new System.EventHandler(this.grvDSThuoc_Click);
             // 
             // gridView1
             // 
@@ -297,7 +297,8 @@
             this.SoLuongKiemKe,
             this.TonSoSach,
             this.SoLuongTang,
-            this.SoLuongGiam});
+            this.SoLuongGiam,
+            this.gridColumn7});
             this.gridView1.GridControl = this.grvPhieuDieuChinh;
             this.gridView1.Name = "gridView1";
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
@@ -334,8 +335,12 @@
             this.TonSoSach.Name = "TonSoSach";
             this.TonSoSach.Visible = true;
             this.TonSoSach.VisibleIndex = 1;
-            this.txtColTonSoSach.EditValueChanged += new System.EventHandler(this.txtColTonSoSach_EditValueChanged);
-
+            // 
+            // txtColTonSoSach
+            // 
+            this.txtColTonSoSach.AutoHeight = false;
+            this.txtColTonSoSach.Name = "txtColTonSoSach";
+            this.txtColTonSoSach.Leave += new System.EventHandler(this.txtColTonSoSach_EditValueChanged);
             // 
             // SoLuongTang
             // 
@@ -346,6 +351,7 @@
             this.SoLuongTang.Caption = "Số lượng tăng";
             this.SoLuongTang.FieldName = "SoLuongTang";
             this.SoLuongTang.Name = "SoLuongTang";
+            this.SoLuongTang.OptionsColumn.ReadOnly = true;
             this.SoLuongTang.Visible = true;
             this.SoLuongTang.VisibleIndex = 2;
             // 
@@ -358,6 +364,7 @@
             this.SoLuongGiam.Caption = "Số lượng giảm";
             this.SoLuongGiam.FieldName = "SoLuongGiam";
             this.SoLuongGiam.Name = "SoLuongGiam";
+            this.SoLuongGiam.OptionsColumn.ReadOnly = true;
             this.SoLuongGiam.Visible = true;
             this.SoLuongGiam.VisibleIndex = 3;
             // 
@@ -542,10 +549,11 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // txtColTonSoSach
+            // gridColumn7
             // 
-            this.txtColTonSoSach.AutoHeight = false;
-            this.txtColTonSoSach.Name = "txtColTonSoSach";
+            this.gridColumn7.Caption = "CT_Thuoc_PhieuNhap_ID";
+            this.gridColumn7.FieldName = "CT_Thuoc_PhieuNhap_ID";
+            this.gridColumn7.Name = "gridColumn7";
             // 
             // frmPhieuDieuChinh
             // 
@@ -563,6 +571,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbbColDVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvPhieuDieuChinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColTonSoSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenPhieu.Properties)).EndInit();
@@ -581,7 +590,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtColTonSoSach)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,5 +635,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cbbColDVT;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtColTonSoSach;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }
