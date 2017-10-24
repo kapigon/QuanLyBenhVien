@@ -119,6 +119,18 @@
     <Compile Include="frmDS_Thuoc.Designer.cs">
       <DependentUpon>frmDS_Thuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKiemKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKiemKe.Designer.cs">
+      <DependentUpon>frmKiemKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuDieuChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuDieuChinh.Designer.cs">
+      <DependentUpon>frmPhieuDieuChinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSNCC_KH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +284,9 @@
     <Compile Include="PhanQuyen.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PhieuDieuChinh.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PhieuNhapThuoc.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
@@ -286,6 +301,7 @@
     <Compile Include="Repository\HangSanXuatRepository.cs" />
     <Compile Include="Repository\HoatChatRepository.cs" />
     <Compile Include="Repository\PhieuXuatThuocRepository.cs" />
+    <Compile Include="Repository\PhieuDieuChinhRepository.cs" />
     <Compile Include="Repository\ViTriRepository.cs" />
     <Compile Include="Repository\ThuocRepository.cs" />
     <Compile Include="Repository\NuocSanXuatRepository.cs" />
@@ -321,6 +337,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDS_Thuoc.resx">
       <DependentUpon>frmDS_Thuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKiemKe.resx">
+      <DependentUpon>frmKiemKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuDieuChinh.resx">
+      <DependentUpon>frmPhieuDieuChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSNCC_KH.resx">
       <DependentUpon>frmDSNCC_KH.cs</DependentUpon>

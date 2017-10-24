@@ -243,6 +243,25 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenNuoc" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="PhieuDieuChinh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaPhieuDieuChinh" Type="varchar" MaxLength="50" />
+          <Property Name="TenPhieuDieuChinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="CT_Thuoc_PhieuNhap_ID" Type="bigint" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="250" />
+          <Property Name="SoLuongKiemKe" Type="int" />
+          <Property Name="TonSoSach" Type="int" />
+          <Property Name="SoLuongTang" Type="int" />
+          <Property Name="SoLuongGiam" Type="int" />
+          <Property Name="UserTao" Type="int" />
+          <Property Name="LoaiDieuChinh" Type="int" />
+          <Property Name="NgayTao" Type="date" />
+          <Property Name="Huy" Type="bit" />
+          <Property Name="UserHuy" Type="int" />
+        </EntityType>
         <EntityType Name="TrangThaiPhieu">
           <Key>
             <PropertyRef Name="ID" />
@@ -277,6 +296,7 @@
           <EntitySet Name="LoaiHinhBan" EntityType="Self.LoaiHinhBan" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="LoaiNCC_KH" EntityType="Self.LoaiNCC_KH" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="NuocSanXuat" EntityType="Self.NuocSanXuat" Schema="g6t_user" store:Type="Tables" />
+          <EntitySet Name="PhieuDieuChinh" EntityType="Self.PhieuDieuChinh" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="TrangThaiPhieu" EntityType="Self.TrangThaiPhieu" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="ViTri" EntityType="Self.ViTri" Schema="g6t_user" store:Type="Tables" />
         </EntityContainer>
@@ -306,6 +326,7 @@
           <EntitySet Name="ViTri" EntityType="HospitalModel.ViTri" />
           <EntitySet Name="LoaiHinhBan" EntityType="HospitalModel.LoaiHinhBan" />
           <EntitySet Name="PhieuXuatThuoc" EntityType="HospitalModel.PhieuXuatThuoc" />
+          <EntitySet Name="PhieuDieuChinh" EntityType="HospitalModel.PhieuDieuChinh" />
         </EntityContainer>
         <EntityType Name="ChiTietPhanQuyen">
           <Key>
@@ -558,6 +579,25 @@
           <Property Name="Xoa" Type="Boolean" />
           <Property Name="UserXoa" Type="Int32" />
           <Property Name="UserTao" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PhieuDieuChinh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaPhieuDieuChinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenPhieuDieuChinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CT_Thuoc_PhieuNhap_ID" Type="Int64" />
+          <Property Name="NoiDung" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SoLuongKiemKe" Type="Int32" />
+          <Property Name="TonSoSach" Type="Int32" />
+          <Property Name="SoLuongTang" Type="Int32" />
+          <Property Name="SoLuongGiam" Type="Int32" />
+          <Property Name="UserTao" Type="Int32" />
+          <Property Name="LoaiDieuChinh" Type="Int32" />
+          <Property Name="NgayTao" Type="DateTime" Precision="0" />
+          <Property Name="Huy" Type="Boolean" />
+          <Property Name="UserHuy" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -834,6 +874,26 @@
                 <ScalarProperty Name="LoaiHinhBan_ID" ColumnName="LoaiHinhBan_ID" />
                 <ScalarProperty Name="TrangThaiPhieu_ID" ColumnName="TrangThaiPhieu_ID" />
                 <ScalarProperty Name="NCC_KH_ID" ColumnName="NCC_KH_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhieuDieuChinh">
+            <EntityTypeMapping TypeName="HospitalModel.PhieuDieuChinh">
+              <MappingFragment StoreEntitySet="PhieuDieuChinh">
+                <ScalarProperty Name="UserHuy" ColumnName="UserHuy" />
+                <ScalarProperty Name="Huy" ColumnName="Huy" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="LoaiDieuChinh" ColumnName="LoaiDieuChinh" />
+                <ScalarProperty Name="UserTao" ColumnName="UserTao" />
+                <ScalarProperty Name="SoLuongGiam" ColumnName="SoLuongGiam" />
+                <ScalarProperty Name="SoLuongTang" ColumnName="SoLuongTang" />
+                <ScalarProperty Name="TonSoSach" ColumnName="TonSoSach" />
+                <ScalarProperty Name="SoLuongKiemKe" ColumnName="SoLuongKiemKe" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="CT_Thuoc_PhieuNhap_ID" ColumnName="CT_Thuoc_PhieuNhap_ID" />
+                <ScalarProperty Name="TenPhieuDieuChinh" ColumnName="TenPhieuDieuChinh" />
+                <ScalarProperty Name="MaPhieuDieuChinh" ColumnName="MaPhieuDieuChinh" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

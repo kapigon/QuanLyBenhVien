@@ -46,5 +46,6 @@ namespace QLBV_DEV
         public virtual DbSet<ViTri> ViTri { get; set; }
         public virtual DbSet<LoaiHinhBan> LoaiHinhBan { get; set; }
         public virtual DbSet<PhieuXuatThuoc> PhieuXuatThuoc { get; set; }
+        public virtual DbSet<PhieuDieuChinh> PhieuDieuChinh { get; set; }
     }
 }

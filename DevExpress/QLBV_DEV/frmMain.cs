@@ -12,26 +12,27 @@ namespace QLBV_DEV
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        frmPhieuNhapThuoc   frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
-        frmDSPhieuNhap      frmDSPhieuNhap      = new frmDSPhieuNhap();
-        frmDSPhieuXuat      frmDSPhieuXuat      = new frmDSPhieuXuat();
-        frmThemNCC_KH       frmThemNhaCungCap   = new frmThemNCC_KH();
-        frmThemThuoc        frmThemThuoc        = new frmThemThuoc();
-        frmDSNCC_KH         frmDSNCC_KH         = new frmDSNCC_KH();
-        frmNuocSanXuat      frmNuocSanXuat      = new frmNuocSanXuat();
-        frmHoatChat         frmHoatChat         = new frmHoatChat();
-        frmNhomThuoc        frmNhomThuoc        = new frmNhomThuoc();
-        frmDonViTinh        frmDonViTinh        = new frmDonViTinh();
-        frmKho              frmViTri            = new frmKho();
-        frmHangSanXuat      frmHangSanXuat      = new frmHangSanXuat();
-        frmKho              frmKho              = new frmKho();
-        frmDS_Thuoc         frmDS_Thuoc         = new frmDS_Thuoc();
-        frmPhieuXuatThuoc   frmPhieuXuatThuoc   = new frmPhieuXuatThuoc();
-        frmDSThuocCanDate   frmDSThuocCanDate   = new frmDSThuocCanDate();
+        frmPhieuNhapThuoc   frmPhieuNhapThuoc           = new frmPhieuNhapThuoc();
+        frmDSPhieuNhap      frmDSPhieuNhap              = new frmDSPhieuNhap();
+        frmDSPhieuXuat      frmDSPhieuXuat              = new frmDSPhieuXuat();
+        frmThemNCC_KH       frmThemNhaCungCap           = new frmThemNCC_KH();
+        frmThemThuoc        frmThemThuoc                = new frmThemThuoc();
+        frmDSNCC_KH         frmDSNCC_KH                 = new frmDSNCC_KH();
+        frmNuocSanXuat      frmNuocSanXuat              = new frmNuocSanXuat();
+        frmHoatChat         frmHoatChat                 = new frmHoatChat();
+        frmNhomThuoc        frmNhomThuoc                = new frmNhomThuoc();
+        frmDonViTinh        frmDonViTinh                = new frmDonViTinh();
+        frmKho              frmViTri                    = new frmKho();
+        frmHangSanXuat      frmHangSanXuat              = new frmHangSanXuat();
+        frmKho              frmKho                      = new frmKho();
+        frmDS_Thuoc         frmDS_Thuoc                 = new frmDS_Thuoc();
+        frmPhieuXuatThuoc   frmPhieuXuatThuoc           = new frmPhieuXuatThuoc();
+        frmDSThuocCanDate   frmDSThuocCanDate           = new frmDSThuocCanDate();
         frmThuoCanDate_tungloai frmThuoCanDate_tungloai = new frmThuoCanDate_tungloai();
-        frmTonKhoTheoLo     frmTonKhoTheoLo         = new frmTonKhoTheoLo();
-        frmTonKhoTheoThuoc  frmTonKhoTheoThuoc  = new frmTonKhoTheoThuoc();
-        frmTonKhoToiThieu   frmTonKhoToiThieu   = new frmTonKhoToiThieu();
+        frmTonKhoTheoLo     frmTonKhoTheoLo             = new frmTonKhoTheoLo();
+        frmTonKhoTheoThuoc  frmTonKhoTheoThuoc          = new frmTonKhoTheoThuoc();
+        frmTonKhoToiThieu   frmTonKhoToiThieu           = new frmTonKhoToiThieu();
+        frmKiemKe   frmPhieuDieuChinh           = new frmKiemKe();
 
         private void close_form(object sender, FormClosedEventArgs e)
         {
@@ -54,6 +55,7 @@ namespace QLBV_DEV
             frmTonKhoTheoLo         = new frmTonKhoTheoLo();
             frmTonKhoTheoThuoc      = new frmTonKhoTheoThuoc();
             frmTonKhoToiThieu       = new frmTonKhoToiThieu();
+            frmPhieuDieuChinh       = new frmKiemKe();
         }
 
         public frmMain()
@@ -391,6 +393,22 @@ namespace QLBV_DEV
                 frmDSPhieuXuat.MdiParent = this;
                 frmDSPhieuXuat.FormClosed += new FormClosedEventHandler(close_form);
                 frmDSPhieuXuat.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmKiemKe));
+            if (frm == null)
+            {
+                frmPhieuDieuChinh.MdiParent = this;
+                frmPhieuDieuChinh.FormClosed += new FormClosedEventHandler(close_form);
+                frmPhieuDieuChinh.Show();
 
             }
             else

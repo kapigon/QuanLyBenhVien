@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.dateNgayVietHD = new DevExpress.XtraEditors.DateEdit();
@@ -254,10 +254,10 @@
             this.txtSoPhieu.Size = new System.Drawing.Size(213, 20);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
-            conditionValidationRule1.CaseSensitive = true;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Số phiếu không được để trống";
-            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule1);
+            conditionValidationRule2.CaseSensitive = true;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Số phiếu không được để trống";
+            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule2);
             // 
             // btnDong
             // 
@@ -407,6 +407,7 @@
             this.gridColThuoc_ID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridColThuoc_ID.Name = "gridColThuoc_ID";
+            this.gridColThuoc_ID.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.gridColThuoc_ID.View = this.gridView2;
             this.gridColThuoc_ID.EditValueChanged += new System.EventHandler(this.gridColThuoc_ID_EditValueChanged);
             // 
