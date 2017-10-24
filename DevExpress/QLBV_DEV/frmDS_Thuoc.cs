@@ -24,6 +24,10 @@ namespace QLBV_DEV
         public frmDS_Thuoc()
         {
             InitializeComponent();
+            LoadNhomThuoc();
+            LoadTenThuoc();
+            LoadHoatChat();
+            LoadHangSanXuat();
             LoadDS_Thuoc();
         }
         
@@ -61,6 +65,7 @@ namespace QLBV_DEV
             var result = from ncc in db.Thuoc
                          select new
                          {
+                             ID = ncc.ID,
                              TenThuoc = ncc.TenThuoc,
                              MaThuoc  = ncc.MaThuoc,
                          };
@@ -74,6 +79,7 @@ namespace QLBV_DEV
             var result = from ncc in db.NhomThuoc
                          select new
                          {
+                             ID = ncc.ID,
                              TenNhom = ncc.TenNhom,
                          };
             cbbNhomThuoc.Properties.DataSource = result.ToList();
@@ -89,6 +95,7 @@ namespace QLBV_DEV
             var result = from ncc in db.HoatChat
                          select new
                          {
+                             ID = ncc.ID,
                              TenHoatChat = ncc.TenHoatChat,
                          };
 
@@ -102,6 +109,7 @@ namespace QLBV_DEV
             var result = from ncc in db.HangSanXuat
                          select new
                          {
+                             ID = ncc.ID,
                              TenHangSX = ncc.TenHangSX,
                          };
 
@@ -115,10 +123,7 @@ namespace QLBV_DEV
         #region events
         private void frmDSThuoc_Load(object sender, EventArgs e)
         {
-            LoadNhomThuoc();
-            LoadTenThuoc();
-            LoadHoatChat();
-            LoadHangSanXuat();
+            
         }
 
         
@@ -132,12 +137,23 @@ namespace QLBV_DEV
         private void frmDSThuoc_Closed(object sender, FormClosedEventArgs e)
         {
             LoadDS_Thuoc();
+            LoadTenThuoc();
         }
         
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cbbNhomThuoc.EditValue.ToString());
+
+            int thuoc_id = 0;
+            String tenthuoc = cbbTenThuoc.Text.Trim();
+            int nhomthuoc_ID = cbbNhomThuoc.EditValue != "" ? Convert.ToInt32(cbbNhomThuoc.EditValue) : 0;
+            int hoatchat_ID = cbbHoatChat.EditValue != "" ? Convert.ToInt32(cbbHoatChat.EditValue) : 0;
+            int hangsanxuat_Id = cbbHangSanXuat.EditValue != "" ? Convert.ToInt32(cbbHangSanXuat.EditValue) : 0;
+            bool kichhoat = Convert.ToBoolean(chkKichHoat.EditValue);
+
+                 
+            var query = rpo_Thuoc.search(thuoc_id, tenthuoc, nhomthuoc_ID, hoatchat_ID, hangsanxuat_Id, kichhoat);
+            grvDSThuoc.DataSource = new BindingList<Thuoc>(query.ToList());
         }
 
         private void btnSua_Click(object sender, EventArgs e)

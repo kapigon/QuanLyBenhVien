@@ -87,6 +87,7 @@ namespace QLBV_DEV
         {
             /// Load hết dữ liệu đổ vào tất cả combobox
             LoadAllCombobox();
+            txtTonKho.Text = obj_Thuoc.TonKho.ToString();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

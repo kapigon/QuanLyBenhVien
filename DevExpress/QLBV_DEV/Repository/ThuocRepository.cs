@@ -105,5 +105,36 @@ namespace QLBV_DEV.Repository
             }
         }
 
+        public IQueryable<Thuoc> search(int thuoc_id, String tenthuoc, int nhomthuoc_ID, int hoatchat_ID, int hangsanxuat_Id, bool kichhoat)
+        {
+            var query = from _object in db.Thuoc 
+                        //join nt in db.NhomThuoc on _object.NhomThuoc_ID equals nt.ID
+                        //join hc in db.HoatChat on _object.HoatChat_ID equals hc.ID
+                        //join hsx in db.HangSanXuat on _object.HangSanXuat_ID equals hsx.ID
+                        from hoatchat in db.HoatChat.Where(hc => hc.ID == _object.HoatChat_ID).DefaultIfEmpty()
+                        from nhomthuoc in db.NhomThuoc.Where(nt => nt.ID == _object.NhomThuoc_ID).DefaultIfEmpty()
+                        from hangsanxuat in db.HangSanXuat.Where(hsx => hsx.ID == _object.HangSanXuat_ID).DefaultIfEmpty()
+                        select _object;
+
+            if (thuoc_id > 0)
+                query = query.Where(p =>p.ID == thuoc_id);
+
+            if (tenthuoc != "")
+                query = query.Where(p => p.TenThuoc.Equals(tenthuoc));
+
+            if (nhomthuoc_ID > 0)
+                query = query.Where(p => p.NhomThuoc_ID == nhomthuoc_ID);
+
+            if (hoatchat_ID > 0)
+                query = query.Where(p => p.HoatChat_ID == hoatchat_ID);
+
+            if (hangsanxuat_Id > 0)
+                query = query.Where(p => p.HangSanXuat_ID == hangsanxuat_Id);
+                query = query.Where(p => p.KichHoat == kichhoat);
+
+            return query;
+
+        }
+
     }
 }

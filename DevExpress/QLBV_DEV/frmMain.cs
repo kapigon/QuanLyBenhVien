@@ -54,6 +54,7 @@ namespace QLBV_DEV
             frmTonKhoTheoLo         = new frmTonKhoTheoLo();
             frmTonKhoTheoThuoc      = new frmTonKhoTheoThuoc();
             frmTonKhoToiThieu       = new frmTonKhoToiThieu();
+            frmDS_Thuoc             = new frmDS_Thuoc();
         }
 
         public frmMain()
@@ -397,6 +398,11 @@ namespace QLBV_DEV
             {
                 frm.Activate();
             }
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
