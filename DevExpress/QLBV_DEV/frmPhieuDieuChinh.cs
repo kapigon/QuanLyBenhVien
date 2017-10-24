@@ -180,6 +180,23 @@ namespace QLBV_DEV
                 // e.Info.ImageIndex = -1;
             }
         }
+        // Bắt sự kiện thay đổi khi chọn Tên thuốc -> tự động đưa ra dữ liệu vào các cột trong gridcontrol tương ứng
+        private void txtColTonSoSach_EditValueChanged(object sender, EventArgs e)
+        {
+            int index = gridView1.FocusedRowHandle;
+            int soluongkiemke = Convert.ToInt32(gridView1.GetRowCellValue(index, "SoLuongKiemKe"));
+            int tonsosach = Convert.ToInt32(gridView1.GetRowCellValue(index, "txtColTonSoSach"));
+            MessageBox.Show(soluongkiemke + " - " + tonsosach);
+            if (soluongkiemke - tonsosach > 0)
+            {
+                gridView1.SetRowCellValue(index, "SoLuongTang", soluongkiemke - tonsosach);
+            }
+            else if (soluongkiemke - tonsosach < 0)
+            {
+                gridView1.SetRowCellValue(index, "SoLuongGiam", soluongkiemke - tonsosach);
+
+            }
+        }
         #endregion
     }
 }

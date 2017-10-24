@@ -67,6 +67,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtColTonSoSach = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSThuoc)).BeginInit();
@@ -92,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColTonSoSach)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -280,7 +282,8 @@
             this.grvPhieuDieuChinh.Name = "grvPhieuDieuChinh";
             this.grvPhieuDieuChinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
-            this.repositoryItemCheckEdit1});
+            this.repositoryItemCheckEdit1,
+            this.txtColTonSoSach});
             this.grvPhieuDieuChinh.Size = new System.Drawing.Size(415, 393);
             this.grvPhieuDieuChinh.TabIndex = 10;
             this.grvPhieuDieuChinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -326,10 +329,13 @@
             this.TonSoSach.AppearanceHeader.Options.UseTextOptions = true;
             this.TonSoSach.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TonSoSach.Caption = "Tồn sổ sách";
+            this.TonSoSach.ColumnEdit = this.txtColTonSoSach;
             this.TonSoSach.FieldName = "TonSoSach";
             this.TonSoSach.Name = "TonSoSach";
             this.TonSoSach.Visible = true;
             this.TonSoSach.VisibleIndex = 1;
+            this.txtColTonSoSach.EditValueChanged += new System.EventHandler(this.txtColTonSoSach_EditValueChanged);
+
             // 
             // SoLuongTang
             // 
@@ -536,6 +542,11 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
+            // txtColTonSoSach
+            // 
+            this.txtColTonSoSach.AutoHeight = false;
+            this.txtColTonSoSach.Name = "txtColTonSoSach";
+            // 
             // frmPhieuDieuChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,6 +581,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColTonSoSach)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -614,5 +626,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cbbColDVT;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtColTonSoSach;
     }
 }
