@@ -12,27 +12,28 @@ namespace QLBV_DEV
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        frmPhieuNhapThuoc   frmPhieuNhapThuoc           = new frmPhieuNhapThuoc();
-        frmDSPhieuNhap      frmDSPhieuNhap              = new frmDSPhieuNhap();
-        frmDSPhieuXuat      frmDSPhieuXuat              = new frmDSPhieuXuat();
-        frmThemNCC_KH       frmThemNhaCungCap           = new frmThemNCC_KH();
-        frmThemThuoc        frmThemThuoc                = new frmThemThuoc();
-        frmDSNCC_KH         frmDSNCC_KH                 = new frmDSNCC_KH();
-        frmNuocSanXuat      frmNuocSanXuat              = new frmNuocSanXuat();
-        frmHoatChat         frmHoatChat                 = new frmHoatChat();
-        frmNhomThuoc        frmNhomThuoc                = new frmNhomThuoc();
-        frmDonViTinh        frmDonViTinh                = new frmDonViTinh();
-        frmKho              frmViTri                    = new frmKho();
-        frmHangSanXuat      frmHangSanXuat              = new frmHangSanXuat();
-        frmKho              frmKho                      = new frmKho();
-        frmDS_Thuoc         frmDS_Thuoc                 = new frmDS_Thuoc();
-        frmPhieuXuatThuoc   frmPhieuXuatThuoc           = new frmPhieuXuatThuoc();
-        frmDSThuocCanDate   frmDSThuocCanDate           = new frmDSThuocCanDate();
+        frmPhieuNhapThuoc   frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
+        frmDSPhieuNhap      frmDSPhieuNhap      = new frmDSPhieuNhap();
+        frmDSPhieuXuat      frmDSPhieuXuat      = new frmDSPhieuXuat();
+        frmThemNCC_KH       frmThemNhaCungCap   = new frmThemNCC_KH();
+        frmThemThuoc        frmThemThuoc        = new frmThemThuoc();
+        frmDSNCC_KH         frmDSNCC_KH         = new frmDSNCC_KH();
+        frmNuocSanXuat      frmNuocSanXuat      = new frmNuocSanXuat();
+        frmHoatChat         frmHoatChat         = new frmHoatChat();
+        frmNhomThuoc        frmNhomThuoc        = new frmNhomThuoc();
+        frmDonViTinh        frmDonViTinh        = new frmDonViTinh();
+        frmKho              frmViTri            = new frmKho();
+        frmHangSanXuat      frmHangSanXuat      = new frmHangSanXuat();
+        frmKho              frmKho              = new frmKho();
+        frmDS_Thuoc         frmDS_Thuoc         = new frmDS_Thuoc();
+        frmPhieuXuatThuoc   frmPhieuXuatThuoc   = new frmPhieuXuatThuoc();
+        frmDSThuocCanDate   frmDSThuocCanDate   = new frmDSThuocCanDate();
         frmThuoCanDate_tungloai frmThuoCanDate_tungloai = new frmThuoCanDate_tungloai();
-        frmTonKhoTheoLo     frmTonKhoTheoLo             = new frmTonKhoTheoLo();
-        frmTonKhoTheoThuoc  frmTonKhoTheoThuoc          = new frmTonKhoTheoThuoc();
-        frmTonKhoToiThieu   frmTonKhoToiThieu           = new frmTonKhoToiThieu();
-        frmKiemKe   frmPhieuDieuChinh           = new frmKiemKe();
+        frmTonKhoTheoLo     frmTonKhoTheoLo     = new frmTonKhoTheoLo();
+        frmTonKhoTheoThuoc  frmTonKhoTheoThuoc  = new frmTonKhoTheoThuoc();
+        frmTonKhoToiThieu   frmTonKhoToiThieu   = new frmTonKhoToiThieu();
+        frmKiemKe           frmKiemKe           = new frmKiemKe();
+        frmCanhbaotrangchu  frmCanhbaotrangchu  = new frmCanhbaotrangchu();
 
         private void close_form(object sender, FormClosedEventArgs e)
         {
@@ -56,14 +57,34 @@ namespace QLBV_DEV
             frmTonKhoTheoThuoc      = new frmTonKhoTheoThuoc();
             frmTonKhoToiThieu       = new frmTonKhoToiThieu();
             frmDS_Thuoc             = new frmDS_Thuoc();
-            frmPhieuDieuChinh       = new frmKiemKe();
+            frmKiemKe               = new frmKiemKe();
+            frmCanhbaotrangchu      = new frmCanhbaotrangchu();
         }
 
         public frmMain()
         {
 
             InitializeComponent();
+            LoadCanhBaoTrangChu();
+
         }
+        private void LoadCanhBaoTrangChu()
+        {
+            frmCanhbaotrangchu frmCanhbaotrangchu = new frmCanhbaotrangchu();
+            Form frm = kiemtraform(typeof(frmCanhbaotrangchu));
+            if (frm == null)
+            {
+                //frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
+                frmCanhbaotrangchu.MdiParent = this;
+                frmCanhbaotrangchu.FormClosed += new FormClosedEventHandler(close_form);
+                frmCanhbaotrangchu.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
         //Kiểm tra đã bật Tab Form chưa
         private Form kiemtraform(Type ftype)
         {
@@ -404,7 +425,7 @@ namespace QLBV_DEV
 
         private void ribbon_Click(object sender, EventArgs e)
         {
-
+            LoadCanhBaoTrangChu();
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
@@ -412,9 +433,9 @@ namespace QLBV_DEV
             Form frm = kiemtraform(typeof(frmKiemKe));
             if (frm == null)
             {
-                frmPhieuDieuChinh.MdiParent = this;
-                frmPhieuDieuChinh.FormClosed += new FormClosedEventHandler(close_form);
-                frmPhieuDieuChinh.Show();
+                frmKiemKe.MdiParent = this;
+                frmKiemKe.FormClosed += new FormClosedEventHandler(close_form);
+                frmKiemKe.Show();
 
             }
             else
