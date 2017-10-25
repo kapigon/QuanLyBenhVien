@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Localization>
+    <LocalizationGroup Name="FileAttachments">
+      <LocalizationItem Name="Editor_Clear" Value="Limpar" />
+      <LocalizationItem Name="Editor_DownLoad" Value="Download do conteúdo do arquivo" />
+      <LocalizationItem Name="Editor_Edit" Value="Alterar arquivo" />
+    </LocalizationGroup>
+  </Localization>
+</Application>

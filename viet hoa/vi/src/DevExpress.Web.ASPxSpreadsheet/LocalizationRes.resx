@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxSpreadsheetStringId.InsertImage">
+    <value>Insert image</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertImage_FromWeb">
+    <value>From the web (URL)</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertImage_FromLocal">
+    <value>From your computer</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertImage_EnterUrl">
+    <value>Enter image web address</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertImage_UploadInstructions">
+    <value>Browse your computer for the image file to upload</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertImage_ImagePreview">
+    <value>Image preview</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertImage_ImageManager_Header">
+    <value>Select image</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertLink">
+    <value>Insert hyperlink</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChangeLink">
+    <value>Change hyperlink</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertLink_URL">
+    <value>URL</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertLink_Email">
+    <value>E-mail address</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertLink_EmailTo">
+    <value>E-mail to</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertLink_Subject">
+    <value>Subject</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertLink_DisplayProperties">
+    <value>Display Properties</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertLink_Text">
+    <value>Text</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.InsertLink_ToolTip">
+    <value>ToolTip</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.OpenFile">
+    <value>Open spreadsheet file</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.OpenFile_FromServer">
+    <value>From the server</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.OpenFile_FromComputer">
+    <value>From your computer</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.OpenFile_ChooseInstruction">
+    <value>Choose spreadsheet file from the server</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.OpenFile_UploadInstruction">
+    <value>Browse your computer for the spreadsheet file to upload</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.OpenFile_FileManager_Header">
+    <value>Select spreadsheet file</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.RenameSheet">
+    <value>Rename sheet</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.RenameSheet_SheetName">
+    <value>Sheet name</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile">
+    <value>Save spreadsheet file as</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile_FileAlreadyExists">
+    <value>already exist. Do you want to replace it?</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile_SaveFileToServer">
+    <value>Save file to the server</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile_DownloadCopy">
+    <value>Download a copy</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile_FolderPath">
+    <value>Folder path</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile_FileName">
+    <value>File name</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile_FileType">
+    <value>File type</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile_DownloadInstruction">
+    <value>Choose download file type</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.SaveFile_FolderManager_Header">
+    <value>Select destination folder or existing file</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.RowHeight">
+    <value>Row height</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.RowHeight_Caption">
+    <value>Row height</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ColumnWidth">
+    <value>Column width</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ColumnWidth_Caption">
+    <value>Column width</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.DefaultColumnWidth">
+    <value>Standard width</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.DefaultColumnWidth_Caption">
+    <value>Standard column width</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.UnhideSheet">
+    <value>Unhide</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.UnhideSheet_Caption">
+    <value>Unhide sheet</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChangeChartType">
+    <value>Change chart type</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChartSelectData">
+    <value>Select data source</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChartSelectData_Caption">
+    <value>Chart data range</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ModifyChartLayout">
+    <value>Chart layouts</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChartChangeTitle">
+    <value>Change chart title</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChartChangeTitle_Caption">
+    <value>Chart title</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChartChangeHorizontalAxisTitle">
+    <value>Change horizontal axis title</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChartChangeHorizontalAxisTitle_Caption">
+    <value>Horizontal axis title</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChartChangeVerticalAxisTitle">
+    <value>Change vertical axis title</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ChartChangeVerticalAxisTitle_Caption">
+    <value>Vertical axis title</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ModifyChartStyle">
+    <value>Chart styles</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace">
+    <value>Find</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_FindTab_Caption">
+    <value>Find</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_FindWhat">
+    <value>Find what</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_MatchCase">
+    <value>Match case</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_Search">
+    <value>Search</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_Search_ByRows">
+    <value>By Rows</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_Search_ByColumns">
+    <value>By Columns</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_LookIn">
+    <value>Look in</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_LookIn_Formulas">
+    <value>Formulas</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_LookIn_Values">
+    <value>Values</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_MatchCellContent">
+    <value>Match entire cell contents</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_SearchResults">
+    <value>Search results</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_SearchResults_CellHeader">
+    <value>Cell</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FindAndReplace_SearchResults_ValueHeader">
+    <value>Value</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonInsert">
+    <value>Insert</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonChange">
+    <value>Change</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonCancel">
+    <value>Cancel</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonOK">
+    <value>OK</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonOpen">
+    <value>Open</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonSaveAs">
+    <value>Save as</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonSelect">
+    <value>Select</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonDownload">
+    <value>Download</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ButtonFindAll">
+    <value>Find all</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.Invalid_FileName">
+    <value>Invalid file name</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.Invalid_EMail">
+    <value>Invalid e-mail</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.Invalid_URL">
+    <value>Invalid link address</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.BorderLineStyle_Thin">
+    <value>Thin</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.BorderLineStyle_Dashed">
+    <value>Dashed</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.BorderLineStyle_Dotted">
+    <value>Dotted</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.BorderLineStyle_Double">
+    <value>Double</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.BorderLineStyle_Medium">
+    <value>Medium</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.BorderLineStyle_MediumDashed">
+    <value>Medium Dashed</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.BorderLineStyle_MediumDotted">
+    <value>Medium Dotted</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.BorderLineStyle_Thick">
+    <value>Thick</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ViewGroup_Title">
+    <value>View</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FullScreenCommand_Text">
+    <value>Full Screen</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.FullScreenCommand_Description">
+    <value>View the document in full screen mode.</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.RequiredFieldError">
+    <value>This field is required</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ExternalRibbonControl_NotFound">
+    <value>The external ribbon control '{0}' is not found.</value>
+  </data>
+  <data name="ASPxSpreadsheetStringId.ConfirmOnLosingChanges">
+    <value>Are you sure you want to perform the action? All unsaved sheet data will be lost.</value>
+  </data>
+</root>

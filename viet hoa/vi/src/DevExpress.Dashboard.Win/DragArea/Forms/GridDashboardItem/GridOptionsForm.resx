@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"></xsd:import>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"></assembly>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 19</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>buttonsPanel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 19</value>
+  </data>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>buttonsPanel</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="separator.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="separator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 0</value>
+  </data>
+  <data name="separator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 313</value>
+  </data>
+  <data name="separator.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;separator.Name" xml:space="preserve">
+    <value>separator</value>
+  </data>
+  <data name="&gt;&gt;separator.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;separator.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;separator.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="columnTypeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 12</value>
+  </data>
+  <data name="columnTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="columnTypeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="columnTypeLabel.Text" xml:space="preserve">
+    <value>Column type:</value>
+  </data>
+  <data name="&gt;&gt;columnTypeLabel.Name" xml:space="preserve">
+    <value>columnTypeLabel</value>
+  </data>
+  <data name="&gt;&gt;columnTypeLabel.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;columnTypeLabel.Parent" xml:space="preserve">
+    <value>columnTypePanel</value>
+  </data>
+  <data name="&gt;&gt;columnTypeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dimensionCheckEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 31</value>
+  </data>
+  <data name="dimensionCheckEdit.Properties.Caption" xml:space="preserve">
+    <value>Dimension</value>
+  </data>
+  <data name="dimensionCheckEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 19</value>
+  </data>
+  <data name="dimensionCheckEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dimensionCheckEdit.Name" xml:space="preserve">
+    <value>dimensionCheckEdit</value>
+  </data>
+  <data name="&gt;&gt;dimensionCheckEdit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;dimensionCheckEdit.Parent" xml:space="preserve">
+    <value>columnTypePanel</value>
+  </data>
+  <data name="&gt;&gt;dimensionCheckEdit.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="measureCheckEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 56</value>
+  </data>
+  <data name="measureCheckEdit.Properties.Caption" xml:space="preserve">
+    <value>Measure</value>
+  </data>
+  <data name="measureCheckEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 19</value>
+  </data>
+  <data name="measureCheckEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;measureCheckEdit.Name" xml:space="preserve">
+    <value>measureCheckEdit</value>
+  </data>
+  <data name="&gt;&gt;measureCheckEdit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;measureCheckEdit.Parent" xml:space="preserve">
+    <value>columnTypePanel</value>
+  </data>
+  <data name="&gt;&gt;measureCheckEdit.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="deltaCheckEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 81</value>
+  </data>
+  <data name="deltaCheckEdit.Properties.Caption" xml:space="preserve">
+    <value>Delta</value>
+  </data>
+  <data name="deltaCheckEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 19</value>
+  </data>
+  <data name="deltaCheckEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;deltaCheckEdit.Name" xml:space="preserve">
+    <value>deltaCheckEdit</value>
+  </data>
+  <data name="&gt;&gt;deltaCheckEdit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;deltaCheckEdit.Parent" xml:space="preserve">
+    <value>columnTypePanel</value>
+  </data>
+  <data name="&gt;&gt;deltaCheckEdit.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="autoCheckEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 131</value>
+  </data>
+  <data name="autoCheckEdit.Properties.Caption" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="autoCheckEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 19</value>
+  </data>
+  <data name="autoCheckEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;autoCheckEdit.Name" xml:space="preserve">
+    <value>autoCheckEdit</value>
+  </data>
+  <data name="&gt;&gt;autoCheckEdit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;autoCheckEdit.Parent" xml:space="preserve">
+    <value>columnTypePanel</value>
+  </data>
+  <data name="&gt;&gt;autoCheckEdit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sparklineCheckEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 106</value>
+  </data>
+  <data name="sparklineCheckEdit.Properties.Caption" xml:space="preserve">
+    <value>Sparkline</value>
+  </data>
+  <data name="sparklineCheckEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 19</value>
+  </data>
+  <data name="sparklineCheckEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;sparklineCheckEdit.Name" xml:space="preserve">
+    <value>sparklineCheckEdit</value>
+  </data>
+  <data name="&gt;&gt;sparklineCheckEdit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;sparklineCheckEdit.Parent" xml:space="preserve">
+    <value>columnTypePanel</value>
+  </data>
+  <data name="&gt;&gt;sparklineCheckEdit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="columnTypePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="columnTypePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 161</value>
+  </data>
+  <data name="columnTypePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;columnTypePanel.Name" xml:space="preserve">
+    <value>columnTypePanel</value>
+  </data>
+  <data name="&gt;&gt;columnTypePanel.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PanelControl, DevExpress.Utils.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;columnTypePanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;columnTypePanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnApply.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 19</value>
+  </data>
+  <data name="btnApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnApply.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Name" xml:space="preserve">
+    <value>btnApply</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Parent" xml:space="preserve">
+    <value>buttonsPanel</value>
+  </data>
+  <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 257</value>
+  </data>
+  <data name="buttonsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 56</value>
+  </data>
+  <data name="buttonsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;buttonsPanel.Name" xml:space="preserve">
+    <value>buttonsPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonsPanel.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PanelControl, DevExpress.Utils.v14.2, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;buttonsPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonsPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dimensionColumnControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 20</value>
+  </data>
+  <data name="dimensionColumnControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 212</value>
+  </data>
+  <data name="dimensionColumnControl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="dimensionColumnControl.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;dimensionColumnControl.Name" xml:space="preserve">
+    <value>dimensionColumnControl</value>
+  </data>
+  <data name="&gt;&gt;dimensionColumnControl.Type" xml:space="preserve">
+    <value>DevExpress.DashboardWin.Native.GridDimensionColumnControl, DevExpress.Dashboard.v14.2.Win, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;dimensionColumnControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dimensionColumnControl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="measureColumnControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 20</value>
+  </data>
+  <data name="measureColumnControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 212</value>
+  </data>
+  <data name="measureColumnControl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="measureColumnControl.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;measureColumnControl.Name" xml:space="preserve">
+    <value>measureColumnControl</value>
+  </data>
+  <data name="&gt;&gt;measureColumnControl.Type" xml:space="preserve">
+    <value>DevExpress.DashboardWin.Native.GridMeasureColumnControl, DevExpress.Dashboard.v14.2.Win, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;measureColumnControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;measureColumnControl.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="deltaColumnControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 20</value>
+  </data>
+  <data name="deltaColumnControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 212</value>
+  </data>
+  <data name="deltaColumnControl.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="deltaColumnControl.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;deltaColumnControl.Name" xml:space="preserve">
+    <value>deltaColumnControl</value>
+  </data>
+  <data name="&gt;&gt;deltaColumnControl.Type" xml:space="preserve">
+    <value>DevExpress.DashboardWin.Native.GridDeltaColumnControl, DevExpress.Dashboard.v14.2.Win, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;deltaColumnControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deltaColumnControl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="sparklineColumnControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 40</value>
+  </data>
+  <data name="sparklineColumnControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 212</value>
+  </data>
+  <data name="sparklineColumnControl.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="sparklineColumnControl.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;sparklineColumnControl.Name" xml:space="preserve">
+    <value>sparklineColumnControl</value>
+  </data>
+  <data name="&gt;&gt;sparklineColumnControl.Type" xml:space="preserve">
+    <value>DevExpress.DashboardWin.Native.GridSparklineColumnControl, DevExpress.Dashboard.v14.2.Win, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;sparklineColumnControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;sparklineColumnControl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>509, 311</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Column Options</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>GridOptionsForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>DevExpress.DashboardWin.Native.DashboardForm, DevExpress.Dashboard.v14.2.Win, Culture=neutral</value>
+  </data>
+</root>

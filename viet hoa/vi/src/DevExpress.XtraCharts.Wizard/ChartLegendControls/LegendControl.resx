@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"></xsd:import>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="tbcPageControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>294, 95</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="tbcPageControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"></assembly>
+  <data name="tbcPageControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <metadata name="tbGeneral.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>189, 95</value>
+  </metadata>
+  <metadata name="legendGeneralControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="legendGeneralControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="legendGeneralControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="legendGeneralControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 47</value>
+  </data>
+  <data name="legendGeneralControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 431</value>
+  </data>
+  <data name="legendGeneralControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;legendGeneralControl.Name" xml:space="preserve">
+    <value>legendGeneralControl</value>
+  </data>
+  <data name="&gt;&gt;legendGeneralControl.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;legendGeneralControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="panelControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>869, 56</value>
+  </metadata>
+  <data name="panelControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 35</value>
+  </data>
+  <data name="panelControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 12</value>
+  </data>
+  <data name="panelControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="&gt;&gt;panelControl1.Name" xml:space="preserve">
+    <value>panelControl1</value>
+  </data>
+  <data name="&gt;&gt;panelControl1.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;panelControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="labelControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>744, 56</value>
+  </metadata>
+  <data name="labelControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="labelControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 29</value>
+  </data>
+  <data name="labelControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 6</value>
+  </data>
+  <data name="labelControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Name" xml:space="preserve">
+    <value>labelControl1</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="chVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>644, 56</value>
+  </metadata>
+  <data name="chVisible.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="chVisible.Properties.Caption" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="chVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 19</value>
+  </data>
+  <data name="chVisible.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chVisible.Name" xml:space="preserve">
+    <value>chVisible</value>
+  </data>
+  <data name="&gt;&gt;chVisible.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;chVisible.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 480</value>
+  </data>
+  <data name="tbGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="&gt;&gt;tbGeneral.Name" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;tbGeneral.Parent" xml:space="preserve">
+    <value>tbcPageControl</value>
+  </data>
+  <data name="&gt;&gt;tbGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbcPageControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 487</value>
+  </data>
+  <data name="tbcPageControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <metadata name="tbAppearance.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>516, 56</value>
+  </metadata>
+  <metadata name="backgroundControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>358, 56</value>
+  </metadata>
+  <data name="backgroundControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="backgroundControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="backgroundControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="backgroundControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 460</value>
+  </data>
+  <data name="backgroundControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;backgroundControl.Name" xml:space="preserve">
+    <value>backgroundControl</value>
+  </data>
+  <data name="&gt;&gt;backgroundControl.Parent" xml:space="preserve">
+    <value>tbAppearance</value>
+  </data>
+  <data name="&gt;&gt;backgroundControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbAppearance.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbAppearance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 480</value>
+  </data>
+  <data name="tbAppearance.Text" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="&gt;&gt;tbAppearance.Name" xml:space="preserve">
+    <value>tbAppearance</value>
+  </data>
+  <data name="&gt;&gt;tbAppearance.Parent" xml:space="preserve">
+    <value>tbcPageControl</value>
+  </data>
+  <data name="&gt;&gt;tbAppearance.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="tbInterior.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>255, 56</value>
+  </metadata>
+  <metadata name="interiorControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>123, 56</value>
+  </metadata>
+  <data name="interiorControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="interiorControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="interiorControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="interiorControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 282</value>
+  </data>
+  <data name="interiorControl.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="&gt;&gt;interiorControl.Name" xml:space="preserve">
+    <value>interiorControl</value>
+  </data>
+  <data name="&gt;&gt;interiorControl.Parent" xml:space="preserve">
+    <value>tbInterior</value>
+  </data>
+  <data name="&gt;&gt;interiorControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="pnlEditors.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="pnlEditors.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pnlEditors.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlEditors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="pnlEditors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 0</value>
+  </data>
+  <data name="pnlEditors.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;pnlEditors.Name" xml:space="preserve">
+    <value>pnlEditors</value>
+  </data>
+  <data name="&gt;&gt;pnlEditors.Parent" xml:space="preserve">
+    <value>tbInterior</value>
+  </data>
+  <data name="&gt;&gt;pnlEditors.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbInterior.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbInterior.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 480</value>
+  </data>
+  <data name="tbInterior.Text" xml:space="preserve">
+    <value>Interior</value>
+  </data>
+  <data name="&gt;&gt;tbInterior.Name" xml:space="preserve">
+    <value>tbInterior</value>
+  </data>
+  <data name="&gt;&gt;tbInterior.Parent" xml:space="preserve">
+    <value>tbcPageControl</value>
+  </data>
+  <data name="&gt;&gt;tbInterior.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="tbMarker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>841, 17</value>
+  </metadata>
+  <metadata name="markerControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>711, 17</value>
+  </metadata>
+  <data name="markerControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="markerControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="markerControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="markerControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 81</value>
+  </data>
+  <data name="markerControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;markerControl.Name" xml:space="preserve">
+    <value>markerControl</value>
+  </data>
+  <data name="&gt;&gt;markerControl.Parent" xml:space="preserve">
+    <value>tbMarker</value>
+  </data>
+  <data name="&gt;&gt;markerControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbMarker.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbMarker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 480</value>
+  </data>
+  <data name="tbMarker.Text" xml:space="preserve">
+    <value>Marker</value>
+  </data>
+  <data name="&gt;&gt;tbMarker.Name" xml:space="preserve">
+    <value>tbMarker</value>
+  </data>
+  <data name="&gt;&gt;tbMarker.Parent" xml:space="preserve">
+    <value>tbcPageControl</value>
+  </data>
+  <data name="&gt;&gt;tbMarker.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="tbText.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>625, 17</value>
+  </metadata>
+  <metadata name="textControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>512, 17</value>
+  </metadata>
+  <data name="textControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="textControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="textControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 104</value>
+  </data>
+  <data name="textControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textControl.Name" xml:space="preserve">
+    <value>textControl</value>
+  </data>
+  <data name="&gt;&gt;textControl.Parent" xml:space="preserve">
+    <value>tbText</value>
+  </data>
+  <data name="&gt;&gt;textControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 480</value>
+  </data>
+  <data name="tbText.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="&gt;&gt;tbText.Name" xml:space="preserve">
+    <value>tbText</value>
+  </data>
+  <data name="&gt;&gt;tbText.Parent" xml:space="preserve">
+    <value>tbcPageControl</value>
+  </data>
+  <data name="&gt;&gt;tbText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="tbBorder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>412, 17</value>
+  </metadata>
+  <metadata name="appearanceControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>257, 17</value>
+  </metadata>
+  <data name="appearanceControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="appearanceControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="appearanceControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="appearanceControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 81</value>
+  </data>
+  <data name="appearanceControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;appearanceControl.Name" xml:space="preserve">
+    <value>appearanceControl</value>
+  </data>
+  <data name="&gt;&gt;appearanceControl.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;appearanceControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbBorder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbBorder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 480</value>
+  </data>
+  <data name="tbBorder.Text" xml:space="preserve">
+    <value>Border</value>
+  </data>
+  <data name="&gt;&gt;tbBorder.Name" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;tbBorder.Parent" xml:space="preserve">
+    <value>tbcPageControl</value>
+  </data>
+  <data name="&gt;&gt;tbBorder.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="tbShadow.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>151, 17</value>
+  </metadata>
+  <metadata name="shadowControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="shadowControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="shadowControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="shadowControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="shadowControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 81</value>
+  </data>
+  <data name="shadowControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;shadowControl.Name" xml:space="preserve">
+    <value>shadowControl</value>
+  </data>
+  <data name="&gt;&gt;shadowControl.Parent" xml:space="preserve">
+    <value>tbShadow</value>
+  </data>
+  <data name="&gt;&gt;shadowControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbShadow.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbShadow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 480</value>
+  </data>
+  <data name="tbShadow.Text" xml:space="preserve">
+    <value>Shadow</value>
+  </data>
+  <data name="&gt;&gt;tbShadow.Name" xml:space="preserve">
+    <value>tbShadow</value>
+  </data>
+  <data name="&gt;&gt;tbShadow.Parent" xml:space="preserve">
+    <value>tbcPageControl</value>
+  </data>
+  <data name="&gt;&gt;tbShadow.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tbcPageControl.Name" xml:space="preserve">
+    <value>tbcPageControl</value>
+  </data>
+  <data name="&gt;&gt;tbcPageControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbcPageControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 487</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>LegendControl</value>
+  </data>
+</root>
