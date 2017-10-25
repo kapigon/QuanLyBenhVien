@@ -306,7 +306,12 @@ namespace QLBV_DEV
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            
+            ThuocRepository rpo_Thuoc = new ThuocRepository();
+            List<Thuoc> lstThuoc = rpo_Thuoc.GetAll(10) as List<Thuoc>;
+
+            frmPrint print = new frmPrint();
+            print.printDSThuoc(lstThuoc);
+            print.ShowDialog();
         }
 
         private void btnDong_Click(object sender, EventArgs e)

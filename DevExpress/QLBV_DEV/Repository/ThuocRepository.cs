@@ -15,6 +15,16 @@ namespace QLBV_DEV.Repository
             return from _object in db.Thuoc orderby _object.ID ascending select _object;
         }
 
+        public IQueryable<Thuoc> GetAllS(int top)
+        {
+            return (from _object in db.Thuoc orderby _object.ID ascending select _object).Take(top);
+        }
+
+        public List<Thuoc> GetAll(int top)
+        {
+            return (from _object in db.Thuoc orderby _object.ID ascending select _object).Take(top).ToList();
+        }
+
         public IQueryable<Thuoc> GetAll(bool kichhoat)
         {
             return from _object in db.Thuoc where (_object.KichHoat == kichhoat) orderby _object.ID ascending select _object;
