@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxRichEditStringId.Font">
+    <value>Font</value>
+  </data>
+  <data name="ASPxRichEditStringId.FontStyle">
+    <value>Font style</value>
+  </data>
+  <data name="ASPxRichEditStringId.FontSize">
+    <value>Font size</value>
+  </data>
+  <data name="ASPxRichEditStringId.FontColor">
+    <value>Font color</value>
+  </data>
+  <data name="ASPxRichEditStringId.UnderlineStyle">
+    <value>Underline style</value>
+  </data>
+  <data name="ASPxRichEditStringId.UnderlineColor">
+    <value>Underline color</value>
+  </data>
+  <data name="ASPxRichEditStringId.Effects">
+    <value>Effect</value>
+  </data>
+  <data name="ASPxRichEditStringId.AllCaps">
+    <value>All caps</value>
+  </data>
+  <data name="ASPxRichEditStringId.Hidden">
+    <value>Hidden</value>
+  </data>
+  <data name="ASPxRichEditStringId.Normal">
+    <value>Normal</value>
+  </data>
+  <data name="ASPxRichEditStringId.Bold">
+    <value>Bold</value>
+  </data>
+  <data name="ASPxRichEditStringId.Italic">
+    <value>Italic</value>
+  </data>
+  <data name="ASPxRichEditStringId.BoldItalic">
+    <value>BoldItalic</value>
+  </data>
+  <data name="ASPxRichEditStringId.Dotted">
+    <value></value>
+  </data>
+  <data name="ASPxRichEditStringId.Strikeout">
+    <value></value>
+  </data>
+  <data name="ASPxRichEditStringId.DoubleStrikeout">
+    <value></value>
+  </data>
+  <data name="ASPxRichEditStringId.Superscript">
+    <value></value>
+  </data>
+  <data name="ASPxRichEditStringId.Subscript">
+    <value></value>
+  </data>
+  <data name="ASPxRichEditStringId.UnderlineWordsOnly">
+    <value>Underline words only</value>
+  </data>
+  <data name="ASPxRichEditStringId.ParagraphTab0">
+    <value>Indents And Spacing</value>
+  </data>
+  <data name="ASPxRichEditStringId.ParagraphTab1">
+    <value>Line And Page Breaks</value>
+  </data>
+  <data name="ASPxRichEditStringId.General">
+    <value>General</value>
+  </data>
+  <data name="ASPxRichEditStringId.Alignment">
+    <value>Alignment</value>
+  </data>
+  <data name="ASPxRichEditStringId.Left">
+    <value>Left</value>
+  </data>
+  <data name="ASPxRichEditStringId.Right">
+    <value>Right</value>
+  </data>
+  <data name="ASPxRichEditStringId.Centered">
+    <value>Centered</value>
+  </data>
+  <data name="ASPxRichEditStringId.Justified">
+    <value>Justified</value>
+  </data>
+  <data name="ASPxRichEditStringId.OutlineLevel">
+    <value>Outline level</value>
+  </data>
+  <data name="ASPxRichEditStringId.BodyText">
+    <value>Body Text</value>
+  </data>
+  <data name="ASPxRichEditStringId.Level">
+    <value>Level</value>
+  </data>
+  <data name="ASPxRichEditStringId.Indentation">
+    <value>Indentation</value>
+  </data>
+  <data name="ASPxRichEditStringId.Special">
+    <value>Special</value>
+  </data>
+  <data name="ASPxRichEditStringId.By">
+    <value>By</value>
+  </data>
+  <data name="ASPxRichEditStringId.none">
+    <value>(none)</value>
+  </data>
+  <data name="ASPxRichEditStringId.FirstLine">
+    <value>First line</value>
+  </data>
+  <data name="ASPxRichEditStringId.Hanging">
+    <value>Hanging</value>
+  </data>
+  <data name="ASPxRichEditStringId.Spacing">
+    <value>Spacing</value>
+  </data>
+  <data name="ASPxRichEditStringId.Before">
+    <value>Before</value>
+  </data>
+  <data name="ASPxRichEditStringId.LineSpacing">
+    <value>Line spacing</value>
+  </data>
+  <data name="ASPxRichEditStringId.At">
+    <value>At</value>
+  </data>
+  <data name="ASPxRichEditStringId.After">
+    <value>After</value>
+  </data>
+  <data name="ASPxRichEditStringId.Single">
+    <value>Single</value>
+  </data>
+  <data name="ASPxRichEditStringId.spacing_1_5_lines">
+    <value>1.5 lines</value>
+  </data>
+  <data name="ASPxRichEditStringId.Double">
+    <value>Double</value>
+  </data>
+  <data name="ASPxRichEditStringId.Multiple">
+    <value>Multiple</value>
+  </data>
+  <data name="ASPxRichEditStringId.Exactly">
+    <value>Exactly</value>
+  </data>
+  <data name="ASPxRichEditStringId.AtLeast">
+    <value>At least</value>
+  </data>
+  <data name="ASPxRichEditStringId.NoSpace">
+    <value>Don't add space between paragraph of the same style</value>
+  </data>
+  <data name="ASPxRichEditStringId.Pagination">
+    <value>Pagination</value>
+  </data>
+  <data name="ASPxRichEditStringId.KLT">
+    <value>Keep lines together</value>
+  </data>
+  <data name="ASPxRichEditStringId.PBB">
+    <value>Page break before</value>
+  </data>
+  <data name="ASPxRichEditStringId.SaveToServer">
+    <value>Save file to the server</value>
+  </data>
+  <data name="ASPxRichEditStringId.DownloadCopy">
+    <value>Download a copy</value>
+  </data>
+  <data name="ASPxRichEditStringId.FolderPath">
+    <value>Folder path</value>
+  </data>
+  <data name="ASPxRichEditStringId.FileType">
+    <value>File type</value>
+  </data>
+  <data name="ASPxRichEditStringId.FileName">
+    <value>File name</value>
+  </data>
+  <data name="ASPxRichEditStringId.ChooseType">
+    <value>Choose download file type</value>
+  </data>
+  <data name="ASPxRichEditStringId.SaveFileAs">
+    <value>Save file as</value>
+  </data>
+  <data name="ASPxRichEditStringId.Portrait">
+    <value>Portrait</value>
+  </data>
+  <data name="ASPxRichEditStringId.Landscape">
+    <value>Landscape</value>
+  </data>
+  <data name="ASPxRichEditStringId.Continuous">
+    <value>Continuous</value>
+  </data>
+  <data name="ASPxRichEditStringId.NewPage">
+    <value>New page</value>
+  </data>
+  <data name="ASPxRichEditStringId.EvenPage">
+    <value>Even page</value>
+  </data>
+  <data name="ASPxRichEditStringId.OddPage">
+    <value>Odd page</value>
+  </data>
+  <data name="ASPxRichEditStringId.WholeDocument">
+    <value>Whole document</value>
+  </data>
+  <data name="ASPxRichEditStringId.CurrentSection">
+    <value>Current section</value>
+  </data>
+  <data name="ASPxRichEditStringId.SelectedSections">
+    <value>Selected sections</value>
+  </data>
+  <data name="ASPxRichEditStringId.ThisPointForward">
+    <value>This point forward</value>
+  </data>
+  <data name="ASPxRichEditStringId.Margins">
+    <value>Margins</value>
+  </data>
+  <data name="ASPxRichEditStringId.Paper">
+    <value>Paper</value>
+  </data>
+  <data name="ASPxRichEditStringId.Layout">
+    <value>Layout</value>
+  </data>
+  <data name="ASPxRichEditStringId.Top">
+    <value>Top</value>
+  </data>
+  <data name="ASPxRichEditStringId.Bottom">
+    <value>Bottom</value>
+  </data>
+  <data name="ASPxRichEditStringId.Orientation">
+    <value>Orientation</value>
+  </data>
+  <data name="ASPxRichEditStringId.PaperSize">
+    <value>Paper size</value>
+  </data>
+  <data name="ASPxRichEditStringId.Width">
+    <value>Width</value>
+  </data>
+  <data name="ASPxRichEditStringId.Height">
+    <value>Height</value>
+  </data>
+  <data name="ASPxRichEditStringId.Section">
+    <value>Section</value>
+  </data>
+  <data name="ASPxRichEditStringId.SectionStart">
+    <value>Section start</value>
+  </data>
+  <data name="ASPxRichEditStringId.HeadersAndFooters">
+    <value>Headers and footers</value>
+  </data>
+  <data name="ASPxRichEditStringId.DifferentOddAndEven">
+    <value>Different odd and even</value>
+  </data>
+  <data name="ASPxRichEditStringId.DifferentFirstPage">
+    <value>Different first page</value>
+  </data>
+  <data name="ASPxRichEditStringId.ApplyTo">
+    <value>Apply to</value>
+  </data>
+  <data name="ASPxRichEditStringId.CancelButton">
+    <value>Cancel</value>
+  </data>
+  <data name="ASPxRichEditStringId.OkButton">
+    <value>OK</value>
+  </data>
+  <data name="ASPxRichEditStringId.OpenButton">
+    <value>Open</value>
+  </data>
+  <data name="ASPxRichEditStringId.SaveAsButton">
+    <value>Save</value>
+  </data>
+  <data name="ASPxRichEditStringId.DownloadButton">
+    <value>Download</value>
+  </data>
+  <data name="ASPxRichEditStringId.SelectButton">
+    <value>Select</value>
+  </data>
+  <data name="ASPxRichEditStringId.InsertButton">
+    <value>Insert</value>
+  </data>
+  <data name="ASPxRichEditStringId.ChangeButton">
+    <value>Change</value>
+  </data>
+  <data name="ASPxRichEditStringId.InsertImage_FromWeb">
+    <value>From the web (URL)</value>
+  </data>
+  <data name="ASPxRichEditStringId.InsertImage_FromLocal">
+    <value>From your computer</value>
+  </data>
+  <data name="ASPxRichEditStringId.InsertImage_EnterUrl">
+    <value>Enter image web address</value>
+  </data>
+  <data name="ASPxRichEditStringId.InsertImage_UploadInstructions">
+    <value>Browse your computer for the image file to upload</value>
+  </data>
+  <data name="ASPxRichEditStringId.InsertImage_ImagePreview">
+    <value>Image preview</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageFile">
+    <value>File</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageHome">
+    <value>Home</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageInsert">
+    <value>Insert</value>
+  </data>
+  <data name="ASPxRichEditStringId.PagePageLayout">
+    <value>Page Layout</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageReferences">
+    <value>References</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageMailings">
+    <value>Mail Merge</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageReview">
+    <value>Review</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageView">
+    <value>View</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageHeaderAndFooter">
+    <value>Header &amp; Footer</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageTable">
+    <value>Table</value>
+  </data>
+  <data name="ASPxRichEditStringId.PagePicture">
+    <value>Picture</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupUndo">
+    <value>Undo</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupFont">
+    <value>Font</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupParagraph">
+    <value>Paragraph</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupClipboard">
+    <value>Clipboard</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupEditing">
+    <value>Editing</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupCommon">
+    <value>Common</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupStyles">
+    <value>Styles</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupZoom">
+    <value>Zoom</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupShow">
+    <value>Show</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupIllustrations">
+    <value>Illustrations</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupText">
+    <value>Text</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTables">
+    <value>Tables</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupSymbols">
+    <value>Symbols</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupLinks">
+    <value>Links</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupPages">
+    <value>Pages</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupHeaderFooter">
+    <value>Header &amp;&amp; Footer</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupHeaderFooterToolsDesignClose">
+    <value>Close</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupHeaderFooterToolsDesignNavigation">
+    <value>Navigation</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupMailMerge">
+    <value>Mail Merge</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupDocumentViews">
+    <value>Document Views</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupHeaderFooterToolsDesignOptions">
+    <value>Options</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupPageSetup">
+    <value>Page Setup</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupDocumentProtection">
+    <value>Protect</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupDocumentProofing">
+    <value>Proofing</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupDocumentComment">
+    <value>Comment</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupDocumentTracking">
+    <value>Tracking</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableOfContents">
+    <value>Table of Contents</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupFloatingPictureToolsArrange">
+    <value>Arrange</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupFloatingPictureToolsShapeStyles">
+    <value>Shape Styles</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupCaptions">
+    <value>Captions</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupPageBackground">
+    <value>Background</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupDocumentLanguage">
+    <value>Language</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupView">
+    <value>View</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableToolsDesignTableStyleOptions">
+    <value>Table Style Options</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableToolsDesignTableStyles">
+    <value>Table Styles</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableToolsDesignBordersAndShadings">
+    <value>Borders &amp; Shadings</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableToolsLayoutTable">
+    <value>Table</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableToolsLayoutRowsAndColumns">
+    <value>Rows &amp; Columns</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableToolsLayoutMerge">
+    <value>Merge</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableToolsLayoutCellSize">
+    <value>Cell Size</value>
+  </data>
+  <data name="ASPxRichEditStringId.GroupTableToolsLayoutAlignment">
+    <value>Alignment</value>
+  </data>
+  <data name="ASPxRichEditStringId.RequiredFieldError">
+    <value>This field is required</value>
+  </data>
+  <data name="ASPxRichEditStringId.MenuCmd_ToggleFullScreen">
+    <value>Full Screen</value>
+  </data>
+  <data name="ASPxRichEditStringId.MenuCmd_ToggleFullScreenDescription">
+    <value>Enable / disable the full screen mode.</value>
+  </data>
+  <data name="ASPxRichEditStringId.SaveAsFileTitle">
+    <value>Save As</value>
+  </data>
+  <data name="ASPxRichEditStringId.OpenFileTitle">
+    <value>Open</value>
+  </data>
+  <data name="ASPxRichEditStringId.FontTitle">
+    <value>Font</value>
+  </data>
+  <data name="ASPxRichEditStringId.ParagraphTitle">
+    <value>Paragraph</value>
+  </data>
+  <data name="ASPxRichEditStringId.PageSetupTitle">
+    <value>Page Setup</value>
+  </data>
+  <data name="ASPxRichEditStringId.ColumnsTitle">
+    <value>Columns</value>
+  </data>
+  <data name="ASPxRichEditStringId.InsertImageTitle">
+    <value>Insert Image</value>
+  </data>
+  <data name="ASPxRichEditStringId.ErrorTitle">
+    <value>Error</value>
+  </data>
+  <data name="ASPxRichEditStringId.RulerMarginLeftTitle">
+    <value>Margin Left</value>
+  </data>
+  <data name="ASPxRichEditStringId.RulerMarginRightTitle">
+    <value>Margin Right</value>
+  </data>
+  <data name="ASPxRichEditStringId.RulerFirstLineIdentTitle">
+    <value>First Line Ident</value>
+  </data>
+  <data name="ASPxRichEditStringId.RulerHangingIdentTitle">
+    <value>Hanging Ident</value>
+  </data>
+  <data name="ASPxRichEditStringId.RulerRightIdentTitle">
+    <value>Right Ident</value>
+  </data>
+  <data name="ASPxRichEditStringId.RulerLeftIdentTitle">
+    <value>Left Ident</value>
+  </data>
+  <data name="ASPxRichEditStringId.MarginsNarrow">
+    <value>Narrow</value>
+  </data>
+  <data name="ASPxRichEditStringId.MarginsNormal">
+    <value>Normal</value>
+  </data>
+  <data name="ASPxRichEditStringId.MarginsModerate">
+    <value>Moderate</value>
+  </data>
+  <data name="ASPxRichEditStringId.MarginsWide">
+    <value>Wide</value>
+  </data>
+  <data name="ASPxRichEditStringId.ModelIsChangedError">
+    <value>The document has been modified outside the editor and needs to be reloaded. &lt;br /&gt;Your last-minute changes might not be preserved, if any.</value>
+  </data>
+  <data name="ASPxRichEditStringId.SessionHasExpiredError">
+    <value>Your session has expired. &lt;br /&gt;Please refresh the page to continue.</value>
+  </data>
+  <data name="ASPxRichEditStringId.OpeningAndOverstoreImpossibleError">
+    <value>The open and save document operations are not allowed&lt;br /&gt;since the working directory is not specified for the editor.</value>
+  </data>
+  <data name="ASPxRichEditStringId.ClipboardAccessDeniedError">
+    <value>Access to the clipboard is denied due to your browser's security policy. &lt;br /&gt;Instead you can use the keyboard shortcuts:&lt;br /&gt;Ctrl+X (cut), Ctrl+C (copy) and Ctrl+V (paste).</value>
+  </data>
+  <data name="ASPxRichEditStringId.ConfirmOnLosingChanges">
+    <value>Are you sure you want to perform the action? All unsaved document data will be lost.</value>
+  </data>
+</root>

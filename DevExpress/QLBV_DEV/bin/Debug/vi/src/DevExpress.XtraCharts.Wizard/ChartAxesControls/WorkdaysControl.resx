@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"></xsd:import>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="panelWorkdaysPadding.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>489, 95</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="panelWorkdaysPadding.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"></assembly>
+  <data name="panelWorkdaysPadding.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
+  </data>
+  <data name="panelWorkdaysPadding.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 12</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="panelWorkdaysPadding.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelWorkdaysPadding.Name" xml:space="preserve">
+    <value>panelWorkdaysPadding</value>
+  </data>
+  <data name="&gt;&gt;panelWorkdaysPadding.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelWorkdaysPadding.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="labelLine.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>389, 95</value>
+  </metadata>
+  <data name="labelLine.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="labelLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 19</value>
+  </data>
+  <data name="labelLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 6</value>
+  </data>
+  <data name="labelLine.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelLine.Name" xml:space="preserve">
+    <value>labelLine</value>
+  </data>
+  <data name="&gt;&gt;labelLine.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelLine.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="ceWorkdaysOnly.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>246, 95</value>
+  </metadata>
+  <data name="ceWorkdaysOnly.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceWorkdaysOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ceWorkdaysOnly.Properties.Caption" xml:space="preserve">
+    <value>Workdays Only</value>
+  </data>
+  <data name="ceWorkdaysOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 19</value>
+  </data>
+  <data name="ceWorkdaysOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ceWorkdaysOnly.Name" xml:space="preserve">
+    <value>ceWorkdaysOnly</value>
+  </data>
+  <data name="&gt;&gt;ceWorkdaysOnly.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ceWorkdaysOnly.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="grWorkdays.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>129, 95</value>
+  </metadata>
+  <data name="grWorkdays.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="ceSaturday.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <data name="ceSaturday.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceSaturday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 145</value>
+  </data>
+  <data name="ceSaturday.Properties.Caption" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
+  <data name="ceSaturday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 19</value>
+  </data>
+  <data name="ceSaturday.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;ceSaturday.Name" xml:space="preserve">
+    <value>ceSaturday</value>
+  </data>
+  <data name="&gt;&gt;ceSaturday.Parent" xml:space="preserve">
+    <value>grWorkdays</value>
+  </data>
+  <data name="&gt;&gt;ceSaturday.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="ceFriday.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>895, 56</value>
+  </metadata>
+  <data name="ceFriday.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceFriday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 126</value>
+  </data>
+  <data name="ceFriday.Properties.Caption" xml:space="preserve">
+    <value>Friday</value>
+  </data>
+  <data name="ceFriday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 19</value>
+  </data>
+  <data name="ceFriday.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;ceFriday.Name" xml:space="preserve">
+    <value>ceFriday</value>
+  </data>
+  <data name="&gt;&gt;ceFriday.Parent" xml:space="preserve">
+    <value>grWorkdays</value>
+  </data>
+  <data name="&gt;&gt;ceFriday.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="ceThursday.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>782, 56</value>
+  </metadata>
+  <data name="ceThursday.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceThursday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 107</value>
+  </data>
+  <data name="ceThursday.Properties.Caption" xml:space="preserve">
+    <value>Thursday</value>
+  </data>
+  <data name="ceThursday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 19</value>
+  </data>
+  <data name="ceThursday.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;ceThursday.Name" xml:space="preserve">
+    <value>ceThursday</value>
+  </data>
+  <data name="&gt;&gt;ceThursday.Parent" xml:space="preserve">
+    <value>grWorkdays</value>
+  </data>
+  <data name="&gt;&gt;ceThursday.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="ceWednesday.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>655, 56</value>
+  </metadata>
+  <data name="ceWednesday.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceWednesday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 88</value>
+  </data>
+  <data name="ceWednesday.Properties.Caption" xml:space="preserve">
+    <value>Wednesday</value>
+  </data>
+  <data name="ceWednesday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 19</value>
+  </data>
+  <data name="ceWednesday.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;ceWednesday.Name" xml:space="preserve">
+    <value>ceWednesday</value>
+  </data>
+  <data name="&gt;&gt;ceWednesday.Parent" xml:space="preserve">
+    <value>grWorkdays</value>
+  </data>
+  <data name="&gt;&gt;ceWednesday.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="ceTuesday.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>547, 56</value>
+  </metadata>
+  <data name="ceTuesday.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceTuesday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 69</value>
+  </data>
+  <data name="ceTuesday.Properties.Caption" xml:space="preserve">
+    <value>Tuesday</value>
+  </data>
+  <data name="ceTuesday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 19</value>
+  </data>
+  <data name="ceTuesday.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ceTuesday.Name" xml:space="preserve">
+    <value>ceTuesday</value>
+  </data>
+  <data name="&gt;&gt;ceTuesday.Parent" xml:space="preserve">
+    <value>grWorkdays</value>
+  </data>
+  <data name="&gt;&gt;ceTuesday.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="ceMonday.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>438, 56</value>
+  </metadata>
+  <data name="ceMonday.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceMonday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="ceMonday.Properties.Caption" xml:space="preserve">
+    <value>Monday</value>
+  </data>
+  <data name="ceMonday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 19</value>
+  </data>
+  <data name="ceMonday.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ceMonday.Name" xml:space="preserve">
+    <value>ceMonday</value>
+  </data>
+  <data name="&gt;&gt;ceMonday.Parent" xml:space="preserve">
+    <value>grWorkdays</value>
+  </data>
+  <data name="&gt;&gt;ceMonday.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="ceSunday.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 56</value>
+  </metadata>
+  <data name="ceSunday.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceSunday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="ceSunday.Properties.Caption" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="ceSunday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 19</value>
+  </data>
+  <data name="ceSunday.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ceSunday.Name" xml:space="preserve">
+    <value>ceSunday</value>
+  </data>
+  <data name="&gt;&gt;ceSunday.Parent" xml:space="preserve">
+    <value>grWorkdays</value>
+  </data>
+  <data name="&gt;&gt;ceSunday.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="grWorkdays.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="grWorkdays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 37</value>
+  </data>
+  <data name="grWorkdays.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="grWorkdays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 176</value>
+  </data>
+  <data name="grWorkdays.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="grWorkdays.Text" xml:space="preserve">
+    <value>Workdays</value>
+  </data>
+  <data name="&gt;&gt;grWorkdays.Name" xml:space="preserve">
+    <value>grWorkdays</value>
+  </data>
+  <data name="&gt;&gt;grWorkdays.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grWorkdays.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="panelKnownDaysPadding.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>144, 56</value>
+  </metadata>
+  <data name="panelKnownDaysPadding.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelKnownDaysPadding.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 213</value>
+  </data>
+  <data name="panelKnownDaysPadding.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 12</value>
+  </data>
+  <data name="panelKnownDaysPadding.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;panelKnownDaysPadding.Name" xml:space="preserve">
+    <value>panelKnownDaysPadding</value>
+  </data>
+  <data name="&gt;&gt;panelKnownDaysPadding.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelKnownDaysPadding.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="grKnownDays.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="grKnownDays.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="panelExactWorkdays.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>865, 17</value>
+  </metadata>
+  <data name="panelExactWorkdays.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="btnExactWorkdays.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>713, 17</value>
+  </metadata>
+  <data name="btnExactWorkdays.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnExactWorkdays.EditValue" xml:space="preserve">
+    <value>Click the ellipsis button...</value>
+  </data>
+  <data name="btnExactWorkdays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 0</value>
+  </data>
+  <data name="btnExactWorkdays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 20</value>
+  </data>
+  <data name="btnExactWorkdays.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;btnExactWorkdays.Name" xml:space="preserve">
+    <value>btnExactWorkdays</value>
+  </data>
+  <data name="&gt;&gt;btnExactWorkdays.Parent" xml:space="preserve">
+    <value>panelExactWorkdays</value>
+  </data>
+  <data name="&gt;&gt;btnExactWorkdays.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="labelExactWorkdays.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>553, 17</value>
+  </metadata>
+  <data name="labelExactWorkdays.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labelExactWorkdays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="labelExactWorkdays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 20</value>
+  </data>
+  <data name="labelExactWorkdays.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="labelExactWorkdays.Text" xml:space="preserve">
+    <value>Exact Workdays:</value>
+  </data>
+  <data name="&gt;&gt;labelExactWorkdays.Name" xml:space="preserve">
+    <value>labelExactWorkdays</value>
+  </data>
+  <data name="&gt;&gt;labelExactWorkdays.Parent" xml:space="preserve">
+    <value>panelExactWorkdays</value>
+  </data>
+  <data name="&gt;&gt;labelExactWorkdays.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelExactWorkdays.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelExactWorkdays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 55</value>
+  </data>
+  <data name="panelExactWorkdays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="panelExactWorkdays.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;panelExactWorkdays.Name" xml:space="preserve">
+    <value>panelExactWorkdays</value>
+  </data>
+  <data name="&gt;&gt;panelExactWorkdays.Parent" xml:space="preserve">
+    <value>grKnownDays</value>
+  </data>
+  <data name="&gt;&gt;panelExactWorkdays.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="panelHolidaysSplitter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>386, 17</value>
+  </metadata>
+  <data name="panelHolidaysSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelHolidaysSplitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 51</value>
+  </data>
+  <data name="panelHolidaysSplitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 4</value>
+  </data>
+  <data name="panelHolidaysSplitter.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;panelHolidaysSplitter.Name" xml:space="preserve">
+    <value>panelHolidaysSplitter</value>
+  </data>
+  <data name="&gt;&gt;panelHolidaysSplitter.Parent" xml:space="preserve">
+    <value>grKnownDays</value>
+  </data>
+  <data name="&gt;&gt;panelHolidaysSplitter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="panelHolidays.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>258, 17</value>
+  </metadata>
+  <data name="panelHolidays.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="btnHolidays.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
+  <data name="btnHolidays.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnHolidays.EditValue" xml:space="preserve">
+    <value>Click the ellipsis button...</value>
+  </data>
+  <data name="btnHolidays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 0</value>
+  </data>
+  <data name="btnHolidays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 20</value>
+  </data>
+  <data name="btnHolidays.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;btnHolidays.Name" xml:space="preserve">
+    <value>btnHolidays</value>
+  </data>
+  <data name="&gt;&gt;btnHolidays.Parent" xml:space="preserve">
+    <value>panelHolidays</value>
+  </data>
+  <data name="&gt;&gt;btnHolidays.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="labelHolidays.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="labelHolidays.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labelHolidays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="labelHolidays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 20</value>
+  </data>
+  <data name="labelHolidays.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="labelHolidays.Text" xml:space="preserve">
+    <value>Holidays:</value>
+  </data>
+  <data name="&gt;&gt;labelHolidays.Name" xml:space="preserve">
+    <value>labelHolidays</value>
+  </data>
+  <data name="&gt;&gt;labelHolidays.Parent" xml:space="preserve">
+    <value>panelHolidays</value>
+  </data>
+  <data name="&gt;&gt;labelHolidays.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelHolidays.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelHolidays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="panelHolidays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="panelHolidays.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;panelHolidays.Name" xml:space="preserve">
+    <value>panelHolidays</value>
+  </data>
+  <data name="&gt;&gt;panelHolidays.Parent" xml:space="preserve">
+    <value>grKnownDays</value>
+  </data>
+  <data name="&gt;&gt;panelHolidays.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grKnownDays.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="grKnownDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 225</value>
+  </data>
+  <data name="grKnownDays.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="grKnownDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 87</value>
+  </data>
+  <data name="grKnownDays.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="grKnownDays.Text" xml:space="preserve">
+    <value>Known Days</value>
+  </data>
+  <data name="&gt;&gt;grKnownDays.Name" xml:space="preserve">
+    <value>grKnownDays</value>
+  </data>
+  <data name="&gt;&gt;grKnownDays.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grKnownDays.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 335</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>WorkdaysControl</value>
+  </data>
+</root>

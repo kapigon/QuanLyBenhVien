@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="ChartWizard" Caption="Thuật sĩ Biểu đồ" />
+      <Action Id="PrintChart" Caption="In Biểu đồ" />
+      <Action Id="PrintPreviewPivotGrid" Caption="In lưới Pivot" />
+    </Actions>
+  </ActionDesign>
+</Application>

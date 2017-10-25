@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="EditSeries" Caption="Sửa Series" />
+      <Action Id="EditSeriesDetailView" Caption="Sửa Series" />
+      <Action Id="OpenSeries" Caption="Mở Series" />
+      <Action Id="RestoreOccurrence" Caption="Khôi phục Biến cố" />
+    </Actions>
+  </ActionDesign>
+</Application>

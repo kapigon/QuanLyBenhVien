@@ -1,0 +1,1920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"></xsd:import>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="tbcTabPages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>853, 251</value>
+  </metadata>
+  <metadata name="tbcTabPages.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="tbcTabPages.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"></assembly>
+  <data name="tbcTabPages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <metadata name="tbGeneral.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>748, 251</value>
+  </metadata>
+  <metadata name="groupSize.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>642, 251</value>
+  </metadata>
+  <metadata name="chartPanelControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 212</value>
+  </metadata>
+  <metadata name="chartPanelControl5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 212</value>
+  </metadata>
+  <metadata name="panelControl11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>487, 173</value>
+  </metadata>
+  <metadata name="labelControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>362, 173</value>
+  </metadata>
+  <metadata name="panelVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>245, 173</value>
+  </metadata>
+  <data name="&gt;&gt;groupSize.Name" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;groupSize.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;groupSize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl2.Name" xml:space="preserve">
+    <value>chartPanelControl2</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl2.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl5.Name" xml:space="preserve">
+    <value>chartPanelControl5</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl5.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelControl11.Name" xml:space="preserve">
+    <value>panelControl11</value>
+  </data>
+  <data name="&gt;&gt;panelControl11.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;panelControl11.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Name" xml:space="preserve">
+    <value>labelControl1</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panelVisible.Name" xml:space="preserve">
+    <value>panelVisible</value>
+  </data>
+  <data name="&gt;&gt;panelVisible.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;panelVisible.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tbGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 471</value>
+  </data>
+  <data name="tbGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="&gt;&gt;tbGeneral.Name" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;tbGeneral.Parent" xml:space="preserve">
+    <value>tbcTabPages</value>
+  </data>
+  <data name="&gt;&gt;tbGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbcTabPages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 478</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="tbcTabPages.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <metadata name="tbAppearance.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
+  </metadata>
+  <metadata name="backgroundControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>778, 134</value>
+  </metadata>
+  <data name="&gt;&gt;backgroundControl.Name" xml:space="preserve">
+    <value>backgroundControl</value>
+  </data>
+  <data name="&gt;&gt;backgroundControl.Parent" xml:space="preserve">
+    <value>tbAppearance</value>
+  </data>
+  <data name="&gt;&gt;backgroundControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbAppearance.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbAppearance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 471</value>
+  </data>
+  <data name="tbAppearance.Text" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="&gt;&gt;tbAppearance.Name" xml:space="preserve">
+    <value>tbAppearance</value>
+  </data>
+  <data name="&gt;&gt;tbAppearance.Parent" xml:space="preserve">
+    <value>tbcTabPages</value>
+  </data>
+  <data name="&gt;&gt;tbAppearance.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="tbBorder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>678, 134</value>
+  </metadata>
+  <metadata name="chartPanelControl3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>522, 134</value>
+  </metadata>
+  <metadata name="chartPanelControl4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>142, 134</value>
+  </metadata>
+  <metadata name="labelControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <metadata name="cbBorderVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>844, 95</value>
+  </metadata>
+  <data name="&gt;&gt;chartPanelControl3.Name" xml:space="preserve">
+    <value>chartPanelControl3</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl3.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl4.Name" xml:space="preserve">
+    <value>chartPanelControl4</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl4.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.Name" xml:space="preserve">
+    <value>labelControl2</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbBorderVisible.Name" xml:space="preserve">
+    <value>cbBorderVisible</value>
+  </data>
+  <data name="&gt;&gt;cbBorderVisible.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;cbBorderVisible.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbBorder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbBorder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 471</value>
+  </data>
+  <data name="tbBorder.Text" xml:space="preserve">
+    <value>Border</value>
+  </data>
+  <data name="&gt;&gt;tbBorder.Name" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;tbBorder.Parent" xml:space="preserve">
+    <value>tbcTabPages</value>
+  </data>
+  <data name="&gt;&gt;tbBorder.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="tbShadow.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>738, 95</value>
+  </metadata>
+  <metadata name="shadowControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>604, 95</value>
+  </metadata>
+  <data name="&gt;&gt;shadowControl.Name" xml:space="preserve">
+    <value>shadowControl</value>
+  </data>
+  <data name="&gt;&gt;shadowControl.Parent" xml:space="preserve">
+    <value>tbShadow</value>
+  </data>
+  <data name="&gt;&gt;shadowControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbShadow.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbShadow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 471</value>
+  </data>
+  <data name="tbShadow.Text" xml:space="preserve">
+    <value>Shadow</value>
+  </data>
+  <data name="&gt;&gt;tbShadow.Name" xml:space="preserve">
+    <value>tbShadow</value>
+  </data>
+  <data name="&gt;&gt;tbShadow.Parent" xml:space="preserve">
+    <value>tbcTabPages</value>
+  </data>
+  <data name="&gt;&gt;tbShadow.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="tbScrollingZooming.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>445, 95</value>
+  </metadata>
+  <metadata name="gcAxisY.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>352, 95</value>
+  </metadata>
+  <metadata name="pnlSeparator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>446, 56</value>
+  </metadata>
+  <metadata name="gcAxisX.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>352, 56</value>
+  </metadata>
+  <metadata name="chartPanelControl7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>445, 17</value>
+  </metadata>
+  <metadata name="lblNote.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>353, 17</value>
+  </metadata>
+  <data name="&gt;&gt;gcAxisY.Name" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;gcAxisY.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;gcAxisY.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.Name" xml:space="preserve">
+    <value>pnlSeparator</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;gcAxisX.Name" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;gcAxisX.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;gcAxisX.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl7.Name" xml:space="preserve">
+    <value>chartPanelControl7</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl7.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblNote.Name" xml:space="preserve">
+    <value>lblNote</value>
+  </data>
+  <data name="&gt;&gt;lblNote.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;lblNote.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbScrollingZooming.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbScrollingZooming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 471</value>
+  </data>
+  <data name="tbScrollingZooming.Text" xml:space="preserve">
+    <value>Scroll &amp;&amp; Zoom</value>
+  </data>
+  <data name="&gt;&gt;tbScrollingZooming.Name" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;tbScrollingZooming.Parent" xml:space="preserve">
+    <value>tbcTabPages</value>
+  </data>
+  <data name="&gt;&gt;tbScrollingZooming.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="tbScrollBarOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>199, 17</value>
+  </metadata>
+  <metadata name="scrollBarOptionsControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="&gt;&gt;scrollBarOptionsControl.Name" xml:space="preserve">
+    <value>scrollBarOptionsControl</value>
+  </data>
+  <data name="&gt;&gt;scrollBarOptionsControl.Parent" xml:space="preserve">
+    <value>tbScrollBarOptions</value>
+  </data>
+  <data name="&gt;&gt;scrollBarOptionsControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbScrollBarOptions.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="tbScrollBarOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 471</value>
+  </data>
+  <data name="tbScrollBarOptions.Text" xml:space="preserve">
+    <value>Scroll Bars</value>
+  </data>
+  <data name="&gt;&gt;tbScrollBarOptions.Name" xml:space="preserve">
+    <value>tbScrollBarOptions</value>
+  </data>
+  <data name="&gt;&gt;tbScrollBarOptions.Parent" xml:space="preserve">
+    <value>tbcTabPages</value>
+  </data>
+  <data name="&gt;&gt;tbScrollBarOptions.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tbcTabPages.Name" xml:space="preserve">
+    <value>tbcTabPages</value>
+  </data>
+  <data name="&gt;&gt;tbcTabPages.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbcTabPages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="groupSize.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>642, 251</value>
+  </metadata>
+  <metadata name="panelSizeInPixels.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>498, 251</value>
+  </metadata>
+  <metadata name="panelWeight.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 251</value>
+  </metadata>
+  <metadata name="chartPanelControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>700, 212</value>
+  </metadata>
+  <metadata name="panelSizeMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>565, 212</value>
+  </metadata>
+  <data name="groupSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panelSizeInPixels.Name" xml:space="preserve">
+    <value>panelSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;panelSizeInPixels.Parent" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;panelSizeInPixels.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelWeight.Name" xml:space="preserve">
+    <value>panelWeight</value>
+  </data>
+  <data name="&gt;&gt;panelWeight.Parent" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;panelWeight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl1.Name" xml:space="preserve">
+    <value>chartPanelControl1</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl1.Parent" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelSizeMode.Name" xml:space="preserve">
+    <value>panelSizeMode</value>
+  </data>
+  <data name="&gt;&gt;panelSizeMode.Parent" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;panelSizeMode.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupSize.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 79</value>
+  </data>
+  <data name="groupSize.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="groupSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 107</value>
+  </data>
+  <data name="groupSize.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupSize.Text" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="&gt;&gt;groupSize.Name" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;groupSize.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;groupSize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="panelSizeInPixels.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>498, 251</value>
+  </metadata>
+  <metadata name="txtSizeInPixels.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>370, 251</value>
+  </metadata>
+  <metadata name="lblSizeInPixels.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>243, 251</value>
+  </metadata>
+  <data name="panelSizeInPixels.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtSizeInPixels.Name" xml:space="preserve">
+    <value>txtSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;txtSizeInPixels.Parent" xml:space="preserve">
+    <value>panelSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;txtSizeInPixels.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblSizeInPixels.Name" xml:space="preserve">
+    <value>lblSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;lblSizeInPixels.Parent" xml:space="preserve">
+    <value>panelSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;lblSizeInPixels.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelSizeInPixels.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelSizeInPixels.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 75</value>
+  </data>
+  <data name="panelSizeInPixels.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 20</value>
+  </data>
+  <data name="panelSizeInPixels.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panelSizeInPixels.Name" xml:space="preserve">
+    <value>panelSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;panelSizeInPixels.Parent" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;panelSizeInPixels.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="txtSizeInPixels.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>370, 251</value>
+  </metadata>
+  <data name="txtSizeInPixels.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="txtSizeInPixels.EditValue" type="System.Decimal, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txtSizeInPixels.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 0</value>
+  </data>
+  <data name="txtSizeInPixels.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 20</value>
+  </data>
+  <data name="txtSizeInPixels.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtSizeInPixels.Name" xml:space="preserve">
+    <value>txtSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;txtSizeInPixels.Parent" xml:space="preserve">
+    <value>panelSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;txtSizeInPixels.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblSizeInPixels.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>243, 251</value>
+  </metadata>
+  <data name="lblSizeInPixels.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblSizeInPixels.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblSizeInPixels.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="lblSizeInPixels.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblSizeInPixels.Text" xml:space="preserve">
+    <value>Size in pixels:</value>
+  </data>
+  <data name="&gt;&gt;lblSizeInPixels.Name" xml:space="preserve">
+    <value>lblSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;lblSizeInPixels.Parent" xml:space="preserve">
+    <value>panelSizeInPixels</value>
+  </data>
+  <data name="&gt;&gt;lblSizeInPixels.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="panelWeight.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 251</value>
+  </metadata>
+  <metadata name="txtWeight.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 251</value>
+  </metadata>
+  <metadata name="lblWeight.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>856, 212</value>
+  </metadata>
+  <data name="panelWeight.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtWeight.Name" xml:space="preserve">
+    <value>txtWeight</value>
+  </data>
+  <data name="&gt;&gt;txtWeight.Parent" xml:space="preserve">
+    <value>panelWeight</value>
+  </data>
+  <data name="&gt;&gt;txtWeight.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblWeight.Name" xml:space="preserve">
+    <value>lblWeight</value>
+  </data>
+  <data name="&gt;&gt;lblWeight.Parent" xml:space="preserve">
+    <value>panelWeight</value>
+  </data>
+  <data name="&gt;&gt;lblWeight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelWeight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 55</value>
+  </data>
+  <data name="panelWeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 20</value>
+  </data>
+  <data name="panelWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelWeight.Name" xml:space="preserve">
+    <value>panelWeight</value>
+  </data>
+  <data name="&gt;&gt;panelWeight.Parent" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;panelWeight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="txtWeight.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 251</value>
+  </metadata>
+  <data name="txtWeight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="txtWeight.EditValue" type="System.Decimal, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txtWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 0</value>
+  </data>
+  <data name="txtWeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 20</value>
+  </data>
+  <data name="txtWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtWeight.Name" xml:space="preserve">
+    <value>txtWeight</value>
+  </data>
+  <data name="&gt;&gt;txtWeight.Parent" xml:space="preserve">
+    <value>panelWeight</value>
+  </data>
+  <data name="&gt;&gt;txtWeight.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblWeight.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>856, 212</value>
+  </metadata>
+  <data name="lblWeight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblWeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="lblWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblWeight.Text" xml:space="preserve">
+    <value>Weight:</value>
+  </data>
+  <data name="&gt;&gt;lblWeight.Name" xml:space="preserve">
+    <value>lblWeight</value>
+  </data>
+  <data name="&gt;&gt;lblWeight.Parent" xml:space="preserve">
+    <value>panelWeight</value>
+  </data>
+  <data name="&gt;&gt;lblWeight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="chartPanelControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>700, 212</value>
+  </metadata>
+  <data name="chartPanelControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 51</value>
+  </data>
+  <data name="chartPanelControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 4</value>
+  </data>
+  <data name="chartPanelControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl1.Name" xml:space="preserve">
+    <value>chartPanelControl1</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl1.Parent" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="panelSizeMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>565, 212</value>
+  </metadata>
+  <metadata name="cbSizeMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>447, 212</value>
+  </metadata>
+  <metadata name="lblSizeMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>329, 212</value>
+  </metadata>
+  <data name="panelSizeMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbSizeMode.Name" xml:space="preserve">
+    <value>cbSizeMode</value>
+  </data>
+  <data name="&gt;&gt;cbSizeMode.Parent" xml:space="preserve">
+    <value>panelSizeMode</value>
+  </data>
+  <data name="&gt;&gt;cbSizeMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblSizeMode.Name" xml:space="preserve">
+    <value>lblSizeMode</value>
+  </data>
+  <data name="&gt;&gt;lblSizeMode.Parent" xml:space="preserve">
+    <value>panelSizeMode</value>
+  </data>
+  <data name="&gt;&gt;lblSizeMode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelSizeMode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelSizeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="panelSizeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 20</value>
+  </data>
+  <data name="panelSizeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panelSizeMode.Name" xml:space="preserve">
+    <value>panelSizeMode</value>
+  </data>
+  <data name="&gt;&gt;panelSizeMode.Parent" xml:space="preserve">
+    <value>groupSize</value>
+  </data>
+  <data name="&gt;&gt;panelSizeMode.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="cbSizeMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>447, 212</value>
+  </metadata>
+  <data name="cbSizeMode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="cbSizeMode.EditValue" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="cbSizeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 0</value>
+  </data>
+  <data name="cbSizeMode.Properties.Items" xml:space="preserve">
+    <value>UseWeight</value>
+  </data>
+  <data name="cbSizeMode.Properties.Items1" xml:space="preserve">
+    <value>UseSizeInPixels</value>
+  </data>
+  <data name="cbSizeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 20</value>
+  </data>
+  <data name="cbSizeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbSizeMode.Name" xml:space="preserve">
+    <value>cbSizeMode</value>
+  </data>
+  <data name="&gt;&gt;cbSizeMode.Parent" xml:space="preserve">
+    <value>panelSizeMode</value>
+  </data>
+  <data name="&gt;&gt;cbSizeMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblSizeMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>329, 212</value>
+  </metadata>
+  <data name="lblSizeMode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblSizeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblSizeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="lblSizeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblSizeMode.Text" xml:space="preserve">
+    <value>Size mode:</value>
+  </data>
+  <data name="&gt;&gt;lblSizeMode.Name" xml:space="preserve">
+    <value>lblSizeMode</value>
+  </data>
+  <data name="&gt;&gt;lblSizeMode.Parent" xml:space="preserve">
+    <value>panelSizeMode</value>
+  </data>
+  <data name="&gt;&gt;lblSizeMode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="chartPanelControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 212</value>
+  </metadata>
+  <data name="chartPanelControl2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 67</value>
+  </data>
+  <data name="chartPanelControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 12</value>
+  </data>
+  <data name="chartPanelControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl2.Name" xml:space="preserve">
+    <value>chartPanelControl2</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl2.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="chartPanelControl5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 212</value>
+  </metadata>
+  <metadata name="panelName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>817, 173</value>
+  </metadata>
+  <data name="chartPanelControl5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panelName.Name" xml:space="preserve">
+    <value>panelName</value>
+  </data>
+  <data name="&gt;&gt;panelName.Parent" xml:space="preserve">
+    <value>chartPanelControl5</value>
+  </data>
+  <data name="&gt;&gt;panelName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chartPanelControl5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 47</value>
+  </data>
+  <data name="chartPanelControl5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>12, 0, 12, 0</value>
+  </data>
+  <data name="chartPanelControl5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="chartPanelControl5.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl5.Name" xml:space="preserve">
+    <value>chartPanelControl5</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl5.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="panelName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>817, 173</value>
+  </metadata>
+  <metadata name="txtName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>719, 173</value>
+  </metadata>
+  <metadata name="lblName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>622, 173</value>
+  </metadata>
+  <data name="panelName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
+    <value>panelName</value>
+  </data>
+  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
+    <value>lblName</value>
+  </data>
+  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
+    <value>panelName</value>
+  </data>
+  <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 0</value>
+  </data>
+  <data name="panelName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 20</value>
+  </data>
+  <data name="panelName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panelName.Name" xml:space="preserve">
+    <value>panelName</value>
+  </data>
+  <data name="&gt;&gt;panelName.Parent" xml:space="preserve">
+    <value>chartPanelControl5</value>
+  </data>
+  <data name="&gt;&gt;panelName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="txtName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>719, 173</value>
+  </metadata>
+  <data name="txtName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 0</value>
+  </data>
+  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 20</value>
+  </data>
+  <data name="txtName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
+    <value>panelName</value>
+  </data>
+  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>622, 173</value>
+  </metadata>
+  <data name="lblName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="lblName.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
+    <value>lblName</value>
+  </data>
+  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
+    <value>panelName</value>
+  </data>
+  <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="panelControl11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>487, 173</value>
+  </metadata>
+  <data name="panelControl11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelControl11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 35</value>
+  </data>
+  <data name="panelControl11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 12</value>
+  </data>
+  <data name="panelControl11.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="&gt;&gt;panelControl11.Name" xml:space="preserve">
+    <value>panelControl11</value>
+  </data>
+  <data name="&gt;&gt;panelControl11.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;panelControl11.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="labelControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>362, 173</value>
+  </metadata>
+  <data name="labelControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="labelControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 29</value>
+  </data>
+  <data name="labelControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 6</value>
+  </data>
+  <data name="labelControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Name" xml:space="preserve">
+    <value>labelControl1</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="panelVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>245, 173</value>
+  </metadata>
+  <metadata name="chVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>145, 173</value>
+  </metadata>
+  <data name="panelVisible.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;chVisible.Name" xml:space="preserve">
+    <value>chVisible</value>
+  </data>
+  <data name="&gt;&gt;chVisible.Parent" xml:space="preserve">
+    <value>panelVisible</value>
+  </data>
+  <data name="&gt;&gt;chVisible.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelVisible.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="panelVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 19</value>
+  </data>
+  <data name="panelVisible.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelVisible.Name" xml:space="preserve">
+    <value>panelVisible</value>
+  </data>
+  <data name="&gt;&gt;panelVisible.Parent" xml:space="preserve">
+    <value>tbGeneral</value>
+  </data>
+  <data name="&gt;&gt;panelVisible.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="chVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>145, 173</value>
+  </metadata>
+  <data name="chVisible.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chVisible.EditValue" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chVisible.Properties.Caption" xml:space="preserve">
+    <value>&amp;Visible</value>
+  </data>
+  <data name="chVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 19</value>
+  </data>
+  <data name="chVisible.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chVisible.Name" xml:space="preserve">
+    <value>chVisible</value>
+  </data>
+  <data name="&gt;&gt;chVisible.Parent" xml:space="preserve">
+    <value>panelVisible</value>
+  </data>
+  <data name="&gt;&gt;chVisible.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="backgroundControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>778, 134</value>
+  </metadata>
+  <data name="backgroundControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="backgroundControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="backgroundControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="backgroundControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 451</value>
+  </data>
+  <data name="backgroundControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;backgroundControl.Name" xml:space="preserve">
+    <value>backgroundControl</value>
+  </data>
+  <data name="&gt;&gt;backgroundControl.Parent" xml:space="preserve">
+    <value>tbAppearance</value>
+  </data>
+  <data name="&gt;&gt;backgroundControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="chartPanelControl3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>522, 134</value>
+  </metadata>
+  <metadata name="ceBorderColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>392, 134</value>
+  </metadata>
+  <metadata name="lblColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>298, 134</value>
+  </metadata>
+  <data name="&gt;&gt;ceBorderColor.Name" xml:space="preserve">
+    <value>ceBorderColor</value>
+  </data>
+  <data name="&gt;&gt;ceBorderColor.Parent" xml:space="preserve">
+    <value>chartPanelControl3</value>
+  </data>
+  <data name="&gt;&gt;ceBorderColor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblColor.Name" xml:space="preserve">
+    <value>lblColor</value>
+  </data>
+  <data name="&gt;&gt;lblColor.Parent" xml:space="preserve">
+    <value>chartPanelControl3</value>
+  </data>
+  <data name="&gt;&gt;lblColor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chartPanelControl3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 47</value>
+  </data>
+  <data name="chartPanelControl3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 21</value>
+  </data>
+  <data name="chartPanelControl3.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl3.Name" xml:space="preserve">
+    <value>chartPanelControl3</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl3.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="ceBorderColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>392, 134</value>
+  </metadata>
+  <data name="ceBorderColor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ceBorderColor.EditValue" type="System.Drawing.Color, System.Drawing">
+    <value></value>
+  </data>
+  <data name="ceBorderColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 0</value>
+  </data>
+  <data name="ceBorderColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 20</value>
+  </data>
+  <data name="ceBorderColor.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;ceBorderColor.Name" xml:space="preserve">
+    <value>ceBorderColor</value>
+  </data>
+  <data name="&gt;&gt;ceBorderColor.Parent" xml:space="preserve">
+    <value>chartPanelControl3</value>
+  </data>
+  <data name="&gt;&gt;ceBorderColor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>298, 134</value>
+  </metadata>
+  <data name="lblColor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 21</value>
+  </data>
+  <data name="lblColor.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblColor.Text" xml:space="preserve">
+    <value>Color:</value>
+  </data>
+  <data name="&gt;&gt;lblColor.Name" xml:space="preserve">
+    <value>lblColor</value>
+  </data>
+  <data name="&gt;&gt;lblColor.Parent" xml:space="preserve">
+    <value>chartPanelControl3</value>
+  </data>
+  <data name="&gt;&gt;lblColor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="chartPanelControl4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>142, 134</value>
+  </metadata>
+  <data name="chartPanelControl4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 35</value>
+  </data>
+  <data name="chartPanelControl4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 12</value>
+  </data>
+  <data name="chartPanelControl4.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl4.Name" xml:space="preserve">
+    <value>chartPanelControl4</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl4.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="labelControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <data name="labelControl2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="labelControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 29</value>
+  </data>
+  <data name="labelControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 6</value>
+  </data>
+  <data name="labelControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.Name" xml:space="preserve">
+    <value>labelControl2</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="cbBorderVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>844, 95</value>
+  </metadata>
+  <data name="cbBorderVisible.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="cbBorderVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="cbBorderVisible.Properties.Caption" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="cbBorderVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 19</value>
+  </data>
+  <data name="cbBorderVisible.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;cbBorderVisible.Name" xml:space="preserve">
+    <value>cbBorderVisible</value>
+  </data>
+  <data name="&gt;&gt;cbBorderVisible.Parent" xml:space="preserve">
+    <value>tbBorder</value>
+  </data>
+  <data name="&gt;&gt;cbBorderVisible.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="shadowControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>604, 95</value>
+  </metadata>
+  <data name="shadowControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="shadowControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="shadowControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="shadowControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 81</value>
+  </data>
+  <data name="shadowControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;shadowControl.Name" xml:space="preserve">
+    <value>shadowControl</value>
+  </data>
+  <data name="&gt;&gt;shadowControl.Parent" xml:space="preserve">
+    <value>tbShadow</value>
+  </data>
+  <data name="&gt;&gt;shadowControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="gcAxisY.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>352, 95</value>
+  </metadata>
+  <metadata name="chEnableAxisYZooming.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 95</value>
+  </metadata>
+  <metadata name="chartPanelControl6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="chartPanelControl10.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>744, 56</value>
+  </metadata>
+  <metadata name="chEnableAxisYScrolling.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>568, 56</value>
+  </metadata>
+  <data name="gcAxisY.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYZooming.Name" xml:space="preserve">
+    <value>chEnableAxisYZooming</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYZooming.Parent" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYZooming.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl6.Name" xml:space="preserve">
+    <value>chartPanelControl6</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl6.Parent" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl10.Name" xml:space="preserve">
+    <value>chartPanelControl10</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl10.Parent" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYScrolling.Name" xml:space="preserve">
+    <value>chEnableAxisYScrolling</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYScrolling.Parent" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYScrolling.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gcAxisY.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="gcAxisY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 158</value>
+  </data>
+  <data name="gcAxisY.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="gcAxisY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 85</value>
+  </data>
+  <data name="gcAxisY.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="gcAxisY.Text" xml:space="preserve">
+    <value>Axis Y</value>
+  </data>
+  <data name="&gt;&gt;gcAxisY.Name" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;gcAxisY.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;gcAxisY.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="chEnableAxisYZooming.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 95</value>
+  </metadata>
+  <data name="chEnableAxisYZooming.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chEnableAxisYZooming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="chEnableAxisYZooming.Properties.Caption" xml:space="preserve">
+    <value>Enable zooming</value>
+  </data>
+  <data name="chEnableAxisYZooming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 19</value>
+  </data>
+  <data name="chEnableAxisYZooming.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYZooming.Name" xml:space="preserve">
+    <value>chEnableAxisYZooming</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYZooming.Parent" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYZooming.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="chartPanelControl6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <data name="chartPanelControl6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chartPanelControl6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="chartPanelControl6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 0</value>
+  </data>
+  <data name="chartPanelControl6.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl6.Name" xml:space="preserve">
+    <value>chartPanelControl6</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl6.Parent" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="chartPanelControl10.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>744, 56</value>
+  </metadata>
+  <data name="chartPanelControl10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="chartPanelControl10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 4</value>
+  </data>
+  <data name="chartPanelControl10.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl10.Name" xml:space="preserve">
+    <value>chartPanelControl10</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl10.Parent" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="chEnableAxisYScrolling.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>568, 56</value>
+  </metadata>
+  <data name="chEnableAxisYScrolling.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chEnableAxisYScrolling.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="chEnableAxisYScrolling.Properties.Caption" xml:space="preserve">
+    <value>Enable scrolling</value>
+  </data>
+  <data name="chEnableAxisYScrolling.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 19</value>
+  </data>
+  <data name="chEnableAxisYScrolling.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYScrolling.Name" xml:space="preserve">
+    <value>chEnableAxisYScrolling</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYScrolling.Parent" xml:space="preserve">
+    <value>gcAxisY</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisYScrolling.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="pnlSeparator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>446, 56</value>
+  </metadata>
+  <data name="pnlSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 146</value>
+  </data>
+  <data name="pnlSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 12</value>
+  </data>
+  <data name="pnlSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.Name" xml:space="preserve">
+    <value>pnlSeparator</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="gcAxisX.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>352, 56</value>
+  </metadata>
+  <metadata name="chEnableAxisXZooming.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 56</value>
+  </metadata>
+  <metadata name="chartPanelControl9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="chartPanelControl8.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>778, 17</value>
+  </metadata>
+  <metadata name="chEnableAxisXScrolling.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>601, 17</value>
+  </metadata>
+  <data name="gcAxisX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXZooming.Name" xml:space="preserve">
+    <value>chEnableAxisXZooming</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXZooming.Parent" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXZooming.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl9.Name" xml:space="preserve">
+    <value>chartPanelControl9</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl9.Parent" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl8.Name" xml:space="preserve">
+    <value>chartPanelControl8</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl8.Parent" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXScrolling.Name" xml:space="preserve">
+    <value>chEnableAxisXScrolling</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXScrolling.Parent" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXScrolling.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gcAxisX.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="gcAxisX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 61</value>
+  </data>
+  <data name="gcAxisX.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="gcAxisX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 85</value>
+  </data>
+  <data name="gcAxisX.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="gcAxisX.Text" xml:space="preserve">
+    <value>Axis X</value>
+  </data>
+  <data name="&gt;&gt;gcAxisX.Name" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;gcAxisX.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;gcAxisX.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="chEnableAxisXZooming.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 56</value>
+  </metadata>
+  <data name="chEnableAxisXZooming.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chEnableAxisXZooming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="chEnableAxisXZooming.Properties.Caption" xml:space="preserve">
+    <value>Enable zooming</value>
+  </data>
+  <data name="chEnableAxisXZooming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 19</value>
+  </data>
+  <data name="chEnableAxisXZooming.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXZooming.Name" xml:space="preserve">
+    <value>chEnableAxisXZooming</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXZooming.Parent" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXZooming.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="chartPanelControl9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="chartPanelControl9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chartPanelControl9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="chartPanelControl9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 0</value>
+  </data>
+  <data name="chartPanelControl9.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl9.Name" xml:space="preserve">
+    <value>chartPanelControl9</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl9.Parent" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="chartPanelControl8.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>778, 17</value>
+  </metadata>
+  <data name="chartPanelControl8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="chartPanelControl8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 4</value>
+  </data>
+  <data name="chartPanelControl8.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl8.Name" xml:space="preserve">
+    <value>chartPanelControl8</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl8.Parent" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="chEnableAxisXScrolling.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>601, 17</value>
+  </metadata>
+  <data name="chEnableAxisXScrolling.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chEnableAxisXScrolling.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="chEnableAxisXScrolling.Properties.Caption" xml:space="preserve">
+    <value>Enable scrolling</value>
+  </data>
+  <data name="chEnableAxisXScrolling.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 19</value>
+  </data>
+  <data name="chEnableAxisXScrolling.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXScrolling.Name" xml:space="preserve">
+    <value>chEnableAxisXScrolling</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXScrolling.Parent" xml:space="preserve">
+    <value>gcAxisX</value>
+  </data>
+  <data name="&gt;&gt;chEnableAxisXScrolling.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="chartPanelControl7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>445, 17</value>
+  </metadata>
+  <data name="chartPanelControl7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chartPanelControl7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 49</value>
+  </data>
+  <data name="chartPanelControl7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 12</value>
+  </data>
+  <data name="chartPanelControl7.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl7.Name" xml:space="preserve">
+    <value>chartPanelControl7</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl7.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;chartPanelControl7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="lblNote.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>353, 17</value>
+  </metadata>
+  <data name="lblNote.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="lblNote.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="lblNote.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 39</value>
+  </data>
+  <data name="lblNote.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>When the default setting is specified, the real value is obtained from the appropriate Diagram's option. The real value is shown in brackets.</value>
+  </data>
+  <data name="&gt;&gt;lblNote.Name" xml:space="preserve">
+    <value>lblNote</value>
+  </data>
+  <data name="&gt;&gt;lblNote.Parent" xml:space="preserve">
+    <value>tbScrollingZooming</value>
+  </data>
+  <data name="&gt;&gt;lblNote.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="scrollBarOptionsControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="scrollBarOptionsControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="scrollBarOptionsControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="scrollBarOptionsControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="scrollBarOptionsControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 359</value>
+  </data>
+  <data name="scrollBarOptionsControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;scrollBarOptionsControl.Name" xml:space="preserve">
+    <value>scrollBarOptionsControl</value>
+  </data>
+  <data name="&gt;&gt;scrollBarOptionsControl.Parent" xml:space="preserve">
+    <value>tbScrollBarOptions</value>
+  </data>
+  <data name="&gt;&gt;scrollBarOptionsControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 478</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PaneControl</value>
+  </data>
+</root>

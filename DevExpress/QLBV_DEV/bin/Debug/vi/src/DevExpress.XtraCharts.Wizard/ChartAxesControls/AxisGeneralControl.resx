@@ -1,0 +1,996 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"></xsd:import>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="pnlVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>234, 173</value>
+  </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="pnlVisible.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="chVisible.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>134, 173</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
+  <data name="chVisible.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"></assembly>
+  <data name="chVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chVisible.Properties.Caption" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="chVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 19</value>
+  </data>
+  <data name="chVisible.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chVisible.Name" xml:space="preserve">
+    <value>chVisible</value>
+  </data>
+  <data name="&gt;&gt;chVisible.Parent" xml:space="preserve">
+    <value>pnlVisible</value>
+  </data>
+  <data name="&gt;&gt;chVisible.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlVisible.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 19</value>
+  </data>
+  <data name="pnlVisible.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlVisible.Name" xml:space="preserve">
+    <value>pnlVisible</value>
+  </data>
+  <data name="&gt;&gt;pnlVisible.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlVisible.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <metadata name="pnlTopLevel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
+  </metadata>
+  <data name="pnlTopLevel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="chTopLevel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>882, 134</value>
+  </metadata>
+  <data name="chTopLevel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chTopLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chTopLevel.Properties.Caption" xml:space="preserve">
+    <value>Top Level</value>
+  </data>
+  <data name="chTopLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 19</value>
+  </data>
+  <data name="chTopLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chTopLevel.Name" xml:space="preserve">
+    <value>chTopLevel</value>
+  </data>
+  <data name="&gt;&gt;chTopLevel.Parent" xml:space="preserve">
+    <value>pnlTopLevel</value>
+  </data>
+  <data name="&gt;&gt;chTopLevel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlTopLevel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlTopLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 19</value>
+  </data>
+  <data name="pnlTopLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 19</value>
+  </data>
+  <data name="pnlTopLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnlTopLevel.Name" xml:space="preserve">
+    <value>pnlTopLevel</value>
+  </data>
+  <data name="&gt;&gt;pnlTopLevel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlTopLevel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="pnlName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>781, 134</value>
+  </metadata>
+  <data name="pnlName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="txtName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>683, 134</value>
+  </metadata>
+  <data name="txtName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 0</value>
+  </data>
+  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 20</value>
+  </data>
+  <data name="txtName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
+    <value>pnlName</value>
+  </data>
+  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>586, 134</value>
+  </metadata>
+  <data name="lblName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 0</value>
+  </data>
+  <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 20</value>
+  </data>
+  <data name="lblName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
+    <value>lblName</value>
+  </data>
+  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
+    <value>pnlName</value>
+  </data>
+  <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 56</value>
+  </data>
+  <data name="pnlName.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>12, 0, 12, 0</value>
+  </data>
+  <data name="pnlName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 20</value>
+  </data>
+  <data name="pnlName.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pnlName.Name" xml:space="preserve">
+    <value>pnlName</value>
+  </data>
+  <data name="&gt;&gt;pnlName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlName.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="pnlVisibleInPanes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>439, 134</value>
+  </metadata>
+  <data name="pnlVisibleInPanes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="btnVisibilityInPanes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>282, 134</value>
+  </metadata>
+  <data name="btnVisibilityInPanes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnVisibilityInPanes.EditValue" xml:space="preserve">
+    <value>Click the ellipsis button...</value>
+  </data>
+  <data name="btnVisibilityInPanes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 0</value>
+  </data>
+  <data name="btnVisibilityInPanes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 20</value>
+  </data>
+  <data name="btnVisibilityInPanes.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnVisibilityInPanes.Name" xml:space="preserve">
+    <value>btnVisibilityInPanes</value>
+  </data>
+  <data name="&gt;&gt;btnVisibilityInPanes.Parent" xml:space="preserve">
+    <value>pnlVisibleInPanes</value>
+  </data>
+  <data name="&gt;&gt;btnVisibilityInPanes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblVisibilityInPanes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>130, 134</value>
+  </metadata>
+  <data name="lblVisibilityInPanes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblVisibilityInPanes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 0</value>
+  </data>
+  <data name="lblVisibilityInPanes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 20</value>
+  </data>
+  <data name="lblVisibilityInPanes.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblVisibilityInPanes.Text" xml:space="preserve">
+    <value>Visibility in panes:</value>
+  </data>
+  <data name="&gt;&gt;lblVisibilityInPanes.Name" xml:space="preserve">
+    <value>lblVisibilityInPanes</value>
+  </data>
+  <data name="&gt;&gt;lblVisibilityInPanes.Parent" xml:space="preserve">
+    <value>pnlVisibleInPanes</value>
+  </data>
+  <data name="&gt;&gt;lblVisibilityInPanes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlVisibleInPanes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlVisibleInPanes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="pnlVisibleInPanes.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>12, 0, 12, 0</value>
+  </data>
+  <data name="pnlVisibleInPanes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 20</value>
+  </data>
+  <data name="pnlVisibleInPanes.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pnlVisibleInPanes.Name" xml:space="preserve">
+    <value>pnlVisibleInPanes</value>
+  </data>
+  <data name="&gt;&gt;pnlVisibleInPanes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlVisibleInPanes.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="pnlPosition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <data name="pnlPosition.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="grpPosition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>915, 95</value>
+  </metadata>
+  <data name="grpPosition.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="pnlAlignment.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>790, 95</value>
+  </metadata>
+  <data name="pnlAlignment.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="cmbAlignment.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>658, 95</value>
+  </metadata>
+  <data name="cmbAlignment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="cmbAlignment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 4</value>
+  </data>
+  <data name="cmbAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 20</value>
+  </data>
+  <data name="cmbAlignment.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cmbAlignment.Name" xml:space="preserve">
+    <value>cmbAlignment</value>
+  </data>
+  <data name="&gt;&gt;cmbAlignment.Parent" xml:space="preserve">
+    <value>pnlAlignment</value>
+  </data>
+  <data name="&gt;&gt;cmbAlignment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblAlignment.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>537, 95</value>
+  </metadata>
+  <data name="lblAlignment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblAlignment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 4</value>
+  </data>
+  <data name="lblAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 20</value>
+  </data>
+  <data name="lblAlignment.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>Alignment:</value>
+  </data>
+  <data name="&gt;&gt;lblAlignment.Name" xml:space="preserve">
+    <value>lblAlignment</value>
+  </data>
+  <data name="&gt;&gt;lblAlignment.Parent" xml:space="preserve">
+    <value>pnlAlignment</value>
+  </data>
+  <data name="&gt;&gt;lblAlignment.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="sepAlignment.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>410, 95</value>
+  </metadata>
+  <data name="sepAlignment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="sepAlignment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="sepAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 4</value>
+  </data>
+  <data name="sepAlignment.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;sepAlignment.Name" xml:space="preserve">
+    <value>sepAlignment</value>
+  </data>
+  <data name="&gt;&gt;sepAlignment.Parent" xml:space="preserve">
+    <value>pnlAlignment</value>
+  </data>
+  <data name="&gt;&gt;sepAlignment.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlAlignment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlAlignment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="pnlAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 24</value>
+  </data>
+  <data name="pnlAlignment.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnlAlignment.Name" xml:space="preserve">
+    <value>pnlAlignment</value>
+  </data>
+  <data name="&gt;&gt;pnlAlignment.Parent" xml:space="preserve">
+    <value>grpPosition</value>
+  </data>
+  <data name="&gt;&gt;pnlAlignment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="pnlReverse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>299, 95</value>
+  </metadata>
+  <data name="pnlReverse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="chReverse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>193, 95</value>
+  </metadata>
+  <data name="chReverse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chReverse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chReverse.Properties.Caption" xml:space="preserve">
+    <value>Reverse</value>
+  </data>
+  <data name="chReverse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 19</value>
+  </data>
+  <data name="chReverse.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chReverse.Name" xml:space="preserve">
+    <value>chReverse</value>
+  </data>
+  <data name="&gt;&gt;chReverse.Parent" xml:space="preserve">
+    <value>pnlReverse</value>
+  </data>
+  <data name="&gt;&gt;chReverse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlReverse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlReverse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="pnlReverse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 19</value>
+  </data>
+  <data name="pnlReverse.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlReverse.Name" xml:space="preserve">
+    <value>pnlReverse</value>
+  </data>
+  <data name="&gt;&gt;pnlReverse.Parent" xml:space="preserve">
+    <value>grpPosition</value>
+  </data>
+  <data name="&gt;&gt;pnlReverse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpPosition.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="grpPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="grpPosition.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="grpPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 86</value>
+  </data>
+  <data name="grpPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="grpPosition.Text" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="&gt;&gt;grpPosition.Name" xml:space="preserve">
+    <value>grpPosition</value>
+  </data>
+  <data name="&gt;&gt;grpPosition.Parent" xml:space="preserve">
+    <value>pnlPosition</value>
+  </data>
+  <data name="&gt;&gt;grpPosition.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlPosition.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 112</value>
+  </data>
+  <data name="pnlPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 86</value>
+  </data>
+  <data name="pnlPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pnlPosition.Name" xml:space="preserve">
+    <value>pnlPosition</value>
+  </data>
+  <data name="&gt;&gt;pnlPosition.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlPosition.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="pnlLogarithmicOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <data name="pnlLogarithmicOptions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="grpLogarithmicOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>783, 56</value>
+  </metadata>
+  <data name="grpLogarithmicOptions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="pnlLogarithmicBase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>625, 56</value>
+  </metadata>
+  <data name="pnlLogarithmicBase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="spnLogarithmicBase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>464, 56</value>
+  </metadata>
+  <data name="spnLogarithmicBase.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="spnLogarithmicBase.EditValue" type="System.Decimal, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="spnLogarithmicBase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 4</value>
+  </data>
+  <data name="spnLogarithmicBase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 20</value>
+  </data>
+  <data name="spnLogarithmicBase.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;spnLogarithmicBase.Name" xml:space="preserve">
+    <value>spnLogarithmicBase</value>
+  </data>
+  <data name="&gt;&gt;spnLogarithmicBase.Parent" xml:space="preserve">
+    <value>pnlLogarithmicBase</value>
+  </data>
+  <data name="&gt;&gt;spnLogarithmicBase.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblLogarithmicBase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>310, 56</value>
+  </metadata>
+  <data name="lblLogarithmicBase.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblLogarithmicBase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 4</value>
+  </data>
+  <data name="lblLogarithmicBase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 20</value>
+  </data>
+  <data name="lblLogarithmicBase.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblLogarithmicBase.Text" xml:space="preserve">
+    <value>Logarithmic base:</value>
+  </data>
+  <data name="&gt;&gt;lblLogarithmicBase.Name" xml:space="preserve">
+    <value>lblLogarithmicBase</value>
+  </data>
+  <data name="&gt;&gt;lblLogarithmicBase.Parent" xml:space="preserve">
+    <value>pnlLogarithmicBase</value>
+  </data>
+  <data name="&gt;&gt;lblLogarithmicBase.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="sepLogarithmicBase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>150, 56</value>
+  </metadata>
+  <data name="sepLogarithmicBase.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="sepLogarithmicBase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="sepLogarithmicBase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 4</value>
+  </data>
+  <data name="sepLogarithmicBase.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;sepLogarithmicBase.Name" xml:space="preserve">
+    <value>sepLogarithmicBase</value>
+  </data>
+  <data name="&gt;&gt;sepLogarithmicBase.Parent" xml:space="preserve">
+    <value>pnlLogarithmicBase</value>
+  </data>
+  <data name="&gt;&gt;sepLogarithmicBase.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlLogarithmicBase.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlLogarithmicBase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="pnlLogarithmicBase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 24</value>
+  </data>
+  <data name="pnlLogarithmicBase.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmicBase.Name" xml:space="preserve">
+    <value>pnlLogarithmicBase</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmicBase.Parent" xml:space="preserve">
+    <value>grpLogarithmicOptions</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmicBase.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="pnlLogarithmic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="pnlLogarithmic.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="chLogarithmic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>900, 17</value>
+  </metadata>
+  <data name="chLogarithmic.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chLogarithmic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chLogarithmic.Properties.Caption" xml:space="preserve">
+    <value>Logarithmic</value>
+  </data>
+  <data name="chLogarithmic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 19</value>
+  </data>
+  <data name="chLogarithmic.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chLogarithmic.Name" xml:space="preserve">
+    <value>chLogarithmic</value>
+  </data>
+  <data name="&gt;&gt;chLogarithmic.Parent" xml:space="preserve">
+    <value>pnlLogarithmic</value>
+  </data>
+  <data name="&gt;&gt;chLogarithmic.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlLogarithmic.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlLogarithmic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="pnlLogarithmic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 19</value>
+  </data>
+  <data name="pnlLogarithmic.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmic.Name" xml:space="preserve">
+    <value>pnlLogarithmic</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmic.Parent" xml:space="preserve">
+    <value>grpLogarithmicOptions</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmic.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpLogarithmicOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="grpLogarithmicOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="grpLogarithmicOptions.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="grpLogarithmicOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 86</value>
+  </data>
+  <data name="grpLogarithmicOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="grpLogarithmicOptions.Text" xml:space="preserve">
+    <value>Logarithmic Options</value>
+  </data>
+  <data name="&gt;&gt;grpLogarithmicOptions.Name" xml:space="preserve">
+    <value>grpLogarithmicOptions</value>
+  </data>
+  <data name="&gt;&gt;grpLogarithmicOptions.Parent" xml:space="preserve">
+    <value>pnlLogarithmicOptions</value>
+  </data>
+  <data name="&gt;&gt;grpLogarithmicOptions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlLogarithmicOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlLogarithmicOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 210</value>
+  </data>
+  <data name="pnlLogarithmicOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 86</value>
+  </data>
+  <data name="pnlLogarithmicOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmicOptions.Name" xml:space="preserve">
+    <value>pnlLogarithmicOptions</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmicOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlLogarithmicOptions.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="sepPosition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>786, 17</value>
+  </metadata>
+  <data name="sepPosition.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="sepPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 100</value>
+  </data>
+  <data name="sepPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 12</value>
+  </data>
+  <data name="sepPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;sepPosition.Name" xml:space="preserve">
+    <value>sepPosition</value>
+  </data>
+  <data name="&gt;&gt;sepPosition.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;sepPosition.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="sepLogarihmicOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>612, 17</value>
+  </metadata>
+  <data name="sepLogarihmicOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="sepLogarihmicOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 198</value>
+  </data>
+  <data name="sepLogarihmicOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 12</value>
+  </data>
+  <data name="sepLogarihmicOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;sepLogarihmicOptions.Name" xml:space="preserve">
+    <value>sepLogarihmicOptions</value>
+  </data>
+  <data name="&gt;&gt;sepLogarihmicOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;sepLogarihmicOptions.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="sepVisibleInpanes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>463, 17</value>
+  </metadata>
+  <data name="sepVisibleInpanes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="sepVisibleInpanes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 76</value>
+  </data>
+  <data name="sepVisibleInpanes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 4</value>
+  </data>
+  <data name="sepVisibleInpanes.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;sepVisibleInpanes.Name" xml:space="preserve">
+    <value>sepVisibleInpanes</value>
+  </data>
+  <data name="&gt;&gt;sepVisibleInpanes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;sepVisibleInpanes.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="pnlDateTimeMeasureUnits.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>267, 17</value>
+  </metadata>
+  <data name="pnlDateTimeMeasureUnits.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pnlDateTimeMeasureUnits.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlDateTimeMeasureUnits.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 296</value>
+  </data>
+  <data name="pnlDateTimeMeasureUnits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 0</value>
+  </data>
+  <data name="pnlDateTimeMeasureUnits.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;pnlDateTimeMeasureUnits.Name" xml:space="preserve">
+    <value>pnlDateTimeMeasureUnits</value>
+  </data>
+  <data name="&gt;&gt;pnlDateTimeMeasureUnits.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlDateTimeMeasureUnits.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="sepName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>164, 17</value>
+  </metadata>
+  <data name="sepName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="sepNameContent.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="sepNameContent.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="sepNameContent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="sepNameContent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 18</value>
+  </data>
+  <data name="sepNameContent.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;sepNameContent.Name" xml:space="preserve">
+    <value>sepNameContent</value>
+  </data>
+  <data name="&gt;&gt;sepNameContent.Parent" xml:space="preserve">
+    <value>sepName</value>
+  </data>
+  <data name="&gt;&gt;sepNameContent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sepName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="sepName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 38</value>
+  </data>
+  <data name="sepName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 18</value>
+  </data>
+  <data name="sepName.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;sepName.Name" xml:space="preserve">
+    <value>sepName</value>
+  </data>
+  <data name="&gt;&gt;sepName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;sepName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 592</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AxisGeneralControl</value>
+  </data>
+</root>

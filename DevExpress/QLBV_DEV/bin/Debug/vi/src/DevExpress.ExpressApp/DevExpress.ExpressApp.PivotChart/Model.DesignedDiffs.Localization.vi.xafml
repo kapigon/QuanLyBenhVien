@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="BindAnalysisData" Caption="Ràng buộc Phân tích Dữ liệu" />
+      <Action Id="UnbindAnalysisData" Caption="Bỏ ràng buộc Phân tích Dữ liệu" />
+    </Actions>
+  </ActionDesign>
+  <NavigationItems RelatedAnalysisGroupCaption="Phân tích" />
+</Application>
