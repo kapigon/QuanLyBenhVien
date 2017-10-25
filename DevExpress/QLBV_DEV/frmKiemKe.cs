@@ -43,27 +43,35 @@ namespace QLBV_DEV
             var query = from ct_thuoc_nhap in db.CT_Thuoc_PhieuNhap
                         join thuoc in db.Thuoc on ct_thuoc_nhap.Thuoc_ID equals thuoc.ID
                         //from pdc in db.PhieuDieuChinh.Where(pdc => pdc.CT_Thuoc_PhieuNhap_ID == ct_thuoc_nhap.ID).DefaultIfEmpty()
-                        //join tinhtong in
-                        //    (from pdc in db.PhieuDieuChinh select new {
-                        //        CT_Thuoc_PhieuNhap_ID = pdc.CT_Thuoc_PhieuNhap_ID,
-                        //        SoLuongTang = (pdc.SoLuongTang)
-                        //    }) 
-                        //on ct_thuoc_nhap.ID equals tinhtong.CT_Thuoc_PhieuNhap_ID
+                       
                         //join pdc in db.PhieuDieuChinh on ct_thuoc_nhap.ID equals pdc.CT_Thuoc_PhieuNhap_ID
                         //join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
                         //from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
                         //from hangsanxuat in db.HangSanXuat.Where(hsx => hsx.ID == thuoc.HangSanXuat_ID).DefaultIfEmpty()
+
+                        /*
+                        * Xử lý công số lượng tăng giảm trong phiếu điều chỉnh
+                        * join tinhtong in
+                           (from pdc in db.PhieuDieuChinh
+                            group pdc by pdc.CT_Thuoc_PhieuNhap_ID into gr_ID
+                           select new {
+                               CT_Thuoc_PhieuNhap_ID = gr_ID.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
+                               SoLuongTang = gr_ID.Sum(p => p.SoLuongTang),
+                               SoLuongGiam = gr_ID.Sum(p => p.SoLuongGiam)
+                           }) on ct_thuoc_nhap.ID equals tinhtong.CT_Thuoc_PhieuNhap_ID*/
                         select new
                         {
-                            ID = ct_thuoc_nhap.ID,
-                            MaThuoc = thuoc.MaThuoc,
-                            TenThuoc = thuoc.TenThuoc,
-                            DVT = thuoc.DVT_Le_ID,
-                            HSD = ct_thuoc_nhap.HSD,
-                            SoLo = ct_thuoc_nhap.SoLo,
-                            TonKho = ct_thuoc_nhap.TonKho,//+ (from ct_thuoc_nhap in db.CT_Thuoc_PhieuNhap),
-                            TonSoSach = ct_thuoc_nhap.TonKho,
-                            KichHoat = thuoc.KichHoat
+                            ID          = ct_thuoc_nhap.ID,
+                            ThuocID     = thuoc.ID,
+                            MaThuoc     = thuoc.MaThuoc,
+                            TenThuoc    = thuoc.TenThuoc,
+                            DVT         = thuoc.DVT_Le_ID,
+                            HSD         = ct_thuoc_nhap.HSD,
+                            SoLo        = ct_thuoc_nhap.SoLo,
+                            TonKho      = ct_thuoc_nhap.TonKho,
+                            TonSoSach   = ct_thuoc_nhap.TonKho,
+                            KichHoat    = thuoc.KichHoat
+                            //TonKho = ct_thuoc_nhap.TonKho + tinhtong.SoLuongTang - tinhtong.SoLuongGiam,
                             //TenNhom = nhomthuoc.TenNhom,
                             //HoatChat = hoatchat.TenHoatChat,
                             //ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,
@@ -218,6 +226,7 @@ namespace QLBV_DEV
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmPhieuDieuChinh frmPhieuDieuChinh = new frmPhieuDieuChinh();
+            frmPhieuDieuChinh.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
             frmPhieuDieuChinh.loadData(gridView1);
             frmPhieuDieuChinh.ShowDialog();
         }
@@ -227,56 +236,11 @@ namespace QLBV_DEV
             LoadDS_Thuoc();
         }
         
-
         private void btnTim_Click(object sender, EventArgs e)
         {
             MessageBox.Show(cbbNhomThuoc.EditValue.ToString());
         }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (thuoc_ID > 0)
-            {
-                frmThemThuoc frmThemThuoc = new frmThemThuoc();
-                frmThemThuoc.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
-                frmThemThuoc.loadData(thuoc_ID);
-                frmThemThuoc.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Hãy lựa chọn dòng cần sửa.");
-            }
-        }
-
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (thuoc_ID > 0)
-            {
-                String ten = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenThuoc").ToString();
-                DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    //do something
-                    CT_Thuoc_PhieuNhap obj_CT_Thuoc = rpo_CT_Thuoc.GetSingle(thuoc_ID);
-                    obj_CT_Thuoc.Xoa = true;
-                    rpo_CT_Thuoc.Save(obj_CT_Thuoc);
-                    //rpo_Thuoc.Delete(thuoc_ID);
-
-                    // Tải lại danh sách nhà cung cấp
-                    LoadDS_Thuoc();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-            else
-            {
-                MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
-            }
-        }
-
+                
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -297,6 +261,8 @@ namespace QLBV_DEV
         {
             iRow = gridView1.FocusedRowHandle;
         }
+
+        /// Đánh số thứ tự
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             // Thêm số thứ tự tự động tăng GridControl

@@ -33,6 +33,7 @@
             this.grvDSThuoc = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,7 +44,7 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnTaoPhieuDieuChinh = new DevExpress.XtraEditors.SimpleButton();
-            this.grvPhieuDieuChinh = new DevExpress.XtraGrid.GridControl();
+            this.grvCT_PhieuDieuChinh = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuongKiemKe = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,6 +52,8 @@
             this.txtColTonSoSach = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.SoLuongTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuongGiam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.txtTenPhieu = new DevExpress.XtraEditors.TextEdit();
@@ -68,13 +71,12 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSThuoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbColDVT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvPhieuDieuChinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvCT_PhieuDieuChinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColTonSoSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -104,7 +106,7 @@
             this.layoutControl1.Controls.Add(this.btnXoa);
             this.layoutControl1.Controls.Add(this.btnSua);
             this.layoutControl1.Controls.Add(this.btnTaoPhieuDieuChinh);
-            this.layoutControl1.Controls.Add(this.grvPhieuDieuChinh);
+            this.layoutControl1.Controls.Add(this.grvCT_PhieuDieuChinh);
             this.layoutControl1.Controls.Add(this.txtTenPhieu);
             this.layoutControl1.Controls.Add(this.dateNgayTao);
             this.layoutControl1.Controls.Add(this.txtGhiChu);
@@ -144,6 +146,7 @@
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
+            this.gridColumn8,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -162,6 +165,14 @@
             this.gridColumn1.OptionsColumn.ReadOnly = true;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Thuốc ID";
+            this.gridColumn8.FieldName = "ThuocID";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 6;
             // 
             // gridColumn2
             // 
@@ -275,19 +286,19 @@
             this.btnTaoPhieuDieuChinh.Text = "Tạo phiếu điều chỉnh";
             this.btnTaoPhieuDieuChinh.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // grvPhieuDieuChinh
+            // grvCT_PhieuDieuChinh
             // 
-            this.grvPhieuDieuChinh.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.grvPhieuDieuChinh.Location = new System.Drawing.Point(430, 129);
-            this.grvPhieuDieuChinh.MainView = this.gridView1;
-            this.grvPhieuDieuChinh.Name = "grvPhieuDieuChinh";
-            this.grvPhieuDieuChinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.grvCT_PhieuDieuChinh.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.grvCT_PhieuDieuChinh.Location = new System.Drawing.Point(430, 129);
+            this.grvCT_PhieuDieuChinh.MainView = this.gridView1;
+            this.grvCT_PhieuDieuChinh.Name = "grvCT_PhieuDieuChinh";
+            this.grvCT_PhieuDieuChinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemCheckEdit1,
             this.txtColTonSoSach});
-            this.grvPhieuDieuChinh.Size = new System.Drawing.Size(415, 393);
-            this.grvPhieuDieuChinh.TabIndex = 10;
-            this.grvPhieuDieuChinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvCT_PhieuDieuChinh.Size = new System.Drawing.Size(415, 393);
+            this.grvCT_PhieuDieuChinh.TabIndex = 10;
+            this.grvCT_PhieuDieuChinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -298,8 +309,9 @@
             this.TonSoSach,
             this.SoLuongTang,
             this.SoLuongGiam,
+            this.GhiChu,
             this.gridColumn7});
-            this.gridView1.GridControl = this.grvPhieuDieuChinh;
+            this.gridView1.GridControl = this.grvCT_PhieuDieuChinh;
             this.gridView1.Name = "gridView1";
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
@@ -367,6 +379,22 @@
             this.SoLuongGiam.OptionsColumn.ReadOnly = true;
             this.SoLuongGiam.Visible = true;
             this.SoLuongGiam.VisibleIndex = 3;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.AppearanceHeader.Options.UseTextOptions = true;
+            this.GhiChu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.GhiChu.Caption = "Ghi chú";
+            this.GhiChu.FieldName = "GhiChu";
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.Visible = true;
+            this.GhiChu.VisibleIndex = 4;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "CT_Thuoc_PhieuNhap_ID";
+            this.gridColumn7.FieldName = "CT_Thuoc_PhieuNhap_ID";
+            this.gridColumn7.Name = "gridColumn7";
             // 
             // repositoryItemTextEdit1
             // 
@@ -529,7 +557,7 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.grvPhieuDieuChinh;
+            this.layoutControlItem7.Control = this.grvCT_PhieuDieuChinh;
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
             this.layoutControlItem7.Location = new System.Drawing.Point(418, 117);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -549,12 +577,6 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "CT_Thuoc_PhieuNhap_ID";
-            this.gridColumn7.FieldName = "CT_Thuoc_PhieuNhap_ID";
-            this.gridColumn7.Name = "gridColumn7";
-            // 
             // frmPhieuDieuChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,7 +591,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvDSThuoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbColDVT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvPhieuDieuChinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvCT_PhieuDieuChinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColTonSoSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -598,7 +620,7 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraGrid.GridControl grvPhieuDieuChinh;
+        private DevExpress.XtraGrid.GridControl grvCT_PhieuDieuChinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
@@ -636,5 +658,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cbbColDVT;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtColTonSoSach;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn GhiChu;
     }
 }

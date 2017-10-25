@@ -342,7 +342,7 @@ namespace QLBV_DEV
 
             var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuXuat;
             if (ctXuat == null) return;
-            ctXuat.SoLuong                  = x.SoLuong;
+            ctXuat.SoLuong                  = x.TonKhoLo;
             ctXuat.DVT_Theo_DVT_Thuoc_ID    = x.DVT_Theo_DVT_Thuoc_ID;
             ctXuat.GiaBan                   = x.GiaBanLe;
             ctXuat.TonKho                   = x.TonKhoLo;

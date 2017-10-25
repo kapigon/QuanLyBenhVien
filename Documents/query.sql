@@ -26,3 +26,16 @@ SELECT ct_phieu.ID, ct_phieu.TonKho + tinhtong.SLT - tinhtong.SLG
 FROM CT_Thuoc_PhieuNhap as ct_phieu
 JOIN (SELECT pdc.CT_Thuoc_PhieuNhap_ID as ID, SUM(pdc.SoLuongTang) as SLT, SUM(pdc.SoLuongGiam) as SLG from PHIEUDIEUCHINH as pdc
 GROUP BY pdc.CT_Thuoc_PhieuNhap_ID) as tinhtong on tinhtong.ID = ct_phieu.ID
+
+/*
+join tinhtong in
+(from pdc in db.PhieuDieuChinh
+ group pdc by pdc.CT_Thuoc_PhieuNhap_ID into gr_ID
+select new {
+	CT_Thuoc_PhieuNhap_ID = gr_ID.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
+	SoLuongTang = gr_ID.Sum(p => p.SoLuongTang),
+	SoLuongGiam = gr_ID.Sum(p => p.SoLuongGiam)
+}) on ct_thuoc_nhap.ID equals tinhtong.CT_Thuoc_PhieuNhap_ID*/
+
+
+select *From PhieuDieuChinh

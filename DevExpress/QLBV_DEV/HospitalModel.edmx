@@ -167,6 +167,22 @@
           <Property Name="NgayTao" Type="date" />
           <Property Name="KichHoat" Type="bit" />
         </EntityType>
+        <EntityType Name="CT_PhieuDieuChinh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhieuDieuChinh_ID" Type="bigint" />
+          <Property Name="CT_Thuoc_PhieuNhap_ID" Type="bigint" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="250" />
+          <Property Name="SoLuongKiemKe" Type="int" />
+          <Property Name="TonSoSach" Type="int" />
+          <Property Name="SoLuongTang" Type="int" />
+          <Property Name="SoLuongGiam" Type="int" />
+          <Property Name="LoaiDieuChinh" Type="int" />
+          <Property Name="Huy" Type="bit" />
+          <Property Name="UserHuy" Type="int" />
+        </EntityType>
         <EntityType Name="CT_Thuoc_PhieuNhap">
           <Key>
             <PropertyRef Name="ID" />
@@ -250,14 +266,8 @@
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaPhieuDieuChinh" Type="varchar" MaxLength="50" />
           <Property Name="TenPhieuDieuChinh" Type="nvarchar" MaxLength="50" />
-          <Property Name="CT_Thuoc_PhieuNhap_ID" Type="bigint" />
-          <Property Name="NoiDung" Type="nvarchar" MaxLength="250" />
-          <Property Name="SoLuongKiemKe" Type="int" />
-          <Property Name="TonSoSach" Type="int" />
-          <Property Name="SoLuongTang" Type="int" />
-          <Property Name="SoLuongGiam" Type="int" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="250" />
           <Property Name="UserTao" Type="int" />
-          <Property Name="LoaiDieuChinh" Type="int" />
           <Property Name="NgayTao" Type="date" />
           <Property Name="Huy" Type="bit" />
           <Property Name="UserHuy" Type="int" />
@@ -289,6 +299,7 @@
           <EntitySet Name="PhieuNhapThuoc" EntityType="Self.PhieuNhapThuoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhieuXuatThuoc" EntityType="Self.PhieuXuatThuoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Thuoc" EntityType="Self.Thuoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CT_PhieuDieuChinh" EntityType="Self.CT_PhieuDieuChinh" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="CT_Thuoc_PhieuNhap" EntityType="Self.CT_Thuoc_PhieuNhap" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="CT_Thuoc_PhieuXuat" EntityType="Self.CT_Thuoc_PhieuXuat" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="HangSanXuat" EntityType="Self.HangSanXuat" Schema="g6t_user" store:Type="Tables" />
@@ -326,6 +337,7 @@
           <EntitySet Name="ViTri" EntityType="HospitalModel.ViTri" />
           <EntitySet Name="LoaiHinhBan" EntityType="HospitalModel.LoaiHinhBan" />
           <EntitySet Name="PhieuXuatThuoc" EntityType="HospitalModel.PhieuXuatThuoc" />
+          <EntitySet Name="CT_PhieuDieuChinh" EntityType="HospitalModel.CT_PhieuDieuChinh" />
           <EntitySet Name="PhieuDieuChinh" EntityType="HospitalModel.PhieuDieuChinh" />
         </EntityContainer>
         <EntityType Name="ChiTietPhanQuyen">
@@ -580,6 +592,22 @@
           <Property Name="UserXoa" Type="Int32" />
           <Property Name="UserTao" Type="Int32" />
         </EntityType>
+        <EntityType Name="CT_PhieuDieuChinh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhieuDieuChinh_ID" Type="Int64" />
+          <Property Name="CT_Thuoc_PhieuNhap_ID" Type="Int64" />
+          <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SoLuongKiemKe" Type="Int32" />
+          <Property Name="TonSoSach" Type="Int32" />
+          <Property Name="SoLuongTang" Type="Int32" />
+          <Property Name="SoLuongGiam" Type="Int32" />
+          <Property Name="LoaiDieuChinh" Type="Int32" />
+          <Property Name="Huy" Type="Boolean" />
+          <Property Name="UserHuy" Type="Int32" />
+        </EntityType>
         <EntityType Name="PhieuDieuChinh">
           <Key>
             <PropertyRef Name="ID" />
@@ -587,14 +615,8 @@
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaPhieuDieuChinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TenPhieuDieuChinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CT_Thuoc_PhieuNhap_ID" Type="Int64" />
-          <Property Name="NoiDung" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="SoLuongKiemKe" Type="Int32" />
-          <Property Name="TonSoSach" Type="Int32" />
-          <Property Name="SoLuongTang" Type="Int32" />
-          <Property Name="SoLuongGiam" Type="Int32" />
+          <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="UserTao" Type="Int32" />
-          <Property Name="LoaiDieuChinh" Type="Int32" />
           <Property Name="NgayTao" Type="DateTime" Precision="0" />
           <Property Name="Huy" Type="Boolean" />
           <Property Name="UserHuy" Type="Int32" />
@@ -878,20 +900,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CT_PhieuDieuChinh">
+            <EntityTypeMapping TypeName="HospitalModel.CT_PhieuDieuChinh">
+              <MappingFragment StoreEntitySet="CT_PhieuDieuChinh">
+                <ScalarProperty Name="UserHuy" ColumnName="UserHuy" />
+                <ScalarProperty Name="Huy" ColumnName="Huy" />
+                <ScalarProperty Name="LoaiDieuChinh" ColumnName="LoaiDieuChinh" />
+                <ScalarProperty Name="SoLuongGiam" ColumnName="SoLuongGiam" />
+                <ScalarProperty Name="SoLuongTang" ColumnName="SoLuongTang" />
+                <ScalarProperty Name="TonSoSach" ColumnName="TonSoSach" />
+                <ScalarProperty Name="SoLuongKiemKe" ColumnName="SoLuongKiemKe" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="CT_Thuoc_PhieuNhap_ID" ColumnName="CT_Thuoc_PhieuNhap_ID" />
+                <ScalarProperty Name="PhieuDieuChinh_ID" ColumnName="PhieuDieuChinh_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PhieuDieuChinh">
             <EntityTypeMapping TypeName="HospitalModel.PhieuDieuChinh">
               <MappingFragment StoreEntitySet="PhieuDieuChinh">
                 <ScalarProperty Name="UserHuy" ColumnName="UserHuy" />
                 <ScalarProperty Name="Huy" ColumnName="Huy" />
                 <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
-                <ScalarProperty Name="LoaiDieuChinh" ColumnName="LoaiDieuChinh" />
                 <ScalarProperty Name="UserTao" ColumnName="UserTao" />
-                <ScalarProperty Name="SoLuongGiam" ColumnName="SoLuongGiam" />
-                <ScalarProperty Name="SoLuongTang" ColumnName="SoLuongTang" />
-                <ScalarProperty Name="TonSoSach" ColumnName="TonSoSach" />
-                <ScalarProperty Name="SoLuongKiemKe" ColumnName="SoLuongKiemKe" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="CT_Thuoc_PhieuNhap_ID" ColumnName="CT_Thuoc_PhieuNhap_ID" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="TenPhieuDieuChinh" ColumnName="TenPhieuDieuChinh" />
                 <ScalarProperty Name="MaPhieuDieuChinh" ColumnName="MaPhieuDieuChinh" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
