@@ -68,6 +68,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CT_PhieuDieuChinh.cs" />
+    <Compile Include="frmCanhbaotrangchu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCanhbaotrangchu.Designer.cs">
+      <DependentUpon>frmCanhbaotrangchu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietPhanQuyen.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
@@ -299,6 +306,7 @@
     <Compile Include="Reports\rptPhieuXuat.Designer.cs">
       <DependentUpon>rptPhieuXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repository\CT_PhieuDieuChinhRepository.cs" />
     <Compile Include="Repository\CT_PhieuXuatThuocRepository.cs" />
     <Compile Include="Repository\DVTRepository.cs" />
     <Compile Include="Repository\CT_PhieuNhapThuocRepository.cs" />
@@ -324,6 +332,9 @@
     <Compile Include="ViTri.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmCanhbaotrangchu.resx">
+      <DependentUpon>frmCanhbaotrangchu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCT_Thuoc_PhieuNhap.resx">
       <DependentUpon>frmCT_Thuoc_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
