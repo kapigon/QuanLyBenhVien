@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QLBV_DEV.Repository;
 using System.Collections;
-using QLBV_DEV.Reports;
 
 namespace QLBV_DEV
 {
@@ -307,8 +306,7 @@ namespace QLBV_DEV
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            frmPrint print = new frmPrint();
-            print.ShowDialog();
+            
         }
 
         private void btnDong_Click(object sender, EventArgs e)
