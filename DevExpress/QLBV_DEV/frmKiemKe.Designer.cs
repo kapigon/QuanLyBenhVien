@@ -261,6 +261,7 @@
             this.MaThuoc.OptionsColumn.ReadOnly = true;
             this.MaThuoc.Visible = true;
             this.MaThuoc.VisibleIndex = 0;
+            this.MaThuoc.Width = 103;
             // 
             // TenThuoc
             // 
@@ -272,6 +273,7 @@
             this.TenThuoc.OptionsColumn.ReadOnly = true;
             this.TenThuoc.Visible = true;
             this.TenThuoc.VisibleIndex = 1;
+            this.TenThuoc.Width = 341;
             // 
             // SoLo
             // 
@@ -285,6 +287,7 @@
             this.SoLo.OptionsColumn.ReadOnly = true;
             this.SoLo.Visible = true;
             this.SoLo.VisibleIndex = 2;
+            this.SoLo.Width = 61;
             // 
             // DVT
             // 
@@ -298,6 +301,7 @@
             this.DVT.Name = "DVT";
             this.DVT.Visible = true;
             this.DVT.VisibleIndex = 3;
+            this.DVT.Width = 62;
             // 
             // cbbColDVT
             // 
@@ -322,6 +326,7 @@
             this.HSD.OptionsColumn.ReadOnly = true;
             this.HSD.Visible = true;
             this.HSD.VisibleIndex = 4;
+            this.HSD.Width = 76;
             // 
             // TonKho
             // 
@@ -335,6 +340,7 @@
             this.TonKho.OptionsColumn.ReadOnly = true;
             this.TonKho.Visible = true;
             this.TonKho.VisibleIndex = 5;
+            this.TonKho.Width = 99;
             // 
             // TonSoSach
             // 
@@ -356,6 +362,7 @@
             this.KichHoat.Name = "KichHoat";
             this.KichHoat.Visible = true;
             this.KichHoat.VisibleIndex = 6;
+            this.KichHoat.Width = 73;
             // 
             // repositoryItemCheckEdit1
             // 

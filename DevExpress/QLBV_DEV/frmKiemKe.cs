@@ -238,7 +238,17 @@ namespace QLBV_DEV
         
         private void btnTim_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cbbNhomThuoc.EditValue.ToString());
+            //MessageBox.Show(cbbNhomThuoc.EditValue.ToString());
+            //int thuoc_id = 0;
+            //String tenthuoc = cbbTenThuoc.Text.Trim();
+            //int nhomthuoc_ID = cbbNhomThuoc.EditValue != "" ? Convert.ToInt32(cbbNhomThuoc.EditValue) : 0;
+            //int hoatchat_ID = cbbHoatChat.EditValue != "" ? Convert.ToInt32(cbbHoatChat.EditValue) : 0;
+            //int hangsanxuat_Id = cbbHangSanXuat.EditValue != "" ? Convert.ToInt32(cbbHangSanXuat.EditValue) : 0;
+            //bool kichhoat = Convert.ToBoolean(chkKichHoat.EditValue);
+
+
+            //var query = rpo_Thuoc.search(thuoc_id, tenthuoc, nhomthuoc_ID, hoatchat_ID, hangsanxuat_Id, kichhoat);
+            //grvDSThuoc.DataSource = new BindingList<Thuoc>(query.ToList());
         }
                 
         private void btnThoat_Click(object sender, EventArgs e)

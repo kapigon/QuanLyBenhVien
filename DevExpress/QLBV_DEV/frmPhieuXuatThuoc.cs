@@ -36,6 +36,8 @@ namespace QLBV_DEV
             LoadDVT();
             LoadThuoc();
             LoadLoaiHinhBan();
+            dateNgayBan.EditValue = DateTime.Now;
+            dateNgayVietHD.EditValue = DateTime.Now;
 
         }
 
@@ -314,10 +316,10 @@ namespace QLBV_DEV
             {
                 o_PhieuXuatThuoc            = new oPhieuXuatThuoc();
                 o_PhieuXuatThuoc.TenThuoc   = gridView1.GetRowCellValue(i, "TenThuoc").ToString();
-                o_PhieuXuatThuoc.DVT = gridView1.GetRowCellValue(i, "DVT_Theo_DVT_Thuoc_ID").ToString();
+                o_PhieuXuatThuoc.DVT        = gridView1.GetRowCellDisplayText(i, "DVT_Theo_DVT_Thuoc_ID").ToString();
                 o_PhieuXuatThuoc.SoLuong    = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
                 o_PhieuXuatThuoc.GiaBan     = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaBan"));
-                o_PhieuXuatThuoc.ThanhTien = Convert.ToDouble(gridView1.GetRowCellValue(i, "ThanhTien"));
+                o_PhieuXuatThuoc.ThanhTien  = Convert.ToDouble(gridView1.GetRowCellValue(i, "ThanhTien"));
 
                 lstPhieuXuatThuoc.Add(o_PhieuXuatThuoc);
             }
@@ -373,6 +375,17 @@ namespace QLBV_DEV
 
             CapNhatTongCong();
         }
+
+        private void txtColGiaBan_EditValueChanged(object sender, EventArgs e)
+        {
+            CapNhatTongCong();
+        }
+
+        private void txtColSoLuong_EditValueChanged(object sender, EventArgs e)
+        {
+            CapNhatTongCong();
+        }
+
 
         // Mở form thêm khách hàng khi kích vào dấu + trong cbb khách hàng
         private void cbbKH_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)

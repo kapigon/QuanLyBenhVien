@@ -31,8 +31,8 @@ namespace QLBV_DEV
             LoadDVT();
             LoadThuoc();
             //Defaul value
-            //dateNgayNhap.EditValue = DateTime.Now;
-            //dateNgayVietHD.EditValue = DateTime.Now;
+            dateNgayNhap.EditValue = DateTime.Now;
+            dateNgayVietHD.EditValue = DateTime.Now;
         }
 
         #region methods
@@ -228,7 +228,7 @@ namespace QLBV_DEV
                                     obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID  = Convert.ToInt32(gridView1.GetRowCellValue(i, "DVT_Theo_DVT_Thuoc_ID"));
                                     obj_CT_Thuoc.ViTri_ID               = Convert.ToInt32(gridView1.GetRowCellValue(i, "ViTri_ID"));
                                     obj_CT_Thuoc.Barcode                = gridView1.GetRowCellValue(i, "Barcode_1").ToString();
-                                    obj_CT_Thuoc.HSD                    = Convert.ToDateTime(gridView1.GetRowCellValue(i, "HSD"));
+                                    obj_CT_Thuoc.HSD                    = Convert.ToDateTime(gridView1.GetRowCellValue(i, "HSD")) >= DateTime.Now ? Convert.ToDateTime(gridView1.GetRowCellValue(i, "HSD")) : DateTime.Now;
                                     obj_CT_Thuoc.GiaNhap                = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaNhap"));
                                     obj_CT_Thuoc.SoLuong                = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
                                     obj_CT_Thuoc.TonKho                 = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));

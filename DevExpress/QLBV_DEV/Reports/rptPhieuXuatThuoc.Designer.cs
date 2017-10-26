@@ -31,6 +31,7 @@
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.DataAccess.EntityFramework.EFConnectionParameters efConnectionParameters1 = new DevExpress.DataAccess.EntityFramework.EFConnectionParameters();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptPhieuXuatThuoc));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -81,6 +82,7 @@
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrControlStyle1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.efDataSource1 = new DevExpress.DataAccess.EntityFramework.EFDataSource();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
             this.objectDataSource2 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
             this.objectDataSource3 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
@@ -105,8 +107,7 @@
             // 
             // xrTable2
             // 
-            this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
+            this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable2.KeepTogether = true;
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
@@ -207,6 +208,7 @@
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox1,
             this.xrTable1,
             this.xrLabel15,
             this.xrLabel14,
@@ -572,6 +574,13 @@
             this.efDataSource1.ConnectionParameters = efConnectionParameters1;
             this.efDataSource1.Name = "efDataSource1";
             // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(624.4999F, 10.00001F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(52.50012F, 52.16667F);
+            // 
             // objectDataSource1
             // 
             this.objectDataSource1.DataSource = typeof(QLBV_DEV.Thuoc);
@@ -621,6 +630,14 @@
             this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
@@ -637,6 +654,22 @@
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
@@ -736,5 +769,6 @@
         private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource1;
         private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource2;
         private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource3;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
     }
 }
