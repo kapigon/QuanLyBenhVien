@@ -378,13 +378,19 @@ namespace QLBV_DEV
             {
                 frmThemNCC_KH frmThemNCC_KH = new frmThemNCC_KH(); // 1 : NCC
                 frmThemNCC_KH.ChonNCC_KH(1);
+                frmThemNCC_KH.FormClosed += new FormClosedEventHandler(frmThemNCC_KHClosed);
                 frmThemNCC_KH.ShowDialog();
             }
         }
 
+        private void frmThemNCC_KHClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadNCC();
+        }
+
         private void grdDSThuoc_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         #endregion

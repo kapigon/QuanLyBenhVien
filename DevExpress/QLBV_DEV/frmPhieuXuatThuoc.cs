@@ -381,6 +381,7 @@ namespace QLBV_DEV
             {
                 frmThemNCC_KH frmThemNCC_KH = new frmThemNCC_KH(); // 2 : KH
                 frmThemNCC_KH.ChonNCC_KH(2);
+                frmThemNCC_KH.FormClosed += new FormClosedEventHandler(frmThemNCC_KHClosed);
                 frmThemNCC_KH.ShowDialog();
             }
         }
@@ -401,6 +402,11 @@ namespace QLBV_DEV
                 }
             }
         }
+        private void frmThemNCC_KHClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadNCC_KH();
+        }
+
         private void txtKhachDua_EditValueChanged(object sender, EventArgs e)
         {
             double tongcong = Convert.ToDouble(txtTongCong.Text.Trim().Replace("VNĐ", ""));

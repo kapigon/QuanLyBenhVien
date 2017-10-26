@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.txtConLai = new DevExpress.XtraEditors.TextEdit();
@@ -81,6 +81,7 @@
             this.BanLe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BanBuon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThuocID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -124,7 +125,6 @@
             this.labelKhachDua = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtConLai.Properties)).BeginInit();
@@ -385,10 +385,10 @@
             this.txtSoPhieu.Size = new System.Drawing.Size(220, 20);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
-            conditionValidationRule2.CaseSensitive = true;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Số phiếu không được để trống";
-            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule2);
+            conditionValidationRule1.CaseSensitive = true;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Số phiếu không được để trống";
+            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule1);
             // 
             // btnDong
             // 
@@ -809,6 +809,14 @@
             this.ThuocID.FieldName = "ThuocID";
             this.ThuocID.Name = "ThuocID";
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên thuốc";
+            this.gridColumn2.FieldName = "TenThuoc";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 9;
+            // 
             // repositoryItemLookUpEdit1
             // 
             this.repositoryItemLookUpEdit1.AutoHeight = false;
@@ -912,7 +920,7 @@
             this.cbbKH.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNCC_KH", "Tên KH"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DiaChi", "Địa chỉ")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DiaChi", "Địa chỉ", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
             this.cbbKH.Properties.NullText = "";
             this.cbbKH.Properties.PopupSizeable = false;
             this.cbbKH.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -1247,14 +1255,6 @@
             this.layoutControlItem19.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem19.Text = "Còn lại";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(64, 13);
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên thuốc";
-            this.gridColumn2.FieldName = "TenThuoc";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 9;
             // 
             // frmPhieuXuatThuoc
             // 

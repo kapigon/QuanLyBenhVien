@@ -672,7 +672,7 @@
             this.cbbNCC.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNCC", "Tên NCC"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DiaChi", "Địa chỉ")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DiaChi", "Địa chỉ", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
             this.cbbNCC.Properties.NullText = "";
             this.cbbNCC.Properties.PopupSizeable = false;
             this.cbbNCC.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
