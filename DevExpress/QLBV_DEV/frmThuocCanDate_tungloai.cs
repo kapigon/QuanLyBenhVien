@@ -12,14 +12,14 @@ using System.Data.Entity;
 
 namespace QLBV_DEV
 {
-    public partial class frmThuoCanDate_tungloai : DevExpress.XtraEditors.XtraForm
+    public partial class frmThuocCanDate_tungloai : DevExpress.XtraEditors.XtraForm
     {
         #region params
         HospitalEntities db = new HospitalEntities();
         ThuocRepository rpo_Thuoc = new ThuocRepository();
         #endregion
 
-        public frmThuoCanDate_tungloai()
+        public frmThuocCanDate_tungloai()
         {
             InitializeComponent();
             LoadDS_ThuocCanDate();
@@ -52,7 +52,7 @@ namespace QLBV_DEV
             var query = from thuoc_phieunhap in db.CT_Thuoc_PhieuNhap
                         join thuoc in db.Thuoc on thuoc_phieunhap.Thuoc_ID equals thuoc.ID
                         //where DateTime.Now >= Convert.ToDateTime(thuoc_phieunhap.HSD).AddDays(Convert.ToInt32(thuoc.ThoiGianCanhBaoHetHan) * -1)
-                        //where DateTime.Now >= DbFunctions.AddDays(thuoc_phieunhap.HSD, -thuoc.ThoiGianCanhBaoHetHan)
+                        where DateTime.Now >= DbFunctions.AddDays(thuoc_phieunhap.HSD, -thuoc.ThoiGianCanhBaoHetHan)
                        // where Convert.ToInt32((thuoc_phieunhap.HSD.Value.Date-DateTime.Now.Date).TotalDays) > Convert.ToInt32( thuoc.ThoiGianCanhBaoHetHan.Value.ToString())
                         select new
                         {

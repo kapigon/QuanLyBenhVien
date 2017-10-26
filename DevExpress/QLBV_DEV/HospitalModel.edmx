@@ -238,6 +238,19 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenHoatChat" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="LichSuCapNhatGia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Thuoc_ID" Type="bigint" />
+          <Property Name="GiaBanLeCu" Type="float" />
+          <Property Name="GiaBanLeMoi" Type="float" />
+          <Property Name="GiaBanBuonCu" Type="float" />
+          <Property Name="GiaBanBuonMoi" Type="float" />
+          <Property Name="NgayTao" Type="date" />
+          <Property Name="UserTao" Type="int" />
+        </EntityType>
         <EntityType Name="LoaiHinhBan">
           <Key>
             <PropertyRef Name="ID" />
@@ -304,6 +317,7 @@
           <EntitySet Name="CT_Thuoc_PhieuXuat" EntityType="Self.CT_Thuoc_PhieuXuat" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="HangSanXuat" EntityType="Self.HangSanXuat" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="HoatChat" EntityType="Self.HoatChat" Schema="g6t_user" store:Type="Tables" />
+          <EntitySet Name="LichSuCapNhatGia" EntityType="Self.LichSuCapNhatGia" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="LoaiHinhBan" EntityType="Self.LoaiHinhBan" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="LoaiNCC_KH" EntityType="Self.LoaiNCC_KH" Schema="g6t_user" store:Type="Tables" />
           <EntitySet Name="NuocSanXuat" EntityType="Self.NuocSanXuat" Schema="g6t_user" store:Type="Tables" />
@@ -339,6 +353,7 @@
           <EntitySet Name="PhieuXuatThuoc" EntityType="HospitalModel.PhieuXuatThuoc" />
           <EntitySet Name="CT_PhieuDieuChinh" EntityType="HospitalModel.CT_PhieuDieuChinh" />
           <EntitySet Name="PhieuDieuChinh" EntityType="HospitalModel.PhieuDieuChinh" />
+          <EntitySet Name="LichSuCapNhatGia" EntityType="HospitalModel.LichSuCapNhatGia" />
         </EntityContainer>
         <EntityType Name="ChiTietPhanQuyen">
           <Key>
@@ -620,6 +635,19 @@
           <Property Name="NgayTao" Type="DateTime" Precision="0" />
           <Property Name="Huy" Type="Boolean" />
           <Property Name="UserHuy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LichSuCapNhatGia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Thuoc_ID" Type="Int64" />
+          <Property Name="GiaBanLeCu" Type="Double" />
+          <Property Name="GiaBanLeMoi" Type="Double" />
+          <Property Name="GiaBanBuonCu" Type="Double" />
+          <Property Name="GiaBanBuonMoi" Type="Double" />
+          <Property Name="NgayTao" Type="DateTime" Precision="0" />
+          <Property Name="UserTao" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -927,6 +955,20 @@
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="TenPhieuDieuChinh" ColumnName="TenPhieuDieuChinh" />
                 <ScalarProperty Name="MaPhieuDieuChinh" ColumnName="MaPhieuDieuChinh" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LichSuCapNhatGia">
+            <EntityTypeMapping TypeName="HospitalModel.LichSuCapNhatGia">
+              <MappingFragment StoreEntitySet="LichSuCapNhatGia">
+                <ScalarProperty Name="UserTao" ColumnName="UserTao" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="GiaBanBuonMoi" ColumnName="GiaBanBuonMoi" />
+                <ScalarProperty Name="GiaBanBuonCu" ColumnName="GiaBanBuonCu" />
+                <ScalarProperty Name="GiaBanLeMoi" ColumnName="GiaBanLeMoi" />
+                <ScalarProperty Name="GiaBanLeCu" ColumnName="GiaBanLeCu" />
+                <ScalarProperty Name="Thuoc_ID" ColumnName="Thuoc_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

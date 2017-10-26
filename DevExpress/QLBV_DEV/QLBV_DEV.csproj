@@ -131,6 +131,12 @@
     <Compile Include="frmDSThuocCanDate.Designer.cs">
       <DependentUpon>frmDSThuocCanDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCapNhatGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCapNhatGia.Designer.cs">
+      <DependentUpon>frmCapNhatGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDS_Thuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,11 +233,11 @@
     <Compile Include="frmThemThuoc.Designer.cs">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThuoCanDate_tungloai.cs">
+    <Compile Include="frmThuocCanDate_tungloai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThuoCanDate_tungloai.Designer.cs">
-      <DependentUpon>frmThuoCanDate_tungloai.cs</DependentUpon>
+    <Compile Include="frmThuocCanDate_tungloai.Designer.cs">
+      <DependentUpon>frmThuocCanDate_tungloai.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTonKhoTheoLo.cs">
       <SubType>Form</SubType>
@@ -370,6 +376,9 @@
     <EmbeddedResource Include="frmDSThuocCanDate.resx">
       <DependentUpon>frmDSThuocCanDate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCapNhatGia.resx">
+      <DependentUpon>frmCapNhatGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDS_Thuoc.resx">
       <DependentUpon>frmDS_Thuoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,8 +428,8 @@
     <EmbeddedResource Include="frmThemThuoc.resx">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThuoCanDate_tungloai.resx">
-      <DependentUpon>frmThuoCanDate_tungloai.cs</DependentUpon>
+    <EmbeddedResource Include="frmThuocCanDate_tungloai.resx">
+      <DependentUpon>frmThuocCanDate_tungloai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTonKhoTheoLo.resx">
       <DependentUpon>frmTonKhoTheoLo.cs</DependentUpon>

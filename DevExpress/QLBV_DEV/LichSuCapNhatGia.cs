@@ -12,18 +12,15 @@ namespace QLBV_DEV
     using System;
     using System.Collections.Generic;
     
-    public partial class CT_Thuoc_PhieuXuat
+    public partial class LichSuCapNhatGia
     {
         public long ID { get; set; }
-        public Nullable<long> PhieuXuatHang_ID { get; set; }
-        public Nullable<long> CT_Thuoc_PhieuNhap_ID { get; set; }
-        public Nullable<int> DVT_Theo_DVT_Thuoc_ID { get; set; }
-        public Nullable<int> LoaiHinhBan_ID { get; set; }
-        public Nullable<double> GiaBan { get; set; }
-        public Nullable<int> SoLuong { get; set; }
-        public Nullable<double> TongTien { get; set; }
-        public string GhiChu { get; set; }
+        public Nullable<long> Thuoc_ID { get; set; }
+        public Nullable<double> GiaBanLeCu { get; set; }
+        public Nullable<double> GiaBanLeMoi { get; set; }
+        public Nullable<double> GiaBanBuonCu { get; set; }
+        public Nullable<double> GiaBanBuonMoi { get; set; }
+        public Nullable<System.DateTime> NgayTao { get; set; }
         public Nullable<int> UserTao { get; set; }
-        public Nullable<System.DateTime> NgayBan { get; set; }
     }
 }

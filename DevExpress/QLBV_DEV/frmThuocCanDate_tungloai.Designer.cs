@@ -1,6 +1,6 @@
 ﻿namespace QLBV_DEV
 {
-    partial class frmThuoCanDate_tungloai
+    partial class frmThuocCanDate_tungloai
     {
         /// <summary>
         /// Required designer variable.

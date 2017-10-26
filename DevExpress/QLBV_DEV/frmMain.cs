@@ -28,7 +28,7 @@ namespace QLBV_DEV
         frmDS_Thuoc         frmDS_Thuoc         = new frmDS_Thuoc();
         frmPhieuXuatThuoc   frmPhieuXuatThuoc   = new frmPhieuXuatThuoc();
         frmDSThuocCanDate   frmDSThuocCanDate   = new frmDSThuocCanDate();
-        frmThuoCanDate_tungloai frmThuoCanDate_tungloai = new frmThuoCanDate_tungloai();
+        frmThuocCanDate_tungloai frmThuoCanDate_tungloai = new frmThuocCanDate_tungloai();
         frmTonKhoTheoLo     frmTonKhoTheoLo     = new frmTonKhoTheoLo();
         frmTonKhoTheoThuoc  frmTonKhoTheoThuoc  = new frmTonKhoTheoThuoc();
         frmTonKhoToiThieu   frmTonKhoToiThieu   = new frmTonKhoToiThieu();
@@ -52,7 +52,7 @@ namespace QLBV_DEV
             frmKho                  = new frmKho();
             frmPhieuXuatThuoc       = new frmPhieuXuatThuoc();
             frmDSThuocCanDate       = new frmDSThuocCanDate();
-            frmThuoCanDate_tungloai = new frmThuoCanDate_tungloai();
+            frmThuoCanDate_tungloai = new frmThuocCanDate_tungloai();
             frmTonKhoTheoLo         = new frmTonKhoTheoLo();
             frmTonKhoTheoThuoc      = new frmTonKhoTheoThuoc();
             frmTonKhoToiThieu       = new frmTonKhoToiThieu();
@@ -345,7 +345,7 @@ namespace QLBV_DEV
 
         private void btnThuocCanDate_tungloai_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmThuoCanDate_tungloai));
+            Form frm = kiemtraform(typeof(frmThuocCanDate_tungloai));
             if (frm == null)
             {
                 frmThuoCanDate_tungloai.MdiParent = this;

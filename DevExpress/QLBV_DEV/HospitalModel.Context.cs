@@ -48,5 +48,6 @@ namespace QLBV_DEV
         public virtual DbSet<PhieuXuatThuoc> PhieuXuatThuoc { get; set; }
         public virtual DbSet<CT_PhieuDieuChinh> CT_PhieuDieuChinh { get; set; }
         public virtual DbSet<PhieuDieuChinh> PhieuDieuChinh { get; set; }
+        public virtual DbSet<LichSuCapNhatGia> LichSuCapNhatGia { get; set; }
     }
 }
