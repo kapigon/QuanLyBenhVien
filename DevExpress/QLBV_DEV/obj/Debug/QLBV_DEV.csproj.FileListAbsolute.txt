@@ -22,29 +22,6 @@ C:\Users\Long\Desktop\QuanLyBenhVien-Long\QLBV-Dev\QLBV_DEV\QLBV_DEV\obj\Debug\Q
 C:\Users\Long\Desktop\QuanLyBenhVien-Long\QLBV-Dev\QLBV_DEV\QLBV_DEV\obj\Debug\QLBV_DEV.csprojResolveAssemblyReference.cache
 C:\Users\Long\Desktop\QuanLyBenhVien-Long\QLBV-Dev\QLBV_DEV\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemThuoc.resources
 C:\Users\Long\Desktop\QuanLyBenhVien-Long\QLBV-Dev\QLBV_DEV\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSPhieuNhap.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.exe.config
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.exe
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.pdb
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.dll
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.SqlServer.dll
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.xml
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.SqlServer.xml
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmCT_Thuoc_PhieuNhap.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDonViTinh.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSNCC_KH.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSNuocSanXuat.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSPhieuNhap.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmHoatChat.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmMain.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPhieuNhapThuoc.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemNCC_KH.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemNuocSanXuat.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemThuoc.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.Properties.Resources.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.csproj.GenerateResource.Cache
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.exe.licenses
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.exe
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.pdb
 D:\Project G6T\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.exe.config
 D:\Project G6T\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.exe
 D:\Project G6T\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.pdb
@@ -84,3 +61,44 @@ D:\Project G6T\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmKiemKe.r
 D:\Project G6T\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPhieuDieuChinh.resources
 D:\Project G6T\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmCanhbaotrangchu.resources
 D:\Project G6T\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.csprojResolveAssemblyReference.cache
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmCanhbaotrangchu.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmCT_Thuoc_PhieuNhap.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmCT_Thuoc_PhieuXuat.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSPhieuNhap.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSPhieuXuat.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSThuocCanDate.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDS_Thuoc.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmKiemKe.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPhieuDieuChinh.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSNCC_KH.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDonViTinh.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmHangSanXuat.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmHoatChat.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmKho.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmNhomThuoc.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmNuocSanXuat.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmMain.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPhieuNhapThuoc.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPhieuXuatThuoc.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPrint.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemNCC_KH.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemThuoc.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThuoCanDate_tungloai.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmTonKhoTheoLo.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmTonKhoTheoThuoc.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmTonKhoToiThieu.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmViTri.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.Properties.Resources.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.Reports.rptPhieuXuatThuoc.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.csproj.GenerateResource.Cache
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.exe.licenses
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.exe.config
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.exe
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\QLBV_DEV.pdb
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.dll
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.xml
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.exe
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.pdb
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.csprojResolveAssemblyReference.cache
