@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.dateNgayVietHD = new DevExpress.XtraEditors.DateEdit();
@@ -254,10 +254,10 @@
             this.txtSoPhieu.Size = new System.Drawing.Size(213, 20);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
-            conditionValidationRule2.CaseSensitive = true;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Số phiếu không được để trống";
-            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule2);
+            conditionValidationRule1.CaseSensitive = true;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Số phiếu không được để trống";
+            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule1);
             // 
             // btnDong
             // 
@@ -451,16 +451,12 @@
             this.DVT_Le_ID.Caption = "ĐVT lẻ";
             this.DVT_Le_ID.FieldName = "DVT_Le_ID";
             this.DVT_Le_ID.Name = "DVT_Le_ID";
-            this.DVT_Le_ID.Visible = true;
-            this.DVT_Le_ID.VisibleIndex = 2;
             // 
             // DVT_Nguyen_ID
             // 
             this.DVT_Nguyen_ID.Caption = "ĐVT nguyên";
             this.DVT_Nguyen_ID.FieldName = "DVT_Nguyen_ID";
             this.DVT_Nguyen_ID.Name = "DVT_Nguyen_ID";
-            this.DVT_Nguyen_ID.Visible = true;
-            this.DVT_Nguyen_ID.VisibleIndex = 3;
             // 
             // Thuoc_ID
             // 

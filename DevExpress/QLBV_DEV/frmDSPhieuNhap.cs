@@ -37,7 +37,8 @@ namespace QLBV_DEV
             //             select nv;
             //var result = rpo_PhieuNhap.GetAllNotDelete();
             var result = from phieunhap in db.PhieuNhapThuoc
-                        join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
+                        //join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
+                         from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
                         where phieunhap.Xoa != true
                         orderby phieunhap.ID ascending
                         select new

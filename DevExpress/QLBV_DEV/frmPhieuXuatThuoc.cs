@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +7,9 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using QLBV_DEV.Repository;
 using System.Collections;
+using QLBV_DEV.Repository;
+using QLBV_DEV.Reports.Objects;
 
 namespace QLBV_DEV
 {
@@ -56,6 +57,7 @@ namespace QLBV_DEV
             txtSoHoaDon.Text = obj_PhieuXuat.SoHoaDon;
             dateNgayVietHD.EditValue = Convert.ToDateTime(obj_PhieuXuat.NgayHoaDon);
             dateNgayBan.EditValue = Convert.ToDateTime(obj_PhieuXuat.NgayTao);
+            txtChietKhau.Text = obj_PhieuXuat.ChietKhau.ToString();
 
             grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuXuat>(db.CT_Thuoc_PhieuXuat.Where(p => p.PhieuXuatHang_ID == id).ToList());
         }
@@ -306,11 +308,21 @@ namespace QLBV_DEV
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            ThuocRepository rpo_Thuoc = new ThuocRepository();
-            List<Thuoc> lstThuoc = rpo_Thuoc.GetAll(10) as List<Thuoc>;
+            List<oPhieuXuatThuoc> lstPhieuXuatThuoc = new List<oPhieuXuatThuoc>();
+            oPhieuXuatThuoc o_PhieuXuatThuoc;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                o_PhieuXuatThuoc            = new oPhieuXuatThuoc();
+                o_PhieuXuatThuoc.TenThuoc   = gridView1.GetRowCellValue(i, "TenThuoc").ToString();
+                o_PhieuXuatThuoc.DVT = gridView1.GetRowCellValue(i, "DVT_Theo_DVT_Thuoc_ID").ToString();
+                o_PhieuXuatThuoc.SoLuong    = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
+                o_PhieuXuatThuoc.GiaBan     = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaBan"));
+                o_PhieuXuatThuoc.ThanhTien = Convert.ToDouble(gridView1.GetRowCellValue(i, "ThanhTien"));
 
+                lstPhieuXuatThuoc.Add(o_PhieuXuatThuoc);
+            }
             frmPrint print = new frmPrint();
-            print.printDSThuoc(lstThuoc);
+            print.printDSThuoc(lstPhieuXuatThuoc);
             print.ShowDialog();
         }
 
@@ -349,6 +361,7 @@ namespace QLBV_DEV
             if (ctXuat == null) return;
             ctXuat.SoLuong                  = x.TonKhoLo;
             ctXuat.DVT_Theo_DVT_Thuoc_ID    = x.DVT_Theo_DVT_Thuoc_ID;
+            ctXuat.TenThuoc                 = x.TenThuoc;
             ctXuat.GiaBan                   = x.GiaBanLe;
             ctXuat.TonKho                   = x.TonKhoLo;
             ctXuat.HSD                      = x.HSD;

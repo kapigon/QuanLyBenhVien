@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.txtConLai = new DevExpress.XtraEditors.TextEdit();
@@ -124,6 +124,7 @@
             this.labelKhachDua = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtConLai.Properties)).BeginInit();
@@ -267,7 +268,7 @@
             this.txtChietKhau.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtChietKhau.Properties.EditFormat.FormatString = "C0";
             this.txtChietKhau.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtChietKhau.Properties.Mask.EditMask = "c0";
+            this.txtChietKhau.Properties.Mask.EditMask = "C0";
             this.txtChietKhau.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtChietKhau.Size = new System.Drawing.Size(173, 20);
             this.txtChietKhau.StyleController = this.layoutControl1;
@@ -384,10 +385,10 @@
             this.txtSoPhieu.Size = new System.Drawing.Size(220, 20);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
-            conditionValidationRule1.CaseSensitive = true;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Số phiếu không được để trống";
-            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule1);
+            conditionValidationRule2.CaseSensitive = true;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Số phiếu không được để trống";
+            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule2);
             // 
             // btnDong
             // 
@@ -474,7 +475,8 @@
             this.PhieuXuatHang_ID,
             this.BanLe,
             this.BanBuon,
-            this.ThuocID});
+            this.ThuocID,
+            this.gridColumn2});
             this.gridView1.GridControl = this.grdDSThuoc;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "Tổng tiền", this.ThanhTien, "SUM={0:2}")});
@@ -1246,6 +1248,14 @@
             this.layoutControlItem19.Text = "Còn lại";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(64, 13);
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên thuốc";
+            this.gridColumn2.FieldName = "TenThuoc";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 9;
+            // 
             // frmPhieuXuatThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1422,6 +1432,7 @@
         private DevExpress.XtraLayout.LayoutControlItem labelKhachDua;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraEditors.SplitterControl splitterControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
 
     }
 }

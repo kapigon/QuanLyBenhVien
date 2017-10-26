@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QLBV_DEV.Reports;
 using QLBV_DEV.Repository;
+using QLBV_DEV.Reports.Objects;
 
 namespace QLBV_DEV
 {
@@ -19,13 +20,13 @@ namespace QLBV_DEV
             InitializeComponent();
         }
 
-        public void printDSThuoc(List<Thuoc> lstThuoc)
+        public void printDSThuoc(List<oPhieuXuatThuoc> lstThuoc)
         {
             ThuocRepository rpo_thuoc = new ThuocRepository();
 
             rptPhieuXuatThuoc report = new rptPhieuXuatThuoc();
 
-            report.DataSource = rpo_thuoc.GetAllS(10).ToList();
+            report.DataSource = lstThuoc;
 
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
