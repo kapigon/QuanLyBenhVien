@@ -233,6 +233,19 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenHoatChat" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="LichSuCapNhatGia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Thuoc_ID" Type="bigint" />
+    <Property Name="GiaBanLeCu" Type="float" />
+    <Property Name="GiaBanLeMoi" Type="float" />
+    <Property Name="GiaBanBuonCu" Type="float" />
+    <Property Name="GiaBanBuonMoi" Type="float" />
+    <Property Name="NgayTao" Type="date" />
+    <Property Name="UserTao" Type="int" />
+  </EntityType>
   <EntityType Name="LoaiHinhBan">
     <Key>
       <PropertyRef Name="ID" />
@@ -299,6 +312,7 @@
     <EntitySet Name="CT_Thuoc_PhieuXuat" EntityType="Self.CT_Thuoc_PhieuXuat" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="HangSanXuat" EntityType="Self.HangSanXuat" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="HoatChat" EntityType="Self.HoatChat" Schema="g6t_user" store:Type="Tables" />
+    <EntitySet Name="LichSuCapNhatGia" EntityType="Self.LichSuCapNhatGia" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="LoaiHinhBan" EntityType="Self.LoaiHinhBan" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="LoaiNCC_KH" EntityType="Self.LoaiNCC_KH" Schema="g6t_user" store:Type="Tables" />
     <EntitySet Name="NuocSanXuat" EntityType="Self.NuocSanXuat" Schema="g6t_user" store:Type="Tables" />

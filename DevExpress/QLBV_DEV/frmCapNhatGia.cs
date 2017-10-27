@@ -18,7 +18,7 @@ namespace QLBV_DEV
         int thuoc_ID = 0;
         int iRow;
         ThuocRepository rpo_Thuoc = new ThuocRepository();
-
+        
         #endregion
 
         public frmCapNhatGia()
@@ -114,6 +114,14 @@ namespace QLBV_DEV
             cbbHangSanXuat.Properties.ValueMember = "ID";
 
         }
+
+        private void clearField()
+        {
+            txtMaTuoc.Text = "";
+            txtTenThuoc.Text = "";
+            txtGiaBanLe.Text = "";
+            txtGiaBanBuon.Text = "";
+        }
         #endregion
 
         #region events                
@@ -135,17 +143,77 @@ namespace QLBV_DEV
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            if (gridView1 == null || gridView1.SelectedRowsCount == 0) return;
+
             iRow = gridView1.FocusedRowHandle;
+
+            txtMaTuoc.Text      = gridView1.GetRowCellDisplayText(iRow, "MaThuoc").ToString();
+            txtTenThuoc.Text    = gridView1.GetRowCellDisplayText(iRow, "TenThuoc").ToString();
+            txtGiaBanLe.Text    = gridView1.GetRowCellDisplayText(iRow, "GiaBanLe").ToString();
+            txtGiaBanBuon.Text  = gridView1.GetRowCellDisplayText(iRow, "GiaBanBuon").ToString();
+
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            if (gridView1 == null || gridView1.SelectedRowsCount == 0) return;
 
+            if (gridView1.GetRowCellDisplayText(iRow, "ID") == "") return;
+
+            long id = Convert.ToInt64(gridView1.GetRowCellDisplayText(iRow, "ID"));
+
+            Thuoc                       obj_Thuoc       = rpo_Thuoc.GetSingle(id);
+            LichSuCapNhatGiaRepository  rpo_lsGia       = new LichSuCapNhatGiaRepository();
+            LichSuCapNhatGia            obj_LS_Gia      = new LichSuCapNhatGia();
+
+            double                      giabanle        = txtGiaBanLe.Text != "" ? Convert.ToDouble(txtGiaBanLe.Text) : 0;
+            double                      giabanbuon      = txtGiaBanBuon.Text != "" ? Convert.ToDouble(txtGiaBanBuon.Text) : 0;
+
+            int                         userID          = 10000;
+
+            if (obj_Thuoc != null)
+            {
+                //ob_Thuoc.gi
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        /// Nếu giá thay đổi thì cập nhật lại giá
+                        if (obj_Thuoc.GiaBanLe != giabanle || obj_Thuoc.GiaBanBuon != giabanbuon)
+                        {
+                            // Set Gia trị cho Lịch sử Giá
+                            obj_LS_Gia.Thuoc_ID         = id;
+                            obj_LS_Gia.GiaBanLeCu       = obj_Thuoc.GiaBanLe;
+                            obj_LS_Gia.GiaBanLeMoi      = giabanle;
+                            obj_LS_Gia.GiaBanBuonCu     = obj_Thuoc.GiaBanBuon;
+                            obj_LS_Gia.GiaBanBuonMoi    = giabanbuon;
+                            obj_LS_Gia.UserTao          = userID;
+
+                            // Set Gia cho Thuoc
+                            obj_Thuoc.GiaBanLe          = giabanle;
+                            obj_Thuoc.GiaBanBuon        = giabanbuon;
+
+                            /// Cập nhật giá thuốc
+                            rpo_Thuoc.Save(obj_Thuoc);
+                            
+                            /// Ghi vào bảng Lịch sử Giá
+                            rpo_lsGia.Create(obj_LS_Gia);
+
+                            /// Sau khi lưu lại Giá thuốc mới và Ghi vào bảng lịch sửa cập nhất giá -> cập nhật giá trên grid
+                            LoadDS_Thuoc();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            clearField();
         }
         #endregion
 

@@ -44,12 +44,12 @@
             this.MaThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NhomThuoc_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cbbColNhomThuoc = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.TenHoatChat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThoiGianCanhBaoHetHan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TonKhoToiThieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GiaBanLe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GiaBanBuon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbbColNhomThuoc = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
@@ -191,6 +191,8 @@
             // 
             this.txtGiaBanBuon.Location = new System.Drawing.Point(727, 223);
             this.txtGiaBanBuon.Name = "txtGiaBanBuon";
+            this.txtGiaBanBuon.Properties.Mask.EditMask = "C0";
+            this.txtGiaBanBuon.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtGiaBanBuon.Size = new System.Drawing.Size(118, 20);
             this.txtGiaBanBuon.StyleController = this.layoutControl1;
             this.txtGiaBanBuon.TabIndex = 23;
@@ -199,6 +201,8 @@
             // 
             this.txtGiaBanLe.Location = new System.Drawing.Point(727, 199);
             this.txtGiaBanLe.Name = "txtGiaBanLe";
+            this.txtGiaBanLe.Properties.Mask.EditMask = "C0";
+            this.txtGiaBanLe.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtGiaBanLe.Size = new System.Drawing.Size(118, 20);
             this.txtGiaBanLe.StyleController = this.layoutControl1;
             this.txtGiaBanLe.TabIndex = 22;
@@ -315,16 +319,6 @@
             this.NhomThuoc_ID.VisibleIndex = 2;
             this.NhomThuoc_ID.Width = 145;
             // 
-            // cbbColNhomThuoc
-            // 
-            this.cbbColNhomThuoc.AutoHeight = false;
-            this.cbbColNhomThuoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbColNhomThuoc.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNhom", "Nhóm Thuốc")});
-            this.cbbColNhomThuoc.Name = "cbbColNhomThuoc";
-            // 
             // TenHoatChat
             // 
             this.TenHoatChat.AppearanceHeader.Options.UseTextOptions = true;
@@ -378,6 +372,16 @@
             this.GiaBanBuon.Name = "GiaBanBuon";
             this.GiaBanBuon.Visible = true;
             this.GiaBanBuon.VisibleIndex = 6;
+            // 
+            // cbbColNhomThuoc
+            // 
+            this.cbbColNhomThuoc.AutoHeight = false;
+            this.cbbColNhomThuoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbColNhomThuoc.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNhom", "Nhóm Thuốc")});
+            this.cbbColNhomThuoc.Name = "cbbColNhomThuoc";
             // 
             // repositoryItemTextEdit1
             // 

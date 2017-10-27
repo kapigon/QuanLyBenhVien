@@ -24,6 +24,7 @@
     <EntitySet Name="PhieuXuatThuoc" EntityType="HospitalModel.PhieuXuatThuoc" />
     <EntitySet Name="CT_PhieuDieuChinh" EntityType="HospitalModel.CT_PhieuDieuChinh" />
     <EntitySet Name="PhieuDieuChinh" EntityType="HospitalModel.PhieuDieuChinh" />
+    <EntitySet Name="LichSuCapNhatGia" EntityType="HospitalModel.LichSuCapNhatGia" />
   </EntityContainer>
   <EntityType Name="ChiTietPhanQuyen">
     <Key>
@@ -305,5 +306,18 @@
     <Property Name="NgayTao" Type="DateTime" Precision="0" />
     <Property Name="Huy" Type="Boolean" />
     <Property Name="UserHuy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LichSuCapNhatGia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Thuoc_ID" Type="Int64" />
+    <Property Name="GiaBanLeCu" Type="Double" />
+    <Property Name="GiaBanLeMoi" Type="Double" />
+    <Property Name="GiaBanBuonCu" Type="Double" />
+    <Property Name="GiaBanBuonMoi" Type="Double" />
+    <Property Name="NgayTao" Type="DateTime" Precision="0" />
+    <Property Name="UserTao" Type="Int32" />
   </EntityType>
 </Schema>

@@ -305,5 +305,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LichSuCapNhatGia">
+      <EntityTypeMapping TypeName="HospitalModel.LichSuCapNhatGia">
+        <MappingFragment StoreEntitySet="LichSuCapNhatGia">
+          <ScalarProperty Name="UserTao" ColumnName="UserTao" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="GiaBanBuonMoi" ColumnName="GiaBanBuonMoi" />
+          <ScalarProperty Name="GiaBanBuonCu" ColumnName="GiaBanBuonCu" />
+          <ScalarProperty Name="GiaBanLeMoi" ColumnName="GiaBanLeMoi" />
+          <ScalarProperty Name="GiaBanLeCu" ColumnName="GiaBanLeCu" />
+          <ScalarProperty Name="Thuoc_ID" ColumnName="Thuoc_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
