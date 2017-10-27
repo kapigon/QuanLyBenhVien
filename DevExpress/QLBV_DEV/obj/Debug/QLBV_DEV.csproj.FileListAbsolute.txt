@@ -67,6 +67,7 @@ D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmCT_Thuoc_Phi
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSPhieuNhap.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSPhieuXuat.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDSThuocCanDate.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmCapNhatGia.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmDS_Thuoc.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmKiemKe.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPhieuDieuChinh.resources
@@ -83,7 +84,7 @@ D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPhieuXuatThu
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmPrint.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemNCC_KH.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThemThuoc.resources
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThuoCanDate_tungloai.resources
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmThuocCanDate_tungloai.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmTonKhoTheoLo.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmTonKhoTheoThuoc.resources
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.frmTonKhoToiThieu.resources
@@ -101,4 +102,4 @@ D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.xml
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\bin\Debug\EntityFramework.SqlServer.xml
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.exe
 D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.pdb
-D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.csprojResolveAssemblyReference.cache
+D:\Project\QuanLyBenhVien\DevExpress\QLBV_DEV\obj\Debug\QLBV_DEV.InBaoCao.resources
