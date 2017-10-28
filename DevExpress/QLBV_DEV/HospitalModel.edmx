@@ -109,7 +109,8 @@
           </Key>
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NCC_KH_ID" Type="int" />
-          <Property Name="SoPhieu" Type="varchar" MaxLength="10" />
+          <Property Name="TrangThaiPhieu_ID" Type="int" />
+          <Property Name="SoPhieu" Type="varchar" MaxLength="20" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="150" />
           <Property Name="NgayNhap" Type="date" />
           <Property Name="ThueSuat" Type="float" />
@@ -438,7 +439,7 @@
           </Key>
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NCC_KH_ID" Type="Int32" />
-          <Property Name="SoPhieu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SoPhieu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="GhiChu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="NgayNhap" Type="DateTime" Precision="0" />
           <Property Name="ThueSuat" Type="Double" />
@@ -451,6 +452,7 @@
           <Property Name="UserTao" Type="Int32" />
           <Property Name="Xoa" Type="Boolean" />
           <Property Name="NgayXoa" Type="DateTime" Precision="0" />
+          <Property Name="TrangThaiPhieu_ID" Type="Int32" />
         </EntityType>
         <EntityType Name="Thuoc">
           <Key>
@@ -743,6 +745,7 @@
           <EntitySetMapping Name="PhieuNhapThuoc">
             <EntityTypeMapping TypeName="HospitalModel.PhieuNhapThuoc">
               <MappingFragment StoreEntitySet="PhieuNhapThuoc">
+                <ScalarProperty Name="TrangThaiPhieu_ID" ColumnName="TrangThaiPhieu_ID" />
                 <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
                 <ScalarProperty Name="Xoa" ColumnName="Xoa" />
                 <ScalarProperty Name="UserTao" ColumnName="UserTao" />

@@ -15,7 +15,16 @@ namespace QLBV_DEV.Repository
             return from _object in db.PhieuXuatThuoc orderby _object.ID ascending select _object;
         }
 
-        
+        public int getCountByDay(string search)
+        {
+            var query = from _object in db.PhieuXuatThuoc
+                        where _object.SoPhieu.StartsWith(search)
+                        orderby _object.ID ascending
+                        select _object;
+
+            return query.Count();
+        }
+
         public IQueryable<PhieuXuatThuoc> GetAllNotDelete()
         {
             return from _object in db.PhieuXuatThuoc where _object.Xoa != true orderby _object.ID ascending select _object;

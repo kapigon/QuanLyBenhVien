@@ -104,7 +104,8 @@
     </Key>
     <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NCC_KH_ID" Type="int" />
-    <Property Name="SoPhieu" Type="varchar" MaxLength="10" />
+    <Property Name="TrangThaiPhieu_ID" Type="int" />
+    <Property Name="SoPhieu" Type="varchar" MaxLength="20" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="150" />
     <Property Name="NgayNhap" Type="date" />
     <Property Name="ThueSuat" Type="float" />

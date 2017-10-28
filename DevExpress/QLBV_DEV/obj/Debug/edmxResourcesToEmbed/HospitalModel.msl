@@ -89,6 +89,7 @@
     <EntitySetMapping Name="PhieuNhapThuoc">
       <EntityTypeMapping TypeName="HospitalModel.PhieuNhapThuoc">
         <MappingFragment StoreEntitySet="PhieuNhapThuoc">
+          <ScalarProperty Name="TrangThaiPhieu_ID" ColumnName="TrangThaiPhieu_ID" />
           <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
           <ScalarProperty Name="Xoa" ColumnName="Xoa" />
           <ScalarProperty Name="UserTao" ColumnName="UserTao" />

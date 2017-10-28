@@ -38,10 +38,23 @@ namespace QLBV_DEV
             LoadLoaiHinhBan();
             dateNgayBan.EditValue = DateTime.Now;
             dateNgayVietHD.EditValue = DateTime.Now;
+            CreateSoPhieu();
 
         }
 
         #region methods
+        // Create tự động số phiếu xuất
+        public void CreateSoPhieu()
+        {
+            string today = DateTime.Now.ToString("yyMMdd");
+            //MessageBox.Show(today);
+
+            int soTT = rpo_PhieuXuat.getCountByDay("PX" + today);
+
+            string soPhieu = "PX" + today + "-" + (soTT + 1).ToString("000");
+
+            txtSoPhieu.EditValue = soPhieu;
+        }
         // Load dữ liệu theo ID đổ vào các trường trong Form
         public void loadData(long id)
         {

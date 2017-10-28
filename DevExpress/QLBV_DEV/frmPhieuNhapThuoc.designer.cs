@@ -251,6 +251,7 @@
             this.txtSoPhieu.Location = new System.Drawing.Point(377, 69);
             this.txtSoPhieu.Name = "txtSoPhieu";
             this.txtSoPhieu.Properties.MaxLength = 10;
+            this.txtSoPhieu.Properties.ReadOnly = true;
             this.txtSoPhieu.Size = new System.Drawing.Size(213, 20);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;

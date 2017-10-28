@@ -30,12 +30,24 @@ namespace QLBV_DEV
             LoadNCC();
             LoadDVT();
             LoadThuoc();
+            CreateSoPhieu();
             //Defaul value
             dateNgayNhap.EditValue = DateTime.Now;
             dateNgayVietHD.EditValue = DateTime.Now;
         }
 
         #region methods
+        // Create tự động số phiếu nhập
+        public void CreateSoPhieu()
+        {
+            string today = DateTime.Now.ToString("yyMMdd");
+            int soTT = rpo_PhieuNhap.getCountByDay("PN" + today);
+
+            string soPhieu = "PN" + today + "-" + (soTT + 1).ToString("000");
+
+            txtSoPhieu.EditValue = soPhieu;
+        }
+
         // Load dữ liệu theo ID đổ vào các trường trong Form
         public void loadData(long id)
         {

@@ -15,10 +15,19 @@ namespace QLBV_DEV.Repository
             return from _object in db.PhieuNhapThuoc orderby _object.ID ascending select _object;
         }
 
-        
         public IQueryable<PhieuNhapThuoc> GetAllNotDelete()
         {
             return from _object in db.PhieuNhapThuoc where _object.Xoa != true orderby _object.ID ascending select _object;
+        }
+
+        public int getCountByDay(string search)
+        {
+            var query = from _object in db.PhieuNhapThuoc
+                        where _object.SoPhieu.StartsWith(search)
+                        orderby _object.ID ascending
+                        select _object;
+
+            return query.Count();
         }
 
         public IQueryable<PhieuNhapThuoc> search(int ncc_kh_ID, String soPhieu, DateTime tuNgay, DateTime denNgay, String soHoaDon)
