@@ -30,6 +30,16 @@ namespace QLBV_DEV.Repository
             return from _object in db.Thuoc where (_object.KichHoat == kichhoat) orderby _object.ID ascending select _object;
         }
 
+        public int getCountByMaThuoc(string search)
+        {
+            var query = from _object in db.Thuoc
+                        where _object.MaThuoc.StartsWith(search)
+                        orderby _object.ID ascending
+                        select _object;
+
+            return query.Count();
+        }
+
         public Thuoc GetSingle(long id)
         {
             return (from _object in db.Thuoc where _object.ID == id select _object).FirstOrDefault();

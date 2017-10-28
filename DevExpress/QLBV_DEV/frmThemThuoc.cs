@@ -140,16 +140,24 @@ namespace QLBV_DEV
             }
         }
 
-        private void cbbHoatChat_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void txtTenThuoc_Leave(object sender, EventArgs e)
         {
-            if (e.Button.Kind.ToString() == "Plus")
+            txtMaThuoc.Text = "";
+            string maThuoc = Helpers.StringClearFormat.ClearNumberSpecial(txtTenThuoc.Text).Substring(0, 3).ToUpper();
+
+            if (maThuoc != "")
             {
-                frmHoatChat frmHoatChat = new frmHoatChat();
-                frmHoatChat.ShowDialog();
+                int soTT = rpo_Thuoc.getCountByMaThuoc(maThuoc);
+
+                maThuoc = maThuoc + (soTT + 1).ToString("000");
+
+                txtMaThuoc.Text = maThuoc;
             }
         }
-
         #endregion
+
+
+        
 
        
     }

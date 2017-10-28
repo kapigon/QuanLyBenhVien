@@ -115,13 +115,26 @@ namespace QLBV_DEV.Helpers
             return strValue.Replace(" ", "-");
         }
 
+        public static string ClearNumberSpecial(string Name)
+        {
+            string strValue = string.Empty;
+            if (!string.IsNullOrEmpty(Name))
+            {
+                strValue = ClearCharacterSpecial(Name);
+                strValue = System.Text.RegularExpressions.Regex.Replace(strValue, "[0-9]", "").Replace("--", "-").Replace("-", "");
+
+            }
+            // - Return values
+            return strValue;
+        }
+
         public static string ClearText(string Name)
         {
             string strValue = string.Empty;
             if (!string.IsNullOrEmpty(Name))
             {
                 strValue = Name.ToLower();
-                strValue = System.Text.RegularExpressions.Regex.Replace(strValue, "[^0-9a-zA-Z]+?", "-").Replace("--", "-");
+                strValue = System.Text.RegularExpressions.Regex.Replace(strValue, "[^0-9a-zA-Z]+?", "-").Replace("--", "");
 
             }
             // - Return values
