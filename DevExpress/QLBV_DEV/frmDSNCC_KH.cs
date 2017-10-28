@@ -24,6 +24,7 @@ namespace QLBV_DEV
         {
             InitializeComponent();
             LoadDS_NCC_KH();
+            cbbLoaiNCC_KH.EditValue = 0;
         }
 
         #region methods
@@ -34,6 +35,7 @@ namespace QLBV_DEV
             grvDSNCC_KH.DataSource = result.ToList();*/
             var query = from ncc_kh in db.NCC_KH
                         join loaiNCC_KH in db.LoaiNCC_KH on ncc_kh.LoaiNCC_KH_ID equals loaiNCC_KH.ID 
+                        orderby ncc_kh.ID descending
                         select new
                         {
                             ID              = ncc_kh.ID,
@@ -57,6 +59,23 @@ namespace QLBV_DEV
                 btnXoa.Enabled = false;
             }
         }
+        //private void LoadLoaiNCC_KH()
+        //{
+        //    var result = from ncc in db.LoaiNCC_KH
+        //                 select new
+        //                 {
+        //                     ID = ncc.ID,
+        //                     TenLoaiNCC_KH = ncc.TenLoaiNCC_KH
+        //                 };
+        //    cbbLoaiNCC_KH.Properties.DataSource = new BindingList<LoaiNCC_KH>(db.LoaiNCC_KH.ToList());
+        //    cbbLoaiNCC_KH.Properties.DisplayMember = "TenLoaiNCC_KH";
+        //    cbbLoaiNCC_KH.Properties.ValueMember = "ID";
+
+        //    //cbbColLoaiNCC_KH.DataSource = result.ToList();
+        //    //cbbColLoaiNCC_KH.DisplayMember = "TenLoaiNCC_KH";
+        //    //cbbColLoaiNCC_KH.ValueMember = "ID";
+        //}
+
         private void LoadLoaiNCC_KH()
         {
             var result = from ncc in db.LoaiNCC_KH
@@ -65,7 +84,13 @@ namespace QLBV_DEV
                              ID = ncc.ID,
                              TenLoaiNCC_KH = ncc.TenLoaiNCC_KH
                          };
-            cbbLoaiNCC_KH.Properties.DataSource = new BindingList<LoaiNCC_KH>(db.LoaiNCC_KH.ToList());
+            LoaiNCC_KH loai = new LoaiNCC_KH();
+            loai.ID = 0;
+            loai.TenLoaiNCC_KH = "Tất cả";
+            List<LoaiNCC_KH> lstLoai = db.LoaiNCC_KH.ToList();
+            lstLoai.Add(loai);
+
+            cbbLoaiNCC_KH.Properties.DataSource = new BindingList<LoaiNCC_KH>(lstLoai);
             cbbLoaiNCC_KH.Properties.DisplayMember = "TenLoaiNCC_KH";
             cbbLoaiNCC_KH.Properties.ValueMember = "ID";
 
@@ -174,6 +199,11 @@ namespace QLBV_DEV
             string id = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ID").ToString();
             ncc_kh_ID = Convert.ToInt32(id);
             //MessageBox.Show(id);
+        }
+
+        private void btnLammoi_Click(object sender, EventArgs e)
+        {
+            LoadDS_NCC_KH();
         }
     }
 }

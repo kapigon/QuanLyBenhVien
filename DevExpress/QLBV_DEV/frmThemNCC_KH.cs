@@ -123,8 +123,11 @@ namespace QLBV_DEV
                         rpo_NCC_KH.Create(obj_NCC_KH);
                         //db.NCC_KH.Add(_object);
                         //db.SaveChanges();
-
-                        this.Close();
+                        MessageBox.Show("Lưu thành công");
+                        Xoatatca();
+                        txtTen.Focus();
+                        txtTen.Text = " Mời bạn nhập mới";
+                        //txtTen.Font.Italic = true;
                     }
                 }
                 catch (DbEntityValidationException dbEx)
@@ -142,6 +145,24 @@ namespace QLBV_DEV
                     }
                 }
             }
+        }
+
+        private void Xoatatca()
+        {
+            txtChiNhanh.Text = "";
+            txtDiaChi.Text = "";
+            txtDienThoai.Text = "";
+            txtEmail.Text = "";
+            txtFax.Text = ""; 
+            txtMa.Text = "";
+            txtMota.Text = "";
+            txtMST.Text = "";
+            txtNganHang.Text = "";
+            txtSoTK.Text = "";
+            txtTen.Text = "";
+            txtWebsite.Text = "";
+            //cbbLoaiNCC_KH.Text = "";    
+            cbbLoaiNCC_KH.EditValue = 0;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

@@ -443,5 +443,10 @@ namespace QLBV_DEV
                 frm.Activate();
             }
         }
+
+        private void ribbon_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
