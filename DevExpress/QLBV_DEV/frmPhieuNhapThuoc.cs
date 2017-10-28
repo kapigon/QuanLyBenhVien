@@ -239,10 +239,11 @@ namespace QLBV_DEV
                                     obj_CT_Thuoc.Kho_ID                 = Convert.ToInt32(gridView1.GetRowCellValue(i, "Kho_ID"));
                                     obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID  = Convert.ToInt32(gridView1.GetRowCellValue(i, "DVT_Theo_DVT_Thuoc_ID"));
                                     obj_CT_Thuoc.ViTri_ID               = Convert.ToInt32(gridView1.GetRowCellValue(i, "ViTri_ID"));
-                                    obj_CT_Thuoc.Barcode                = gridView1.GetRowCellValue(i, "Barcode_1").ToString();
+                                    //obj_CT_Thuoc.Barcode                = gridView1.GetRowCellValue(i, "Barcode_1").ToString();
                                     obj_CT_Thuoc.HSD                    = Convert.ToDateTime(gridView1.GetRowCellValue(i, "HSD")) >= DateTime.Now ? Convert.ToDateTime(gridView1.GetRowCellValue(i, "HSD")) : DateTime.Now;
                                     obj_CT_Thuoc.GiaNhap                = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaNhap"));
                                     obj_CT_Thuoc.SoLuong                = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
+                                    obj_CT_Thuoc.TongTien               = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaNhap")) * Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
                                     obj_CT_Thuoc.TonKho                 = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
                                     obj_CT_Thuoc.SoLo                   = gridView1.GetRowCellValue(i, "SoLo") != null ? gridView1.GetRowCellValue(i, "SoLo").ToString() : "";
                                     obj_PhieuNhap.UserTao               = userID;
@@ -266,11 +267,27 @@ namespace QLBV_DEV
                                    */
 
                                     /// Nếu 'row' chưa có 1 Chi tiết Thuốc thì tạo mới
-                                    if (!isUpdateRow)
+                                    if (!isUpdateRow){
                                         rpo_CT_Thuoc.Create(obj_CT_Thuoc);
+
+                                        // Tạo mã barcode
+                                        obj_CT_Thuoc.Barcode = "TKV" + obj_CT_Thuoc.ID.ToString("000000");
+                                        rpo_CT_Thuoc.Save(obj_CT_Thuoc);
+                                    }
+                                        
                                     /// Lưu lại 1 Chi tiết Thuốc
                                     else
+                                    {
                                         rpo_CT_Thuoc.Save(obj_CT_Thuoc);
+
+                                        // Tạo lai barcode nếu chưa có mã
+                                        if (obj_CT_Thuoc.Barcode == "" || obj_CT_Thuoc.Barcode == null)
+                                        {
+                                            obj_CT_Thuoc.Barcode = "TKV" + obj_CT_Thuoc.ID.ToString("000000");
+                                            rpo_CT_Thuoc.Save(obj_CT_Thuoc);
+                                        }
+                                    }
+                                        
 
 
                                     /// Cập số lượng tồn kho Thuốc

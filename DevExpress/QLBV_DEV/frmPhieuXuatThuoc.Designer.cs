@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.chkDeNghiHuy = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.txtConLai = new DevExpress.XtraEditors.TextEdit();
             this.txtChietKhau = new DevExpress.XtraEditors.TextEdit();
@@ -52,6 +53,7 @@
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaVach_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtColGiaBan = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.Barcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Thuoc_ID_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColThuoc_ID = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -66,6 +68,7 @@
             this.GiaBanLe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GiaBanBuon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CT_Thuoc_PhieuNhap_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TonKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -124,9 +127,13 @@
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.labelKhachDua = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDeNghiHuy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConLai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChietKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhachDua.Properties)).BeginInit();
@@ -191,11 +198,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelKhachDua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chkDeNghiHuy);
             this.layoutControl1.Controls.Add(this.splitterControl1);
             this.layoutControl1.Controls.Add(this.txtConLai);
             this.layoutControl1.Controls.Add(this.txtChietKhau);
@@ -234,6 +245,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(1184, 696);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // chkDeNghiHuy
+            // 
+            this.chkDeNghiHuy.Location = new System.Drawing.Point(621, 616);
+            this.chkDeNghiHuy.Name = "chkDeNghiHuy";
+            this.chkDeNghiHuy.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.chkDeNghiHuy.Properties.Appearance.Options.UseForeColor = true;
+            this.chkDeNghiHuy.Properties.Caption = "Đề nghị hủy";
+            this.chkDeNghiHuy.Size = new System.Drawing.Size(95, 19);
+            this.chkDeNghiHuy.StyleController = this.layoutControl1;
+            this.chkDeNghiHuy.TabIndex = 23;
             // 
             // splitterControl1
             // 
@@ -464,6 +486,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.MaVach_1,
+            this.Barcode,
             this.Thuoc_ID_1,
             this.CT_Thuoc_PhieuNhap_ID,
             this.TonKho,
@@ -500,9 +523,7 @@
             this.MaVach_1.Name = "MaVach_1";
             this.MaVach_1.UnboundExpression = "[CT_Thuoc_PhieuNhap_ID]";
             this.MaVach_1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.MaVach_1.Visible = true;
-            this.MaVach_1.VisibleIndex = 0;
-            this.MaVach_1.Width = 95;
+            this.MaVach_1.Width = 60;
             // 
             // txtColGiaBan
             // 
@@ -513,6 +534,15 @@
             this.txtColGiaBan.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtColGiaBan.Name = "txtColGiaBan";
             this.txtColGiaBan.EditValueChanged += new System.EventHandler(this.txtColGiaBan_EditValueChanged);
+            // 
+            // Barcode
+            // 
+            this.Barcode.Caption = "Mã vạch";
+            this.Barcode.FieldName = "Barcode";
+            this.Barcode.Name = "Barcode";
+            this.Barcode.Visible = true;
+            this.Barcode.VisibleIndex = 0;
+            this.Barcode.Width = 71;
             // 
             // Thuoc_ID_1
             // 
@@ -546,7 +576,8 @@
             this.searchHSD,
             this.GiaBanLe,
             this.GiaBanBuon,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn3});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -646,6 +677,12 @@
             this.gridColumn1.FieldName = "ThuocID";
             this.gridColumn1.Name = "gridColumn1";
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Barcode";
+            this.gridColumn3.FieldName = "Barcode";
+            this.gridColumn3.Name = "gridColumn3";
+            // 
             // CT_Thuoc_PhieuNhap_ID
             // 
             this.CT_Thuoc_PhieuNhap_ID.Caption = "Tên Thuốc";
@@ -654,7 +691,7 @@
             this.CT_Thuoc_PhieuNhap_ID.Name = "CT_Thuoc_PhieuNhap_ID";
             this.CT_Thuoc_PhieuNhap_ID.Visible = true;
             this.CT_Thuoc_PhieuNhap_ID.VisibleIndex = 1;
-            this.CT_Thuoc_PhieuNhap_ID.Width = 411;
+            this.CT_Thuoc_PhieuNhap_ID.Width = 395;
             // 
             // TonKho
             // 
@@ -668,7 +705,7 @@
             this.TonKho.OptionsColumn.ReadOnly = true;
             this.TonKho.Visible = true;
             this.TonKho.VisibleIndex = 3;
-            this.TonKho.Width = 79;
+            this.TonKho.Width = 76;
             // 
             // SoLuong
             // 
@@ -684,7 +721,7 @@
             this.SoLuong.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.SoLuong.Visible = true;
             this.SoLuong.VisibleIndex = 2;
-            this.SoLuong.Width = 77;
+            this.SoLuong.Width = 73;
             // 
             // txtColSoLuong
             // 
@@ -707,7 +744,7 @@
             this.TenDVT.OptionsColumn.ReadOnly = true;
             this.TenDVT.Visible = true;
             this.TenDVT.VisibleIndex = 4;
-            this.TenDVT.Width = 55;
+            this.TenDVT.Width = 52;
             // 
             // cbbDVT
             // 
@@ -741,7 +778,7 @@
             this.GiaBan.Name = "GiaBan";
             this.GiaBan.Visible = true;
             this.GiaBan.VisibleIndex = 5;
-            this.GiaBan.Width = 86;
+            this.GiaBan.Width = 82;
             // 
             // ThanhTien
             // 
@@ -761,7 +798,7 @@
             this.ThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 6;
-            this.ThanhTien.Width = 94;
+            this.ThanhTien.Width = 90;
             // 
             // repositoryItemTextEdit1
             // 
@@ -786,7 +823,7 @@
             this.HSD.OptionsColumn.ReadOnly = true;
             this.HSD.Visible = true;
             this.HSD.VisibleIndex = 7;
-            this.HSD.Width = 93;
+            this.HSD.Width = 89;
             // 
             // GhiChu
             // 
@@ -797,7 +834,7 @@
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.Visible = true;
             this.GhiChu.VisibleIndex = 8;
-            this.GhiChu.Width = 152;
+            this.GhiChu.Width = 154;
             // 
             // PhieuXuatHang_ID
             // 
@@ -995,7 +1032,8 @@
             this.layoutControlItem15,
             this.layoutControlItem18,
             this.labelKhachDua,
-            this.layoutControlItem19});
+            this.layoutControlItem19,
+            this.layoutControlItem17});
             this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1184, 696);
@@ -1214,7 +1252,7 @@
             this.emptySpaceItem5.CustomizationFormText = "emptySpaceItem5";
             this.emptySpaceItem5.Location = new System.Drawing.Point(0, 604);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(708, 72);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(609, 72);
             this.emptySpaceItem5.Text = "emptySpaceItem5";
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -1268,6 +1306,37 @@
             this.layoutControlItem19.Text = "Còn lại";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(64, 13);
             // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.chkDeNghiHuy;
+            this.layoutControlItem17.CustomizationFormText = "layoutControlItem17";
+            this.layoutControlItem17.Location = new System.Drawing.Point(609, 604);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(99, 72);
+            this.layoutControlItem17.Text = "layoutControlItem17";
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem4";
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 590);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(708, 48);
+            this.emptySpaceItem4.Text = "emptySpaceItem4";
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.CustomizationFormText = "emptySpaceItem6";
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 662);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(1164, 14);
+            this.emptySpaceItem6.Text = "emptySpaceItem6";
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // frmPhieuXuatThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1279,6 +1348,7 @@
             this.Load += new System.EventHandler(this.frmPhieuXuatThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkDeNghiHuy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConLai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChietKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhachDua.Properties)).EndInit();
@@ -1343,7 +1413,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelKhachDua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1445,6 +1518,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraEditors.SplitterControl splitterControl1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
+        private DevExpress.XtraEditors.CheckEdit chkDeNghiHuy;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
+        private DevExpress.XtraGrid.Columns.GridColumn Barcode;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
 
     }
 }

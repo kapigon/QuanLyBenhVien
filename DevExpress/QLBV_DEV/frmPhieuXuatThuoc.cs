@@ -40,6 +40,8 @@ namespace QLBV_DEV
             dateNgayVietHD.EditValue = DateTime.Now;
             CreateSoPhieu();
 
+            chkDeNghiHuy.ReadOnly = true;
+
         }
 
         #region methods
@@ -75,6 +77,11 @@ namespace QLBV_DEV
             txtChietKhau.Text = obj_PhieuXuat.ChietKhau.ToString();
 
             grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuXuat>(db.CT_Thuoc_PhieuXuat.Where(p => p.PhieuXuatHang_ID == id).ToList());
+
+            chkDeNghiHuy.ReadOnly = false;
+
+            if(obj_PhieuXuat.TrangThaiPhieu_ID == 2)
+                chkDeNghiHuy.EditValue = true;
         }
 
         private void LoadNCC_KH()
@@ -117,6 +124,7 @@ namespace QLBV_DEV
                              ID                     = ct_thuoc.ID,
                              ThuocID                = thuoc.ID,
                              MaThuoc                = thuoc.MaThuoc,
+                             Barcode                = ct_thuoc.Barcode,
                              TenThuoc               = thuoc.TenThuoc,
                              TonKhoLo               = ct_thuoc.TonKho,
                              TonKhoTong             = thuoc.TonKho,
@@ -213,7 +221,7 @@ namespace QLBV_DEV
                     obj_PhieuXuat = rpo_PhieuXuat.GetSingle(phieuxuat_ID);
 
                 obj_PhieuXuat.NCC_KH_ID         = khID;
-                obj_PhieuXuat.TrangThaiPhieu_ID = 1;            // Nháp
+                //obj_PhieuXuat.TrangThaiPhieu_ID = 1;            // Nháp
                 obj_PhieuXuat.LoaiHinhBan_ID    = Convert.ToInt32(cbbLoaiHinhBan.EditValue);
                 obj_PhieuXuat.SoPhieu           = soPhieu;
                 obj_PhieuXuat.GhiChu            = ghiChu;
@@ -226,6 +234,10 @@ namespace QLBV_DEV
                 obj_PhieuXuat.ChietKhau         = chietkhau;                    /// *
                 obj_PhieuXuat.TongTienKHTra     = tongtien + (tongtien * thueSuat / 100) - chietkhau;            /// *
                 obj_PhieuXuat.UserTao           = userID;               /// *
+                if(chkDeNghiHuy.Checked)
+                    obj_PhieuXuat.TrangThaiPhieu_ID = 2;
+                else
+                    obj_PhieuXuat.TrangThaiPhieu_ID = 1;
 
                 if (gridView1.DataRowCount > 0)
                 {
@@ -305,6 +317,7 @@ namespace QLBV_DEV
                             //this.Close();
                             MessageBox.Show("Lưu thành công");
                             btnLuu.Enabled = false;
+                            chkDeNghiHuy.ReadOnly = false;
                         }
                         catch (Exception)
                         {
@@ -377,6 +390,7 @@ namespace QLBV_DEV
             ctXuat.SoLuong                  = x.TonKhoLo;
             ctXuat.DVT_Theo_DVT_Thuoc_ID    = x.DVT_Theo_DVT_Thuoc_ID;
             ctXuat.TenThuoc                 = x.TenThuoc;
+            ctXuat.Barcode                  = x.Barcode;
             ctXuat.GiaBan                   = x.GiaBanLe;
             ctXuat.TonKho                   = x.TonKhoLo;
             ctXuat.HSD                      = x.HSD;

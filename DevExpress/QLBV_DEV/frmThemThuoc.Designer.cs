@@ -324,7 +324,6 @@
             this.cbbHoatChat.Size = new System.Drawing.Size(222, 26);
             this.cbbHoatChat.StyleController = this.layoutControl1;
             this.cbbHoatChat.TabIndex = 21;
-            this.cbbHoatChat.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cbbHoatChat_ButtonClick);
             // 
             // cbbDonViNguyen
             // 

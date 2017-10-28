@@ -32,6 +32,7 @@ namespace QLBV_DEV
         /// </summary>
         public String TenThuoc { get; set; }
         public long ThuocID { get; set; }
+        public String Barcode { get; set; }
         public Nullable<System.DateTime> HSD { get; set; }
         public Nullable<int> TonKho { get; set; }
         public Nullable<double> GiaBanLe { get; set; }
