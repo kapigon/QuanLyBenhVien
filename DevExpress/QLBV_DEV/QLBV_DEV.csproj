@@ -113,6 +113,12 @@
     <Compile Include="frmCT_Thuoc_PhieuXuat.Designer.cs">
       <DependentUpon>frmCT_Thuoc_PhieuXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBaoCaoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoNgay.Designer.cs">
+      <DependentUpon>frmBaoCaoNgay.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     </Compile>
     <Compile Include="frmDSPhieuXuat.Designer.cs">
       <DependentUpon>frmDSPhieuXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSPhieuXuatHuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSPhieuXuatHuy.Designer.cs">
+      <DependentUpon>frmDSPhieuXuatHuy.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDSThuocCanDate.cs">
       <SubType>Form</SubType>
@@ -267,6 +279,7 @@
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ErrorHandle.cs" />
+    <Compile Include="Helpers\LoginInfo.cs" />
     <Compile Include="Helpers\StringClearFormat.cs" />
     <Compile Include="Helpers\ValidateInput.cs" />
     <Compile Include="HoatChat.cs">
@@ -287,9 +300,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HospitalModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="InBaoCao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InBaoCao.Designer.cs">
+      <DependentUpon>InBaoCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kho.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LichSuCapNhatGia.cs" />
     <Compile Include="LichSuGia.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
@@ -338,6 +358,7 @@
     <Compile Include="Repository\CT_PhieuNhapThuocRepository.cs" />
     <Compile Include="Repository\HangSanXuatRepository.cs" />
     <Compile Include="Repository\HoatChatRepository.cs" />
+    <Compile Include="Repository\LichSuCapNhatGiaRepository.cs" />
     <Compile Include="Repository\PhieuXuatThuocRepository.cs" />
     <Compile Include="Repository\PhieuDieuChinhRepository.cs" />
     <Compile Include="Repository\ViTriRepository.cs" />
@@ -367,11 +388,17 @@
     <EmbeddedResource Include="frmCT_Thuoc_PhieuXuat.resx">
       <DependentUpon>frmCT_Thuoc_PhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoNgay.resx">
+      <DependentUpon>frmBaoCaoNgay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDSPhieuNhap.resx">
       <DependentUpon>frmDSPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSPhieuXuat.resx">
       <DependentUpon>frmDSPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSPhieuXuatHuy.resx">
+      <DependentUpon>frmDSPhieuXuatHuy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSThuocCanDate.resx">
       <DependentUpon>frmDSThuocCanDate.cs</DependentUpon>
@@ -442,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVitri.resx">
       <DependentUpon>frmViTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InBaoCao.resx">
+      <DependentUpon>InBaoCao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
