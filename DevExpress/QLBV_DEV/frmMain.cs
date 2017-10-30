@@ -7,11 +7,15 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using QLBV_DEV.Repository;
 
 namespace QLBV_DEV
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        NhanVienRepository rpo_NhanVien = new NhanVienRepository();
+        NhanVien obj_NhanVien = new NhanVien();
+                
         frmPhieuNhapThuoc   frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
         frmDSPhieuNhap      frmDSPhieuNhap      = new frmDSPhieuNhap();
         frmDSPhieuXuat      frmDSPhieuXuat      = new frmDSPhieuXuat();
@@ -34,6 +38,8 @@ namespace QLBV_DEV
         frmTonKhoToiThieu   frmTonKhoToiThieu   = new frmTonKhoToiThieu();
         frmKiemKe           frmKiemKe           = new frmKiemKe();
         frmCanhbaotrangchu  frmCanhbaotrangchu  = new frmCanhbaotrangchu();
+        frmDSPhieuXuatHuy   frmDSPhieuXuatHuy   = new frmDSPhieuXuatHuy();
+
 
         //private void close_form(object sender, FormClosedEventArgs e)
         //{
@@ -68,7 +74,43 @@ namespace QLBV_DEV
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2010 Blue");
             LoadCanhBaoTrangChu();
 
+            QLBV_DEV.Helpers.LoginInfo.nhanVien = rpo_NhanVien.GetSingle(100000);
         }
+
+        /// Reload Form 
+        public frmMain(int type)
+        {
+            if (type == 1)
+                frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
+            else if (type == 2)
+                frmDSPhieuNhap = new frmDSPhieuNhap();
+            else if (type == 3)
+                frmDSPhieuXuat = new frmDSPhieuXuat();
+            else
+            {
+                frmThemNCC_KH = new frmThemNCC_KH();
+                frmThemThuoc = new frmThemThuoc();
+                frmDSNCC_KH = new frmDSNCC_KH();
+                frmNuocSanXuat = new frmNuocSanXuat();
+                frmHoatChat = new frmHoatChat();
+                frmNhomThuoc = new frmNhomThuoc();
+                frmDonViTinh = new frmDonViTinh();
+                frmViTri = new frmViTri();
+                frmHangSanXuat = new frmHangSanXuat();
+                frmKho = new frmKho();
+                frmPhieuXuatThuoc = new frmPhieuXuatThuoc();
+                frmDSThuocCanDate = new frmDSThuocCanDate();
+                frmThuocCanDate_tungloai = new frmThuocCanDate_tungloai();
+                frmTonKhoTheoLo = new frmTonKhoTheoLo();
+                frmTonKhoTheoThuoc = new frmTonKhoTheoThuoc();
+                frmTonKhoToiThieu = new frmTonKhoToiThieu();
+                frmDS_Thuoc = new frmDS_Thuoc();
+                frmKiemKe = new frmKiemKe();
+                frmCanhbaotrangchu = new frmCanhbaotrangchu();
+            }
+
+        }        
+
         //--------------------------------------------------------------------------------
         //Kiểm tra đã bật Tab Form chưa
         private Form kiemtraform(Type ftype)
@@ -447,6 +489,22 @@ namespace QLBV_DEV
         private void ribbon_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDSPhieuXuatHuy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frmDSPhieuXuatHuy));
+            if (frm == null)
+            {
+                frmDSPhieuXuatHuy.MdiParent = this;
+                frmDSPhieuXuatHuy.FormClosed += (sender1, eventArgs) => { frmDSPhieuXuatHuy = new frmDSPhieuXuatHuy(); };
+                frmDSPhieuXuatHuy.Show();
+
+            }
+            else
+            {
+                frm.Activate();
+            }
         }
     }
 }

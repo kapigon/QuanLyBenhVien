@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.chkDeNghiHuy = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.txtConLai = new DevExpress.XtraEditors.TextEdit();
@@ -128,6 +129,7 @@
             this.labelKhachDua = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -199,6 +201,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.labelKhachDua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
@@ -206,6 +209,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnXoa);
             this.layoutControl1.Controls.Add(this.chkDeNghiHuy);
             this.layoutControl1.Controls.Add(this.splitterControl1);
             this.layoutControl1.Controls.Add(this.txtConLai);
@@ -246,6 +250,17 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Enabled = false;
+            this.btnXoa.Location = new System.Drawing.Point(621, 639);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(95, 22);
+            this.btnXoa.StyleController = this.layoutControl1;
+            this.btnXoa.TabIndex = 24;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // chkDeNghiHuy
             // 
             this.chkDeNghiHuy.Location = new System.Drawing.Point(621, 616);
@@ -256,6 +271,7 @@
             this.chkDeNghiHuy.Size = new System.Drawing.Size(95, 19);
             this.chkDeNghiHuy.StyleController = this.layoutControl1;
             this.chkDeNghiHuy.TabIndex = 23;
+            this.chkDeNghiHuy.CheckedChanged += new System.EventHandler(this.chkDeNghiHuy_CheckedChanged);
             // 
             // splitterControl1
             // 
@@ -859,6 +875,8 @@
             this.ThuocID.Caption = "Thuốc ID";
             this.ThuocID.FieldName = "ThuocID";
             this.ThuocID.Name = "ThuocID";
+            this.ThuocID.Visible = true;
+            this.ThuocID.VisibleIndex = 9;
             // 
             // gridColumn2
             // 
@@ -1033,7 +1051,8 @@
             this.layoutControlItem18,
             this.labelKhachDua,
             this.layoutControlItem19,
-            this.layoutControlItem17});
+            this.layoutControlItem17,
+            this.layoutControlItem20});
             this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1184, 696);
@@ -1312,10 +1331,21 @@
             this.layoutControlItem17.CustomizationFormText = "layoutControlItem17";
             this.layoutControlItem17.Location = new System.Drawing.Point(609, 604);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(99, 72);
+            this.layoutControlItem17.Size = new System.Drawing.Size(99, 23);
             this.layoutControlItem17.Text = "layoutControlItem17";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
+            // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.btnXoa;
+            this.layoutControlItem20.CustomizationFormText = "layoutControlItem20";
+            this.layoutControlItem20.Location = new System.Drawing.Point(609, 627);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(99, 49);
+            this.layoutControlItem20.Text = "layoutControlItem20";
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem20.TextVisible = false;
             // 
             // emptySpaceItem4
             // 
@@ -1414,6 +1444,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.labelKhachDua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
@@ -1524,6 +1555,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraGrid.Columns.GridColumn Barcode;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
 
     }
 }

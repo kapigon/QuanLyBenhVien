@@ -10,17 +10,17 @@ using DevExpress.XtraEditors;
 using System.Collections;
 using QLBV_DEV.Repository;
 using QLBV_DEV.Reports.Objects;
+using QLBV_DEV.Helpers;
 
 namespace QLBV_DEV
 {
     public partial class frmPhieuXuatThuoc : DevExpress.XtraEditors.XtraForm
     {
         #region params
-        HospitalEntities db = new HospitalEntities();
-        PhieuXuatThuocRepository rpo_PhieuXuat = new PhieuXuatThuocRepository();
-        CT_Thuoc_PhieuXuatRepository rpo_CT_Thuoc = new CT_Thuoc_PhieuXuatRepository();
-
-
+        HospitalEntities                db                  = new HospitalEntities();
+        PhieuXuatThuocRepository        rpo_PhieuXuat       = new PhieuXuatThuocRepository();
+        CT_Thuoc_PhieuXuatRepository    rpo_CT_Thuoc        = new CT_Thuoc_PhieuXuatRepository();
+        NhanVien                        obj_NhanVien        = new NhanVien();
 
         // Chỉ số của dòng
         int index;
@@ -41,6 +41,13 @@ namespace QLBV_DEV
             CreateSoPhieu();
 
             chkDeNghiHuy.ReadOnly = true;
+
+           // frmMain main = new frmMain();
+           // MessageBox.Show(main.obj_NhanVien.HoVaTen);
+            if (LoginInfo.nhanVien != null)
+            {
+                obj_NhanVien = LoginInfo.nhanVien;
+            }
 
         }
 
@@ -78,10 +85,49 @@ namespace QLBV_DEV
 
             grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuXuat>(db.CT_Thuoc_PhieuXuat.Where(p => p.PhieuXuatHang_ID == id).ToList());
 
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+
+                //var search = sender as SearchLookUpEdit;
+                //if (search == null) return;
+
+                //var id = (search.EditValue == null || search.EditValue == DBNull.Value) ? 0 : Convert.ToInt32(search.EditValue);
+
+                long thuoc_PhieuNhap_ID = Convert.ToInt64(gridView1.GetRowCellValue(i, "CT_Thuoc_PhieuNhap_ID"));
+
+                //search.Properties.DataSource
+                var listThuoc = gridColThuoc_ID.DataSource as List<dynamic>;
+                if (listThuoc == null) return;
+
+                var x = listThuoc.FirstOrDefault(t => t.ID == thuoc_PhieuNhap_ID);
+
+                var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuXuat;
+                if (ctXuat == null) return;
+
+                gridView1.SetRowCellValue(i, "TonKhoLo", x.TonKhoLo);
+                gridView1.SetRowCellValue(i, "Barcode", x.Barcode);
+                gridView1.SetRowCellValue(i, "HSD", x.HSD);
+                gridView1.SetRowCellValue(i, "GiaBanLe", x.GiaBanLe);
+                gridView1.SetRowCellValue(i, "GiaBanBuon", x.GiaBanBuon);
+                gridView1.SetRowCellValue(i, "ThuocID", x.ThuocID);
+
+                //ctXuat.SoLuong = x.TonKhoLo;
+                //ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Theo_DVT_Thuoc_ID;
+            }
+            
+
+            gridView1.PostEditor();
+
             chkDeNghiHuy.ReadOnly = false;
 
-            if(obj_PhieuXuat.TrangThaiPhieu_ID == 2)
+            if (obj_PhieuXuat.TrangThaiPhieu_ID == 2)
+            {
                 chkDeNghiHuy.EditValue = true;
+                btnLuu.Enabled = false;
+                btnXoa.Enabled = true;
+            }
+                
+
         }
 
         private void LoadNCC_KH()
@@ -172,6 +218,17 @@ namespace QLBV_DEV
             //gridView1.SetRowCellValue(_index, "SoLuong", obj_CT_Thuoc.SoLuong);
             //gridView1.SetRowCellValue(_index, "SoLo", obj_CT_Thuoc.SoLo);
         }
+
+        // Cập nhật tổng cộng tiền
+        private void CapNhatTongCong()
+        {
+            double tongtien = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
+            double thuesuat = Convert.ToDouble(txtThueSuat.Text.Trim().Replace("VNĐ", ""));
+            double chietkhau = Convert.ToDouble(txtChietKhau.Text.Trim().Replace("VNĐ", ""));
+
+            txtTongCong.Text = (tongtien + thuesuat - chietkhau).ToString();
+        }
+
         #endregion
 
         #region events
@@ -209,7 +266,7 @@ namespace QLBV_DEV
                 int thueSuat            = Convert.ToInt32(cbbThueSuat.EditValue.ToString().Replace("%",""));
                 String soHD             = txtSoHoaDon.Text.Trim();
                 DateTime ngayVietHD     = dateNgayVietHD.DateTime;
-                int userID              = 100000;
+                int userID              = Convert.ToInt32(obj_NhanVien.ID);       // 10000
                 double tongtien         = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
                 double chietkhau        = Convert.ToDouble(txtChietKhau.Text);
 
@@ -318,6 +375,8 @@ namespace QLBV_DEV
                             MessageBox.Show("Lưu thành công");
                             btnLuu.Enabled = false;
                             chkDeNghiHuy.ReadOnly = false;
+
+                            frmMain frmMain = new frmMain(3);
                         }
                         catch (Exception)
                         {
@@ -472,19 +531,120 @@ namespace QLBV_DEV
             CapNhatTongCong();
         }
 
-        #endregion
+                
 
-
-        // Cập nhật tổng cộng tiền
-        private void CapNhatTongCong()
+        private void chkDeNghiHuy_CheckedChanged(object sender, EventArgs e)
         {
-            double tongtien = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
-            double thuesuat = Convert.ToDouble(txtThueSuat.Text.Trim().Replace("VNĐ", ""));
-            double chietkhau = Convert.ToDouble(txtChietKhau.Text.Trim().Replace("VNĐ", ""));
-
-            txtTongCong.Text = (tongtien + thuesuat - chietkhau).ToString();
+            if (phieuxuat_ID > 0)
+            {
+                PhieuXuatThuoc obj_PhieuXuat;
+                obj_PhieuXuat = rpo_PhieuXuat.GetSingle(phieuxuat_ID);
+                if(Convert.ToBoolean(chkDeNghiHuy.EditValue)){
+                    obj_PhieuXuat.TrangThaiPhieu_ID = 2;
+                    rpo_PhieuXuat.Save(obj_PhieuXuat);
+                }
+            }
         }
 
-        
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (phieuxuat_ID > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show(txtSoPhieu.Text, "Xác nhận xóa?", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (gridView1.DataRowCount > 0)
+                    {
+                        using (var dbContextTransaction = db.Database.BeginTransaction())
+                        {
+                            try
+                            {
+                                PhieuXuatThuoc obj_PhieuXuat = rpo_PhieuXuat.GetSingle(phieuxuat_ID);
+                                if(obj_PhieuXuat != null){
+                                    /// Cập nhật lại cho 
+                                    obj_PhieuXuat.Xoa       = true;
+                                    obj_PhieuXuat.UserXoa   = obj_NhanVien.ID;
+                                    obj_PhieuXuat.TrangThaiPhieu_ID = 4;        // Trạng thái: đã xóa/hủy
+                                    rpo_PhieuXuat.Save(obj_PhieuXuat);
+
+                                    /// Khi tao 1 phiếu xuất thành công -> tạo các Chi tiết Thuốc theo phiếu xuất đó
+                                    if (obj_PhieuXuat.ID != null)
+                                    {
+                                        for (int i = 0; i < gridView1.DataRowCount; i++)
+                                        {
+                                            CT_Thuoc_PhieuXuat obj_CT_Thuoc;
+                                            int ct_thuoc_ID = 0;
+                                            long ct_phieunhap_ID = 0;
+                                            long thuoc_ID = 0;
+                                            int soluong = 0;
+
+                                            /// Kiểm tra xem ID đã tồn tại trong 'row' chưa
+                                            if (gridView1.GetRowCellValue(i, "ID") != "" && Convert.ToInt32(gridView1.GetRowCellValue(i, "ID")) > 0)
+                                            {
+                                                ct_thuoc_ID = Convert.ToInt32(gridView1.GetRowCellValue(i, "ID"));
+                                                obj_CT_Thuoc = rpo_CT_Thuoc.GetSingle(ct_thuoc_ID);
+                                                if (obj_CT_Thuoc != null)
+                                                {
+                                                    obj_CT_Thuoc.GiaBan     = 0;
+                                                    obj_CT_Thuoc.TongTien   = 0;
+                                                    obj_CT_Thuoc.SoLuong    = 0;
+
+                                                    /// Lưu lại 1 Chi tiết Thuốc
+                                                    rpo_CT_Thuoc.Save(obj_CT_Thuoc);
+                                                }
+                                            }
+
+                                            ct_phieunhap_ID = Convert.ToInt64(gridView1.GetRowCellValue(i, "CT_Thuoc_PhieuNhap_ID"));
+                                            soluong = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
+                                            thuoc_ID = Convert.ToInt64(gridView1.GetRowCellValue(i, "ThuocID"));                                  
+
+                                            /// Trả lại thuốc theo CT_Thuoc_PhieuNhap
+                                            CT_Thuoc_PhieuNhapRepository rpo_CT_PhieuNhap = new CT_Thuoc_PhieuNhapRepository();
+                                            CT_Thuoc_PhieuNhap obj_CT_PhieuNhap = rpo_CT_PhieuNhap.GetSingle(ct_phieunhap_ID);
+                                            if (obj_CT_PhieuNhap != null)
+                                            {
+                                                if (obj_CT_PhieuNhap.TonKho >= 0)
+                                                    obj_CT_PhieuNhap.TonKho += soluong;
+                                                else
+                                                    obj_CT_PhieuNhap.TonKho = soluong;
+
+                                                rpo_CT_PhieuNhap.Save(obj_CT_PhieuNhap);
+                                            }
+
+                                            /// Cập số lượng tồn kho Thuốc
+                                            ThuocRepository rpo_Thuoc = new ThuocRepository();
+                                            Thuoc obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
+
+                                            if (obj_Thuoc != null)
+                                            {
+                                                obj_Thuoc.TonKho = rpo_Thuoc.GetCountTonKho(thuoc_ID);
+
+                                                rpo_Thuoc.Save(obj_Thuoc);
+                                            }
+
+                                        }
+                                    }
+                                    //this.Close();
+                                    MessageBox.Show("Xóa thành công");
+                                    this.Close();
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                dbContextTransaction.Rollback();
+                                MessageBox.Show("Quá trình xử lý không thành công");
+                            }
+                        }
+                    } 
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+        }
+
     }
+    #endregion
 }

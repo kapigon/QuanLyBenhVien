@@ -11,7 +11,7 @@ using QLBV_DEV.Repository;
 
 namespace QLBV_DEV
 {
-    public partial class frmDSPhieuXuat : DevExpress.XtraEditors.XtraForm
+    public partial class frmDSPhieuXuatHuy : DevExpress.XtraEditors.XtraForm
     {
         #region params
         HospitalEntities db = new HospitalEntities();
@@ -22,7 +22,7 @@ namespace QLBV_DEV
         int iRow;
         #endregion
 
-        public frmDSPhieuXuat()
+        public frmDSPhieuXuatHuy()
         {
             InitializeComponent();
             LoadNCC();
@@ -39,7 +39,7 @@ namespace QLBV_DEV
             var result = from phieuxuat in db.PhieuXuatThuoc
                         //join ncc_kh in db.NCC_KH on phieuxuat.NCC_KH_ID equals ncc_kh.ID
                          from kh in db.NCC_KH.Where(kh => kh.ID == phieuxuat.NCC_KH_ID).DefaultIfEmpty()
-                        where phieuxuat.Xoa != true && phieuxuat.TrangThaiPhieu_ID == 1
+                        where phieuxuat.TrangThaiPhieu_ID == 2          // Trạng thái Hủy
                         orderby phieuxuat.ID ascending
                         select new
                         {
@@ -88,40 +88,7 @@ namespace QLBV_DEV
         {
             iRow = gridView1.FocusedRowHandle;
         }
-        
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (iRow >= 0)
-            {
-                String soPhieu = gridView1.GetRowCellValue(iRow, "SoPhieu").ToString();
-                DialogResult dialogResult = MessageBox.Show(soPhieu, "Xác nhận xóa?", MessageBoxButtons.YesNo);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
-                    //int userID = 100000;
-
-                    PhieuXuatThuoc obj_PhieuXuat = rpo_PhieuXuat.GetSingle(id);
-                    obj_PhieuXuat.Xoa = true;
-                    //obj_PhieuXuat.NgayXoa = DateTime.Now; //// **
-
-                    rpo_PhieuXuat.Save(obj_PhieuXuat);
-
-
-                    // Tải lại danh sách nhà cung cấp
-                    LoadDS_PhieuXuat();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-            else
-            {
-                MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
-            }
-        }
-
+                
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (iRow >= 0)

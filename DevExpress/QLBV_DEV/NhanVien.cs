@@ -14,7 +14,7 @@ namespace QLBV_DEV
     
     public partial class NhanVien
     {
-        public long ID { get; set; }
+        public int ID { get; set; }
         public Nullable<int> Khoa_ID { get; set; }
         public Nullable<int> PhanQuyen_ID { get; set; }
         public string HoVaTen { get; set; }
