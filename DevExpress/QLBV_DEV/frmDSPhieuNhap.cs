@@ -175,5 +175,15 @@ namespace QLBV_DEV
             grdDS_PhieuNhap.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
         }
         #endregion
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            //sfdDSPhieuNhap.Filter = "Excel Worksheets|*.xls";
+            sfdDSPhieuNhap.Filter = "Excel files (*.xls or .xlsx)|.xls;*.xlsx";
+            if (sfdDSPhieuNhap.ShowDialog() == DialogResult.OK)
+            {
+                grdDS_PhieuNhap.ExportToXls(sfdDSPhieuNhap.FileName);
+            }
+        }
     }
 }

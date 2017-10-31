@@ -44,7 +44,7 @@ namespace QLBV_DEV
 
                         //join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
                          //from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
-                        where phieuxuat.NgayTao != DateTime.Today
+                        where phieuxuat.NgayTao == DateTime.Today
                         //orderby phieunhap.ID ascending
                         select new
                         {
@@ -54,6 +54,7 @@ namespace QLBV_DEV
                             SoLuong     = ct_phieuxuat.SoLuong,
                             GiaBan      = ct_phieuxuat.GiaBan,
                             DVT         = dvt.TenDVT,
+                            NgayBan     = phieuxuat.NgayTao,
                             TongTien    = ct_phieuxuat.TongTien
                             //SoPhieu     = phieux.SoPhieu,
                             //SoHoaDon    = phieunhap.SoHoaDon,

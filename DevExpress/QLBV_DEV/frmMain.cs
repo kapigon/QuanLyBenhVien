@@ -66,17 +66,49 @@ namespace QLBV_DEV
         //    frmKiemKe               = new frmKiemKe();
         //    frmCanhbaotrangchu      = new frmCanhbaotrangchu();
         //}
+        private Dictionary<Type, Form> ActiveForms;
 
         public frmMain()
         {
 
             InitializeComponent();
+            this.ActiveForms = new Dictionary<Type, Form>();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2010 Blue");
             LoadCanhBaoTrangChu();
+
 
             QLBV_DEV.Helpers.LoginInfo.nhanVien = rpo_NhanVien.GetSingle(100000);
         }
 
+        private void ShowForm<TSource>() where TSource : Form
+        {
+            Form form = null;
+
+            if (this.ActiveForms.ContainsKey(typeof(TSource)))
+            {
+                form = this.ActiveForms[typeof(TSource)];
+                form.Activate();
+            }
+            else
+            {
+                form = Activator.CreateInstance<TSource>();
+                form.MdiParent = this;
+                //form.FormClosed += form_FormClosed;
+                form.FormClosed += (sender1, eventArgs) => {
+                    this.ActiveForms.Remove(form.GetType());
+                    form = Activator.CreateInstance<TSource>(); 
+                };
+                form.Show();
+
+                this.ActiveForms.Add(typeof(TSource), form);
+            }
+        }
+
+        private void form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //throw new NotImplementedException();
+            this.ActiveForms.Remove(sender.GetType());
+        }
         /// Reload Form 
         public frmMain(int type)
         {
@@ -113,7 +145,7 @@ namespace QLBV_DEV
 
         //--------------------------------------------------------------------------------
         //Kiểm tra đã bật Tab Form chưa
-        private Form kiemtraform(Type ftype)
+        public Form kiemtraform(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
             {
@@ -127,35 +159,13 @@ namespace QLBV_DEV
         //--------------------------------------------------------------------------------
         private void LoadCanhBaoTrangChu()
         {
-            frmCanhbaotrangchu frmCanhbaotrangchu = new frmCanhbaotrangchu();
-            Form frm = kiemtraform(typeof(frmCanhbaotrangchu));
-            if (frm == null)
-            {
-                frmCanhbaotrangchu.MdiParent = this;
-                frmCanhbaotrangchu.FormClosed += (sender1, eventArgs) => { frmCanhbaotrangchu = new frmCanhbaotrangchu(); };
-                frmCanhbaotrangchu.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmCanhbaotrangchu>();
         }
         //---------------------------------------------------------------------------------
 
         private void btnTaoPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmPhieuNhapThuoc));
-            if (frm == null)
-            {
-                //frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
-                frmPhieuNhapThuoc.MdiParent = this;
-                frmPhieuNhapThuoc.FormClosed += (sender1, eventArgs) => { frmPhieuNhapThuoc = new frmPhieuNhapThuoc(); };
-                frmPhieuNhapThuoc.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmPhieuNhapThuoc>();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -165,304 +175,108 @@ namespace QLBV_DEV
 
         private void btnDSPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmDSPhieuNhap));
-            if (frm == null)
-            {
-                frmDSPhieuNhap.MdiParent = this;
-                frmDSPhieuNhap.FormClosed += (sender1, eventArgs) => { frmDSPhieuNhap = new frmDSPhieuNhap(); };
-                frmDSPhieuNhap.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmDSPhieuNhap>();
+            //Form frm = kiemtraform(typeof(frmDSPhieuNhap));
+            //if (frm == null)
+            //{
+            //    frmDSPhieuNhap.MdiParent = this;
+            //    frmDSPhieuNhap.FormClosed += (sender1, eventArgs) => { frmDSPhieuNhap = new frmDSPhieuNhap(); };
+            //    frmDSPhieuNhap.Show();
+            //}
+            //else
+            //{
+            //    frm.Activate();
+            //}
         }
 
         private void btnThemNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmThemNCC_KH));
-            if (frm == null)
-            {
-                frmThemNCC_KH.MdiParent = this;
-                frmThemNCC_KH.FormClosed += (sender1, eventArgs) => { frmThemNCC_KH = new frmThemNCC_KH(); };
-                frmThemNCC_KH.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmThemNCC_KH>();
         }
 
         private void btnThemThuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmThemThuoc));
-            if (frm == null)
-            {
-                frmThemThuoc.MdiParent = this;
-                frmThemThuoc.FormClosed += (sender1, eventArgs) => { frmThemThuoc = new frmThemThuoc(); };
-                frmThemThuoc.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmThemThuoc>();
         }
 
-        private void btnDSNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
+        public void btnDSNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmDSNCC_KH));
-            if (frm == null)
-            {
-                frmDSNCC_KH.MdiParent = this;
-                frmDSNCC_KH.FormClosed += (sender1, eventArgs) => { frmDSNCC_KH = new frmDSNCC_KH(); };
-                frmDSNCC_KH.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmDSNCC_KH>();
         }
 
         private void btnDSNuocSanXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmNuocSanXuat));
-            if (frm == null)
-            {
-                frmNuocSanXuat.MdiParent = this;
-                frmNuocSanXuat.FormClosed += (sender1, eventArgs) => { frmNuocSanXuat = new frmNuocSanXuat(); };
-                frmNuocSanXuat.Show();
-                
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmNuocSanXuat>();
         }
-
-
-
+        
         private void btnHoatChat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmHoatChat));
-            if (frm == null)
-            {
-                frmHoatChat.MdiParent = this;
-                frmHoatChat.FormClosed += (sender1, eventArgs) => { frmHoatChat = new frmHoatChat(); };
-                frmHoatChat.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmHoatChat>();
         }
 
         private void btnDonViTinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmKho));
-            if (frm == null)
-            {
-                frmDonViTinh.MdiParent = this;
-                frmDonViTinh.FormClosed += (sender1, eventArgs) => { frmDonViTinh = new frmDonViTinh(); };
-                frmDonViTinh.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmKho>();
         }
 
         private void btnNhomThuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmNhomThuoc));
-            if (frm == null)
-            {
-                frmNhomThuoc.MdiParent = this;
-                frmNhomThuoc.FormClosed += (sender1, eventArgs) => { frmNhomThuoc = new frmNhomThuoc(); };
-                frmNhomThuoc.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmNhomThuoc>();
         }
 
         private void btnViTri_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmKho));
-            if (frm == null)
-            {
-                frmViTri.MdiParent = this;
-                frmViTri.FormClosed += (sender1, eventArgs) => { frmViTri = new frmViTri(); };
-                frmViTri.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmKho>();
         }
 
         private void btnHangSanXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmHangSanXuat));
-            if (frm == null)
-            {
-                frmHangSanXuat.MdiParent = this;
-                frmHangSanXuat.FormClosed += (sender1, eventArgs) => { frmHangSanXuat = new frmHangSanXuat(); };
-                frmHangSanXuat.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmHangSanXuat>();
         }
 
         private void btnKho_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmKho));
-            if (frm == null)
-            {
-                frmKho.MdiParent = this;
-                frmKho.FormClosed += (sender1, eventArgs) => { frmKho = new frmKho(); };
-                frmKho.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmKho>();
         }
 
         private void btnDSThuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmDS_Thuoc));
-            if (frm == null)
-            {
-                frmDS_Thuoc.MdiParent = this;
-                frmDS_Thuoc.FormClosed += (sender1, eventArgs) => { frmDS_Thuoc = new frmDS_Thuoc(); }; ;
-                frmDS_Thuoc.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmDS_Thuoc>();
         }
 
         private void btnTaoPhieuXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmPhieuXuatThuoc));
-            if (frm == null)
-            {
-                frmPhieuXuatThuoc.MdiParent = this;
-                frmPhieuXuatThuoc.FormClosed += (sender1, eventArgs) => { frmPhieuXuatThuoc = new frmPhieuXuatThuoc(); };
-                frmPhieuXuatThuoc.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmPhieuXuatThuoc>();
         }
 
         private void btnCanDate1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmDSThuocCanDate));
-            if (frm == null)
-            {
-                frmDSThuocCanDate.MdiParent = this;
-                frmDSThuocCanDate.FormClosed += (sender1, eventArgs) => { frmDSThuocCanDate = new frmDSThuocCanDate(); };
-                frmDSThuocCanDate.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmDSThuocCanDate>();
         }
 
         private void btnThuocCanDate_tungloai_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmThuocCanDate_tungloai));
-            if (frm == null)
-            {
-                frmThuocCanDate_tungloai.MdiParent = this;
-                frmThuocCanDate_tungloai.FormClosed += (sender1, eventArgs) => { frmThuocCanDate_tungloai = new frmThuocCanDate_tungloai(); };
-                frmThuocCanDate_tungloai.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmThuocCanDate_tungloai>();
         }
 
         private void btnTonKhoTheoLo_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmTonKhoTheoLo));
-            if (frm == null)
-            {
-                frmTonKhoTheoLo.MdiParent = this;
-                frmTonKhoTheoLo.FormClosed += (sender1, eventArgs) => { frmTonKhoTheoLo = new frmTonKhoTheoLo(); };
-                frmTonKhoTheoLo.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmTonKhoTheoLo>();
         }
 
         private void btnTonKhoTheoThuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmTonKhoTheoThuoc));
-            if (frm == null)
-            {
-                frmTonKhoTheoThuoc.MdiParent = this;
-                frmTonKhoTheoThuoc.FormClosed += (sender1, eventArgs) => { frmTonKhoTheoThuoc = new frmTonKhoTheoThuoc(); };
-                frmTonKhoTheoThuoc.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmTonKhoTheoThuoc>();
         }
 
         private void btnTonkhoToiThieu_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmTonKhoToiThieu));
-            if (frm == null)
-            {
-                frmTonKhoToiThieu.MdiParent = this;
-                frmTonKhoToiThieu.FormClosed += (sender1, eventArgs) => { frmTonKhoToiThieu = new frmTonKhoToiThieu(); };
-                frmTonKhoToiThieu.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmTonKhoToiThieu>();
         }
 
         private void btnDSPhieuXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmDSPhieuXuat));
-            if (frm == null)
-            {
-                frmDSPhieuXuat.MdiParent = this;
-                frmDSPhieuXuat.FormClosed += (sender1, eventArgs) => { frmDSPhieuXuat = new frmDSPhieuXuat(); };
-                frmDSPhieuXuat.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmDSPhieuXuat>();
         }
 
         private void ribbon_Click(object sender, EventArgs e)
@@ -472,18 +286,7 @@ namespace QLBV_DEV
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmKiemKe));
-            if (frm == null)
-            {
-                frmKiemKe.MdiParent = this;
-                frmKiemKe.FormClosed += (sender1, eventArgs) => { frmKiemKe = new frmKiemKe(); };
-                frmKiemKe.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmKiemKe>();
         }
 
         private void ribbon_Click_1(object sender, EventArgs e)
@@ -493,18 +296,7 @@ namespace QLBV_DEV
 
         private void btnDSPhieuXuatHuy_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frmDSPhieuXuatHuy));
-            if (frm == null)
-            {
-                frmDSPhieuXuatHuy.MdiParent = this;
-                frmDSPhieuXuatHuy.FormClosed += (sender1, eventArgs) => { frmDSPhieuXuatHuy = new frmDSPhieuXuatHuy(); };
-                frmDSPhieuXuatHuy.Show();
-
-            }
-            else
-            {
-                frm.Activate();
-            }
+            this.ShowForm<frmDSPhieuXuatHuy>();
         }
     }
 }

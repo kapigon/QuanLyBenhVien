@@ -73,6 +73,7 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDS_BanHang)).BeginInit();
@@ -211,6 +212,7 @@
             this.SoLuong,
             this.DVT,
             this.GiaBan,
+            this.gridColumn2,
             this.gridColumn6});
             this.gridView1.GridControl = this.grdDS_BanHang;
             this.gridView1.Name = "gridView1";
@@ -294,7 +296,7 @@
             this.gridColumn6.Caption = "Tổng tiền";
             this.gridColumn6.DisplayFormat.FormatString = "C0";
             this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn6.FieldName = "TongTienTra";
+            this.gridColumn6.FieldName = "TongTien";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
@@ -613,6 +615,14 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Ngày bán";
+            this.gridColumn2.FieldName = "NgayBan";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 6;
+            // 
             // frmBaoCaoNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -706,5 +716,6 @@
         private DevExpress.XtraEditors.LookUpEdit cbbNCC_KH;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cbbCol_NCC_KH;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

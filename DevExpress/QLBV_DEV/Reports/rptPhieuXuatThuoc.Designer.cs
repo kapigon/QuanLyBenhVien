@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptPhieuXuatThuoc));
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.DataAccess.EntityFramework.EFConnectionParameters efConnectionParameters1 = new DevExpress.DataAccess.EntityFramework.EFConnectionParameters();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptPhieuXuatThuoc));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -44,6 +44,7 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -82,7 +83,6 @@
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrControlStyle1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.efDataSource1 = new DevExpress.DataAccess.EntityFramework.EFDataSource();
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
             this.objectDataSource2 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
             this.objectDataSource3 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
@@ -227,6 +227,13 @@
             this.xrLabel1});
             this.PageHeader.HeightF = 216.6667F;
             this.PageHeader.Name = "PageHeader";
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(624.4999F, 10.00001F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(52.50012F, 52.16667F);
             // 
             // xrTable1
             // 
@@ -574,13 +581,6 @@
             this.efDataSource1.ConnectionParameters = efConnectionParameters1;
             this.efDataSource1.Name = "efDataSource1";
             // 
-            // xrPictureBox1
-            // 
-            this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(624.4999F, 10.00001F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(52.50012F, 52.16667F);
-            // 
             // objectDataSource1
             // 
             this.objectDataSource1.DataSource = typeof(QLBV_DEV.Thuoc);
@@ -638,6 +638,10 @@
             this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
@@ -662,6 +666,14 @@
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
