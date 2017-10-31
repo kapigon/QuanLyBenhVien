@@ -38,7 +38,7 @@ namespace QLBV_DEV
             DevExpress.Utils.FormatInfo.AlwaysUseThreadFormat = true;
 
 
-            Application.Run(new frmMain());
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -75,9 +75,6 @@ namespace QLBV_DEV
             this.ActiveForms = new Dictionary<Type, Form>();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2010 Blue");
             LoadCanhBaoTrangChu();
-
-
-            QLBV_DEV.Helpers.LoginInfo.nhanVien = rpo_NhanVien.GetSingle(100000);
         }
 
         private void ShowForm<TSource>() where TSource : Form
