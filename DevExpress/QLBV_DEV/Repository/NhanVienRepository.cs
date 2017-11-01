@@ -25,6 +25,14 @@ namespace QLBV_DEV.Repository
             return (from _object in db.NhanVien where _object.ID == id select _object).FirstOrDefault();
         }
 
+        public NhanVien GetSingle(string userName, string password)
+        {
+            return (from _object in db.NhanVien
+                    where _object.TaiKhoan.ToLower().Equals(userName.ToLower())
+                    && _object.MatKhau.Equals(password)
+                    select _object).FirstOrDefault();
+        }
+
         public NhanVien GetSingle(string HoVaTen)
         {
             return (from c in db.NhanVien.AsEnumerable() where Helpers.StringClearFormat.ClearCharacterSpecial(c.HoVaTen) == HoVaTen select c).FirstOrDefault();
