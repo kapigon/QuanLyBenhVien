@@ -286,10 +286,6 @@ namespace QLBV_DEV
             this.ShowForm<frmKiemKe>();
         }
 
-        private void ribbon_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnDSPhieuXuatHuy_ItemClick(object sender, ItemClickEventArgs e)
         {

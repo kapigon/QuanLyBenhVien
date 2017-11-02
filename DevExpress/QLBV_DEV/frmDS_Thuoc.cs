@@ -24,10 +24,12 @@ namespace QLBV_DEV
         public frmDS_Thuoc()
         {
             InitializeComponent();
+
             LoadNhomThuoc();
             LoadTenThuoc();
             LoadHoatChat();
             LoadHangSanXuat();
+            LoadNuocSanXuat();
             LoadDS_Thuoc();
         }
         
@@ -67,7 +69,7 @@ namespace QLBV_DEV
                          {
                              ID = ncc.ID,
                              TenThuoc = ncc.TenThuoc,
-                             MaThuoc  = ncc.MaThuoc,
+                             MaThuoc  = ncc.MaThuoc
                          };
             cbbTenThuoc.Properties.DataSource = result.ToList();
             cbbTenThuoc.Properties.DisplayMember = "TenThuoc";
@@ -80,7 +82,7 @@ namespace QLBV_DEV
                          select new
                          {
                              ID = ncc.ID,
-                             TenNhom = ncc.TenNhom,
+                             TenNhom = ncc.TenNhom
                          };
             cbbNhomThuoc.Properties.DataSource = result.ToList();
             cbbNhomThuoc.Properties.DisplayMember = "TenNhom";
@@ -96,7 +98,7 @@ namespace QLBV_DEV
                          select new
                          {
                              ID = ncc.ID,
-                             TenHoatChat = ncc.TenHoatChat,
+                             TenHoatChat = ncc.TenHoatChat
                          };
 
             cbbHoatChat.Properties.DataSource = result.ToList();
@@ -110,12 +112,27 @@ namespace QLBV_DEV
                          select new
                          {
                              ID = ncc.ID,
-                             TenHangSX = ncc.TenHangSX,
+                             TenHangSX = ncc.TenHangSX
                          };
 
             cbbHangSanXuat.Properties.DataSource = result.ToList();
             cbbHangSanXuat.Properties.DisplayMember = "TenHangSX";
             cbbHangSanXuat.Properties.ValueMember = "ID";
+
+        }
+
+        private void LoadNuocSanXuat()
+        {
+            var result = from ncc in db.NuocSanXuat
+                         select new
+                         {
+                             ID = ncc.ID,
+                             TenNuoc = ncc.TenNuoc
+                         };
+
+            cbbNuocSanXuat.Properties.DataSource = result.ToList();
+            cbbNuocSanXuat.Properties.DisplayMember = "TenNuoc";
+            cbbNuocSanXuat.Properties.ValueMember = "ID";
 
         }
         #endregion
@@ -144,15 +161,16 @@ namespace QLBV_DEV
         private void btnTim_Click(object sender, EventArgs e)
         {
 
-            int thuoc_id = 0;
-            String tenthuoc = cbbTenThuoc.Text.Trim();
-            int nhomthuoc_ID = cbbNhomThuoc.EditValue != "" ? Convert.ToInt32(cbbNhomThuoc.EditValue) : 0;
-            int hoatchat_ID = cbbHoatChat.EditValue != "" ? Convert.ToInt32(cbbHoatChat.EditValue) : 0;
+            int thuoc_Id = 0;
+            //String tenthuoc = cbbTenThuoc.Text.Trim();
+            int nhomthuoc_Id = cbbNhomThuoc.EditValue != "" ? Convert.ToInt32(cbbNhomThuoc.EditValue) : 0;
+            int hoatchat_Id = cbbHoatChat.EditValue != "" ? Convert.ToInt32(cbbHoatChat.EditValue) : 0;
             int hangsanxuat_Id = cbbHangSanXuat.EditValue != "" ? Convert.ToInt32(cbbHangSanXuat.EditValue) : 0;
+            int nuocsanxuat_Id = Convert.ToInt32(cbbNuocSanXuat.EditValue);
             bool kichhoat = Convert.ToBoolean(chkKichHoat.EditValue);
 
                  
-            var query = rpo_Thuoc.search(thuoc_id, tenthuoc, nhomthuoc_ID, hoatchat_ID, hangsanxuat_Id, kichhoat);
+            var query = rpo_Thuoc.search(thuoc_Id, nhomthuoc_Id, hoatchat_Id, hangsanxuat_Id, nuocsanxuat_Id, kichhoat);
             grvDSThuoc.DataSource = new BindingList<Thuoc>(query.ToList());
         }
 

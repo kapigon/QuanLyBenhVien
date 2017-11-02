@@ -125,7 +125,7 @@ namespace QLBV_DEV.Repository
             }
         }
 
-        public IQueryable<Thuoc> search(int thuoc_id, String tenthuoc, int nhomthuoc_ID, int hoatchat_ID, int hangsanxuat_Id, bool kichhoat)
+        public IQueryable<Thuoc> search(int thuoc_id, int nhomthuoc_ID, int hoatchat_ID, int hangsanxuat_Id, int nuocsanxuat_Id, bool kichhoat)
         {
             var query = from _object in db.Thuoc 
                         //join nt in db.NhomThuoc on _object.NhomThuoc_ID equals nt.ID
@@ -134,13 +134,14 @@ namespace QLBV_DEV.Repository
                         from hoatchat in db.HoatChat.Where(hc => hc.ID == _object.HoatChat_ID).DefaultIfEmpty()
                         from nhomthuoc in db.NhomThuoc.Where(nt => nt.ID == _object.NhomThuoc_ID).DefaultIfEmpty()
                         from hangsanxuat in db.HangSanXuat.Where(hsx => hsx.ID == _object.HangSanXuat_ID).DefaultIfEmpty()
+                        from nuocsanxuat in db.NuocSanXuat.Where(nsx => nsx.ID == _object.HangSanXuat_ID).DefaultIfEmpty()
                         select _object;
 
             if (thuoc_id > 0)
                 query = query.Where(p =>p.ID == thuoc_id);
 
-            if (tenthuoc != "")
-                query = query.Where(p => p.TenThuoc.Equals(tenthuoc));
+            //if (tenthuoc != "")
+            //    query = query.Where(p => p.TenThuoc.Equals(tenthuoc));
 
             if (nhomthuoc_ID > 0)
                 query = query.Where(p => p.NhomThuoc_ID == nhomthuoc_ID);
@@ -150,6 +151,9 @@ namespace QLBV_DEV.Repository
 
             if (hangsanxuat_Id > 0)
                 query = query.Where(p => p.HangSanXuat_ID == hangsanxuat_Id);
+
+            if (nuocsanxuat_Id > 0)
+                query = query.Where(p => p.NuocSanXuat_ID == nuocsanxuat_Id);
                 query = query.Where(p => p.KichHoat == kichhoat);
 
             return query;

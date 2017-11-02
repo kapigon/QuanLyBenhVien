@@ -153,6 +153,7 @@
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NhomThuoc_ID" Type="int" />
           <Property Name="HangSanXuat_ID" Type="int" />
+          <Property Name="NuocSanXuat_ID" Type="int" />
           <Property Name="HoatChat_ID" Type="int" />
           <Property Name="DVT_Nguyen_ID" Type="int" />
           <Property Name="DVT_Le_ID" Type="int" />
@@ -475,6 +476,7 @@
           <Property Name="TonKhoToiThieu" Type="Int32" />
           <Property Name="NgayTao" Type="DateTime" Precision="0" />
           <Property Name="KichHoat" Type="Boolean" />
+          <Property Name="NuocSanXuat_ID" Type="Int32" />
         </EntityType>
         <EntityType Name="CT_Thuoc_PhieuNhap">
           <Key>
@@ -767,6 +769,7 @@
           <EntitySetMapping Name="Thuoc">
             <EntityTypeMapping TypeName="HospitalModel.Thuoc">
               <MappingFragment StoreEntitySet="Thuoc">
+                <ScalarProperty Name="NuocSanXuat_ID" ColumnName="NuocSanXuat_ID" />
                 <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
                 <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
                 <ScalarProperty Name="TonKhoToiThieu" ColumnName="TonKhoToiThieu" />

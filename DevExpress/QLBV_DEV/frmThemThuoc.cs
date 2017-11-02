@@ -21,6 +21,7 @@ namespace QLBV_DEV
         DVTRepository           rpo_DVT         = new DVTRepository();
         HoatChatRepository      rpo_HoatChat    = new HoatChatRepository();
         HangSanXuatRepository   rpo_HangSX      = new HangSanXuatRepository();
+        NuocSanXuatRepository   rpo_NuocSX      = new NuocSanXuatRepository();
         bool isUpdate = false;
         long thuoc_ID;
         #endregion
@@ -50,6 +51,10 @@ namespace QLBV_DEV
             cbbHangSanXuat.Properties.DataSource = rpo_HangSX.GetAll().ToList();
             cbbHangSanXuat.Properties.DisplayMember = "TenHangSX";
             cbbHangSanXuat.Properties.ValueMember = "ID";
+            ///Nước sản xuất
+            cbbNuocSanXuat.Properties.DataSource = rpo_NuocSX.GetAll().ToList();
+            cbbNuocSanXuat.Properties.DisplayMember = "TenNuoc";
+            cbbNuocSanXuat.Properties.ValueMember = "ID";
 
             /// Hoạt Chất
             cbbHoatChat.Properties.DataSource = rpo_HoatChat.GetAll().ToList();
@@ -67,6 +72,7 @@ namespace QLBV_DEV
             cbbDonViNguyen.EditValue    = obj_Thuoc.DVT_Nguyen_ID;
             cbbDonViLe.EditValue        = obj_Thuoc.DVT_Le_ID;
             cbbHangSanXuat.EditValue    = obj_Thuoc.HangSanXuat_ID;
+            cbbNuocSanXuat.EditValue    = obj_Thuoc.NuocSanXuat_ID;
             cbbHoatChat.EditValue       = obj_Thuoc.HoatChat_ID;
             txtQuyCach.Text             = obj_Thuoc.QuyCach.ToString();
             txtTonKho.Text              = obj_Thuoc.TonKho.ToString();        
@@ -100,6 +106,7 @@ namespace QLBV_DEV
             obj_Thuoc.DVT_Nguyen_ID         = Convert.ToInt32(cbbDonViNguyen.EditValue);
             obj_Thuoc.DVT_Le_ID             = Convert.ToInt32(cbbDonViLe.EditValue);
             obj_Thuoc.HangSanXuat_ID        = Convert.ToInt32(cbbHangSanXuat.EditValue);
+            obj_Thuoc.NuocSanXuat_ID        = Convert.ToInt32(cbbNuocSanXuat.EditValue);
             obj_Thuoc.HoatChat_ID           = Convert.ToInt32(cbbHoatChat.EditValue);
             obj_Thuoc.QuyCach               = Convert.ToInt32(txtQuyCach.Text.Trim());
             obj_Thuoc.TonKho                = Convert.ToInt32(txtTonKho.Text.Trim());
@@ -155,6 +162,24 @@ namespace QLBV_DEV
             }
         }
         #endregion
+
+        private void cbbNuocSanXuat_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Kind.ToString() == "Plus")
+            {
+                frmNuocSanXuat frmNuocSanXuat = new frmNuocSanXuat();
+                frmNuocSanXuat.ShowDialog();
+            }
+        }
+
+        private void cbbHoatChat_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Kind.ToString() == "Plus")
+            {
+                frmHoatChat frmHoatChat = new frmHoatChat();
+                frmHoatChat.ShowDialog();
+            }
+        }
 
 
         
