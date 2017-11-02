@@ -31,69 +31,54 @@ namespace QLBV_DEV
         #region methods
         private void LoadBangKeCT_Xuat_Nhap_Ton_Thuoc()
         {
-            //var result = from nv in db.PhieuNhapThuoc
-            //             where nv.Xoa == false
-            //             select nv;
-            //var result = rpo_PhieuNhap.GetAllNotDelete();
-            var result = from ct_phieuxuat in db.CT_Thuoc_PhieuXuat
-                         join phieuxuat in db.PhieuXuatThuoc on ct_phieuxuat.PhieuXuatHang_ID equals phieuxuat.ID
-                         join ct_phieunhap in db.CT_Thuoc_PhieuNhap on ct_phieuxuat.CT_Thuoc_PhieuNhap_ID equals ct_phieunhap.ID
-                         join thuoc in db.Thuoc on ct_phieunhap.Thuoc_ID equals thuoc.ID
-                         join dvt in db.DonViTinh on ct_phieuxuat.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
+            DateTime tuNgay = Convert.ToDateTime(dateTuNgay.EditValue);
+            DateTime denNgay = Convert.ToDateTime(dateDenNgay.EditValue);
+            // Group nhom theo CT_Thuoc_PhieuNhap_ID
+            var qCT_PhieuXuat = from ct_xuat in db.CT_Thuoc_PhieuXuat
+                                where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
+                                group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
+                                select new
+                                {
+                                    gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
+                                    SoLuong = gr_CT_Xuat.Sum(p => p.SoLuong),
+                                    GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
+                                };
 
-                        //join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
-                         //from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
-                         where phieuxuat.NgayTao >= dateTuNgay && phieuxuat.NgayTao <= dateDenNgay
-                        //orderby phieunhap.ID ascending
+            var query = from ct_nhap    in db.CT_Thuoc_PhieuNhap
+                        from ct_xuat    in qCT_PhieuXuat.Where(ct_xuat => ct_xuat.CT_Thuoc_PhieuNhap_ID == ct_nhap.ID).DefaultIfEmpty()
+                        //from ct_xuat in db.CT_Thuoc_PhieuXuat.Where(ct_xuat => ct_xuat.CT_Thuoc_PhieuNhap_ID == ct_nhap.ID)//.DefaultIfEmpty()
+                        join thuoc      in db.Thuoc                 on ct_nhap.Thuoc_ID equals thuoc.ID
+                        where (ct_nhap.NgayNhap >= tuNgay && ct_nhap.NgayNhap <= denNgay)
                         select new
                         {
-                            ID          = thuoc.ID,
-                            MaThuoc     = thuoc.MaThuoc,
-                            TenThuoc    = thuoc.TenThuoc,
-                            SoLuong     = ct_phieuxuat.SoLuong,
-                            GiaBan      = ct_phieuxuat.GiaBan,
-                            DVT         = dvt.TenDVT,
-                            NgayBan     = phieuxuat.NgayTao,
-                            TongTien    = ct_phieuxuat.TongTien
-                            //SoPhieu     = phieux.SoPhieu,
-                            //SoHoaDon    = phieunhap.SoHoaDon,
-                            //NgayNhap    = phieunhap.NgayNhap,
-                            //NCC_KH_ID   = ncc_kh.TenNCC_KH,
-                            //ThueSuat    = phieunhap.ThueSuat + "%",
-                            //ChietKhau   = phieunhap.ChietKhau,
-                            //TongTienTra = phieunhap.TongTienTra
+                            Thuoc_ID        = thuoc.ID,
+                            MaThuoc         = thuoc.MaThuoc,
+                            TenThuoc        = thuoc.TenThuoc,
+                            TonDauKy        = ct_nhap.TonKho + ct_xuat.SoLuong - ct_nhap.SoLuong,
+                            NhapTrongKy     = ct_nhap.SoLuong,
+                            XuatTrongky     = ct_xuat.SoLuong,
+                            GiaXuatTrongKy  = ct_xuat.GiaBan,
+                            TonCuoiKy       = ct_nhap.TonKho - ct_xuat.SoLuong + ct_nhap.SoLuong
                         };
-            grdDS_BanHang.DataSource = result.ToList();
+
+            grdDS_BanHang.DataSource = query.ToList();
         }
 
-        private void LoadNCC()
-        {
-            NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
-            // lấy ra NCC và vừa là NCC vừa là KH
-            cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
-            //cbbNCC.DataSource = result.ToList();
-            cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
-            cbbNCC_KH.Properties.ValueMember = "ID";
-
-            cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
-            cbbCol_NCC_KH.DisplayMember = "TenNCC_KH";
-            cbbCol_NCC_KH.ValueMember = "ID";
-        }
-
+       
         #endregion
 
         #region events
-       
-        
+
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
-      
+
+
         private void frmDSPhieuNhap_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
@@ -105,6 +90,7 @@ namespace QLBV_DEV
 
             //var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
             //grdDS_BanHang.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+            LoadBangKeCT_Xuat_Nhap_Ton_Thuoc();
         }
         #endregion
     }

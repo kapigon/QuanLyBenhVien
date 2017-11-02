@@ -25,7 +25,6 @@ namespace QLBV_DEV
         public frmBangKeNhap_Xuat_Ton()
         {
             InitializeComponent();
-            LoadNCC();
             LoadDoanhThuTheoNgay();
         }
 
@@ -67,20 +66,7 @@ namespace QLBV_DEV
             grdDS_BanHang.DataSource = result.ToList();
         }
 
-        private void LoadNCC()
-        {
-            NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
-            // lấy ra NCC và vừa là NCC vừa là KH
-            cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
-            //cbbNCC.DataSource = result.ToList();
-            cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
-            cbbNCC_KH.Properties.ValueMember = "ID";
-
-            cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
-            cbbCol_NCC_KH.DisplayMember = "TenNCC_KH";
-            cbbCol_NCC_KH.ValueMember = "ID";
-        }
-
+       
         #endregion
 
         #region events
@@ -177,14 +163,14 @@ namespace QLBV_DEV
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            int ncc_kh_ID       = Convert.ToInt32(cbbNCC_KH.EditValue); 
-            String soPhieu      = txtSoPhieu.Text.Trim();
-            DateTime tuNgay     = Convert.ToDateTime(dateTuNgay.EditValue);
-            DateTime denNgay    = Convert.ToDateTime(dateDenNgay.EditValue);
-            String soHoaDon     = txtSoHoaDon.Text.Trim();
+            //int ncc_kh_ID       = Convert.ToInt32(cbbNCC_KH.EditValue); 
+            //String soPhieu      = txtSoPhieu.Text.Trim();
+            //DateTime tuNgay     = Convert.ToDateTime(dateTuNgay.EditValue);
+            //DateTime denNgay    = Convert.ToDateTime(dateDenNgay.EditValue);
+            //String soHoaDon     = txtSoHoaDon.Text.Trim();
 
-            var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
-            grdDS_BanHang.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+            //var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
+            //grdDS_BanHang.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
         }
         #endregion
     }

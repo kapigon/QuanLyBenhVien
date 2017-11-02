@@ -66,6 +66,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDS_BanHang)).BeginInit();
@@ -153,6 +154,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
             this.gridColumn1,
             this.MaThuoc,
             this.TenThuoc,
@@ -516,14 +518,22 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
-            // frmBangKeNhap_Xuat_Ton
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Thuoc_ID";
+            this.gridColumn2.FieldName = "Thuoc_ID";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // frmBangKeChiTietNhap_Xuat_Ton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 534);
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmBangKeNhap_Xuat_Ton";
+            this.Name = "frmBangKeChiTietNhap_Xuat_Ton";
             this.Text = "Bảng kê Nhập - Xuất - Tồn thuốc";
             this.Load += new System.EventHandler(this.frmDSPhieuNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -595,5 +605,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn NhapTrongKy;
         private DevExpress.XtraGrid.Columns.GridColumn XuatTrongky;
         private DevExpress.XtraGrid.Columns.GridColumn TonCuoiKy;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
