@@ -469,6 +469,20 @@ namespace QLBV_DEV
 
         private void txtColSoLuong_EditValueChanged(object sender, EventArgs e)
         {
+            index = gridView1.FocusedRowHandle;
+            gridView1.PostEditor();
+            int soluong = Convert.ToInt32(gridView1.GetRowCellValue(index, "SoLuong"));
+            int tonkho = Convert.ToInt32(gridView1.GetRowCellValue(index, "TonKho"));
+            if (soluong > tonkho)
+            {
+                MessageBox.Show("Số lượng nhập vượt quá số lượng trong kho");
+                gridView1.SetRowCellValue(index, "SoLuong", tonkho);
+            }
+            CapNhatTongCong();
+        }
+
+        private void txtColThanhTien_EditValueChanged(object sender, EventArgs e)
+        {
             CapNhatTongCong();
         }
 
@@ -501,6 +515,7 @@ namespace QLBV_DEV
                 }
             }
         }
+
         private void frmThemNCC_KHClosed(object sender, FormClosedEventArgs e)
         {
             LoadNCC_KH();
@@ -513,6 +528,7 @@ namespace QLBV_DEV
 
             txtConLai.Text = (khachtra - tongcong).ToString();
         }
+
         private void cbbThueSuat_SelectedIndexChanged(object sender, EventArgs e)
         {
             double tongtien     = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
@@ -530,8 +546,7 @@ namespace QLBV_DEV
         {
             CapNhatTongCong();
         }
-
-                
+                      
 
         private void chkDeNghiHuy_CheckedChanged(object sender, EventArgs e)
         {

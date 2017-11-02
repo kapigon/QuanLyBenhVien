@@ -78,7 +78,7 @@
             this.cbbDVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.GiaBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.txtColThanhTien = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.HSD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhieuXuatHang_ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -156,7 +156,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbDVT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColThanhTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -478,7 +478,7 @@
             this.repositoryItemLookUpEdit1,
             this.repositoryItemDateEdit1,
             this.repositoryItemMemoEdit1,
-            this.repositoryItemTextEdit1,
+            this.txtColThanhTien,
             this.repositoryItemTextEdit2,
             this.cbbDVT,
             this.txtColSoLuong,
@@ -549,7 +549,7 @@
             this.txtColGiaBan.Mask.EditMask = "C0";
             this.txtColGiaBan.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtColGiaBan.Name = "txtColGiaBan";
-            this.txtColGiaBan.EditValueChanged += new System.EventHandler(this.txtColGiaBan_EditValueChanged);
+            this.txtColGiaBan.Leave += new System.EventHandler(this.txtColGiaBan_EditValueChanged);
             // 
             // Barcode
             // 
@@ -745,7 +745,7 @@
             this.txtColSoLuong.Mask.EditMask = "n0";
             this.txtColSoLuong.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtColSoLuong.Name = "txtColSoLuong";
-            this.txtColSoLuong.EditValueChanged += new System.EventHandler(this.txtColSoLuong_EditValueChanged);
+            this.txtColSoLuong.Leave += new System.EventHandler(this.txtColSoLuong_EditValueChanged);
             // 
             // TenDVT
             // 
@@ -803,10 +803,9 @@
             this.ThanhTien.AppearanceHeader.Options.UseTextOptions = true;
             this.ThanhTien.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ThanhTien.Caption = "Thành tiền";
-            this.ThanhTien.ColumnEdit = this.repositoryItemTextEdit1;
+            this.ThanhTien.ColumnEdit = this.txtColThanhTien;
             this.ThanhTien.FieldName = "ThanhTien";
             this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.OptionsColumn.AllowEdit = false;
             this.ThanhTien.OptionsColumn.ReadOnly = true;
             this.ThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "Tổng Tiền = {0:c}")});
@@ -816,14 +815,14 @@
             this.ThanhTien.VisibleIndex = 6;
             this.ThanhTien.Width = 90;
             // 
-            // repositoryItemTextEdit1
+            // txtColThanhTien
             // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.EditFormat.FormatString = "C0";
-            this.repositoryItemTextEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemTextEdit1.Mask.EditMask = "n";
-            this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            this.txtColThanhTien.AutoHeight = false;
+            this.txtColThanhTien.EditFormat.FormatString = "C0";
+            this.txtColThanhTien.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtColThanhTien.Mask.EditMask = "n";
+            this.txtColThanhTien.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtColThanhTien.Name = "txtColThanhTien";
             // 
             // HSD
             // 
@@ -1399,7 +1398,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbDVT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColThanhTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
@@ -1500,7 +1499,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtColSoLuong;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cbbDVT;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtColThanhTien;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidate;
