@@ -86,7 +86,7 @@
             this.layoutControl1.Controls.Add(this.btnXoa);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.Font = new System.Drawing.Font("Tahoma", 10.25F);
@@ -139,7 +139,7 @@
             // gridcontrolDonViTinh
             // 
             this.gridcontrolDonViTinh.DataSource = this.donViTinhBindingSource;
-            this.gridcontrolDonViTinh.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridcontrolDonViTinh.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gridcontrolDonViTinh.Location = new System.Drawing.Point(12, 12);
             this.gridcontrolDonViTinh.MainView = this.grvDonViTinh;
             this.gridcontrolDonViTinh.Name = "gridcontrolDonViTinh";
@@ -351,7 +351,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 419);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDonViTinh";
             this.Text = "Đơn vị tính";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDSNuocSanXuat_FormClosed);
