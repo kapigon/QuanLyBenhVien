@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QLBV_DEV.Repository;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 namespace QLBV_DEV
 {
@@ -31,7 +33,7 @@ namespace QLBV_DEV
             LoadHoatChat();
             LoadHangSanXuat();
             LoadNuocSanXuat();
-            LoadSoLo();
+            //LoadSoLo();
             LoadKhoHang();
             LoadViTri();
             LoadDVT();
@@ -70,7 +72,8 @@ namespace QLBV_DEV
                             HSD         = ct_thuoc_nhap.HSD,
                             SoLo        = ct_thuoc_nhap.SoLo,
                             TonKho      = ct_thuoc_nhap.TonKho,
-                            TonSoSach   = ct_thuoc_nhap.TonKho,
+                            //TonSoSach   = ct_thuoc_nhap.TonKho,
+                            //KhoHang = "",
                             KichHoat    = thuoc.KichHoat
                             //TonKho = ct_thuoc_nhap.TonKho + tinhtong.SoLuongTang - tinhtong.SoLuongGiam,
                             //TenNhom = nhomthuoc.TenNhom,
@@ -158,21 +161,21 @@ namespace QLBV_DEV
             cbbNuocSanXuat.Properties.ValueMember = "ID";
 
         }
-        private void LoadSoLo()
-        {
-            var result = from ct_t in db.CT_Thuoc_PhieuNhap
-                         join pnt in db.PhieuNhapThuoc on ct_t.PhieuNhapHang_ID equals pnt.ID
-                         select new
-                         {
-                             ID = ct_t.ID,
-                             SoLo = pnt.ID + (ct_t.SoLo != null && ct_t.SoLo != "" ? " - " + ct_t.SoLo : ""),
-                         };
+        //private void LoadSoLo()
+        //{
+        //    var result = from ct_t in db.CT_Thuoc_PhieuNhap
+        //                 join pnt in db.PhieuNhapThuoc on ct_t.PhieuNhapHang_ID equals pnt.ID
+        //                 select new
+        //                 {
+        //                     ID = ct_t.ID,
+        //                     SoLo = pnt.ID + (ct_t.SoLo != null && ct_t.SoLo != "" ? " - " + ct_t.SoLo : ""),
+        //                 };
 
-            cbbSoLo.Properties.DataSource = result.ToList();
-            cbbSoLo.Properties.DisplayMember = "SoLo";
-            cbbSoLo.Properties.ValueMember = "ID";
+        //    cbbSoLo.Properties.DataSource = result.ToList();
+        //    cbbSoLo.Properties.DisplayMember = "SoLo";
+        //    cbbSoLo.Properties.ValueMember = "ID";
 
-        }
+        //}
         private void LoadKhoHang()
         {
             var result = from k in db.Kho
@@ -240,17 +243,23 @@ namespace QLBV_DEV
         
         private void btnTim_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(cbbNhomThuoc.EditValue.ToString());
-            //int thuoc_id = 0;
-            //String tenthuoc = cbbTenThuoc.Text.Trim();
-            //int nhomthuoc_ID = cbbNhomThuoc.EditValue != "" ? Convert.ToInt32(cbbNhomThuoc.EditValue) : 0;
-            //int hoatchat_ID = cbbHoatChat.EditValue != "" ? Convert.ToInt32(cbbHoatChat.EditValue) : 0;
-            //int hangsanxuat_Id = cbbHangSanXuat.EditValue != "" ? Convert.ToInt32(cbbHangSanXuat.EditValue) : 0;
-            //bool kichhoat = Convert.ToBoolean(chkKichHoat.EditValue);
 
+            long thuoc_Id = Convert.ToInt64(cbbTenThuoc.EditValue);
+            int nhomthuoc_Id = Convert.ToInt32(cbbNhomThuoc.EditValue);
+            int hangsanxuat_Id = Convert.ToInt32(cbbHangSanXuat.EditValue);
+            int khohang_Id = Convert.ToInt32(cbbKhoHang.EditValue);
+            string solo = cbbSoLo.Text;
+            int hoatchat_Id = Convert.ToInt32(cbbHoatChat.EditValue);
+            int nuocsanxuat_Id = Convert.ToInt32(cbbNuocSanXuat.EditValue);
+            int vitri_Id = Convert.ToInt32(cbbViTri.EditValue);
 
-            //var query = rpo_Thuoc.search(thuoc_id, tenthuoc, nhomthuoc_ID, hoatchat_ID, hangsanxuat_Id, kichhoat);
-            //grvDSThuoc.DataSource = new BindingList<Thuoc>(query.ToList());
+            var query = rpo_CT_Thuoc.search(thuoc_Id, nhomthuoc_Id, hangsanxuat_Id, khohang_Id,
+                                            solo,    hoatchat_Id , nuocsanxuat_Id, vitri_Id);
+            if (query.ToList().Count > 0)
+                grvDSThuoc.DataSource = new BindingList<dynamic>(query.ToList());
+            
+                
+            
         }
                 
         private void btnThoat_Click(object sender, EventArgs e)
