@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtMatKhau = new DevExpress.XtraEditors.TextEdit();
@@ -103,9 +103,9 @@
             this.txtTenDangNhap.Size = new System.Drawing.Size(180, 20);
             this.txtTenDangNhap.StyleController = this.layoutControl1;
             this.txtTenDangNhap.TabIndex = 2;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Tên không được để trống";
-            this.dxValidate.SetValidationRule(this.txtTenDangNhap, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Tên không được để trống";
+            this.dxValidate.SetValidationRule(this.txtTenDangNhap, conditionValidationRule1);
             // 
             // btnDangNhap
             // 
@@ -228,7 +228,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
-            this.Text = "Kho hàng";
+            this.Text = "ĐĂNG NHẬP";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).EndInit();

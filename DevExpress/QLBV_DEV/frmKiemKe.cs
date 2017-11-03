@@ -228,6 +228,7 @@ namespace QLBV_DEV
             frmPhieuDieuChinh frmPhieuDieuChinh = new frmPhieuDieuChinh();
             frmPhieuDieuChinh.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
             frmPhieuDieuChinh.loadData(gridView1);
+            frmPhieuDieuChinh.ShowInTaskbar = false;
             frmPhieuDieuChinh.ShowDialog();
         }
 

@@ -712,7 +712,7 @@
             // TonKho
             // 
             this.TonKho.AppearanceCell.Options.UseTextOptions = true;
-            this.TonKho.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.TonKho.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TonKho.AppearanceHeader.Options.UseTextOptions = true;
             this.TonKho.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TonKho.Caption = "Tồn kho lô";
@@ -726,7 +726,7 @@
             // SoLuong
             // 
             this.SoLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.SoLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SoLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SoLuong.AppearanceHeader.Options.UseTextOptions = true;
             this.SoLuong.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SoLuong.Caption = "Số lượng";
@@ -874,8 +874,6 @@
             this.ThuocID.Caption = "Thuốc ID";
             this.ThuocID.FieldName = "ThuocID";
             this.ThuocID.Name = "ThuocID";
-            this.ThuocID.Visible = true;
-            this.ThuocID.VisibleIndex = 9;
             // 
             // gridColumn2
             // 

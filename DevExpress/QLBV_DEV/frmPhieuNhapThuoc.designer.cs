@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.dateNgayVietHD = new DevExpress.XtraEditors.DateEdit();
@@ -255,10 +255,10 @@
             this.txtSoPhieu.Size = new System.Drawing.Size(213, 20);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
-            conditionValidationRule1.CaseSensitive = true;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Số phiếu không được để trống";
-            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule1);
+            conditionValidationRule2.CaseSensitive = true;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Số phiếu không được để trống";
+            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule2);
             // 
             // btnDong
             // 
@@ -384,6 +384,7 @@
             this.MaVach_1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.MaVach_1.Visible = true;
             this.MaVach_1.VisibleIndex = 0;
+            this.MaVach_1.Width = 112;
             // 
             // repositoryItemTextEdit6
             // 
@@ -467,11 +468,12 @@
             this.Thuoc_ID.Name = "Thuoc_ID";
             this.Thuoc_ID.Visible = true;
             this.Thuoc_ID.VisibleIndex = 1;
+            this.Thuoc_ID.Width = 455;
             // 
             // SoLuong
             // 
             this.SoLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.SoLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SoLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SoLuong.AppearanceHeader.Options.UseTextOptions = true;
             this.SoLuong.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SoLuong.Caption = "Số lượng";
@@ -480,6 +482,7 @@
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.Visible = true;
             this.SoLuong.VisibleIndex = 2;
+            this.SoLuong.Width = 98;
             // 
             // repositoryItemTextEdit3
             // 
@@ -506,6 +509,7 @@
             this.DVT_Theo_DVT_Thuoc_ID.Name = "DVT_Theo_DVT_Thuoc_ID";
             this.DVT_Theo_DVT_Thuoc_ID.Visible = true;
             this.DVT_Theo_DVT_Thuoc_ID.VisibleIndex = 3;
+            this.DVT_Theo_DVT_Thuoc_ID.Width = 113;
             // 
             // cbbDVT
             // 
@@ -529,6 +533,7 @@
             this.GiaNhap.Name = "GiaNhap";
             this.GiaNhap.Visible = true;
             this.GiaNhap.VisibleIndex = 4;
+            this.GiaNhap.Width = 111;
             // 
             // ThanhTien
             // 
@@ -547,6 +552,7 @@
             this.ThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 5;
+            this.ThanhTien.Width = 128;
             // 
             // repositoryItemTextEdit1
             // 
@@ -569,6 +575,7 @@
             this.HSD.Name = "HSD";
             this.HSD.Visible = true;
             this.HSD.VisibleIndex = 6;
+            this.HSD.Width = 125;
             // 
             // repositoryItemDateEdit1
             // 

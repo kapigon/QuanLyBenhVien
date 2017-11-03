@@ -111,6 +111,7 @@ namespace QLBV_DEV
         {
             frmThemNCC_KH f_ncc_kh = new frmThemNCC_KH();
             f_ncc_kh.FormClosed += new FormClosedEventHandler(frmDSNCC_KHClosed);
+            f_ncc_kh.ShowInTaskbar = false;
             f_ncc_kh.ShowDialog();
         }
 
@@ -139,6 +140,7 @@ namespace QLBV_DEV
                 frmThemNCC_KH frmNCC_KH = new frmThemNCC_KH();
                 frmNCC_KH.FormClosed += new FormClosedEventHandler(frmNCC_KHClosed);
                 frmNCC_KH.loadData(ncc_kh_ID);
+                frmNCC_KH.ShowInTaskbar = false;
                 frmNCC_KH.ShowDialog();
             }
             else

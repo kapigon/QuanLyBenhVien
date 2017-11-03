@@ -148,6 +148,7 @@ namespace QLBV_DEV
         {
             frmThemThuoc frmThemThuoc = new frmThemThuoc();
             frmThemThuoc.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
+            frmThemThuoc.ShowInTaskbar = false;
             frmThemThuoc.ShowDialog();
         }
 
@@ -181,6 +182,7 @@ namespace QLBV_DEV
                 frmThemThuoc frmThemThuoc = new frmThemThuoc();
                 frmThemThuoc.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
                 frmThemThuoc.loadData(thuoc_ID);
+                frmThemThuoc.ShowInTaskbar = false;
                 frmThemThuoc.ShowDialog();
             }
             else

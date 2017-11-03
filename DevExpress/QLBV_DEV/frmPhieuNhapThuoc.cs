@@ -149,11 +149,12 @@ namespace QLBV_DEV
             txtSoPhieu.Text             = "";
             txtGhiChu.Text              = "";
             txtSeri.Text                = "";
-            cbbThueSuat.EditValue       = "";
+            cbbThueSuat.EditValue       = "0%";
             txtSoHoaDon.Text            = "";
             dateNgayVietHD.EditValue    = DateTime.Now;
             dateNgayNhap.EditValue      = DateTime.Now;
             grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>();
+            CreateSoPhieu();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
