@@ -115,27 +115,25 @@ WHERE ct_xuat.NgayBan >= convert(date, '2017/10/30') and ct_xuat.NgayBan <= conv
 
 
 SELECT thuoc.ID, thuoc.TenThuoc FROM Thuoc as thuoc
-JOIN
+
 
 ---------------
-select t.ID, t.MaThuoc, t.TenThuoc, groupNhom.Ton as 'Tồn kho đầu kỳ', groupNhom.SoLuongNhap, groupNhom.soluongxuat
+select t.ID, t.MaThuoc, t.TenThuoc, groupNhom.Ton as 'TonDauKy', groupNhom.SoLuongNhap as 'NhapTrongKy', groupNhom.soluongxuat as 'XuatTrongKy', groupNhom.giaban as 'ThanhTien', groupNhom.SoLuongNhap - groupNhom.soluongxuat as 'TonCuoiKy'
 FROM
-(Select TonKho.ID,(TonKho.tonkho + SoLuongXuat.soluongxuat - SoLuongNhap.soluongnhap) as Ton, SoLuongNhap, SoLuongXuat
+(Select TonKho.ID,(TonKho.tonkho + SoLuongXuat.soluongxuat - SoLuongNhap.soluongnhap) as Ton, SoLuongNhap, SoLuongXuat, giaban
 FROM
-	(SELECT
-		t.ID,
-		Sum(ct_nhap.TonKho) as tonkho
-	FROM CT_Thuoc_PhieuNhap as ct_nhap 
-	JOIN Thuoc as t on t.ID = ct_nhap.Thuoc_ID
-	GROUP BY t.ID) as TonKho
-
-JOIN 
 	(SELECT 
-		ct_nhap.Thuoc_ID,
-		SUM(ct_xuat.SoLuong) as soluongxuat
+		ct_xuat.CT_Thuoc_PhieuNhap_ID,
+		SUM(ct_xuat.SoLuong) as soluongxuat,
+		Sum(ct_xuat.GiaBan) as giaban
 		FROM CT_Thuoc_PhieuXuat as ct_xuat
 		JOIN CT_Thuoc_PhieuNhap as ct_nhap on ct_nhap.ID = ct_xuat.CT_Thuoc_PhieuNhap_ID
-		GROUP BY ct_nhap.Thuoc_ID)  as SoLuongXuat
+		GROUP BY ct_xuat.CT_Thuoc_PhieuNhap_ID)  as SoLuongXuat
+JOIN 
+	(SELECT ct_nhap.ID,
+		Sum(ct_nhap.TonKho) as tonkho
+	FROM CT_Thuoc_PhieuNhap as ct_nhap 
+	GROUP BY ct_nhap.Thuoc_ID) as TonKho
 ON TonKho.ID = SoLuongXuat.Thuoc_ID
 
 JOIN 
@@ -147,5 +145,45 @@ JOIN
 ON TonKho.ID = SoLuongNhap.Thuoc_ID) AS groupNHOM 
 JOIN Thuoc as t on t.ID = groupNHOM.ID
 
+select *from CT_Thuoc_PhieuNhap where Thuoc_ID = 1157
+select *From CT_Thuoc_PhieuXuat
+where Thuoc_ID = 1157
 
+
+
+
+select	ct_nhap.ID, ct_nhap.TonKho, ct_nhap.Soluong as SoLuongNhap, 
+		ct_xuat.SoLuong as SoLuongXuat, ct_xuat.GiaBan,
+		ct_nhap.TonKho + ct_xuat.SoLuong + (Select CASE 
+											WHEN ct_xuatTuNgayDenHien.SoLuong =  NULL
+											   THEN 0 
+											   ELSE ct_xuatTuNgayDenHien.SoLuong
+											END as SoLuongXuatNgoai) - ct_nhap.Soluong as TonDauKy,
+		ct_nhap.Soluong - ct_xuat.SoLuong as TonKhoCuoiKy
+
+from CT_Thuoc_PhieuNhap as ct_nhap	
 	
+LEFT JOIN 
+(SELECT ct_xuat.CT_Thuoc_PhieuNhap_ID,
+		SUM(ct_xuat.SoLuong) as SoLuong, 
+		SUM(ct_xuat.GiaBan) as GiaBan
+FROM CT_Thuoc_PhieuXuat as ct_xuat
+WHERE (ct_xuat.NgayBan >= convert(date, '2017/11/02') and ct_xuat.NgayBan <= convert(date, '2017/11/03'))
+GROUP BY ct_xuat.CT_Thuoc_PhieuNhap_ID) as ct_xuat
+on ct_xuat.CT_Thuoc_PhieuNhap_ID = ct_nhap.ID
+
+LEFT JOIN
+(SELECT ct_xuat.CT_Thuoc_PhieuNhap_ID,
+		SUM(ct_xuat.SoLuong) as SoLuong, 
+		SUM(ct_xuat.GiaBan) as GiaBan
+FROM CT_Thuoc_PhieuXuat as ct_xuat
+WHERE (ct_xuat.NgayBan > convert(date, '2017/11/03'))-- and ct_xuat.NgayBan <= convert(date, '2017/11/03'))
+GROUP BY ct_xuat.CT_Thuoc_PhieuNhap_ID) as ct_xuatTuNgayDenHien
+on ct_xuatTuNgayDenHien.CT_Thuoc_PhieuNhap_ID = ct_nhap.ID
+
+
+select *from CT_Thuoc_phieuXuat
+select *from CT_Thuoc_phieuNhap
+select *from PhieuNhapThuoc
+
+Select *from Thuoc where ID = 1157
