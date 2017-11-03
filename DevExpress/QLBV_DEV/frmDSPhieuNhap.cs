@@ -148,6 +148,7 @@ namespace QLBV_DEV
                 frmPhieuNhap.FormClosed += new FormClosedEventHandler(frmDS_PhieuNhapClosed);
 
                 frmPhieuNhap.loadData(id);
+                frmPhieuNhap.ShowInTaskbar = false;
                 frmPhieuNhap.ShowDialog();
             }
             else

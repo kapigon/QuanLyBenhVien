@@ -134,6 +134,7 @@ namespace QLBV_DEV
             if (e.Button.Kind.ToString() == "Plus")
             {
                 frmNhomThuoc frmNhomThuoc = new frmNhomThuoc();
+                frmNhomThuoc.ShowInTaskbar = false;
                 frmNhomThuoc.ShowDialog();
             }
         }
@@ -143,6 +144,7 @@ namespace QLBV_DEV
             if (e.Button.Kind.ToString() == "Plus")
             {
                 frmHangSanXuat frmHangSanXuat = new frmHangSanXuat();
+                frmHangSanXuat.ShowInTaskbar = false;
                 frmHangSanXuat.ShowDialog();
             }
         }
@@ -161,13 +163,13 @@ namespace QLBV_DEV
                 txtMaThuoc.Text = maThuoc;
             }
         }
-        #endregion
 
         private void cbbNuocSanXuat_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (e.Button.Kind.ToString() == "Plus")
             {
                 frmNuocSanXuat frmNuocSanXuat = new frmNuocSanXuat();
+                frmNuocSanXuat.ShowInTaskbar = false;
                 frmNuocSanXuat.ShowDialog();
             }
         }
@@ -177,13 +179,10 @@ namespace QLBV_DEV
             if (e.Button.Kind.ToString() == "Plus")
             {
                 frmHoatChat frmHoatChat = new frmHoatChat();
+                frmHoatChat.ShowInTaskbar = false;
                 frmHoatChat.ShowDialog();
             }
         }
-
-
-        
-
-       
+        #endregion     
     }
 }

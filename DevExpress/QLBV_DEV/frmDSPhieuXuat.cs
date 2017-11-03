@@ -133,7 +133,9 @@ namespace QLBV_DEV
                 frmPhieuXuatThuoc frmPhieuXuatThuoc = new frmPhieuXuatThuoc();
                 frmPhieuXuatThuoc.FormClosed += new FormClosedEventHandler(frmDS_PhieuXuatClosed);
 
+                //frmPhieuXuatThuoc
                 frmPhieuXuatThuoc.loadData(id);
+                frmPhieuXuatThuoc.ShowInTaskbar = false;
                 frmPhieuXuatThuoc.ShowDialog();
             }
             else

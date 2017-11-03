@@ -101,6 +101,7 @@ namespace QLBV_DEV
                 frmPhieuXuatThuoc.FormClosed += new FormClosedEventHandler(frmDS_PhieuXuatClosed);
 
                 frmPhieuXuatThuoc.loadData(id);
+                frmPhieuXuatThuoc.ShowInTaskbar = false;
                 frmPhieuXuatThuoc.ShowDialog();
             }
             else

@@ -67,67 +67,63 @@ namespace QLBV_DEV
         // Load dữ liệu theo ID đổ vào các trường trong Form
         public void loadData(long id)
         {
-            phieuxuat_ID = id;
-            isUpdate = true;
-
-            PhieuXuatThuoc obj_PhieuXuat = new PhieuXuatThuoc();
-            obj_PhieuXuat = rpo_PhieuXuat.GetSingle(id);
-
-            cbbKH.EditValue = obj_PhieuXuat.NCC_KH_ID;
-            txtSoPhieu.Text = obj_PhieuXuat.SoPhieu;
-            txtGhiChu.Text = obj_PhieuXuat.GhiChu;
-            txtSeri.Text = obj_PhieuXuat.SoSeri;
-            cbbThueSuat.EditValue = obj_PhieuXuat.ThueSuat + "%";
-            txtSoHoaDon.Text = obj_PhieuXuat.SoHoaDon;
-            dateNgayVietHD.EditValue = Convert.ToDateTime(obj_PhieuXuat.NgayHoaDon);
-            dateNgayBan.EditValue = Convert.ToDateTime(obj_PhieuXuat.NgayTao);
-            txtChietKhau.Text = obj_PhieuXuat.ChietKhau.ToString();
-
-            grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuXuat>(db.CT_Thuoc_PhieuXuat.Where(p => p.PhieuXuatHang_ID == id).ToList());
-
-            for (int i = 0; i < gridView1.RowCount; i++)
+            if (id > 0)
             {
+                phieuxuat_ID = id;
+                isUpdate = true;
 
-                //var search = sender as SearchLookUpEdit;
-                //if (search == null) return;
+                PhieuXuatThuoc obj_PhieuXuat = new PhieuXuatThuoc();
+                obj_PhieuXuat = rpo_PhieuXuat.GetSingle(id);
+                if (obj_PhieuXuat != null)
+                {
+                    cbbKH.EditValue             = obj_PhieuXuat.NCC_KH_ID;
+                    txtSoPhieu.Text             = obj_PhieuXuat.SoPhieu;
+                    txtGhiChu.Text              = obj_PhieuXuat.GhiChu;
+                    txtSeri.Text                = obj_PhieuXuat.SoSeri;
+                    cbbThueSuat.EditValue       = obj_PhieuXuat.ThueSuat + "%";
+                    txtSoHoaDon.Text            = obj_PhieuXuat.SoHoaDon;
+                    dateNgayVietHD.EditValue    = Convert.ToDateTime(obj_PhieuXuat.NgayHoaDon);
+                    dateNgayBan.EditValue       = Convert.ToDateTime(obj_PhieuXuat.NgayTao);
+                    txtChietKhau.Text           = obj_PhieuXuat.ChietKhau.ToString();
 
-                //var id = (search.EditValue == null || search.EditValue == DBNull.Value) ? 0 : Convert.ToInt32(search.EditValue);
+                    grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuXuat>(db.CT_Thuoc_PhieuXuat.Where(p => p.PhieuXuatHang_ID == id).ToList());
 
-                long thuoc_PhieuNhap_ID = Convert.ToInt64(gridView1.GetRowCellValue(i, "CT_Thuoc_PhieuNhap_ID"));
+                    for (int i = 0; i < gridView1.RowCount; i++)
+                    {
+                        long thuoc_PhieuNhap_ID = Convert.ToInt64(gridView1.GetRowCellValue(i, "CT_Thuoc_PhieuNhap_ID"));
 
-                //search.Properties.DataSource
-                var listThuoc = gridColThuoc_ID.DataSource as List<dynamic>;
-                if (listThuoc == null) return;
+                        //search.Properties.DataSource
+                        var listThuoc = gridColThuoc_ID.DataSource as List<dynamic>;
+                        if (listThuoc == null) return;
 
-                var x = listThuoc.FirstOrDefault(t => t.ID == thuoc_PhieuNhap_ID);
+                        var x = listThuoc.FirstOrDefault(t => t.ID == thuoc_PhieuNhap_ID);
 
-                var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuXuat;
-                if (ctXuat == null) return;
+                        var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuXuat;
+                        if (ctXuat == null) return;
 
-                gridView1.SetRowCellValue(i, "TonKhoLo", x.TonKhoLo);
-                gridView1.SetRowCellValue(i, "Barcode", x.Barcode);
-                gridView1.SetRowCellValue(i, "HSD", x.HSD);
-                gridView1.SetRowCellValue(i, "GiaBanLe", x.GiaBanLe);
-                gridView1.SetRowCellValue(i, "GiaBanBuon", x.GiaBanBuon);
-                gridView1.SetRowCellValue(i, "ThuocID", x.ThuocID);
+                        gridView1.SetRowCellValue(i, "TonKho", x.TonKhoLo);
+                        gridView1.SetRowCellValue(i, "Barcode", x.Barcode);
+                        gridView1.SetRowCellValue(i, "HSD", x.HSD);
+                        gridView1.SetRowCellValue(i, "GiaBanLe", x.GiaBanLe);
+                        gridView1.SetRowCellValue(i, "GiaBanBuon", x.GiaBanBuon);
+                        gridView1.SetRowCellValue(i, "ThuocID", x.ThuocID);
 
-                //ctXuat.SoLuong = x.TonKhoLo;
-                //ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Theo_DVT_Thuoc_ID;
+                        //ctXuat.SoLuong = x.TonKhoLo;
+                        //ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Theo_DVT_Thuoc_ID;
+                    }
+
+                    gridView1.PostEditor();
+
+                    chkDeNghiHuy.ReadOnly = false;
+
+                    if (obj_PhieuXuat.TrangThaiPhieu_ID == 2)
+                    {
+                        chkDeNghiHuy.EditValue = true;
+                        btnLuu.Enabled = false;
+                        btnXoa.Enabled = true;
+                    }
+                }
             }
-            
-
-            gridView1.PostEditor();
-
-            chkDeNghiHuy.ReadOnly = false;
-
-            if (obj_PhieuXuat.TrangThaiPhieu_ID == 2)
-            {
-                chkDeNghiHuy.EditValue = true;
-                btnLuu.Enabled = false;
-                btnXoa.Enabled = true;
-            }
-                
-
         }
 
         private void LoadNCC_KH()
@@ -222,9 +218,23 @@ namespace QLBV_DEV
         // Cập nhật tổng cộng tiền
         private void CapNhatTongCong()
         {
-            double tongtien = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
-            double thuesuat = Convert.ToDouble(txtThueSuat.Text.Trim().Replace("VNĐ", ""));
-            double chietkhau = Convert.ToDouble(txtChietKhau.Text.Trim().Replace("VNĐ", ""));
+            double tongtien     = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
+            double thuesuat     = Convert.ToDouble(txtThueSuat.Text.Trim().Replace("VNĐ", ""));
+            double chietkhau    = Convert.ToDouble(txtChietKhau.Text.Trim().Replace("VNĐ", ""));
+            double thanhtien    = 0;
+
+            if (gridView1.RowCount > 0)
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                {
+                    int soluong     = Convert.ToInt32(gridView1.GetRowCellValue(i,"SoLuong"));
+                    double giaban   = Convert.ToDouble(gridView1.GetRowCellValue(i, "GiaBan"));
+
+                    thanhtien      += soluong * giaban;
+                }
+            }
+
+            tongtien = thanhtien;
 
             txtTongCong.Text = (tongtien + thuesuat - chietkhau).ToString();
         }
@@ -247,11 +257,12 @@ namespace QLBV_DEV
             txtSoPhieu.Text             = "";
             txtGhiChu.Text              = "";
             txtSeri.Text                = "";
-            cbbThueSuat.EditValue       = "";
+            cbbThueSuat.EditValue       = "0%";
             txtSoHoaDon.Text            = "";
             dateNgayVietHD.EditValue    = DateTime.Now;
             dateNgayBan.EditValue       = DateTime.Now;
             grdDSThuoc.DataSource       = new BindingList<CT_Thuoc_PhieuXuat>();
+            CreateSoPhieu();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -464,6 +475,7 @@ namespace QLBV_DEV
 
         private void txtColGiaBan_EditValueChanged(object sender, EventArgs e)
         {
+            gridView1.PostEditor();
             CapNhatTongCong();
         }
 

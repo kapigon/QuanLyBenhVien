@@ -25,6 +25,9 @@ namespace QLBV_DEV
         public frmBangKeChiTietNhap_Xuat_Ton()
         {
             InitializeComponent();
+            dateTuNgay.EditValue = DateTime.Now;
+            dateDenNgay.EditValue = DateTime.Now;
+
             LoadBangKeCT_Xuat_Nhap_Ton_Thuoc();
         }
 
@@ -34,7 +37,7 @@ namespace QLBV_DEV
             DateTime tuNgay = Convert.ToDateTime(dateTuNgay.EditValue);
             DateTime denNgay = Convert.ToDateTime(dateDenNgay.EditValue);
             // Group nhom theo CT_Thuoc_PhieuNhap_ID
-            var qCT_PhieuXuat = from ct_xuat in db.CT_Thuoc_PhieuXuat
+            var qCT_PhieuXuatTrongKhoangT = from ct_xuat in db.CT_Thuoc_PhieuXuat
                                 where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
                                 group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
                                 select new
@@ -44,8 +47,19 @@ namespace QLBV_DEV
                                     GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
                                 };
 
-            var query = from ct_nhap    in db.CT_Thuoc_PhieuNhap
-                        from ct_xuat    in qCT_PhieuXuat.Where(ct_xuat => ct_xuat.CT_Thuoc_PhieuNhap_ID == ct_nhap.ID).DefaultIfEmpty()
+            var qCT_PhieuXuatNgoaiKhoangT = from ct_xuat in db.CT_Thuoc_PhieuXuat
+                                            where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan > denNgay)
+                                            group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
+                                            select new
+                                            {
+                                                CT_Thuoc_PhieuNhap_ID   = gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
+                                                SoLuongNgoai            = gr_CT_Xuat.Sum(p => p.SoLuong),
+                                                GiaBan                  = gr_CT_Xuat.Sum(p => p.GiaBan),
+                                            };
+
+            var query = from ct_nhap        in db.CT_Thuoc_PhieuNhap
+                        from ct_xuat        in qCT_PhieuXuatTrongKhoangT.Where(ct_xuat => ct_xuat.CT_Thuoc_PhieuNhap_ID == ct_nhap.ID).DefaultIfEmpty()
+                        from ct_xuatNgoai   in qCT_PhieuXuatNgoaiKhoangT.Where(ct_xuatNgoai => ct_xuatNgoai.CT_Thuoc_PhieuNhap_ID == ct_nhap.ID).DefaultIfEmpty()
                         //from ct_xuat in db.CT_Thuoc_PhieuXuat.Where(ct_xuat => ct_xuat.CT_Thuoc_PhieuNhap_ID == ct_nhap.ID)//.DefaultIfEmpty()
                         join thuoc      in db.Thuoc                 on ct_nhap.Thuoc_ID equals thuoc.ID
                         where (ct_nhap.NgayNhap >= tuNgay && ct_nhap.NgayNhap <= denNgay)
