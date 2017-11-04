@@ -392,8 +392,6 @@
             // repositoryItemTextEdit6
             // 
             this.repositoryItemTextEdit6.AutoHeight = false;
-            this.repositoryItemTextEdit6.EditFormat.FormatString = "C0";
-            this.repositoryItemTextEdit6.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit6.Name = "repositoryItemTextEdit6";
             // 
             // Thuoc_ID_1
@@ -523,6 +521,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenDVT", "Tên ĐVT")});
             this.cbbDVT.Name = "cbbDVT";
+            this.cbbDVT.ReadOnly = true;
             // 
             // GiaNhap
             // 
