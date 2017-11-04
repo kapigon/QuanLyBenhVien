@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.chkDeNghiHuy = new DevExpress.XtraEditors.CheckEdit();
@@ -129,7 +130,7 @@
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -232,7 +233,7 @@
             this.layoutControl1.Controls.Add(this.cbbLoaiHinhBan);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(182, 237, 250, 350);
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
@@ -424,10 +425,10 @@
             this.txtSoPhieu.Size = new System.Drawing.Size(339, 26);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
-            conditionValidationRule1.CaseSensitive = true;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Số phiếu không được để trống";
-            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule1);
+            conditionValidationRule2.CaseSensitive = true;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Số phiếu không được để trống";
+            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule2);
             // 
             // btnDong
             // 
@@ -471,7 +472,7 @@
             // 
             // grdDSThuoc
             // 
-            this.grdDSThuoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grdDSThuoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.grdDSThuoc.Location = new System.Drawing.Point(12, 256);
             this.grdDSThuoc.MainView = this.gridView1;
             this.grdDSThuoc.Name = "grdDSThuoc";
@@ -497,6 +498,7 @@
             this.grdDSThuoc.TabIndex = 6;
             this.grdDSThuoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.grdDSThuoc.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.grdDSThuoc_ProcessGridKey);
             // 
             // gridView1
             // 
@@ -708,7 +710,7 @@
             this.CT_Thuoc_PhieuNhap_ID.Name = "CT_Thuoc_PhieuNhap_ID";
             this.CT_Thuoc_PhieuNhap_ID.Visible = true;
             this.CT_Thuoc_PhieuNhap_ID.VisibleIndex = 1;
-            this.CT_Thuoc_PhieuNhap_ID.Width = 395;
+            this.CT_Thuoc_PhieuNhap_ID.Width = 447;
             // 
             // TonKho
             // 
@@ -738,7 +740,7 @@
             this.SoLuong.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.SoLuong.Visible = true;
             this.SoLuong.VisibleIndex = 2;
-            this.SoLuong.Width = 73;
+            this.SoLuong.Width = 136;
             // 
             // txtColSoLuong
             // 
@@ -761,7 +763,7 @@
             this.TenDVT.OptionsColumn.ReadOnly = true;
             this.TenDVT.Visible = true;
             this.TenDVT.VisibleIndex = 4;
-            this.TenDVT.Width = 52;
+            this.TenDVT.Width = 97;
             // 
             // cbbDVT
             // 
@@ -795,7 +797,7 @@
             this.GiaBan.Name = "GiaBan";
             this.GiaBan.Visible = true;
             this.GiaBan.VisibleIndex = 5;
-            this.GiaBan.Width = 82;
+            this.GiaBan.Width = 120;
             // 
             // ThanhTien
             // 
@@ -809,12 +811,12 @@
             this.ThanhTien.Name = "ThanhTien";
             this.ThanhTien.OptionsColumn.ReadOnly = true;
             this.ThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "Tổng Tiền = {0:c}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "= {0:c}")});
             this.ThanhTien.UnboundExpression = "[SoLuong] * [GiaBan]";
             this.ThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 6;
-            this.ThanhTien.Width = 90;
+            this.ThanhTien.Width = 174;
             // 
             // txtColThanhTien
             // 
@@ -1371,7 +1373,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1776, 1017);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPhieuXuatThuoc";
             this.Text = "Phiếu xuất thuốc";
             this.Load += new System.EventHandler(this.frmPhieuXuatThuoc_Load);

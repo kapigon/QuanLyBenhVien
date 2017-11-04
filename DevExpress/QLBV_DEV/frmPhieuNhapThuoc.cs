@@ -10,6 +10,7 @@ using DevExpress.XtraEditors;
 using QLBV_DEV.Repository;
 using System.Collections;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid;
 
 namespace QLBV_DEV
 {
@@ -401,6 +402,11 @@ namespace QLBV_DEV
             ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Nguyen_ID;
 
             gridView1.PostEditor();
+            // Nhảy vào ô số lượng sau khi chọn tên thuốc
+            gridView1.FocusedRowHandle = _index;
+            gridView1.FocusedColumn = gridView1.Columns["SoLuong"];
+            gridView1.ShowEditor();
+            //-------------------------------------------
         }
 
         
@@ -472,5 +478,16 @@ namespace QLBV_DEV
 
         }
         #endregion
+
+        private void grdDSThuoc_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            var grid = sender as GridControl;
+            var view = grid.FocusedView as GridView;
+            if (e.KeyData == Keys.Delete)
+            {
+                view.DeleteSelectedRows();
+                e.Handled = true;
+            }
+        }
     }
 }

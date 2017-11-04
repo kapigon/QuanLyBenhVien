@@ -44,7 +44,7 @@ namespace QLBV_DEV
             gridControl1.DataSource = query.ToList();
         }
 
-        
+
         private void LoadDS_TonKhoToiThieu()
         {
             var query = from thuoc in db.Thuoc
