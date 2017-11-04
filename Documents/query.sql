@@ -178,13 +178,15 @@ GROUP BY ct_xuat.CT_Thuoc_PhieuNhap_ID) as ct_xuatTuNgayDenHien
 on ct_xuatTuNgayDenHien.CT_Thuoc_PhieuNhap_ID = ct_nhap.ID
 
 
-select ct_xuat.CT_Thuoc_PhieuNhap_ID,ct_xuat.SoLuong, ct_xuatTuNgayDenHien.SoLuong, ct_nhap.SoLuong, ct_nhap.TonKho, ct_xuat_trongky.SoLuong
+select ct_xuat.CT_Thuoc_PhieuNhap_ID, ct_xuat.SoLuong, ct_xuatTuNgayDenHien.SoLuong, ct_nhap.SoLuong, ct_nhap.TonKho, ct_xuat_trongky.SoLuong,
+		ct_nhap.TonKho + ct_xuat.SoLuong - ct_nhap.SoLuong  as TonKhoDauKy,
+		ct_nhap.TonKho + ct_xuat.SoLuong - ct_xuat_trongky.SoLuong as TonKhoCuoiKy
 from
 (SELECT ct_xuat.CT_Thuoc_PhieuNhap_ID,
 		SUM(ct_xuat.SoLuong) as SoLuong, 
 		SUM(ct_xuat.GiaBan) as GiaBan
 FROM CT_Thuoc_PhieuXuat as ct_xuat
-WHERE (ct_xuat.NgayBan >= convert(date, '2017/11/03'))--and ct_xuat.NgayBan <= convert(date, '2017/11/03'))
+WHERE (ct_xuat.NgayBan >= convert(date, '2017/11/01'))--and ct_xuat.NgayBan <= convert(date, '2017/11/03'))
 GROUP BY ct_xuat.CT_Thuoc_PhieuNhap_ID) as ct_xuat
 
 LEFT JOIN
@@ -201,12 +203,13 @@ LEFT JOIN
 		SUM(ct_xuat.SoLuong) as SoLuong, 
 		SUM(ct_xuat.GiaBan) as GiaBan
 FROM CT_Thuoc_PhieuXuat as ct_xuat
-WHERE (ct_xuat.NgayBan >= convert(date, '2017/11/03')and ct_xuat.NgayBan <= convert(date, '2017/11/03'))
+WHERE (ct_xuat.NgayBan >= convert(date, '2017/11/01')and ct_xuat.NgayBan <= convert(date, '2017/11/03'))
 GROUP BY ct_xuat.CT_Thuoc_PhieuNhap_ID) as ct_xuat_trongky
 on ct_xuat_trongky.CT_Thuoc_PhieuNhap_ID = ct_xuat.CT_Thuoc_PhieuNhap_ID
 
 LEFT JOIN CT_Thuoc_PhieuNhap as ct_nhap
 on ct_nhap.ID = ct_xuat.CT_Thuoc_PhieuNhap_ID
+where ct_nhap.NgayNhap = convert(date, '2017/11/01')
 
 
 

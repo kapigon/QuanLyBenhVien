@@ -296,5 +296,15 @@ namespace QLBV_DEV
         {
             this.ShowForm<frmBangKeChiTietNhap_Xuat_Ton>();
         }
+
+        private void btnBC_Xuatthuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ShowForm<frmBangKeChiTietXuat>();
+        }
+
+        private void btnBC_Nhapthuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ShowForm<frmBangKeChiTietNhap>();
+        }
     }
 }

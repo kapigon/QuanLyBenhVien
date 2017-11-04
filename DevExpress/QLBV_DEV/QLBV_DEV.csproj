@@ -82,6 +82,18 @@
     <Compile Include="CT_PhieuDieuChinh.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmBangKeChiTietNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBangKeChiTietNhap.designer.cs">
+      <DependentUpon>frmBangKeChiTietNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBangKeChiTietXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBangKeChiTietXuat.Designer.cs">
+      <DependentUpon>frmBangKeChiTietXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBangKeChiTietNhap_Xuat_Ton.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -401,6 +413,12 @@
     <Compile Include="ViTri.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBangKeChiTietNhap.resx">
+      <DependentUpon>frmBangKeChiTietNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBangKeChiTietXuat.resx">
+      <DependentUpon>frmBangKeChiTietXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBangKeChiTietNhap_Xuat_Ton.resx">
       <DependentUpon>frmBangKeChiTietNhap_Xuat_Ton.cs</DependentUpon>
     </EmbeddedResource>
