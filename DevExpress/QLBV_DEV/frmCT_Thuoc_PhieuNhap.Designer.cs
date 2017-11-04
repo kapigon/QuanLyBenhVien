@@ -50,6 +50,9 @@
             this.txtMaThuoc = new DevExpress.XtraEditors.TextEdit();
             this.cbbTenThuoc = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbbNhomThuoc = new DevExpress.XtraEditors.LookUpEdit();
             this.cbbDonViNguyen = new DevExpress.XtraEditors.LookUpEdit();
             this.cbbHoatChat = new DevExpress.XtraEditors.LookUpEdit();
@@ -92,9 +95,6 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanLe.Properties)).BeginInit();
@@ -405,6 +405,28 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
+            // MaThuoc
+            // 
+            this.MaThuoc.Caption = "Mã thuốc";
+            this.MaThuoc.FieldName = "MaThuoc";
+            this.MaThuoc.Name = "MaThuoc";
+            this.MaThuoc.Visible = true;
+            this.MaThuoc.VisibleIndex = 0;
+            // 
+            // TenThuoc
+            // 
+            this.TenThuoc.Caption = "Tên thuốc";
+            this.TenThuoc.FieldName = "TenThuoc";
+            this.TenThuoc.Name = "TenThuoc";
+            this.TenThuoc.Visible = true;
+            this.TenThuoc.VisibleIndex = 1;
+            // 
             // cbbNhomThuoc
             // 
             this.cbbNhomThuoc.Location = new System.Drawing.Point(113, 91);
@@ -537,6 +559,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenDVT", "Đơn vị tính")});
             this.cbbDonViNhap.Properties.NullText = "";
+            this.cbbDonViNhap.Properties.ReadOnly = true;
             this.cbbDonViNhap.Size = new System.Drawing.Size(141, 20);
             this.cbbDonViNhap.StyleController = this.layoutControl1;
             this.cbbDonViNhap.TabIndex = 46;
@@ -886,28 +909,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(499, 13);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // ID
-            // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            // 
-            // MaThuoc
-            // 
-            this.MaThuoc.Caption = "Mã thuốc";
-            this.MaThuoc.FieldName = "MaThuoc";
-            this.MaThuoc.Name = "MaThuoc";
-            this.MaThuoc.Visible = true;
-            this.MaThuoc.VisibleIndex = 0;
-            // 
-            // TenThuoc
-            // 
-            this.TenThuoc.Caption = "Tên thuốc";
-            this.TenThuoc.FieldName = "TenThuoc";
-            this.TenThuoc.Name = "TenThuoc";
-            this.TenThuoc.Visible = true;
-            this.TenThuoc.VisibleIndex = 1;
             // 
             // frmCT_Thuoc_PhieuNhap
             // 

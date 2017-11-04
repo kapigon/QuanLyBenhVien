@@ -116,14 +116,18 @@ namespace QLBV_DEV
                     cbbTenThuoc.EditValue = thuocID.ToString();
                 }
 
-                cbbDonViNhap.EditValue = obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID != null ? obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID : 0;
-                txtSoLuong.Text         = obj_CT_Thuoc.SoLuong.ToString();
-                txtGiaNhap.Text         = obj_CT_Thuoc.GiaNhap.ToString();
-                txtBarcode.Text         = obj_CT_Thuoc.Barcode;
-                txtSoLo.Text            = obj_CT_Thuoc.SoLo != null ? obj_CT_Thuoc.SoLo.ToString() : "";
-                dateHSD.EditValue       = obj_CT_Thuoc.HSD != null ? obj_CT_Thuoc.HSD : DateTime.Now;
-                cbbViTri.EditValue      = obj_CT_Thuoc.ViTri_ID != null ? obj_CT_Thuoc.ViTri_ID : 0;
-                cbbKho.EditValue        = obj_CT_Thuoc.Kho_ID != null ? obj_CT_Thuoc.Kho_ID : 0;
+                if (obj_CT_Thuoc != null)
+                {
+                    cbbDonViNhap.EditValue = obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID != null ? obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID : 0;
+                    txtSoLuong.Text = obj_CT_Thuoc.SoLuong.ToString();
+                    txtGiaNhap.Text = obj_CT_Thuoc.GiaNhap.ToString();
+                    txtBarcode.Text = obj_CT_Thuoc.Barcode;
+                    txtSoLo.Text = obj_CT_Thuoc.SoLo != null ? obj_CT_Thuoc.SoLo.ToString() : "";
+                    dateHSD.EditValue = obj_CT_Thuoc.HSD != null ? obj_CT_Thuoc.HSD : DateTime.Now;
+                    cbbViTri.EditValue = obj_CT_Thuoc.ViTri_ID != null ? obj_CT_Thuoc.ViTri_ID : 0;
+                    cbbKho.EditValue = obj_CT_Thuoc.Kho_ID != null ? obj_CT_Thuoc.Kho_ID : 0;
+                }
+                
 
                 //obj_CT_Thuoc.ID = 100;
             }
@@ -233,6 +237,7 @@ namespace QLBV_DEV
                 txtGiaBanBuon.Text          = obj_Thuoc.GiaBanBuon.ToString();
                 txtCanhBaoHetHan.Text       = obj_Thuoc.ThoiGianCanhBaoHetHan.ToString();
 
+                cbbDonViNhap.EditValue      = obj_Thuoc.DVT_Le_ID;
                 if (obj_Thuoc.KichHoat != null)
                     chkKichHoat.Checked     = obj_Thuoc.KichHoat.Value;
             }
