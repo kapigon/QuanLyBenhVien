@@ -165,13 +165,12 @@ namespace QLBV_DEV
         private void btnTim_Click(object sender, EventArgs e)
         {
 
-            int thuoc_Id = 0;
-            //String tenthuoc = cbbTenThuoc.Text.Trim();
-            int nhomthuoc_Id = cbbNhomThuoc.EditValue != "" ? Convert.ToInt32(cbbNhomThuoc.EditValue) : 0;
-            int hoatchat_Id = cbbHoatChat.EditValue != "" ? Convert.ToInt32(cbbHoatChat.EditValue) : 0;
-            int hangsanxuat_Id = cbbHangSanXuat.EditValue != "" ? Convert.ToInt32(cbbHangSanXuat.EditValue) : 0;
-            int nuocsanxuat_Id = Convert.ToInt32(cbbNuocSanXuat.EditValue);
-            bool kichhoat = Convert.ToBoolean(chkKichHoat.EditValue);
+            long thuoc_Id       = Convert.ToInt64(cbbTenThuoc.EditValue);
+            int nhomthuoc_Id    = Convert.ToInt32(cbbNhomThuoc.EditValue);
+            int hoatchat_Id     = Convert.ToInt32(cbbHoatChat.EditValue) ;
+            int hangsanxuat_Id  = Convert.ToInt32(cbbHangSanXuat.EditValue);
+            int nuocsanxuat_Id  = Convert.ToInt32(cbbNuocSanXuat.EditValue);
+            bool kichhoat       = Convert.ToBoolean(chkKichHoat.EditValue);
 
                  
             var query = rpo_Thuoc.search(thuoc_Id, nhomthuoc_Id, hoatchat_Id, hangsanxuat_Id, nuocsanxuat_Id, kichhoat);

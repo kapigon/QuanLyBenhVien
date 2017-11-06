@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDS_Thuoc));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnXuatExcel = new DevExpress.XtraEditors.SimpleButton();
             this.chkKichHoat = new DevExpress.XtraEditors.CheckEdit();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -82,7 +83,6 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnXuatExcel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.sfdDSThuoc = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -138,7 +138,7 @@
             this.layoutControl1.Controls.Add(this.cbbNuocSanXuat);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(769, 247, 250, 350);
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
@@ -155,6 +155,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(857, 508);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.Location = new System.Drawing.Point(260, 127);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(78, 22);
+            this.btnXuatExcel.StyleController = this.layoutControl1;
+            this.btnXuatExcel.TabIndex = 21;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // chkKichHoat
             // 
@@ -213,7 +223,7 @@
             // 
             // grvDSThuoc
             // 
-            this.grvDSThuoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grvDSThuoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.grvDSThuoc.Location = new System.Drawing.Point(12, 153);
             this.grvDSThuoc.MainView = this.gridView1;
             this.grvDSThuoc.Name = "grvDSThuoc";
@@ -479,7 +489,6 @@
             // 
             // cbbNhomThuoc
             // 
-            this.cbbNhomThuoc.EditValue = "";
             this.cbbNhomThuoc.Location = new System.Drawing.Point(97, 91);
             this.cbbNhomThuoc.Name = "cbbNhomThuoc";
             this.cbbNhomThuoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -714,16 +723,6 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
-            // btnXuatExcel
-            // 
-            this.btnXuatExcel.Location = new System.Drawing.Point(260, 127);
-            this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(78, 22);
-            this.btnXuatExcel.StyleController = this.layoutControl1;
-            this.btnXuatExcel.TabIndex = 21;
-            this.btnXuatExcel.Text = "Xuất Excel";
-            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
-            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnXuatExcel;
@@ -741,7 +740,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 508);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDS_Thuoc";
             this.Text = "Danh sách Thuốc";
             this.Load += new System.EventHandler(this.frmDSThuoc_Load);

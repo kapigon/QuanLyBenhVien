@@ -223,7 +223,7 @@ namespace QLBV_DEV
 
         private void btnViTri_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.ShowForm<frmKho>();
+            this.ShowForm<frmViTri>();
         }
 
         private void btnHangSanXuat_ItemClick(object sender, ItemClickEventArgs e)
