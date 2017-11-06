@@ -36,11 +36,11 @@ namespace QLBV_DEV
             obj_NhanVien = rpo_NhanVien.GetSingle(user, pass);
             if (obj_NhanVien != null)
             {
+                this.Hide();
+
                 QLBV_DEV.Helpers.LoginInfo.nhanVien = obj_NhanVien;
                 frmMain frmMain = new frmMain();
                 frmMain.Show();
-
-                this.Hide();
             }
             else
                 MessageBox.Show("Tên đăng nhập và mật khẩu không đúng");
