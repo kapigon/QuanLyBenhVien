@@ -20,7 +20,7 @@ namespace QLBV_DEV
         int iRow;
         PhieuDieuChinhRepository rpo_PhieuDieuChinh = new PhieuDieuChinhRepository();
         CT_PhieuDieuChinhRepository rpo_CT_PDC = new CT_PhieuDieuChinhRepository();
-
+        NhanVien obj_NhanVien;
         #endregion
 
 
@@ -32,6 +32,15 @@ namespace QLBV_DEV
             grvCT_PhieuDieuChinh.DataSource = new BindingList<PhieuDieuChinh>();
             gridView1.CustomDrawRowIndicator += gridView1_CustomDrawRowIndicator;
             gridView2.CustomDrawRowIndicator += gridView1_CustomDrawRowIndicator;
+
+            obj_NhanVien = QLBV_DEV.Helpers.LoginInfo.nhanVien;
+
+            if (obj_NhanVien == null)
+            {
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.ShowDialog();
+            }
+
 
         }
         
@@ -82,7 +91,7 @@ namespace QLBV_DEV
 
             /// Xu ly lu vao bang Phieu dieu chinh
             PhieuDieuChinh obj_PDC;
-            int userID = 100000;
+            int userID = obj_NhanVien.ID;
 
             if (gridView1.RowCount > 0 && gridView1 != null)
             {
@@ -98,7 +107,7 @@ namespace QLBV_DEV
                         rpo_PhieuDieuChinh.Create(obj_PDC);
 
                          /// Khi tao 1 phiếu điều chỉnh thành công -> tạo các Chi tiết điều chỉnh thuốc
-                        if (obj_PDC.ID != null)
+                        if (obj_PDC.ID > 0)
                         {
                             CT_PhieuDieuChinh obj_CT_PDC;
                             for (int i = 0; i < gridView1.RowCount; i++)
@@ -151,47 +160,7 @@ namespace QLBV_DEV
                 }
             }
         }
-                
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (phieudieuchinh_ID > 0)
-            {
-                //frmThemThuoc frmThemThuoc = new frmThemThuoc();
-                //frmThemThuoc.loadData(thuoc_ID);
-                //frmThemThuoc.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Hãy lựa chọn dòng cần sửa.");
-            }
-        }
-        
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (phieudieuchinh_ID > 0)
-            {
-                String ten = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenThuoc").ToString();
-                DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    //do something
-                    //CT_Thuoc_PhieuNhap obj_CT_Thuoc = rpo_CT_Thuoc.GetSingle(thuoc_ID);
-                    //obj_CT_Thuoc.Xoa = true;
-                    //rpo_CT_Thuoc.Save(obj_CT_Thuoc);
-                    //rpo_Thuoc.Delete(thuoc_ID);
-
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-            else
-            {
-                MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
-            }
-        }
-
+      
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -202,18 +171,6 @@ namespace QLBV_DEV
             iRow = gridView1.FocusedRowHandle;
         }
 
-        //private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
-        //{
-        //    // Thêm số thứ tự tự động tăng GridControl
-        //    //bool indicatorIcon = true;
-        //    GridView view = (GridView)sender;
-        //    if (e.Info.IsRowIndicator && e.RowHandle >= 0)
-        //    {
-        //        e.Info.DisplayText = (e.RowHandle + 1).ToString();
-        //        //if (!indicatorIcon)
-        //        // e.Info.ImageIndex = -1;
-        //    }
-        //}
         // Bắt sự kiện thay đổi khi chọn Tên thuốc -> tự động đưa ra dữ liệu vào các cột trong gridcontrol tương ứng
         private void txtColTonSoSach_EditValueChanged(object sender, EventArgs e)
         {

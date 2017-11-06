@@ -125,7 +125,7 @@ namespace QLBV_DEV.Repository
             }
         }
 
-        public IQueryable<Thuoc> search(int thuoc_id, int nhomthuoc_ID, int hoatchat_ID, int hangsanxuat_Id, int nuocsanxuat_Id, bool kichhoat)
+        public IQueryable<Thuoc> search(long thuoc_id, int nhomthuoc_ID, int hoatchat_ID, int hangsanxuat_Id, int nuocsanxuat_Id, bool kichhoat)
         {
             var query = from _object in db.Thuoc 
                         //join nt in db.NhomThuoc on _object.NhomThuoc_ID equals nt.ID

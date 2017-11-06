@@ -98,30 +98,32 @@ namespace QLBV_DEV
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            dxValidate.Validate();
+            if (dxValidate.Validate())
+            {
+                obj_Thuoc.TenThuoc              = txtTenThuoc.Text.Trim();
+                obj_Thuoc.MaThuoc               = txtMaThuoc.Text.Trim();
+                obj_Thuoc.NhomThuoc_ID          = Convert.ToInt32(cbbNhomThuoc.EditValue);
+                obj_Thuoc.DVT_Nguyen_ID         = Convert.ToInt32(cbbDonViNguyen.EditValue);
+                obj_Thuoc.DVT_Le_ID             = Convert.ToInt32(cbbDonViLe.EditValue);
+                obj_Thuoc.HangSanXuat_ID        = Convert.ToInt32(cbbHangSanXuat.EditValue);
+                obj_Thuoc.NuocSanXuat_ID        = Convert.ToInt32(cbbNuocSanXuat.EditValue);
+                obj_Thuoc.HoatChat_ID           = Convert.ToInt32(cbbHoatChat.EditValue);
+                obj_Thuoc.QuyCach               = Convert.ToInt32(txtQuyCach.Text.Trim());
+                //obj_Thuoc.TonKho                = Convert.ToInt32(txtTonKho.Text.Trim());
+                obj_Thuoc.TonKhoToiThieu        = txtTonKhoToiThieu.EditValue !="" ? Convert.ToInt32(txtTonKhoToiThieu.EditValue) : 0;
+                obj_Thuoc.ThoiGianCanhBaoHetHan = txtCanhBaoHetHan.Text != ""? Convert.ToInt32(txtCanhBaoHetHan.Text) : 0;
+                obj_Thuoc.GiaBanLe              = txtGiaBanLe.Text != "" ? Convert.ToDouble(txtGiaBanLe.Text) : 0;
+                obj_Thuoc.GiaBanBuon            = txtGiaBanBuon.Text != "" ? Convert.ToDouble(txtGiaBanBuon.Text) : 0;
+                obj_Thuoc.KichHoat              = Convert.ToBoolean(chkKichHoat.EditValue);
+
+                if (!isUpdate)
+                    rpo_Thuoc.Create(obj_Thuoc);
+                else
+                    rpo_Thuoc.Save(obj_Thuoc);
+
+                this.Close();
+            }
             
-            obj_Thuoc.TenThuoc              = txtTenThuoc.Text.Trim();
-            obj_Thuoc.MaThuoc               = txtMaThuoc.Text.Trim();
-            obj_Thuoc.NhomThuoc_ID          = Convert.ToInt32(cbbNhomThuoc.EditValue);
-            obj_Thuoc.DVT_Nguyen_ID         = Convert.ToInt32(cbbDonViNguyen.EditValue);
-            obj_Thuoc.DVT_Le_ID             = Convert.ToInt32(cbbDonViLe.EditValue);
-            obj_Thuoc.HangSanXuat_ID        = Convert.ToInt32(cbbHangSanXuat.EditValue);
-            obj_Thuoc.NuocSanXuat_ID        = Convert.ToInt32(cbbNuocSanXuat.EditValue);
-            obj_Thuoc.HoatChat_ID           = Convert.ToInt32(cbbHoatChat.EditValue);
-            obj_Thuoc.QuyCach               = Convert.ToInt32(txtQuyCach.Text.Trim());
-            obj_Thuoc.TonKho                = Convert.ToInt32(txtTonKho.Text.Trim());
-            obj_Thuoc.TonKhoToiThieu        = Convert.ToInt32(txtTonKhoToiThieu.Text.Trim());
-            obj_Thuoc.ThoiGianCanhBaoHetHan = Convert.ToInt32(txtCanhBaoHetHan.Text.Trim());
-            obj_Thuoc.GiaBanLe              = Convert.ToDouble(txtGiaBanLe.Text.Trim());
-            obj_Thuoc.GiaBanBuon            = Convert.ToDouble(txtGiaBanBuon.Text.Trim());
-            obj_Thuoc.KichHoat              = Convert.ToBoolean(chkKichHoat.EditValue);
-
-            if (!isUpdate)
-                rpo_Thuoc.Create(obj_Thuoc);
-            else
-                rpo_Thuoc.Save(obj_Thuoc);
-
-            this.Close();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
