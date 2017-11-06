@@ -330,6 +330,15 @@ namespace QLBV_DEV
         }
         #endregion
 
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            sfdDSThuoc.Filter = "Excel files (*.xls or .xlsx)|.xls;*.xlsx";
+            if (sfdDSThuoc.ShowDialog() == DialogResult.OK)
+            {
+                grvDSThuoc.ExportToXls(sfdDSThuoc.FileName);
+            }
+        }
+
         
     }
 }

@@ -323,7 +323,11 @@ namespace QLBV_DEV
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            
+            sfdDSThuoc.Filter = "Excel files (*.xls or .xlsx)|.xls;*.xlsx";
+            if (sfdDSThuoc.ShowDialog() == DialogResult.OK)
+            {
+                grdDSThuoc.ExportToXls(sfdDSThuoc.FileName);
+            }
         }
 
         private void btnDong_Click(object sender, EventArgs e)

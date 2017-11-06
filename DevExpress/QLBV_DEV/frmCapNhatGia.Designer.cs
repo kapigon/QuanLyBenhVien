@@ -403,6 +403,7 @@
             this.btnTim.StyleController = this.layoutControl1;
             this.btnTim.TabIndex = 9;
             this.btnTim.Text = "Tìm kiếm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // cbbTenThuoc
             // 

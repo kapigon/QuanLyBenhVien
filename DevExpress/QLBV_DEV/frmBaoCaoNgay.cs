@@ -187,5 +187,14 @@ namespace QLBV_DEV
             grdDS_BanHang.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
         }
         #endregion
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            sfdDS_BanHang.Filter = "Excel files (*.xls or .xlsx)|.xls;*.xlsx";
+            if (sfdDS_BanHang.ShowDialog() == DialogResult.OK)
+            {
+                grdDS_BanHang.ExportToXls(sfdDS_BanHang.FileName);
+            }
+        }
     }
 }

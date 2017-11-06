@@ -46,31 +46,9 @@ namespace QLBV_DEV
             denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
 
             // Group nhom theo CT_Thuoc_PhieuNhap_ID
-            var qCT_Xuat_TuNgay_HienTai = from ct_xuat in db.CT_Thuoc_PhieuXuat
-                                          where ct_xuat.SoLuong > 0 &&
-                                          (ct_xuat.NgayBan.Value.Year >= tuNgay.Year
-                                          && ct_xuat.NgayBan.Value.Month >= tuNgay.Month
-                                          && ct_xuat.NgayBan.Value.Day >= tuNgay.Day
-                                          )
-                                          group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
-                                          select new
-                                          {
-                                              CT_Thuoc_PhieuNhap_ID = gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
-                                              SoLuong = gr_CT_Xuat.Sum(p => p.SoLuong),
-                                              GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
-                                          };
 
             var qCT_Xuat_TuNgay_DenNgay = from ct_xuat in db.CT_Thuoc_PhieuXuat
-                                          where ct_xuat.SoLuong > 0 && //(ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
-                                          ((ct_xuat.NgayBan.Value.Year >= tuNgay.Year
-                                          && ct_xuat.NgayBan.Value.Month >= tuNgay.Month
-                                          && ct_xuat.NgayBan.Value.Day >= tuNgay.Day
-                                          )
-                                          &&
-                                          (ct_xuat.NgayBan.Value.Year <= denNgay.Year
-                                          && ct_xuat.NgayBan.Value.Month <= denNgay.Month
-                                          && ct_xuat.NgayBan.Value.Day <= denNgay.Day
-                                          ))
+                                          where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
                                           group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
                                           select new
                                           {
@@ -79,21 +57,8 @@ namespace QLBV_DEV
                                               GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
                                           };
 
-            var qCT_PhieuNhapTaiTuNgay = from ct_nhap in db.CT_Thuoc_PhieuNhap
-                                             .Where(l => l.NgayNhap.Value.Year == tuNgay.Year
-                                               && l.NgayNhap.Value.Month == tuNgay.Month
-                                               && l.NgayNhap.Value.Day == tuNgay.Day)
-                                         select new
-                                         {
-                                             ID = ct_nhap.ID,
-                                             Thuoc_ID = ct_nhap.Thuoc_ID,
-                                             SoLuongNhap = ct_nhap.SoLuong,
-                                             TonKho = ct_nhap.TonKho,
-                                         };
-
             var qCT_PhieuNhap = from ct_nhap in db.CT_Thuoc_PhieuNhap
-                                where (ct_nhap.NgayNhap.Value.Year >= tuNgay.Year && ct_nhap.NgayNhap.Value.Month >= tuNgay.Month && ct_nhap.NgayNhap.Value.Day >= tuNgay.Day)
-                                        && (ct_nhap.NgayNhap.Value.Year <= denNgay.Year && ct_nhap.NgayNhap.Value.Month <= denNgay.Month && ct_nhap.NgayNhap.Value.Day <= denNgay.Day)
+                                where (ct_nhap.NgayNhap >= tuNgay && ct_nhap.NgayNhap <= denNgay)
                                 select new
                                 {
                                     ID = ct_nhap.ID,

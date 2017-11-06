@@ -217,6 +217,11 @@ namespace QLBV_DEV
         }
         #endregion
 
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }
