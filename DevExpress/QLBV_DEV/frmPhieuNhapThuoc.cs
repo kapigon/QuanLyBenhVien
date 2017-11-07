@@ -467,9 +467,15 @@ namespace QLBV_DEV
 
                 var x = listThuoc.FirstOrDefault(t => t.ID == id);
 
-                var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuNhap;
-                if (ctXuat == null) return;
-                ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Nguyen_ID;
+                var ctNhap = gridView1.GetFocusedRow() as CT_Thuoc_PhieuNhap;
+                if (ctNhap == null) return;
+                ctNhap.DVT_Theo_DVT_Thuoc_ID = x.DVT_Nguyen_ID;
+
+                ctNhap.GiaNhap = 0;
+                ctNhap.HSD = null;
+                ctNhap.SoLuong = 0;
+
+
 
                 gridView1.PostEditor();
                 // Nhảy vào ô số lượng sau khi chọn tên thuốc

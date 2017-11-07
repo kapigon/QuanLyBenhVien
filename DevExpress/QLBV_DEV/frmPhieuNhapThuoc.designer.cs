@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuNhapThuoc));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -274,10 +274,10 @@
             this.txtSoPhieu.Size = new System.Drawing.Size(330, 26);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
-            conditionValidationRule1.CaseSensitive = true;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Số phiếu không được để trống";
-            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule1);
+            conditionValidationRule2.CaseSensitive = true;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Số phiếu không được để trống";
+            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule2);
             // 
             // btnDong
             // 
@@ -411,6 +411,8 @@
             // 
             // MaVach_1
             // 
+            this.MaVach_1.AppearanceCell.Options.UseTextOptions = true;
+            this.MaVach_1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MaVach_1.AppearanceHeader.Options.UseTextOptions = true;
             this.MaVach_1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MaVach_1.Caption = "Mã vạch";
