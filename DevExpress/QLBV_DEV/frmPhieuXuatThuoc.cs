@@ -417,7 +417,7 @@ namespace QLBV_DEV
                                 btnLuu.Enabled = false;
                                 chkDeNghiHuy.ReadOnly = false;
 
-                                frmMain frmMain = new frmMain(3);
+                                //frmMain frmMain = new frmMain(3);
                             }
                             catch (Exception)
                             {

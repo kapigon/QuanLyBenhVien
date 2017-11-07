@@ -14,8 +14,7 @@ namespace QLBV_DEV
     public partial class frmBaoCaoNgay : DevExpress.XtraEditors.XtraForm
     {
         #region params
-        HospitalEntities db = new HospitalEntities();
-        PhieuNhapThuocRepository rpo_PhieuNhap = new PhieuNhapThuocRepository();
+        CT_Thuoc_PhieuXuatRepository rpo_CT_PhieuXuat = new CT_Thuoc_PhieuXuatRepository();
 
         int phieuNhapID = 0;
 
@@ -27,6 +26,9 @@ namespace QLBV_DEV
             InitializeComponent();
             LoadNCC();
             LoadDoanhThuTheoNgay();
+
+            dateTuNgay.EditValue = DateTime.Now;
+            dateDenNgay.EditValue = DateTime.Now;
         }
 
         #region methods
@@ -34,38 +36,13 @@ namespace QLBV_DEV
         {
             try
             {
-                //var result = from nv in db.PhieuNhapThuoc
-                //             where nv.Xoa == false
-                //             select nv;
-                //var result = rpo_PhieuNhap.GetAllNotDelete();
-                var result = from ct_phieuxuat in db.CT_Thuoc_PhieuXuat
-                             join phieuxuat in db.PhieuXuatThuoc on ct_phieuxuat.PhieuXuatHang_ID equals phieuxuat.ID
-                             join ct_phieunhap in db.CT_Thuoc_PhieuNhap on ct_phieuxuat.CT_Thuoc_PhieuNhap_ID equals ct_phieunhap.ID
-                             join thuoc in db.Thuoc on ct_phieunhap.Thuoc_ID equals thuoc.ID
-                             join dvt in db.DonViTinh on ct_phieuxuat.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
+                DateTime tuNgay = Convert.ToDateTime(dateTuNgay.EditValue);
+                DateTime denNgay = Convert.ToDateTime(dateDenNgay.EditValue);
 
-                            //join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
-                             //from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
-                            where phieuxuat.NgayTao == DateTime.Today
-                            //orderby phieunhap.ID ascending
-                            select new
-                            {
-                                ID          = thuoc.ID,
-                                MaThuoc     = thuoc.MaThuoc,
-                                TenThuoc    = thuoc.TenThuoc,
-                                SoLuong     = ct_phieuxuat.SoLuong,
-                                GiaBan      = ct_phieuxuat.GiaBan,
-                                DVT         = dvt.TenDVT,
-                                NgayBan     = phieuxuat.NgayTao,
-                                TongTien    = ct_phieuxuat.TongTien
-                                //SoPhieu     = phieux.SoPhieu,
-                                //SoHoaDon    = phieunhap.SoHoaDon,
-                                //NgayNhap    = phieunhap.NgayNhap,
-                                //NCC_KH_ID   = ncc_kh.TenNCC_KH,
-                                //ThueSuat    = phieunhap.ThueSuat + "%",
-                                //ChietKhau   = phieunhap.ChietKhau,
-                                //TongTienTra = phieunhap.TongTienTra
-                            };
+                tuNgay = Convert.ToDateTime(tuNgay.ToShortDateString());
+                denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
+
+                var result = rpo_CT_PhieuXuat.search(0, "", tuNgay, denNgay, "");
                 grdDS_BanHang.DataSource = result.ToList();
             }
             catch (Exception)
@@ -79,13 +56,13 @@ namespace QLBV_DEV
             try
             {
                 NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
-                // lấy ra NCC và vừa là NCC vừa là KH
-                cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
+                // lấy ra KH và vừa là NCC vừa là KH
+                cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(2, 2).ToList());
                 //cbbNCC.DataSource = result.ToList();
                 cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
                 cbbNCC_KH.Properties.ValueMember = "ID";
 
-                cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
+                cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(2, 2).ToList());
                 cbbCol_NCC_KH.DisplayMember = "TenNCC_KH";
                 cbbCol_NCC_KH.ValueMember = "ID";
             }
@@ -98,26 +75,7 @@ namespace QLBV_DEV
         #endregion
 
         #region events
-        private void btnThemPhieu_Click(object sender, EventArgs e)
-        {
-            frmPhieuNhapThuoc frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
-            frmPhieuNhapThuoc.ShowInTaskbar = false;
-            frmPhieuNhapThuoc.ShowDialog();
-
-            /*frmMain frmMain = new frmMain();
-            frmMain.showPhieuNhap();
-            Form frm = frmMain.kiemtraform(typeof(frmPhieuNhapThuoc));
-            if (frm == null)
-            {
-                //frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
-                frmPhieuNhapThuoc.MdiParent = frmMain;
-                frmPhieuNhapThuoc.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }*/
-        }
+       
         
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -128,87 +86,7 @@ namespace QLBV_DEV
         {
             iRow = gridView1.FocusedRowHandle;
         }
-        
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (iRow >= 0)
-                {
-                    String soPhieu = gridView1.GetRowCellValue(iRow, "SoPhieu").ToString();
-                    DialogResult dialogResult = MessageBox.Show(soPhieu, "Xác nhận xóa?", MessageBoxButtons.YesNo);
-
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
-                            //int userID = 100000;
-
-                            PhieuNhapThuoc obj_PhieuNhap = rpo_PhieuNhap.GetSingle(id);
-                            obj_PhieuNhap.Xoa = true;
-                            obj_PhieuNhap.NgayXoa = DateTime.Now;
-
-                            rpo_PhieuNhap.Save(obj_PhieuNhap);
-
-
-                            // Tải lại danh sách nhà cung cấp
-                            LoadDoanhThuTheoNgay();
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
-                        }
-                    }
-                    else if (dialogResult == DialogResult.No)
-                    {
-                        //do something else
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
-            }
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (iRow >= 0)
-                {
-                    try
-                    {
-
-                        long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
-
-                        frmPhieuNhapThuoc frmPhieuNhap = new frmPhieuNhapThuoc();
-                        frmPhieuNhap.FormClosed += new FormClosedEventHandler(frmDS_PhieuNhapClosed);
-
-                        frmPhieuNhap.loadData(id);
-                        frmPhieuNhap.ShowDialog();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Hãy lựa chọn dòng cần sửa.");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
-            }
-        }
-
+                
         private void frmDS_PhieuNhapClosed(object sender, FormClosedEventArgs e)
         {
             LoadDoanhThuTheoNgay();
@@ -226,10 +104,13 @@ namespace QLBV_DEV
             DateTime denNgay    = Convert.ToDateTime(dateDenNgay.EditValue);
             String soHoaDon     = txtSoHoaDon.Text.Trim();
 
+            tuNgay = Convert.ToDateTime(tuNgay.ToShortDateString());
+            denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
+
             try
             {
-                var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
-                grdDS_BanHang.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+                var query = rpo_CT_PhieuXuat.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
+                grdDS_BanHang.DataSource = query.ToList();
             }
             catch (Exception)
             {
@@ -237,12 +118,7 @@ namespace QLBV_DEV
             }
             
         }
-
-        private void btnTaiLaiDS_Click(object sender, EventArgs e)
-        {
-            LoadDoanhThuTheoNgay();
-        }
-        
+                
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
             sfdDS_BanHang.Filter = "Excel files (*.xls or .xlsx)|.xls;*.xlsx";

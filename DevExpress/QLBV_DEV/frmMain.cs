@@ -311,5 +311,10 @@ namespace QLBV_DEV
         {
             this.ShowForm<frmCanhbaotrangchu>();
         }
+
+        private void btnThuocBanTheoNgay_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ShowForm<frmBaoCaoNgay>();
+        }
     }
 }
