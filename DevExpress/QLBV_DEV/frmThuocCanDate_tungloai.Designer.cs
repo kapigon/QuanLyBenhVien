@@ -76,7 +76,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Teal;
-            this.labelControl1.Location = new System.Drawing.Point(-62, 12);
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.labelControl1.Size = new System.Drawing.Size(1213, 44);
@@ -86,7 +86,7 @@
             // 
             // grvThuocCanDate_tungloai
             // 
-            this.grvThuocCanDate_tungloai.Location = new System.Drawing.Point(-62, 60);
+            this.grvThuocCanDate_tungloai.Location = new System.Drawing.Point(12, 60);
             this.grvThuocCanDate_tungloai.MainView = this.gridView1;
             this.grvThuocCanDate_tungloai.Name = "grvThuocCanDate_tungloai";
             this.grvThuocCanDate_tungloai.Size = new System.Drawing.Size(1213, 451);
@@ -112,8 +112,7 @@
             this.gridColumn1.Caption = "Id";
             this.gridColumn1.FieldName = "Id";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 104;
             // 
             // gridColumn2
             // 
@@ -123,7 +122,8 @@
             this.gridColumn2.FieldName = "TenThuoc";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 462;
             // 
             // gridColumn3
             // 
@@ -133,7 +133,8 @@
             this.gridColumn3.FieldName = "MaThuoc";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 218;
             // 
             // gridColumn4
             // 
@@ -143,7 +144,8 @@
             this.gridColumn4.FieldName = "HSD";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.Width = 268;
             // 
             // gridColumn5
             // 
@@ -153,7 +155,8 @@
             this.gridColumn5.FieldName = "canhbaohethan";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.Width = 247;
             // 
             // Root
             // 
@@ -163,7 +166,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2});
-            this.Root.Location = new System.Drawing.Point(-74, 0);
+            this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1237, 523);
             this.Root.Text = "Root";

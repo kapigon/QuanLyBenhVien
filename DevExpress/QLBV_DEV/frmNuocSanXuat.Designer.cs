@@ -174,7 +174,7 @@
             // 
             this.gridColumnTenNuoc.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumnTenNuoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnTenNuoc.Caption = "TÊN NƯỚC";
+            this.gridColumnTenNuoc.Caption = "Tên nước";
             this.gridColumnTenNuoc.FieldName = "TenNuoc";
             this.gridColumnTenNuoc.Name = "gridColumnTenNuoc";
             this.gridColumnTenNuoc.Visible = true;

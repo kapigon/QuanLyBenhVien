@@ -334,7 +334,7 @@
             this.MaThuoc.Name = "MaThuoc";
             this.MaThuoc.Visible = true;
             this.MaThuoc.VisibleIndex = 0;
-            this.MaThuoc.Width = 105;
+            this.MaThuoc.Width = 150;
             // 
             // TenThuoc
             // 
@@ -345,7 +345,7 @@
             this.TenThuoc.Name = "TenThuoc";
             this.TenThuoc.Visible = true;
             this.TenThuoc.VisibleIndex = 1;
-            this.TenThuoc.Width = 259;
+            this.TenThuoc.Width = 339;
             // 
             // TenHoatChat
             // 
@@ -356,7 +356,7 @@
             this.TenHoatChat.Name = "TenHoatChat";
             this.TenHoatChat.Visible = true;
             this.TenHoatChat.VisibleIndex = 3;
-            this.TenHoatChat.Width = 116;
+            this.TenHoatChat.Width = 151;
             // 
             // NhomThuoc_ID
             // 
@@ -368,7 +368,7 @@
             this.NhomThuoc_ID.Name = "NhomThuoc_ID";
             this.NhomThuoc_ID.Visible = true;
             this.NhomThuoc_ID.VisibleIndex = 2;
-            this.NhomThuoc_ID.Width = 145;
+            this.NhomThuoc_ID.Width = 217;
             // 
             // cbbColNhomThuoc
             // 
@@ -391,7 +391,7 @@
             this.ThoiGianCanhBaoHetHan.Name = "ThoiGianCanhBaoHetHan";
             this.ThoiGianCanhBaoHetHan.Visible = true;
             this.ThoiGianCanhBaoHetHan.VisibleIndex = 4;
-            this.ThoiGianCanhBaoHetHan.Width = 57;
+            this.ThoiGianCanhBaoHetHan.Width = 91;
             // 
             // TonKhoToiThieu
             // 
@@ -404,7 +404,7 @@
             this.TonKhoToiThieu.Name = "TonKhoToiThieu";
             this.TonKhoToiThieu.Visible = true;
             this.TonKhoToiThieu.VisibleIndex = 5;
-            this.TonKhoToiThieu.Width = 65;
+            this.TonKhoToiThieu.Width = 134;
             // 
             // KichHoat
             // 
@@ -416,7 +416,7 @@
             this.KichHoat.Name = "KichHoat";
             this.KichHoat.Visible = true;
             this.KichHoat.VisibleIndex = 6;
-            this.KichHoat.Width = 68;
+            this.KichHoat.Width = 87;
             // 
             // repositoryItemCheckEdit1
             // 

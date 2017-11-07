@@ -100,12 +100,6 @@
     <Compile Include="frmBangKeChiTietNhap_Xuat_Ton.Designer.cs">
       <DependentUpon>frmBangKeChiTietNhap_Xuat_Ton.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBangKeNhap_Xuat_Ton.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBangKeNhap_Xuat_Ton.Designer.cs">
-      <DependentUpon>frmBangKeNhap_Xuat_Ton.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmBaoCaoNgay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +301,12 @@
     <Compile Include="frmViTri.Designer.cs">
       <DependentUpon>frmViTri.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWelcomeBVTKV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWelcomeBVTKV.Designer.cs">
+      <DependentUpon>frmWelcomeBVTKV.cs</DependentUpon>
+    </Compile>
     <Compile Include="HangSanXuat.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
@@ -331,12 +331,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HospitalModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="InBaoCao.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="InBaoCao.Designer.cs">
-      <DependentUpon>InBaoCao.cs</DependentUpon>
     </Compile>
     <Compile Include="Kho.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
@@ -421,9 +415,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBangKeChiTietNhap_Xuat_Ton.resx">
       <DependentUpon>frmBangKeChiTietNhap_Xuat_Ton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBangKeNhap_Xuat_Ton.resx">
-      <DependentUpon>frmBangKeNhap_Xuat_Ton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaoCaoNgay.resx">
       <DependentUpon>frmBaoCaoNgay.cs</DependentUpon>
@@ -519,8 +510,8 @@
     <EmbeddedResource Include="frmVitri.resx">
       <DependentUpon>frmViTri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InBaoCao.resx">
-      <DependentUpon>InBaoCao.cs</DependentUpon>
+    <EmbeddedResource Include="frmWelcomeBVTKV.resx">
+      <DependentUpon>frmWelcomeBVTKV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

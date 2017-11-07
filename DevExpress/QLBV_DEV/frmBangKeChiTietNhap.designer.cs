@@ -216,6 +216,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 0;
+            this.gridColumn4.Width = 125;
             // 
             // MaThuoc
             // 
@@ -227,6 +228,7 @@
             this.MaThuoc.OptionsColumn.ReadOnly = true;
             this.MaThuoc.Visible = true;
             this.MaThuoc.VisibleIndex = 1;
+            this.MaThuoc.Width = 111;
             // 
             // TenThuoc
             // 
@@ -238,6 +240,7 @@
             this.TenThuoc.OptionsColumn.ReadOnly = true;
             this.TenThuoc.Visible = true;
             this.TenThuoc.VisibleIndex = 2;
+            this.TenThuoc.Width = 318;
             // 
             // gridColumn3
             // 
@@ -250,6 +253,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 129;
             // 
             // DVT
             // 
@@ -272,6 +276,7 @@
             this.SoLuong.OptionsColumn.ReadOnly = true;
             this.SoLuong.Visible = true;
             this.SoLuong.VisibleIndex = 4;
+            this.SoLuong.Width = 127;
             // 
             // GiaNhap
             // 
@@ -287,6 +292,7 @@
             this.GiaNhap.OptionsColumn.ReadOnly = true;
             this.GiaNhap.Visible = true;
             this.GiaNhap.VisibleIndex = 5;
+            this.GiaNhap.Width = 213;
             // 
             // TongTien
             // 
@@ -306,6 +312,7 @@
             this.TongTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TongTien.Visible = true;
             this.TongTien.VisibleIndex = 6;
+            this.TongTien.Width = 221;
             // 
             // repositoryItemFontEdit1
             // 

@@ -306,5 +306,10 @@ namespace QLBV_DEV
         {
             this.ShowForm<frmBangKeChiTietNhap>();
         }
+
+        private void btnCanhbao_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ShowForm<frmCanhbaotrangchu>();
+        }
     }
 }

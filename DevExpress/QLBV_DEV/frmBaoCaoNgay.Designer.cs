@@ -291,6 +291,7 @@
             this.MaThuoc.OptionsColumn.ReadOnly = true;
             this.MaThuoc.Visible = true;
             this.MaThuoc.VisibleIndex = 0;
+            this.MaThuoc.Width = 124;
             // 
             // TenThuoc
             // 
@@ -302,6 +303,7 @@
             this.TenThuoc.OptionsColumn.ReadOnly = true;
             this.TenThuoc.Visible = true;
             this.TenThuoc.VisibleIndex = 1;
+            this.TenThuoc.Width = 307;
             // 
             // SoLuong
             // 
@@ -315,6 +317,7 @@
             this.SoLuong.OptionsColumn.ReadOnly = true;
             this.SoLuong.Visible = true;
             this.SoLuong.VisibleIndex = 2;
+            this.SoLuong.Width = 138;
             // 
             // DVT
             // 
@@ -328,6 +331,7 @@
             this.DVT.OptionsColumn.ReadOnly = true;
             this.DVT.Visible = true;
             this.DVT.VisibleIndex = 3;
+            this.DVT.Width = 124;
             // 
             // GiaBan
             // 
@@ -343,6 +347,7 @@
             this.GiaBan.OptionsColumn.ReadOnly = true;
             this.GiaBan.Visible = true;
             this.GiaBan.VisibleIndex = 4;
+            this.GiaBan.Width = 161;
             // 
             // gridColumn2
             // 
@@ -355,6 +360,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.Width = 206;
             // 
             // gridColumn6
             // 
@@ -370,6 +376,7 @@
             this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 184;
             // 
             // repositoryItemFontEdit1
             // 

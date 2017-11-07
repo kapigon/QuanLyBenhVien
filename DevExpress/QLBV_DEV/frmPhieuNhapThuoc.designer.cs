@@ -302,7 +302,7 @@
             this.btnIn.Size = new System.Drawing.Size(150, 60);
             this.btnIn.StyleController = this.layoutControl1;
             this.btnIn.TabIndex = 3;
-            this.btnIn.Text = "In";
+            this.btnIn.Text = "Xuất excel";
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnLuu

@@ -312,7 +312,7 @@
             this.MaThuoc.Name = "MaThuoc";
             this.MaThuoc.Visible = true;
             this.MaThuoc.VisibleIndex = 0;
-            this.MaThuoc.Width = 105;
+            this.MaThuoc.Width = 88;
             // 
             // TenThuoc
             // 
@@ -323,7 +323,7 @@
             this.TenThuoc.Name = "TenThuoc";
             this.TenThuoc.Visible = true;
             this.TenThuoc.VisibleIndex = 1;
-            this.TenThuoc.Width = 259;
+            this.TenThuoc.Width = 260;
             // 
             // NhomThuoc_ID
             // 
@@ -334,7 +334,7 @@
             this.NhomThuoc_ID.Name = "NhomThuoc_ID";
             this.NhomThuoc_ID.Visible = true;
             this.NhomThuoc_ID.VisibleIndex = 2;
-            this.NhomThuoc_ID.Width = 145;
+            this.NhomThuoc_ID.Width = 163;
             // 
             // TenHoatChat
             // 
@@ -345,7 +345,7 @@
             this.TenHoatChat.Name = "TenHoatChat";
             this.TenHoatChat.Visible = true;
             this.TenHoatChat.VisibleIndex = 3;
-            this.TenHoatChat.Width = 116;
+            this.TenHoatChat.Width = 106;
             // 
             // ThoiGianCanhBaoHetHan
             // 
@@ -369,7 +369,7 @@
             this.TonKhoToiThieu.Name = "TonKhoToiThieu";
             this.TonKhoToiThieu.Visible = true;
             this.TonKhoToiThieu.VisibleIndex = 4;
-            this.TonKhoToiThieu.Width = 65;
+            this.TonKhoToiThieu.Width = 89;
             // 
             // GiaBanLe
             // 
@@ -380,7 +380,7 @@
             this.GiaBanLe.Name = "GiaBanLe";
             this.GiaBanLe.Visible = true;
             this.GiaBanLe.VisibleIndex = 5;
-            this.GiaBanLe.Width = 68;
+            this.GiaBanLe.Width = 111;
             // 
             // GiaBanBuon
             // 
@@ -391,6 +391,7 @@
             this.GiaBanBuon.Name = "GiaBanBuon";
             this.GiaBanBuon.Visible = true;
             this.GiaBanBuon.VisibleIndex = 6;
+            this.GiaBanBuon.Width = 132;
             // 
             // cbbColNhomThuoc
             // 

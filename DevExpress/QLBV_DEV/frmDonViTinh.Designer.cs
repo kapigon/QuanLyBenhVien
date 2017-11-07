@@ -179,7 +179,7 @@
             // 
             this.gridColumnDonViTinh.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumnDonViTinh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnDonViTinh.Caption = "ĐƠN VỊ TÍNH";
+            this.gridColumnDonViTinh.Caption = "Đơn vị tính";
             this.gridColumnDonViTinh.FieldName = "TenDVT";
             this.gridColumnDonViTinh.Name = "gridColumnDonViTinh";
             this.gridColumnDonViTinh.Visible = true;

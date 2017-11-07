@@ -252,6 +252,7 @@
             this.MaNCC_KH.Name = "MaNCC_KH";
             this.MaNCC_KH.Visible = true;
             this.MaNCC_KH.VisibleIndex = 0;
+            this.MaNCC_KH.Width = 133;
             // 
             // TenNCC_KH
             // 
@@ -262,6 +263,7 @@
             this.TenNCC_KH.Name = "TenNCC_KH";
             this.TenNCC_KH.Visible = true;
             this.TenNCC_KH.VisibleIndex = 1;
+            this.TenNCC_KH.Width = 366;
             // 
             // LoaiNCC_KH_ID
             // 
@@ -272,6 +274,7 @@
             this.LoaiNCC_KH_ID.Name = "LoaiNCC_KH_ID";
             this.LoaiNCC_KH_ID.Visible = true;
             this.LoaiNCC_KH_ID.VisibleIndex = 2;
+            this.LoaiNCC_KH_ID.Width = 125;
             // 
             // DiaChi
             // 
@@ -282,6 +285,7 @@
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Visible = true;
             this.DiaChi.VisibleIndex = 3;
+            this.DiaChi.Width = 305;
             // 
             // SDT
             // 
@@ -292,6 +296,7 @@
             this.SDT.Name = "SDT";
             this.SDT.Visible = true;
             this.SDT.VisibleIndex = 4;
+            this.SDT.Width = 172;
             // 
             // MST
             // 
@@ -302,6 +307,7 @@
             this.MST.Name = "MST";
             this.MST.Visible = true;
             this.MST.VisibleIndex = 5;
+            this.MST.Width = 163;
             // 
             // KichHoat
             // 
@@ -313,6 +319,7 @@
             this.KichHoat.Name = "KichHoat";
             this.KichHoat.Visible = true;
             this.KichHoat.VisibleIndex = 6;
+            this.KichHoat.Width = 97;
             // 
             // repositoryItemCheckEdit1
             // 

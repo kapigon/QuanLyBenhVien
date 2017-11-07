@@ -65,9 +65,9 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.sfdDSNhap_Xuat_Ton = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -90,9 +90,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -138,7 +138,7 @@
             // btnXuatExcel
             // 
             this.btnXuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.Image")));
-            this.btnXuatExcel.Location = new System.Drawing.Point(166, 708);
+            this.btnXuatExcel.Location = new System.Drawing.Point(12, 708);
             this.btnXuatExcel.MaximumSize = new System.Drawing.Size(150, 60);
             this.btnXuatExcel.MinimumSize = new System.Drawing.Size(150, 60);
             this.btnXuatExcel.Name = "btnXuatExcel";
@@ -151,7 +151,7 @@
             // btnThoat
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(12, 708);
+            this.btnThoat.Location = new System.Drawing.Point(166, 708);
             this.btnThoat.MaximumSize = new System.Drawing.Size(150, 60);
             this.btnThoat.MinimumSize = new System.Drawing.Size(150, 60);
             this.btnThoat.Name = "btnThoat";
@@ -221,6 +221,7 @@
             this.MaThuoc.OptionsColumn.ReadOnly = true;
             this.MaThuoc.Visible = true;
             this.MaThuoc.VisibleIndex = 0;
+            this.MaThuoc.Width = 119;
             // 
             // TenThuoc
             // 
@@ -232,6 +233,7 @@
             this.TenThuoc.OptionsColumn.ReadOnly = true;
             this.TenThuoc.Visible = true;
             this.TenThuoc.VisibleIndex = 1;
+            this.TenThuoc.Width = 262;
             // 
             // gridColumn3
             // 
@@ -244,6 +246,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 121;
             // 
             // TonDauKy
             // 
@@ -257,6 +260,7 @@
             this.TonDauKy.OptionsColumn.ReadOnly = true;
             this.TonDauKy.Visible = true;
             this.TonDauKy.VisibleIndex = 3;
+            this.TonDauKy.Width = 147;
             // 
             // DVT
             // 
@@ -279,6 +283,7 @@
             this.NhapTrongKy.OptionsColumn.ReadOnly = true;
             this.NhapTrongKy.Visible = true;
             this.NhapTrongKy.VisibleIndex = 4;
+            this.NhapTrongKy.Width = 147;
             // 
             // XuatTrongky
             // 
@@ -292,6 +297,7 @@
             this.XuatTrongky.OptionsColumn.ReadOnly = true;
             this.XuatTrongky.Visible = true;
             this.XuatTrongky.VisibleIndex = 5;
+            this.XuatTrongky.Width = 147;
             // 
             // GiaXuatTrongKy
             // 
@@ -309,6 +315,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GiaXuatTrongKy", "= {0:c}")});
             this.GiaXuatTrongKy.Visible = true;
             this.GiaXuatTrongKy.VisibleIndex = 6;
+            this.GiaXuatTrongKy.Width = 147;
             // 
             // TonCuoiKy
             // 
@@ -322,6 +329,7 @@
             this.TonCuoiKy.OptionsColumn.ReadOnly = true;
             this.TonCuoiKy.Visible = true;
             this.TonCuoiKy.VisibleIndex = 7;
+            this.TonCuoiKy.Width = 154;
             // 
             // gridColumn6
             // 
@@ -454,9 +462,9 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,
             this.layoutControlItem7,
-            this.layoutControlItem1,
             this.layoutControlItem11,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItem1});
             this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1286, 780);
@@ -518,24 +526,13 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.btnXuatExcel;
-            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(154, 696);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1112, 64);
-            this.layoutControlItem1.Text = "layoutControlItem1";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnThoat;
             this.layoutControlItem11.CustomizationFormText = "layoutControlItem11";
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 696);
+            this.layoutControlItem11.Location = new System.Drawing.Point(154, 696);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(154, 64);
+            this.layoutControlItem11.Size = new System.Drawing.Size(1112, 64);
             this.layoutControlItem11.Text = "layoutControlItem11";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
@@ -551,6 +548,17 @@
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.btnXuatExcel;
+            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 696);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(154, 64);
+            this.layoutControlItem1.Text = "layoutControlItem1";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // frmBangKeChiTietNhap_Xuat_Ton
             // 
@@ -582,9 +590,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }

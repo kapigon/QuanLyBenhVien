@@ -178,7 +178,7 @@
             this.gridColumnNhomThuoc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumnNhomThuoc.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumnNhomThuoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnNhomThuoc.Caption = "NHÓM THUỐC";
+            this.gridColumnNhomThuoc.Caption = "Nhóm thuốc";
             this.gridColumnNhomThuoc.FieldName = "TenNhom";
             this.gridColumnNhomThuoc.Name = "gridColumnNhomThuoc";
             this.gridColumnNhomThuoc.Visible = true;

@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::QLBV_DEV.frmWelcomeBVTKV), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup3 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup4 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup5 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup6 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup7 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem4 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup8 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem5 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup9 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup10 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup11 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup12 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup13 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup14 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem6 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem7 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem8 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnTaoPhieuNhap = new DevExpress.XtraBars.BarButtonItem();
@@ -81,7 +81,9 @@
             this.btnBC_Nhapthuoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnBC_Xuatthuoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnBC_Nhapxuatton = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCanhbao = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -124,11 +126,10 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 403);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(2);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 599);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(863, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1294, 35);
             // 
             // ribbon
             // 
@@ -170,10 +171,10 @@
             this.btnDSPhieuXuatHuy,
             this.btnBC_Nhapthuoc,
             this.btnBC_Xuatthuoc,
-            this.btnBC_Nhapxuatton});
+            this.btnBC_Nhapxuatton,
+            this.btnCanhbao});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbon.MaxItemId = 5;
+            this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage6,
@@ -187,7 +188,7 @@
             this.repositoryItemImageEdit1,
             this.repositoryItemPictureEdit2,
             this.repositoryItemCalcEdit1});
-            this.ribbon.Size = new System.Drawing.Size(863, 144);
+            this.ribbon.Size = new System.Drawing.Size(1294, 170);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnTaoPhieuNhap
@@ -403,20 +404,20 @@
             // 
             // 
             // 
-            galleryItemGroup1.Caption = "Group2";
-            galleryItem1.Caption = "Item1";
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1});
-            galleryItemGroup2.Caption = "Group3";
-            galleryItemGroup3.Caption = "Group4";
-            galleryItemGroup4.Caption = "Group5";
-            galleryItemGroup5.Caption = "Group6";
+            galleryItemGroup8.Caption = "Group2";
+            galleryItem5.Caption = "Item1";
+            galleryItemGroup8.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem5});
+            galleryItemGroup9.Caption = "Group3";
+            galleryItemGroup10.Caption = "Group4";
+            galleryItemGroup11.Caption = "Group5";
+            galleryItemGroup12.Caption = "Group6";
             this.ribbonGalleryBarItem2.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1,
-            galleryItemGroup2,
-            galleryItemGroup3,
-            galleryItemGroup4,
-            galleryItemGroup5});
+            galleryItemGroup8,
+            galleryItemGroup9,
+            galleryItemGroup10,
+            galleryItemGroup11,
+            galleryItemGroup12});
             this.ribbonGalleryBarItem2.Id = 28;
             this.ribbonGalleryBarItem2.Name = "ribbonGalleryBarItem2";
             // 
@@ -432,9 +433,9 @@
             // 
             // 
             // 
-            galleryItemGroup6.Caption = "Group1";
+            galleryItemGroup13.Caption = "Group1";
             this.ribbonGalleryBarItem4.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup6});
+            galleryItemGroup13});
             this.ribbonGalleryBarItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("ribbonGalleryBarItem4.Glyph")));
             this.ribbonGalleryBarItem4.Id = 30;
             this.ribbonGalleryBarItem4.Name = "ribbonGalleryBarItem4";
@@ -445,16 +446,16 @@
             // 
             // 
             // 
-            galleryItemGroup7.Caption = "Group7";
-            galleryItem2.Caption = "Item2";
-            galleryItem3.Caption = "Item3";
-            galleryItem4.Caption = "Item4";
-            galleryItemGroup7.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem2,
-            galleryItem3,
-            galleryItem4});
+            galleryItemGroup14.Caption = "Group7";
+            galleryItem6.Caption = "Item2";
+            galleryItem7.Caption = "Item3";
+            galleryItem8.Caption = "Item4";
+            galleryItemGroup14.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem6,
+            galleryItem7,
+            galleryItem8});
             this.ribbonGalleryBarItem5.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup7});
+            galleryItemGroup14});
             this.ribbonGalleryBarItem5.Id = 31;
             this.ribbonGalleryBarItem5.Name = "ribbonGalleryBarItem5";
             // 
@@ -525,10 +526,26 @@
             this.btnBC_Nhapxuatton.Name = "btnBC_Nhapxuatton";
             this.btnBC_Nhapxuatton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBC_Nhapxuatton_ItemClick);
             // 
+            // btnCanhbao
+            // 
+            this.btnCanhbao.Caption = "Cảnh báo";
+            this.btnCanhbao.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCanhbao.Glyph")));
+            this.btnCanhbao.Id = 5;
+            this.btnCanhbao.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCanhbao.LargeGlyph")));
+            this.btnCanhbao.Name = "btnCanhbao";
+            this.btnCanhbao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCanhbao_ItemClick);
+            // 
             // ribbonPage6
             // 
+            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup18});
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "Trang chủ";
+            // 
+            // ribbonPageGroup18
+            // 
+            this.ribbonPageGroup18.ItemLinks.Add(this.btnCanhbao);
+            this.ribbonPageGroup18.Name = "ribbonPageGroup18";
             // 
             // ribbonPage1
             // 
@@ -739,13 +756,12 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 434);
+            this.ClientSize = new System.Drawing.Size(1294, 634);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
@@ -837,5 +853,7 @@
         private DevExpress.XtraBars.BarButtonItem btnBC_Nhapxuatton;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.BarButtonItem btnCanhbao;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
     }
 }

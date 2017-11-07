@@ -219,7 +219,7 @@
             // 
             this.gridColumnDonViTinh.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumnDonViTinh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnDonViTinh.Caption = "TÊN KHO";
+            this.gridColumnDonViTinh.Caption = "Tên kho";
             this.gridColumnDonViTinh.FieldName = "TenKho";
             this.gridColumnDonViTinh.Name = "gridColumnDonViTinh";
             this.gridColumnDonViTinh.Visible = true;
@@ -230,7 +230,7 @@
             // 
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "MÃ KHO";
+            this.gridColumn3.Caption = "Mã kho";
             this.gridColumn3.FieldName = "MaKho";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
@@ -241,7 +241,7 @@
             // 
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "ĐỊA CHỈ";
+            this.gridColumn1.Caption = "Địa chỉ";
             this.gridColumn1.FieldName = "DiaChi";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
@@ -254,7 +254,7 @@
             this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "ĐIỆN THOẠI";
+            this.gridColumn2.Caption = "Số ĐT";
             this.gridColumn2.FieldName = "DienThoai";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;

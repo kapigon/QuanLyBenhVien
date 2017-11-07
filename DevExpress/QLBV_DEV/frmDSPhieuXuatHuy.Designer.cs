@@ -223,6 +223,7 @@
             this.SoPhieu.OptionsColumn.ReadOnly = true;
             this.SoPhieu.Visible = true;
             this.SoPhieu.VisibleIndex = 0;
+            this.SoPhieu.Width = 129;
             // 
             // NgayTao
             // 
@@ -236,6 +237,7 @@
             this.NgayTao.OptionsColumn.ReadOnly = true;
             this.NgayTao.Visible = true;
             this.NgayTao.VisibleIndex = 2;
+            this.NgayTao.Width = 193;
             // 
             // SoHoaDon
             // 
@@ -247,6 +249,7 @@
             this.SoHoaDon.OptionsColumn.ReadOnly = true;
             this.SoHoaDon.Visible = true;
             this.SoHoaDon.VisibleIndex = 1;
+            this.SoHoaDon.Width = 138;
             // 
             // NCC_KH_ID
             // 
@@ -258,6 +261,7 @@
             this.NCC_KH_ID.OptionsColumn.ReadOnly = true;
             this.NCC_KH_ID.Visible = true;
             this.NCC_KH_ID.VisibleIndex = 3;
+            this.NCC_KH_ID.Width = 291;
             // 
             // gridColumn2
             // 
@@ -271,6 +275,7 @@
             this.gridColumn2.OptionsColumn.ReadOnly = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 4;
+            this.gridColumn2.Width = 160;
             // 
             // ChietKhau
             // 
@@ -286,6 +291,7 @@
             this.ChietKhau.OptionsColumn.ReadOnly = true;
             this.ChietKhau.Visible = true;
             this.ChietKhau.VisibleIndex = 5;
+            this.ChietKhau.Width = 160;
             // 
             // gridColumn6
             // 
@@ -301,6 +307,7 @@
             this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.Width = 173;
             // 
             // repositoryItemFontEdit1
             // 

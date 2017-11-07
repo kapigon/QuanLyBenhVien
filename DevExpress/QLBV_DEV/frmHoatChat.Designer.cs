@@ -185,7 +185,7 @@
             this.gridColumnTenHoatChat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumnTenHoatChat.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumnTenHoatChat.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnTenHoatChat.Caption = "TÊN HOẠT CHẤT";
+            this.gridColumnTenHoatChat.Caption = "Tên hoạt chất";
             this.gridColumnTenHoatChat.FieldName = "TenHoatChat";
             this.gridColumnTenHoatChat.Name = "gridColumnTenHoatChat";
             this.gridColumnTenHoatChat.Visible = true;
