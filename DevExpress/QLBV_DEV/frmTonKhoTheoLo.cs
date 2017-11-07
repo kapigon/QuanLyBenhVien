@@ -32,23 +32,30 @@ namespace QLBV_DEV
 
         private void LoadDS_TonKhoTheoLo()
         {
-            //Lấy danh sách thuốc theo lô
-            var query = from thuoc_phieunhap in db.CT_Thuoc_PhieuNhap
-                        join thuoc in db.Thuoc on thuoc_phieunhap.Thuoc_ID equals thuoc.ID
-                        join kho in db.Kho on thuoc_phieunhap.Kho_ID equals kho.ID
-                        join vitri in db.ViTri on thuoc_phieunhap.ViTri_ID equals vitri.ID
-                        select new
-                        {
-                            Id = thuoc_phieunhap.Thuoc_ID,
-                            MaThuoc = thuoc.MaThuoc,
-                            TenThuoc = thuoc.TenThuoc,
-                            SoLo = thuoc_phieunhap.Kho_ID,
-                            TonKho =thuoc_phieunhap.TonKho,
-                            TenKho = kho.TenKho,
-                            ViTri = vitri.TenViTri,
-                            HSD = thuoc_phieunhap.HSD
-                        };
-            grvTonKhoTheoLo.DataSource = query.ToList();
+            try
+            {
+                //Lấy danh sách thuốc theo lô
+                var query = from thuoc_phieunhap in db.CT_Thuoc_PhieuNhap
+                            join thuoc in db.Thuoc on thuoc_phieunhap.Thuoc_ID equals thuoc.ID
+                            join kho in db.Kho on thuoc_phieunhap.Kho_ID equals kho.ID
+                            join vitri in db.ViTri on thuoc_phieunhap.ViTri_ID equals vitri.ID
+                            select new
+                            {
+                                Id = thuoc_phieunhap.Thuoc_ID,
+                                MaThuoc = thuoc.MaThuoc,
+                                TenThuoc = thuoc.TenThuoc,
+                                SoLo = thuoc_phieunhap.Kho_ID,
+                                TonKho =thuoc_phieunhap.TonKho,
+                                TenKho = kho.TenKho,
+                                ViTri = vitri.TenViTri,
+                                HSD = thuoc_phieunhap.HSD
+                            };
+                grvTonKhoTheoLo.DataSource = query.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
 
         #region Sothutu

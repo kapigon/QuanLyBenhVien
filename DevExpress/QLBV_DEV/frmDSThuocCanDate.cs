@@ -37,42 +37,49 @@ namespace QLBV_DEV
             LoadDS_ThuocCanDate();
         }
         private void LoadDS_ThuocCanDate()
-        {            
-            DateTime thoigiantoi = DateTime.Now;
-            int songaydemlui = 0;
-            if(txtSoNgay.Text != "" && Convert.ToInt32(txtSoNgay.Text) > 0){
-                songaydemlui = Convert.ToInt32(txtSoNgay.Text);
-                thoigiantoi = thoigiantoi.AddDays(songaydemlui);
-            }
+        {
+            try
+            {
+                DateTime thoigiantoi = DateTime.Now;
+                int songaydemlui = 0;
+                if(txtSoNgay.Text != "" && Convert.ToInt32(txtSoNgay.Text) > 0){
+                    songaydemlui = Convert.ToInt32(txtSoNgay.Text);
+                    thoigiantoi = thoigiantoi.AddDays(songaydemlui);
+                }
                 
-             //lấy ra thuốc trong số ngày nhập vào hết hạn
-            var query = from thuoc_phieunhap in db.CT_Thuoc_PhieuNhap
-                        join thuoc in db.Thuoc on thuoc_phieunhap.Thuoc_ID equals thuoc.ID
-                        where DateTime.Now <= thuoc_phieunhap.HSD && thuoc_phieunhap.HSD <= thoigiantoi 
-                        select new
-                        {
-                            Id          = thuoc_phieunhap.Thuoc_ID,
-                            TenThuoc    = thuoc.TenThuoc,
-                            Mathuoc     = thuoc.MaThuoc,
-                            HSD         = thuoc_phieunhap.HSD
-                        };
+                 //lấy ra thuốc trong số ngày nhập vào hết hạn
+                var query = from thuoc_phieunhap in db.CT_Thuoc_PhieuNhap
+                            join thuoc in db.Thuoc on thuoc_phieunhap.Thuoc_ID equals thuoc.ID
+                            where DateTime.Now <= thuoc_phieunhap.HSD && thuoc_phieunhap.HSD <= thoigiantoi 
+                            select new
+                            {
+                                Id          = thuoc_phieunhap.Thuoc_ID,
+                                TenThuoc    = thuoc.TenThuoc,
+                                Mathuoc     = thuoc.MaThuoc,
+                                HSD         = thuoc_phieunhap.HSD
+                            };
 
 
-            //Lấy thuốc theo thời gian cảnh báo
-                         //where Convert.ToInt32((thuoc_phieunhap.HSD.Value.Date - DateTime.Now.Date).TotalDays) > 2
-            //var query = from thuoc_phieunhap in db.CT_Thuoc_PhieuNhap
-            //            join thuoc in db.Thuoc on thuoc_phieunhap.Thuoc_ID equals thuoc.ID
-            //            //where DateTime.Now >= Convert.ToDateTime(thuoc_phieunhap.HSD).AddDays(Convert.ToInt32(thuoc.ThoiGianCanhBaoHetHan) * -1)
-            //            where DateTime.Now >= DbFunctions.AddDays(thuoc_phieunhap.HSD, -thuoc.ThoiGianCanhBaoHetHan)
-            //           // where Convert.ToInt32((thuoc_phieunhap.HSD.Value.Date-DateTime.Now.Date).TotalDays) > Convert.ToInt32( thuoc.ThoiGianCanhBaoHetHan.Value.ToString())
-            //            select new
-            //            {
-            //                Id = thuoc_phieunhap.Thuoc_ID,
-            //                TenThuoc = thuoc.TenThuoc,
-            //                Mathuoc = thuoc.MaThuoc,
-            //                HSD = thuoc_phieunhap.HSD
-            //            };
-            grvHangCanDate.DataSource = query.ToList();
+                //Lấy thuốc theo thời gian cảnh báo
+                             //where Convert.ToInt32((thuoc_phieunhap.HSD.Value.Date - DateTime.Now.Date).TotalDays) > 2
+                //var query = from thuoc_phieunhap in db.CT_Thuoc_PhieuNhap
+                //            join thuoc in db.Thuoc on thuoc_phieunhap.Thuoc_ID equals thuoc.ID
+                //            //where DateTime.Now >= Convert.ToDateTime(thuoc_phieunhap.HSD).AddDays(Convert.ToInt32(thuoc.ThoiGianCanhBaoHetHan) * -1)
+                //            where DateTime.Now >= DbFunctions.AddDays(thuoc_phieunhap.HSD, -thuoc.ThoiGianCanhBaoHetHan)
+                //           // where Convert.ToInt32((thuoc_phieunhap.HSD.Value.Date-DateTime.Now.Date).TotalDays) > Convert.ToInt32( thuoc.ThoiGianCanhBaoHetHan.Value.ToString())
+                //            select new
+                //            {
+                //                Id = thuoc_phieunhap.Thuoc_ID,
+                //                TenThuoc = thuoc.TenThuoc,
+                //                Mathuoc = thuoc.MaThuoc,
+                //                HSD = thuoc_phieunhap.HSD
+                //            };
+                grvHangCanDate.DataSource = query.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
 
         private void txtSoNgay_EditValueChanged(object sender, EventArgs e)

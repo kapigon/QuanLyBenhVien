@@ -32,39 +32,46 @@ namespace QLBV_DEV
         #region methods
         private void LoadDoanhThuTheoNgay()
         {
-            //var result = from nv in db.PhieuNhapThuoc
-            //             where nv.Xoa == false
-            //             select nv;
-            //var result = rpo_PhieuNhap.GetAllNotDelete();
-            var result = from ct_phieuxuat in db.CT_Thuoc_PhieuXuat
-                         join phieuxuat in db.PhieuXuatThuoc on ct_phieuxuat.PhieuXuatHang_ID equals phieuxuat.ID
-                         join ct_phieunhap in db.CT_Thuoc_PhieuNhap on ct_phieuxuat.CT_Thuoc_PhieuNhap_ID equals ct_phieunhap.ID
-                         join thuoc in db.Thuoc on ct_phieunhap.Thuoc_ID equals thuoc.ID
-                         join dvt in db.DonViTinh on ct_phieuxuat.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
+            try
+            {
+                //var result = from nv in db.PhieuNhapThuoc
+                //             where nv.Xoa == false
+                //             select nv;
+                //var result = rpo_PhieuNhap.GetAllNotDelete();
+                var result = from ct_phieuxuat in db.CT_Thuoc_PhieuXuat
+                             join phieuxuat in db.PhieuXuatThuoc on ct_phieuxuat.PhieuXuatHang_ID equals phieuxuat.ID
+                             join ct_phieunhap in db.CT_Thuoc_PhieuNhap on ct_phieuxuat.CT_Thuoc_PhieuNhap_ID equals ct_phieunhap.ID
+                             join thuoc in db.Thuoc on ct_phieunhap.Thuoc_ID equals thuoc.ID
+                             join dvt in db.DonViTinh on ct_phieuxuat.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
 
-                        //join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
-                         //from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
-                        where phieuxuat.NgayTao == DateTime.Today
-                        //orderby phieunhap.ID ascending
-                        select new
-                        {
-                            ID          = thuoc.ID,
-                            MaThuoc     = thuoc.MaThuoc,
-                            TenThuoc    = thuoc.TenThuoc,
-                            SoLuong     = ct_phieuxuat.SoLuong,
-                            GiaBan      = ct_phieuxuat.GiaBan,
-                            DVT         = dvt.TenDVT,
-                            NgayBan     = phieuxuat.NgayTao,
-                            TongTien    = ct_phieuxuat.TongTien
-                            //SoPhieu     = phieux.SoPhieu,
-                            //SoHoaDon    = phieunhap.SoHoaDon,
-                            //NgayNhap    = phieunhap.NgayNhap,
-                            //NCC_KH_ID   = ncc_kh.TenNCC_KH,
-                            //ThueSuat    = phieunhap.ThueSuat + "%",
-                            //ChietKhau   = phieunhap.ChietKhau,
-                            //TongTienTra = phieunhap.TongTienTra
-                        };
-            grdDS_BanHang.DataSource = result.ToList();
+                            //join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
+                             //from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
+                            where phieuxuat.NgayTao == DateTime.Today
+                            //orderby phieunhap.ID ascending
+                            select new
+                            {
+                                ID          = thuoc.ID,
+                                MaThuoc     = thuoc.MaThuoc,
+                                TenThuoc    = thuoc.TenThuoc,
+                                SoLuong     = ct_phieuxuat.SoLuong,
+                                GiaBan      = ct_phieuxuat.GiaBan,
+                                DVT         = dvt.TenDVT,
+                                NgayBan     = phieuxuat.NgayTao,
+                                TongTien    = ct_phieuxuat.TongTien
+                                //SoPhieu     = phieux.SoPhieu,
+                                //SoHoaDon    = phieunhap.SoHoaDon,
+                                //NgayNhap    = phieunhap.NgayNhap,
+                                //NCC_KH_ID   = ncc_kh.TenNCC_KH,
+                                //ThueSuat    = phieunhap.ThueSuat + "%",
+                                //ChietKhau   = phieunhap.ChietKhau,
+                                //TongTienTra = phieunhap.TongTienTra
+                            };
+                grdDS_BanHang.DataSource = result.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
 
         private void LoadNCC()
@@ -124,18 +131,25 @@ namespace QLBV_DEV
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
-                    //int userID = 100000;
+                    try
+                    {
+                        long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
+                        //int userID = 100000;
 
-                    PhieuNhapThuoc obj_PhieuNhap = rpo_PhieuNhap.GetSingle(id);
-                    obj_PhieuNhap.Xoa = true;
-                    obj_PhieuNhap.NgayXoa = DateTime.Now;
+                        PhieuNhapThuoc obj_PhieuNhap = rpo_PhieuNhap.GetSingle(id);
+                        obj_PhieuNhap.Xoa = true;
+                        obj_PhieuNhap.NgayXoa = DateTime.Now;
 
-                    rpo_PhieuNhap.Save(obj_PhieuNhap);
+                        rpo_PhieuNhap.Save(obj_PhieuNhap);
 
 
-                    // Tải lại danh sách nhà cung cấp
-                    LoadDoanhThuTheoNgay();
+                        // Tải lại danh sách nhà cung cấp
+                        LoadDoanhThuTheoNgay();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+                    }
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -152,13 +166,21 @@ namespace QLBV_DEV
         {
             if (iRow >= 0)
             {
-                long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
+                try
+                {
 
-                frmPhieuNhapThuoc frmPhieuNhap = new frmPhieuNhapThuoc();
-                frmPhieuNhap.FormClosed += new FormClosedEventHandler(frmDS_PhieuNhapClosed);
+                    long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
 
-                frmPhieuNhap.loadData(id);
-                frmPhieuNhap.ShowDialog();
+                    frmPhieuNhapThuoc frmPhieuNhap = new frmPhieuNhapThuoc();
+                    frmPhieuNhap.FormClosed += new FormClosedEventHandler(frmDS_PhieuNhapClosed);
+
+                    frmPhieuNhap.loadData(id);
+                    frmPhieuNhap.ShowDialog();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+                }
             }
             else
             {
@@ -183,11 +205,23 @@ namespace QLBV_DEV
             DateTime denNgay    = Convert.ToDateTime(dateDenNgay.EditValue);
             String soHoaDon     = txtSoHoaDon.Text.Trim();
 
-            var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
-            grdDS_BanHang.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+            try
+            {
+                var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
+                grdDS_BanHang.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
+            
         }
-        #endregion
 
+        private void btnTaiLaiDS_Click(object sender, EventArgs e)
+        {
+            LoadDoanhThuTheoNgay();
+        }
+        
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
             sfdDS_BanHang.Filter = "Excel files (*.xls or .xlsx)|.xls;*.xlsx";
@@ -196,5 +230,8 @@ namespace QLBV_DEV
                 grdDS_BanHang.ExportToXls(sfdDS_BanHang.FileName);
             }
         }
+        #endregion
+
+
     }
 }

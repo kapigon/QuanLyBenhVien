@@ -27,23 +27,30 @@ namespace QLBV_DEV
 
         private void LoadDS_TonKhoToiThieu()
         {
-                        var query = from thuoc in db.Thuoc
-                        join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID                         
-                       // join hangsanxuat in db.HangSanXuat on thuoc.HangSanXuat_ID equals hangsanxuat.ID                      
-                        where thuoc.TonKho < thuoc.TonKhoToiThieu
+            try
+            {
+                var query = from thuoc in db.Thuoc
+                            join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
+                            // join hangsanxuat in db.HangSanXuat on thuoc.HangSanXuat_ID equals hangsanxuat.ID                      
+                            where thuoc.TonKho < thuoc.TonKhoToiThieu
 
-                        select new
-                        {
-                            Id          = thuoc.ID,
-                            MaThuoc     = thuoc.MaThuoc,
-                            TenThuoc    = thuoc.TenThuoc,
+                            select new
+                            {
+                                Id = thuoc.ID,
+                                MaThuoc = thuoc.MaThuoc,
+                                TenThuoc = thuoc.TenThuoc,
 
-                            TonKho      = thuoc.TonKho,
-                            TonKhoToiThieu = thuoc.TonKhoToiThieu,
-                           // HangSanXuat = hangsanxuat.TenHangSX,
-                            NhomThuoc = nhomthuoc.TenNhom
-                        };
-            grvTonKhoToiThieu.DataSource = query.ToList();
+                                TonKho = thuoc.TonKho,
+                                TonKhoToiThieu = thuoc.TonKhoToiThieu,
+                                // HangSanXuat = hangsanxuat.TenHangSX,
+                                NhomThuoc = nhomthuoc.TenNhom
+                            };
+                grvTonKhoToiThieu.DataSource = query.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
 
         #region Sothutu

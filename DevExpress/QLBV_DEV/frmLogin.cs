@@ -30,28 +30,34 @@ namespace QLBV_DEV
         
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string user = txtTenDangNhap.Text.Trim();
-            string pass = txtMatKhau.Text.Trim();
-
-            obj_NhanVien = rpo_NhanVien.GetSingle(user, pass);
-            if (obj_NhanVien != null)
+            try
             {
-                this.Hide();
+                string user = txtTenDangNhap.Text.Trim();
+                string pass = txtMatKhau.Text.Trim();
 
-                QLBV_DEV.Helpers.LoginInfo.nhanVien = obj_NhanVien;
-                frmMain frmMain = new frmMain();
-                frmMain.Show();
+                obj_NhanVien = rpo_NhanVien.GetSingle(user, pass);
+                if (obj_NhanVien != null)
+                {
+                    this.Hide();
+
+                    QLBV_DEV.Helpers.LoginInfo.nhanVien = obj_NhanVien;
+                    frmMain frmMain = new frmMain();
+                    frmMain.Show();
+                }
+                else
+                    MessageBox.Show("Tên đăng nhập và mật khẩu không đúng");
             }
-            else
-                MessageBox.Show("Tên đăng nhập và mật khẩu không đúng");
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi kết nối mạng, Vui lòng kiểm tra lại mạng...");
+            }
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        
 
     }
 }

@@ -159,20 +159,24 @@ namespace QLBV_DEV
                 }
                 LoadDS_DonViTinh();
             }
-            catch (DbEntityValidationException dbEx)
+            catch (Exception)
             {
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        Trace.TraceInformation(
-                              "Class: {0}, Property: {1}, Error: {2}",
-                              validationErrors.Entry.Entity.GetType().FullName,
-                              validationError.PropertyName,
-                              validationError.ErrorMessage);
-                    }
-                }
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
+            //catch (DbEntityValidationException dbEx)
+            //{
+            //    foreach (var validationErrors in dbEx.EntityValidationErrors)
+            //    {
+            //        foreach (var validationError in validationErrors.ValidationErrors)
+            //        {
+            //            Trace.TraceInformation(
+            //                  "Class: {0}, Property: {1}, Error: {2}",
+            //                  validationErrors.Entry.Entity.GetType().FullName,
+            //                  validationError.PropertyName,
+            //                  validationError.ErrorMessage);
+            //        }
+            //    }
+            //}
             
         }
 

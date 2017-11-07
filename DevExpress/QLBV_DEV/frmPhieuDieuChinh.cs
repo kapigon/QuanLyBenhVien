@@ -35,11 +35,11 @@ namespace QLBV_DEV
 
             obj_NhanVien = QLBV_DEV.Helpers.LoginInfo.nhanVien;
 
-            if (obj_NhanVien == null)
-            {
-                frmLogin frmLogin = new frmLogin();
-                frmLogin.ShowDialog();
-            }
+            //if (obj_NhanVien == null)
+            //{
+            //    frmLogin frmLogin = new frmLogin();
+            //    frmLogin.ShowDialog();
+            //}
 
 
         }
@@ -88,76 +88,82 @@ namespace QLBV_DEV
             CT_Thuoc_PhieuNhapRepository rpo_CT_Phieu = new CT_Thuoc_PhieuNhapRepository();
             CT_Thuoc_PhieuNhap obj_CT_Phieu;
 
-
-            /// Xu ly lu vao bang Phieu dieu chinh
-            PhieuDieuChinh obj_PDC;
-            int userID = obj_NhanVien.ID;
-
-            if (gridView1.RowCount > 0 && gridView1 != null)
+            try
             {
-                 using (var dbContextTransaction = db.Database.BeginTransaction())
+                /// Xu ly lu vao bang Phieu dieu chinh
+                PhieuDieuChinh obj_PDC;
+                int userID = obj_NhanVien.ID;
+
+                if (gridView1.RowCount > 0 && gridView1 != null)
                 {
-                    try
+                     using (var dbContextTransaction = db.Database.BeginTransaction())
                     {
-                        obj_PDC = new PhieuDieuChinh();
-                        obj_PDC.MaPhieuDieuChinh        = "PDC-" + (rpo_PhieuDieuChinh.GetCount() + 1);
-                        obj_PDC.TenPhieuDieuChinh       = txtTenPhieu.Text.Trim();
-                        obj_PDC.GhiChu                  = txtGhiChu.Text.Trim();
-                        obj_PDC.UserTao                 = userID;
-                        rpo_PhieuDieuChinh.Create(obj_PDC);
-
-                         /// Khi tao 1 phiếu điều chỉnh thành công -> tạo các Chi tiết điều chỉnh thuốc
-                        if (obj_PDC.ID > 0)
+                        try
                         {
-                            CT_PhieuDieuChinh obj_CT_PDC;
-                            for (int i = 0; i < gridView1.RowCount; i++)
+                            obj_PDC = new PhieuDieuChinh();
+                            obj_PDC.MaPhieuDieuChinh        = "PDC-" + (rpo_PhieuDieuChinh.GetCount() + 1);
+                            obj_PDC.TenPhieuDieuChinh       = txtTenPhieu.Text.Trim();
+                            obj_PDC.GhiChu                  = txtGhiChu.Text.Trim();
+                            obj_PDC.UserTao                 = userID;
+                            rpo_PhieuDieuChinh.Create(obj_PDC);
+
+                             /// Khi tao 1 phiếu điều chỉnh thành công -> tạo các Chi tiết điều chỉnh thuốc
+                            if (obj_PDC.ID > 0)
                             {
-                                long ct_thuoc_ID    = Convert.ToInt64(gridView1.GetRowCellValue(i, "CT_Thuoc_PhieuNhap_ID"));
-                                int sl_HeThong      = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongKiemKe"));
-                                int sl_SoSach       = Convert.ToInt32(gridView1.GetRowCellValue(i, "TonSoSach"));
-                                int sl_Tang         = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongTang"));
-                                int sl_Giam         = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongGiam"));
-                                String ghiChu       = gridView1.GetRowCellValue(i, "GhiChu").ToString();
-                                long thuoc_ID       = Convert.ToInt64(gridView2.GetRowCellValue(i, "ThuocID"));
-                                obj_CT_PDC = new CT_PhieuDieuChinh()
+                                CT_PhieuDieuChinh obj_CT_PDC;
+                                for (int i = 0; i < gridView1.RowCount; i++)
                                 {
-                                    PhieuDieuChinh_ID       = obj_PDC.ID,
-                                    CT_Thuoc_PhieuNhap_ID   = ct_thuoc_ID,
-                                    SoLuongKiemKe           = sl_HeThong,
-                                    TonSoSach               = sl_SoSach,
-                                    SoLuongTang             = sl_Tang,
-                                    SoLuongGiam             = sl_Giam,
-                                    LoaiDieuChinh           = (sl_Tang > 0 ? 1 : (sl_Giam > 0 ? 2 : 0)),
-                                    GhiChu                  = ghiChu
-                                };
-                                // tăng = 1  - giảm = 2 - k tăng k giam = 0
-                                rpo_CT_PDC.Create(obj_CT_PDC);
-
-                                /// Cập nhật lại số lượng cho ID
-                                obj_CT_Phieu = rpo_CT_Phieu.GetSingle(ct_thuoc_ID);
-                                if (obj_CT_Phieu != null)
-                                {
-                                    // Số lượng tồn kho và thực tế khác nhau sẽ cập nhật lại số tồn kho
-                                    if (obj_CT_Phieu.TonKho != sl_SoSach)
+                                    long ct_thuoc_ID    = Convert.ToInt64(gridView1.GetRowCellValue(i, "CT_Thuoc_PhieuNhap_ID"));
+                                    int sl_HeThong      = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongKiemKe"));
+                                    int sl_SoSach       = Convert.ToInt32(gridView1.GetRowCellValue(i, "TonSoSach"));
+                                    int sl_Tang         = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongTang"));
+                                    int sl_Giam         = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongGiam"));
+                                    String ghiChu       = gridView1.GetRowCellValue(i, "GhiChu").ToString();
+                                    long thuoc_ID       = Convert.ToInt64(gridView2.GetRowCellValue(i, "ThuocID"));
+                                    obj_CT_PDC = new CT_PhieuDieuChinh()
                                     {
-                                        obj_CT_Phieu.TonKho = sl_SoSach;
-                                        rpo_CT_Phieu.Save(obj_CT_Phieu);
+                                        PhieuDieuChinh_ID       = obj_PDC.ID,
+                                        CT_Thuoc_PhieuNhap_ID   = ct_thuoc_ID,
+                                        SoLuongKiemKe           = sl_HeThong,
+                                        TonSoSach               = sl_SoSach,
+                                        SoLuongTang             = sl_Tang,
+                                        SoLuongGiam             = sl_Giam,
+                                        LoaiDieuChinh           = (sl_Tang > 0 ? 1 : (sl_Giam > 0 ? 2 : 0)),
+                                        GhiChu                  = ghiChu
+                                    };
+                                    // tăng = 1  - giảm = 2 - k tăng k giam = 0
+                                    rpo_CT_PDC.Create(obj_CT_PDC);
 
-                                        /// Đếm lại số lượng Thuốc theo obj_CT_Phieu
-                                        obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
-                                        obj_Thuoc.TonKho = rpo_Thuoc.GetCountTonKho(thuoc_ID);
-                                        rpo_Thuoc.Save(obj_Thuoc); 
+                                    /// Cập nhật lại số lượng cho ID
+                                    obj_CT_Phieu = rpo_CT_Phieu.GetSingle(ct_thuoc_ID);
+                                    if (obj_CT_Phieu != null)
+                                    {
+                                        // Số lượng tồn kho và thực tế khác nhau sẽ cập nhật lại số tồn kho
+                                        if (obj_CT_Phieu.TonKho != sl_SoSach)
+                                        {
+                                            obj_CT_Phieu.TonKho = sl_SoSach;
+                                            rpo_CT_Phieu.Save(obj_CT_Phieu);
+
+                                            /// Đếm lại số lượng Thuốc theo obj_CT_Phieu
+                                            obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
+                                            obj_Thuoc.TonKho = rpo_Thuoc.GetCountTonKho(thuoc_ID);
+                                            rpo_Thuoc.Save(obj_Thuoc); 
+                                        }
                                     }
                                 }
                             }
+                            this.Close();
                         }
-                        this.Close();
-                    }
-                    catch (Exception)
-                    {
-                        dbContextTransaction.Rollback();
+                        catch (Exception)
+                        {
+                            dbContextTransaction.Rollback();
+                        }
                     }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
       

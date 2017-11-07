@@ -31,43 +31,57 @@ namespace QLBV_DEV
         #region methods
         private void LoadLoaiNCC_KH()
         {
-            var result = from ncc in db.LoaiNCC_KH
-                         select new
-                         {
-                             ID = ncc.ID,
-                             LoaiNCC_KH = ncc.TenLoaiNCC_KH
-                         };
-            cbbLoaiNCC_KH.Properties.DataSource = result.ToList();
-            cbbLoaiNCC_KH.Properties.DisplayMember = "LoaiNCC_KH";
-            cbbLoaiNCC_KH.Properties.ValueMember = "ID";
-            //cbbLoaiNCC_KH.EditValue = 1;
+            try
+            {
+                var result = from ncc in db.LoaiNCC_KH
+                             select new
+                             {
+                                 ID = ncc.ID,
+                                 LoaiNCC_KH = ncc.TenLoaiNCC_KH
+                             };
+                cbbLoaiNCC_KH.Properties.DataSource = result.ToList();
+                cbbLoaiNCC_KH.Properties.DisplayMember = "LoaiNCC_KH";
+                cbbLoaiNCC_KH.Properties.ValueMember = "ID";
+                //cbbLoaiNCC_KH.EditValue = 1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
         public void  ChonNCC_KH(int type){
             cbbLoaiNCC_KH.EditValue = type;
         }
         public void loadData(int ID)
         {
-            NCC_KH obj_NCC_KH = rpo_NCC_KH.GetSingle(ID);
-            if (obj_NCC_KH.ID > 0)
+            try
             {
-                txtMa.Text = obj_NCC_KH.MaNCC_KH;
-                txtTen.Text = obj_NCC_KH.TenNCC_KH;
-                txtDiaChi.Text = obj_NCC_KH.DiaChi;
-                txtChiNhanh.Text = obj_NCC_KH.ChiNhanh;
-                txtMST.Text = obj_NCC_KH.MST;
-                txtSoTK.Text = obj_NCC_KH.SoTaiKhoan;
-                txtNganHang.Text = obj_NCC_KH.NganHang;
-                txtDienThoai.Text = obj_NCC_KH.DienThoai;
-                txtFax.Text = obj_NCC_KH.Fax;
-                txtEmail.Text = obj_NCC_KH.Email;
-                txtWebsite.Text = obj_NCC_KH.Website;
-                txtMota.Text = obj_NCC_KH.MoTa;
-                chkKichHoat.EditValue = obj_NCC_KH.KichHoat;
-            }
+                NCC_KH obj_NCC_KH = rpo_NCC_KH.GetSingle(ID);
+                if (obj_NCC_KH.ID > 0)
+                {
+                    txtMa.Text = obj_NCC_KH.MaNCC_KH;
+                    txtTen.Text = obj_NCC_KH.TenNCC_KH;
+                    txtDiaChi.Text = obj_NCC_KH.DiaChi;
+                    txtChiNhanh.Text = obj_NCC_KH.ChiNhanh;
+                    txtMST.Text = obj_NCC_KH.MST;
+                    txtSoTK.Text = obj_NCC_KH.SoTaiKhoan;
+                    txtNganHang.Text = obj_NCC_KH.NganHang;
+                    txtDienThoai.Text = obj_NCC_KH.DienThoai;
+                    txtFax.Text = obj_NCC_KH.Fax;
+                    txtEmail.Text = obj_NCC_KH.Email;
+                    txtWebsite.Text = obj_NCC_KH.Website;
+                    txtMota.Text = obj_NCC_KH.MoTa;
+                    chkKichHoat.EditValue = obj_NCC_KH.KichHoat;
+                }
 
-            btnLuu.Text = "&Cập nhật";
-            isUpdate = true;
-            ncc_kh_ID = ID;
+                btnLuu.Text = "&Cập nhật";
+                isUpdate = true;
+                ncc_kh_ID = ID;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
         #endregion
 
@@ -130,20 +144,24 @@ namespace QLBV_DEV
                         //txtTen.Font.Italic = true;
                     }
                 }
-                catch (DbEntityValidationException dbEx)
+                catch (Exception)
                 {
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            Trace.TraceInformation(
-                                  "Class: {0}, Property: {1}, Error: {2}",
-                                  validationErrors.Entry.Entity.GetType().FullName,
-                                  validationError.PropertyName,
-                                  validationError.ErrorMessage);
-                        }
-                    }
+                    MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
                 }
+                //catch (DbEntityValidationException dbEx)
+                //{
+                //    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                //    {
+                //        foreach (var validationError in validationErrors.ValidationErrors)
+                //        {
+                //            Trace.TraceInformation(
+                //                  "Class: {0}, Property: {1}, Error: {2}",
+                //                  validationErrors.Entry.Entity.GetType().FullName,
+                //                  validationError.PropertyName,
+                //                  validationError.ErrorMessage);
+                //        }
+                //    }
+                //}
             }
         }
 

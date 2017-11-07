@@ -39,103 +39,145 @@ namespace QLBV_DEV
         #region methods
         private void LoadDS_Thuoc()
         {
-            var query = from thuoc in db.Thuoc
-                        join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
-                        from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
-                        select new
-                        {
-                            ID = thuoc.ID,
-                            TenThuoc = thuoc.TenThuoc,
-                            MaThuoc = thuoc.MaThuoc,
-                            TenNhom = nhomthuoc.TenNhom,
-                            HoatChat = hoatchat.TenHoatChat,
-                            ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,
-                            TonKhoToiThieu = thuoc.TonKhoToiThieu,
-                            KichHoat = thuoc.KichHoat
-                        };
-            if (query.ToList().Count() > 0)
+            try
             {
-                grvDSThuoc.DataSource = query.ToList();
-                //grvDSThuoc.DataSource = new BindingList<Thuoc>(db.Thuoc.Where(p=>p.KichHoat == true || p.KichHoat == null).ToList());
+                var query = from thuoc in db.Thuoc
+                            join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
+                            from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
+                            select new
+                            {
+                                ID = thuoc.ID,
+                                TenThuoc = thuoc.TenThuoc,
+                                MaThuoc = thuoc.MaThuoc,
+                                TenNhom = nhomthuoc.TenNhom,
+                                HoatChat = hoatchat.TenHoatChat,
+                                ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,
+                                TonKhoToiThieu = thuoc.TonKhoToiThieu,
+                                KichHoat = thuoc.KichHoat
+                            };
+                if (query.ToList().Count() > 0)
+                {
+                    grvDSThuoc.DataSource = query.ToList();
+                    //grvDSThuoc.DataSource = new BindingList<Thuoc>(db.Thuoc.Where(p=>p.KichHoat == true || p.KichHoat == null).ToList());
 
+                }
+                else
+                {
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                }
             }
-            else
+            catch (Exception)
             {
-                btnSua.Enabled = false;
-                btnXoa.Enabled = false;
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
         private void LoadTenThuoc()
         {
-            var result = from ncc in db.Thuoc
-                         select new
-                         {
-                             ID = ncc.ID,
-                             TenThuoc = ncc.TenThuoc,
-                             MaThuoc  = ncc.MaThuoc
-                         };
-            cbbTenThuoc.Properties.DataSource = result.ToList();
-            cbbTenThuoc.Properties.DisplayMember = "TenThuoc";
-            cbbTenThuoc.Properties.ValueMember = "ID";
+            try
+            {
+                var result = from ncc in db.Thuoc
+                             select new
+                             {
+                                 ID = ncc.ID,
+                                 TenThuoc = ncc.TenThuoc,
+                                 MaThuoc  = ncc.MaThuoc
+                             };
+                cbbTenThuoc.Properties.DataSource = result.ToList();
+                cbbTenThuoc.Properties.DisplayMember = "TenThuoc";
+                cbbTenThuoc.Properties.ValueMember = "ID";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
 
         private void LoadNhomThuoc()
         {
-            var result = from ncc in db.NhomThuoc
-                         select new
-                         {
-                             ID = ncc.ID,
-                             TenNhom = ncc.TenNhom
-                         };
-            cbbNhomThuoc.Properties.DataSource = result.ToList();
-            cbbNhomThuoc.Properties.DisplayMember = "TenNhom";
-            cbbNhomThuoc.Properties.ValueMember = "ID";
+            try
+            {
+                var result = from ncc in db.NhomThuoc
+                             select new
+                             {
+                                 ID = ncc.ID,
+                                 TenNhom = ncc.TenNhom
+                             };
+                cbbNhomThuoc.Properties.DataSource = result.ToList();
+                cbbNhomThuoc.Properties.DisplayMember = "TenNhom";
+                cbbNhomThuoc.Properties.ValueMember = "ID";
 
-            //cbbColNhomThuoc.DataSource = result.ToList();
-            //cbbColNhomThuoc.DisplayMember = "TenNhom";
-            //cbbColNhomThuoc.ValueMember = "ID";
+                //cbbColNhomThuoc.DataSource = result.ToList();
+                //cbbColNhomThuoc.DisplayMember = "TenNhom";
+                //cbbColNhomThuoc.ValueMember = "ID";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
         private void LoadHoatChat()
         {
-            var result = from ncc in db.HoatChat
-                         select new
-                         {
-                             ID = ncc.ID,
-                             TenHoatChat = ncc.TenHoatChat
-                         };
+            try
+            {
+                var result = from ncc in db.HoatChat
+                             select new
+                             {
+                                 ID = ncc.ID,
+                                 TenHoatChat = ncc.TenHoatChat
+                             };
 
-            cbbHoatChat.Properties.DataSource = result.ToList();
-            cbbHoatChat.Properties.DisplayMember = "TenHoatChat";
-            cbbHoatChat.Properties.ValueMember = "ID";
+                cbbHoatChat.Properties.DataSource = result.ToList();
+                cbbHoatChat.Properties.DisplayMember = "TenHoatChat";
+                cbbHoatChat.Properties.ValueMember = "ID";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
 
         }
         private void LoadHangSanXuat()
         {
-            var result = from ncc in db.HangSanXuat
-                         select new
-                         {
-                             ID = ncc.ID,
-                             TenHangSX = ncc.TenHangSX
-                         };
+            try
+            {
+                var result = from ncc in db.HangSanXuat
+                             select new
+                             {
+                                 ID = ncc.ID,
+                                 TenHangSX = ncc.TenHangSX
+                             };
 
-            cbbHangSanXuat.Properties.DataSource = result.ToList();
-            cbbHangSanXuat.Properties.DisplayMember = "TenHangSX";
-            cbbHangSanXuat.Properties.ValueMember = "ID";
+                cbbHangSanXuat.Properties.DataSource = result.ToList();
+                cbbHangSanXuat.Properties.DisplayMember = "TenHangSX";
+                cbbHangSanXuat.Properties.ValueMember = "ID";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
 
         }
 
         private void LoadNuocSanXuat()
         {
-            var result = from ncc in db.NuocSanXuat
-                         select new
-                         {
-                             ID = ncc.ID,
-                             TenNuoc = ncc.TenNuoc
-                         };
+            try
+            {
+                var result = from ncc in db.NuocSanXuat
+                             select new
+                             {
+                                 ID = ncc.ID,
+                                 TenNuoc = ncc.TenNuoc
+                             };
 
-            cbbNuocSanXuat.Properties.DataSource = result.ToList();
-            cbbNuocSanXuat.Properties.DisplayMember = "TenNuoc";
-            cbbNuocSanXuat.Properties.ValueMember = "ID";
+                cbbNuocSanXuat.Properties.DataSource = result.ToList();
+                cbbNuocSanXuat.Properties.DisplayMember = "TenNuoc";
+                cbbNuocSanXuat.Properties.ValueMember = "ID";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
 
         }
         #endregion
@@ -172,20 +214,33 @@ namespace QLBV_DEV
             int nuocsanxuat_Id  = Convert.ToInt32(cbbNuocSanXuat.EditValue);
             bool kichhoat       = Convert.ToBoolean(chkKichHoat.EditValue);
 
-                 
-            var query = rpo_Thuoc.search(thuoc_Id, nhomthuoc_Id, hoatchat_Id, hangsanxuat_Id, nuocsanxuat_Id, kichhoat);
-            grvDSThuoc.DataSource = new BindingList<Thuoc>(query.ToList());
+            try
+            {
+                var query = rpo_Thuoc.search(thuoc_Id, nhomthuoc_Id, hoatchat_Id, hangsanxuat_Id, nuocsanxuat_Id, kichhoat);
+                grvDSThuoc.DataSource = new BindingList<Thuoc>(query.ToList());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }  
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (thuoc_ID > 0)
             {
-                frmThemThuoc frmThemThuoc = new frmThemThuoc();
-                frmThemThuoc.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
-                frmThemThuoc.loadData(thuoc_ID);
-                frmThemThuoc.ShowInTaskbar = false;
-                frmThemThuoc.ShowDialog();
+                try
+                {
+                    frmThemThuoc frmThemThuoc = new frmThemThuoc();
+                    frmThemThuoc.FormClosed += new FormClosedEventHandler(frmDSThuoc_Closed);
+                    frmThemThuoc.loadData(thuoc_ID);
+                    frmThemThuoc.ShowInTaskbar = false;
+                    frmThemThuoc.ShowDialog();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+                }
             }
             else
             {
@@ -198,22 +253,29 @@ namespace QLBV_DEV
         {
             if (thuoc_ID > 0)
             {
-                String ten = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenThuoc").ToString();
-                DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                try
                 {
-                    //do something
-                    Thuoc obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
-                    obj_Thuoc.KichHoat = false;
-                    rpo_Thuoc.Save(obj_Thuoc);
-                    //rpo_Thuoc.Delete(thuoc_ID);
+                    String ten = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenThuoc").ToString();
+                    DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa?", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        //do something
+                        Thuoc obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
+                        obj_Thuoc.KichHoat = false;
+                        rpo_Thuoc.Save(obj_Thuoc);
+                        //rpo_Thuoc.Delete(thuoc_ID);
 
-                    // Tải lại danh sách nhà cung cấp
-                    LoadDS_Thuoc();
+                        // Tải lại danh sách nhà cung cấp
+                        LoadDS_Thuoc();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        //do something else
+                    }
                 }
-                else if (dialogResult == DialogResult.No)
+                catch (Exception)
                 {
-                    //do something else
+                    MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
                 }
             }
             else
@@ -242,6 +304,15 @@ namespace QLBV_DEV
         {
             iRow = gridView1.FocusedRowHandle;
         }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            sfdDSThuoc.Filter = "Excel files (*.xls or .xlsx)|.xls;*.xlsx";
+            if (sfdDSThuoc.ShowDialog() == DialogResult.OK)
+            {
+                grvDSThuoc.ExportToXls(sfdDSThuoc.FileName);
+            }
+        }
         #endregion
 
         #region Sothutu
@@ -258,45 +329,44 @@ namespace QLBV_DEV
         }
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
-            if (!gridView1.IsGroupRow(e.RowHandle)) //Nếu không phải là Group
+            try
             {
-                if (e.Info.IsRowIndicator) //Nếu là dòng Indicator
+                if (!gridView1.IsGroupRow(e.RowHandle)) //Nếu không phải là Group
                 {
-                    if (e.RowHandle < 0)
+                    if (e.Info.IsRowIndicator) //Nếu là dòng Indicator
                     {
-                        e.Info.ImageIndex = 0;
-                        e.Info.DisplayText = string.Empty;
+                        if (e.RowHandle < 0)
+                        {
+                            e.Info.ImageIndex = 0;
+                            e.Info.DisplayText = string.Empty;
+                        }
+                        else
+                        {
+                            e.Info.ImageIndex = -1; //Không hiển thị hình
+                            e.Info.DisplayText = (e.RowHandle + 1).ToString(); //Số thứ tự tăng dần
+                        }
+                        SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font); //Lấy kích thước của vùng hiển thị Text
+                        Int32 _Width = Convert.ToInt32(_Size.Width) + 20;
+                        BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); })); //Tăng kích thước nếu Text vượt quá
                     }
-                    else
-                    {
-                        e.Info.ImageIndex = -1; //Không hiển thị hình
-                        e.Info.DisplayText = (e.RowHandle + 1).ToString(); //Số thứ tự tăng dần
-                    }
-                    SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font); //Lấy kích thước của vùng hiển thị Text
+                }
+                else
+                {
+                    e.Info.ImageIndex = -1;
+                    e.Info.DisplayText = string.Format("[{0}]", (e.RowHandle * -1)); //Nhân -1 để đánh lại số thứ tự tăng dần
+                    SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font);
                     Int32 _Width = Convert.ToInt32(_Size.Width) + 20;
-                    BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); })); //Tăng kích thước nếu Text vượt quá
+                    BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); }));
                 }
             }
-            else
+            catch (Exception)
             {
-                e.Info.ImageIndex = -1;
-                e.Info.DisplayText = string.Format("[{0}]", (e.RowHandle * -1)); //Nhân -1 để đánh lại số thứ tự tăng dần
-                SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font);
-                Int32 _Width = Convert.ToInt32(_Size.Width) + 20;
-                BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); }));
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
 
         }
         #endregion
 
-        private void btnXuatExcel_Click(object sender, EventArgs e)
-        {
-            sfdDSThuoc.Filter = "Excel files (*.xls or .xlsx)|.xls;*.xlsx";
-            if (sfdDSThuoc.ShowDialog() == DialogResult.OK)
-            {
-                grvDSThuoc.ExportToXls(sfdDSThuoc.FileName);
-            }
-        }
 
     }
 }

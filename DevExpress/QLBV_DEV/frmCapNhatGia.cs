@@ -18,7 +18,7 @@ namespace QLBV_DEV
         int thuoc_ID = 0;
         int iRow;
         ThuocRepository rpo_Thuoc = new ThuocRepository();
-        
+        NhanVien obj_NhanVien = new NhanVien();
         #endregion
 
         public frmCapNhatGia()
@@ -29,6 +29,8 @@ namespace QLBV_DEV
             LoadHoatChat();
             LoadHangSanXuat();
             LoadDS_Thuoc();
+
+            obj_NhanVien = QLBV_DEV.Helpers.LoginInfo.nhanVien;
         }
         
         #region methods
@@ -162,53 +164,64 @@ namespace QLBV_DEV
 
             long id = Convert.ToInt64(gridView1.GetRowCellDisplayText(iRow, "ID"));
 
-            Thuoc                       obj_Thuoc       = rpo_Thuoc.GetSingle(id);
-            LichSuCapNhatGiaRepository  rpo_lsGia       = new LichSuCapNhatGiaRepository();
-            LichSuCapNhatGia            obj_LS_Gia      = new LichSuCapNhatGia();
-
-            double                      giabanle        = txtGiaBanLe.Text != "" ? Convert.ToDouble(txtGiaBanLe.Text) : 0;
-            double                      giabanbuon      = txtGiaBanBuon.Text != "" ? Convert.ToDouble(txtGiaBanBuon.Text) : 0;
-
-            int                         userID          = 10000;
-
-            if (obj_Thuoc != null)
+            try
             {
-                //ob_Thuoc.gi
-                using (var dbContextTransaction = db.Database.BeginTransaction())
+                Thuoc obj_Thuoc = rpo_Thuoc.GetSingle(id);
+                LichSuCapNhatGiaRepository rpo_lsGia = new LichSuCapNhatGiaRepository();
+                LichSuCapNhatGia obj_LS_Gia = new LichSuCapNhatGia();
+
+                double giabanle = txtGiaBanLe.Text != "" ? Convert.ToDouble(txtGiaBanLe.Text) : 0;
+                double giabanbuon = txtGiaBanBuon.Text != "" ? Convert.ToDouble(txtGiaBanBuon.Text) : 0;
+
+                int userID = obj_NhanVien.ID;
+
+                if (obj_Thuoc != null)
                 {
-                    try
+                    //ob_Thuoc.gi
+                    using (var dbContextTransaction = db.Database.BeginTransaction())
                     {
-                        /// Nếu giá thay đổi thì cập nhật lại giá
-                        if (obj_Thuoc.GiaBanLe != giabanle || obj_Thuoc.GiaBanBuon != giabanbuon)
+                        try
                         {
-                            // Set Gia trị cho Lịch sử Giá
-                            obj_LS_Gia.Thuoc_ID         = id;
-                            obj_LS_Gia.GiaBanLeCu       = obj_Thuoc.GiaBanLe;
-                            obj_LS_Gia.GiaBanLeMoi      = giabanle;
-                            obj_LS_Gia.GiaBanBuonCu     = obj_Thuoc.GiaBanBuon;
-                            obj_LS_Gia.GiaBanBuonMoi    = giabanbuon;
-                            obj_LS_Gia.UserTao          = userID;
+                            /// Nếu giá thay đổi thì cập nhật lại giá
+                            if (obj_Thuoc.GiaBanLe != giabanle || obj_Thuoc.GiaBanBuon != giabanbuon)
+                            {
+                                // Set Gia trị cho Lịch sử Giá
+                                obj_LS_Gia.Thuoc_ID = id;
+                                obj_LS_Gia.GiaBanLeCu = obj_Thuoc.GiaBanLe;
+                                obj_LS_Gia.GiaBanLeMoi = giabanle;
+                                obj_LS_Gia.GiaBanBuonCu = obj_Thuoc.GiaBanBuon;
+                                obj_LS_Gia.GiaBanBuonMoi = giabanbuon;
+                                obj_LS_Gia.UserTao = userID;
 
-                            // Set Gia cho Thuoc
-                            obj_Thuoc.GiaBanLe          = giabanle;
-                            obj_Thuoc.GiaBanBuon        = giabanbuon;
+                                // Set Gia cho Thuoc
+                                obj_Thuoc.GiaBanLe = giabanle;
+                                obj_Thuoc.GiaBanBuon = giabanbuon;
 
-                            /// Cập nhật giá thuốc
-                            rpo_Thuoc.Save(obj_Thuoc);
-                            
-                            /// Ghi vào bảng Lịch sử Giá
-                            rpo_lsGia.Create(obj_LS_Gia);
+                                /// Cập nhật giá thuốc
+                                rpo_Thuoc.Save(obj_Thuoc);
 
-                            /// Sau khi lưu lại Giá thuốc mới và Ghi vào bảng lịch sửa cập nhất giá -> cập nhật giá trên grid
-                            LoadDS_Thuoc();
+                                /// Ghi vào bảng Lịch sử Giá
+                                rpo_lsGia.Create(obj_LS_Gia);
+
+                                /// Sau khi lưu lại Giá thuốc mới và Ghi vào bảng lịch sửa cập nhất giá -> cập nhật giá trên grid
+                                LoadDS_Thuoc();
+                            }
                         }
-                    }
-                    catch (Exception)
-                    {
-                        dbContextTransaction.Rollback();
+                        catch (Exception)
+                        {
+                            dbContextTransaction.Rollback();
+                            MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+                        }
                     }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
+            
+
+            
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

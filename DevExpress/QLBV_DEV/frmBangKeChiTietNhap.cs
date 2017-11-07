@@ -43,24 +43,30 @@ namespace QLBV_DEV
 
             tuNgay = Convert.ToDateTime(tuNgay.ToShortDateString());
             denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
-            
-            var query = from ct_nhap    in db.CT_Thuoc_PhieuNhap
-                        join phieunhap  in db.PhieuNhapThuoc on ct_nhap.PhieuNhapHang_ID equals phieunhap.ID
-                        join thuoc      in db.Thuoc on ct_nhap.Thuoc_ID equals thuoc.ID
-                        join dvt        in db.DonViTinh on ct_nhap.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
-                        where (ct_nhap.NgayNhap >= tuNgay && ct_nhap.NgayNhap <= denNgay)
-                        select new
-                        {
-                            SoPhieu     = phieunhap.SoPhieu,
-                            Thuoc_ID    = thuoc.ID,
-                            MaThuoc     = thuoc.MaThuoc,
-                            TenThuoc    = thuoc.TenThuoc,
-                            TenDVT      = dvt.TenDVT,
-                            SoLuong     = ct_nhap.SoLuong,
-                            GiaNhap     = ct_nhap.GiaNhap
-                        };
+            try
+            {
+                var query = from ct_nhap    in db.CT_Thuoc_PhieuNhap
+                            join phieunhap  in db.PhieuNhapThuoc on ct_nhap.PhieuNhapHang_ID equals phieunhap.ID
+                            join thuoc      in db.Thuoc on ct_nhap.Thuoc_ID equals thuoc.ID
+                            join dvt        in db.DonViTinh on ct_nhap.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
+                            where (ct_nhap.NgayNhap >= tuNgay && ct_nhap.NgayNhap <= denNgay)
+                            select new
+                            {
+                                SoPhieu     = phieunhap.SoPhieu,
+                                Thuoc_ID    = thuoc.ID,
+                                MaThuoc     = thuoc.MaThuoc,
+                                TenThuoc    = thuoc.TenThuoc,
+                                TenDVT      = dvt.TenDVT,
+                                SoLuong     = ct_nhap.SoLuong,
+                                GiaNhap     = ct_nhap.GiaNhap
+                            };
 
-            grdDS_Nhap_Xuat_Ton.DataSource = query.ToList();
+                grdDS_Nhap_Xuat_Ton.DataSource = query.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
 
        

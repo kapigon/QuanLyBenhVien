@@ -323,8 +323,9 @@
             // 
             // pGioiTinh
             // 
-            this.pGioiTinh.Description = "GioiTinh";
+            this.pGioiTinh.Description = "Giới tính";
             this.pGioiTinh.Name = "pGioiTinh";
+            this.pGioiTinh.Visible = false;
             // 
             // xrLabel14
             // 
@@ -342,6 +343,7 @@
             // 
             this.pNhanVien.Description = "Nhân viên";
             this.pNhanVien.Name = "pNhanVien";
+            this.pNhanVien.Visible = false;
             // 
             // xrLabel13
             // 
@@ -361,6 +363,7 @@
             this.pTuoi.Name = "pTuoi";
             this.pTuoi.Type = typeof(int);
             this.pTuoi.ValueInfo = "0";
+            this.pTuoi.Visible = false;
             // 
             // xrLabel12
             // 
@@ -378,6 +381,7 @@
             // 
             this.pSDT.Description = "Số ĐT";
             this.pSDT.Name = "pSDT";
+            this.pSDT.Visible = false;
             // 
             // xrLabel11
             // 
@@ -395,6 +399,7 @@
             // 
             this.pKhachHang.Description = "Khách hàng";
             this.pKhachHang.Name = "pKhachHang";
+            this.pKhachHang.Visible = false;
             // 
             // xrLabel10
             // 
@@ -413,6 +418,7 @@
             this.pNgayBan.Description = "Ngày bán";
             this.pNgayBan.Name = "pNgayBan";
             this.pNgayBan.Type = typeof(System.DateTime);
+            this.pNgayBan.Visible = false;
             // 
             // xrLabel9
             // 
@@ -430,6 +436,7 @@
             // 
             this.pTenNhaThuoc.Description = "Tên nhà thuốc";
             this.pTenNhaThuoc.Name = "pTenNhaThuoc";
+            this.pTenNhaThuoc.Visible = false;
             // 
             // xrLabel8
             // 
@@ -642,6 +649,14 @@
             this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
@@ -670,6 +685,22 @@
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
@@ -733,7 +764,6 @@
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
-        private DevExpress.XtraReports.Parameters.Parameter pGioiTinh;
         private DevExpress.XtraReports.UI.XRLabel xrLabel14;
         private DevExpress.XtraReports.Parameters.Parameter pNhanVien;
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
@@ -782,5 +812,6 @@
         private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource2;
         private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource3;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
+        private DevExpress.XtraReports.Parameters.Parameter pGioiTinh;
     }
 }

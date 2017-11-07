@@ -32,73 +32,71 @@ namespace QLBV_DEV
         #region methods
         private void LoadDS_NCC_KH()
         {
-           /* var result = from nv in db.NCC_KH
-                         select nv;
-            grvDSNCC_KH.DataSource = result.ToList();*/
-            var query = from ncc_kh in db.NCC_KH
-                        join loaiNCC_KH in db.LoaiNCC_KH on ncc_kh.LoaiNCC_KH_ID equals loaiNCC_KH.ID 
-                        orderby ncc_kh.ID descending
-                        select new
-                        {
-                            ID              = ncc_kh.ID,
-                            MaNCC_KH        = ncc_kh.MaNCC_KH,
-                            TenNCC_KH       = ncc_kh.TenNCC_KH,
-                            LoaiNCC_KH_ID   = loaiNCC_KH.TenLoaiNCC_KH,
-                            DiaChi          = ncc_kh.DiaChi,
-                            SDT             = ncc_kh.DienThoai,
-                            MST             = ncc_kh.MST,
-                            KichHoat        = ncc_kh.KichHoat
-                        };
+            try
+            {
+               /* var result = from nv in db.NCC_KH
+                             select nv;
+                grvDSNCC_KH.DataSource = result.ToList();*/
+                var query = from ncc_kh in db.NCC_KH
+                            join loaiNCC_KH in db.LoaiNCC_KH on ncc_kh.LoaiNCC_KH_ID equals loaiNCC_KH.ID 
+                            orderby ncc_kh.ID descending
+                            select new
+                            {
+                                ID              = ncc_kh.ID,
+                                MaNCC_KH        = ncc_kh.MaNCC_KH,
+                                TenNCC_KH       = ncc_kh.TenNCC_KH,
+                                LoaiNCC_KH_ID   = loaiNCC_KH.TenLoaiNCC_KH,
+                                DiaChi          = ncc_kh.DiaChi,
+                                SDT             = ncc_kh.DienThoai,
+                                MST             = ncc_kh.MST,
+                                KichHoat        = ncc_kh.KichHoat
+                            };
             
-            if (query.ToList().Count() > 0)
-            {
-                grvDSNCC_KH.DataSource = query.ToList();
-                //grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(db.NCC_KH.ToList());
+                if (query.ToList().Count() > 0)
+                {
+                    grvDSNCC_KH.DataSource = query.ToList();
+                    //grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(db.NCC_KH.ToList());
+                }
+                else
+                {
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                }
             }
-            else
+            catch (Exception)
             {
-                btnSua.Enabled = false;
-                btnXoa.Enabled = false;
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
-        //private void LoadLoaiNCC_KH()
-        //{
-        //    var result = from ncc in db.LoaiNCC_KH
-        //                 select new
-        //                 {
-        //                     ID = ncc.ID,
-        //                     TenLoaiNCC_KH = ncc.TenLoaiNCC_KH
-        //                 };
-        //    cbbLoaiNCC_KH.Properties.DataSource = new BindingList<LoaiNCC_KH>(db.LoaiNCC_KH.ToList());
-        //    cbbLoaiNCC_KH.Properties.DisplayMember = "TenLoaiNCC_KH";
-        //    cbbLoaiNCC_KH.Properties.ValueMember = "ID";
-
-        //    //cbbColLoaiNCC_KH.DataSource = result.ToList();
-        //    //cbbColLoaiNCC_KH.DisplayMember = "TenLoaiNCC_KH";
-        //    //cbbColLoaiNCC_KH.ValueMember = "ID";
-        //}
 
         private void LoadLoaiNCC_KH()
         {
-            var result = from ncc in db.LoaiNCC_KH
-                         select new
-                         {
-                             ID = ncc.ID,
-                             TenLoaiNCC_KH = ncc.TenLoaiNCC_KH
-                         };
-            LoaiNCC_KH loai = new LoaiNCC_KH();
-            loai.ID = 0;
-            loai.TenLoaiNCC_KH = "Tất cả";
-            List<LoaiNCC_KH> lstLoai = db.LoaiNCC_KH.ToList();
-            lstLoai.Add(loai);
+            try
+            {
+                var result = from ncc in db.LoaiNCC_KH
+                             select new
+                             {
+                                 ID = ncc.ID,
+                                 TenLoaiNCC_KH = ncc.TenLoaiNCC_KH
+                             };
+                LoaiNCC_KH loai = new LoaiNCC_KH();
+                loai.ID = 0;
+                loai.TenLoaiNCC_KH = "Tất cả";
+                List<LoaiNCC_KH> lstLoai = db.LoaiNCC_KH.ToList();
+                lstLoai.Add(loai);
 
-            cbbLoaiNCC_KH.Properties.DataSource = new BindingList<LoaiNCC_KH>(lstLoai);
-            cbbLoaiNCC_KH.Properties.DisplayMember = "TenLoaiNCC_KH";
-            cbbLoaiNCC_KH.Properties.ValueMember = "ID";
+                cbbLoaiNCC_KH.Properties.DataSource = new BindingList<LoaiNCC_KH>(lstLoai);
+                cbbLoaiNCC_KH.Properties.DisplayMember = "TenLoaiNCC_KH";
+                cbbLoaiNCC_KH.Properties.ValueMember = "ID";
 
-            //cbbColLoaiNCC_KH.DataSource = result.ToList();
-            //cbbColLoaiNCC_KH.DisplayMember = "TenLoaiNCC_KH";
-            //cbbColLoaiNCC_KH.ValueMember = "ID";
+                //cbbColLoaiNCC_KH.DataSource = result.ToList();
+                //cbbColLoaiNCC_KH.DisplayMember = "TenLoaiNCC_KH";
+                //cbbColLoaiNCC_KH.ValueMember = "ID";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
         #endregion
 
@@ -125,29 +123,43 @@ namespace QLBV_DEV
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(cbbLoaiNCC_KH.EditValue.ToString());
-            String maNCC_KH =txtMaNCC_KH.Text.Trim();
-            int loai_CCC_KH = Convert.ToInt32(cbbLoaiNCC_KH.EditValue);
-            String tenNCC_KH = txtTenNCC_KH.Text.Trim();
+            try
+            {
+                //MessageBox.Show(cbbLoaiNCC_KH.EditValue.ToString());
+                String maNCC_KH =txtMaNCC_KH.Text.Trim();
+                int loai_CCC_KH = Convert.ToInt32(cbbLoaiNCC_KH.EditValue);
+                String tenNCC_KH = txtTenNCC_KH.Text.Trim();
 
-            var query = rpo_NCC_KH.search(maNCC_KH, loai_CCC_KH, tenNCC_KH);
-            grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(query.ToList());
+                var query = rpo_NCC_KH.search(maNCC_KH, loai_CCC_KH, tenNCC_KH);
+                grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(query.ToList());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
 
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (ncc_kh_ID > 0)
+            try
             {
-                frmThemNCC_KH frmNCC_KH = new frmThemNCC_KH();
-                frmNCC_KH.FormClosed += new FormClosedEventHandler(frmNCC_KHClosed);
-                frmNCC_KH.loadData(ncc_kh_ID);
-                frmNCC_KH.ShowInTaskbar = false;
-                frmNCC_KH.ShowDialog();
+                if (ncc_kh_ID > 0)
+                {
+                    frmThemNCC_KH frmNCC_KH = new frmThemNCC_KH();
+                    frmNCC_KH.FormClosed += new FormClosedEventHandler(frmNCC_KHClosed);
+                    frmNCC_KH.loadData(ncc_kh_ID);
+                    frmNCC_KH.ShowInTaskbar = false;
+                    frmNCC_KH.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Hãy lựa chọn dòng cần sửa.");
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Hãy lựa chọn dòng cần sửa.");
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
 
@@ -158,33 +170,40 @@ namespace QLBV_DEV
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (ncc_kh_ID > 0)
+            try
             {
-                String ten = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenNCC_KH").ToString();
-                DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (ncc_kh_ID > 0)
                 {
-                    NCC_KH objNCC_KH = rpo_NCC_KH.GetSingle(ncc_kh_ID);
-                    //do something
-                    /*NCC_KH objNCC_KH = db.NCC_KH.Where(p => p.ID == ncc_kh_ID).SingleOrDefault();
-                    db.NCC_KH.Remove(objNCC_KH);
-                    db.SaveChanges();
-                    */
-                    objNCC_KH.KichHoat = false;
-                    rpo_NCC_KH.Save(objNCC_KH);
+                    String ten = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenNCC_KH").ToString();
+                    DialogResult dialogResult = MessageBox.Show(ten, "Xác nhận xóa?", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        NCC_KH objNCC_KH = rpo_NCC_KH.GetSingle(ncc_kh_ID);
+                        //do something
+                        /*NCC_KH objNCC_KH = db.NCC_KH.Where(p => p.ID == ncc_kh_ID).SingleOrDefault();
+                        db.NCC_KH.Remove(objNCC_KH);
+                        db.SaveChanges();
+                        */
+                        objNCC_KH.KichHoat = false;
+                        rpo_NCC_KH.Save(objNCC_KH);
                     
 
-                    // Tải lại danh sách nhà cung cấp
-                    LoadDS_NCC_KH();
+                        // Tải lại danh sách nhà cung cấp
+                        LoadDS_NCC_KH();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        //do something else
+                    }
                 }
-                else if (dialogResult == DialogResult.No)
+                else
                 {
-                    //do something else
+                    MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
                 }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
 
@@ -222,36 +241,43 @@ namespace QLBV_DEV
             _View.IndicatorWidth = _View.IndicatorWidth < _Width ? _Width : _View.IndicatorWidth;
             return true;
         }
+
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
-            if (!gridView1.IsGroupRow(e.RowHandle)) //Nếu không phải là Group
+            try
             {
-                if (e.Info.IsRowIndicator) //Nếu là dòng Indicator
+                if (!gridView1.IsGroupRow(e.RowHandle)) //Nếu không phải là Group
                 {
-                    if (e.RowHandle < 0)
+                    if (e.Info.IsRowIndicator) //Nếu là dòng Indicator
                     {
-                        e.Info.ImageIndex = 0;
-                        e.Info.DisplayText = string.Empty;
+                        if (e.RowHandle < 0)
+                        {
+                            e.Info.ImageIndex = 0;
+                            e.Info.DisplayText = string.Empty;
+                        }
+                        else
+                        {
+                            e.Info.ImageIndex = -1; //Không hiển thị hình
+                            e.Info.DisplayText = (e.RowHandle + 1).ToString(); //Số thứ tự tăng dần
+                        }
+                        SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font); //Lấy kích thước của vùng hiển thị Text
+                        Int32 _Width = Convert.ToInt32(_Size.Width) + 20;
+                        BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); })); //Tăng kích thước nếu Text vượt quá
                     }
-                    else
-                    {
-                        e.Info.ImageIndex = -1; //Không hiển thị hình
-                        e.Info.DisplayText = (e.RowHandle + 1).ToString(); //Số thứ tự tăng dần
-                    }
-                    SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font); //Lấy kích thước của vùng hiển thị Text
+                }
+                else
+                {
+                    e.Info.ImageIndex = -1;
+                    e.Info.DisplayText = string.Format("[{0}]", (e.RowHandle * -1)); //Nhân -1 để đánh lại số thứ tự tăng dần
+                    SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font);
                     Int32 _Width = Convert.ToInt32(_Size.Width) + 20;
-                    BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); })); //Tăng kích thước nếu Text vượt quá
+                    BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); }));
                 }
             }
-            else
+            catch (Exception)
             {
-                e.Info.ImageIndex = -1;
-                e.Info.DisplayText = string.Format("[{0}]", (e.RowHandle * -1)); //Nhân -1 để đánh lại số thứ tự tăng dần
-                SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font);
-                Int32 _Width = Convert.ToInt32(_Size.Width) + 20;
-                BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); }));
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
-
         }
         #endregion
     }
