@@ -311,6 +311,7 @@
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ErrorHandle.cs" />
+    <Compile Include="Helpers\ErrorMessages.cs" />
     <Compile Include="Helpers\LoginInfo.cs" />
     <Compile Include="Helpers\StringClearFormat.cs" />
     <Compile Include="Helpers\ValidateInput.cs" />
