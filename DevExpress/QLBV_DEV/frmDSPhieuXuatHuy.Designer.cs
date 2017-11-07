@@ -141,8 +141,8 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Teal;
             this.labelControl1.Location = new System.Drawing.Point(475, 125);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.labelControl1.Size = new System.Drawing.Size(336, 54);
+            this.labelControl1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.labelControl1.Size = new System.Drawing.Size(336, 44);
             this.labelControl1.StyleController = this.layoutControl1;
             this.labelControl1.TabIndex = 17;
             this.labelControl1.Text = "DANH SÁCH PHIẾU HỦY";
@@ -175,7 +175,7 @@
             // 
             // grdDS_PhieuXuat
             // 
-            this.grdDS_PhieuXuat.Location = new System.Drawing.Point(12, 183);
+            this.grdDS_PhieuXuat.Location = new System.Drawing.Point(12, 173);
             this.grdDS_PhieuXuat.MainView = this.gridView1;
             this.grdDS_PhieuXuat.Name = "grdDS_PhieuXuat";
             this.grdDS_PhieuXuat.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -184,7 +184,7 @@
             this.repositoryItemTimeEdit1,
             this.repositoryItemGridLookUpEdit2,
             this.cbbCol_NCC_KH});
-            this.grdDS_PhieuXuat.Size = new System.Drawing.Size(1262, 521);
+            this.grdDS_PhieuXuat.Size = new System.Drawing.Size(1262, 531);
             this.grdDS_PhieuXuat.TabIndex = 10;
             this.grdDS_PhieuXuat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -207,6 +207,8 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.Caption = "ID";
             this.gridColumn1.FieldName = "ID";
             this.gridColumn1.Name = "gridColumn1";
@@ -551,9 +553,9 @@
             // 
             this.layoutControlItem7.Control = this.grdDS_PhieuXuat;
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 171);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 161);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1266, 525);
+            this.layoutControlItem7.Size = new System.Drawing.Size(1266, 535);
             this.layoutControlItem7.Text = "layoutControlItem7";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -587,7 +589,7 @@
             this.layoutControlItem9.CustomizationFormText = "layoutControlItem9";
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 113);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(1266, 58);
+            this.layoutControlItem9.Size = new System.Drawing.Size(1266, 48);
             this.layoutControlItem9.Text = "layoutControlItem9";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;

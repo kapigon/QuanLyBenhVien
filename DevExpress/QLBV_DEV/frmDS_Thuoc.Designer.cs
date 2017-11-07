@@ -190,7 +190,8 @@
             this.labelControl1.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl1.Location = new System.Drawing.Point(395, 121);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(420, 34);
+            this.labelControl1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.labelControl1.Size = new System.Drawing.Size(420, 44);
             this.labelControl1.StyleController = this.layoutControl1;
             this.labelControl1.TabIndex = 23;
             this.labelControl1.Text = "DANH SÁCH CÁC LOẠI THUỐC";
@@ -287,14 +288,14 @@
             // grvDSThuoc
             // 
             this.grvDSThuoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.grvDSThuoc.Location = new System.Drawing.Point(12, 159);
+            this.grvDSThuoc.Location = new System.Drawing.Point(12, 169);
             this.grvDSThuoc.MainView = this.gridView1;
             this.grvDSThuoc.Name = "grvDSThuoc";
             this.grvDSThuoc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cbbColNhomThuoc,
             this.repositoryItemTextEdit1,
             this.repositoryItemCheckEdit1});
-            this.grvDSThuoc.Size = new System.Drawing.Size(1187, 313);
+            this.grvDSThuoc.Size = new System.Drawing.Size(1187, 303);
             this.grvDSThuoc.TabIndex = 10;
             this.grvDSThuoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -313,12 +314,13 @@
             this.KichHoat});
             this.gridView1.GridControl = this.grvDSThuoc;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // ID
             // 
+            this.ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
@@ -742,9 +744,9 @@
             // 
             this.layoutControlItem7.Control = this.grvDSThuoc;
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 147);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 157);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1191, 317);
+            this.layoutControlItem7.Size = new System.Drawing.Size(1191, 307);
             this.layoutControlItem7.Text = "layoutControlItem7";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -843,7 +845,7 @@
             this.layoutControlItem15.CustomizationFormText = "layoutControlItem15";
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 109);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(1191, 38);
+            this.layoutControlItem15.Size = new System.Drawing.Size(1191, 48);
             this.layoutControlItem15.Text = "layoutControlItem15";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
