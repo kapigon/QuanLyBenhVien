@@ -16,7 +16,7 @@ namespace QLBV_DEV.Helpers
                 case 1:
                     return "Lỗi kết nối mạng, Vui lòng kiểm tra lại...";
                 case 2:
-                    return "";
+                    return "Danh sách trống, Vui lòng nhập dữ liệu...";
                 default:
                     return "Hệ thống đang bị lỗi";
             }

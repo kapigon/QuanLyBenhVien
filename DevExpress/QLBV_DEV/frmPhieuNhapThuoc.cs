@@ -359,9 +359,13 @@ namespace QLBV_DEV
                                 dbContextTransaction.Rollback();
                             }
                         }
-                    } 
-                    MessageBox.Show("Lưu thành công");
-                    btnLuu.Enabled = false;
+                        MessageBox.Show("Lưu thành công");
+                        btnLuu.Enabled = false;
+                    }
+                    else // Danh sách grid trống, chưa có dữ liệu
+                    {
+                        MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(2));
+                    }
                 }
                 catch (Exception)
                 {

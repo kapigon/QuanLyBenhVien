@@ -187,6 +187,7 @@ namespace QLBV_DEV
         {
             var result = from thuoc in db.Thuoc
                          join ct_thuoc in db.CT_Thuoc_PhieuNhap on thuoc.ID equals ct_thuoc.Thuoc_ID
+                         where ct_thuoc.TonKho > 0
                          //join dvt in db.DonViTinh on ct_thuoc.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
                          select new
                          {
@@ -424,7 +425,11 @@ namespace QLBV_DEV
                                 MessageBox.Show("Quá trình xử lý không thành công");
                             }
                         }
-                    } 
+                    }
+                    else // Danh sách grid trống, chưa có dữ liệu
+                    {
+                        MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(2));
+                    }
                 }
                 catch (Exception)
                 {

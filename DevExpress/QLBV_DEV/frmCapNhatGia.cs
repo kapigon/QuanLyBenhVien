@@ -24,10 +24,17 @@ namespace QLBV_DEV
         public frmCapNhatGia()
         {
             InitializeComponent();
-            LoadNhomThuoc();
-            LoadTenThuoc();
-            LoadHoatChat();
-            LoadHangSanXuat();
+            try
+            {
+                LoadNhomThuoc();
+                LoadTenThuoc();
+                LoadHoatChat();
+                LoadHangSanXuat();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
             LoadDS_Thuoc();
 
             obj_NhanVien = QLBV_DEV.Helpers.LoginInfo.nhanVien;
@@ -36,26 +43,32 @@ namespace QLBV_DEV
         #region methods
         private void LoadDS_Thuoc()
         {
-            var query = from thuoc in db.Thuoc
-                        from nhomthuoc in db.NhomThuoc.Where(nt => nt.ID == thuoc.NhomThuoc_ID).DefaultIfEmpty()
-                        from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
-                        select new
-                        {
-                            ID                      = thuoc.ID,
-                            TenThuoc                = thuoc.TenThuoc,
-                            MaThuoc                 = thuoc.MaThuoc,
-                            TenNhom                 = nhomthuoc.TenNhom,
-                            TenHoatChat             = hoatchat.TenHoatChat,
-                            ThoiGianCanhBaoHetHan   = thuoc.ThoiGianCanhBaoHetHan,
-                            TonKhoToiThieu          = thuoc.TonKhoToiThieu,
-                            GiaBanLe                = thuoc.GiaBanLe,
-                            GiaBanBuon              = thuoc.GiaBanBuon
-                        };
-            if (query.ToList().Count() > 0)
+            try
             {
-                grvDSThuoc.DataSource = query.ToList();
-                //grvDSThuoc.DataSource = new BindingList<Thuoc>(db.Thuoc.Where(p=>p.KichHoat == true || p.KichHoat == null).ToList());
-
+                var query = from thuoc in db.Thuoc
+                            from nhomthuoc in db.NhomThuoc.Where(nt => nt.ID == thuoc.NhomThuoc_ID).DefaultIfEmpty()
+                            from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
+                            select new
+                            {
+                                ID                      = thuoc.ID,
+                                TenThuoc                = thuoc.TenThuoc,
+                                MaThuoc                 = thuoc.MaThuoc,
+                                TenNhom                 = nhomthuoc.TenNhom,
+                                TenHoatChat             = hoatchat.TenHoatChat,
+                                ThoiGianCanhBaoHetHan   = thuoc.ThoiGianCanhBaoHetHan,
+                                TonKhoToiThieu          = thuoc.TonKhoToiThieu,
+                                GiaBanLe                = thuoc.GiaBanLe,
+                                GiaBanBuon              = thuoc.GiaBanBuon
+                            };
+                if (query.ToList().Count() > 0)
+                {
+                    grvDSThuoc.DataSource = query.ToList();
+                    //grvDSThuoc.DataSource = new BindingList<Thuoc>(db.Thuoc.Where(p=>p.KichHoat == true || p.KichHoat == null).ToList());
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
         private void LoadTenThuoc()
@@ -219,22 +232,31 @@ namespace QLBV_DEV
             {
                 MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
-            
-
-            
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             clearField();
         }
-        #endregion
-
+        
         private void btnTim_Click(object sender, EventArgs e)
         {
+            long thuoc_Id = Convert.ToInt64(cbbTenThuoc.EditValue);
+            int nhomthuoc_Id = Convert.ToInt32(cbbNhomThuoc.EditValue);
+            int hoatchat_Id = Convert.ToInt32(cbbHoatChat.EditValue);
+            int hangsanxuat_Id = Convert.ToInt32(cbbHangSanXuat.EditValue);
+            bool kichhoat = Convert.ToBoolean(chkKichHoat.EditValue);
 
+            try
+            {
+                var query = rpo_Thuoc.search(thuoc_Id, nhomthuoc_Id, hoatchat_Id, kichhoat);
+                grvDSThuoc.DataSource = new BindingList<dynamic>(query.ToList());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }  
         }
-
-        
+        #endregion
     }
 }

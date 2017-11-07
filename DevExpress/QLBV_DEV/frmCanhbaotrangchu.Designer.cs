@@ -84,6 +84,7 @@
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.Font = new System.Drawing.Font("Tahoma", 10.25F);
@@ -96,16 +97,17 @@
             this.layoutControl1.OptionsPrint.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.layoutControl1.OptionsPrint.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1151, 568);
+            this.layoutControl1.Size = new System.Drawing.Size(767, 389);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // gridControl3
             // 
-            this.gridControl3.Location = new System.Drawing.Point(577, 294);
+            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl3.Location = new System.Drawing.Point(385, 203);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(562, 262);
+            this.gridControl3.Size = new System.Drawing.Size(370, 174);
             this.gridControl3.TabIndex = 8;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -163,10 +165,11 @@
             // 
             // gridControl4
             // 
-            this.gridControl4.Location = new System.Drawing.Point(12, 294);
+            this.gridControl4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl4.Location = new System.Drawing.Point(12, 203);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(561, 262);
+            this.gridControl4.Size = new System.Drawing.Size(369, 174);
             this.gridControl4.TabIndex = 7;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -213,6 +216,8 @@
             // 
             // gridColumn13
             // 
+            this.gridColumn13.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn13.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn13.Caption = "Ngày tạo";
@@ -223,10 +228,11 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(577, 34);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(385, 28);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(562, 234);
+            this.gridControl2.Size = new System.Drawing.Size(370, 155);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -283,10 +289,11 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 34);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(12, 28);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(561, 234);
+            this.gridControl1.Size = new System.Drawing.Size(369, 155);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -366,7 +373,7 @@
             this.layoutControlItem3});
             this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1151, 568);
+            this.Root.Size = new System.Drawing.Size(767, 389);
             this.Root.Text = "Root";
             this.Root.TextVisible = false;
             // 
@@ -376,50 +383,51 @@
             this.grvThuocCanDate_tungloai.CustomizationFormText = "layoutControlItem1";
             this.grvThuocCanDate_tungloai.Location = new System.Drawing.Point(0, 0);
             this.grvThuocCanDate_tungloai.Name = "grvThuocCanDate_tungloai";
-            this.grvThuocCanDate_tungloai.Size = new System.Drawing.Size(565, 260);
+            this.grvThuocCanDate_tungloai.Size = new System.Drawing.Size(373, 175);
             this.grvThuocCanDate_tungloai.Text = "Thuốc sắp hết hạn sử dụng";
             this.grvThuocCanDate_tungloai.TextLocation = DevExpress.Utils.Locations.Top;
-            this.grvThuocCanDate_tungloai.TextSize = new System.Drawing.Size(256, 19);
+            this.grvThuocCanDate_tungloai.TextSize = new System.Drawing.Size(174, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.gridControl2;
             this.layoutControlItem2.CustomizationFormText = "Thuốc sắp hết ";
-            this.layoutControlItem2.Location = new System.Drawing.Point(565, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(373, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(566, 260);
+            this.layoutControlItem2.Size = new System.Drawing.Size(374, 175);
             this.layoutControlItem2.Text = "Thuốc sắp hết trong kho";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(256, 19);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(174, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.gridControl4;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 260);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 175);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(565, 288);
+            this.layoutControlItem4.Size = new System.Drawing.Size(373, 194);
             this.layoutControlItem4.Text = "Danh sách đơn xuất thuốc gần nhất";
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(256, 19);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(174, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.gridControl3;
             this.layoutControlItem3.CustomizationFormText = "Danh sách đơn bán thuốc gần nhất";
-            this.layoutControlItem3.Location = new System.Drawing.Point(565, 260);
+            this.layoutControlItem3.Location = new System.Drawing.Point(373, 175);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(566, 288);
+            this.layoutControlItem3.Size = new System.Drawing.Size(374, 194);
             this.layoutControlItem3.Text = "Danh sách đơn nhập thuốc gần nhất";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(256, 19);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(174, 13);
             // 
             // frmCanhbaotrangchu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 568);
+            this.ClientSize = new System.Drawing.Size(767, 389);
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmCanhbaotrangchu";
             this.Text = "Trang chủ";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

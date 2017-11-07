@@ -76,16 +76,23 @@ namespace QLBV_DEV
 
         private void LoadNCC()
         {
-            NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
-            // lấy ra NCC và vừa là NCC vừa là KH
-            cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
-            //cbbNCC.DataSource = result.ToList();
-            cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
-            cbbNCC_KH.Properties.ValueMember = "ID";
+            try
+            {
+                NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
+                // lấy ra NCC và vừa là NCC vừa là KH
+                cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
+                //cbbNCC.DataSource = result.ToList();
+                cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
+                cbbNCC_KH.Properties.ValueMember = "ID";
 
-            cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
-            cbbCol_NCC_KH.DisplayMember = "TenNCC_KH";
-            cbbCol_NCC_KH.ValueMember = "ID";
+                cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
+                cbbCol_NCC_KH.DisplayMember = "TenNCC_KH";
+                cbbCol_NCC_KH.ValueMember = "ID";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
 
         #endregion
@@ -124,67 +131,81 @@ namespace QLBV_DEV
         
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (iRow >= 0)
+            try
             {
-                String soPhieu = gridView1.GetRowCellValue(iRow, "SoPhieu").ToString();
-                DialogResult dialogResult = MessageBox.Show(soPhieu, "Xác nhận xóa?", MessageBoxButtons.YesNo);
+                if (iRow >= 0)
+                {
+                    String soPhieu = gridView1.GetRowCellValue(iRow, "SoPhieu").ToString();
+                    DialogResult dialogResult = MessageBox.Show(soPhieu, "Xác nhận xóa?", MessageBoxButtons.YesNo);
 
-                if (dialogResult == DialogResult.Yes)
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
+                            //int userID = 100000;
+
+                            PhieuNhapThuoc obj_PhieuNhap = rpo_PhieuNhap.GetSingle(id);
+                            obj_PhieuNhap.Xoa = true;
+                            obj_PhieuNhap.NgayXoa = DateTime.Now;
+
+                            rpo_PhieuNhap.Save(obj_PhieuNhap);
+
+
+                            // Tải lại danh sách nhà cung cấp
+                            LoadDoanhThuTheoNgay();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+                        }
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        //do something else
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (iRow >= 0)
                 {
                     try
                     {
+
                         long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
-                        //int userID = 100000;
 
-                        PhieuNhapThuoc obj_PhieuNhap = rpo_PhieuNhap.GetSingle(id);
-                        obj_PhieuNhap.Xoa = true;
-                        obj_PhieuNhap.NgayXoa = DateTime.Now;
+                        frmPhieuNhapThuoc frmPhieuNhap = new frmPhieuNhapThuoc();
+                        frmPhieuNhap.FormClosed += new FormClosedEventHandler(frmDS_PhieuNhapClosed);
 
-                        rpo_PhieuNhap.Save(obj_PhieuNhap);
-
-
-                        // Tải lại danh sách nhà cung cấp
-                        LoadDoanhThuTheoNgay();
+                        frmPhieuNhap.loadData(id);
+                        frmPhieuNhap.ShowDialog();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
                     }
                 }
-                else if (dialogResult == DialogResult.No)
+                else
                 {
-                    //do something else
+                    MessageBox.Show("Hãy lựa chọn dòng cần sửa.");
                 }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
-            }
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (iRow >= 0)
-            {
-                try
-                {
-
-                    long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
-
-                    frmPhieuNhapThuoc frmPhieuNhap = new frmPhieuNhapThuoc();
-                    frmPhieuNhap.FormClosed += new FormClosedEventHandler(frmDS_PhieuNhapClosed);
-
-                    frmPhieuNhap.loadData(id);
-                    frmPhieuNhap.ShowDialog();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
-                }
-            }
-            else
-            {
-                MessageBox.Show("Hãy lựa chọn dòng cần sửa.");
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
 

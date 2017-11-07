@@ -27,10 +27,18 @@ namespace QLBV_DEV
             gridView2.CustomDrawRowIndicator += gridView2_CustomDrawRowIndicator;
             gridView3.CustomDrawRowIndicator += gridView3_CustomDrawRowIndicator;
             gridView4.CustomDrawRowIndicator += gridView4_CustomDrawRowIndicator;
-            LoadDS_ThuocCanDate();
-            LoadDS_TonKhoToiThieu();
-            LoadDS_PhieuXuat();
-            LoadDS_PhieuNhap();
+
+            try
+            {
+                LoadDS_ThuocCanDate();
+                LoadDS_TonKhoToiThieu();
+                LoadDS_PhieuXuat();
+                LoadDS_PhieuNhap();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
         }
 
         private void LoadDS_ThuocCanDate()
@@ -42,7 +50,7 @@ namespace QLBV_DEV
                         {
                             Id = thuoc_phieunhap.Thuoc_ID,
                             TenThuoc = thuoc.TenThuoc,
-                            Mathuoc = thuoc.MaThuoc,
+                            MaThuoc = thuoc.MaThuoc,
                             SoLo = thuoc_phieunhap.SoLo,
                             HSD = thuoc_phieunhap.HSD
                         };
