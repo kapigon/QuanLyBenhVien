@@ -49,7 +49,7 @@ namespace QLBV_DEV
             }
             catch (Exception)
             {
-                MessageBox.Show("Lỗi kết nối mạng, Vui lòng kiểm tra lại mạng...");
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
             
         }
