@@ -220,16 +220,6 @@
             this.btnXuatExcel.Text = "Xuất Excel";
             this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
-            // btnXuatExcel
-            // 
-            this.btnXuatExcel.Location = new System.Drawing.Point(260, 127);
-            this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(78, 22);
-            this.btnXuatExcel.StyleController = this.layoutControl1;
-            this.btnXuatExcel.TabIndex = 21;
-            this.btnXuatExcel.Text = "Xuất Excel";
-            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
-            // 
             // chkKichHoat
             // 
             this.chkKichHoat.EditValue = true;
@@ -296,9 +286,8 @@
             // 
             // grvDSThuoc
             // 
-            this.grvDSThuoc.Location = new System.Drawing.Point(12, 159);
             this.grvDSThuoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.grvDSThuoc.Location = new System.Drawing.Point(12, 153);
+            this.grvDSThuoc.Location = new System.Drawing.Point(12, 159);
             this.grvDSThuoc.MainView = this.gridView1;
             this.grvDSThuoc.Name = "grvDSThuoc";
             this.grvDSThuoc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
