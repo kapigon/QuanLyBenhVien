@@ -42,7 +42,7 @@ namespace QLBV_DEV
                 //var result = rpo_PhieuNhap.GetAllNotDelete();
                 var result = from phieunhap in db.PhieuNhapThuoc
                             //join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
-                             from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
+                            //from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
                             where phieunhap.Xoa != true
                             orderby phieunhap.ID ascending
                             select new
@@ -51,7 +51,8 @@ namespace QLBV_DEV
                                 SoPhieu     = phieunhap.SoPhieu,
                                 SoHoaDon    = phieunhap.SoHoaDon,
                                 NgayNhap    = phieunhap.NgayNhap,
-                                NCC_KH_ID   = ncc_kh.TenNCC_KH,
+                                //NCC_KH_ID   = ncc_kh.TenNCC_KH,
+                                NCC_KH_ID   = phieunhap.NCC_KH_ID,
                                 ThueSuat    = phieunhap.ThueSuat + "%",
                                 ChietKhau   = phieunhap.ChietKhau,
                                 TongTienTra = phieunhap.TongTienTra
@@ -204,8 +205,11 @@ namespace QLBV_DEV
                 DateTime denNgay    = Convert.ToDateTime(dateDenNgay.EditValue);
                 String soHoaDon     = txtSoHoaDon.Text.Trim();
 
+                tuNgay = Convert.ToDateTime(tuNgay.ToShortDateString());
+                denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
+
                 var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
-                grdDS_PhieuNhap.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+                grdDS_PhieuNhap.DataSource = new BindingList<dynamic>(query.ToList());
             }
             catch (Exception)
             {
