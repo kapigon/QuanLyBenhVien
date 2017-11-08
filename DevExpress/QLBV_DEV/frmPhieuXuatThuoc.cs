@@ -13,6 +13,8 @@ using QLBV_DEV.Reports.Objects;
 using QLBV_DEV.Helpers;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 namespace QLBV_DEV
 {
@@ -465,9 +467,26 @@ namespace QLBV_DEV
                 print.printDSThuoc(lstPhieuXuatThuoc);
                 print.ShowDialog();
             }
-            catch (Exception)
+            //catch (Exception)
+            //{
+            //    MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            //}
+            catch (DbEntityValidationException dbEx)
             {
-                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+                string strError = "";
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        strError += validationError.ErrorMessage;
+                        Trace.TraceInformation(
+                              "Class: {0}, Property: {1}, Error: {2}",
+                              validationErrors.Entry.Entity.GetType().FullName,
+                              validationError.PropertyName,
+                              validationError.ErrorMessage);
+                    }
+                }
+                MessageBox.Show(strError);
             }
         }
 

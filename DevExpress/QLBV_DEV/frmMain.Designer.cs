@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::QLBV_DEV.frmWelcomeBVTKV), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
@@ -81,6 +82,7 @@
             this.btnBC_Xuatthuoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnBC_Nhapxuatton = new DevExpress.XtraBars.BarButtonItem();
             this.btnCanhbao = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThuocBanTheoNgay = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -107,14 +109,13 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.repositoryItemPictureEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThuocBanTheoNgay = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
@@ -127,7 +128,7 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 403);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(863, 31);
@@ -176,7 +177,7 @@
             this.btnCanhbao,
             this.btnThuocBanTheoNgay});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(2);
             this.ribbon.MaxItemId = 7;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -538,6 +539,15 @@
             this.btnCanhbao.Name = "btnCanhbao";
             this.btnCanhbao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCanhbao_ItemClick);
             // 
+            // btnThuocBanTheoNgay
+            // 
+            this.btnThuocBanTheoNgay.Caption = "Thuốc bán theo ngày";
+            this.btnThuocBanTheoNgay.Glyph = ((System.Drawing.Image)(resources.GetObject("btnThuocBanTheoNgay.Glyph")));
+            this.btnThuocBanTheoNgay.Id = 6;
+            this.btnThuocBanTheoNgay.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThuocBanTheoNgay.LargeGlyph")));
+            this.btnThuocBanTheoNgay.Name = "btnThuocBanTheoNgay";
+            this.btnThuocBanTheoNgay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuocBanTheoNgay_ItemClick);
+            // 
             // ribbonPage6
             // 
             this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -758,15 +768,6 @@
             this.barButtonItem2.Id = -1;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // btnThuocBanTheoNgay
-            // 
-            this.btnThuocBanTheoNgay.Caption = "Thuốc bán theo ngày";
-            this.btnThuocBanTheoNgay.Glyph = ((System.Drawing.Image)(resources.GetObject("btnThuocBanTheoNgay.Glyph")));
-            this.btnThuocBanTheoNgay.Id = 6;
-            this.btnThuocBanTheoNgay.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThuocBanTheoNgay.LargeGlyph")));
-            this.btnThuocBanTheoNgay.Name = "btnThuocBanTheoNgay";
-            this.btnThuocBanTheoNgay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuocBanTheoNgay_ItemClick);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -775,12 +776,13 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "PHẦN MỀM QUẢN LÝ BỆNH VIỆN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();

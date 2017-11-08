@@ -59,5 +59,16 @@ namespace QLBV_DEV
             this.Close();
         }
 
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình?", "Xác nhận thoát chương trình", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    Application.Exit();
+                else
+                    e.Cancel = true;
+            }
+        }
+
     }
 }

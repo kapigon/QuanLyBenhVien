@@ -167,7 +167,7 @@
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.StylePriority.UseTextAlignment = false;
             this.xrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell13.Weight = 0.84375D;
+            this.xrTableCell13.Weight = 0.6458331298828125D;
             // 
             // xrTableCell14
             // 
@@ -178,7 +178,7 @@
             this.xrTableCell14.StylePriority.UsePadding = false;
             this.xrTableCell14.StylePriority.UseTextAlignment = false;
             this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell14.Weight = 0.85958099365234375D;
+            this.xrTableCell14.Weight = 1.0574978637695311D;
             // 
             // xrTableCell15
             // 
@@ -193,7 +193,7 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 70F;
+            this.TopMargin.HeightF = 73F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -291,7 +291,7 @@
             this.xrTableCell10.StylePriority.UseTextAlignment = false;
             this.xrTableCell10.Text = "Số lượng";
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell10.Weight = 0.84375D;
+            this.xrTableCell10.Weight = 0.64583282470703129D;
             // 
             // xrTableCell11
             // 
@@ -299,7 +299,7 @@
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "Giá";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell11.Weight = 0.85958160400390626D;
+            this.xrTableCell11.Weight = 1.0574987792968751D;
             // 
             // xrTableCell12
             // 
@@ -657,6 +657,9 @@
             this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
+            this.ComponentStorage.Add(this.objectDataSource1);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
@@ -693,6 +696,12 @@
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
             this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource2);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
+            this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
@@ -731,7 +740,7 @@
             this.ComponentStorage.Add(this.objectDataSource3);
             this.ComponentStorage.Add(this.objectDataSource3);
             this.DataSource = this.objectDataSource3;
-            this.Margins = new System.Drawing.Printing.Margins(70, 70, 70, 70);
+            this.Margins = new System.Drawing.Printing.Margins(70, 70, 73, 70);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;

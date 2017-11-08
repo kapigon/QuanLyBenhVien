@@ -10,6 +10,8 @@ using DevExpress.XtraEditors;
 using QLBV_DEV.Reports;
 using QLBV_DEV.Repository;
 using QLBV_DEV.Reports.Objects;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 namespace QLBV_DEV
 {
@@ -22,14 +24,35 @@ namespace QLBV_DEV
 
         public void printDSThuoc(List<oPhieuXuatThuoc> lstThuoc)
         {
-            ThuocRepository rpo_thuoc = new ThuocRepository();
+            try
+            {
 
-            rptPhieuXuatThuoc report = new rptPhieuXuatThuoc();
+                ThuocRepository rpo_thuoc = new ThuocRepository();
 
-            report.DataSource = lstThuoc;
+                rptPhieuXuatThuoc report = new rptPhieuXuatThuoc();
 
-            documentViewer1.DocumentSource = report;
-            report.CreateDocument();
+                report.DataSource = lstThuoc;
+
+                documentViewer1.DocumentSource = report;
+                report.CreateDocument();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                string strError = "";
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        strError += validationError.ErrorMessage;
+                        Trace.TraceInformation(
+                              "Class: {0}, Property: {1}, Error: {2}",
+                              validationErrors.Entry.Entity.GetType().FullName,
+                              validationError.PropertyName,
+                              validationError.ErrorMessage);
+                    }
+                }
+                MessageBox.Show(strError);
+            }
         }
     }
 }
