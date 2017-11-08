@@ -15,6 +15,13 @@ namespace QLBV_DEV
         [STAThread]
         static void Main()
         {
+            bool result;
+            var mutex = new System.Threading.Mutex(true, "Quan mem quan ly thuoc - TKV", out result);
+            if (!result)
+            {
+                MessageBox.Show("Phần mềm đang được chạy, vui lòng kiểm lại...", "Phần mềm quản lý thuốc - TKV");
+                return;
+            }
             CultureInfo culture = CultureInfo.CreateSpecificCulture("vi-VN");
 
             // The following line provides localization for the application's user interface.  
