@@ -327,5 +327,10 @@ namespace QLBV_DEV
                     e.Cancel = true;
             }
         }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ShowForm<frmCapNhatGia>();
+        }
     }
 }
