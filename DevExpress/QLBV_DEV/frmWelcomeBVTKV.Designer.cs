@@ -45,7 +45,7 @@
             this.marqueeProgressBarControl1.EditValue = 0;
             this.marqueeProgressBarControl1.Location = new System.Drawing.Point(23, 296);
             this.marqueeProgressBarControl1.Name = "marqueeProgressBarControl1";
-            this.marqueeProgressBarControl1.Size = new System.Drawing.Size(404, 12);
+            this.marqueeProgressBarControl1.Size = new System.Drawing.Size(426, 12);
             this.marqueeProgressBarControl1.TabIndex = 5;
             this.marqueeProgressBarControl1.EditValueChanged += new System.EventHandler(this.marqueeProgressBarControl1_EditValueChanged);
             // 
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 356);
+            this.ClientSize = new System.Drawing.Size(470, 356);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.pictureEdit2);
