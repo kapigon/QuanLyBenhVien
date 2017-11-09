@@ -39,27 +39,13 @@ namespace QLBV_DEV
 
             obj_NhanVien = QLBV_DEV.Helpers.LoginInfo.nhanVien;
         }
-        
+
         #region methods
         private void LoadDS_Thuoc()
         {
             try
             {
-                var query = from thuoc in db.Thuoc
-                            from nhomthuoc in db.NhomThuoc.Where(nt => nt.ID == thuoc.NhomThuoc_ID).DefaultIfEmpty()
-                            from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
-                            select new
-                            {
-                                ID                      = thuoc.ID,
-                                TenThuoc                = thuoc.TenThuoc,
-                                MaThuoc                 = thuoc.MaThuoc,
-                                TenNhom                 = nhomthuoc.TenNhom,
-                                TenHoatChat             = hoatchat.TenHoatChat,
-                                ThoiGianCanhBaoHetHan   = thuoc.ThoiGianCanhBaoHetHan,
-                                TonKhoToiThieu          = thuoc.TonKhoToiThieu,
-                                GiaBanLe                = thuoc.GiaBanLe,
-                                GiaBanBuon              = thuoc.GiaBanBuon
-                            };
+                var query = rpo_Thuoc.search(0, 0, 0, true);
                 if (query.ToList().Count() > 0)
                 {
                     grvDSThuoc.DataSource = query.ToList();
@@ -78,7 +64,7 @@ namespace QLBV_DEV
                          {
                              ID = ncc.ID,
                              TenThuoc = ncc.TenThuoc,
-                             MaThuoc  = ncc.MaThuoc,
+                             MaThuoc = ncc.MaThuoc,
                          };
             cbbTenThuoc.Properties.DataSource = result.ToList();
             cbbTenThuoc.Properties.DisplayMember = "TenThuoc";
@@ -139,12 +125,12 @@ namespace QLBV_DEV
         }
         #endregion
 
-        #region events                
+        #region events
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
+
         private void grvDSThuoc_Click(object sender, EventArgs e)
         {
             // dừng xử lý nếu không kích vào dòng có dữ liệu
@@ -162,10 +148,10 @@ namespace QLBV_DEV
 
             iRow = gridView1.FocusedRowHandle;
 
-            txtMaTuoc.Text      = gridView1.GetRowCellDisplayText(iRow, "MaThuoc").ToString();
-            txtTenThuoc.Text    = gridView1.GetRowCellDisplayText(iRow, "TenThuoc").ToString();
-            txtGiaBanLe.Text    = gridView1.GetRowCellDisplayText(iRow, "GiaBanLe").ToString();
-            txtGiaBanBuon.Text  = gridView1.GetRowCellDisplayText(iRow, "GiaBanBuon").ToString();
+            txtMaTuoc.Text = gridView1.GetRowCellDisplayText(iRow, "MaThuoc").ToString();
+            txtTenThuoc.Text = gridView1.GetRowCellDisplayText(iRow, "TenThuoc").ToString();
+            txtGiaBanLe.Text = gridView1.GetRowCellDisplayText(iRow, "GiaBanLe").ToString();
+            txtGiaBanBuon.Text = gridView1.GetRowCellDisplayText(iRow, "GiaBanBuon").ToString();
 
         }
 
@@ -238,9 +224,11 @@ namespace QLBV_DEV
         {
             clearField();
         }
-        
+
         private void btnTim_Click(object sender, EventArgs e)
         {
+            clearField();
+
             long thuoc_Id = Convert.ToInt64(cbbTenThuoc.EditValue);
             int nhomthuoc_Id = Convert.ToInt32(cbbNhomThuoc.EditValue);
             int hoatchat_Id = Convert.ToInt32(cbbHoatChat.EditValue);
@@ -250,12 +238,12 @@ namespace QLBV_DEV
             try
             {
                 var query = rpo_Thuoc.search(thuoc_Id, nhomthuoc_Id, hoatchat_Id, kichhoat);
-                grvDSThuoc.DataSource = new BindingList<dynamic>(query.ToList());
+                grvDSThuoc.DataSource = query.ToList();
             }
             catch (Exception)
             {
                 MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
-            }  
+            }
         }
         #endregion
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace QLBV_DEV.Repository
-{    
+{
     public partial class ThuocRepository
     {
         QLBV_DEV.Helpers.ErrorHandle myError = new QLBV_DEV.Helpers.ErrorHandle();
@@ -45,7 +45,8 @@ namespace QLBV_DEV.Repository
             return (from _object in db.Thuoc where _object.ID == id select _object).FirstOrDefault();
         }
 
-        public int GetCountTonKho(long id){
+        public int GetCountTonKho(long id)
+        {
 
             var query = from _object in db.CT_Thuoc_PhieuNhap where _object.Thuoc_ID == id select _object;
 
@@ -127,7 +128,7 @@ namespace QLBV_DEV.Repository
 
         public IQueryable<Thuoc> search(long thuoc_id, int nhomthuoc_ID, int hoatchat_ID, int hangsanxuat_Id, int nuocsanxuat_Id, bool kichhoat)
         {
-            var query = from _object in db.Thuoc 
+            var query = from _object in db.Thuoc
                         //join nt in db.NhomThuoc on _object.NhomThuoc_ID equals nt.ID
                         //join hc in db.HoatChat on _object.HoatChat_ID equals hc.ID
                         //join hsx in db.HangSanXuat on _object.HangSanXuat_ID equals hsx.ID
@@ -138,7 +139,7 @@ namespace QLBV_DEV.Repository
                         select _object;
 
             if (thuoc_id > 0)
-                query = query.Where(p =>p.ID == thuoc_id);
+                query = query.Where(p => p.ID == thuoc_id);
 
             //if (tenthuoc != "")
             //    query = query.Where(p => p.TenThuoc.Equals(tenthuoc));
@@ -154,7 +155,7 @@ namespace QLBV_DEV.Repository
 
             if (nuocsanxuat_Id > 0)
                 query = query.Where(p => p.NuocSanXuat_ID == nuocsanxuat_Id);
-                query = query.Where(p => p.KichHoat == kichhoat);
+            query = query.Where(p => p.KichHoat == kichhoat);
 
             return query;
 
@@ -163,27 +164,27 @@ namespace QLBV_DEV.Repository
         public IQueryable<dynamic> search(long thuoc_id, int nhomthuoc_ID, int hoatchat_ID, bool kichhoat)
         {
             var query = from thuoc in db.Thuoc
-                        from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()
                         from nhomthuoc in db.NhomThuoc.Where(nt => nt.ID == thuoc.NhomThuoc_ID).DefaultIfEmpty()
+                        from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()
                         select new
                         {
-                            ID                      = thuoc.ID,
-                            TenThuoc                = thuoc.TenThuoc,
-                            MaThuoc                 = thuoc.MaThuoc,
-                            TenNhom                 = nhomthuoc.TenNhom,
-                            TenHoatChat             = hoatchat.TenHoatChat,
-                            ThoiGianCanhBaoHetHan   = thuoc.ThoiGianCanhBaoHetHan,
-                            TonKhoToiThieu          = thuoc.TonKhoToiThieu,
-                            GiaBanLe                = thuoc.GiaBanLe,
-                            GiaBanBuon              = thuoc.GiaBanBuon,
-                            NhomThuoc_ID            = nhomthuoc.ID,
-                            HoatChat_ID             = hoatchat.ID,
-                            KichHoat                = thuoc.KichHoat
+                            ID = thuoc.ID,
+                            TenThuoc = thuoc.TenThuoc,
+                            MaThuoc = thuoc.MaThuoc,
+                            TenNhom = nhomthuoc.TenNhom,
+                            TenHoatChat = hoatchat.TenHoatChat,
+                            ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,
+                            TonKhoToiThieu = thuoc.TonKhoToiThieu,
+                            GiaBanLe = thuoc.GiaBanLe,
+                            GiaBanBuon = thuoc.GiaBanBuon,
+                            NhomThuoc_ID = thuoc.NhomThuoc_ID,
+                            HoatChat_ID = thuoc.HoatChat_ID,
+                            KichHoat = thuoc.KichHoat
 
                         };
             if (thuoc_id > 0)
                 query = query.Where(p => p.ID == thuoc_id);
-            
+
             if (nhomthuoc_ID > 0)
                 query = query.Where(p => p.NhomThuoc_ID == nhomthuoc_ID);
 

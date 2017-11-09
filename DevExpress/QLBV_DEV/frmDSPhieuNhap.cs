@@ -17,9 +17,7 @@ namespace QLBV_DEV
         #region params
         HospitalEntities db = new HospitalEntities();
         PhieuNhapThuocRepository rpo_PhieuNhap = new PhieuNhapThuocRepository();
-
-        int phieuNhapID = 0;
-
+        
         int iRow;
         #endregion
 
@@ -36,26 +34,7 @@ namespace QLBV_DEV
         {
             try
             {
-                //var result = from nv in db.PhieuNhapThuoc
-                //             where nv.Xoa == false
-                //             select nv;
-                //var result = rpo_PhieuNhap.GetAllNotDelete();
-                var result = from phieunhap in db.PhieuNhapThuoc
-                            //join ncc_kh in db.NCC_KH on phieunhap.NCC_KH_ID equals ncc_kh.ID
-                             from ncc_kh in db.NCC_KH.Where(ncc => ncc.ID == phieunhap.NCC_KH_ID).DefaultIfEmpty()
-                            where phieunhap.Xoa != true
-                            orderby phieunhap.ID ascending
-                            select new
-                            {
-                                ID          = phieunhap.ID,
-                                SoPhieu     = phieunhap.SoPhieu,
-                                SoHoaDon    = phieunhap.SoHoaDon,
-                                NgayNhap    = phieunhap.NgayNhap,
-                                NCC_KH_ID   = ncc_kh.TenNCC_KH,
-                                ThueSuat    = phieunhap.ThueSuat + "%",
-                                ChietKhau   = phieunhap.ChietKhau,
-                                TongTienTra = phieunhap.TongTienTra
-                            };
+                var result = rpo_PhieuNhap.search(0, "", Convert.ToDateTime("01/01/0001"), Convert.ToDateTime("01/01/0001"), "");
                 grdDS_PhieuNhap.DataSource = result.ToList();
             }
             catch (Exception)
@@ -108,17 +87,17 @@ namespace QLBV_DEV
                 frm.Activate();
             }*/
         }
-        
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
+
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             iRow = gridView1.FocusedRowHandle;
         }
-        
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -192,20 +171,23 @@ namespace QLBV_DEV
 
         private void frmDSPhieuNhap_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
-                int ncc_kh_ID       = Convert.ToInt32(cbbNCC_KH.EditValue); 
-                String soPhieu      = txtSoPhieu.Text.Trim();
-                DateTime tuNgay     = Convert.ToDateTime(dateTuNgay.EditValue);
-                DateTime denNgay    = Convert.ToDateTime(dateDenNgay.EditValue);
-                String soHoaDon     = txtSoHoaDon.Text.Trim();
+                int ncc_kh_ID = Convert.ToInt32(cbbNCC_KH.EditValue);
+                String soPhieu = txtSoPhieu.Text.Trim();
+                DateTime tuNgay = Convert.ToDateTime(dateTuNgay.EditValue);
+                DateTime denNgay = Convert.ToDateTime(dateDenNgay.EditValue);
+                String soHoaDon = txtSoHoaDon.Text.Trim();
+
+                tuNgay = Convert.ToDateTime(tuNgay.ToShortDateString());
+                denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
 
                 var query = rpo_PhieuNhap.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
-                grdDS_PhieuNhap.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
+                grdDS_PhieuNhap.DataSource = new BindingList<dynamic>(query.ToList());
             }
             catch (Exception)
             {

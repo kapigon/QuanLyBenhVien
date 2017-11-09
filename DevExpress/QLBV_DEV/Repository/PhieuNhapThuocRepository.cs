@@ -30,10 +30,24 @@ namespace QLBV_DEV.Repository
             return query.Count();
         }
 
-        public IQueryable<PhieuNhapThuoc> search(int ncc_kh_ID, String soPhieu, DateTime tuNgay, DateTime denNgay, String soHoaDon)
+        public IQueryable<dynamic> search(int ncc_kh_ID, String soPhieu, DateTime tuNgay, DateTime denNgay, String soHoaDon)
         {
-            var query = from _object in db.PhieuNhapThuoc select _object;
-            
+            var query = from _object in db.PhieuNhapThuoc
+                        where _object.Xoa != true
+                        orderby _object.ID ascending
+                        select new
+                        {
+                            ID          = _object.ID,
+                            SoPhieu     = _object.SoPhieu,
+                            SoHoaDon    = _object.SoHoaDon,
+                            NgayNhap    = _object.NgayNhap,
+                            //NCC_KH_ID   = ncc_kh.TenNCC_KH,
+                            NCC_KH_ID   = _object.NCC_KH_ID,
+                            ThueSuat    = _object.ThueSuat + "%",
+                            ChietKhau   = _object.ChietKhau,
+                            TongTienTra = _object.TongTienTra
+                        }; ;
+
             if (ncc_kh_ID > 0)
                 query = query.Where(p => p.NCC_KH_ID == ncc_kh_ID);
 
@@ -49,7 +63,7 @@ namespace QLBV_DEV.Repository
             if (soHoaDon != "")
                 query = query.Where(p => p.SoHoaDon == soHoaDon);
 
-                return query;
+            return query;
             //return from _object in db.PhieuNhapThuoc orderby _object.ID ascending select _object;
         }
 

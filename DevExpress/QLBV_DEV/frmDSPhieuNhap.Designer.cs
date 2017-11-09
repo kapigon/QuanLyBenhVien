@@ -309,6 +309,7 @@
             this.NCC_KH_ID.AppearanceHeader.Options.UseTextOptions = true;
             this.NCC_KH_ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NCC_KH_ID.Caption = "Nhà cung cấp";
+            this.NCC_KH_ID.ColumnEdit = this.cbbCol_NCC_KH;
             this.NCC_KH_ID.FieldName = "NCC_KH_ID";
             this.NCC_KH_ID.Name = "NCC_KH_ID";
             this.NCC_KH_ID.OptionsColumn.ReadOnly = true;

@@ -40,22 +40,7 @@ namespace QLBV_DEV
                 //             where nv.Xoa == false
                 //             select nv;
                 //var result = rpo_PhieuNhap.GetAllNotDelete();
-                var result = from phieuxuat in db.PhieuXuatThuoc
-                            //join ncc_kh in db.NCC_KH on phieuxuat.NCC_KH_ID equals ncc_kh.ID
-                             from kh in db.NCC_KH.Where(kh => kh.ID == phieuxuat.NCC_KH_ID).DefaultIfEmpty()
-                            where phieuxuat.Xoa != true && phieuxuat.TrangThaiPhieu_ID == 1
-                            orderby phieuxuat.ID ascending
-                            select new
-                            {
-                                ID              = phieuxuat.ID,
-                                SoPhieu         = phieuxuat.SoPhieu,
-                                SoHoaDon        = phieuxuat.SoHoaDon,
-                                NgayTao         = phieuxuat.NgayTao,
-                                NCC_KH_ID       = kh.TenNCC_KH,
-                                ThueSuat        = phieuxuat.ThueSuat + "%",
-                                ChietKhau       = phieuxuat.ChietKhau,
-                                TongTienKHTra   = phieuxuat.TongTienKHTra
-                            };
+                var result = rpo_PhieuXuat.search(0, "", Convert.ToDateTime("01/01/0001"), Convert.ToDateTime("01/01/0001"), "", 1);
                 grdDS_PhieuXuat.DataSource = result.ToList();
             }
             catch (Exception)
@@ -75,7 +60,7 @@ namespace QLBV_DEV
                 cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
                 cbbNCC_KH.Properties.ValueMember = "ID";
 
-                cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(1, 2).ToList());
+                cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(2, 2).ToList());
                 cbbCol_NCC_KH.DisplayMember = "TenNCC_KH";
                 cbbCol_NCC_KH.ValueMember = "ID";
             }
@@ -94,17 +79,17 @@ namespace QLBV_DEV
             frmPhieuXuatThuoc.ShowInTaskbar = false;
             frmPhieuXuatThuoc.ShowDialog();
         }
-        
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
+
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             iRow = gridView1.FocusedRowHandle;
         }
-        
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -179,19 +164,23 @@ namespace QLBV_DEV
 
         private void frmDSPhieuNhap_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try { 
-                int ncc_kh_ID       = Convert.ToInt32(cbbNCC_KH.EditValue); 
-                String soPhieu      = txtSoPhieu.Text.Trim();
-                DateTime tuNgay     = Convert.ToDateTime(dateTuNgay.EditValue);
-                DateTime denNgay    = Convert.ToDateTime(dateDenNgay.EditValue);
-                String soHoaDon     = txtSoHoaDon.Text.Trim();
+            try
+            {
+                int ncc_kh_ID = Convert.ToInt32(cbbNCC_KH.EditValue);
+                String soPhieu = txtSoPhieu.Text.Trim();
+                DateTime tuNgay = Convert.ToDateTime(dateTuNgay.EditValue);
+                DateTime denNgay = Convert.ToDateTime(dateDenNgay.EditValue);
+                String soHoaDon = txtSoHoaDon.Text.Trim();
 
-                var query = rpo_PhieuXuat.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon);
-                grdDS_PhieuXuat.DataSource = new BindingList<PhieuXuatThuoc>(query.ToList());
+                tuNgay = Convert.ToDateTime(tuNgay.ToShortDateString());
+                denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
+
+                var query = rpo_PhieuXuat.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon, 1);
+                grdDS_PhieuXuat.DataSource = new BindingList<dynamic>(query.ToList());
             }
             catch (Exception)
             {
@@ -252,6 +241,6 @@ namespace QLBV_DEV
 
         }
         #endregion
-        
+
     }
 }

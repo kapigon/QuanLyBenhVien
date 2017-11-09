@@ -15,7 +15,7 @@ namespace QLBV_DEV
     {
         NhanVienRepository rpo_NhanVien = new NhanVienRepository();
         NhanVien obj_NhanVien = new NhanVien();
-                
+
         //frmPhieuNhapThuoc   frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
         //frmDSPhieuNhap      frmDSPhieuNhap      = new frmDSPhieuNhap();
         //frmDSPhieuXuat      frmDSPhieuXuat      = new frmDSPhieuXuat();
@@ -91,9 +91,10 @@ namespace QLBV_DEV
                 form = Activator.CreateInstance<TSource>();
                 form.MdiParent = this;
                 //form.FormClosed += form_FormClosed;
-                form.FormClosed += (sender1, eventArgs) => {
+                form.FormClosed += (sender1, eventArgs) =>
+                {
                     this.ActiveForms.Remove(form.GetType());
-                    form = Activator.CreateInstance<TSource>(); 
+                    form = Activator.CreateInstance<TSource>();
                 };
                 form.Show();
 
@@ -138,7 +139,7 @@ namespace QLBV_DEV
             //    frmCanhbaotrangchu = new frmCanhbaotrangchu();
             //}
 
-        }        
+        }
 
         //--------------------------------------------------------------------------------
         //Kiểm tra đã bật Tab Form chưa
@@ -205,7 +206,7 @@ namespace QLBV_DEV
         {
             this.ShowForm<frmNuocSanXuat>();
         }
-        
+
         private void btnHoatChat_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.ShowForm<frmHoatChat>();
@@ -278,7 +279,7 @@ namespace QLBV_DEV
 
         private void ribbon_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
@@ -317,20 +318,20 @@ namespace QLBV_DEV
             this.ShowForm<frmBaoCaoNgay>();
         }
 
+        private void btnGiaBan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ShowForm<frmCapNhatGia>();
+        }
+
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                if (MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình?", "Xác nhận thoát chương trình", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                    Application.Exit();	
+                if (MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình.?", "Xác nhận thoát chương trình", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    Application.Exit();
                 else
                     e.Cancel = true;
             }
-        }
-
-        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.ShowForm<frmCapNhatGia>();
         }
     }
 }
