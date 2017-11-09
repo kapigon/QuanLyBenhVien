@@ -181,6 +181,7 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.Location = new System.Drawing.Point(654, 325);
             this.btnHuy.MaximumSize = new System.Drawing.Size(0, 35);
             this.btnHuy.MinimumSize = new System.Drawing.Size(0, 35);
@@ -193,6 +194,7 @@
             // 
             // btnCapNhat
             // 
+            this.btnCapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.Image")));
             this.btnCapNhat.Location = new System.Drawing.Point(654, 286);
             this.btnCapNhat.MaximumSize = new System.Drawing.Size(0, 35);
             this.btnCapNhat.MinimumSize = new System.Drawing.Size(0, 35);
@@ -304,6 +306,8 @@
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 7;
             // 
             // MaThuoc
             // 
@@ -542,7 +546,6 @@
             // 
             // cbbNhomThuoc
             // 
-            this.cbbNhomThuoc.EditValue = "";
             this.cbbNhomThuoc.Location = new System.Drawing.Point(97, 67);
             this.cbbNhomThuoc.Name = "cbbNhomThuoc";
             this.cbbNhomThuoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

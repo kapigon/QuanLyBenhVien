@@ -83,6 +83,7 @@
             this.btnBC_Nhapxuatton = new DevExpress.XtraBars.BarButtonItem();
             this.btnCanhbao = new DevExpress.XtraBars.BarButtonItem();
             this.btnThuocBanTheoNgay = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGiaBan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -90,6 +91,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -175,10 +177,11 @@
             this.btnBC_Xuatthuoc,
             this.btnBC_Nhapxuatton,
             this.btnCanhbao,
-            this.btnThuocBanTheoNgay});
+            this.btnThuocBanTheoNgay,
+            this.btnGiaBan});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbon.MaxItemId = 7;
+            this.ribbon.MaxItemId = 9;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage6,
@@ -548,6 +551,14 @@
             this.btnThuocBanTheoNgay.Name = "btnThuocBanTheoNgay";
             this.btnThuocBanTheoNgay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuocBanTheoNgay_ItemClick);
             // 
+            // btnGiaBan
+            // 
+            this.btnGiaBan.Caption = "Giá bán";
+            this.btnGiaBan.Id = 8;
+            this.btnGiaBan.LargeGlyph = global::QLBV_DEV.Properties.Resources.Price_list;
+            this.btnGiaBan.Name = "btnGiaBan";
+            this.btnGiaBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiaBan_ItemClick);
+            // 
             // ribbonPage6
             // 
             this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -566,7 +577,8 @@
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup16,
-            this.ribbonPageGroup15});
+            this.ribbonPageGroup15,
+            this.ribbonPageGroup19});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Phiếu";
             // 
@@ -596,6 +608,12 @@
             this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "Kiểm kê";
+            // 
+            // ribbonPageGroup19
+            // 
+            this.ribbonPageGroup19.ItemLinks.Add(this.btnGiaBan);
+            this.ribbonPageGroup19.Name = "ribbonPageGroup19";
+            this.ribbonPageGroup19.Text = "Cập nhật giá";
             // 
             // ribbonPage2
             // 
@@ -872,5 +890,7 @@
         private DevExpress.XtraBars.BarButtonItem btnCanhbao;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.BarButtonItem btnThuocBanTheoNgay;
+        private DevExpress.XtraBars.BarButtonItem btnGiaBan;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
     }
 }

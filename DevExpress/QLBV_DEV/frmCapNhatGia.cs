@@ -45,21 +45,7 @@ namespace QLBV_DEV
         {
             try
             {
-                var query = from thuoc in db.Thuoc
-                            from nhomthuoc in db.NhomThuoc.Where(nt => nt.ID == thuoc.NhomThuoc_ID).DefaultIfEmpty()
-                            from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
-                            select new
-                            {
-                                ID                      = thuoc.ID,
-                                TenThuoc                = thuoc.TenThuoc,
-                                MaThuoc                 = thuoc.MaThuoc,
-                                TenNhom                 = nhomthuoc.TenNhom,
-                                TenHoatChat             = hoatchat.TenHoatChat,
-                                ThoiGianCanhBaoHetHan   = thuoc.ThoiGianCanhBaoHetHan,
-                                TonKhoToiThieu          = thuoc.TonKhoToiThieu,
-                                GiaBanLe                = thuoc.GiaBanLe,
-                                GiaBanBuon              = thuoc.GiaBanBuon
-                            };
+                var query = rpo_Thuoc.search(0, 0, 0, true);
                 if (query.ToList().Count() > 0)
                 {
                     grvDSThuoc.DataSource = query.ToList();
@@ -241,6 +227,8 @@ namespace QLBV_DEV
         
         private void btnTim_Click(object sender, EventArgs e)
         {
+            clearField();
+
             long thuoc_Id = Convert.ToInt64(cbbTenThuoc.EditValue);
             int nhomthuoc_Id = Convert.ToInt32(cbbNhomThuoc.EditValue);
             int hoatchat_Id = Convert.ToInt32(cbbHoatChat.EditValue);
@@ -250,7 +238,7 @@ namespace QLBV_DEV
             try
             {
                 var query = rpo_Thuoc.search(thuoc_Id, nhomthuoc_Id, hoatchat_Id, kichhoat);
-                grvDSThuoc.DataSource = new BindingList<dynamic>(query.ToList());
+                grvDSThuoc.DataSource = query.ToList();
             }
             catch (Exception)
             {

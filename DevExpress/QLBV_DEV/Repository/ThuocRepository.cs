@@ -163,8 +163,8 @@ namespace QLBV_DEV.Repository
         public IQueryable<dynamic> search(long thuoc_id, int nhomthuoc_ID, int hoatchat_ID, bool kichhoat)
         {
             var query = from thuoc in db.Thuoc
-                        from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()
                         from nhomthuoc in db.NhomThuoc.Where(nt => nt.ID == thuoc.NhomThuoc_ID).DefaultIfEmpty()
+                        from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()
                         select new
                         {
                             ID                      = thuoc.ID,
@@ -176,14 +176,14 @@ namespace QLBV_DEV.Repository
                             TonKhoToiThieu          = thuoc.TonKhoToiThieu,
                             GiaBanLe                = thuoc.GiaBanLe,
                             GiaBanBuon              = thuoc.GiaBanBuon,
-                            NhomThuoc_ID            = nhomthuoc.ID,
-                            HoatChat_ID             = hoatchat.ID,
+                            NhomThuoc_ID            = thuoc.NhomThuoc_ID,
+                            HoatChat_ID             = thuoc.HoatChat_ID,
                             KichHoat                = thuoc.KichHoat
 
                         };
             if (thuoc_id > 0)
                 query = query.Where(p => p.ID == thuoc_id);
-            
+
             if (nhomthuoc_ID > 0)
                 query = query.Where(p => p.NhomThuoc_ID == nhomthuoc_ID);
 
