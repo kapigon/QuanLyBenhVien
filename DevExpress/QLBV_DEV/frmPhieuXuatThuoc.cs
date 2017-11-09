@@ -650,6 +650,7 @@ namespace QLBV_DEV
                     obj_PhieuXuat = rpo_PhieuXuat.GetSingle(phieuxuat_ID);
                     if(Convert.ToBoolean(chkDeNghiHuy.EditValue)){
                         obj_PhieuXuat.TrangThaiPhieu_ID = 2;
+                        obj_PhieuXuat.NgayXoa = DateTime.Now;
                         rpo_PhieuXuat.Save(obj_PhieuXuat);
                     }
                 }
@@ -682,6 +683,7 @@ namespace QLBV_DEV
                                         obj_PhieuXuat.Xoa       = true;
                                         obj_PhieuXuat.UserXoa   = obj_NhanVien.ID;
                                         obj_PhieuXuat.TrangThaiPhieu_ID = 4;        // Trạng thái: đã xóa/hủy
+                                        obj_PhieuXuat.NgayXoa = DateTime.Now;
                                         rpo_PhieuXuat.Save(obj_PhieuXuat);
 
                                         /// Khi tao 1 phiếu xuất thành công -> tạo các Chi tiết Thuốc theo phiếu xuất đó

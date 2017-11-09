@@ -75,8 +75,14 @@ namespace QLBV_DEV
             this.ActiveForms = new Dictionary<Type, Form>();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2010 Blue");
             LoadCanhBaoTrangChu();
+
+            obj_NhanVien = QLBV_DEV.Helpers.LoginInfo.nhanVien;
+            barUserName.Caption = obj_NhanVien.TaiKhoan;
+
+            LoadBaoCao();
         }
 
+        
         private void ShowForm<TSource>() where TSource : Form
         {
             Form form = null;
@@ -333,5 +339,66 @@ namespace QLBV_DEV
                     e.Cancel = true;
             }
         }
+
+        private void LoadBaoCao()
+        {
+            try
+            {
+                /// Tổng số đơn BÁN hàng trong ngày
+                PhieuXuatThuocRepository rpo_PhieuXuat = new PhieuXuatThuocRepository();
+                btnSoDonBanHomNay.Caption = "Tổng đơn bán: " + rpo_PhieuXuat.getTongSoDonBanHomNay();
+
+                /// Tổng số đơn CHỜ HỦY hàng trong ngày
+                btnSoDonChoHuyHomNay.Caption = "Tổng đơn chờ hủy: " + rpo_PhieuXuat.getTongSoDonChoHuyHomNay();
+
+                /// Tổng số đơn ĐÃ HỦY hàng trong ngày
+                btnSoDonDaHuyHomNay.Caption = "Tổng đơn đã hủy: " + rpo_PhieuXuat.getTongSoDonDaHuyHomNay();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
+        }
+
+        private void btnUserInfo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (obj_NhanVien.ID > 0)
+            {
+                frmThongTinNguoiDung frmUserInfo = new frmThongTinNguoiDung();
+                frmUserInfo.loadData(obj_NhanVien.ID);
+                frmUserInfo.ShowInTaskbar = false;
+                frmUserInfo.ShowDialog();
+            }
+            else
+            {
+                this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
+            }
+        }
+
+        private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+        }
+
+        private void btnSoDonBanHomNay_ListItemClick(object sender, ListItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSoDonHuyHomNay_ListItemClick(object sender, ListItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSoDonDaHuyHomNay_ListItemClick(object sender, ListItemClickEventArgs e)
+        {
+
+        }
+
+        
     }
 }

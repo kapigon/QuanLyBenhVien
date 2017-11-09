@@ -357,8 +357,14 @@
     <Compile Include="frmThemNCC_KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemNCC_KH.Designer.cs">
+    <Compile Include="frmThemNCC_KH.designer.cs">
       <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinNguoiDung.Designer.cs">
+      <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemThuoc.cs">
       <SubType>Form</SubType>
@@ -587,6 +593,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemNCC_KH.resx">
       <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinNguoiDung.resx">
+      <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemThuoc.resx">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>

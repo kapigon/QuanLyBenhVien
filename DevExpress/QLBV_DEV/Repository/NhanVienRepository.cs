@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace QLBV_DEV.Repository
@@ -27,9 +28,22 @@ namespace QLBV_DEV.Repository
 
         public NhanVien GetSingle(string userName, string password)
         {
+            MD5 md5Hash = MD5.Create();
+           
+            string hash = Helpers.StringClearFormat.GetMd5Hash(md5Hash, password);
+
+            //if (Helpers.StringClearFormat.VerifyMd5Hash(md5Hash, password, hash))
+            //{
+            //    Console.WriteLine("The hashes are the same.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The hashes are not same.");
+            //}
+
             return (from _object in db.NhanVien
                     where _object.TaiKhoan.ToLower().Equals(userName.ToLower())
-                    && _object.MatKhau.Equals(password)
+                    && _object.MatKhau.Equals(hash)
                     select _object).FirstOrDefault();
         }
 

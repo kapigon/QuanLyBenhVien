@@ -26,5 +26,7 @@ namespace QLBV_DEV
         public string CMT { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
         public Nullable<bool> KichHoat { get; set; }
+        public string SDT { get; set; }
+        public string Email { get; set; }
     }
 }

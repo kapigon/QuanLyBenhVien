@@ -81,6 +81,8 @@
           <Property Name="HoVaTen" Type="nvarchar" MaxLength="100" />
           <Property Name="TaiKhoan" Type="varchar" MaxLength="100" />
           <Property Name="MatKhau" Type="varchar" MaxLength="150" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="SDT" Type="varchar" MaxLength="50" />
           <Property Name="GioiTinh" Type="bit" />
           <Property Name="NgaySinh" Type="date" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
@@ -143,6 +145,7 @@
           <Property Name="ChietKhau" Type="float" />
           <Property Name="TongTienKHTra" Type="float" />
           <Property Name="Xoa" Type="bit" />
+          <Property Name="NgayXoa" Type="date" />
           <Property Name="UserXoa" Type="int" />
           <Property Name="UserTao" Type="int" />
         </EntityType>
@@ -418,6 +421,8 @@
           <Property Name="CMT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="NgayTao" Type="DateTime" Precision="0" />
           <Property Name="KichHoat" Type="Boolean" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="NhomThuoc">
           <Key>
@@ -610,6 +615,7 @@
           <Property Name="Xoa" Type="Boolean" />
           <Property Name="UserXoa" Type="Int32" />
           <Property Name="UserTao" Type="Int32" />
+          <Property Name="NgayXoa" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="CT_PhieuDieuChinh">
           <Key>
@@ -712,6 +718,8 @@
           <EntitySetMapping Name="NhanVien">
             <EntityTypeMapping TypeName="HospitalModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
                 <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
                 <ScalarProperty Name="CMT" ColumnName="CMT" />
@@ -914,6 +922,7 @@
           <EntitySetMapping Name="PhieuXuatThuoc">
             <EntityTypeMapping TypeName="HospitalModel.PhieuXuatThuoc">
               <MappingFragment StoreEntitySet="PhieuXuatThuoc">
+                <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
                 <ScalarProperty Name="UserTao" ColumnName="UserTao" />
                 <ScalarProperty Name="UserXoa" ColumnName="UserXoa" />
                 <ScalarProperty Name="Xoa" ColumnName="Xoa" />

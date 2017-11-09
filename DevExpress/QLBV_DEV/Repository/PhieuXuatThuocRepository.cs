@@ -30,6 +30,23 @@ namespace QLBV_DEV.Repository
             return from _object in db.PhieuXuatThuoc where _object.Xoa != true orderby _object.ID ascending select _object;
         }
 
+        public int getTongSoDonBanHomNay()
+        {
+            return (from _object in db.PhieuXuatThuoc where _object.NgayTao == DateTime.Today select _object).Count();
+
+        }
+
+        public int getTongSoDonChoHuyHomNay()
+        {
+            return (from _object in db.PhieuXuatThuoc where _object.NgayXoa == DateTime.Today && _object.TrangThaiPhieu_ID == 2 select _object).Count();
+
+        }
+
+        public int getTongSoDonDaHuyHomNay()
+        {
+            return (from _object in db.PhieuXuatThuoc where _object.NgayXoa == DateTime.Today && _object.TrangThaiPhieu_ID == 4 select _object).Count();
+        }
+
         public IQueryable<dynamic> search(int ncc_kh_ID, String soPhieu, DateTime tuNgay, DateTime denNgay, String soHoaDon, int trangthaiPhieu)
         {
             var query = from _object in db.PhieuXuatThuoc
