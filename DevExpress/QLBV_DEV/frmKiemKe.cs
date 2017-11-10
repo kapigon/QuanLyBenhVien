@@ -306,14 +306,14 @@ namespace QLBV_DEV
         {
             try
             {
-                long thuoc_Id = Convert.ToInt64(cbbTenThuoc.EditValue);
-                int nhomthuoc_Id = Convert.ToInt32(cbbNhomThuoc.EditValue);
-                int hangsanxuat_Id = Convert.ToInt32(cbbHangSanXuat.EditValue);
-                int khohang_Id = Convert.ToInt32(cbbKhoHang.EditValue);
-                string solo = cbbSoLo.Text;
-                int hoatchat_Id = Convert.ToInt32(cbbHoatChat.EditValue);
-                int nuocsanxuat_Id = Convert.ToInt32(cbbNuocSanXuat.EditValue);
-                int vitri_Id = Convert.ToInt32(cbbViTri.EditValue);
+                long thuoc_Id       = Convert.ToInt64(cbbTenThuoc.EditValue);
+                int nhomthuoc_Id    = Convert.ToInt32(cbbNhomThuoc.EditValue);
+                int hangsanxuat_Id  = Convert.ToInt32(cbbHangSanXuat.EditValue);
+                int khohang_Id      = Convert.ToInt32(cbbKhoHang.EditValue);
+                string solo         = cbbSoLo.Text;
+                int hoatchat_Id     = Convert.ToInt32(cbbHoatChat.EditValue);
+                int nuocsanxuat_Id  = Convert.ToInt32(cbbNuocSanXuat.EditValue);
+                int vitri_Id        = Convert.ToInt32(cbbViTri.EditValue);
 
                 var query = rpo_CT_Thuoc.search(thuoc_Id, nhomthuoc_Id, hangsanxuat_Id, khohang_Id,
                                                 solo,    hoatchat_Id , nuocsanxuat_Id, vitri_Id);

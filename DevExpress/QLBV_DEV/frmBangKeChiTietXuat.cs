@@ -16,12 +16,7 @@ namespace QLBV_DEV
     public partial class frmBangKeChiTietXuat : DevExpress.XtraEditors.XtraForm
     {
         #region params
-        HospitalEntities db = new HospitalEntities();
-        PhieuNhapThuocRepository rpo_PhieuNhap = new PhieuNhapThuocRepository();
-
-        int phieuNhapID = 0;
-
-        int iRow;
+        CT_Thuoc_PhieuXuatRepository rpo_CT_PhieuXuat = new CT_Thuoc_PhieuXuatRepository();
         #endregion
 
         public frmBangKeChiTietXuat()
@@ -44,37 +39,8 @@ namespace QLBV_DEV
             tuNgay = Convert.ToDateTime(tuNgay.ToShortDateString());
             denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
 
-            //var qct_xuat = from ct_xuat in db.CT_Thuoc_PhieuXuat
-            //               where
-            //               ((ct_xuat.NgayBan.Value.Year >= tuNgay.Year && ct_xuat.NgayBan.Value.Month >= tuNgay.Month && ct_xuat.NgayBan.Value.Day >= tuNgay.Day)
-            //               && (ct_xuat.NgayBan.Value.Year <= denNgay.Year && ct_xuat.NgayBan.Value.Month <= denNgay.Month && ct_xuat.NgayBan.Value.Day <= denNgay.Day))
-            //              select new
-            //              {
-            //                  CT_Thuoc_PhieuNhap_ID = ct_xuat.CT_Thuoc_PhieuNhap_ID,
-            //                  DVT = ct_xuat.DVT_Theo_DVT_Thuoc_ID,
-            //                  SoLuong = ct_xuat.SoLuong,
-            //                  GiaBan = ct_xuat.GiaBan,
-            //                  PhieuXuat_ID = ct_xuat.PhieuXuatHang_ID
-            //              };
-
             try{
-                var query = from ct_xuat    in db.CT_Thuoc_PhieuXuat
-                            join phieuxuat  in db.PhieuXuatThuoc on ct_xuat.PhieuXuatHang_ID equals phieuxuat.ID
-                            join ct_nhap    in db.CT_Thuoc_PhieuNhap on ct_xuat.CT_Thuoc_PhieuNhap_ID equals ct_nhap.ID
-                            join thuoc      in db.Thuoc on ct_nhap.Thuoc_ID equals thuoc.ID
-                            join dvt        in db.DonViTinh on ct_xuat.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
-                            where (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
-                            select new
-                            {
-                                SoPhieu     = phieuxuat.SoPhieu,
-                                Thuoc_ID    = thuoc.ID,
-                                MaThuoc     = thuoc.MaThuoc,
-                                TenThuoc    = thuoc.TenThuoc,
-                                TenDVT      = dvt.TenDVT,
-                                SoLuong     = ct_xuat.SoLuong,
-                                GiaBan      = ct_xuat.GiaBan
-                            };
-
+                var query = rpo_CT_PhieuXuat.BangKeCT_Xuat_Thuoc(tuNgay, denNgay);
                 grdDS_Nhap_Xuat_Ton.DataSource = query.ToList();
             }
             catch (Exception)
@@ -82,29 +48,19 @@ namespace QLBV_DEV
                 MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
-
-       
         #endregion
 
         #region events
-
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-        private void frmDSPhieuNhap_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadBangKeCT_Xuat_Thuoc();
         }
         
-
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
             //sfdDSPhieuNhap.Filter = "Excel Worksheets|*.xls";

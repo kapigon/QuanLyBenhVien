@@ -18,7 +18,8 @@ namespace QLBV_DEV
     {
         #region params
         HospitalEntities db = new HospitalEntities();
-        ThuocRepository rpo_Thuoc = new ThuocRepository();        
+        ThuocRepository                 rpo_Thuoc           = new ThuocRepository();
+        CT_Thuoc_PhieuNhapRepository    rpo_CT_PhieuNhap = new CT_Thuoc_PhieuNhapRepository();   
         #endregion
 
         public frmDSThuocCanDate()
@@ -48,16 +49,7 @@ namespace QLBV_DEV
                 }
                 
                  //lấy ra thuốc trong số ngày nhập vào hết hạn
-                var query = from thuoc_phieunhap in db.CT_Thuoc_PhieuNhap
-                            join thuoc in db.Thuoc on thuoc_phieunhap.Thuoc_ID equals thuoc.ID
-                            where DateTime.Now <= thuoc_phieunhap.HSD && thuoc_phieunhap.HSD <= thoigiantoi 
-                            select new
-                            {
-                                Id          = thuoc_phieunhap.Thuoc_ID,
-                                TenThuoc    = thuoc.TenThuoc,
-                                Mathuoc     = thuoc.MaThuoc,
-                                HSD         = thuoc_phieunhap.HSD
-                            };
+                var query = rpo_CT_PhieuNhap.DS_ThuocCanDate(thoigiantoi);
 
 
                 //Lấy thuốc theo thời gian cảnh báo

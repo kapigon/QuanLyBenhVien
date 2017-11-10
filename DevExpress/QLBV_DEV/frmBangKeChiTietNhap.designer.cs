@@ -542,7 +542,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBangKeChiTietNhap";
             this.Text = "Bảng kê Chi Tiết Nhập Thuốc";
-            this.Load += new System.EventHandler(this.frmDSPhieuNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdDS_Nhap_Xuat_Ton)).EndInit();

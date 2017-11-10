@@ -70,18 +70,22 @@ namespace QLBV_DEV
                 isUpdate = true;
 
                 PhieuNhapThuoc obj_PhieuNhap = new PhieuNhapThuoc();
-                obj_PhieuNhap = rpo_PhieuNhap.GetSingle(id);
+                obj_PhieuNhap       = rpo_PhieuNhap.GetSingle(id);
 
-                cbbNCC.EditValue = obj_PhieuNhap.NCC_KH_ID;
-                txtSoPhieu.Text = obj_PhieuNhap.SoPhieu;
-                txtGhiChu.Text = obj_PhieuNhap.GhiChu;
-                txtSeri.Text = obj_PhieuNhap.SoSeri;
-                cbbThueSuat.EditValue = obj_PhieuNhap.ThueSuat + "%";
-                txtSoHoaDon.Text = obj_PhieuNhap.SoHoaDon;
-                dateNgayVietHD.EditValue = Convert.ToDateTime(obj_PhieuNhap.NgayHoaDon);
-                dateNgayNhap.EditValue = Convert.ToDateTime(obj_PhieuNhap.NgayNhap);
+                if (obj_PhieuNhap != null)
+                {
+                    cbbNCC.EditValue = obj_PhieuNhap.NCC_KH_ID;
+                    txtSoPhieu.Text = obj_PhieuNhap.SoPhieu;
+                    txtGhiChu.Text = obj_PhieuNhap.GhiChu;
+                    txtSeri.Text = obj_PhieuNhap.SoSeri;
+                    cbbThueSuat.EditValue = obj_PhieuNhap.ThueSuat + "%";
+                    txtSoHoaDon.Text = obj_PhieuNhap.SoHoaDon;
+                    dateNgayVietHD.EditValue = Convert.ToDateTime(obj_PhieuNhap.NgayHoaDon);
+                    dateNgayNhap.EditValue = Convert.ToDateTime(obj_PhieuNhap.NgayNhap);
 
-                grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>(db.CT_Thuoc_PhieuNhap.Where(p => p.PhieuNhapHang_ID == id).ToList());
+                    grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>(db.CT_Thuoc_PhieuNhap.Where(p => p.PhieuNhapHang_ID == id).ToList());
+                }
+                
             }
             catch (Exception)
             {

@@ -56,6 +56,7 @@
             this.layoutControl1.Controls.Add(this.grvTonKhoTheoThuoc);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(833, 422, 250, 350);
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
@@ -69,7 +70,7 @@
             this.layoutControl1.OptionsPrint.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.layoutControl1.OptionsPrint.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1087, 541);
+            this.layoutControl1.Size = new System.Drawing.Size(769, 358);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -77,20 +78,21 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Teal;
-            this.labelControl1.Location = new System.Drawing.Point(296, 12);
+            this.labelControl1.Location = new System.Drawing.Point(213, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.labelControl1.Size = new System.Drawing.Size(494, 44);
+            this.labelControl1.Size = new System.Drawing.Size(342, 33);
             this.labelControl1.StyleController = this.layoutControl1;
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "TỒN KHO THEO TỪNG LOẠI THUỐC";
             // 
             // grvTonKhoTheoThuoc
             // 
-            this.grvTonKhoTheoThuoc.Location = new System.Drawing.Point(12, 60);
+            this.grvTonKhoTheoThuoc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grvTonKhoTheoThuoc.Location = new System.Drawing.Point(12, 49);
             this.grvTonKhoTheoThuoc.MainView = this.gridView1;
             this.grvTonKhoTheoThuoc.Name = "grvTonKhoTheoThuoc";
-            this.grvTonKhoTheoThuoc.Size = new System.Drawing.Size(1063, 469);
+            this.grvTonKhoTheoThuoc.Size = new System.Drawing.Size(745, 297);
             this.grvTonKhoTheoThuoc.TabIndex = 4;
             this.grvTonKhoTheoThuoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -139,6 +141,8 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn3.Caption = "Tồn kho";
@@ -180,7 +184,7 @@
             this.layoutControlItem2});
             this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1087, 541);
+            this.Root.Size = new System.Drawing.Size(769, 358);
             this.Root.Text = "Root";
             this.Root.TextVisible = false;
             // 
@@ -188,9 +192,9 @@
             // 
             this.layoutControlItem1.Control = this.grvTonKhoTheoThuoc;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 37);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1067, 473);
+            this.layoutControlItem1.Size = new System.Drawing.Size(749, 301);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -202,17 +206,18 @@
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1067, 48);
+            this.layoutControlItem2.Size = new System.Drawing.Size(749, 37);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // frmTonKhoTheoThuoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 541);
+            this.ClientSize = new System.Drawing.Size(769, 358);
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmTonKhoTheoThuoc";
             this.Text = "Tồn kho theo thuốc";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

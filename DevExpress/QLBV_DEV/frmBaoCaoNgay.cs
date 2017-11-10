@@ -16,8 +16,6 @@ namespace QLBV_DEV
         #region params
         CT_Thuoc_PhieuXuatRepository rpo_CT_PhieuXuat = new CT_Thuoc_PhieuXuatRepository();
 
-        int phieuNhapID = 0;
-
         int iRow;
         #endregion
 

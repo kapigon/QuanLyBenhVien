@@ -41,20 +41,7 @@ namespace QLBV_DEV
         {
             try
             {
-                var query = from thuoc in db.Thuoc
-                            join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
-                            from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
-                            select new
-                            {
-                                ID = thuoc.ID,
-                                TenThuoc = thuoc.TenThuoc,
-                                MaThuoc = thuoc.MaThuoc,
-                                TenNhom = nhomthuoc.TenNhom,
-                                HoatChat = hoatchat.TenHoatChat,
-                                ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,
-                                TonKhoToiThieu = thuoc.TonKhoToiThieu,
-                                KichHoat = thuoc.KichHoat
-                            };
+                var query = rpo_Thuoc.DS_Thuoc();
                 if (query.ToList().Count() > 0)
                 {
                     grvDSThuoc.DataSource = query.ToList();

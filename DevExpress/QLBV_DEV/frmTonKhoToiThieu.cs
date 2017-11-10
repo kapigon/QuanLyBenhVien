@@ -29,22 +29,7 @@ namespace QLBV_DEV
         {
             try
             {
-                var query = from thuoc in db.Thuoc
-                            join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
-                            // join hangsanxuat in db.HangSanXuat on thuoc.HangSanXuat_ID equals hangsanxuat.ID                      
-                            where thuoc.TonKho < thuoc.TonKhoToiThieu
-
-                            select new
-                            {
-                                Id = thuoc.ID,
-                                MaThuoc = thuoc.MaThuoc,
-                                TenThuoc = thuoc.TenThuoc,
-
-                                TonKho = thuoc.TonKho,
-                                TonKhoToiThieu = thuoc.TonKhoToiThieu,
-                                // HangSanXuat = hangsanxuat.TenHangSX,
-                                NhomThuoc = nhomthuoc.TenNhom
-                            };
+                var query = rpo_Thuoc.TonKhoToiThieu();
                 grvTonKhoToiThieu.DataSource = query.ToList();
             }
             catch (Exception)

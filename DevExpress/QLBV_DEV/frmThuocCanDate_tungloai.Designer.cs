@@ -55,7 +55,7 @@
             this.layoutControl1.Controls.Add(this.grvThuocCanDate_tungloai);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(757, 430, 250, 350);
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
@@ -69,7 +69,7 @@
             this.layoutControl1.OptionsPrint.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.layoutControl1.OptionsPrint.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(775, 376);
+            this.layoutControl1.Size = new System.Drawing.Size(888, 415);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -77,7 +77,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Teal;
-            this.labelControl1.Location = new System.Drawing.Point(-76, 12);
+            this.labelControl1.Location = new System.Drawing.Point(24, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.labelControl1.Size = new System.Drawing.Size(839, 33);
@@ -87,11 +87,11 @@
             // 
             // grvThuocCanDate_tungloai
             // 
-            this.grvThuocCanDate_tungloai.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grvThuocCanDate_tungloai.Location = new System.Drawing.Point(-76, 49);
+            this.grvThuocCanDate_tungloai.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.grvThuocCanDate_tungloai.Location = new System.Drawing.Point(12, 49);
             this.grvThuocCanDate_tungloai.MainView = this.gridView1;
             this.grvThuocCanDate_tungloai.Name = "grvThuocCanDate_tungloai";
-            this.grvThuocCanDate_tungloai.Size = new System.Drawing.Size(839, 298);
+            this.grvThuocCanDate_tungloai.Size = new System.Drawing.Size(864, 354);
             this.grvThuocCanDate_tungloai.TabIndex = 4;
             this.grvThuocCanDate_tungloai.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -124,8 +124,8 @@
             this.gridColumn2.FieldName = "TenThuoc";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 462;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 199;
             // 
             // gridColumn3
             // 
@@ -135,11 +135,13 @@
             this.gridColumn3.FieldName = "MaThuoc";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 218;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 149;
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn4.Caption = "Hạn sử dụng";
@@ -147,18 +149,20 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 268;
+            this.gridColumn4.Width = 284;
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn5.Caption = "Thời gian cảnh báo hết hạn";
-            this.gridColumn5.FieldName = "canhbaohethan";
+            this.gridColumn5.FieldName = "ThoiGianCanhBaoHetHan";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 247;
+            this.gridColumn5.Width = 189;
             // 
             // Root
             // 
@@ -168,9 +172,9 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2});
-            this.Root.Location = new System.Drawing.Point(-88, 0);
+            this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(863, 359);
+            this.Root.Size = new System.Drawing.Size(888, 415);
             this.Root.Text = "Root";
             this.Root.TextVisible = false;
             // 
@@ -180,7 +184,7 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 37);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(843, 302);
+            this.layoutControlItem1.Size = new System.Drawing.Size(868, 358);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -192,7 +196,7 @@
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(843, 37);
+            this.layoutControlItem2.Size = new System.Drawing.Size(868, 37);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -201,9 +205,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 376);
+            this.ClientSize = new System.Drawing.Size(888, 415);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmThuocCanDate_tungloai";
             this.Text = "Danh sách thuốc sắp hết hạn sử dụng theo từng loại";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

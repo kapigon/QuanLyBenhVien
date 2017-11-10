@@ -133,18 +133,11 @@ namespace QLBV_DEV
         #endregion
 
         #region events
-
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-        private void frmDSPhieuNhap_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             //int ncc_kh_ID       = Convert.ToInt32(cbbNCC_KH.EditValue); 
@@ -157,7 +150,6 @@ namespace QLBV_DEV
             //grdDS_BanHang.DataSource = new BindingList<PhieuNhapThuoc>(query.ToList());
             LoadBangKeCT_Xuat_Nhap_Ton_Thuoc();
         }
-        #endregion
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
@@ -168,6 +160,8 @@ namespace QLBV_DEV
                 grdDS_Nhap_Xuat_Ton.ExportToXls(sfdDSNhap_Xuat_Ton.FileName);
             }
         }
+        #endregion
+
 
         #region Sothutu
         //Tạo số thứ tự tăng tự động cho 1 gridView. Dùng cho cả trường hợp group.

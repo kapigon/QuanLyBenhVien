@@ -34,28 +34,11 @@ namespace QLBV_DEV
         {
             try
             {
-               /* var result = from nv in db.NCC_KH
-                             select nv;
-                grvDSNCC_KH.DataSource = result.ToList();*/
-                var query = from ncc_kh in db.NCC_KH
-                            join loaiNCC_KH in db.LoaiNCC_KH on ncc_kh.LoaiNCC_KH_ID equals loaiNCC_KH.ID 
-                            orderby ncc_kh.ID descending
-                            select new
-                            {
-                                ID              = ncc_kh.ID,
-                                MaNCC_KH        = ncc_kh.MaNCC_KH,
-                                TenNCC_KH       = ncc_kh.TenNCC_KH,
-                                LoaiNCC_KH_ID   = loaiNCC_KH.TenLoaiNCC_KH,
-                                DiaChi          = ncc_kh.DiaChi,
-                                SDT             = ncc_kh.DienThoai,
-                                MST             = ncc_kh.MST,
-                                KichHoat        = ncc_kh.KichHoat
-                            };
+                var query = rpo_NCC_KH.DS_NCC_KH();
             
                 if (query.ToList().Count() > 0)
                 {
                     grvDSNCC_KH.DataSource = query.ToList();
-                    //grvDSNCC_KH.DataSource = new BindingList<NCC_KH>(db.NCC_KH.ToList());
                 }
                 else
                 {

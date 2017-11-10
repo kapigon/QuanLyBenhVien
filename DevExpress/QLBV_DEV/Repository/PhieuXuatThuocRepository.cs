@@ -52,7 +52,7 @@ namespace QLBV_DEV.Repository
             var query = from _object in db.PhieuXuatThuoc
                         //from kh in db.NCC_KH.Where(kh => kh.ID == phieuxuat.NCC_KH_ID).DefaultIfEmpty()
                         where _object.Xoa != true && _object.TrangThaiPhieu_ID == trangthaiPhieu
-                        orderby _object.ID ascending
+                        orderby _object.ID descending
                         select new
                         {
                             ID = _object.ID,
@@ -64,7 +64,7 @@ namespace QLBV_DEV.Repository
                             ThueSuat = _object.ThueSuat + "%",
                             ChietKhau = _object.ChietKhau,
                             TongTienKHTra = _object.TongTienKHTra
-                        }; ;
+                        };
 
             if (ncc_kh_ID > 0)
                 query = query.Where(p => p.NCC_KH_ID == ncc_kh_ID);

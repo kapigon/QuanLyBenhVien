@@ -34,7 +34,7 @@ namespace QLBV_DEV.Repository
         {
             var query = from _object in db.PhieuNhapThuoc
                         where _object.Xoa != true
-                        orderby _object.ID ascending
+                        orderby _object.ID descending
                         select new
                         {
                             ID          = _object.ID,
@@ -46,7 +46,7 @@ namespace QLBV_DEV.Repository
                             ThueSuat    = _object.ThueSuat + "%",
                             ChietKhau   = _object.ChietKhau,
                             TongTienTra = _object.TongTienTra
-                        }; ;
+                        };
 
             if (ncc_kh_ID > 0)
                 query = query.Where(p => p.NCC_KH_ID == ncc_kh_ID);

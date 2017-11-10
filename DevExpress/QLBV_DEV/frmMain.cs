@@ -13,9 +13,14 @@ namespace QLBV_DEV
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        NhanVienRepository rpo_NhanVien = new NhanVienRepository();
-        NhanVien obj_NhanVien = new NhanVien();
+        NhanVienRepository  rpo_NhanVien = new NhanVienRepository();
+        NhanVien            obj_NhanVien = new NhanVien();
 
+        int sodon_trongngay         = 0;
+        int sodon_chohuy_trongngay  = 0;
+        int sodon_dahuy_trongngay   = 0;
+        int thuoc_can_date          = 0;
+        int thuoc_sap_het = 0;
         //frmPhieuNhapThuoc   frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
         //frmDSPhieuNhap      frmDSPhieuNhap      = new frmDSPhieuNhap();
         //frmDSPhieuXuat      frmDSPhieuXuat      = new frmDSPhieuXuat();
@@ -317,6 +322,7 @@ namespace QLBV_DEV
         private void btnCanhbao_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.ShowForm<frmCanhbaotrangchu>();
+            LoadBaoCao();
         }
 
         private void btnThuocBanTheoNgay_ItemClick(object sender, ItemClickEventArgs e)
@@ -344,15 +350,33 @@ namespace QLBV_DEV
         {
             try
             {
-                /// Tổng số đơn BÁN hàng trong ngày
                 PhieuXuatThuocRepository rpo_PhieuXuat = new PhieuXuatThuocRepository();
-                btnSoDonBanHomNay.Caption = "Tổng đơn bán: " + rpo_PhieuXuat.getTongSoDonBanHomNay();
+                sodon_trongngay         = rpo_PhieuXuat.getTongSoDonBanHomNay();
+                sodon_chohuy_trongngay  = rpo_PhieuXuat.getTongSoDonChoHuyHomNay();
+                sodon_dahuy_trongngay   = rpo_PhieuXuat.getTongSoDonDaHuyHomNay();
+
+                CT_Thuoc_PhieuNhapRepository rpo_CT_PhieuNhap = new CT_Thuoc_PhieuNhapRepository();
+                thuoc_can_date          = rpo_CT_PhieuNhap.ThuocCanDate().Count();
+
+                ThuocRepository rpo_Thuoc   = new ThuocRepository();
+                thuoc_sap_het               = rpo_Thuoc.TonKhoToiThieu().Count();
+
+                /// Tổng số đơn BÁN hàng trong ngày
+                btnSoDonBanHomNay.Caption       = "Tổng đơn bán: (" + sodon_trongngay + ")";
 
                 /// Tổng số đơn CHỜ HỦY hàng trong ngày
-                btnSoDonChoHuyHomNay.Caption = "Tổng đơn chờ hủy: " + rpo_PhieuXuat.getTongSoDonChoHuyHomNay();
+                btnSoDonChoHuyHomNay.Caption    = "Tổng đơn chờ hủy: (" + sodon_chohuy_trongngay + ")";
 
                 /// Tổng số đơn ĐÃ HỦY hàng trong ngày
-                btnSoDonDaHuyHomNay.Caption = "Tổng đơn đã hủy: " + rpo_PhieuXuat.getTongSoDonDaHuyHomNay();
+                btnSoDonDaHuyHomNay.Caption     = "Tổng đơn đã hủy: (" + sodon_dahuy_trongngay + ")";
+
+                // Tổng số thuốc CẬN DATE
+                btnSapHetHan.Caption            = "Sắp hết hạn: (" + thuoc_can_date + ")";
+
+                // Tổng số thuốc sắp hết trong kho
+                btnSapHetTrongKho.Caption       = "Sắp hết trong kho: (" + thuoc_sap_het + ")";
+
+
             }
             catch (Exception)
             {
@@ -384,21 +408,46 @@ namespace QLBV_DEV
             frmLogin.Show();
         }
 
-        private void btnSoDonBanHomNay_ListItemClick(object sender, ListItemClickEventArgs e)
+        private void btnSoDonBanHomNay_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            if (sodon_trongngay > 0)
+            {
+                frmDSPhieuXuat frmDSPhieuXuat = new frmDSPhieuXuat();
+                frmDSPhieuXuat.LoadDS_SoDon_HomNay(DateTime.Today);
+                frmDSPhieuXuat.ShowInTaskbar = false;
+                frmDSPhieuXuat.ShowDialog();
+            }
         }
 
-        private void btnSoDonHuyHomNay_ListItemClick(object sender, ListItemClickEventArgs e)
+        private void btnSoDonChoHuyHomNay_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            if (sodon_chohuy_trongngay > 0)
+            {
+                frmDSPhieuXuatHuy frmDSPhieuXuatHuy = new frmDSPhieuXuatHuy();
+                frmDSPhieuXuatHuy.LoadDS_SoDon_ChoHuy_HomNay(DateTime.Today);
+                frmDSPhieuXuatHuy.ShowInTaskbar = false;
+                frmDSPhieuXuatHuy.ShowDialog();
+            }
         }
 
-        private void btnSoDonDaHuyHomNay_ListItemClick(object sender, ListItemClickEventArgs e)
+        private void btnHetHan_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            if (thuoc_can_date > 0)
+            {
+                frmThuocCanDate_tungloai frm = new frmThuocCanDate_tungloai();
+                frm.ShowInTaskbar = false;
+                frm.ShowDialog();
+            }
         }
 
-        
+        private void btnHetTrongKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (thuoc_sap_het > 0)
+            {
+                frmTonKhoToiThieu frm = new frmTonKhoToiThieu();
+                frm.ShowInTaskbar = false;
+                frm.ShowDialog();
+            }
+        } 
     }
 }

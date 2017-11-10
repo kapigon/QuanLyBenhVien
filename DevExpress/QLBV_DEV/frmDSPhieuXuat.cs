@@ -49,6 +49,21 @@ namespace QLBV_DEV
             }
         }
 
+        public void LoadDS_SoDon_HomNay(DateTime toDay)
+        {
+            try
+            {
+                dateTuNgay.EditValue = toDay;
+                dateDenNgay.EditValue = toDay;
+                var result = rpo_PhieuXuat.search(0, "", toDay, toDay, "", 1);
+                grdDS_PhieuXuat.DataSource = result.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
+        }
+
         private void LoadNCC()
         {
             try
@@ -241,6 +256,5 @@ namespace QLBV_DEV
 
         }
         #endregion
-
     }
 }

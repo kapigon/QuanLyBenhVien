@@ -16,12 +16,7 @@ namespace QLBV_DEV
     public partial class frmBangKeChiTietNhap : DevExpress.XtraEditors.XtraForm
     {
         #region params
-        HospitalEntities db = new HospitalEntities();
-        PhieuNhapThuocRepository rpo_PhieuNhap = new PhieuNhapThuocRepository();
-
-        int phieuNhapID = 0;
-
-        int iRow;
+        CT_Thuoc_PhieuNhapRepository rpo_CT_PhieuNhap = new CT_Thuoc_PhieuNhapRepository();
         #endregion
 
         public frmBangKeChiTietNhap()
@@ -45,22 +40,7 @@ namespace QLBV_DEV
             denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
             try
             {
-                var query = from ct_nhap    in db.CT_Thuoc_PhieuNhap
-                            join phieunhap  in db.PhieuNhapThuoc on ct_nhap.PhieuNhapHang_ID equals phieunhap.ID
-                            join thuoc      in db.Thuoc on ct_nhap.Thuoc_ID equals thuoc.ID
-                            join dvt        in db.DonViTinh on ct_nhap.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
-                            where (ct_nhap.NgayNhap >= tuNgay && ct_nhap.NgayNhap <= denNgay)
-                            select new
-                            {
-                                SoPhieu     = phieunhap.SoPhieu,
-                                Thuoc_ID    = thuoc.ID,
-                                MaThuoc     = thuoc.MaThuoc,
-                                TenThuoc    = thuoc.TenThuoc,
-                                TenDVT      = dvt.TenDVT,
-                                SoLuong     = ct_nhap.SoLuong,
-                                GiaNhap     = ct_nhap.GiaNhap
-                            };
-
+                var query = rpo_CT_PhieuNhap.BangKeCT_Nhap_Thuoc(tuNgay, denNgay);
                 grdDS_Nhap_Xuat_Ton.DataSource = query.ToList();
             }
             catch (Exception)
@@ -68,29 +48,19 @@ namespace QLBV_DEV
                 MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
-
-       
         #endregion
 
         #region events
-
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-        private void frmDSPhieuNhap_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadBangKeCT_Nhap_Thuoc();
         }
         
-
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
             //sfdDSPhieuNhap.Filter = "Excel Worksheets|*.xls";

@@ -33,12 +33,7 @@ namespace QLBV_DEV
         {
             try
             {
-                var result = from ncc in db.LoaiNCC_KH
-                             select new
-                             {
-                                 ID = ncc.ID,
-                                 LoaiNCC_KH = ncc.TenLoaiNCC_KH
-                             };
+                var result = rpo_NCC_KH.GetLoaiNCC_KH();
                 cbbLoaiNCC_KH.Properties.DataSource = result.ToList();
                 cbbLoaiNCC_KH.Properties.DisplayMember = "LoaiNCC_KH";
                 cbbLoaiNCC_KH.Properties.ValueMember = "ID";
@@ -59,19 +54,19 @@ namespace QLBV_DEV
                 NCC_KH obj_NCC_KH = rpo_NCC_KH.GetSingle(ID);
                 if (obj_NCC_KH.ID > 0)
                 {
-                    txtMa.Text = obj_NCC_KH.MaNCC_KH;
-                    txtTen.Text = obj_NCC_KH.TenNCC_KH;
-                    txtDiaChi.Text = obj_NCC_KH.DiaChi;
-                    txtChiNhanh.Text = obj_NCC_KH.ChiNhanh;
-                    txtMST.Text = obj_NCC_KH.MST;
-                    txtSoTK.Text = obj_NCC_KH.SoTaiKhoan;
-                    txtNganHang.Text = obj_NCC_KH.NganHang;
-                    txtDienThoai.Text = obj_NCC_KH.DienThoai;
-                    txtFax.Text = obj_NCC_KH.Fax;
-                    txtEmail.Text = obj_NCC_KH.Email;
-                    txtWebsite.Text = obj_NCC_KH.Website;
-                    txtMota.Text = obj_NCC_KH.MoTa;
-                    chkKichHoat.EditValue = obj_NCC_KH.KichHoat;
+                    txtMa.Text              = obj_NCC_KH.MaNCC_KH;
+                    txtTen.Text             = obj_NCC_KH.TenNCC_KH;
+                    txtDiaChi.Text          = obj_NCC_KH.DiaChi;
+                    txtChiNhanh.Text        = obj_NCC_KH.ChiNhanh;
+                    txtMST.Text             = obj_NCC_KH.MST;
+                    txtSoTK.Text            = obj_NCC_KH.SoTaiKhoan;
+                    txtNganHang.Text        = obj_NCC_KH.NganHang;
+                    txtDienThoai.Text       = obj_NCC_KH.DienThoai;
+                    txtFax.Text             = obj_NCC_KH.Fax;
+                    txtEmail.Text           = obj_NCC_KH.Email;
+                    txtWebsite.Text         = obj_NCC_KH.Website;
+                    txtMota.Text            = obj_NCC_KH.MoTa;
+                    chkKichHoat.EditValue   = obj_NCC_KH.KichHoat;
                 }
 
                 btnLuu.Text = "&Cập nhật";
@@ -167,19 +162,19 @@ namespace QLBV_DEV
 
         private void Xoatatca()
         {
-            txtChiNhanh.Text = "";
-            txtDiaChi.Text = "";
-            txtDienThoai.Text = "";
-            txtEmail.Text = "";
-            txtFax.Text = ""; 
-            txtMa.Text = "";
-            txtMota.Text = "";
-            txtMST.Text = "";
-            txtNganHang.Text = "";
-            txtSoTK.Text = "";
-            txtTen.Text = "";
-            txtWebsite.Text = "";
-            //cbbLoaiNCC_KH.Text = "";    
+            txtChiNhanh.Text        = "";
+            txtDiaChi.Text          = "";
+            txtDienThoai.Text       = "";
+            txtEmail.Text           = "";
+            txtFax.Text             = ""; 
+            txtMa.Text              = "";
+            txtMota.Text            = "";
+            txtMST.Text             = "";
+            txtNganHang.Text        = "";
+            txtSoTK.Text            = "";
+            txtTen.Text             = "";
+            txtWebsite.Text         = "";
+            //cbbLoaiNCC_KH.Text    = "";    
             cbbLoaiNCC_KH.EditValue = 0;
         }
 

@@ -96,6 +96,26 @@ namespace QLBV_DEV.Repository
             return query;
         }
 
+        public IQueryable<dynamic> BangKeCT_Xuat_Thuoc(DateTime tuNgay, DateTime denNgay)
+        {
+            return (from ct_xuat    in db.CT_Thuoc_PhieuXuat
+                            join phieuxuat  in db.PhieuXuatThuoc on ct_xuat.PhieuXuatHang_ID equals phieuxuat.ID
+                            join ct_nhap    in db.CT_Thuoc_PhieuNhap on ct_xuat.CT_Thuoc_PhieuNhap_ID equals ct_nhap.ID
+                            join thuoc      in db.Thuoc on ct_nhap.Thuoc_ID equals thuoc.ID
+                            join dvt        in db.DonViTinh on ct_xuat.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
+                            where (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
+                            select new
+                            {
+                                SoPhieu     = phieuxuat.SoPhieu,
+                                Thuoc_ID    = thuoc.ID,
+                                MaThuoc     = thuoc.MaThuoc,
+                                TenThuoc    = thuoc.TenThuoc,
+                                TenDVT      = dvt.TenDVT,
+                                SoLuong     = ct_xuat.SoLuong,
+                                GiaBan      = ct_xuat.GiaBan
+                            });
+        }
+
         public void Create(CT_Thuoc_PhieuXuat _object)
         {
             try

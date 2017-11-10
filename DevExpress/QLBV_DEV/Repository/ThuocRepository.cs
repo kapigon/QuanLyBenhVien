@@ -161,6 +161,44 @@ namespace QLBV_DEV.Repository
 
         }
 
+        public IQueryable<dynamic> DS_Thuoc()
+        {
+            return (from thuoc in db.Thuoc
+                    join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
+                    from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()//on thuoc.HoatChat_ID equals hoatchat.ID
+                    select new
+                    {
+                        ID = thuoc.ID,
+                        TenThuoc = thuoc.TenThuoc,
+                        MaThuoc = thuoc.MaThuoc,
+                        TenNhom = nhomthuoc.TenNhom,
+                        HoatChat = hoatchat.TenHoatChat,
+                        ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,
+                        TonKhoToiThieu = thuoc.TonKhoToiThieu,
+                        KichHoat = thuoc.KichHoat
+                    });
+        }
+
+        public IQueryable<dynamic> TonKhoToiThieu()
+        {
+
+            return (from thuoc in db.Thuoc
+                    join nhomthuoc in db.NhomThuoc on thuoc.NhomThuoc_ID equals nhomthuoc.ID
+                    // join hangsanxuat in db.HangSanXuat on thuoc.HangSanXuat_ID equals hangsanxuat.ID                      
+                    where thuoc.TonKho < thuoc.TonKhoToiThieu
+                    orderby thuoc.ID descending
+                    select new
+                    {
+                        Id = thuoc.ID,
+                        MaThuoc = thuoc.MaThuoc,
+                        TenThuoc = thuoc.TenThuoc,
+                        TonKho = thuoc.TonKho,
+                        TonKhoToiThieu = thuoc.TonKhoToiThieu,
+                        // HangSanXuat = hangsanxuat.TenHangSX,
+                        NhomThuoc = nhomthuoc.TenNhom
+                    });
+        }
+
         public IQueryable<dynamic> search(long thuoc_id, int nhomthuoc_ID, int hoatchat_ID, bool kichhoat)
         {
             var query = from thuoc in db.Thuoc
