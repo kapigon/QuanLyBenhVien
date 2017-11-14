@@ -29,6 +29,9 @@
         <EntityTypeShape EntityType="HospitalModel.CT_PhieuDieuChinh" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="HospitalModel.PhieuDieuChinh" Width="1.5" PointX="13.375" PointY="4.75" />
         <EntityTypeShape EntityType="HospitalModel.LichSuCapNhatGia" Width="1.5" PointX="13.375" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.CT_DonViTinh" Width="1.5" PointX="7.375" PointY="13.75" />
+        <EntityTypeShape EntityType="HospitalModel.ThongTinChung" Width="1.5" PointX="13.375" PointY="12.75" />
+        <EntityTypeShape EntityType="HospitalModel.Log" Width="1.5" PointX="3.375" PointY="14.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

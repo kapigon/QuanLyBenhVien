@@ -174,6 +174,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CT_DonViTinh.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CT_PhieuDieuChinh.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
@@ -270,6 +273,12 @@
     <Compile Include="frmDS_Thuoc.Designer.cs">
       <DependentUpon>frmDS_Thuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHangSanXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHangSanXuat.designer.cs">
+      <DependentUpon>frmHangSanXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,11 +327,11 @@
     <Compile Include="frmNuocSanXuat.Designer.cs">
       <DependentUpon>frmNuocSanXuat.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHangSanXuat.cs">
+    <Compile Include="frmCT_DonViTinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHangSanXuat.Designer.cs">
-      <DependentUpon>frmHangSanXuat.cs</DependentUpon>
+    <Compile Include="frmCT_DonViTinh.Designer.cs">
+      <DependentUpon>frmCT_DonViTinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -360,17 +369,23 @@
     <Compile Include="frmThemNCC_KH.designer.cs">
       <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongTinNguoiDung.cs">
+    <Compile Include="frmThongTinChung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongTinNguoiDung.Designer.cs">
-      <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
+    <Compile Include="frmThongTinChung.Designer.cs">
+      <DependentUpon>frmThongTinChung.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThemThuoc.Designer.cs">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinNguoiDung.designer.cs">
+      <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThuocCanDate_tungloai.cs">
       <SubType>Form</SubType>
@@ -449,6 +464,9 @@
     <Compile Include="LoaiNCC_KH.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="NCC_KH.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
@@ -482,6 +500,7 @@
     <Compile Include="Reports\rptPhieuXuatThuoc.Designer.cs">
       <DependentUpon>rptPhieuXuatThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repository\CT_DonViTinhRepository.cs" />
     <Compile Include="Repository\CT_PhieuDieuChinhRepository.cs" />
     <Compile Include="Repository\CT_PhieuXuatThuocRepository.cs" />
     <Compile Include="Repository\DVTRepository.cs" />
@@ -489,6 +508,7 @@
     <Compile Include="Repository\HangSanXuatRepository.cs" />
     <Compile Include="Repository\HoatChatRepository.cs" />
     <Compile Include="Repository\LichSuCapNhatGiaRepository.cs" />
+    <Compile Include="Repository\ThongTinChungRepository.cs" />
     <Compile Include="Repository\PhieuXuatThuocRepository.cs" />
     <Compile Include="Repository\PhieuDieuChinhRepository.cs" />
     <Compile Include="Repository\ViTriRepository.cs" />
@@ -500,6 +520,9 @@
     <Compile Include="Repository\NCC_KHRepository.cs" />
     <Compile Include="Repository\PhieuNhapThuocRepository.cs" />
     <Compile Include="Repository\NhanVienRepository.cs" />
+    <Compile Include="ThongTinChung.cs">
+      <DependentUpon>HospitalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Thuoc.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
@@ -548,6 +571,9 @@
     <EmbeddedResource Include="frmDS_Thuoc.resx">
       <DependentUpon>frmDS_Thuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHangSanXuat.resx">
+      <DependentUpon>frmHangSanXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKho.resx">
       <DependentUpon>frmKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -563,8 +589,8 @@
     <EmbeddedResource Include="frmDonViTinh.resx">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHangSanXuat.resx">
-      <DependentUpon>frmHangSanXuat.cs</DependentUpon>
+    <EmbeddedResource Include="frmCT_DonViTinh.resx">
+      <DependentUpon>frmCT_DonViTinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoatChat.resx">
       <DependentUpon>frmHoatChat.cs</DependentUpon>
@@ -594,11 +620,14 @@
     <EmbeddedResource Include="frmThemNCC_KH.resx">
       <DependentUpon>frmThemNCC_KH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongTinNguoiDung.resx">
-      <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
+    <EmbeddedResource Include="frmThongTinChung.resx">
+      <DependentUpon>frmThongTinChung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemThuoc.resx">
       <DependentUpon>frmThemThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinNguoiDung.resx">
+      <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuocCanDate_tungloai.resx">
       <DependentUpon>frmThuocCanDate_tungloai.cs</DependentUpon>

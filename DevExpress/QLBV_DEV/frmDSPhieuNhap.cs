@@ -69,23 +69,10 @@ namespace QLBV_DEV
         #region events
         private void btnThemPhieu_Click(object sender, EventArgs e)
         {
-            frmPhieuNhapThuoc frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
-            frmPhieuNhapThuoc.ShowInTaskbar = false;
-            frmPhieuNhapThuoc.ShowDialog();
-
-            /*frmMain frmMain = new frmMain();
-            frmMain.showPhieuNhap();
-            Form frm = frmMain.kiemtraform(typeof(frmPhieuNhapThuoc));
-            if (frm == null)
-            {
-                //frmPhieuNhapThuoc forms = new frmPhieuNhapThuoc();
-                frmPhieuNhapThuoc.MdiParent = frmMain;
-                frmPhieuNhapThuoc.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }*/
+            QLBV_DEV.frmMain.frmMainStatic.ShowForm<frmPhieuNhapThuoc>();
+            //frmPhieuNhapThuoc frmPhieuNhapThuoc = new frmPhieuNhapThuoc();
+            //frmPhieuNhapThuoc.ShowInTaskbar = false;
+            //frmPhieuNhapThuoc.ShowDialog();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

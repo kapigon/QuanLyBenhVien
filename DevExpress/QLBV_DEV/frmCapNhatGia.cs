@@ -118,7 +118,7 @@ namespace QLBV_DEV
 
         private void clearField()
         {
-            txtMaTuoc.Text = "";
+            txtMaThuoc.Text = "";
             txtTenThuoc.Text = "";
             txtGiaBanLe.Text = "";
             txtGiaBanBuon.Text = "";
@@ -148,7 +148,7 @@ namespace QLBV_DEV
 
             iRow = gridView1.FocusedRowHandle;
 
-            txtMaTuoc.Text = gridView1.GetRowCellDisplayText(iRow, "MaThuoc").ToString();
+            txtMaThuoc.Text = gridView1.GetRowCellDisplayText(iRow, "MaThuoc").ToString();
             txtTenThuoc.Text = gridView1.GetRowCellDisplayText(iRow, "TenThuoc").ToString();
             txtGiaBanLe.Text = gridView1.GetRowCellDisplayText(iRow, "GiaBanLe").ToString();
             txtGiaBanBuon.Text = gridView1.GetRowCellDisplayText(iRow, "GiaBanBuon").ToString();

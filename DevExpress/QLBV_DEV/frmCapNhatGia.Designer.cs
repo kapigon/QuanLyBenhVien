@@ -36,7 +36,7 @@
             this.txtGiaBanBuon = new DevExpress.XtraEditors.TextEdit();
             this.txtGiaBanLe = new DevExpress.XtraEditors.TextEdit();
             this.txtTenThuoc = new DevExpress.XtraEditors.TextEdit();
-            this.txtMaTuoc = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaThuoc = new DevExpress.XtraEditors.TextEdit();
             this.chkKichHoat = new DevExpress.XtraEditors.CheckEdit();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.grvDSThuoc = new DevExpress.XtraGrid.GridControl();
@@ -94,7 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanBuon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanLe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenThuoc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaTuoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaThuoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkKichHoat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSThuoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -138,7 +138,7 @@
             this.layoutControl1.Controls.Add(this.txtGiaBanBuon);
             this.layoutControl1.Controls.Add(this.txtGiaBanLe);
             this.layoutControl1.Controls.Add(this.txtTenThuoc);
-            this.layoutControl1.Controls.Add(this.txtMaTuoc);
+            this.layoutControl1.Controls.Add(this.txtMaThuoc);
             this.layoutControl1.Controls.Add(this.chkKichHoat);
             this.layoutControl1.Controls.Add(this.btnThoat);
             this.layoutControl1.Controls.Add(this.grvDSThuoc);
@@ -234,14 +234,14 @@
             this.txtTenThuoc.StyleController = this.layoutControl1;
             this.txtTenThuoc.TabIndex = 21;
             // 
-            // txtMaTuoc
+            // txtMaThuoc
             // 
-            this.txtMaTuoc.Location = new System.Drawing.Point(727, 164);
-            this.txtMaTuoc.Name = "txtMaTuoc";
-            this.txtMaTuoc.Properties.ReadOnly = true;
-            this.txtMaTuoc.Size = new System.Drawing.Size(118, 20);
-            this.txtMaTuoc.StyleController = this.layoutControl1;
-            this.txtMaTuoc.TabIndex = 20;
+            this.txtMaThuoc.Location = new System.Drawing.Point(727, 164);
+            this.txtMaThuoc.Name = "txtMaThuoc";
+            this.txtMaThuoc.Properties.ReadOnly = true;
+            this.txtMaThuoc.Size = new System.Drawing.Size(118, 20);
+            this.txtMaThuoc.StyleController = this.layoutControl1;
+            this.txtMaThuoc.TabIndex = 20;
             // 
             // chkKichHoat
             // 
@@ -706,7 +706,7 @@
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.txtMaTuoc;
+            this.layoutControlItem12.Control = this.txtMaThuoc;
             this.layoutControlItem12.CustomizationFormText = "layoutControlItem12";
             this.layoutControlItem12.Location = new System.Drawing.Point(642, 152);
             this.layoutControlItem12.Name = "layoutControlItem12";
@@ -813,7 +813,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanBuon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanLe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenThuoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaTuoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaThuoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkKichHoat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSThuoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -901,7 +901,7 @@
         private DevExpress.XtraEditors.TextEdit txtGiaBanBuon;
         private DevExpress.XtraEditors.TextEdit txtGiaBanLe;
         private DevExpress.XtraEditors.TextEdit txtTenThuoc;
-        private DevExpress.XtraEditors.TextEdit txtMaTuoc;
+        private DevExpress.XtraEditors.TextEdit txtMaThuoc;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;

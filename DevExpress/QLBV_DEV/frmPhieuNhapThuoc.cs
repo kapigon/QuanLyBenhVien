@@ -357,6 +357,8 @@ namespace QLBV_DEV
                                     }
                                 }
                                 this.Close();
+
+                                QLBV_DEV.frmMain.frmMainStatic.ShowForm<frmDSPhieuNhap>();
                             }
                             catch (Exception)
                             {
@@ -395,6 +397,7 @@ namespace QLBV_DEV
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+            QLBV_DEV.frmMain.frmMainStatic.ShowForm<frmDSPhieuNhap>();
         }        
 
         private void grdDSThuoc_DoubleClick(object sender, EventArgs e)

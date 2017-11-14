@@ -15,12 +15,13 @@ namespace QLBV_DEV
     {
         NhanVienRepository  rpo_NhanVien = new NhanVienRepository();
         NhanVien            obj_NhanVien = new NhanVien();
-
+        public static       frmMain frmMainStatic;
+        
         int sodon_trongngay         = 0;
         int sodon_chohuy_trongngay  = 0;
         int sodon_dahuy_trongngay   = 0;
         int thuoc_can_date          = 0;
-        int thuoc_sap_het = 0;
+        int thuoc_sap_het           = 0;
         //frmPhieuNhapThuoc   frmPhieuNhapThuoc   = new frmPhieuNhapThuoc();
         //frmDSPhieuNhap      frmDSPhieuNhap      = new frmDSPhieuNhap();
         //frmDSPhieuXuat      frmDSPhieuXuat      = new frmDSPhieuXuat();
@@ -85,10 +86,11 @@ namespace QLBV_DEV
             barUserName.Caption = obj_NhanVien.TaiKhoan;
 
             LoadBaoCao();
+
+            frmMainStatic = this;
         }
 
-        
-        private void ShowForm<TSource>() where TSource : Form
+        public void ShowForm<TSource>() where TSource : Form
         {
             Form form = null;
 
@@ -172,6 +174,7 @@ namespace QLBV_DEV
         }
         //---------------------------------------------------------------------------------
 
+        
         private void btnTaoPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.ShowForm<frmPhieuNhapThuoc>();
@@ -448,6 +451,19 @@ namespace QLBV_DEV
                 frm.ShowInTaskbar = false;
                 frm.ShowDialog();
             }
+        }
+
+        private void btnThongTinChung_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //this.ShowForm<frmThongTinChung>();
+            frmThongTinChung frm = new frmThongTinChung();
+            frm.ShowInTaskbar = false;
+            frm.ShowDialog();
+        }
+
+        private void btnCT_DVT_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ShowForm<frmCT_DonViTinh>();
         } 
     }
 }
