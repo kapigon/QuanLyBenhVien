@@ -180,6 +180,7 @@
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Thuoc_ID" Type="bigint" />
           <Property Name="DVT_ID" Type="int" />
+          <Property Name="TenDVT" Type="nvarchar" MaxLength="50" />
           <Property Name="QuyDoi" Type="bigint" />
           <Property Name="KichHoat" Type="bit" />
         </EntityType>
@@ -712,6 +713,7 @@
           <Property Name="DVT_ID" Type="Int32" />
           <Property Name="QuyDoi" Type="Int64" />
           <Property Name="KichHoat" Type="Boolean" />
+          <Property Name="TenDVT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ThongTinChung">
           <Key>
@@ -1072,6 +1074,7 @@
           <EntitySetMapping Name="CT_DonViTinh">
             <EntityTypeMapping TypeName="HospitalModel.CT_DonViTinh">
               <MappingFragment StoreEntitySet="CT_DonViTinh">
+                <ScalarProperty Name="TenDVT" ColumnName="TenDVT" />
                 <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
                 <ScalarProperty Name="QuyDoi" ColumnName="QuyDoi" />
                 <ScalarProperty Name="DVT_ID" ColumnName="DVT_ID" />

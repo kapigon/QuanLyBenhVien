@@ -19,5 +19,6 @@ namespace QLBV_DEV
         public Nullable<int> DVT_ID { get; set; }
         public Nullable<long> QuyDoi { get; set; }
         public Nullable<bool> KichHoat { get; set; }
+        public string TenDVT { get; set; }
     }
 }

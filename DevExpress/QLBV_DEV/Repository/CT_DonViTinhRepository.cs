@@ -20,6 +20,24 @@ namespace QLBV_DEV.Repository
             return from _object in db.CT_DonViTinh where _object.Thuoc_ID == thuoc_ID orderby _object.ID ascending select _object;
         }
 
+
+        public IQueryable<dynamic> GetAllByThuocID(long thuoc_ID)
+        {
+            return from _object in db.CT_DonViTinh
+                   join dvt in db.DonViTinh on _object.DVT_ID equals dvt.ID
+                   where _object.Thuoc_ID == thuoc_ID
+                   orderby _object.ID ascending
+                   select new
+                   {
+                       ID       = _object.ID,
+                       Thuoc_ID = _object.Thuoc_ID,
+                       DVT_ID   = _object.DVT_ID,
+                       TenDVT   = dvt.TenDVT,
+                       QuyDoi   = _object.QuyDoi,
+                       KichHoat = _object.KichHoat
+                   };
+        }
+
         public CT_DonViTinh GetSingle(long thuoc_ID, long ct_dvt_ID)
         {
             return (from _object in db.CT_DonViTinh where (_object.Thuoc_ID == thuoc_ID && _object.DVT_ID == ct_dvt_ID) select _object).FirstOrDefault();
@@ -60,8 +78,19 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                db.CT_DonViTinh.Add(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.CT_DonViTinh.Add(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -73,9 +102,20 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                var _object = (from _list in db.CT_DonViTinh where _list.ID == id select _list).First();
-                db.CT_DonViTinh.Remove(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var _object = (from _list in db.CT_DonViTinh where _list.ID == id select _list).First();
+                        db.CT_DonViTinh.Remove(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -87,7 +127,18 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {

@@ -30,8 +30,19 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                db.ThongTinChung.Add(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.ThongTinChung.Add(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -43,9 +54,20 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                var _object = (from _list in db.ThongTinChung where _list.ID == id select _list).First();
-                db.ThongTinChung.Remove(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var _object = (from _list in db.ThongTinChung where _list.ID == id select _list).First();
+                        db.ThongTinChung.Remove(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -56,7 +78,18 @@ namespace QLBV_DEV.Repository
         public void Save(ThongTinChung _object)
         {
             try{
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {

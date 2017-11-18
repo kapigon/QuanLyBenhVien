@@ -54,8 +54,19 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                db.HangSanXuat.Add(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.HangSanXuat.Add(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -67,9 +78,20 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                var _object = (from _list in db.HangSanXuat where _list.ID == id select _list).First();
-                db.HangSanXuat.Remove(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var _object = (from _list in db.HangSanXuat where _list.ID == id select _list).First();
+                        db.HangSanXuat.Remove(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -81,7 +103,18 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {

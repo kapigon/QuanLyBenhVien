@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCT_Thuoc_PhieuNhap));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtGiaBanLe = new DevExpress.XtraEditors.TextEdit();
@@ -413,9 +413,9 @@
             this.cbbTenThuoc.Size = new System.Drawing.Size(140, 20);
             this.cbbTenThuoc.StyleController = this.layoutControl1;
             this.cbbTenThuoc.TabIndex = 13;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Tên thuốc không được để trống.!";
-            this.dxValidate.SetValidationRule(this.cbbTenThuoc, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Tên thuốc không được để trống.!";
+            this.dxValidate.SetValidationRule(this.cbbTenThuoc, conditionValidationRule2);
             this.cbbTenThuoc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cbbTenThuoc_ButtonClick);
             this.cbbTenThuoc.EditValueChanged += new System.EventHandler(this.cbbTenThuoc_EditValueChanged);
             this.cbbTenThuoc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbbTenThuoc_MouseClick);
@@ -583,9 +583,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbbDonViNhap.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenDVT", "Đơn vị tính")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenDVT", "Đơn vị tính"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("QuyDoi", "Quy đổi")});
             this.cbbDonViNhap.Properties.NullText = "";
-            this.cbbDonViNhap.Properties.ReadOnly = true;
             this.cbbDonViNhap.Size = new System.Drawing.Size(141, 20);
             this.cbbDonViNhap.StyleController = this.layoutControl1;
             this.cbbDonViNhap.TabIndex = 46;

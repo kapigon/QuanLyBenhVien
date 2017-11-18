@@ -76,9 +76,20 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                _object.NgayTao = System.DateTime.Now;
-                db.NhanVien.Add(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        _object.NgayTao = System.DateTime.Now;
+                        db.NhanVien.Add(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -90,9 +101,20 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                var _object = (from _list in db.NhanVien where _list.ID == id select _list).First();
-                db.NhanVien.Remove(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var _object = (from _list in db.NhanVien where _list.ID == id select _list).First();
+                        db.NhanVien.Remove(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -104,9 +126,20 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                //_object.EntityKey = (from NhanVien ac in db.NhanVien where ac.ID == _object.ID select ac).FirstOrDefault().EntityKey;
-                //_object.NgayTao = System.DateTime.Now;
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        //_object.EntityKey = (from NhanVien ac in db.NhanVien where ac.ID == _object.ID select ac).FirstOrDefault().EntityKey;
+                        //_object.NgayTao = System.DateTime.Now;
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {

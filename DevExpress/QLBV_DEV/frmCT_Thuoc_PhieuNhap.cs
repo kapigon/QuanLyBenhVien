@@ -24,7 +24,8 @@ namespace QLBV_DEV
         KhoRepository                   rpo_Kho         = new KhoRepository();
         ViTriRepository                 rpo_ViTri       = new ViTriRepository();
         CT_Thuoc_PhieuNhapRepository    rpo_CT_Thuoc    = new CT_Thuoc_PhieuNhapRepository();
-
+        CT_DonViTinhRepository          rpo_CT_DVT      = new CT_DonViTinhRepository();
+                
         private frmPhieuNhapThuoc frmPhieuNhapThuoc;
 
         //CT_Thuoc_PhieuNhap      obj_CT_Thuoc    = new CT_Thuoc_PhieuNhap();
@@ -102,9 +103,9 @@ namespace QLBV_DEV
                 cbbViTri.Properties.ValueMember = "ID";
 
                 /// Đơn Vị Bán
-                cbbDonViNhap.Properties.DataSource = rpo_DVT.GetAll().ToList();
-                cbbDonViNhap.Properties.DisplayMember = "TenDVT";
-                cbbDonViNhap.Properties.ValueMember = "ID";
+                //cbbDonViNhap.Properties.DataSource = rpo_DVT.GetAll().ToList();
+                //cbbDonViNhap.Properties.DisplayMember = "TenDVT";
+                //cbbDonViNhap.Properties.ValueMember = "ID";
             }
             catch (Exception)
             {
@@ -127,7 +128,7 @@ namespace QLBV_DEV
 
                     if (obj_CT_Thuoc != null)
                     {
-                        cbbDonViNhap.EditValue = obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID != null ? obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID : 0;
+                        //cbbDonViNhap.EditValue = obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID != null ? obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID : 0;
                         txtSoLuong.Text = obj_CT_Thuoc.SoLuong.ToString();
                         txtGiaNhap.Text = obj_CT_Thuoc.GiaNhap.ToString();
                         txtBarcode.Text = obj_CT_Thuoc.Barcode;
@@ -186,7 +187,7 @@ namespace QLBV_DEV
 
                     int soluong         = txtSoLuong.Text.Trim() != "" ? Convert.ToInt32(txtSoLuong.Text) : 0;
                     double gianhap      = txtGiaNhap.Text.Trim() != "" ? Convert.ToDouble(txtGiaNhap.Text) : 1;
-                    double tongTien         = (soluong * gianhap);
+                    double tongTien     = (soluong * gianhap);
 
                     obj_CT_Thuoc.PhieuNhapHang_ID       = 0;
                     obj_CT_Thuoc.DVT_Theo_DVT_Thuoc_ID  = Convert.ToInt32(cbbDonViNhap.EditValue);
@@ -197,7 +198,7 @@ namespace QLBV_DEV
                     obj_CT_Thuoc.HSD                    = dateHSD.EditValue != null ? Convert.ToDateTime(dateHSD.EditValue) : Convert.ToDateTime("01/01/0001");
                     obj_CT_Thuoc.GiaNhap                = gianhap;
                     obj_CT_Thuoc.SoLuong                = soluong;
-                    obj_CT_Thuoc.TonKho                 = soluong;
+                    obj_CT_Thuoc.TonKho                 = soluong ;
                     obj_CT_Thuoc.SoLo                   = txtSoLo.Text.Trim();
                     obj_CT_Thuoc.TongTien               = Convert.ToDouble(tongTien);
                     obj_CT_Thuoc.NgayNhap               = DateTime.Now;
@@ -238,29 +239,48 @@ namespace QLBV_DEV
         {
             try
             {
-            long thuocID = Convert.ToInt64(cbbTenThuoc.EditValue);
-            Thuoc obj_Thuoc = new Thuoc();
-            obj_Thuoc = rpo_Thuoc.GetSingle(thuocID);
+                long thuocID = Convert.ToInt64(cbbTenThuoc.EditValue);
+                Thuoc obj_Thuoc = new Thuoc();
+                obj_Thuoc = rpo_Thuoc.GetSingle(thuocID);
 
-            if (obj_Thuoc != null)
-            {
-                txtBarcode.Text             = obj_Thuoc.Barcode;
-                txtMaThuoc.Text             = obj_Thuoc.MaThuoc;
-                cbbNhomThuoc.EditValue      = obj_Thuoc.NhomThuoc_ID;
-                cbbDonViNguyen.EditValue    = obj_Thuoc.DVT_Nguyen_ID;
-                cbbDonViLe.EditValue        = obj_Thuoc.DVT_Le_ID;
-                cbbHangSanXuat.EditValue    = obj_Thuoc.HangSanXuat_ID;
-                cbbHoatChat.EditValue       = obj_Thuoc.HoatChat_ID;
-                txtQuyCach.Text             = obj_Thuoc.QuyCach.ToString();
-                txtTonKho.Text              = obj_Thuoc.TonKho.ToString();
-                txtTonKhoToiThieu.Text      = obj_Thuoc.TonKhoToiThieu.ToString();
-                txtGiaBanLe.Text            = obj_Thuoc.GiaBanLe.ToString();
-                txtGiaBanBuon.Text          = obj_Thuoc.GiaBanBuon.ToString();
-                txtCanhBaoHetHan.Text       = obj_Thuoc.ThoiGianCanhBaoHetHan.ToString();
+                if (obj_Thuoc != null)
+                {
+                    txtBarcode.Text             = obj_Thuoc.Barcode;
+                    txtMaThuoc.Text             = obj_Thuoc.MaThuoc;
+                    cbbNhomThuoc.EditValue      = obj_Thuoc.NhomThuoc_ID;
+                    cbbDonViNguyen.EditValue    = obj_Thuoc.DVT_Nguyen_ID;
+                    cbbDonViLe.EditValue        = obj_Thuoc.DVT_Le_ID;
+                    cbbHangSanXuat.EditValue    = obj_Thuoc.HangSanXuat_ID;
+                    cbbHoatChat.EditValue       = obj_Thuoc.HoatChat_ID;
+                    txtQuyCach.Text             = obj_Thuoc.QuyCach.ToString();
+                    txtTonKho.Text              = obj_Thuoc.TonKho.ToString();
+                    txtTonKhoToiThieu.Text      = obj_Thuoc.TonKhoToiThieu.ToString();
+                    txtGiaBanLe.Text            = obj_Thuoc.GiaBanLe.ToString();
+                    txtGiaBanBuon.Text          = obj_Thuoc.GiaBanBuon.ToString();
+                    txtCanhBaoHetHan.Text       = obj_Thuoc.ThoiGianCanhBaoHetHan.ToString();
 
-                cbbDonViNhap.EditValue      = obj_Thuoc.DVT_Le_ID;
-                if (obj_Thuoc.KichHoat != null)
-                    chkKichHoat.Checked     = obj_Thuoc.KichHoat.Value;
+                    //cbbDonViNhap.EditValue      = obj_Thuoc.DVT_Le_ID;
+                    if (obj_Thuoc.KichHoat != null)
+                        chkKichHoat.Checked     = obj_Thuoc.KichHoat.Value;
+
+                    // Load dữ liệu cho cbbDonViNhap
+                    DonViTinh dvt = new DonViTinh();
+                    dvt.ID = Convert.ToInt32(cbbDonViLe.EditValue);
+                    dvt.TenDVT = rpo_DVT.GetSingle(Convert.ToInt32(cbbDonViLe.EditValue)).TenDVT;
+                    List<dynamic> lstDVT = rpo_CT_DVT.GetAllByThuocID(obj_Thuoc.ID).ToList();
+                    //dynamic item = new dynamic(){ID = "", TenDVT = ""};
+                    lstDVT.Add(new
+                    {
+                        ID = Convert.ToInt32(cbbDonViLe.EditValue),
+                        TenDVT = rpo_DVT.GetSingle(Convert.ToInt32(cbbDonViLe.EditValue)).TenDVT.ToString(),
+                        QuyDoi = Convert.ToInt64(1)
+                    });
+
+                    /// Đơn Vị Bán
+                    cbbDonViNhap.Properties.DataSource = lstDVT;
+                    cbbDonViNhap.Properties.DisplayMember = "TenDVT";
+                    cbbDonViNhap.Properties.ValueMember = "ID";
+
 
                 }
             }

@@ -87,9 +87,20 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                _object.NgayNhap = System.DateTime.Now;
-                db.CT_Thuoc_PhieuNhap.Add(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        _object.NgayNhap = System.DateTime.Now;
+                        db.CT_Thuoc_PhieuNhap.Add(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -101,9 +112,20 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                var _object = (from _list in db.CT_Thuoc_PhieuNhap where _list.ID == id select _list).First();
-                db.CT_Thuoc_PhieuNhap.Remove(_object);
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var _object = (from _list in db.CT_Thuoc_PhieuNhap where _list.ID == id select _list).First();
+                        db.CT_Thuoc_PhieuNhap.Remove(_object);
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -115,7 +137,18 @@ namespace QLBV_DEV.Repository
         {
             try
             {
-                db.SaveChanges();
+                using (var dbContextTransaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
             }
             catch (Exception ex)
             {
