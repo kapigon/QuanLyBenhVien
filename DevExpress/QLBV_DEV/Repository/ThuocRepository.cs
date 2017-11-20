@@ -45,10 +45,22 @@ namespace QLBV_DEV.Repository
             return (from _object in db.Thuoc where _object.ID == id select _object).FirstOrDefault();
         }
 
-        public int GetCountTonKho(long id)
+        /* 2017/11/20: Hoald : Sửa tính lại số lượng tồn kho theo hệ số quy đổi
+         * Param: thuocID - ThuocID
+         */
+        public double GetCountTonKho(long thuocID)
         {
 
-            var query = from _object in db.CT_Thuoc_PhieuNhap where _object.Thuoc_ID == id select _object;
+            var query = from _object in db.CT_Thuoc_PhieuNhap
+                        from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == _object.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == thuocID).DefaultIfEmpty()
+                        where _object.Thuoc_ID == thuocID
+                        select new
+                        {
+                            TonKho = _object.TonKho * ct_dvt.QuyDoi / (from thuoc1 in db.Thuoc
+                                                                            from ct_dvt1 in db.CT_DonViTinh.Where(p => p.DVT_ID == thuoc1.DVT_Le_ID && p.Thuoc_ID == thuoc1.ID).DefaultIfEmpty()
+                                                                            where thuoc1.ID == thuocID
+                                                                            select new { QuyDoi = ct_dvt1.QuyDoi}).FirstOrDefault().QuyDoi
+                        };
 
             return query.Sum(x => x.TonKho).Value;
         }

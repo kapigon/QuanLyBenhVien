@@ -167,7 +167,7 @@
           <Property Name="GiaBanLe" Type="float" />
           <Property Name="GiaBanBuon" Type="float" />
           <Property Name="QuyCach" Type="float" />
-          <Property Name="TonKho" Type="int" />
+          <Property Name="TonKho" Type="float" />
           <Property Name="ThoiGianCanhBaoHetHan" Type="int" />
           <Property Name="TonKhoToiThieu" Type="int" />
           <Property Name="NgayTao" Type="date" />
@@ -181,7 +181,7 @@
           <Property Name="Thuoc_ID" Type="bigint" />
           <Property Name="DVT_ID" Type="int" />
           <Property Name="TenDVT" Type="nvarchar" MaxLength="50" />
-          <Property Name="QuyDoi" Type="bigint" />
+          <Property Name="QuyDoi" Type="float" />
           <Property Name="KichHoat" Type="bit" />
         </EntityType>
         <EntityType Name="CT_PhieuDieuChinh">
@@ -192,10 +192,10 @@
           <Property Name="PhieuDieuChinh_ID" Type="bigint" />
           <Property Name="CT_Thuoc_PhieuNhap_ID" Type="bigint" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="250" />
-          <Property Name="SoLuongKiemKe" Type="int" />
-          <Property Name="TonSoSach" Type="int" />
-          <Property Name="SoLuongTang" Type="int" />
-          <Property Name="SoLuongGiam" Type="int" />
+          <Property Name="SoLuongKiemKe" Type="float" />
+          <Property Name="TonSoSach" Type="float" />
+          <Property Name="SoLuongTang" Type="float" />
+          <Property Name="SoLuongGiam" Type="float" />
           <Property Name="LoaiDieuChinh" Type="int" />
           <Property Name="Huy" Type="bit" />
           <Property Name="UserHuy" Type="int" />
@@ -213,8 +213,8 @@
           <Property Name="Barcode" Type="varchar" MaxLength="20" />
           <Property Name="HSD" Type="date" />
           <Property Name="GiaNhap" Type="float" />
-          <Property Name="SoLuong" Type="int" />
-          <Property Name="TonKho" Type="int" />
+          <Property Name="SoLuong" Type="float" />
+          <Property Name="TonKho" Type="float" />
           <Property Name="SoLo" Type="varchar" MaxLength="10" />
           <Property Name="TongTien" Type="float" />
           <Property Name="NgayNhap" Type="date" />
@@ -232,11 +232,18 @@
           <Property Name="DVT_Theo_DVT_Thuoc_ID" Type="int" />
           <Property Name="LoaiHinhBan_ID" Type="int" />
           <Property Name="GiaBan" Type="float" />
-          <Property Name="SoLuong" Type="int" />
+          <Property Name="SoLuong" Type="float" />
           <Property Name="TongTien" Type="float" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
           <Property Name="NgayBan" Type="date" />
           <Property Name="UserTao" Type="int" />
+          <Property Name="ThuocID" Type="bigint" />
+          <Property Name="TenThuoc" Type="nvarchar" MaxLength="255" />
+          <Property Name="Barcode" Type="varchar" MaxLength="50" />
+          <Property Name="HSD" Type="date" />
+          <Property Name="TonKho" Type="float" />
+          <Property Name="GiaBanLe" Type="float" />
+          <Property Name="GiaBanBuon" Type="float" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -521,7 +528,7 @@
           <Property Name="GiaBanLe" Type="Double" />
           <Property Name="GiaBanBuon" Type="Double" />
           <Property Name="QuyCach" Type="Double" />
-          <Property Name="TonKho" Type="Int32" />
+          <Property Name="TonKho" Type="Double" />
           <Property Name="ThoiGianCanhBaoHetHan" Type="Int32" />
           <Property Name="TonKhoToiThieu" Type="Int32" />
           <Property Name="NgayTao" Type="DateTime" Precision="0" />
@@ -541,14 +548,14 @@
           <Property Name="Barcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="HSD" Type="DateTime" Precision="0" />
           <Property Name="GiaNhap" Type="Double" />
-          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="SoLuong" Type="Double" />
           <Property Name="SoLo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="TongTien" Type="Double" />
           <Property Name="NgayNhap" Type="DateTime" Precision="0" />
           <Property Name="UserTao" Type="Int32" />
           <Property Name="Xoa" Type="Boolean" />
           <Property Name="NgayXoa" Type="DateTime" Precision="0" />
-          <Property Name="TonKho" Type="Int32" />
+          <Property Name="TonKho" Type="Double" />
         </EntityType>
         <EntityType Name="CT_Thuoc_PhieuXuat">
           <Key>
@@ -560,11 +567,18 @@
           <Property Name="DVT_Theo_DVT_Thuoc_ID" Type="Int32" />
           <Property Name="LoaiHinhBan_ID" Type="Int32" />
           <Property Name="GiaBan" Type="Double" />
-          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="SoLuong" Type="Double" />
           <Property Name="TongTien" Type="Double" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserTao" Type="Int32" />
           <Property Name="NgayBan" Type="DateTime" Precision="0" />
+          <Property Name="ThuocID" Type="Int64" />
+          <Property Name="TenThuoc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HSD" Type="DateTime" Precision="0" />
+          <Property Name="TonKho" Type="Double" />
+          <Property Name="GiaBanLe" Type="Double" />
+          <Property Name="GiaBanBuon" Type="Double" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -907,6 +921,13 @@
           <EntitySetMapping Name="CT_Thuoc_PhieuXuat">
             <EntityTypeMapping TypeName="HospitalModel.CT_Thuoc_PhieuXuat">
               <MappingFragment StoreEntitySet="CT_Thuoc_PhieuXuat">
+                <ScalarProperty Name="TonKho" ColumnName="TonKho" />
+                <ScalarProperty Name="HSD" ColumnName="HSD" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="GiaBanBuon" ColumnName="GiaBanBuon" />
+                <ScalarProperty Name="GiaBanLe" ColumnName="GiaBanLe" />
+                <ScalarProperty Name="TenThuoc" ColumnName="TenThuoc" />
+                <ScalarProperty Name="ThuocID" ColumnName="ThuocID" />
                 <ScalarProperty Name="LoaiHinhBan_ID" ColumnName="LoaiHinhBan_ID" />
                 <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
                 <ScalarProperty Name="DVT_Theo_DVT_Thuoc_ID" ColumnName="DVT_Theo_DVT_Thuoc_ID" />

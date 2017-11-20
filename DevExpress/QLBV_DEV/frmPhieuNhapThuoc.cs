@@ -11,6 +11,8 @@ using QLBV_DEV.Repository;
 using System.Collections;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Columns;
 
 namespace QLBV_DEV
 {
@@ -31,7 +33,7 @@ namespace QLBV_DEV
             InitializeComponent();
             grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>();
             LoadNCC();
-            LoadDVT();
+            //LoadDVT();
             LoadThuoc();
             CreateSoPhieu();
             //Defaul value
@@ -482,8 +484,6 @@ namespace QLBV_DEV
                 ctNhap.HSD = null;
                 ctNhap.SoLuong = 0;
 
-
-
                 gridView1.PostEditor();
                 // Nhảy vào ô số lượng sau khi chọn tên thuốc
                 gridView1.FocusedRowHandle = _index;
@@ -520,6 +520,32 @@ namespace QLBV_DEV
             
         }
 
+        // Lấy lại CT_DonViTinh theo ThuocID
+        private void gridView1_ShownEditor(object sender, EventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            int row = view.FocusedRowHandle;
+            GridColumn col_ThuocID = view.Columns["Thuoc_ID"];
+
+            long thuocID = Convert.ToInt64(view.GetRowCellValue(row, col_ThuocID));
+            if (view.FocusedColumn.FieldName == "DVT_Theo_DVT_Thuoc_ID")
+            {
+                LookUpEdit editor = (LookUpEdit)view.ActiveEditor;
+                var result = from ct_dvt in db.CT_DonViTinh
+                             join dvt in db.DonViTinh on ct_dvt.DVT_ID equals dvt.ID
+                             where ct_dvt.Thuoc_ID == thuocID
+                             orderby ct_dvt.QuyDoi ascending
+                             select new
+                             {
+                                 ID = ct_dvt.DVT_ID,
+                                 TenDVT = dvt.TenDVT,
+                                 QuyDoi = ct_dvt.QuyDoi
+                             };
+                editor.Properties.DataSource = result.ToList();
+                editor.Properties.DisplayMember = "TenDVT";
+                editor.Properties.ValueMember = "ID";
+            }
+        }
         #endregion
 
         #region Sothutu
@@ -569,13 +595,14 @@ namespace QLBV_DEV
 
         private void grdDSThuoc_ProcessGridKey(object sender, KeyEventArgs e)
         {
-            var grid = sender as GridControl;
-            var view = grid.FocusedView as GridView;
-            if (e.KeyData == Keys.Delete)
-            {
-                view.DeleteSelectedRows();
-                e.Handled = true;
-            }
+            //var grid = sender as GridControl;
+            //var view = grid.FocusedView as GridView;
+            //if (e.KeyData == Keys.Delete)
+            //{
+            //    view.DeleteSelectedRows();
+            //    e.Handled = true;
+            //}
         }
+
     }
 }

@@ -15,6 +15,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace QLBV_DEV
 {
@@ -25,7 +27,7 @@ namespace QLBV_DEV
         PhieuXuatThuocRepository        rpo_PhieuXuat       = new PhieuXuatThuocRepository();
         CT_Thuoc_PhieuXuatRepository    rpo_CT_Thuoc        = new CT_Thuoc_PhieuXuatRepository();
         NhanVien                        obj_NhanVien        = new NhanVien();
-
+        CT_DonViTinhRepository          rpo_CT_DVT          = new CT_DonViTinhRepository();
         // Chỉ số của dòng
         int index;
         bool isUpdate = false;
@@ -43,7 +45,7 @@ namespace QLBV_DEV
             try
             {
                 LoadNCC_KH();
-                LoadDVT();
+                //LoadDVT();
                 LoadThuoc();
                 LoadLoaiHinhBan();
             }
@@ -174,10 +176,12 @@ namespace QLBV_DEV
         private void LoadDVT()
         {
             var result = from dvt in db.DonViTinh
+                         //from ct_dvt in db.CT_DonViTinh.Where(p=>p.DVT_ID == dvt.ID).DefaultIfEmpty()
                          select new
                          {
                              ID     = dvt.ID,
-                             TenDVT = dvt.TenDVT
+                             TenDVT = dvt.TenDVT,
+                             //QuyDoi = ct_dvt.QuyDoi
                          };
             cbbDVT.DataSource = result.ToList();
             //cbbNCC.DataSource = result.ToList();
@@ -187,25 +191,30 @@ namespace QLBV_DEV
 
         private void LoadThuoc()
         {
-            var result = from thuoc in db.Thuoc
-                         join ct_thuoc in db.CT_Thuoc_PhieuNhap on thuoc.ID equals ct_thuoc.Thuoc_ID
-                         where ct_thuoc.TonKho > 0
-                         //join dvt in db.DonViTinh on ct_thuoc.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
+            var result = from ct_phieunhap in db.CT_Thuoc_PhieuNhap
+                         join thuoc in db.Thuoc on ct_phieunhap.Thuoc_ID equals thuoc.ID  
+                         from ct_dvt in db.CT_DonViTinh.Where(p=> p.DVT_ID == ct_phieunhap.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == thuoc.ID).DefaultIfEmpty()
+                         //join ct_dvt in db.CT_DonViTinh on ct_phieunhap.DVT_Theo_DVT_Thuoc_ID equals ct_dvt.DVT_ID
+                         join dvt in db.DonViTinh on thuoc.DVT_Le_ID equals dvt.ID
+                         where ct_phieunhap.TonKho > 0
                          select new
                          {
-                             ID                     = ct_thuoc.ID,
+                             ID                     = ct_phieunhap.ID,
                              ThuocID                = thuoc.ID,
                              MaThuoc                = thuoc.MaThuoc,
-                             Barcode                = ct_thuoc.Barcode,
+                             Barcode                = ct_phieunhap.Barcode,
                              TenThuoc               = thuoc.TenThuoc,
-                             TonKhoLo               = ct_thuoc.TonKho,
+                             TonKhoLo               = ct_phieunhap.TonKho * ct_dvt.QuyDoi / (from thuoc1 in db.Thuoc 
+                                                                                             from ct_dvt1 in db.CT_DonViTinh.Where(p=> p.DVT_ID == thuoc1.DVT_Le_ID && p.Thuoc_ID == thuoc1.ID).DefaultIfEmpty()
+                                                                                             where thuoc1.ID == thuoc.ID select new {QuyDoi = ct_dvt1.QuyDoi}).FirstOrDefault().QuyDoi,
+                             DVT                    = dvt.TenDVT,
                              TonKhoTong             = thuoc.TonKho,
-                             DVT_Theo_DVT_Thuoc_ID  = ct_thuoc.DVT_Theo_DVT_Thuoc_ID,
+                             DVT_Theo_DVT_Thuoc_ID  = ct_phieunhap.DVT_Theo_DVT_Thuoc_ID,
                              GiaBanLe               = thuoc.GiaBanLe,
                              GiaBanBuon             = thuoc.GiaBanBuon,
-		                     SoLuong                = ct_thuoc.SoLuong,  
-                             SoLo                   = ct_thuoc.SoLo, 
-                             HSD                    = ct_thuoc.HSD
+                             //SoLuong                = ct_phieunhap.SoLuong,
+                             //SoLo                   = ct_phieunhap.SoLo, 
+                             HSD                    = ct_phieunhap.HSD
                          };
             
             //rlookHSD.DataSource= : thay bằng xử lý thêm trường trong class
@@ -534,6 +543,11 @@ namespace QLBV_DEV
             ctXuat.GiaBanBuon               = x.GiaBanBuon;
             ctXuat.ThuocID                  = x.ThuocID;
 
+            //cbbDVT.DataSource = rpo_CT_DVT.GetAllByThuocID(id).ToList();
+            ////cbbNCC.DataSource = result.ToList();
+            //cbbDVT.DisplayMember = "TenDVT";
+            //cbbDVT.ValueMember = "ID";
+
             gridView1.PostEditor();
 
 
@@ -543,7 +557,77 @@ namespace QLBV_DEV
             gridView1.ShowEditor();
             //-------------------------------------------
 
+            // set readonly
+
             CapNhatTongCong();
+        }
+
+        /***** TAM THỜI ĐÓNG XỬ LÝ -> THAY THẾ BẰNG EVENT DƯỚI (gridView1_ShownEditor)
+        // Set readonly Cell "SoLuong" theo điều kiện cột DVT
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            GridView view = sender as GridView;
+
+            if (view.FocusedColumn.FieldName == "SoLuong" && !CT_DonViTinh(view, view.FocusedRowHandle))
+            {
+                e.Cancel = true;
+                gridView1.SetRowCellValue(view.FocusedRowHandle, "SoLuong", 0);
+            }
+                
+        }
+        
+        private bool CT_DonViTinh(GridView view, int row)
+        {
+
+            GridColumn col_DVT = view.Columns["DVT_Theo_DVT_Thuoc_ID"];
+            GridColumn col_ThuocID = view.Columns["ThuocID"];
+
+            int dvtID = Convert.ToInt32(view.GetRowCellValue(row, col_DVT));
+            long thuocID = Convert.ToInt64(view.GetRowCellValue(row, col_ThuocID));
+
+            var result = from ct_dvt in db.CT_DonViTinh
+                         //join dvt in db.DonViTinh on ct_dvt.DVT_ID equals dvt.ID
+                         where ct_dvt.Thuoc_ID == thuocID && ct_dvt.DVT_ID == dvtID
+                         select new
+                         {
+                             ID = ct_dvt.DVT_ID,
+                             //TenDVT = dvt.TenDVT,
+                             QuyDoi = ct_dvt.QuyDoi
+                         };
+            //cbbDVT.DataSource = result.ToList(); ;
+            //cbbDVT.DisplayMember = "TenDVT";
+            //cbbDVT.ValueMember = "ID";
+            return (result.ToList().Count() > 0);
+
+        }
+        *******/
+
+        // Lấy lại CT_DonViTinh theo ThuocID
+        private void gridView1_ShownEditor(object sender, EventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            int row = view.FocusedRowHandle;
+
+            GridColumn col_ThuocID = view.Columns["ThuocID"];
+
+            long thuocID = Convert.ToInt64(view.GetRowCellValue(row, col_ThuocID));
+            if (view.FocusedColumn.FieldName == "DVT_Theo_DVT_Thuoc_ID")
+            {
+                LookUpEdit editor = (LookUpEdit)view.ActiveEditor;
+                var result = from ct_dvt in db.CT_DonViTinh
+                             join dvt in db.DonViTinh on ct_dvt.DVT_ID equals dvt.ID
+                             where ct_dvt.Thuoc_ID == thuocID
+                             orderby ct_dvt.QuyDoi ascending
+                             select new
+                             {
+                                 ID = ct_dvt.DVT_ID,
+                                 TenDVT = dvt.TenDVT,
+                                 QuyDoi = ct_dvt.QuyDoi
+                             };
+                editor.Properties.DataSource = result.ToList();
+                editor.Properties.DisplayMember = "TenDVT";
+                editor.Properties.ValueMember = "ID";
+            }
         }
 
         private void txtColGiaBan_EditValueChanged(object sender, EventArgs e)

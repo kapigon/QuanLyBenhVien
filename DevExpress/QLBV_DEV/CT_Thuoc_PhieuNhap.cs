@@ -23,13 +23,13 @@ namespace QLBV_DEV
         public string Barcode { get; set; }
         public Nullable<System.DateTime> HSD { get; set; }
         public Nullable<double> GiaNhap { get; set; }
-        public Nullable<int> SoLuong { get; set; }
+        public Nullable<double> SoLuong { get; set; }
         public string SoLo { get; set; }
         public Nullable<double> TongTien { get; set; }
         public Nullable<System.DateTime> NgayNhap { get; set; }
         public Nullable<int> UserTao { get; set; }
         public Nullable<bool> Xoa { get; set; }
         public Nullable<System.DateTime> NgayXoa { get; set; }
-        public Nullable<int> TonKho { get; set; }
+        public Nullable<double> TonKho { get; set; }
     }
 }
