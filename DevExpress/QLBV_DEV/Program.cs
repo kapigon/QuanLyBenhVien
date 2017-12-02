@@ -40,7 +40,7 @@ namespace QLBV_DEV
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            culture.NumberFormat.CurrencySymbol = "VNĐ"; // ₫
+            culture.NumberFormat.CurrencySymbol = ""; // VNĐ - ₫
             System.Threading.Thread.CurrentThread.CurrentCulture = culture;
             DevExpress.Utils.FormatInfo.AlwaysUseThreadFormat = true;
 

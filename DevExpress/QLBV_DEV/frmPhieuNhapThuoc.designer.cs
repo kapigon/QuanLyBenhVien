@@ -56,8 +56,8 @@
             this.searchID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchMaThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchTenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DVT_Le_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DVT_Nguyen_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.searchDVT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.searchTonKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Thuoc_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -385,6 +385,7 @@
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.ShownEditor += new System.EventHandler(this.gridView1_ShownEditor);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
             // 
             // ID
             // 
@@ -455,8 +456,8 @@
             this.searchID,
             this.searchMaThuoc,
             this.searchTenThuoc,
-            this.DVT_Le_ID,
-            this.DVT_Nguyen_ID});
+            this.searchDVT,
+            this.searchTonKho});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -484,17 +485,29 @@
             this.searchTenThuoc.Visible = true;
             this.searchTenThuoc.VisibleIndex = 1;
             // 
-            // DVT_Le_ID
+            // searchDVT
             // 
-            this.DVT_Le_ID.Caption = "ĐVT lẻ";
-            this.DVT_Le_ID.FieldName = "DVT_Le_ID";
-            this.DVT_Le_ID.Name = "DVT_Le_ID";
+            this.searchDVT.AppearanceCell.Options.UseTextOptions = true;
+            this.searchDVT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchDVT.AppearanceHeader.Options.UseTextOptions = true;
+            this.searchDVT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchDVT.Caption = "ĐVT";
+            this.searchDVT.FieldName = "DVT";
+            this.searchDVT.Name = "searchDVT";
+            this.searchDVT.Visible = true;
+            this.searchDVT.VisibleIndex = 2;
             // 
-            // DVT_Nguyen_ID
+            // searchTonKho
             // 
-            this.DVT_Nguyen_ID.Caption = "ĐVT nguyên";
-            this.DVT_Nguyen_ID.FieldName = "DVT_Nguyen_ID";
-            this.DVT_Nguyen_ID.Name = "DVT_Nguyen_ID";
+            this.searchTonKho.AppearanceCell.Options.UseTextOptions = true;
+            this.searchTonKho.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchTonKho.AppearanceHeader.Options.UseTextOptions = true;
+            this.searchTonKho.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchTonKho.Caption = "Tồn kho";
+            this.searchTonKho.FieldName = "TonKho";
+            this.searchTonKho.Name = "searchTonKho";
+            this.searchTonKho.Visible = true;
+            this.searchTonKho.VisibleIndex = 3;
             // 
             // Thuoc_ID
             // 
@@ -588,7 +601,7 @@
             this.ThanhTien.Name = "ThanhTien";
             this.ThanhTien.OptionsColumn.AllowEdit = false;
             this.ThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "Tổng Tiền = {0:c}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:c0}")});
             this.ThanhTien.UnboundExpression = "[SoLuong] * [GiaNhap]";
             this.ThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.ThanhTien.Visible = true;
@@ -1121,12 +1134,12 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn TonKho;
-        private DevExpress.XtraGrid.Columns.GridColumn DVT_Le_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn DVT_Nguyen_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn searchDVT;
         private System.Windows.Forms.SaveFileDialog sfdDSThuoc;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn searchTonKho;
 
     }
 }

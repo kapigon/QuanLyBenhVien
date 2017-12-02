@@ -17,8 +17,9 @@ namespace QLBV_DEV
         public long ID { get; set; }
         public Nullable<long> Thuoc_ID { get; set; }
         public Nullable<int> DVT_ID { get; set; }
-        public Nullable<long> QuyDoi { get; set; }
+        public Nullable<double> QuyDoi { get; set; }
         public Nullable<bool> KichHoat { get; set; }
         public string TenDVT { get; set; }
+        public Nullable<bool> DVTQuyChuan { get; set; }
     }
 }

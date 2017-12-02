@@ -14,6 +14,7 @@ using System.Data.Entity.Validation;
 using System.Diagnostics;
 
 using DevExpress.XtraGrid.Views.Grid;
+using System.Collections;
 
 
 namespace QLBV_DEV
@@ -22,9 +23,7 @@ namespace QLBV_DEV
     {
         #region params
         long thuoc_ID   = 0;
-        long ct_dvt_ID  = 0;
         int iRow        = 0;
-        int iRow_CT     = 0;
         ThuocRepository         rpo_Thuoc   = new ThuocRepository();
         DVTRepository           rpo_DVT     = new DVTRepository();
         CT_DonViTinhRepository  rpo_CT_DVT  = new CT_DonViTinhRepository();
@@ -32,7 +31,6 @@ namespace QLBV_DEV
         Thuoc                   obj_Thuoc   = new Thuoc();
         CT_DonViTinh            obj_CT_DVT  = new CT_DonViTinh();
 
-        bool isUpdate = false;
         #endregion
 
         public frmCT_DonViTinh()
@@ -40,6 +38,7 @@ namespace QLBV_DEV
             InitializeComponent();
             LoadDS_Thuoc();
             LoadDVT();
+            grvDS_CT_DVT.DataSource = new BindingList<CT_DonViTinh>();
         }
 
         #region methods
@@ -47,7 +46,7 @@ namespace QLBV_DEV
         {
             try
             {
-                var query = rpo_Thuoc.search(0, 0, 0, true);
+                var query = rpo_Thuoc.getListThuoc_CT_DVT();
                 if (query.ToList().Count() > 0)
                 {
                     grvDSThuoc.DataSource = query.ToList();
@@ -66,7 +65,7 @@ namespace QLBV_DEV
                 var query = rpo_CT_DVT.GetAll(t_ID);
                 if (query.ToList().Count() > 0)
                 {
-                    grvDS_CT_DVT.DataSource = query.ToList();
+                    grvDS_CT_DVT.DataSource = new BindingList<CT_DonViTinh>(query.ToList());
                 }
             }
             catch (Exception)
@@ -80,9 +79,6 @@ namespace QLBV_DEV
             try
             {
                 var result = rpo_DVT.GetAll();
-                cbbDVT.Properties.DataSource = result.ToList();
-                cbbDVT.Properties.DisplayMember = "TenDVT";
-                cbbDVT.Properties.ValueMember = "ID";
 
                 cbbCol_DVT.DataSource = result.ToList();
                 cbbCol_DVT.DisplayMember = "TenDVT";
@@ -93,38 +89,59 @@ namespace QLBV_DEV
                 MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
-
         #endregion
 
         #region events
-        private void btnThem_Click(object sender, EventArgs e)
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (dxValidate.Validate() == true && thuoc_ID > 0)
+            if (thuoc_ID > 0)
             {
                 try
                 {
-                    if (rpo_CT_DVT.GetSingle(thuoc_ID, Convert.ToInt32(cbbDVT.EditValue)) != null)
-                    {
-                        MessageBox.Show(cbbDVT.Text + " đã tồn tại. Vui lòng chọn ĐVT khác");
+                    List<CT_DonViTinh> lstCT_DVT = ((IEnumerable)grvDS_CT_DVT.DataSource).Cast<CT_DonViTinh>().ToList(); ;
+
+                    if(lstCT_DVT.Where(p=>p.QuyDoi == null || p.DVT_ID == 0).ToList().Count() > 0){
+                        MessageBox.Show("Đơn vị tính và Quy đổi không được để trống.!");
                     }
                     else
                     {
-                        obj_CT_DVT = new CT_DonViTinh()
+                        if (gridView2.RowCount > 0)
                         {
-                            Thuoc_ID = thuoc_ID,
-                            DVT_ID = Convert.ToInt32(cbbDVT.EditValue),
-                            QuyDoi = Convert.ToInt64(txtQuyDoi.Text),
-                            KichHoat = chkKichHoat.Checked
-                        };
+                            CT_DonViTinh obj;
+                            for (int i = 0; i < gridView2.RowCount; i++)
+                            {
+                                if (gridView2.GetRowCellValue(i, "ID") != null && Convert.ToInt64(gridView2.GetRowCellValue(i, "ID")) > 0)
+                                {
+                                    long ID = Convert.ToInt64(gridView2.GetRowCellValue(i, "ID"));
+                                    obj = rpo_CT_DVT.GetSingle(ID);
+                                    if (obj != null)
+                                    {
+                                        obj.Thuoc_ID    = thuoc_ID;
+                                        obj.DVT_ID      = Convert.ToInt32(gridView2.GetRowCellValue(i, "DVT_ID"));
+                                        obj.QuyDoi      = Convert.ToInt64(gridView2.GetRowCellValue(i, "QuyDoi"));
+                                        //obj.TenDVT    = lstCT_DVT[i].TenDVT;
+                                        obj.DVTQuyChuan = Convert.ToBoolean(gridView2.GetRowCellValue(i, "DVTQuyChuan"));
+                                        obj.KichHoat    = Convert.ToBoolean(gridView2.GetRowCellValue(i, "KichHoat"));
+                                    }
 
-                        // Tạo mới 1 chi tiết đơn vị tính theo thuoc_ID
-                        rpo_CT_DVT.Create(obj_CT_DVT);
+                                    rpo_CT_DVT.Save(obj);
+                                }
+                                else
+                                {
+                                    obj             = new CT_DonViTinh();
+                                    obj.Thuoc_ID    = thuoc_ID;
+                                    obj.DVT_ID      = Convert.ToInt32(gridView2.GetRowCellValue(i, "DVT_ID"));
+                                    obj.QuyDoi      = Convert.ToInt64(gridView2.GetRowCellValue(i, "QuyDoi"));
+                                    //obj.TenDVT    = lstCT_DVT[i].TenDVT;
+                                    obj.DVTQuyChuan = Convert.ToBoolean(gridView2.GetRowCellValue(i, "DVTQuyChuan"));
+                                    obj.KichHoat    = Convert.ToBoolean(gridView2.GetRowCellValue(i, "KichHoat"));
 
-                        // Load lại danh sách chi tiết đơn vị tính
-                        LoadDS_CT_DVT(thuoc_ID);
-
-                        // Xóa trắng để nhập tiếp
-                        Xoatrang();
+                                    rpo_CT_DVT.Create(obj);
+                                }
+                            }
+                        }
+                        LoadDS_Thuoc();
                     }
                 }
                 catch (Exception)
@@ -134,32 +151,21 @@ namespace QLBV_DEV
             }
         }
 
-        private void btnCapNhat_Click(object sender, EventArgs e)
+        private void chkColDVTQuyChuan_EditValueChanged(object sender, EventArgs e)
         {
-            if (dxValidate.Validate() == true && ct_dvt_ID > 0)
+            int row = gridView2.FocusedRowHandle;
+            var search = sender as CheckEdit;
+
+            if (search == null) return;
+
+            bool chkDVTQuyChuan = search.Checked;
+            if (chkDVTQuyChuan)
+                gridView2.SetRowCellValue(row, "KichHoat", 1);
+
+            for (int i = 0; i < gridView2.RowCount; i++)
             {
-                CT_DonViTinh obj = rpo_CT_DVT.GetSingle(thuoc_ID, Convert.ToInt32(cbbDVT.EditValue)) ;
-                if (obj != null && obj.ID != ct_dvt_ID)
-                {
-                    MessageBox.Show(cbbDVT.Text + " đã tồn tại. Vui lòng chọn ĐVT khác");
-                }
-                else
-                {
-                    obj.ID = ct_dvt_ID;
-                    obj.Thuoc_ID = thuoc_ID;
-                    obj.DVT_ID = Convert.ToInt32(cbbDVT.EditValue);
-                    obj.QuyDoi = Convert.ToInt64(txtQuyDoi.Text);
-                    obj.KichHoat = chkKichHoat.Checked;
-
-                    // Tạo mới 1 chi tiết đơn vị tính theo thuoc_ID
-                    rpo_CT_DVT.Save(obj);
-
-                    // Load lại danh sách chi tiết đơn vị tính
-                    LoadDS_CT_DVT(thuoc_ID);
-
-                    // Xóa trắng để nhập tiếp
-                    Xoatrang();
-                }
+                if (i != row)
+                    gridView2.SetRowCellValue(i, "DVTQuyChuan", 0);
             }
         }
 
@@ -167,33 +173,24 @@ namespace QLBV_DEV
         {
             this.Close();
         }
-
-        private void Xoatrang()
-        {
-            //txtTenThuoc.Text    = "";
-            //txtMaThuoc.Text     = "";
-            cbbDVT.EditValue    = 0;
-            txtQuyDoi.Text      = ""; 
-        }
-
+        
         private void grvDSThuoc_Click(object sender, EventArgs e)
         {
             if (gridView1 == null || gridView1.SelectedRowsCount == 0) return;
 
             if (gridView1.GetRowCellDisplayText(iRow, "ID") == "") return;
 
-            btnThem.Enabled     = true;
-            btnCapNhat.Enabled  = false;
-            Xoatrang();
-            grvDS_CT_DVT.DataSource = null;
+            btnCapNhat.Enabled = true;
 
+            grvDS_CT_DVT.DataSource = new BindingList<CT_DonViTinh>();
+
+            iRow = gridView1.FocusedRowHandle;
             long id = Convert.ToInt64(gridView1.GetRowCellDisplayText(iRow, "ID"));
 
             txtMaThuoc.Text     = gridView1.GetRowCellDisplayText(iRow, "MaThuoc").ToString();
             txtTenThuoc.Text    = gridView1.GetRowCellDisplayText(iRow, "TenThuoc").ToString();
 
             thuoc_ID = id;
-            isUpdate = true;
 
             /// Load danh sách Chi tiết đơn vị tính theo Thuoc_ID
             LoadDS_CT_DVT(thuoc_ID);
@@ -209,33 +206,6 @@ namespace QLBV_DEV
                 e.Info.DisplayText = (e.RowHandle+1).ToString();
             }
         }
-
-
-        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            iRow = gridView1.FocusedRowHandle;
-        }
-
-        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            iRow_CT = gridView2.FocusedRowHandle;
-        }
-
-        private void grvDS_CT_DVT_Click(object sender, EventArgs e)
-        {
-            if (gridView2 == null || gridView2.SelectedRowsCount == 0) return;
-
-            if (gridView2.GetRowCellDisplayText(iRow_CT, "ID") == "") return;
-
-            btnCapNhat.Enabled = true;
-            long id             = Convert.ToInt64(gridView2.GetRowCellDisplayText(iRow_CT, "ID"));
-
-            ct_dvt_ID           = id;
-            cbbDVT.EditValue    = gridView2.GetRowCellValue(iRow_CT, "DVT_ID");
-            txtQuyDoi.Text      = gridView2.GetRowCellValue(iRow_CT, "QuyDoi").ToString();
-            chkKichHoat.Checked = Convert.ToBoolean(gridView2.GetRowCellValue(iRow_CT, "KichHoat"));
-        }
-
         #endregion
 
 

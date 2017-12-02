@@ -227,11 +227,14 @@
             // 
             this.txtGiaBanBuon.Location = new System.Drawing.Point(364, 111);
             this.txtGiaBanBuon.Name = "txtGiaBanBuon";
-            this.txtGiaBanBuon.Properties.Mask.EditMask = "n";
+            this.txtGiaBanBuon.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtGiaBanBuon.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtGiaBanBuon.Properties.Mask.EditMask = "c0";
             this.txtGiaBanBuon.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtGiaBanBuon.Size = new System.Drawing.Size(127, 20);
             this.txtGiaBanBuon.StyleController = this.layoutControl1;
             this.txtGiaBanBuon.TabIndex = 15;
+            this.txtGiaBanBuon.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtCurrency_CustomDisplayText);
             // 
             // txtTonKhoToiThieu
             // 
@@ -251,11 +254,14 @@
             // 
             this.txtGiaBanLe.Location = new System.Drawing.Point(364, 87);
             this.txtGiaBanLe.Name = "txtGiaBanLe";
-            this.txtGiaBanLe.Properties.Mask.EditMask = "n";
+            this.txtGiaBanLe.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtGiaBanLe.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtGiaBanLe.Properties.Mask.EditMask = "c0";
             this.txtGiaBanLe.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtGiaBanLe.Size = new System.Drawing.Size(127, 20);
             this.txtGiaBanLe.StyleController = this.layoutControl1;
             this.txtGiaBanLe.TabIndex = 13;
+            this.txtGiaBanLe.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtCurrency_CustomDisplayText);
             // 
             // txtTonKho
             // 

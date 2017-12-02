@@ -32,5 +32,6 @@ namespace QLBV_DEV
         public Nullable<double> TonKho { get; set; }
         public Nullable<double> GiaBanLe { get; set; }
         public Nullable<double> GiaBanBuon { get; set; }
+        public Nullable<double> QuyDoi { get; set; }
     }
 }

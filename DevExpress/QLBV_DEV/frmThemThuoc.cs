@@ -104,7 +104,7 @@ namespace QLBV_DEV
                 isUpdate = true;
 
                 List<dynamic> lstDVT = rpo_CT_DVT.GetAllByThuocID(id).ToList();
-                cbbDonViQuyChuan.Properties.DataSource = lstDVT.Where(p=>p.KichHoat == true);
+                cbbDonViQuyChuan.Properties.DataSource = lstDVT.Where(p => p.DVTQuyChuan == true);
                 cbbDonViQuyChuan.Properties.DisplayMember = "TenDVT";
                 cbbDonViQuyChuan.Properties.ValueMember = "DVT_ID";
 
@@ -112,12 +112,13 @@ namespace QLBV_DEV
                 for (int i = 0; i < lstDVT.Count; i++)
                 {
                     CT_DonViTinh _obj = new CT_DonViTinh();
-                    _obj.ID         = lstDVT[i].ID;
-                    _obj.Thuoc_ID   = lstDVT[i].Thuoc_ID;
-                    _obj.DVT_ID     = lstDVT[i].DVT_ID;
-                    _obj.QuyDoi     = lstDVT[i].QuyDoi;
-                    _obj.TenDVT     = lstDVT[i].TenDVT;
-                    _obj.KichHoat   = lstDVT[i].KichHoat;
+                    _obj.ID             = lstDVT[i].ID;
+                    _obj.Thuoc_ID       = lstDVT[i].Thuoc_ID;
+                    _obj.DVT_ID         = lstDVT[i].DVT_ID;
+                    _obj.QuyDoi         = lstDVT[i].QuyDoi;
+                    _obj.TenDVT         = lstDVT[i].TenDVT;
+                    _obj.DVTQuyChuan    = lstDVT[i].DVTQuyChuan;
+                    _obj.KichHoat       = lstDVT[i].KichHoat;
 
                     lstCT_DVT.Add(_obj);
                 }
@@ -130,7 +131,7 @@ namespace QLBV_DEV
 
         public void setValueLookUpEdit(List<CT_DonViTinh> _lstCT_DVT)
         {
-            cbbDonViQuyChuan.Properties.DataSource = _lstCT_DVT.Where(p => p.KichHoat == true);
+            cbbDonViQuyChuan.Properties.DataSource = _lstCT_DVT.Where(p => p.DVTQuyChuan == true);
             lstCT_DVT = _lstCT_DVT;
         }
 
@@ -178,28 +179,28 @@ namespace QLBV_DEV
                         rpo_Thuoc.Save(obj_Thuoc);
                     }
 
-                    if (lstCT_DVT.Count > 0)
-                    {
-                        for (int i = 0; i < lstCT_DVT.Count; i++)
-                        {
-                            if (lstCT_DVT[i].ID != null && lstCT_DVT[i].ID > 0)
-                            {
-                                CT_DonViTinh obj = rpo_CT_DVT.GetSingle(lstCT_DVT[i].ID);
-                                obj.Thuoc_ID    = lstCT_DVT[i].Thuoc_ID;
-                                obj.DVT_ID      = lstCT_DVT[i].DVT_ID;
-                                obj.QuyDoi      = lstCT_DVT[i].QuyDoi;
-                                obj.TenDVT      = lstCT_DVT[i].TenDVT;
-                                obj.KichHoat    = lstCT_DVT[i].KichHoat;
+                    //if (lstCT_DVT.Count > 0)
+                    //{
+                    //    for (int i = 0; i < lstCT_DVT.Count; i++)
+                    //    {
+                    //        if (lstCT_DVT[i].ID != null && lstCT_DVT[i].ID > 0)
+                    //        {
+                    //            CT_DonViTinh obj = rpo_CT_DVT.GetSingle(lstCT_DVT[i].ID);
+                    //            obj.Thuoc_ID    = lstCT_DVT[i].Thuoc_ID;
+                    //            obj.DVT_ID      = lstCT_DVT[i].DVT_ID;
+                    //            obj.QuyDoi      = lstCT_DVT[i].QuyDoi;
+                    //            obj.TenDVT      = lstCT_DVT[i].TenDVT;
+                    //            obj.KichHoat    = lstCT_DVT[i].KichHoat;
 
-                                rpo_CT_DVT.Save(obj);
-                            }
-                            else
-                            {
-                                lstCT_DVT[i].Thuoc_ID = obj_Thuoc.ID;
-                                rpo_CT_DVT.Create(lstCT_DVT[i]);
-                            }
-                        }
-                    }
+                    //            rpo_CT_DVT.Save(obj);
+                    //        }
+                    //        else
+                    //        {
+                    //            lstCT_DVT[i].Thuoc_ID = obj_Thuoc.ID;
+                    //            rpo_CT_DVT.Create(lstCT_DVT[i]);
+                    //        }
+                    //    }
+                    //}
                 }
                 catch (Exception)
                 {
@@ -289,5 +290,11 @@ namespace QLBV_DEV
             }
         }
         #endregion     
+        
+        private void txtCurrency_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            decimal price = Convert.ToDecimal(e.Value);
+            e.DisplayText = string.Format("{0:c0}", price); 
+        }
     }
 }

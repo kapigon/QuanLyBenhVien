@@ -39,8 +39,11 @@
             this.cbbColDVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.TenDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.QuyDoi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DVTQuyChuan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chkColDVTQuyChuan = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.KichHoat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chkColKichHoat = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.grvColRadDVTQuyChuan = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -54,7 +57,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvDS_CT_DVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbColDVT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkColDVTQuyChuan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkColKichHoat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvColRadDVTQuyChuan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -83,7 +88,7 @@
             this.layoutControl1.OptionsPrint.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.layoutControl1.OptionsPrint.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(279, 313);
+            this.layoutControl1.Size = new System.Drawing.Size(340, 311);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -94,8 +99,10 @@
             this.grvDS_CT_DVT.Name = "grvDS_CT_DVT";
             this.grvDS_CT_DVT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.chkColKichHoat,
-            this.cbbColDVT});
-            this.grvDS_CT_DVT.Size = new System.Drawing.Size(255, 226);
+            this.cbbColDVT,
+            this.grvColRadDVTQuyChuan,
+            this.chkColDVTQuyChuan});
+            this.grvDS_CT_DVT.Size = new System.Drawing.Size(316, 224);
             this.grvDS_CT_DVT.TabIndex = 11;
             this.grvDS_CT_DVT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -108,6 +115,7 @@
             this.DVT_ID,
             this.TenDVT,
             this.QuyDoi,
+            this.DVTQuyChuan,
             this.KichHoat});
             this.gridView1.GridControl = this.grvDS_CT_DVT;
             this.gridView1.Name = "gridView1";
@@ -141,7 +149,7 @@
             this.DVT_ID.Name = "DVT_ID";
             this.DVT_ID.Visible = true;
             this.DVT_ID.VisibleIndex = 0;
-            this.DVT_ID.Width = 83;
+            this.DVT_ID.Width = 77;
             // 
             // cbbColDVT
             // 
@@ -171,7 +179,23 @@
             this.QuyDoi.Name = "QuyDoi";
             this.QuyDoi.Visible = true;
             this.QuyDoi.VisibleIndex = 1;
-            this.QuyDoi.Width = 62;
+            this.QuyDoi.Width = 57;
+            // 
+            // DVTQuyChuan
+            // 
+            this.DVTQuyChuan.Caption = "ĐVT quy chuẩn";
+            this.DVTQuyChuan.ColumnEdit = this.chkColDVTQuyChuan;
+            this.DVTQuyChuan.FieldName = "DVTQuyChuan";
+            this.DVTQuyChuan.Name = "DVTQuyChuan";
+            this.DVTQuyChuan.Visible = true;
+            this.DVTQuyChuan.VisibleIndex = 2;
+            this.DVTQuyChuan.Width = 72;
+            // 
+            // chkColDVTQuyChuan
+            // 
+            this.chkColDVTQuyChuan.AutoHeight = false;
+            this.chkColDVTQuyChuan.Name = "chkColDVTQuyChuan";
+            this.chkColDVTQuyChuan.EditValueChanged += new System.EventHandler(this.chkColDVTQuyChuan_EditValueChanged);
             // 
             // KichHoat
             // 
@@ -184,18 +208,22 @@
             this.KichHoat.FieldName = "KichHoat";
             this.KichHoat.Name = "KichHoat";
             this.KichHoat.Visible = true;
-            this.KichHoat.VisibleIndex = 2;
-            this.KichHoat.Width = 58;
+            this.KichHoat.VisibleIndex = 3;
+            this.KichHoat.Width = 53;
             // 
             // chkColKichHoat
             // 
             this.chkColKichHoat.AutoHeight = false;
             this.chkColKichHoat.Name = "chkColKichHoat";
             // 
+            // grvColRadDVTQuyChuan
+            // 
+            this.grvColRadDVTQuyChuan.Name = "grvColRadDVTQuyChuan";
+            // 
             // btnLuu
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(24, 254);
+            this.btnLuu.Location = new System.Drawing.Point(24, 252);
             this.btnLuu.MaximumSize = new System.Drawing.Size(100, 35);
             this.btnLuu.MinimumSize = new System.Drawing.Size(100, 35);
             this.btnLuu.Name = "btnLuu";
@@ -208,7 +236,7 @@
             // btnDong
             // 
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
-            this.btnDong.Location = new System.Drawing.Point(128, 254);
+            this.btnDong.Location = new System.Drawing.Point(128, 252);
             this.btnDong.MaximumSize = new System.Drawing.Size(100, 35);
             this.btnDong.MinimumSize = new System.Drawing.Size(100, 35);
             this.btnDong.Name = "btnDong";
@@ -228,7 +256,7 @@
             this.layoutControlGroup3});
             this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(279, 313);
+            this.Root.Size = new System.Drawing.Size(340, 311);
             this.Root.Text = "Root";
             this.Root.TextVisible = false;
             // 
@@ -238,7 +266,7 @@
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem10";
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(259, 230);
+            this.layoutControlItem10.Size = new System.Drawing.Size(320, 228);
             this.layoutControlItem10.Text = "layoutControlItem10";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
@@ -249,9 +277,9 @@
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem8,
             this.layoutControlItem3});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 230);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 228);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(259, 63);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(320, 63);
             this.layoutControlGroup3.Text = "layoutControlGroup3";
             this.layoutControlGroup3.TextVisible = false;
             // 
@@ -272,7 +300,7 @@
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem3.Location = new System.Drawing.Point(104, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(131, 39);
+            this.layoutControlItem3.Size = new System.Drawing.Size(192, 39);
             this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -281,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 313);
+            this.ClientSize = new System.Drawing.Size(340, 311);
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDonViTinh_QuyDoi";
@@ -291,7 +319,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvDS_CT_DVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbColDVT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkColDVTQuyChuan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkColKichHoat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvColRadDVTQuyChuan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -323,6 +353,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit chkColKichHoat;
         private DevExpress.XtraGrid.Columns.GridColumn Thuoc_ID;
         private DevExpress.XtraGrid.Columns.GridColumn TenDVT;
+        private DevExpress.XtraGrid.Columns.GridColumn DVTQuyChuan;
+        private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup grvColRadDVTQuyChuan;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit chkColDVTQuyChuan;
 
     }
 }

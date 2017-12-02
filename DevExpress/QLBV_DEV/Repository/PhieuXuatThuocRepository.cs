@@ -32,13 +32,14 @@ namespace QLBV_DEV.Repository
 
         public int getTongSoDonBanHomNay()
         {
-            return (from _object in db.PhieuXuatThuoc where _object.NgayTao == DateTime.Today select _object).Count();
+            return (from _object in db.PhieuXuatThuoc where _object.NgayTao == DateTime.Today && _object.TrangThaiPhieu_ID == 1 select _object).Count();
 
         }
 
         public int getTongSoDonChoHuyHomNay()
         {
-            return (from _object in db.PhieuXuatThuoc where _object.NgayXoa == DateTime.Today && _object.TrangThaiPhieu_ID == 2 select _object).Count();
+            var date = Convert.ToDateTime(DateTime.Today.ToShortDateString());
+            return (from _object in db.PhieuXuatThuoc where _object.NgayXoa == date && _object.TrangThaiPhieu_ID == 2 select _object).Count();
 
         }
 

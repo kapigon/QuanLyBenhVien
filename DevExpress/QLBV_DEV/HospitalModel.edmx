@@ -182,6 +182,7 @@
           <Property Name="DVT_ID" Type="int" />
           <Property Name="TenDVT" Type="nvarchar" MaxLength="50" />
           <Property Name="QuyDoi" Type="float" />
+          <Property Name="DVTQuyChuan" Type="bit" />
           <Property Name="KichHoat" Type="bit" />
         </EntityType>
         <EntityType Name="CT_PhieuDieuChinh">
@@ -244,6 +245,7 @@
           <Property Name="TonKho" Type="float" />
           <Property Name="GiaBanLe" Type="float" />
           <Property Name="GiaBanBuon" Type="float" />
+          <Property Name="QuyDoi" Type="float" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -579,6 +581,7 @@
           <Property Name="TonKho" Type="Double" />
           <Property Name="GiaBanLe" Type="Double" />
           <Property Name="GiaBanBuon" Type="Double" />
+          <Property Name="QuyDoi" Type="Double" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -725,9 +728,10 @@
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Thuoc_ID" Type="Int64" />
           <Property Name="DVT_ID" Type="Int32" />
-          <Property Name="QuyDoi" Type="Int64" />
+          <Property Name="QuyDoi" Type="Double" />
           <Property Name="KichHoat" Type="Boolean" />
           <Property Name="TenDVT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DVTQuyChuan" Type="Boolean" />
         </EntityType>
         <EntityType Name="ThongTinChung">
           <Key>
@@ -921,6 +925,7 @@
           <EntitySetMapping Name="CT_Thuoc_PhieuXuat">
             <EntityTypeMapping TypeName="HospitalModel.CT_Thuoc_PhieuXuat">
               <MappingFragment StoreEntitySet="CT_Thuoc_PhieuXuat">
+                <ScalarProperty Name="QuyDoi" ColumnName="QuyDoi" />
                 <ScalarProperty Name="TonKho" ColumnName="TonKho" />
                 <ScalarProperty Name="HSD" ColumnName="HSD" />
                 <ScalarProperty Name="Barcode" ColumnName="Barcode" />
@@ -1095,6 +1100,7 @@
           <EntitySetMapping Name="CT_DonViTinh">
             <EntityTypeMapping TypeName="HospitalModel.CT_DonViTinh">
               <MappingFragment StoreEntitySet="CT_DonViTinh">
+                <ScalarProperty Name="DVTQuyChuan" ColumnName="DVTQuyChuan" />
                 <ScalarProperty Name="TenDVT" ColumnName="TenDVT" />
                 <ScalarProperty Name="KichHoat" ColumnName="KichHoat" />
                 <ScalarProperty Name="QuyDoi" ColumnName="QuyDoi" />

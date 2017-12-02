@@ -264,22 +264,12 @@ namespace QLBV_DEV
                         chkKichHoat.Checked     = obj_Thuoc.KichHoat.Value;
 
                     // Load dữ liệu cho cbbDonViNhap
-                    DonViTinh dvt = new DonViTinh();
-                    dvt.ID = Convert.ToInt32(cbbDonViLe.EditValue);
-                    dvt.TenDVT = rpo_DVT.GetSingle(Convert.ToInt32(cbbDonViLe.EditValue)).TenDVT;
                     List<dynamic> lstDVT = rpo_CT_DVT.GetAllByThuocID(obj_Thuoc.ID).ToList();
-                    //dynamic item = new dynamic(){ID = "", TenDVT = ""};
-                    lstDVT.Add(new
-                    {
-                        ID = Convert.ToInt32(cbbDonViLe.EditValue),
-                        TenDVT = rpo_DVT.GetSingle(Convert.ToInt32(cbbDonViLe.EditValue)).TenDVT.ToString(),
-                        QuyDoi = Convert.ToInt64(1)
-                    });
 
                     /// Đơn Vị Bán
-                    cbbDonViNhap.Properties.DataSource = lstDVT;
-                    cbbDonViNhap.Properties.DisplayMember = "TenDVT";
-                    cbbDonViNhap.Properties.ValueMember = "ID";
+                    cbbDonViNhap.Properties.DataSource      = lstDVT;
+                    cbbDonViNhap.Properties.DisplayMember   = "TenDVT";
+                    cbbDonViNhap.Properties.ValueMember     = "ID";
 
 
                 }
@@ -292,5 +282,11 @@ namespace QLBV_DEV
             //chkKichHoat.Checked = ((obj_Thuoc.KichHoat != null) ? Convert.ToBoolean(obj_Thuoc.KichHoat.Value) : false);
         }
         #endregion
+
+        private void txtCurrency_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            decimal price = Convert.ToDecimal(e.Value);
+            e.DisplayText = string.Format("{0:c0}", price);
+        }
     }
 }

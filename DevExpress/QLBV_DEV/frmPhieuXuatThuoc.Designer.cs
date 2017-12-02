@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuXuatThuoc));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -88,6 +88,7 @@
             this.BanBuon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThuocID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.QuyDoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -316,6 +317,7 @@
             this.txtConLai.Size = new System.Drawing.Size(196, 20);
             this.txtConLai.StyleController = this.layoutControl1;
             this.txtConLai.TabIndex = 21;
+            this.txtConLai.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtCurrency_CustomDisplayText);
             // 
             // txtChietKhau
             // 
@@ -324,14 +326,13 @@
             this.txtChietKhau.Name = "txtChietKhau";
             this.txtChietKhau.Properties.Appearance.Options.UseTextOptions = true;
             this.txtChietKhau.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtChietKhau.Properties.EditFormat.FormatString = "C0";
-            this.txtChietKhau.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtChietKhau.Properties.Mask.EditMask = "C0";
+            this.txtChietKhau.Properties.Mask.EditMask = "c0";
             this.txtChietKhau.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtChietKhau.Size = new System.Drawing.Size(169, 20);
             this.txtChietKhau.StyleController = this.layoutControl1;
             this.txtChietKhau.TabIndex = 20;
             this.txtChietKhau.EditValueChanged += new System.EventHandler(this.txtChietKhau_EditValueChanged);
+            this.txtChietKhau.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtCurrency_CustomDisplayText);
             // 
             // txtKhachDua
             // 
@@ -348,6 +349,7 @@
             this.txtKhachDua.StyleController = this.layoutControl1;
             this.txtKhachDua.TabIndex = 19;
             this.txtKhachDua.EditValueChanged += new System.EventHandler(this.txtKhachDua_EditValueChanged);
+            this.txtKhachDua.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtCurrency_CustomDisplayText);
             // 
             // txtThueSuat
             // 
@@ -363,6 +365,7 @@
             this.txtThueSuat.StyleController = this.layoutControl1;
             this.txtThueSuat.TabIndex = 18;
             this.txtThueSuat.EditValueChanged += new System.EventHandler(this.txtThueSuat_EditValueChanged);
+            this.txtThueSuat.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtCurrency_CustomDisplayText);
             // 
             // txtTongCong
             // 
@@ -378,6 +381,7 @@
             this.txtTongCong.Size = new System.Drawing.Size(436, 20);
             this.txtTongCong.StyleController = this.layoutControl1;
             this.txtTongCong.TabIndex = 17;
+            this.txtTongCong.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtCurrency_CustomDisplayText);
             // 
             // txtGhiChu
             // 
@@ -444,10 +448,10 @@
             this.txtSoPhieu.Size = new System.Drawing.Size(149, 20);
             this.txtSoPhieu.StyleController = this.layoutControl1;
             this.txtSoPhieu.TabIndex = 9;
-            conditionValidationRule2.CaseSensitive = true;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Số phiếu không được để trống";
-            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule2);
+            conditionValidationRule1.CaseSensitive = true;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Số phiếu không được để trống";
+            this.dxValidate.SetValidationRule(this.txtSoPhieu, conditionValidationRule1);
             // 
             // btnDong
             // 
@@ -549,16 +553,17 @@
             this.BanLe,
             this.BanBuon,
             this.ThuocID,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.QuyDoi});
             this.gridView1.GridControl = this.grdDSThuoc;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "Tổng tiền", this.ThanhTien, "SUM={0:2}")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "Tổng tiền", this.ThanhTien, "SUM=\"{0:c0}\"")});
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowFooter = true;
-            //this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             this.gridView1.ShownEditor += new System.EventHandler(this.gridView1_ShownEditor);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
             // 
             // ID
             // 
@@ -688,6 +693,8 @@
             // 
             // DVT
             // 
+            this.DVT.AppearanceCell.Options.UseTextOptions = true;
+            this.DVT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.DVT.Caption = "Đơn vị tính";
             this.DVT.FieldName = "DVT";
             this.DVT.Name = "DVT";
@@ -822,6 +829,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenDVT", "Tên ĐVT"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("QuyDoi", "Quy đổi")});
             this.cbbDVT.Name = "cbbDVT";
+            this.cbbDVT.EditValueChanged += new System.EventHandler(this.cbbDVT_EditValueChanged);
             // 
             // GiaBan
             // 
@@ -849,7 +857,7 @@
             this.ThanhTien.Name = "ThanhTien";
             this.ThanhTien.OptionsColumn.ReadOnly = true;
             this.ThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "= {0:c}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:c0}")});
             this.ThanhTien.UnboundExpression = "[SoLuong] * [GiaBan]";
             this.ThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.ThanhTien.Visible = true;
@@ -931,6 +939,12 @@
             this.gridColumn2.Caption = "Tên thuốc";
             this.gridColumn2.FieldName = "TenThuoc";
             this.gridColumn2.Name = "gridColumn2";
+            // 
+            // QuyDoi
+            // 
+            this.QuyDoi.Caption = "Quy đổi";
+            this.QuyDoi.FieldName = "QuyDoi";
+            this.QuyDoi.Name = "QuyDoi";
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -1436,7 +1450,6 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmPhieuXuatThuoc";
             this.Text = "Phiếu xuất thuốc";
-            this.Load += new System.EventHandler(this.frmPhieuXuatThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkDeNghiHuy.Properties)).EndInit();
@@ -1621,6 +1634,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn QuyDoi;
 
     }
 }

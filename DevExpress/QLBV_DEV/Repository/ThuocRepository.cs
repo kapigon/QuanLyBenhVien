@@ -50,16 +50,15 @@ namespace QLBV_DEV.Repository
          */
         public double GetCountTonKho(long thuocID)
         {
+            CT_DonViTinhRepository rpo_CT_DVT = new CT_DonViTinhRepository();
 
             var query = from _object in db.CT_Thuoc_PhieuNhap
                         from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == _object.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == thuocID).DefaultIfEmpty()
                         where _object.Thuoc_ID == thuocID
                         select new
                         {
-                            TonKho = _object.TonKho * ct_dvt.QuyDoi / (from thuoc1 in db.Thuoc
-                                                                            from ct_dvt1 in db.CT_DonViTinh.Where(p => p.DVT_ID == thuoc1.DVT_Le_ID && p.Thuoc_ID == thuoc1.ID).DefaultIfEmpty()
-                                                                            where thuoc1.ID == thuocID
-                                                                            select new { QuyDoi = ct_dvt1.QuyDoi}).FirstOrDefault().QuyDoi
+                            TonKho = _object.TonKho * ct_dvt.QuyDoi / (from ct_dvt1 in db.CT_DonViTinh.Where(p => p.DVTQuyChuan == true && p.Thuoc_ID == thuocID).DefaultIfEmpty()
+                                                                       select ct_dvt1).FirstOrDefault().QuyDoi
                         };
 
             return query.Sum(x => x.TonKho).Value;
@@ -251,18 +250,18 @@ namespace QLBV_DEV.Repository
                         from hoatchat in db.HoatChat.Where(hc => hc.ID == thuoc.HoatChat_ID).DefaultIfEmpty()
                         select new
                         {
-                            ID = thuoc.ID,
-                            TenThuoc = thuoc.TenThuoc,
-                            MaThuoc = thuoc.MaThuoc,
-                            TenNhom = nhomthuoc.TenNhom,
-                            TenHoatChat = hoatchat.TenHoatChat,
-                            ThoiGianCanhBaoHetHan = thuoc.ThoiGianCanhBaoHetHan,
-                            TonKhoToiThieu = thuoc.TonKhoToiThieu,
-                            GiaBanLe = thuoc.GiaBanLe,
-                            GiaBanBuon = thuoc.GiaBanBuon,
-                            NhomThuoc_ID = thuoc.NhomThuoc_ID,
-                            HoatChat_ID = thuoc.HoatChat_ID,
-                            KichHoat = thuoc.KichHoat
+                            ID                      = thuoc.ID,
+                            TenThuoc                = thuoc.TenThuoc,
+                            MaThuoc                 = thuoc.MaThuoc,
+                            TenNhom                 = nhomthuoc.TenNhom,
+                            TenHoatChat             = hoatchat.TenHoatChat,
+                            ThoiGianCanhBaoHetHan   = thuoc.ThoiGianCanhBaoHetHan,
+                            TonKhoToiThieu          = thuoc.TonKhoToiThieu,
+                            GiaBanLe                = thuoc.GiaBanLe,
+                            GiaBanBuon              = thuoc.GiaBanBuon,
+                            NhomThuoc_ID            = thuoc.NhomThuoc_ID,
+                            HoatChat_ID             = thuoc.HoatChat_ID,
+                            KichHoat                = thuoc.KichHoat
 
                         };
             if (thuoc_id > 0)
@@ -276,6 +275,28 @@ namespace QLBV_DEV.Repository
 
             query = query.Where(p => p.KichHoat == kichhoat);
 
+            return query;
+
+        }
+
+        public IQueryable<dynamic> getListThuoc_CT_DVT()
+        {
+            var query = from thuoc in db.Thuoc
+
+                        where thuoc.KichHoat == true
+                        select new
+                        {
+                            ID = thuoc.ID,
+                            TenThuoc = thuoc.TenThuoc,
+                            MaThuoc = thuoc.MaThuoc,
+                            DVTQuyChuan = (from ct_dvt in db.CT_DonViTinh
+                                           join dvt in db.DonViTinh on ct_dvt.DVT_ID equals dvt.ID
+                                           where thuoc.ID == ct_dvt.Thuoc_ID && ct_dvt.DVTQuyChuan == true
+                                           select new { TenDVT = dvt.TenDVT }).FirstOrDefault().TenDVT,
+                            GiaBan = thuoc.GiaBanLe,
+                            KichHoat = thuoc.KichHoat
+                        };
+           
             return query;
 
         }

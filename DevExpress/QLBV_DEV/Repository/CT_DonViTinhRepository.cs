@@ -17,7 +17,7 @@ namespace QLBV_DEV.Repository
 
         public IQueryable<CT_DonViTinh> GetAll(long thuoc_ID)
         {
-            return from _object in db.CT_DonViTinh where _object.Thuoc_ID == thuoc_ID orderby _object.ID ascending select _object;
+            return from _object in db.CT_DonViTinh where _object.Thuoc_ID == thuoc_ID orderby _object.QuyDoi ascending select _object;
         }
 
 
@@ -26,15 +26,16 @@ namespace QLBV_DEV.Repository
             return from _object in db.CT_DonViTinh
                    join dvt in db.DonViTinh on _object.DVT_ID equals dvt.ID
                    where _object.Thuoc_ID == thuoc_ID
-                   orderby _object.ID ascending
+                   orderby _object.QuyDoi ascending
                    select new
                    {
-                       ID       = _object.ID,
-                       Thuoc_ID = _object.Thuoc_ID,
-                       DVT_ID   = _object.DVT_ID,
-                       TenDVT   = dvt.TenDVT,
-                       QuyDoi   = _object.QuyDoi,
-                       KichHoat = _object.KichHoat
+                       ID           = _object.ID,
+                       Thuoc_ID     = _object.Thuoc_ID,
+                       DVT_ID       = _object.DVT_ID,
+                       TenDVT       = dvt.TenDVT,
+                       QuyDoi       = _object.QuyDoi,
+                       DVTQuyChuan  = _object.DVTQuyChuan,
+                       KichHoat     = _object.KichHoat
                    };
         }
 
@@ -46,6 +47,45 @@ namespace QLBV_DEV.Repository
         public long GetCount()
         {
             return (from _object in db.CT_DonViTinh select _object).Count();
+        }
+
+        public double GetQuyChuan(long thuocID)
+        {
+            var quychuan = (from ct_dvt in db.CT_DonViTinh.Where(p => p.DVTQuyChuan == true && p.Thuoc_ID == thuocID).DefaultIfEmpty()
+                                         select ct_dvt).FirstOrDefault().QuyDoi.Value;
+
+            return quychuan != 0 ? quychuan : 1;
+        }
+
+        public double GetQuyDoi(long thuocID, int DVT)
+        {
+            var quydoi = (from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == DVT && p.Thuoc_ID == thuocID).DefaultIfEmpty()
+                                     select ct_dvt).FirstOrDefault().QuyDoi.Value;
+
+            return quydoi != 0 ? quydoi : 1;
+        }
+
+        /*
+         * Owner        : hoalp
+         * Created      : 30/11/2017
+         * thuocID      : Thuốc ID
+         * DVT_Xuat     : đơn vị tính theo CT_Thuoc_PhieuXuat
+         * type         : <T : Thuận - N : Ngược>
+         */
+        public double GetHeSoTheoQuyChuan(long thuocID, int DVT_Nhap, char type)
+        {
+            double quychuan = GetQuyChuan(thuocID);
+
+            double quydoi   = GetQuyDoi(thuocID, DVT_Nhap);
+
+            quychuan    = quychuan != 0 ? quydoi : 1;
+
+            quydoi      = quydoi != 0 ? quydoi : 1;
+
+            if (type == 'N')
+                return quydoi / quychuan;
+            else
+                return quychuan / quydoi;
         } 
 
         public CT_DonViTinh GetSingle(long id)

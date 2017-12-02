@@ -14,6 +14,8 @@ using System.Data.Entity.Validation;
 using System.Diagnostics;
 
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Columns;
 
 
 namespace QLBV_DEV
@@ -87,6 +89,24 @@ namespace QLBV_DEV
             List<CT_DonViTinh> lstCT_DVT = ((BindingList<CT_DonViTinh>)grvDS_CT_DVT.DataSource).ToList();
             frmThemThuoc.setValueLookUpEdit(lstCT_DVT);
             this.Close();
+        }
+
+        private void chkColDVTQuyChuan_EditValueChanged(object sender, EventArgs e)
+        {
+            int row = gridView1.FocusedRowHandle;
+            var search = sender as CheckEdit;
+
+            if (search == null) return;
+            
+            bool chkDVTQuyChuan = search.Checked;
+            if (chkDVTQuyChuan)
+                gridView1.SetRowCellValue(row, "KichHoat", 1);
+
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                if(i != row)
+                    gridView1.SetRowCellValue(i, "DVTQuyChuan", 0);
+            }
         }
 
         // Thêm số thứ tự tự động tăng GridControl

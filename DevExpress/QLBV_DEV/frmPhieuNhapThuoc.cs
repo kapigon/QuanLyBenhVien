@@ -33,7 +33,7 @@ namespace QLBV_DEV
             InitializeComponent();
             grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuNhap>();
             LoadNCC();
-            //LoadDVT();
+            LoadDVT();
             LoadThuoc();
             CreateSoPhieu();
             //Defaul value
@@ -144,16 +144,17 @@ namespace QLBV_DEV
             try
             {
                 var result = from thuoc in db.Thuoc
-                             select thuoc;
-                             //select new
-                             //{
-                             //    thuoc.ID,
-                             //    thuoc.MaThuoc,
-                             //    thuoc.TenThuoc,
-                             //    thuoc.DVT_Le_ID,
-                             //    thuoc.DVT_Nguyen_ID
-                             //};
-                gridColThuoc_ID.DataSource = result.ToList();
+                             from ct_dvt in db.CT_DonViTinh.Where(p => p.DVTQuyChuan == true && p.Thuoc_ID == thuoc.ID).DefaultIfEmpty()
+                             join dvt in db.DonViTinh on ct_dvt.DVT_ID equals dvt.ID
+                             select new
+                             {
+                                 ID         = thuoc.ID,
+                                 MaThuoc    = thuoc.MaThuoc,
+                                 TenThuoc   = thuoc.TenThuoc,
+                                 DVT        = dvt.TenDVT,
+                                 TonKho     = thuoc.TonKho
+                             };
+                gridColThuoc_ID.DataSource = result.ToList<dynamic>();
                 //cbbNCC.DataSource = result.ToList();
                 gridColThuoc_ID.DisplayMember = "TenThuoc";
                 gridColThuoc_ID.ValueMember = "ID";
@@ -230,8 +231,9 @@ namespace QLBV_DEV
                     int thueSuat        = Convert.ToInt32(cbbThueSuat.EditValue.ToString().Replace("%",""));
                     String soHD         = txtSoHoaDon.Text.Trim();
                     DateTime ngayVietHD = dateNgayVietHD.DateTime;
-                    int userID = obj_NhanVien.ID;
-                    double tongtien = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
+                    int userID          = obj_NhanVien.ID;
+                    double tongtien     = Convert.ToDouble(gridView1.Columns["ThanhTien"].SummaryItem.SummaryValue);
+                    
 
                     PhieuNhapThuoc obj_PhieuNhap;
 
@@ -268,7 +270,7 @@ namespace QLBV_DEV
                                     rpo_PhieuNhap.Save(obj_PhieuNhap);
 
                                 /// Khi tao 1 phiếu nhập thành công -> tạo các Chi tiết Thuốc theo phiếu nhập đó
-                                if (obj_PhieuNhap.ID != null)
+                                if (obj_PhieuNhap != null)
                                 {
                                     for (int i = 0; i < gridView1.DataRowCount; i++)
                                     {
@@ -349,13 +351,15 @@ namespace QLBV_DEV
                                         }
                                         
 
-
                                         /// Cập số lượng tồn kho Thuốc
                                         ThuocRepository rpo_Thuoc = new ThuocRepository();
                                         Thuoc obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
-                                        obj_Thuoc.TonKho = rpo_Thuoc.GetCountTonKho(thuoc_ID);
+                                        if(obj_Thuoc != null)
+                                        {
+                                            obj_Thuoc.TonKho = rpo_Thuoc.GetCountTonKho(thuoc_ID);
 
-                                        rpo_Thuoc.Save(obj_Thuoc); 
+                                            rpo_Thuoc.Save(obj_Thuoc); 
+                                        }
                                     }
                                 }
                                 this.Close();
@@ -546,6 +550,14 @@ namespace QLBV_DEV
                 editor.Properties.ValueMember = "ID";
             }
         }
+        private void gridView1_CustomColumnDisplayText(object sender, CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "ThanhTien" || e.Column.FieldName == "GiaNhap" && e.ListSourceRowIndex != DevExpress.XtraGrid.GridControl.InvalidRowHandle)
+            {
+                decimal price = Convert.ToDecimal(e.Value);
+                e.DisplayText = string.Format("{0:c0}", price);
+            }
+        }
         #endregion
 
         #region Sothutu
@@ -603,6 +615,5 @@ namespace QLBV_DEV
             //    e.Handled = true;
             //}
         }
-
     }
 }
