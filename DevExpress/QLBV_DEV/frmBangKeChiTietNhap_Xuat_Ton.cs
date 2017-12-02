@@ -16,9 +16,9 @@ namespace QLBV_DEV
     public partial class frmBangKeChiTietNhap_Xuat_Ton : DevExpress.XtraEditors.XtraForm
     {
         #region params
-        HospitalEntities db = new HospitalEntities();
-        PhieuNhapThuocRepository rpo_PhieuNhap = new PhieuNhapThuocRepository();
-
+        HospitalEntities            db              = new HospitalEntities();
+        PhieuNhapThuocRepository    rpo_PhieuNhap   = new PhieuNhapThuocRepository();
+        CT_DonViTinhRepository      rpo_CT_DVT      = new CT_DonViTinhRepository();
         int phieuNhapID = 0;
 
         int iRow;
@@ -48,6 +48,25 @@ namespace QLBV_DEV
             // Group nhom theo CT_Thuoc_PhieuNhap_ID
             try
             {
+                //var lst_CT_PhieuXuat = (from ct_xuat in db.CT_Thuoc_PhieuXuat
+                //                        join ct_nhap in db.CT_Thuoc_PhieuNhap on ct_xuat.CT_Thuoc_PhieuNhap_ID equals ct_nhap.ID
+                //                        where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
+                //                        select new
+                //                        {
+                //                            CT_Thuoc_PhieuNhap_ID = ct_xuat.CT_Thuoc_PhieuNhap_ID,
+                //                            SoLuong = ct_xuat.SoLuong.Value * rpo_CT_DVT.GetHeSoTheoQuyChuan(Convert.ToInt64(ct_nhap.Thuoc_ID), Convert.ToInt32(ct_nhap.DVT_Theo_DVT_Thuoc_ID), 'T'),
+                //                            GiaBan = ct_xuat.GiaBan
+                //                        });
+                //foreach (var item in lst_CT_PhieuXuat.ToList())
+                //{
+                //    CT_Thuoc_PhieuNhapRepository rpo_CT_PhieuNhap = new CT_Thuoc_PhieuNhapRepository();
+                //    CT_Thuoc_PhieuNhap obj_CT_PhieuNhap = rpo_CT_PhieuNhap.GetSingle(Convert.ToInt64(item.CT_Thuoc_PhieuNhap_ID));
+                //    //item.SoLuong *= 3 + rpo_CT_DVT.GetHeSoTheoQuyChuan(Convert.ToInt64(obj_CT_PhieuNhap.Thuoc_ID), Convert.ToInt32(obj_CT_PhieuNhap.DVT_Theo_DVT_Thuoc_ID), 'T');
+                //    item.SoLuong = 0;
+                //}
+                //lst_CT_PhieuXuat.GroupBy(p => p.CT_Thuoc_PhieuNhap_ID).Sum(p => p.FirstOrDefault().SoLuong);
+
+                //var qCT_Xuat_TuNgay_DenNgay = lst_CT_PhieuXuat;
                 var qCT_Xuat_TuNgay_DenNgay = from ct_xuat in db.CT_Thuoc_PhieuXuat
                                               where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
                                               group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
@@ -107,7 +126,7 @@ namespace QLBV_DEV
                             from ct_xuat        in qCT_Xuat_TuNgay_DenNgay.Where(ct_xuat => ct_xuat.CT_Thuoc_PhieuNhap_ID == ct_nhap.ID).DefaultIfEmpty()
                             from _qCT_PhieuNhap in qCT_PhieuNhap.Where(_qCT_PhieuNhap => _qCT_PhieuNhap.ID == ct_nhap.ID).DefaultIfEmpty()
                             join thuoc          in db.Thuoc on ct_nhap.Thuoc_ID equals thuoc.ID
-                            join dvt in db.DonViTinh on ct_nhap.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
+                            join dvt            in db.DonViTinh on ct_nhap.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
                             select new
                             {
                                 Thuoc_ID        = thuoc.ID,

@@ -296,7 +296,6 @@
             this.XuatTrongky.Caption = "Xuất trong kỳ";
             this.XuatTrongky.FieldName = "XuatTrongky";
             this.XuatTrongky.Name = "XuatTrongky";
-            this.XuatTrongky.OptionsColumn.ReadOnly = true;
             this.XuatTrongky.Visible = true;
             this.XuatTrongky.VisibleIndex = 5;
             this.XuatTrongky.Width = 147;
