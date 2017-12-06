@@ -15,8 +15,8 @@ namespace QLBV_DEV
     public partial class PhieuDieuChinh
     {
         public long ID { get; set; }
-        public string MaPhieuDieuChinh { get; set; }
-        public string TenPhieuDieuChinh { get; set; }
+        public string Ma { get; set; }
+        public string Ten { get; set; }
         public string GhiChu { get; set; }
         public Nullable<int> UserTao { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }

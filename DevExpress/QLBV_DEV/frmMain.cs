@@ -464,6 +464,11 @@ namespace QLBV_DEV
         private void btnCT_DVT_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.ShowForm<frmCT_DonViTinh>();
+        }
+
+        private void btnDSPhieuDieuChinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ShowForm<frmDSPhieuDieuChinh>();
         } 
     }
 }

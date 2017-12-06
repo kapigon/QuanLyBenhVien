@@ -249,10 +249,16 @@
     <Compile Include="frmDSPhieuXuat.Designer.cs">
       <DependentUpon>frmDSPhieuXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSPhieuDieuChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSPhieuDieuChinh.Designer.cs">
+      <DependentUpon>frmDSPhieuDieuChinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSPhieuXuatHuy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDSPhieuXuatHuy.Designer.cs">
+    <Compile Include="frmDSPhieuXuatHuy.designer.cs">
       <DependentUpon>frmDSPhieuXuatHuy.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDSThuocCanDate.cs">
@@ -297,11 +303,11 @@
     <Compile Include="frmKiemKe.Designer.cs">
       <DependentUpon>frmKiemKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhieuDieuChinh.cs">
+    <Compile Include="frmCT_PhieuDieuChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhieuDieuChinh.Designer.cs">
-      <DependentUpon>frmPhieuDieuChinh.cs</DependentUpon>
+    <Compile Include="frmCT_PhieuDieuChinh.Designer.cs">
+      <DependentUpon>frmCT_PhieuDieuChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDSNCC_KH.cs">
       <SubType>Form</SubType>
@@ -350,6 +356,12 @@
     </Compile>
     <Compile Include="frmNhomThuoc.Designer.cs">
       <DependentUpon>frmNhomThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuDieuChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuDieuChinh.designer.cs">
+      <DependentUpon>frmPhieuDieuChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhieuNhapThuoc.cs">
       <SubType>Form</SubType>
@@ -565,6 +577,9 @@
     <EmbeddedResource Include="frmDSPhieuXuat.resx">
       <DependentUpon>frmDSPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDSPhieuDieuChinh.resx">
+      <DependentUpon>frmDSPhieuDieuChinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDSPhieuXuatHuy.resx">
       <DependentUpon>frmDSPhieuXuatHuy.cs</DependentUpon>
     </EmbeddedResource>
@@ -589,8 +604,8 @@
     <EmbeddedResource Include="frmKiemKe.resx">
       <DependentUpon>frmKiemKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieuDieuChinh.resx">
-      <DependentUpon>frmPhieuDieuChinh.cs</DependentUpon>
+    <EmbeddedResource Include="frmCT_PhieuDieuChinh.resx">
+      <DependentUpon>frmCT_PhieuDieuChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSNCC_KH.resx">
       <DependentUpon>frmDSNCC_KH.cs</DependentUpon>
@@ -616,6 +631,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuDieuChinh.resx">
+      <DependentUpon>frmPhieuDieuChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuNhapThuoc.resx">
       <DependentUpon>frmPhieuNhapThuoc.cs</DependentUpon>
@@ -674,7 +692,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HospitalModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="HospitalModel.edmx.diagram">
       <DependentUpon>HospitalModel.edmx</DependentUpon>
     </None>
@@ -760,6 +780,9 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Avatars\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

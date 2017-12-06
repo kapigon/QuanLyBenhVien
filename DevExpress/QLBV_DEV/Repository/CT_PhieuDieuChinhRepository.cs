@@ -29,7 +29,25 @@ namespace QLBV_DEV.Repository
         {
             return (from _object in db.CT_PhieuDieuChinh where _object.ID == id select _object).FirstOrDefault();
         }
-                                
+
+        public IQueryable<dynamic> GetAllByPhieuDieuChinhID(long id)
+        {
+            return from _object in db.CT_PhieuDieuChinh
+                   join ct_phieunhap in db.CT_Thuoc_PhieuNhap on _object.CT_Thuoc_PhieuNhap_ID equals ct_phieunhap.ID
+                   join thuoc in db.Thuoc on ct_phieunhap.Thuoc_ID equals thuoc.ID
+                   where _object.PhieuDieuChinh_ID == id
+                   orderby _object.ID ascending
+                   select new { 
+                       _object.SoLuongKiemKe,
+                       _object.TonSoSach,
+                       _object.SoLuongTang,
+                       _object.SoLuongGiam,
+                       _object.GhiChu,
+                       thuoc.MaThuoc,
+                       thuoc.TenThuoc
+                   };
+        }   
+                   
         public List<CT_PhieuDieuChinh> GetAll(int take, int pageSize, ref int count)
         {
             try
@@ -125,5 +143,7 @@ namespace QLBV_DEV.Repository
             }
         }
 
+
+        
     }
 }

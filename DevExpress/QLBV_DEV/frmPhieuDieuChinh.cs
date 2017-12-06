@@ -31,7 +31,7 @@ namespace QLBV_DEV
             dateNgayTao.EditValue = DateTime.Now;
             grvCT_PhieuDieuChinh.DataSource = new BindingList<PhieuDieuChinh>();
             gridView1.CustomDrawRowIndicator += gridView1_CustomDrawRowIndicator;
-            gridView2.CustomDrawRowIndicator += gridView1_CustomDrawRowIndicator;
+            gridView2.CustomDrawRowIndicator += gridView2_CustomDrawRowIndicator;
 
             obj_NhanVien = QLBV_DEV.Helpers.LoginInfo.nhanVien;
 
@@ -57,7 +57,7 @@ namespace QLBV_DEV
             for(int i = 0; i < gridView.RowCount; i++){
                 obj_CT_PDC = new CT_PhieuDieuChinh();
                 obj_CT_PDC.CT_Thuoc_PhieuNhap_ID = Convert.ToInt64(gridView.GetRowCellValue(i, "ID"));
-                obj_CT_PDC.SoLuongKiemKe = Convert.ToInt32(gridView.GetRowCellValue(i, "TonKho"));
+                obj_CT_PDC.SoLuongKiemKe = Convert.ToDouble(gridView.GetRowCellValue(i, "TonKho"));
 
                 lstCT_PDC.Add(obj_CT_PDC);
             }
@@ -85,8 +85,8 @@ namespace QLBV_DEV
         {
             ThuocRepository rpo_Thuoc = new ThuocRepository();
             Thuoc obj_Thuoc;
-            CT_Thuoc_PhieuNhapRepository rpo_CT_Phieu = new CT_Thuoc_PhieuNhapRepository();
-            CT_Thuoc_PhieuNhap obj_CT_Phieu;
+            CT_Thuoc_PhieuNhapRepository rpo_CT_Thuoc_PhieuNhap = new CT_Thuoc_PhieuNhapRepository();
+            CT_Thuoc_PhieuNhap obj_CT_Thuoc_PhieuNhap;
 
             try
             {
@@ -96,15 +96,22 @@ namespace QLBV_DEV
 
                 if (gridView1.RowCount > 0 && gridView1 != null)
                 {
-                     using (var dbContextTransaction = db.Database.BeginTransaction())
+                    using (var dbContextTransaction = db.Database.BeginTransaction())
                     {
                         try
                         {
+                            /// Tạo mã phiếu điều chỉnh
+                            string today = DateTime.Now.ToString("yyMMdd");
+
+                            int soTT = rpo_PhieuDieuChinh.getCountByDay("PDC-" + today);
+
+                            string maPhieu = "PDC-" + today + "-" + (soTT + 1).ToString("00");
+                            
                             obj_PDC = new PhieuDieuChinh();
-                            obj_PDC.MaPhieuDieuChinh        = "PDC-" + (rpo_PhieuDieuChinh.GetCount() + 1);
-                            obj_PDC.TenPhieuDieuChinh       = txtTenPhieu.Text.Trim();
-                            obj_PDC.GhiChu                  = txtGhiChu.Text.Trim();
-                            obj_PDC.UserTao                 = userID;
+                            obj_PDC.Ma          = maPhieu;
+                            obj_PDC.Ten         = txtTenPhieu.Text.Trim();
+                            obj_PDC.GhiChu      = txtGhiChu.Text.Trim();
+                            obj_PDC.UserTao     = userID;
                             rpo_PhieuDieuChinh.Create(obj_PDC);
 
                              /// Khi tao 1 phiếu điều chỉnh thành công -> tạo các Chi tiết điều chỉnh thuốc
@@ -114,12 +121,13 @@ namespace QLBV_DEV
                                 for (int i = 0; i < gridView1.RowCount; i++)
                                 {
                                     long ct_thuoc_ID    = Convert.ToInt64(gridView1.GetRowCellValue(i, "CT_Thuoc_PhieuNhap_ID"));
-                                    int sl_HeThong      = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongKiemKe"));
-                                    int sl_SoSach       = Convert.ToInt32(gridView1.GetRowCellValue(i, "TonSoSach"));
-                                    int sl_Tang         = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongTang"));
-                                    int sl_Giam         = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuongGiam"));
-                                    String ghiChu       = gridView1.GetRowCellValue(i, "GhiChu").ToString();
+                                    double sl_HeThong   = Convert.ToDouble(gridView1.GetRowCellValue(i, "SoLuongKiemKe"));
+                                    double sl_SoSach    = Convert.ToDouble(gridView1.GetRowCellValue(i, "TonSoSach"));
+                                    double sl_Tang      = Convert.ToDouble(gridView1.GetRowCellValue(i, "SoLuongTang"));
+                                    double sl_Giam      = Convert.ToDouble(gridView1.GetRowCellValue(i, "SoLuongGiam"));
+                                    string ghiChu       = Convert.ToString(gridView1.GetRowCellValue(i, "GhiChu"));
                                     long thuoc_ID       = Convert.ToInt64(gridView2.GetRowCellValue(i, "ThuocID"));
+
                                     obj_CT_PDC = new CT_PhieuDieuChinh()
                                     {
                                         PhieuDieuChinh_ID       = obj_PDC.ID,
@@ -135,14 +143,14 @@ namespace QLBV_DEV
                                     rpo_CT_PDC.Create(obj_CT_PDC);
 
                                     /// Cập nhật lại số lượng cho ID
-                                    obj_CT_Phieu = rpo_CT_Phieu.GetSingle(ct_thuoc_ID);
-                                    if (obj_CT_Phieu != null)
+                                    obj_CT_Thuoc_PhieuNhap = rpo_CT_Thuoc_PhieuNhap.GetSingle(ct_thuoc_ID);
+                                    if (obj_CT_Thuoc_PhieuNhap != null)
                                     {
                                         // Số lượng tồn kho và thực tế khác nhau sẽ cập nhật lại số tồn kho
-                                        if (obj_CT_Phieu.TonKho != sl_SoSach)
+                                        if (obj_CT_Thuoc_PhieuNhap.TonKho != sl_SoSach)
                                         {
-                                            obj_CT_Phieu.TonKho = sl_SoSach;
-                                            rpo_CT_Phieu.Save(obj_CT_Phieu);
+                                            obj_CT_Thuoc_PhieuNhap.TonKho = sl_SoSach;
+                                            rpo_CT_Thuoc_PhieuNhap.Save(obj_CT_Thuoc_PhieuNhap);
 
                                             /// Đếm lại số lượng Thuốc theo obj_CT_Phieu
                                             obj_Thuoc = rpo_Thuoc.GetSingle(thuoc_ID);
@@ -185,8 +193,8 @@ namespace QLBV_DEV
             var search = sender as TextEdit;
             if (search == null) return;
 
-            int tonsosach = (search.EditValue == null || search.EditValue == DBNull.Value || search.EditValue.ToString() == "") ? 0 : Convert.ToInt32(search.EditValue);
-            int soluongkiemke = Convert.ToInt32(gridView1.GetRowCellValue(index, "SoLuongKiemKe"));
+            double tonsosach = (search.EditValue == null || search.EditValue == DBNull.Value || search.EditValue.ToString() == "") ? 0 : Convert.ToDouble(search.EditValue);
+            double soluongkiemke = Convert.ToDouble(gridView1.GetRowCellValue(index, "SoLuongKiemKe"));
 
             //MessageBox.Show(soluongkiemke + " - " + tonsosach + "-" + id);
             if (soluongkiemke - tonsosach > 0)
@@ -268,7 +276,7 @@ namespace QLBV_DEV
                     }
                     SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font); //Lấy kích thước của vùng hiển thị Text
                     Int32 _Width = Convert.ToInt32(_Size.Width) + 20;
-                    BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); })); //Tăng kích thước nếu Text vượt quá
+                    BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView2); })); //Tăng kích thước nếu Text vượt quá
                 }
             }
             else
@@ -277,7 +285,7 @@ namespace QLBV_DEV
                 e.Info.DisplayText = string.Format("[{0}]", (e.RowHandle * -1)); //Nhân -1 để đánh lại số thứ tự tăng dần
                 SizeF _Size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font);
                 Int32 _Width = Convert.ToInt32(_Size.Width) + 20;
-                BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView1); }));
+                BeginInvoke(new MethodInvoker(delegate { cal(_Width, gridView2); }));
             }
 
         }

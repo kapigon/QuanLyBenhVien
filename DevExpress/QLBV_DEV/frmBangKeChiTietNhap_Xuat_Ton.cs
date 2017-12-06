@@ -48,34 +48,39 @@ namespace QLBV_DEV
             // Group nhom theo CT_Thuoc_PhieuNhap_ID
             try
             {
-                //var lst_CT_PhieuXuat = (from ct_xuat in db.CT_Thuoc_PhieuXuat
-                //                        join ct_nhap in db.CT_Thuoc_PhieuNhap on ct_xuat.CT_Thuoc_PhieuNhap_ID equals ct_nhap.ID
-                //                        where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
-                //                        select new
-                //                        {
-                //                            CT_Thuoc_PhieuNhap_ID = ct_xuat.CT_Thuoc_PhieuNhap_ID,
-                //                            SoLuong = ct_xuat.SoLuong.Value * rpo_CT_DVT.GetHeSoTheoQuyChuan(Convert.ToInt64(ct_nhap.Thuoc_ID), Convert.ToInt32(ct_nhap.DVT_Theo_DVT_Thuoc_ID), 'T'),
-                //                            GiaBan = ct_xuat.GiaBan
-                //                        });
-                //foreach (var item in lst_CT_PhieuXuat.ToList())
-                //{
-                //    CT_Thuoc_PhieuNhapRepository rpo_CT_PhieuNhap = new CT_Thuoc_PhieuNhapRepository();
-                //    CT_Thuoc_PhieuNhap obj_CT_PhieuNhap = rpo_CT_PhieuNhap.GetSingle(Convert.ToInt64(item.CT_Thuoc_PhieuNhap_ID));
-                //    //item.SoLuong *= 3 + rpo_CT_DVT.GetHeSoTheoQuyChuan(Convert.ToInt64(obj_CT_PhieuNhap.Thuoc_ID), Convert.ToInt32(obj_CT_PhieuNhap.DVT_Theo_DVT_Thuoc_ID), 'T');
-                //    item.SoLuong = 0;
-                //}
-                //lst_CT_PhieuXuat.GroupBy(p => p.CT_Thuoc_PhieuNhap_ID).Sum(p => p.FirstOrDefault().SoLuong);
+                var lst_CT_PhieuXuat = (from ct_xuat in db.CT_Thuoc_PhieuXuat
+                                        join ct_nhap in db.CT_Thuoc_PhieuNhap on ct_xuat.CT_Thuoc_PhieuNhap_ID equals ct_nhap.ID
+                                        where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
+                                        select new
+                                        {
+                                            CT_Thuoc_PhieuNhap_ID = ct_xuat.CT_Thuoc_PhieuNhap_ID,
+                                            SoLuong = ct_xuat.SoLuong * ((from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == ct_xuat.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == ct_nhap.Thuoc_ID).DefaultIfEmpty()
+                                                                          select ct_dvt).FirstOrDefault().QuyDoi
+                                                                          /
+                                                                          (from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == ct_nhap.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == ct_nhap.Thuoc_ID).DefaultIfEmpty()
+                                                                           select ct_dvt).FirstOrDefault().QuyDoi), 
+                                                                           //* rpo_CT_DVT.GetHeSoTheoQuyChuan(Convert.ToInt64(ct_nhap.Thuoc_ID), Convert.ToInt32(ct_nhap.DVT_Theo_DVT_Thuoc_ID), 'T'),
+                                            TongTien = ct_xuat.TongTien,
+                                        });
 
-                //var qCT_Xuat_TuNgay_DenNgay = lst_CT_PhieuXuat;
-                var qCT_Xuat_TuNgay_DenNgay = from ct_xuat in db.CT_Thuoc_PhieuXuat
-                                              where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
+                var qCT_Xuat_TuNgay_DenNgay = from ct_xuat in lst_CT_PhieuXuat
                                               group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
                                               select new
                                               {
                                                   gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
                                                   SoLuong = gr_CT_Xuat.Sum(p => p.SoLuong),
-                                                  GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
+                                                  GiaBan = gr_CT_Xuat.Sum(p => p.TongTien)
                                               };
+                //var qCT_Xuat_TuNgay_DenNgay = from ct_xuat in db.CT_Thuoc_PhieuXuat
+                //                              join ct_nhap in db.CT_Thuoc_PhieuNhap on ct_xuat.CT_Thuoc_PhieuNhap_ID equals ct_nhap.ID
+                //                              where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan >= tuNgay && ct_xuat.NgayBan <= denNgay)
+                //                              group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
+                //                              select new
+                //                              {
+                //                                  gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
+                //                                  SoLuong = gr_CT_Xuat.Sum(p => p.SoLuong),
+                //                                  GiaBan = gr_CT_Xuat.Sum(p => p.TongTien),
+                //                              };
 
                 var qCT_PhieuNhap = from ct_nhap in db.CT_Thuoc_PhieuNhap
                                     where (ct_nhap.NgayNhap >= tuNgay && ct_nhap.NgayNhap <= denNgay)
@@ -97,25 +102,70 @@ namespace QLBV_DEV
                                where (ct_nhap.NgayNhap <= denNgay)
                                select new { ct_nhap.ID, ct_nhap.SoLuong };
 
-                var xuat_truoc = from ct_xuat in db.CT_Thuoc_PhieuXuat
-                                 where ct_xuat.SoLuong > 0 && ct_xuat.NgayBan < tuNgay
+                var lst_CT_PhieuXuat_Truoc = (from ct_xuat in db.CT_Thuoc_PhieuXuat
+                                              join ct_nhap in db.CT_Thuoc_PhieuNhap on ct_xuat.CT_Thuoc_PhieuNhap_ID equals ct_nhap.ID
+                                              where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan < tuNgay)
+                                              select new
+                                              {
+                                                  CT_Thuoc_PhieuNhap_ID = ct_xuat.CT_Thuoc_PhieuNhap_ID,
+                                                  SoLuong = ct_xuat.SoLuong * ((from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == ct_xuat.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == ct_nhap.Thuoc_ID).DefaultIfEmpty()
+                                                                                select ct_dvt).FirstOrDefault().QuyDoi
+                                                                                /
+                                                                                (from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == ct_nhap.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == ct_nhap.Thuoc_ID).DefaultIfEmpty()
+                                                                                 select ct_dvt).FirstOrDefault().QuyDoi),
+                                                  TongTien = ct_xuat.TongTien,
+                                              });
+                var xuat_truoc = from ct_xuat in lst_CT_PhieuXuat_Truoc
                                  group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
                                  select new
                                  {
                                      gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
                                      SoLuong = gr_CT_Xuat.Sum(p => p.SoLuong),
-                                     GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
+                                     GiaBan = gr_CT_Xuat.Sum(p => p.TongTien)
                                  };
+                //var xuat_truoc = from ct_xuat in db.CT_Thuoc_PhieuXuat
+                //                 where ct_xuat.SoLuong > 0 && ct_xuat.NgayBan < tuNgay
+                //                 group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
+                //                 select new
+                //                 {
+                //                     gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
+                //                     SoLuong = gr_CT_Xuat.Sum(p => p.SoLuong),
+                //                     GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
+                //                 };
 
-                var xuat_sau = from ct_xuat in db.CT_Thuoc_PhieuXuat
-                               where ct_xuat.SoLuong > 0 && ct_xuat.NgayBan <= denNgay
+
+
+                var lst_CT_PhieuXuat_Sau = (from ct_xuat in db.CT_Thuoc_PhieuXuat
+                                            join ct_nhap in db.CT_Thuoc_PhieuNhap on ct_xuat.CT_Thuoc_PhieuNhap_ID equals ct_nhap.ID
+                                            where ct_xuat.SoLuong > 0 && (ct_xuat.NgayBan <= denNgay)
+                                            select new
+                                            {
+                                                CT_Thuoc_PhieuNhap_ID = ct_xuat.CT_Thuoc_PhieuNhap_ID,
+                                                SoLuong = ct_xuat.SoLuong * ((from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == ct_xuat.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == ct_nhap.Thuoc_ID).DefaultIfEmpty()
+                                                                              select ct_dvt).FirstOrDefault().QuyDoi
+                                                                              /
+                                                                              (from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == ct_nhap.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == ct_nhap.Thuoc_ID).DefaultIfEmpty()
+                                                                               select ct_dvt).FirstOrDefault().QuyDoi),
+                                                TongTien = ct_xuat.TongTien,
+                                            });
+
+                var xuat_sau = from ct_xuat in lst_CT_PhieuXuat_Sau
                                group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
                                select new
                                {
                                    gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
                                    SoLuong = gr_CT_Xuat.Sum(p => p.SoLuong),
-                                   GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
+                                   GiaBan = gr_CT_Xuat.Sum(p => p.TongTien)
                                };
+                //var xuat_sau = from ct_xuat in db.CT_Thuoc_PhieuXuat
+                //               where ct_xuat.SoLuong > 0 && ct_xuat.NgayBan <= denNgay
+                //               group ct_xuat by ct_xuat.CT_Thuoc_PhieuNhap_ID into gr_CT_Xuat
+                //               select new
+                //               {
+                //                   gr_CT_Xuat.FirstOrDefault().CT_Thuoc_PhieuNhap_ID,
+                //                   SoLuong = gr_CT_Xuat.Sum(p => p.SoLuong),
+                //                   GiaBan = gr_CT_Xuat.Sum(p => p.GiaBan),
+                //               };
 
 
                 var query = from ct_nhap        in db.CT_Thuoc_PhieuNhap
@@ -129,6 +179,7 @@ namespace QLBV_DEV
                             join dvt            in db.DonViTinh on ct_nhap.DVT_Theo_DVT_Thuoc_ID equals dvt.ID
                             select new
                             {
+                                ID              = ct_nhap.ID,
                                 Thuoc_ID        = thuoc.ID,
                                 MaThuoc         = thuoc.MaThuoc,
                                 TenThuoc        = thuoc.TenThuoc,

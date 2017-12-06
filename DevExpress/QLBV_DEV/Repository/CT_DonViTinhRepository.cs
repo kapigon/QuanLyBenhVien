@@ -52,17 +52,17 @@ namespace QLBV_DEV.Repository
         public double GetQuyChuan(long thuocID)
         {
             var quychuan = (from ct_dvt in db.CT_DonViTinh.Where(p => p.DVTQuyChuan == true && p.Thuoc_ID == thuocID).DefaultIfEmpty()
-                                         select ct_dvt).FirstOrDefault().QuyDoi.Value;
+                                         select ct_dvt).FirstOrDefault().QuyDoi;
 
-            return quychuan != 0 ? quychuan : 1;
+            return quychuan != 0 ? (double)quychuan : 1;
         }
 
         public double GetQuyDoi(long thuocID, int DVT)
         {
-            var quydoi = (from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == DVT && p.Thuoc_ID == thuocID).DefaultIfEmpty()
+            double quydoi = (from ct_dvt in db.CT_DonViTinh.Where(p => p.DVT_ID == DVT && p.Thuoc_ID == thuocID).DefaultIfEmpty()
                                      select ct_dvt).FirstOrDefault().QuyDoi.Value;
 
-            return quydoi != 0 ? quydoi : 1;
+            return quydoi != 0 ? (double)quydoi : 1;
         }
 
         /*
@@ -72,11 +72,12 @@ namespace QLBV_DEV.Repository
          * DVT_Xuat     : đơn vị tính theo CT_Thuoc_PhieuXuat
          * type         : <T : Thuận - N : Ngược>
          */
-        public double GetHeSoTheoQuyChuan(long thuocID, int DVT_Nhap, char type)
+        public double GetHeSoTheoQuyChuan(long thuocID, int DVT_Nhap, int DVT_Xuat, char type)
         {
+            return (double)0;
             double quychuan = GetQuyChuan(thuocID);
 
-            double quydoi   = GetQuyDoi(thuocID, DVT_Nhap);
+            double quydoi   = GetQuyDoi(thuocID, DVT_Xuat);
 
             quychuan    = quychuan != 0 ? quydoi : 1;
 
@@ -86,7 +87,7 @@ namespace QLBV_DEV.Repository
                 return quydoi / quychuan;
             else
                 return quychuan / quydoi;
-        } 
+        }
 
         public CT_DonViTinh GetSingle(long id)
         {

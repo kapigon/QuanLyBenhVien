@@ -27,12 +27,43 @@ namespace QLBV_DEV.Repository
         
         public PhieuDieuChinh GetSingleByTenPhieuDieuChinh(string tenPhieuDieuChinh)
         {
-            return (from c in db.PhieuDieuChinh.AsEnumerable() where Helpers.StringClearFormat.ClearCharacterSpecial(c.TenPhieuDieuChinh) == tenPhieuDieuChinh select c).FirstOrDefault();
+            return (from c in db.PhieuDieuChinh.AsEnumerable() where Helpers.StringClearFormat.ClearCharacterSpecial(c.Ten) == tenPhieuDieuChinh select c).FirstOrDefault();
         }
 
         public PhieuDieuChinh GetSingleByMaPhieuDieuChinh(string maPhieuDieuChinh)
         {
-            return (from c in db.PhieuDieuChinh.AsEnumerable() where c.MaPhieuDieuChinh == maPhieuDieuChinh select c).FirstOrDefault();
+            return (from c in db.PhieuDieuChinh.AsEnumerable() where c.Ma == maPhieuDieuChinh select c).FirstOrDefault();
+        }
+
+        public int getCountByDay(string search)
+        {
+            var query = from _object in db.PhieuDieuChinh
+                        where _object.Ma.StartsWith(search)
+                        orderby _object.ID ascending
+                        select _object;
+
+            return query.Count();
+        }
+
+        public IQueryable<PhieuDieuChinh> search(String ma, String ten, DateTime tuNgay, DateTime denNgay)
+        {
+            var query = from _object in db.PhieuDieuChinh
+                        orderby _object.ID descending
+                        select _object;
+
+            if (ma != "")
+                query.Where(p => p.Ma.Contains(ma));
+
+            if (ten != "")
+                query.Where(p => p.Ten.Contains(ten));
+
+            if (tuNgay != null && tuNgay.ToString("dd/MM/yyyy") != "01/01/0001")
+                query.Where(p => p.NgayTao >= tuNgay);
+
+            if (denNgay != null && denNgay.ToString("dd/MM/yyyy") != "01/01/0001")
+                query.Where(p => p.NgayTao <= denNgay);
+            
+            return query;
         }
 
         public List<PhieuDieuChinh> GetAll(int take, int pageSize, ref int count)

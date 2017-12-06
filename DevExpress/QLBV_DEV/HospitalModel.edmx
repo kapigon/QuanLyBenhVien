@@ -312,8 +312,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MaPhieuDieuChinh" Type="varchar" MaxLength="50" />
-          <Property Name="TenPhieuDieuChinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ma" Type="varchar" MaxLength="50" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="50" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="250" />
           <Property Name="UserTao" Type="int" />
           <Property Name="NgayTao" Type="date" />
@@ -687,10 +687,10 @@
           <Property Name="PhieuDieuChinh_ID" Type="Int64" />
           <Property Name="CT_Thuoc_PhieuNhap_ID" Type="Int64" />
           <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="SoLuongKiemKe" Type="Int32" />
-          <Property Name="TonSoSach" Type="Int32" />
-          <Property Name="SoLuongTang" Type="Int32" />
-          <Property Name="SoLuongGiam" Type="Int32" />
+          <Property Name="SoLuongKiemKe" Type="Double" />
+          <Property Name="TonSoSach" Type="Double" />
+          <Property Name="SoLuongTang" Type="Double" />
+          <Property Name="SoLuongGiam" Type="Double" />
           <Property Name="LoaiDieuChinh" Type="Int32" />
           <Property Name="Huy" Type="Boolean" />
           <Property Name="UserHuy" Type="Int32" />
@@ -700,8 +700,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaPhieuDieuChinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TenPhieuDieuChinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="UserTao" Type="Int32" />
           <Property Name="NgayTao" Type="DateTime" Precision="0" />
@@ -1072,13 +1072,13 @@
           <EntitySetMapping Name="PhieuDieuChinh">
             <EntityTypeMapping TypeName="HospitalModel.PhieuDieuChinh">
               <MappingFragment StoreEntitySet="PhieuDieuChinh">
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Ma" ColumnName="Ma" />
                 <ScalarProperty Name="UserHuy" ColumnName="UserHuy" />
                 <ScalarProperty Name="Huy" ColumnName="Huy" />
                 <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
                 <ScalarProperty Name="UserTao" ColumnName="UserTao" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="TenPhieuDieuChinh" ColumnName="TenPhieuDieuChinh" />
-                <ScalarProperty Name="MaPhieuDieuChinh" ColumnName="MaPhieuDieuChinh" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

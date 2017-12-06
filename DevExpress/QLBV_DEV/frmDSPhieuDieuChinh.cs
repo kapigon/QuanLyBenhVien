@@ -12,36 +12,31 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace QLBV_DEV
 {
-    public partial class frmDSPhieuXuat : DevExpress.XtraEditors.XtraForm
+    public partial class frmDSPhieuDieuChinh : DevExpress.XtraEditors.XtraForm
     {
         #region params
-        HospitalEntities db = new HospitalEntities();
-        PhieuXuatThuocRepository rpo_PhieuXuat = new PhieuXuatThuocRepository();
+        PhieuDieuChinhRepository rpo_PhieuDieuChinh = new PhieuDieuChinhRepository();
 
         int phieuXuatID = 0;
 
         int iRow;
         #endregion
 
-        public frmDSPhieuXuat()
+        public frmDSPhieuDieuChinh()
         {
             InitializeComponent();
-            LoadNCC();
-            LoadDS_PhieuXuat();
+            Load_NhanVien();
+            LoadDS_PhieuDieuChinh();
             gridView1.CustomDrawRowIndicator += gridView1_CustomDrawRowIndicator;
         }
 
         #region methods
-        private void LoadDS_PhieuXuat()
+        private void LoadDS_PhieuDieuChinh()
         {
             try
             {
-                //var result = from nv in db.PhieuNhapThuoc
-                //             where nv.Xoa == false
-                //             select nv;
-                //var result = rpo_PhieuNhap.GetAllNotDelete();
-                var result = rpo_PhieuXuat.search(0, "", Convert.ToDateTime("01/01/0001"), Convert.ToDateTime("01/01/0001"), "", 1);
-                grdDS_PhieuXuat.DataSource = result.ToList();
+                var result = rpo_PhieuDieuChinh.search("", "", Convert.ToDateTime("01/01/0001"), Convert.ToDateTime("01/01/0001"));
+                grdDS_PhieuDieuChinh.DataSource = result.ToList();
             }
             catch (Exception)
             {
@@ -49,35 +44,16 @@ namespace QLBV_DEV
             }
         }
 
-        public void LoadDS_SoDon_HomNay(DateTime toDay)
+       
+        private void Load_NhanVien()
         {
             try
             {
-                dateTuNgay.EditValue = toDay;
-                dateDenNgay.EditValue = toDay;
-                var result = rpo_PhieuXuat.search(0, "", toDay, toDay, "", 1);
-                grdDS_PhieuXuat.DataSource = result.ToList();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
-            }
-        }
+                NhanVienRepository rpo_NhanVien = new NhanVienRepository();
 
-        private void LoadNCC()
-        {
-            try
-            {
-                // lấy ra NCC và vừa là NCC vừa là KH
-                NCC_KHRepository rpo_NCC_KH = new NCC_KHRepository();
-                cbbNCC_KH.Properties.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(2, 2).ToList());
-                //cbbNCC.DataSource = result.ToList();
-                cbbNCC_KH.Properties.DisplayMember = "TenNCC_KH";
-                cbbNCC_KH.Properties.ValueMember = "ID";
-
-                cbbCol_NCC_KH.DataSource = new BindingList<NCC_KH>(rpo_NCC_KH.GetAllByType(2, 2).ToList());
-                cbbCol_NCC_KH.DisplayMember = "TenNCC_KH";
-                cbbCol_NCC_KH.ValueMember = "ID";
+                cbbCol_NhanVien.DataSource = new BindingList<NhanVien>(rpo_NhanVien.GetAll(true).ToList());
+                cbbCol_NhanVien.DisplayMember = "TaiKhoan";
+                cbbCol_NhanVien.ValueMember = "ID";
             }
             catch (Exception)
             {
@@ -88,12 +64,6 @@ namespace QLBV_DEV
         #endregion
 
         #region events
-        private void btnThemPhieu_Click(object sender, EventArgs e)
-        {
-            frmPhieuXuatThuoc frmPhieuXuatThuoc = new frmPhieuXuatThuoc();
-            frmPhieuXuatThuoc.ShowInTaskbar = false;
-            frmPhieuXuatThuoc.ShowDialog();
-        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -105,47 +75,7 @@ namespace QLBV_DEV
             iRow = gridView1.FocusedRowHandle;
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (iRow >= 0)
-                {
-                    String soPhieu = gridView1.GetRowCellValue(iRow, "SoPhieu").ToString();
-                    DialogResult dialogResult = MessageBox.Show(soPhieu, "Xác nhận xóa?", MessageBoxButtons.YesNo);
-
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
-                        //int userID = 100000;
-
-                        PhieuXuatThuoc obj_PhieuXuat = rpo_PhieuXuat.GetSingle(id);
-                        obj_PhieuXuat.Xoa = true;
-                        //obj_PhieuXuat.NgayXoa = DateTime.Now; //// **
-
-                        rpo_PhieuXuat.Save(obj_PhieuXuat);
-
-
-                        // Tải lại danh sách nhà cung cấp
-                        LoadDS_PhieuXuat();
-                    }
-                    else if (dialogResult == DialogResult.No)
-                    {
-                        //do something else
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Hãy lựa chọn dòng cần xóa.");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
-            }
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnXem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -153,13 +83,11 @@ namespace QLBV_DEV
                 {
                     long id = Convert.ToInt64(gridView1.GetRowCellValue(iRow, "ID"));
 
-                    frmPhieuXuatThuoc frmPhieuXuatThuoc = new frmPhieuXuatThuoc(id);
-                    frmPhieuXuatThuoc.FormClosed += new FormClosedEventHandler(frmDS_PhieuXuatClosed);
+                    frmCT_PhieuDieuChinh frmCT_PhieuDieuChinh = new frmCT_PhieuDieuChinh();
 
-                    //frmPhieuXuatThuoc
-                    //frmPhieuXuatThuoc.loadData(id);
-                    frmPhieuXuatThuoc.ShowInTaskbar = false;
-                    frmPhieuXuatThuoc.ShowDialog();
+                    frmCT_PhieuDieuChinh.loadData(id);
+                    frmCT_PhieuDieuChinh.ShowInTaskbar = false;
+                    frmCT_PhieuDieuChinh.ShowDialog();
                 }
                 else
                 {
@@ -171,31 +99,21 @@ namespace QLBV_DEV
                 MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
         }
-
-        private void frmDS_PhieuXuatClosed(object sender, FormClosedEventArgs e)
-        {
-            LoadDS_PhieuXuat();
-        }
-
-        private void frmDSPhieuNhap_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
-                int ncc_kh_ID = Convert.ToInt32(cbbNCC_KH.EditValue);
-                String soPhieu = txtSoPhieu.Text.Trim();
+                String maPhieu = txtMaPhieu.Text.Trim();
                 DateTime tuNgay = Convert.ToDateTime(dateTuNgay.EditValue);
                 DateTime denNgay = Convert.ToDateTime(dateDenNgay.EditValue);
-                String soHoaDon = txtSoHoaDon.Text.Trim();
+                String tenPhieu = txtTenPhieu.Text.Trim();
 
                 tuNgay = Convert.ToDateTime(tuNgay.ToShortDateString());
                 denNgay = Convert.ToDateTime(denNgay.ToShortDateString());
 
-                var query = rpo_PhieuXuat.search(ncc_kh_ID, soPhieu, tuNgay, denNgay, soHoaDon, 1);
-                grdDS_PhieuXuat.DataSource = new BindingList<dynamic>(query.ToList());
+                var query = rpo_PhieuDieuChinh.search(maPhieu, tenPhieu, tuNgay, denNgay);
+                grdDS_PhieuDieuChinh.DataSource = new BindingList<PhieuDieuChinh>(query.ToList());
             }
             catch (Exception)
             {
@@ -253,7 +171,6 @@ namespace QLBV_DEV
             {
                 MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
-
         }
         #endregion
     }

@@ -18,10 +18,10 @@ namespace QLBV_DEV
         public Nullable<long> PhieuDieuChinh_ID { get; set; }
         public Nullable<long> CT_Thuoc_PhieuNhap_ID { get; set; }
         public string GhiChu { get; set; }
-        public Nullable<int> SoLuongKiemKe { get; set; }
-        public Nullable<int> TonSoSach { get; set; }
-        public Nullable<int> SoLuongTang { get; set; }
-        public Nullable<int> SoLuongGiam { get; set; }
+        public Nullable<double> SoLuongKiemKe { get; set; }
+        public Nullable<double> TonSoSach { get; set; }
+        public Nullable<double> SoLuongTang { get; set; }
+        public Nullable<double> SoLuongGiam { get; set; }
         public Nullable<int> LoaiDieuChinh { get; set; }
         public Nullable<bool> Huy { get; set; }
         public Nullable<int> UserHuy { get; set; }

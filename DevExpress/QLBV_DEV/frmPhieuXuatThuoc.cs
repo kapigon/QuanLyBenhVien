@@ -50,7 +50,7 @@ namespace QLBV_DEV
             {
                 LoadNCC_KH();
                 LoadDVT();
-                LoadThuoc();
+                LoadThuoc(false);
                 LoadLoaiHinhBan();
             }
             catch (Exception)
@@ -58,17 +58,49 @@ namespace QLBV_DEV
                 MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
             }
 
-            CreateSoPhieu();
+            if (!isUpdate)
+                CreateSoPhieu();
 
 
-           // frmMain main = new frmMain();
-           // MessageBox.Show(main.obj_NhanVien.HoVaTen);
             if (LoginInfo.nhanVien != null)
             {
                 obj_NhanVien = LoginInfo.nhanVien;
             }
 
             gridView1.CustomDrawRowIndicator += gridView1_CustomDrawRowIndicator;  
+        }
+
+        public frmPhieuXuatThuoc(long id)
+        {
+            InitializeComponent();
+            grdDSThuoc.DataSource = new BindingList<CT_Thuoc_PhieuXuat>();
+            dateNgayBan.EditValue = DateTime.Now;
+            dateNgayVietHD.EditValue = DateTime.Now;
+            chkDeNghiHuy.ReadOnly = true;
+
+            try
+            {
+                LoadNCC_KH();
+                LoadDVT();
+                LoadThuoc(true);
+                LoadLoaiHinhBan();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(QLBV_DEV.Helpers.ErrorMessages.show(1));
+            }
+            
+
+            // frmMain main = new frmMain();
+            // MessageBox.Show(main.obj_NhanVien.HoVaTen);
+            if (LoginInfo.nhanVien != null)
+            {
+                obj_NhanVien = LoginInfo.nhanVien;
+            }
+
+            gridView1.CustomDrawRowIndicator += gridView1_CustomDrawRowIndicator;
+
+            loadData(id);
         }
 
         #region methods
@@ -137,26 +169,29 @@ namespace QLBV_DEV
                             var listThuoc = gridColThuoc_ID.DataSource as List<dynamic>;
                             if (listThuoc == null) return;
 
-                            var     x       = listThuoc.FirstOrDefault(t => t.ID == thuoc_PhieuNhap_ID);
-                            double  tonkho  = x.TonKhoLo;
-                            var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuXuat;
-                            if (ctXuat == null) return;
+                            if (listThuoc.Count > 0)
+                            {
+                                var     x       = listThuoc.FirstOrDefault(t => t.ID == thuoc_PhieuNhap_ID);
+                                double  tonkho  = x.TonKhoLo;
+                                var ctXuat = gridView1.GetFocusedRow() as CT_Thuoc_PhieuXuat;
+                                if (ctXuat == null) return;
 
-                            quydoi      = rpo_CT_DVT.GetQuyDoi(x.ThuocID, Convert.ToInt32(dvt_ID));
-                            quychuan    = rpo_CT_DVT.GetQuyDoi(x.ThuocID, Convert.ToInt32(obj_CT_PhieuNhap.DVT_Theo_DVT_Thuoc_ID));
-                            tonkho     *= quychuan / quydoi;
+                                quydoi      = rpo_CT_DVT.GetQuyDoi(x.ThuocID, Convert.ToInt32(dvt_ID));
+                                quychuan    = rpo_CT_DVT.GetQuyDoi(x.ThuocID, Convert.ToInt32(obj_CT_PhieuNhap.DVT_Theo_DVT_Thuoc_ID));
+                                tonkho     *= quychuan / quydoi;
 
-                            //Convert.ToDouble(obj_CT_PhieuNhap.TonKho) * quydoi / Convert.ToInt64(x.QuyDoi);
-                            gridView1.SetRowCellValue(i, "TonKho", tonkho);
-                            gridView1.SetRowCellValue(i, "Barcode", x.Barcode);
-                            gridView1.SetRowCellValue(i, "HSD", x.HSD);
-                            gridView1.SetRowCellValue(i, "GiaBanLe", x.GiaBanLe);
-                            gridView1.SetRowCellValue(i, "GiaBanBuon", x.GiaBanBuon);
-                            gridView1.SetRowCellValue(i, "ThuocID", x.ThuocID);
-                            gridView1.SetRowCellValue(i, "TenThuoc", x.TenThuoc);
+                                //Convert.ToDouble(obj_CT_PhieuNhap.TonKho) * quydoi / Convert.ToInt64(x.QuyDoi);
+                                gridView1.SetRowCellValue(i, "TonKho", tonkho);
+                                gridView1.SetRowCellValue(i, "Barcode", x.Barcode);
+                                gridView1.SetRowCellValue(i, "HSD", x.HSD);
+                                gridView1.SetRowCellValue(i, "GiaBanLe", x.GiaBanLe);
+                                gridView1.SetRowCellValue(i, "GiaBanBuon", x.GiaBanBuon);
+                                gridView1.SetRowCellValue(i, "ThuocID", x.ThuocID);
+                                gridView1.SetRowCellValue(i, "TenThuoc", x.TenThuoc);
 
-                            //ctXuat.SoLuong = x.TonKhoLo;
-                            //ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Theo_DVT_Thuoc_ID;
+                                //ctXuat.SoLuong = x.TonKhoLo;
+                                //ctXuat.DVT_Theo_DVT_Thuoc_ID = x.DVT_Theo_DVT_Thuoc_ID;
+                            }
                         }
 
                         gridView1.PostEditor();
@@ -213,13 +248,13 @@ namespace QLBV_DEV
             cbbDVT.ValueMember = "ID";
         }
 
-        private void LoadThuoc()
+        private void LoadThuoc(bool isUpdate)
         {
             var result = from ct_phieunhap  in db.CT_Thuoc_PhieuNhap
                          join thuoc         in db.Thuoc                 on ct_phieunhap.Thuoc_ID equals thuoc.ID  
                          from ct_dvt        in db.CT_DonViTinh.Where(p=> p.DVT_ID == ct_phieunhap.DVT_Theo_DVT_Thuoc_ID && p.Thuoc_ID == thuoc.ID).DefaultIfEmpty()
                          join dvt in db.DonViTinh                       on ct_dvt.DVT_ID equals dvt.ID
-                         where ct_phieunhap.TonKho > 0
+                        // where ct_phieunhap.TonKho > 0
                          select new
                          {
                              ID                     = ct_phieunhap.ID,
@@ -241,7 +276,10 @@ namespace QLBV_DEV
                              //SoLo                   = ct_phieunhap.SoLo, 
                              HSD                    = ct_phieunhap.HSD
                          };
-            
+
+            if (isUpdate == false)
+                result = result.Where(p => p.TonKhoLo > 0);
+
             //rlookHSD.DataSource= : thay bằng xử lý thêm trường trong class
             gridColThuoc_ID.DataSource = result.ToList<dynamic>();
             //cbbNCC.DataSource = result.ToList();
