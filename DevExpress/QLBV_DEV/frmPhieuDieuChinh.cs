@@ -147,7 +147,7 @@ namespace QLBV_DEV
                                     if (obj_CT_Thuoc_PhieuNhap != null)
                                     {
                                         // Số lượng tồn kho và thực tế khác nhau sẽ cập nhật lại số tồn kho
-                                        if (obj_CT_Thuoc_PhieuNhap.TonKho != sl_SoSach)
+                                        if (obj_CT_Thuoc_PhieuNhap.TonKho != sl_SoSach && gridView1.GetRowCellValue(i, "TonSoSach") != "")
                                         {
                                             obj_CT_Thuoc_PhieuNhap.TonKho = sl_SoSach;
                                             rpo_CT_Thuoc_PhieuNhap.Save(obj_CT_Thuoc_PhieuNhap);
