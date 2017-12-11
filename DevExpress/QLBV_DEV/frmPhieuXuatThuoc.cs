@@ -267,6 +267,10 @@ namespace QLBV_DEV
                              TonKhoLo               = ct_phieunhap.TonKho,
                              DVT                    = dvt.TenDVT,
                              TonKhoTong             = thuoc.TonKho,
+                             DVTQuyChuan            = (from ct_dvt1 in db.CT_DonViTinh
+                                                    join dvt1 in db.DonViTinh on ct_dvt1.DVT_ID equals dvt1.ID
+                                                    where ct_dvt1.DVTQuyChuan == true && ct_dvt1.Thuoc_ID == thuoc.ID
+                                                       select new { DVTQuyChuan = dvt1.TenDVT }).FirstOrDefault().DVTQuyChuan,
                              DVT_Theo_DVT_Thuoc_ID  = ct_phieunhap.DVT_Theo_DVT_Thuoc_ID,
                              GiaBanLe               = thuoc.GiaBanLe * ct_dvt.QuyDoi / (from ct_dvt1 in db.CT_DonViTinh.Where(p => p.DVTQuyChuan == true && p.Thuoc_ID == thuoc.ID).DefaultIfEmpty()
                                                                                select ct_dvt1).FirstOrDefault().QuyDoi.Value,

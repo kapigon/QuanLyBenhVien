@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuDieuChinh));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.grvDSThuoc = new DevExpress.XtraGrid.GridControl();
@@ -68,6 +70,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSThuoc)).BeginInit();
@@ -92,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidate)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -106,7 +110,7 @@
             this.layoutControl1.Controls.Add(this.txtGhiChu);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(769, 247, 250, 350);
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
@@ -282,7 +286,7 @@
             // 
             // grvCT_PhieuDieuChinh
             // 
-            this.grvCT_PhieuDieuChinh.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grvCT_PhieuDieuChinh.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.grvCT_PhieuDieuChinh.Location = new System.Drawing.Point(430, 140);
             this.grvCT_PhieuDieuChinh.MainView = this.gridView1;
             this.grvCT_PhieuDieuChinh.Name = "grvCT_PhieuDieuChinh";
@@ -411,6 +415,9 @@
             this.txtTenPhieu.Size = new System.Drawing.Size(317, 20);
             this.txtTenPhieu.StyleController = this.layoutControl1;
             this.txtTenPhieu.TabIndex = 4;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Tên phiếu không được để trống .!";
+            this.dxValidate.SetValidationRule(this.txtTenPhieu, conditionValidationRule1);
             // 
             // dateNgayTao
             // 
@@ -559,7 +566,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 382);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPhieuDieuChinh";
             this.Text = "Phiếu điều chỉnh";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -586,6 +593,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -631,5 +639,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn GhiChu;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidate;
     }
 }

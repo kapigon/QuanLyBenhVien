@@ -64,8 +64,9 @@
             this.searchMaThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchTenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchTonKhoLo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.searchTonKhoTong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DVT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.searchTonKhoTong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DVTQuyChuan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchSoLo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchHSD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GiaBanLe = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -632,8 +633,9 @@
             this.searchMaThuoc,
             this.searchTenThuoc,
             this.searchTonKhoLo,
-            this.searchTonKhoTong,
             this.DVT,
+            this.searchTonKhoTong,
+            this.DVTQuyChuan,
             this.searchSoLo,
             this.searchHSD,
             this.GiaBanLe,
@@ -681,16 +683,6 @@
             this.searchTonKhoLo.Visible = true;
             this.searchTonKhoLo.VisibleIndex = 2;
             // 
-            // searchTonKhoTong
-            // 
-            this.searchTonKhoTong.AppearanceHeader.Options.UseTextOptions = true;
-            this.searchTonKhoTong.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.searchTonKhoTong.Caption = "Tồn kho tổng";
-            this.searchTonKhoTong.FieldName = "TonKhoTong";
-            this.searchTonKhoTong.Name = "searchTonKhoTong";
-            this.searchTonKhoTong.Visible = true;
-            this.searchTonKhoTong.VisibleIndex = 3;
-            // 
             // DVT
             // 
             this.DVT.AppearanceCell.Options.UseTextOptions = true;
@@ -699,7 +691,29 @@
             this.DVT.FieldName = "DVT";
             this.DVT.Name = "DVT";
             this.DVT.Visible = true;
-            this.DVT.VisibleIndex = 4;
+            this.DVT.VisibleIndex = 3;
+            // 
+            // searchTonKhoTong
+            // 
+            this.searchTonKhoTong.AppearanceHeader.Options.UseTextOptions = true;
+            this.searchTonKhoTong.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchTonKhoTong.Caption = "Tồn kho tổng";
+            this.searchTonKhoTong.FieldName = "TonKhoTong";
+            this.searchTonKhoTong.Name = "searchTonKhoTong";
+            this.searchTonKhoTong.Visible = true;
+            this.searchTonKhoTong.VisibleIndex = 4;
+            // 
+            // DVTQuyChuan
+            // 
+            this.DVTQuyChuan.AppearanceCell.Options.UseTextOptions = true;
+            this.DVTQuyChuan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DVTQuyChuan.AppearanceHeader.Options.UseTextOptions = true;
+            this.DVTQuyChuan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DVTQuyChuan.Caption = "ĐVT quy chuẩn";
+            this.DVTQuyChuan.FieldName = "DVTQuyChuan";
+            this.DVTQuyChuan.Name = "DVTQuyChuan";
+            this.DVTQuyChuan.Visible = true;
+            this.DVTQuyChuan.VisibleIndex = 5;
             // 
             // searchSoLo
             // 
@@ -717,7 +731,7 @@
             this.searchHSD.FieldName = "HSD";
             this.searchHSD.Name = "searchHSD";
             this.searchHSD.Visible = true;
-            this.searchHSD.VisibleIndex = 5;
+            this.searchHSD.VisibleIndex = 6;
             // 
             // GiaBanLe
             // 
@@ -725,7 +739,7 @@
             this.GiaBanLe.FieldName = "GiaBanLe";
             this.GiaBanLe.Name = "GiaBanLe";
             this.GiaBanLe.Visible = true;
-            this.GiaBanLe.VisibleIndex = 6;
+            this.GiaBanLe.VisibleIndex = 7;
             // 
             // GiaBanBuon
             // 
@@ -733,7 +747,7 @@
             this.GiaBanBuon.FieldName = "GiaBanBuon";
             this.GiaBanBuon.Name = "GiaBanBuon";
             this.GiaBanBuon.Visible = true;
-            this.GiaBanBuon.VisibleIndex = 7;
+            this.GiaBanBuon.VisibleIndex = 8;
             // 
             // gridColumn1
             // 
@@ -1635,6 +1649,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraGrid.Columns.GridColumn QuyDoi;
+        private DevExpress.XtraGrid.Columns.GridColumn DVTQuyChuan;
 
     }
 }
