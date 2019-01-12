@@ -476,7 +476,7 @@ namespace QLBV_DEV
                                         int     dvt                 = 0;
                                         double  soluong_cu          = 0;
                                         /// Kiểm tra xem ID đã tồn tại trong 'row' chưa
-                                        if (gridView1.GetRowCellValue(i, "ID") != "" && Convert.ToInt32(gridView1.GetRowCellValue(i, "ID")) > 0)
+                                        if (gridView1.GetRowCellValue(i, "ID") != null && Convert.ToInt32(gridView1.GetRowCellValue(i, "ID")) > 0)
                                         {
                                             ct_thuoc_ID = Convert.ToInt32(gridView1.GetRowCellValue(i, "ID"));
                                             obj_CT_PhieuXuat = rpo_CT_PhieuXuat.GetSingle(ct_thuoc_ID);
@@ -621,7 +621,13 @@ namespace QLBV_DEV
                 }
 
                 frmPrint print = new frmPrint();
-                print.printDSThuoc(lstPhieuXuatThuoc);
+                NCC_KH obj_KH = new NCC_KH();
+                if (cbbKH.EditValue != null)
+                {
+                    NCC_KHRepository rpo_KH = new NCC_KHRepository();
+                    obj_KH = rpo_KH.GetSingle(Convert.ToInt32(cbbKH.EditValue));
+                }
+                print.printDSThuoc(lstPhieuXuatThuoc, obj_KH);
                 print.ShowDialog();
 
                 PhieuXuatThuoc obj_PhieuXuat = rpo_PhieuXuat.GetSingle(phieuxuat_ID);

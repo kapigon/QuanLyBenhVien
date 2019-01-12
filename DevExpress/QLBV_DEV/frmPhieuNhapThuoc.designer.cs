@@ -106,6 +106,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.sfdDSThuoc = new System.Windows.Forms.SaveFileDialog();
+            this.ThueSuat = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
@@ -371,6 +372,7 @@
             this.TonKho,
             this.DVT_Theo_DVT_Thuoc_ID,
             this.GiaNhap,
+            this.ThueSuat,
             this.ThanhTien,
             this.HSD,
             this.PhieuNhapHang_ID,
@@ -423,7 +425,7 @@
             this.MaVach_1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.MaVach_1.Visible = true;
             this.MaVach_1.VisibleIndex = 0;
-            this.MaVach_1.Width = 112;
+            this.MaVach_1.Width = 79;
             // 
             // repositoryItemTextEdit6
             // 
@@ -519,7 +521,7 @@
             this.Thuoc_ID.Name = "Thuoc_ID";
             this.Thuoc_ID.Visible = true;
             this.Thuoc_ID.VisibleIndex = 1;
-            this.Thuoc_ID.Width = 455;
+            this.Thuoc_ID.Width = 304;
             // 
             // SoLuong
             // 
@@ -533,7 +535,7 @@
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.Visible = true;
             this.SoLuong.VisibleIndex = 2;
-            this.SoLuong.Width = 98;
+            this.SoLuong.Width = 71;
             // 
             // repositoryItemTextEdit3
             // 
@@ -562,7 +564,6 @@
             this.DVT_Theo_DVT_Thuoc_ID.Name = "DVT_Theo_DVT_Thuoc_ID";
             this.DVT_Theo_DVT_Thuoc_ID.Visible = true;
             this.DVT_Theo_DVT_Thuoc_ID.VisibleIndex = 3;
-            this.DVT_Theo_DVT_Thuoc_ID.Width = 113;
             // 
             // cbbDVT
             // 
@@ -587,7 +588,7 @@
             this.GiaNhap.Name = "GiaNhap";
             this.GiaNhap.Visible = true;
             this.GiaNhap.VisibleIndex = 4;
-            this.GiaNhap.Width = 111;
+            this.GiaNhap.Width = 74;
             // 
             // ThanhTien
             // 
@@ -602,11 +603,11 @@
             this.ThanhTien.OptionsColumn.AllowEdit = false;
             this.ThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:c0}")});
-            this.ThanhTien.UnboundExpression = "[SoLuong] * [GiaNhap]";
+            this.ThanhTien.UnboundExpression = "[SoLuong] * [GiaNhap] * ([ThueSuat]  / 100)";
             this.ThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.ThanhTien.Visible = true;
-            this.ThanhTien.VisibleIndex = 5;
-            this.ThanhTien.Width = 128;
+            this.ThanhTien.VisibleIndex = 6;
+            this.ThanhTien.Width = 98;
             // 
             // repositoryItemTextEdit1
             // 
@@ -628,8 +629,8 @@
             this.HSD.FieldName = "HSD";
             this.HSD.Name = "HSD";
             this.HSD.Visible = true;
-            this.HSD.VisibleIndex = 6;
-            this.HSD.Width = 125;
+            this.HSD.VisibleIndex = 7;
+            this.HSD.Width = 106;
             // 
             // repositoryItemDateEdit1
             // 
@@ -997,6 +998,17 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // ThueSuat
+            // 
+            this.ThueSuat.AppearanceCell.Options.UseTextOptions = true;
+            this.ThueSuat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ThueSuat.Caption = "Thuế suất";
+            this.ThueSuat.FieldName = "ThueSuat";
+            this.ThueSuat.Name = "ThueSuat";
+            this.ThueSuat.Visible = true;
+            this.ThueSuat.VisibleIndex = 5;
+            this.ThueSuat.Width = 59;
+            // 
             // frmPhieuNhapThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1140,6 +1152,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraGrid.Columns.GridColumn searchTonKho;
+        private DevExpress.XtraGrid.Columns.GridColumn ThueSuat;
 
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QLBV_DEV.Repository;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace QLBV_DEV
 {
@@ -77,7 +78,7 @@ namespace QLBV_DEV
                         obj_NhanVien.GioiTinh   = Convert.ToBoolean(chkGioiTinh.EditValue);
                         obj_NhanVien.NgaySinh   = Convert.ToDateTime(dateNgaySinh.EditValue);
                         obj_NhanVien.SDT        = txtSDT.Text;
-
+                        obj_NhanVien.HinhAnh    = picHinhAnh.Image.ToString();
                         if (txtMatKhauMoi.Text.Trim() != "")
                         {
                             if( txtMatKhauMoi.Text.Trim().Length < 6)
@@ -123,6 +124,39 @@ namespace QLBV_DEV
         {
             this.Close();
         }
+
+        private void btnUpAnh_Click(object sender, EventArgs e)
+        {
+            ofdHinhAnh.Title = "Chọn ảnh";
+            //ofdHinhAnh.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
+            ofdHinhAnh.Filter = "Images files (*.png or .jpg)|.png;*.jpg";
+
+            string appPath = Environment.CurrentDirectory + @"\Images\Avatars\";                // <---
+            if (Directory.Exists(appPath) == false)                                              // <---
+            {                                                                                    // <---
+                Directory.CreateDirectory(appPath);                                              // <---
+            }                                                                                    // <---
+
+            if (ofdHinhAnh.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string iName = ofdHinhAnh.SafeFileName;   // <---
+                    string filepath = ofdHinhAnh.FileName;    // <---
+                    File.Copy(filepath, appPath + iName); // <---
+                    picHinhAnh.Image = new Bitmap(ofdHinhAnh.OpenFile());
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show("Unable to open file " + exp.Message);
+                }
+            }
+            else
+            {
+                ofdHinhAnh.Dispose();
+            }
+        }
+
         #endregion
     }
 }

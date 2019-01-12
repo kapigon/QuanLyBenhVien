@@ -12,6 +12,7 @@ using QLBV_DEV.Repository;
 using QLBV_DEV.Reports.Objects;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+using QLBV_DEV.Helpers;
 
 namespace QLBV_DEV
 {
@@ -22,14 +23,18 @@ namespace QLBV_DEV
             InitializeComponent();
         }
 
-        public void printDSThuoc(List<oPhieuXuatThuoc> lstThuoc)
+        public void printDSThuoc(List<oPhieuXuatThuoc> lstThuoc, NCC_KH khachhang)
         {
             try
             {
 
                 ThuocRepository rpo_thuoc = new ThuocRepository();
-
-                rptPhieuXuatThuoc report = new rptPhieuXuatThuoc();
+                NhanVien obj_NhanVien = new NhanVien();
+                if (LoginInfo.nhanVien != null)
+                {
+                    obj_NhanVien = LoginInfo.nhanVien;
+                }
+                rptPhieuXuatThuoc report = new rptPhieuXuatThuoc(khachhang, obj_NhanVien);
 
                 report.DataSource = lstThuoc;
 

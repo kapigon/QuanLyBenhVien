@@ -117,31 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="dxValidate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnThem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABt0RVh0VGl0
-        bGUAQWRkO1BsdXM7QmFycztSaWJib247lQYzLwAAA25JREFUOE9Vk2lMU1kcxZ+Q6KgfZObjfFBjYuJa
-        DRojJsa4b8GMQSzOOMG4K65FrEU2kehUGIsokBlpUnFQka2AWh6LmgqSIpWyFUFoC2UpD2zpRrFgjvfe
-        cSbxJSe5+b/zO//zXt7jujyfOSpyTSMKiErnl13K0cmlSn2jVGVwXlE12aXKRn30329TI5MeLSCeQOrt
-        JAwV1+31Mzh4c8SMC1n1Cllu81RubR8qOkagH/bgveAB/2EUD+uskD0wuE79WXWC+KdT5hvLTVu5UTzj
-        TGZ9haK8E62ffDDYJ6Ab8aHWNo46oobRf2d6mwepJR04naEtn7dk7exvrbnAkwptRpq6A62OCfAWNzRm
-        NyJv8dgQlccUeasSfK8HNX0etDv9SCeLjsj5NNYkXJq39GyWbqrR5kWB0YHiD06ou1wM1DWZ8K7ZzM5l
-        3W6oPzpRRO7rBR8k2Q3+ncdvi7iDKZXZyqoe5LfakdtkR16LHfnGMQYNCWOYnPrCzk+NTjxpH2P3H7c5
-        kKu1QBxfouB+Ta4xFOqHkVUvYH+K5v/aFBoQnHCP+7+biYnnrwYBRc0jiEiqaOPCE6tHVbphyF8OMGND
-        iwWNrb1oareiX3DB4Z5Ap1lAW9cgOk3D2HLxKdJeD0FJQsITKu3cL7G8S/HKipSqfhYwOOJmW22OcQhj
-        Pnh9k/D4/HATuch8q6QAN2sGkEoW7pVp7NwuSVnL9fJuXNNYceBGJTZfyGembdGFGPzkZWHbY4qw64oa
-        u2NLcfiOFtf5fiSUmrDjfLGB23TiUeb5+3okafogJ8l3tEO4+8bG2pgGnXB6P7Pa92ptbJ72agCJml6c
-        yzFg/aH7qZwoNDF4h+SZP77MjFiiq+UWxD+3sADB4YWdvAPaKOFFH+KeWXCVSKY2YXfMi8mF64+toJ/x
-        D2sOKjPDkl4ijsCX1WZISb19yRq2mcIH/qiGjIRLqQgclvwaqyIyMwg7iwYEzPppftDq31R8aFw1pMU9
-        JMSEZPJIN6usuFFtJedeXCoxQVLwEXsSagic85xwQZTlhEnQkMCZQXN/FIVlZa87WugXy+tw9qERMSU9
-        BOxB1D9G7CezkGMF3kU7U6KJfw5lbJQVpvBfSACtNC8kau3iPen3ROHKZpFYJRDZlu/LMSwKvX335+Df
-        VxLPTPoTUZjqKyAulNeacU/lAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnCapNhat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

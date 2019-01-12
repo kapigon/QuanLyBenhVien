@@ -103,6 +103,16 @@ namespace QLBV_DEV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap no_avatar {
+            get {
+                object obj = ResourceManager.GetObject("no avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Price_list {
             get {
                 object obj = ResourceManager.GetObject("Price_list", resourceCulture);

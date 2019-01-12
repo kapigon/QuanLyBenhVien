@@ -31,5 +31,6 @@ namespace QLBV_DEV
         public Nullable<bool> Xoa { get; set; }
         public Nullable<System.DateTime> NgayXoa { get; set; }
         public Nullable<double> TonKho { get; set; }
+        public Nullable<double> ThueSuat { get; set; }
     }
 }

@@ -215,6 +215,7 @@
           <Property Name="HSD" Type="date" />
           <Property Name="GiaNhap" Type="float" />
           <Property Name="SoLuong" Type="float" />
+          <Property Name="ThueSuat" Type="float" />
           <Property Name="TonKho" Type="float" />
           <Property Name="SoLo" Type="varchar" MaxLength="10" />
           <Property Name="TongTien" Type="float" />
@@ -234,6 +235,7 @@
           <Property Name="LoaiHinhBan_ID" Type="int" />
           <Property Name="GiaBan" Type="float" />
           <Property Name="SoLuong" Type="float" />
+          <Property Name="ThueSuat" Type="float" />
           <Property Name="TongTien" Type="float" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
           <Property Name="NgayBan" Type="date" />
@@ -558,6 +560,7 @@
           <Property Name="Xoa" Type="Boolean" />
           <Property Name="NgayXoa" Type="DateTime" Precision="0" />
           <Property Name="TonKho" Type="Double" />
+          <Property Name="ThueSuat" Type="Double" />
         </EntityType>
         <EntityType Name="CT_Thuoc_PhieuXuat">
           <Key>
@@ -582,6 +585,7 @@
           <Property Name="GiaBanLe" Type="Double" />
           <Property Name="GiaBanBuon" Type="Double" />
           <Property Name="QuyDoi" Type="Double" />
+          <Property Name="ThueSuat" Type="Double" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -902,6 +906,7 @@
           <EntitySetMapping Name="CT_Thuoc_PhieuNhap">
             <EntityTypeMapping TypeName="HospitalModel.CT_Thuoc_PhieuNhap">
               <MappingFragment StoreEntitySet="CT_Thuoc_PhieuNhap">
+                <ScalarProperty Name="ThueSuat" ColumnName="ThueSuat" />
                 <ScalarProperty Name="TonKho" ColumnName="TonKho" />
                 <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
                 <ScalarProperty Name="Xoa" ColumnName="Xoa" />
@@ -925,6 +930,7 @@
           <EntitySetMapping Name="CT_Thuoc_PhieuXuat">
             <EntityTypeMapping TypeName="HospitalModel.CT_Thuoc_PhieuXuat">
               <MappingFragment StoreEntitySet="CT_Thuoc_PhieuXuat">
+                <ScalarProperty Name="ThueSuat" ColumnName="ThueSuat" />
                 <ScalarProperty Name="QuyDoi" ColumnName="QuyDoi" />
                 <ScalarProperty Name="TonKho" ColumnName="TonKho" />
                 <ScalarProperty Name="HSD" ColumnName="HSD" />
