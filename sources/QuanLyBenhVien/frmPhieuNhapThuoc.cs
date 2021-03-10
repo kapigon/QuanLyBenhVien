@@ -60,31 +60,31 @@ namespace QuanLyBenhVien
 
 
             using (var dbContextTransaction = db.Database.BeginTransaction()) 
+            { 
+                try 
                 { 
-                    try 
+                    /*context.Database.ExecuteSqlCommand( 
+                        @"UPDATE Blogs SET Rating = 5" + 
+                            " WHERE Name LIKE '%Entity Framework%'" 
+                        ); */
+ 
+                    /*var query = db.PhieuNhapThuocs.Where(p => p.Blog.Rating >= 5); 
+                    foreach (var post in query) 
                     { 
-                        /*context.Database.ExecuteSqlCommand( 
-                            @"UPDATE Blogs SET Rating = 5" + 
-                                " WHERE Name LIKE '%Entity Framework%'" 
-                            ); */
+                        post.Title += "[Cool Blog]"; 
+                    } */
  
-                        /*var query = db.PhieuNhapThuocs.Where(p => p.Blog.Rating >= 5); 
-                        foreach (var post in query) 
-                        { 
-                            post.Title += "[Cool Blog]"; 
-                        } */
+                    db.SaveChanges(); 
  
-                        db.SaveChanges(); 
- 
-                        dbContextTransaction.Commit(); 
-                    } 
-                    catch (Exception) 
-                    { 
-                        dbContextTransaction.Rollback(); 
-                    } 
+                    dbContextTransaction.Commit(); 
+                } 
+                catch (Exception) 
+                { 
+                    dbContextTransaction.Rollback(); 
                 } 
             } 
-        }
-        #endregion
+        } 
     }
+    #endregion
+    
 }
